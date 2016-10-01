@@ -22,64 +22,23 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-	<script src="/Projeto_Integrador_IV/js/angular.min.js"></script>
-    <script src="/Projeto_Integrador_IV/index.js"></script>
-    <script src="/Projeto_Integrador_IV/happyCustomer.js"></script>	
+	<script src="/PI4_-_CRM/js/angular.min.js"></script>
+    <script src="/PI4_-_CRM/index.js"></script>
+    <script src="/PI4_-_CRM/happyCustomer.js"></script>	
 </head>
 
 <body id="page-top"  ng-app=happyCustomerApp>
 
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="/Projeto_Integrador_IV">HAPPY CUSTOMER</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                  
-                    <li class="page-scroll">
-                        <a href="#negocios">Negócios</a>
-                    </li>                    
-                    <li class="page-scroll">
-                        <a href="#interacoes">Interações</a>
-                    </li>                    
-                    <li class="page-scroll">
-                        <a href="#clientes">Clientes</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contatos">Contatos</a>
-                    </li>
-                     <li class="page-scroll">
-                        <a href="#produtos">Produtos</a>
-                    </li>     
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/usuario/usuario.html">Atividades</a>
-                    </li>                                                        
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
+	<topo></topo>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <span class="name">Criar Atividades</span>
+                        <span class="name">Editar Atividade</span>
                     </div>
                 </div>
             </div>
@@ -87,170 +46,329 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section class="grid users">
-        <div class="container">
+	<section class="grid form_atividade">
+		<div class="container">
 
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                   
-                        <div class="row control-group">
-                        
-                        	<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Nome</label> <input type="text" class="form-control"
-									placeholder="Nome" id="nome" required
-									data-validation-required-message="Por favor insira um nome">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					<form name="sentMessage" id="contactForm" novalidate>
+						<div class="row control-group">
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Nome</label> 
+								<input type="text" class="form-control" value="Macbook Air com defeito no display." placeholder="Nome" id="nome" required data-validation-required-message="Por favor insira um nome">
 								<p class="help-block text-danger"></p>
 							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Empresa</label> <select id="tipo_usuario"
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								<label>Tipo de Atividade</label> <select id="tipo_usuario"
 									class="form-control" required
 									data-validation-required-message="Por favor selecione um tipo de usuário">
 
-									<option value="default">Empresa</option>
-									<option value="volvo">Samsung</option>
-									<option value="saab">Lenovo</option>
-								</select>
-							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Tipo</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-
-									<option value="default">Tipo</option>
-									<option value="volvo">Industria</option>
+									<option value="default"  >Tipo de Atividade</option>
+									<option value="volvo" selected>Industria</option>
 									<option value="saab">Varejo</option>
 								</select>
+								<p class="help-block text-danger"></p>
+								
 							</div>
 
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Stauts</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Stauts</option>
-									<option value="volvo">Ativo</option>
-									<option value="saab">Inativo</option>
+						</div>
+			
+						<div class="row control-group">
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Empresa</label> 
+								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+									<option value="default">Empresa</option>
+									<option value="volvo">Samsung</option>
+									<option value="saab" selected>Apple</option>
 								</select>
 								<p class="help-block text-danger"></p>
+								
 							</div>
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								<label>Contato</label> <select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+									<option value="default">Contato</option>
+									<option value="volvo">Guilherme</option>
+									<option value="saab">Gabriel</option>
+								</select>
+								<p class="help-block text-danger"></p>
+							</div>								
+					
+						
+						</div>
+						
+						<div class="row control-group">
 
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Usuario resp:</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								<label>Usuario Responsável:</label> 
+							    <select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">Usuario resp:</option>
-									<option value="volvo">Ativo</option>
-									<option value="saab">Inativo</option>
+									<option value="volvo">Gabriel Ferreira</option>
+									<option value="saab">Marcão</option>
 								</select>
 								<p class="help-block text-danger"></p>
 							</div>
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+									<label>Stauts</label> <select id="tipo_usuario"
+										class="form-control" required
+										data-validation-required-message="Por favor selecione um tipo de usuário">
+										<option value="default">Stauts</option>
+										<option value="volvo" selected>Ativo</option>
+										<option value="saab">Inativo</option>
+									</select>
+									<p class="help-block text-danger"></p>
+							</div>	
 
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Descriçao</label> <input type="text" class="form-control"
-									placeholder="Descricao" id="Descricao" required
-									data-validation-required-message="Por favor insira um nome">
+						</div>						
+						
+						<div class="row control-group">
+						
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								<label>Data Inicio</label> 
+								<input type="date" value="2016-09-23" class="form-control" placeholder="data_inicio" id="data_inicio" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								<label>Data Fim</label> 
+							<input type="date" value="2016-09-30" class="form-control" placeholder="data_fim" id="data_fim" required data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+						
+						</div>
+						<div class="row control-group">
+						
+								<div class="form-group col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+									<label>Descriçao</label> 
+									<textarea class="form-control" placeholder="Foi constatado que a maquina estava, com o interior da placa mãe derretida. Então será feita devolução do valor integrau para o cliente." id="Descricao" required data-validation-required-message="Por favor insira um nome"></textarea>
+									<p class="help-block text-danger"></p>
+								</div>	
 
-
-
+							
 						</div>
 
 
+						
+						<div class="row control-group">
+							<h3>Ligação</h3> 
+							
 
+							<div class="col-xs-12" >
+		
+								
+								
+										<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Tipo Número</label> 
+											<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+												<option value="default">Tipo Número</option>
+												<option value="whats">Celular</option>
+												<option value="volvo">Residencial</option>
+												<option value="saab">Empresarial</option>
+											</select>
+											<p class="help-block text-danger"></p>
+										</div>	
+								
+										<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Número</label> 
+								
+											<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+												<option value="default">Número</option>
+												<option value="whats">41 8888-8888</option>
+												<option value="volvo">41 8888-8888</option>
+												<option value="saab">41 8888-8888</option>
+											</select>
+											<p class="help-block text-danger"></p>
+										</div>
+										<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Duração</label> <input type="text"
+												class="form-control" placeholder="Duração"
+												id="Nome do contato" required
+												data-validation-required-message="Por favor insira um nome">
+											<p class="help-block text-danger"></p>
+										</div>										
+										<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Resumo</label> <input type="text"
+												class="form-control" placeholder="Resumo"
+												id="Nome do contato" required
+												data-validation-required-message="Por favor insira um nome">
+											<p class="help-block text-danger"></p>
+										</div>
+										
+										<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Tipo</label> 
+											<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+												<option value="default">Tipo</option>
+												<option value="whats">Efetuada</option>
+												<option value="volvo">Recebida</option>
+											</select>
+											<p class="help-block text-danger"></p>
+										</div>
+										<div class="col-xs-6  btn-group"> 
+										    <a class="btn btn-success btn-sm" href="javascript:void(0)">Salvar Ligação</a>
+										</div> 
+								</div>
 
-
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>DataInicio</label> <input type="date" class="form-control"
-								placeholder="data_inicio" id="data_inicio" required
-								data-validation-required-message="Please enter your name.">
-							<p class="help-block text-danger"></p>
+							
 						</div>
-
-
-
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Data Fim</label> <input type="date" class="form-control"
-								placeholder="data_fim" id="data_fim" required
-								data-validation-required-message="Please enter your name.">
-							<p class="help-block text-danger"></p>
+									
+						<div class="row ">
+							<h3>Ligações da Ativdade</h3>
+			                <div class="table-scrollable table-scrollable-borderless">
+			                    <table class="table table-hover table-light col-xs-12">
+			                        <thead>
+			                            <tr class="uppercase">
+			                                <th > ID </th>
+			                                <th> Tipo Numero </th>
+			                                <th> Número</th>
+			                                <th> Duração</th>
+			                                
+			                                <th>  </th>
+			                                
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+				                        <tr>
+				                            
+				                            <td >1</td>
+				                            <td> Telefone </td>
+				                            <td> +55 (041) 9999-9999</td>
+				                            <td> 00:20:21</td>
+				                            
+				                            <td class="btn-group"><a class="btn btn-success  btn-sm" target="_blank" href="/PI4_-_CRM/ligacao/editar_ligacao.html">ver</a> <a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
+				                        </tr>
+				                        <tr>
+				                            
+				                            <td >2</td>
+				                            <td> Whatsapp </td>
+				                            <td> +55 (041) 9999-9999</td>
+				                            <td> 00:20:21</td>
+				                            <td class="btn-group"><a class="btn btn-success  btn-sm"  target="_blank" href="/PI4_-_CRM/ligacao/editar_ligacao.html">ver</a> <a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
+				                              
+				                        </tr>
+				                        <tr>
+				                            
+				                            <td >3</td>
+				                            <td> Telefone </td>
+				                            <td> +55 (041) 9999-9999</td>
+				                            <td> 00:20:21</td>
+				                            <td class="btn-group"><a class="btn btn-success btn-sm" target="_blank" href="/PI4_-_CRM/ligacao/editar_ligacao.html">ver</a> <a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
+				                        </tr>
+									</tbody>
+			                    </table>
+			                </div>							
+						
 						</div>
+						
+						
 
+						
 
+						<div class="row control-group">
+							<h3>Comunicador</h3> 
+							
 
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Ligações:</label> <select id="tipo_usuario"
-								class="form-control" required
-								data-validation-required-message="Por favor selecione um tipo de usuário">
-								<option value="default">Ligações:</option>
-								<option value="volvo">telefone</option>
-								<option value="saab">celular</option>
-							</select>
-							<p class="help-block text-danger"></p>
+							<div class="col-xs-12 ">
+								<div class="col-xs-10">
+								
+								
+										<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Tipo Comunicador</label> <select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+												<option value="default">Tipo Comunicador</option>
+												<option value="whats">1 - WhatsApp</option>
+												<option value="volvo">2 - Facebook</option>
+												<option value="saab">3  - E-mail</option>
+											</select>
+											<p class="help-block text-danger"></p>
+										</div>	
+								
+										<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Descrição</label> <input type="text"
+												class="form-control" placeholder="Descrição"
+												id="Nome do contato" required
+												data-validation-required-message="Por favor insira um nome">
+											<p class="help-block text-danger"></p>
+										</div>
+										<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+											<label>Resumo</label> <input type="text"
+												class="form-control" placeholder="Resumo"
+												id="Nome do contato" required
+												data-validation-required-message="Por favor insira um nome">
+											<p class="help-block text-danger"></p>
+										</div>							
+								</div>
+								<div class="col-xs-2 btn-group"> 
+									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+								
+								</div> 
+								
+								
+							</div>
 						</div>
-
-
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Contatos</label> <select id="tipo_usuario"
-								class="form-control" required
-								data-validation-required-message="Por favor selecione um tipo de usuário">
-								<option value="default">Contatos</option>
-								<option value="volvo">Guilherme</option>
-								<option value="saab">Gabriel</option>
-							</select>
-							<p class="help-block text-danger"></p>
+			
+						
+						<div class="row ">
+							<h3>Comunicadores da Atividade</h3>
+			                <div class="table-scrollable table-scrollable-borderless">
+			                    <table class="table table-hover table-light col-xs-12">
+			                        <thead>
+			                            <tr class="uppercase">
+			                                <th > ID </th>
+			                                <th> Tipo </th>
+			                                <th> Descrição</th>
+			                                <th> Resumo</th>
+			                                
+			                                <th>  </th>
+			                                
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+                 				                        <tr>
+				                            
+				                            <td >1</td>
+				                            <td> Facebook </td>
+				                            <td> www.facebook.com/jose </td>
+				                            <td> alterar cor do produto</td>
+											<td class="btn-group"><a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>				                        </tr>
+				                        <tr>
+				                            
+				                            <td >2</td>
+				                            <td> Whatsapp </td>
+				                            <td> +55 (041) 9999-9999</td>
+				                            <td> alterar cor do produto</td>
+											<td class="btn-group"><a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>				                        </tr>
+				                        </tr>
+				                        <tr>
+				                            
+				                            <td >3</td>
+				                            <td> Telefone </td>
+				                            <td> +55 (041) 9999-9999</td>
+				                            <td> alterar cor do produto</td>
+											<td class="btn-group"><a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>				                        </tr>
+			                    	</tbody>
+			                    </table>
+			                </div>							
+						
 						</div>
-                          
-                            
+						
 
-                       
-                        </div>                        
-
-
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                
-								<a class="btn btn-danger btn-lg to-left" href="/Projeto_Integrador_IV/atividade/atividade.html">Voltar</a> 
-                                <button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+							
+											
+						<div id="success"></div>
+						<div class="row">
+							<div class="form-group btn-group col-xs-12">
+								<a class="btn btn-danger btn-lg to-left"
+									href="/PI4_-_CRM/atividade/atividade.html">Voltar</a>
+								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+    
 
 
-
-    <!-- Footer -->
-    <footer class="text-center">
-
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Happy Customer 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
@@ -259,13 +377,21 @@
         </a>
     </div>
 
-
-  <!-- jQuery -->
-	<script src="/Projeto_Integrador_IV/vendor/jquery/jquery.min.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="/Projeto_Integrador_IV//vendor/bootstrap/js/bootstrap.min.js"></script>
-
+	<!-- Footer -->
+	<rodape></rodape>
 </body>
+    <!-- jQuery -->
+    <script src="/PI4_-_CRM/vendor/jquery/jquery.min.js"></script>
 
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/PI4_-_CRM//vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/PI4_-_CRM/js/jqBootstrapValidation.js"></script>
+    <script src="/PI4_-_CRM/js/contact_me.js"></script>
+    <script src="/PI4_-_CRM/js/freelancer.min.js"></script>
 </html>

@@ -1,14 +1,14 @@
 <meta charset="utf-8" />
 
 <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/Projeto_Integrador_IV">HAPPY CUSTOMER</a>
+                <a class="navbar-brand" href="/PI4_-_CRM">HAPPY CUSTOMER</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,25 +17,94 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/atividade/atividade.html">Atividades</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/negocio/negocio.html">Negócios</a>
-                    </li>                    
-              
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/cliente/cliente.html">Clientes</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/contato/contato.html">Contatos</a>
-                    </li>
-                     <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/produto/produto.html">Produtos</a>
-                    </li>     
-                    <li class="page-scroll">
-                        <a href="/Projeto_Integrador_IV/usuario/usuario.html">Usuários</a>
-                    </li>                                                        
+                    <li class="menu">
+                        <a href="/PI4_-_CRM/atividade/atividade.html">Atividades</a>
+						<ul class="sub-menu">
+							<li class="menu">
+							 	<a href="/PI4_-_CRM/tipo_atividade/tipo_atividade.html">
+                       				Tipos de Atividade
+                					</a>
+                   			</li>
+						</ul>                                 
+					</li>                    
+                    <li class="menu">
+                        <a href="/PI4_-_CRM/negocio/negocio.html">	Negócios	</a>
+                    </li>                     
+
+                   
+                    <li class="menu">
+                        <a href="/PI4_-_CRM/empresa/empresa.html">Empresa</a>
+						<ul class="sub-menu">
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/produto/produto.html">Produtos</a>
+                   			</li>	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/ligacao/ligacao.html">Ligações</a>
+                   			</li>		
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/contato/contato.html">Contatos</a>
+							 	<ul class="sub-menu">
+								 	<li class="menu">
+									 	<a href="/PI4_-_CRM/origem_contato/origem_contato.html">Origem de contato</a>
+		                   			</li>							 	
+								 	<li class="menu">
+									 	<a href="/PI4_-_CRM/tipo_contato/tipo_contato.html">Tipos de contato</a>
+		                   			</li>
+
+							 	</ul>
+                   			</li>	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/tipo_empresa/tipo_empresa.html">Tipos de empresa</a>
+                   			</li>
+
+						</ul>                                 
+					</li>                   
+ 					<li class="menu">
+                        <a href="javascript:void(0)">Configurações</a>
+						<ul class="sub-menu">
+	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/usuario/usuario.html">Usuários</a>
+							 	<ul class="sub-menu">
+								 	<li class="menu">
+									 	<a href="/PI4_-_CRM/tipo_usuario/tipo_usuario.html">Tipos de usuario</a>
+		                   			</li>
+							 	</ul>
+                   			</li>	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/estado/estado.html">Estado</a>
+                   			</li>
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/cidade/cidade.html">Cidade</a>
+                   			</li>	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/tipo_telefone/tipo_telefone.html">Tipos de telefone</a>
+                   			</li>	
+                    		<li class="menu">
+							 	<a href="/PI4_-_CRM/tipo_comunicador/tipo_comunicador.html">Tipos de comunicador</a>
+
+                   			</li>	
+													
+						</ul>                                 
+					</li>  
+					                   			
+					<li class="menu dropdown-user">
+					    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
+     						 <img class="user-pic img-circle" src="/PI4_-_CRM/img/users/cleve.png">
+                             <span class="username username-hide-on-mobile"> SR. Cleverson </span>
+                             <i class="fa fa-angle-down"></i>
+                         </a>
+					    <ul class="sub-menu">
+                    		<li class="menu">
+					            <a href="/PI4_-_CRM/usuario/editar_usuario.html"> Meus Dados</a>
+					        </li>
+					        <li class="menu">
+					            <a href="/PI4_-_CRM/login/login.html"> Sair</a>
+					        </li>
+					    </ul>
+					</li>
+					
+                                                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

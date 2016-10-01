@@ -25,9 +25,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
 	rel="stylesheet" type="text/css">
-	<script src="/Projeto_Integrador_IV/js/angular.min.js"></script>
-    <script src="/Projeto_Integrador_IV/index.js"></script>
-    <script src="/Projeto_Integrador_IV/happyCustomer.js"></script>	
+	<script src="/PI4_-_CRM/js/angular.min.js"></script>
+    <script src="/PI4_-_CRM/index.js"></script>
+    <script src="/PI4_-_CRM/happyCustomer.js"></script>	
 </head>
 
 <body id="page-top" ng-app=happyCustomerApp>
@@ -53,13 +53,16 @@
 
             <div class="row">
                 <div class="table-scrollable table-scrollable-borderless">
-                    <table class="table table-hover table-light">
+      				<div class="col-sm-6 col-xs-12  search_bar">
+						<input type="text" class="form-control" placeholder="Buscar Cidade" id="Nome do contato" required data-validation-required-message="Por favor insira um nome">
+					</div>		
+                    <table class="table table-hover table-light col-xs-12">
                         <thead>
                             <tr class="uppercase">
                                 <th > ID </th>
                                 <th> Cidade </th>
                                 <th> Estado </th>
-                                <th> <a class="btn btn-success btn-sm" href="/Projeto_Integrador_IV/cidade/criar_cidade.html">Adicionar</a> </th>
+                                <th> <a class="btn btn-success btn-sm" href="/PI4_-_CRM/cidade/criar_cidade.html">Adicionar</a> </th>
                                 
                             </tr>
                         </thead>
@@ -69,7 +72,7 @@
                             <td> Curitiba </td>
                             <td> Paraná </td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/Projeto_Integrador_IV/cidade/editar_cidade.html">Editar</a> 
+                                <a class="btn btn-warning btn-sm" href="/PI4_-_CRM/cidade/editar_cidade.html">Editar</a> 
                             </td>                            
                         </tr>
                         <tr>
@@ -78,7 +81,7 @@
                             <td> Rio Grande do Sul </td>
 
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/Projeto_Integrador_IV/cidade/editar_cidade.html">Editar</a> 
+                                <a class="btn btn-warning btn-sm" href="/PI4_-_CRM/cidade/editar_cidade.html">Editar</a> 
                             </td>                            
                         </tr>
                         <tr>
@@ -87,7 +90,7 @@
                             <td> São Paulo </td>
 
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/Projeto_Integrador_IV/cidade/editar_cidade.html">Editar</a> 
+                                <a class="btn btn-warning btn-sm" href="/PI4_-_CRM/cidade/editar_cidade.html">Editar</a> 
                             </td>                            
                         </tr>                        
                     </tbody>
@@ -100,8 +103,7 @@
 
 
 
-	<!-- Footer -->
-	<rodape></rodape>
+
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div
@@ -111,12 +113,8 @@
 		</a>
 	</div>
 
-
-	<!-- jQuery -->
-	<script src="/Projeto_Integrador_IV/vendor/jquery/jquery.min.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="/Projeto_Integrador_IV//vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Footer -->
+	<rodape></rodape>
 
 
 

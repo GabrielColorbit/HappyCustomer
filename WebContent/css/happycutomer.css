@@ -41,6 +41,26 @@ hr.star-light:after,hr.star-primary:after
 	position: relative;
 	top: -.8em;
 }
+.sub-menu .menu{
+    padding: 6px 10px;
+}
+.menu:hover > .sub-menu{display:block;}
+.sub-menu  .sub-menu{right: 199px;margin-top: -30px;border-bottom: solid 4px #18bc9c;}
+.sub-menu{
+	display:none;
+	position: absolute;
+	width: auto;
+	padding: 20px 00px;
+	background: #fff;
+	color: #2c3e50;
+	border-bottom: solid 4px #2c3e50;
+	width: 200px;
+	box-shadow: #000 0px 7px 21px -9px;
+}
+.navbar-custom .navbar-nav .sub-menu > li > a{
+    color: #2c3e50;
+}
+
 .navbar-custom,header .intro-text .name
 {
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -67,6 +87,11 @@ hr.star-primary:after
 .navbar-custom .navbar-brand,.navbar-custom .navbar-brand.active,.navbar-custom .navbar-brand:active,.navbar-custom .navbar-brand:focus,.navbar-custom .navbar-brand:hover,.navbar-custom .navbar-nav li a,header
 {
 	color: #fff;
+}
+
+img.user-pic.img-circle {
+    width: 38px;
+    margin: -10px 0;
 }
 .navbar-default .navbar-header:before{
     content:"";
@@ -146,9 +171,16 @@ header .intro-text .skills
 	color: #18BC9C;
 	outline: 0;
 }
+
+.navbar-custom .navbar-nav .sub-menu .sub-menu .menu a {
+    color: #18BC9C;
+}
+.navbar-custom .navbar-nav .sub-menu .menu a:hover {
+    color: #2c3e50;
+}
 .navbar-custom .navbar-nav li a:active,.navbar-custom .navbar-nav li a:focus
 {
-	color: #fff;
+	/* color: #fff; */
 }
 .navbar-custom .navbar-nav li.active a,.navbar-custom .navbar-nav li.active a:active,.navbar-custom .navbar-nav li.active a:focus,.navbar-custom .navbar-nav li.active a:hover
 {
@@ -193,9 +225,14 @@ header .intro-text .skills
 		font-size: 2em;
 	}
 }
+body > section{
+	padding-bottom: 0px;
+	background: #fff;
+	margin-bottom: 39px;
+}
 section
 {
-	padding: 100px 0;
+	padding: 50px 0;
 }
 section h2
 {
@@ -208,7 +245,14 @@ section.success
 	color: #fff;
 }
 @media (max-width:767px)
-{
+{	
+
+
+	.sub-menu{
+    display: block;
+    position: relative;
+}
+	.m_view{display: none;}
 	section
 	{
 		padding: 75px 0;
@@ -286,7 +330,7 @@ section.success
 	margin-bottom: 0;
 	padding-bottom: .5em;
 	position: relative;
-	height: 80px;
+	height: auto;
 }
 .floating-label-form-group input, .floating-label-form-group textarea,.floating-label-form-group  select
 {
@@ -317,7 +361,7 @@ section.success
 	vertical-align: middle;
 	webkit-transition: top .3s ease,opacity .3s ease;
 	z-index: 0;
-	color: #555;
+	color: #636363;
 }
 .floating-label-form-group:not(:first-child)
 {
@@ -340,6 +384,11 @@ form .row:first-child .floating-label-form-group
 footer
 {
 	color: #fff;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+	opacity: 1;
+	z-index: -1;
 }
 footer h3
 {
@@ -357,7 +406,7 @@ footer .footer-col
 footer .footer-below
 {
 	background-color: #233140;
-	padding: 25px 0;
+	padding: 10px 0;
 }
 .btn-outline
 {
@@ -520,11 +569,75 @@ footer .footer-below
 }
 select.form-control{
 	height: auto;
-	color: #555;
-	padding: 9px 0;
+	color: #636363;
+	padding:  0;
+	padding-right: 20px;
 	font-size: 1.4em;
-	height: 44px;
+	height: 34px;
+	background: transparent url("../img/arrow.png") no-repeat right center;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
+
 .btn-group, .btn-group-vertical{padding:10px 0}
+.form-group .btn-group{
+    padding-top: 24px;
+}
+
 .to-left{float:left;}
 .to-right{float: right!important;}
+form{
+    color: #636363;
+}
+
+
+::-webkit-input-placeholder {
+   color: #636363!important;
+}
+
+:-moz-placeholder {
+   color: #636363!important;
+
+}
+
+::-moz-placeholder {
+   color: #636363!important;
+
+}
+
+:-ms-input-placeholder {  
+   color: #636363!important;
+
+}
+
+
+
+.table tr .btn{
+    float: right;
+}
+.table tr:first-child td.btn-group{
+    border-top: none;
+}
+.table tr td.btn-group .btn{float: left;}
+.search_bar{padding:0}
+.search_bar > input{
+	background: rgba(0,0,0,0.04);
+	border: 1px solid rgba(0,0,0,0);
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	max-width: 720px;
+	position: relative;
+	-webkit-transition: background 100ms ease-in,width 100ms ease-out;
+	transition: background 100ms ease-in,width 100ms ease-out;
+	padding-right: 34px;
+	height: 46px;
+}
+.search_bar:after{
+	content:"";
+	padding: 23px 17px;
+	background-image: url(../img/sprite.png);
+	position: absolute;
+	background-position: -185px -80px;
+	right: 16px;
+	top: 0;
+}
