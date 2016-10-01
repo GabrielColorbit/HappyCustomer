@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Happy Customer</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Theme CSS -->
+<link href="../css/happycutomer.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+	<script src="/Projeto_Integrador_IV/js/angular.min.js"></script>
+    <script src="/Projeto_Integrador_IV/index.js"></script>
+    <script src="/Projeto_Integrador_IV/happyCustomer.js"></script>	
+</head>
+
+<body id="page-top" ng-app=happyCustomerApp>
+
+	<!-- Navigation -->
+  	<topo></topo>
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-text">
+						<span class="name">Criar Cidade</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="grid users">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					<form name="sentMessage" id="contactForm" novalidate>
+						<div class="row control-group">
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cidade</label> <input type="text" class="form-control"
+									placeholder="Nome" id="nome" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Empresa</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
+
+									<option value="default">Estado</option>
+									<option value="volvo">Paraná</option>
+									<option value="saab">Porto Alegre</option>
+								</select>
+							</div>
+
+
+
+						</div>
+
+
+
+
+
+
+						<div id="success"></div>
+						<div class="row">
+							<div class="form-group btn-group col-xs-12">
+
+								<a class="btn btn-danger btn-lg to-left"
+									href="/Projeto_Integrador_IV/cidade/cidade.html">Voltar</a>
+								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Footer -->
+	<rodape></rodape>
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div
+		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+		<a class="btn btn-primary" href="#page-top"> <i
+			class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="/Projeto_Integrador_IV/vendor/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/Projeto_Integrador_IV//vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>
