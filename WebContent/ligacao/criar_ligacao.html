@@ -10,6 +10,7 @@
 <meta name="author" content="">
 
 <title>Happy Customer</title>
+<link rel="shortcut icon" href="../img/profile.ico" type="image/x-icon">
 
 <!-- Bootstrap Core CSS -->
 <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,16 +28,16 @@
 	rel="stylesheet" type="text/css">
 
 
-	<script src="/CRM/js/angular.min.js"></script>
-    <script src="/CRM/index.js"></script>
-    <script src="/CRM/happyCustomer.js"></script>	
+<script src="/CRM/js/angular.min.js"></script>
+<script src="/CRM/index.js"></script>
+<script src="/CRM/happyCustomer.js"></script>
 </head>
 
-<body id="page-top"  ng-app=happyCustomerApp>
+<body id="page-top" ng-app=happyCustomerApp>
 
 	<!-- Navigation -->
-  	<topo></topo>
-	
+	<topo></topo>
+
 
 	<!-- Header -->
 	<header>
@@ -62,10 +63,12 @@
 					<form name="sentMessage" id="contactForm" novalidate>
 
 						<div class="row control-group">
-						
-							<div class="form-group col-xs-12 floating-label-form-group controls">
-								<label>Tipo</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Tipo</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">Tipo</option>
 									<option value="volvo">Efetuada</option>
 									<option value="saab">Recebida</option>
@@ -74,21 +77,25 @@
 							</div>
 
 						</div>
-						
+
 						<div class="row control-group">
-						
-							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>Empresa</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Empresa</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">23123 - Apple</option>
 									<option value="volvo">213213 - Coca-cola</option>
 									<option value="saab">2543 - Samsung</option>
 								</select>
 								<p class="help-block text-danger"></p>
 							</div>
-							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>Contato</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Contato</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">23123 - Gabriel</option>
 									<option value="volvo">213213 - Guilherme</option>
 									<option value="saab">2543 - Marcão</option>
@@ -99,42 +106,51 @@
 						</div>
 						<div class="row control-group">
 
-							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>Atividade</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Atividade</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">3123 - Computador com defeito</option>
 									<option value="volvo">3123 - Computador com defeito</option>
 									<option value="saab">3123 - Computador com defeito</option>
 								</select>
 								<p class="help-block text-danger"></p>
-								
+
 							</div>
-							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>Usuario</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Usuario</label> <select id="tipo_usuario"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option value="default">Gabriel</option>
 									<option value="volvo">Luiz</option>
 									<option value="saab">José</option>
 								</select>
 								<p class="help-block text-danger"></p>
-								
-							</div>							
-		
+
+							</div>
+
 						</div>
 						<div class="row control-group">
-						
-								<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-									<label>Duração</label> 
-									<input type="text" class="form-control" placeholder="00:00:00" id="Descricao" required data-validation-required-message="Por favor insira um nome">
-									<p class="help-block text-danger"></p>
-								</div>	
-								<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-									<label>Data</label> 
-									<input type="date" value="2016-09-23" class="form-control" placeholder="data_inicio" id="data_inicio" required data-validation-required-message="Please enter your name.">
-									<p class="help-block text-danger"></p>
-								</div>
+
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Duração</label> <input type="text" class="form-control"
+									placeholder="00:00:00" id="Descricao" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Data</label> <input type="date" value="2016-09-23"
+									class="form-control" placeholder="data_inicio" id="data_inicio"
+									required
+									data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
 						</div>
-											
+
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
@@ -153,7 +169,7 @@
 
 
 
-	
+
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div
@@ -165,24 +181,25 @@
 
 
 	<!-- Footer -->
-	<rodape></rodape>	
+	<rodape></rodape>
 
 </body>
-    <!-- jQuery -->
-    <script src="/CRM/vendor/jquery/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/CRM/vendor/jquery/jquery.min.js"></script>
 
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/CRM//vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/CRM//vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="/CRM/js/jquery.maskMoney.min.js"></script>
-    <script src="/CRM/js/jqBootstrapValidation.js"></script>
-    <script src="/CRM/js/contact_me.js"></script>
-    <script src="/CRM/js/freelancer.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/CRM/js/jquery.maskMoney.min.js"></script>
+<script src="/CRM/js/jqBootstrapValidation.js"></script>
+<script src="/CRM/js/contact_me.js"></script>
+<script src="/CRM/js/freelancer.min.js"></script>
 
 
 </html>
