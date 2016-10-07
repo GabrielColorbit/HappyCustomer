@@ -74,7 +74,7 @@ public class Main {
 		TipoTelefoneBO ttBO = new TipoTelefoneBO();
 		TipoTelefone tt = new TipoTelefone();
 		/*cadastro de tipo de telefone*/
-		tt.setNome("Residencial");
+		tt.setNome("Teste fuking jpa");
 		ttBO.salvar(tt);
 //		System.out.println("Busca Tipos de Telefone:");
 		tt = ttBO.getObjectById(1l);
@@ -101,9 +101,9 @@ public class Main {
 		teBO.salvar(te);
 		
 		System.out.println("Busca Tipos de Empresa:");
-		te = teBO.getObjectById(2l);
+		te = teBO.getObjectById(1l);
 		System.out.println(te.getId() +" - "+te.getNome());
-		teBO.excluir(te);
+//		teBO.excluir(te);
 //		te.setNome("Tipo Empresa Teste EditarBO");		
 //		teBO.editar(te);
 		System.out.println("Tipos de Empresa:");
