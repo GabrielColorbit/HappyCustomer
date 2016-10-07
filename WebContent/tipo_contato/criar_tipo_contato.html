@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
 
@@ -33,12 +33,16 @@
 <script src="/CRM/happyCustomer.js"></script>
 </head>
 
-<body id="page-top" ng-app=happyCustomerApp>
+<body id="page-top" ng-app="happyCustomerApp">
 
 	<!-- Navigation -->
 	<topo></topo>
 
-
+	
+	
+	
+	
+	
 	<!-- Header -->
 	<header>
 		<div class="container">
@@ -51,6 +55,102 @@
 			</div>
 		</div>
 	</header>
+
+
+	<section class="grid form_tipo_ontato" ng-controller="tipocontatoController">
+		<div class="container">
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th><a href="#">Adicionar</a><th>
+				</tr>
+				<tr ng-repeat="tipocontato in listTipoContato">
+					<td>{{tipocontato.id}}</td>
+					<td>{{tipocontato.nome}}</td>
+					<td>
+						<a href="#" ng-click='del(tipocontato.id)'>Excluir</a>
+						<a href="#" ng-click='selectEdit(tipocontato.id)'>Editar</a>
+					<td>
+				</tr>
+				
+			</table>
+			<h3>Informações do Tipo de Contato</h3>
+			<table>
+				<tr> 
+					<td>id</td>
+					<td><input type="text" ng-model="id"></td>
+				</tr>
+				<tr>
+					<td>Nome</td>
+					<td><input type="text" ng-model="nome"></td>					
+				</tr>
+				<tr>
+					<td><input type="button" value="adicionar" ng-click="add()"></td>					
+					<td><input type="button" value="salvar" ng-click="edit()"></td>					
+				</tr>
+			 </table>
+			
+		</div>
+	</section>			
+	
+<script>
+
+happyCustomerApp.controller('tipocontatoController',function($scope){
+  		$scope.listTipoContato=[
+          	{id:1,nome:'Prospect'},
+          	{id:2,nome:'Administrador'},
+          	{id:3,nome:'Diretor'}
+          ];
+  		
+  		$scope.add = function(){
+  			$scope.listTipoContato.push({
+  	          	id:$scope.id, nome:$scope.nome
+  			});
+  		 	$scope.id = '';
+  			$scope.nome = '';
+  		}
+  		$scope.edit = function(){
+  			var index = getSelectedIndex($scope.id);
+  			$scope.listTipoContato[index].id = $scope.id;
+  			$scope.listTipoContato[index].nome = $scope.nome;
+  			
+  		}
+  		
+  		
+  		$scope.selectEdit = function(id){
+  			var index = getSelectedIndex(id);
+  			var TipoContato = $scope.listTipoContato[index];
+
+  			$scope.id = TipoContato.id;
+  			$scope.nome = TipoContato.nome;
+  			
+  			
+  		};
+  		
+		$scope.del = function(id){
+			var result = confirm('Tem certeza?');
+			if (result === true){
+				var index = getSelectedIndex(id);
+				$scope.listTipoContato.splice(index, 1);
+			}
+
+		};
+  		function getSelectedIndex(id){
+  			for(var i=0; i < $scope.listTipoContato.length; i ++)
+  				if($scope.listTipoContato[i].id == id)
+  					return i;
+  			return -1;
+ 					
+  		}
+ 
+ });  
+  
+  
+  
+
+
+</script>
 
 	<!-- Portfolio Grid Section -->
 	<section class="grid form_tipo_ontato">

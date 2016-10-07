@@ -1,24 +1,33 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.sun.xml.internal.txw2.annotation.XmlElement;
 
 @Entity
 @Table(name="\"TipoContato\"")
-public class TipoContato {
+@XmlRootElement(name = "TipoContato")
+public class TipoContato implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	
+	@XmlElement
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
+	@XmlElement
 	public String getNome() {
 		return nome;
 	}
@@ -58,5 +67,17 @@ public class TipoContato {
 	public String toString() {
 		return "TipoContato [id=" + id + ", nome=" + nome + "]";
 	}
+
+	public TipoContato() {
+		super();
+	}
+	public TipoContato(Long id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
+	
+	
+	
 	
 }
