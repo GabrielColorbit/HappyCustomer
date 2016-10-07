@@ -51,7 +51,7 @@ import br.edu.facear.crm.entity.Usuario;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		gerenciarTipoTelefone();
-		gerenciarTipoEmpresa();
+//		gerenciarTipoEmpresa();
 //		gerenciarTelefone();
 //		gerenciarProduto();
 //		gerenciarEstado();
