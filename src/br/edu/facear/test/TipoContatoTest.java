@@ -25,11 +25,11 @@ public class TipoContatoTest {
 	public void testAterarTipoCOntato() throws Exception{
 		Facade f = new Facade();
 		TipoContato t = f.buscarTipoContatoPorId(1l);
-		t.setNome("alteração teste junit");
+		t.setNome("Administrador");
 		f.alterarTipoContato(t);
 		t = f.buscarTipoContatoPorId(1l);
 		
-		Assert.assertEquals(true, t.getNome().equals("alteração teste junit"));
+		Assert.assertEquals(true, t.getNome().equals("Administrador"));
 	}
 	
 	@Test

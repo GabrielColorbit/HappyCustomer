@@ -10,16 +10,16 @@ public class Facade {
 	TipoContatoBO tipocontatoBO = new TipoContatoBO();
 	
 	public void cadastrarTipoContato(TipoContato tc) throws Exception{
-		tipocontatoBO.salvar(tc);
+		tipocontatoBO.Cadastrar(tc);
 	}
 	public TipoContato buscarTipoContatoPorId(Long l) throws Exception{
-		return tipocontatoBO.getObjectById(l);
+		return tipocontatoBO.BuscarID(l);
 	}
 	public void alterarTipoContato(TipoContato t) throws Exception{
-		tipocontatoBO.editar(t);
+		tipocontatoBO.Alterar(t);
 	}
 	public List<TipoContato> listarTipoContato() throws Exception {
-		return tipocontatoBO.listar();
+		return tipocontatoBO.Listar();
 	}
 
 }
