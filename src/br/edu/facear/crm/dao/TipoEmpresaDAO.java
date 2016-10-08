@@ -12,7 +12,7 @@ public class TipoEmpresaDAO implements InterfaceDAO<TipoEmpresa>{
 
 
 	@Override
-	public void salvar(TipoEmpresa tipoempresa) throws CrmException {
+	public void Cadastrar(TipoEmpresa tipoempresa) throws CrmException {
 		EntityManager em = Connection.getEntityManager();
 		em.getTransaction().begin();
 		try {
@@ -30,14 +30,14 @@ public class TipoEmpresaDAO implements InterfaceDAO<TipoEmpresa>{
 	}
 
 	@Override
-	public List<TipoEmpresa> listar() {
+	public List<TipoEmpresa> Listar() {
 		EntityManager em = Connection.getEntityManager();
 		Query q = em.createQuery("select a from TipoEmpresa a");
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(TipoEmpresa tipoempresa) {
+	public void Alterar(TipoEmpresa tipoempresa) {
 		EntityManager em = Connection.getEntityManager();
 		em.getTransaction().begin();
 		em.merge(tipoempresa);
@@ -46,13 +46,13 @@ public class TipoEmpresaDAO implements InterfaceDAO<TipoEmpresa>{
 	}
 
 	@Override
-	public TipoEmpresa getObjectById(Long id) {
+	public TipoEmpresa BuscarID(Long id) {
 		EntityManager em = Connection.getEntityManager();
 		return em.find(TipoEmpresa.class, id);
 	}
 
 	@Override
-	public void excluir(TipoEmpresa tipoempresa) {
+	public void Excluir(TipoEmpresa tipoempresa) {
 		EntityManager em = Connection.getEntityManager();
 		em.getTransaction().begin();
 		em.remove(tipoempresa);

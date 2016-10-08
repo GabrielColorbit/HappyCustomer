@@ -10,16 +10,16 @@ public class TipoAtividadeBO implements InterfaceBO<TipoAtividade>{
 	TipoAtividadeDAO tadao = new TipoAtividadeDAO();
 
 	@Override
-	public void salvar(TipoAtividade o) throws Exception {
+	public void Cadastrar(TipoAtividade o) throws Exception {
 		if(o.getNome() == null){
 			throw new Exception("Nome do tipo de atividade é inválido");
 		}
-		tadao.salvar(o);			
+		tadao.Cadastrar(o);			
 	}
 
 	@Override
-	public List<TipoAtividade> listar() throws Exception {
-		List<TipoAtividade> ta= tadao.listar();
+	public List<TipoAtividade> Listar() throws Exception {
+		List<TipoAtividade> ta= tadao.Listar();
 		if(ta == null){
 			throw new Exception("Nenhuma tipo de atividade cadastrado");
 		}
@@ -27,15 +27,15 @@ public class TipoAtividadeBO implements InterfaceBO<TipoAtividade>{
 	}
 
 	@Override
-	public void editar(TipoAtividade o) throws Exception {
+	public void Alterar(TipoAtividade o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Nome do tipo de atividade é inválido");
 		}
-		tadao.editar(o);			
+		tadao.Alterar(o);			
 	}
 
 	@Override
-	public TipoAtividade getObjectById(Long id) throws Exception {
+	public TipoAtividade BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Tipo de atividade pesquisado é inválido");
 		}
@@ -43,15 +43,15 @@ public class TipoAtividadeBO implements InterfaceBO<TipoAtividade>{
 			throw new Exception("Tipo de atividade Pesquisado é inválido");
 		}
 		
-		return tadao.getObjectById(id);
+		return tadao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(TipoAtividade o) throws Exception {
+	public void Excluir(TipoAtividade o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Tipo de atividade selecionado é inválido.");
 		}		
-		tadao.excluir(o);			
+		tadao.Excluir(o);			
 	}
 
 }

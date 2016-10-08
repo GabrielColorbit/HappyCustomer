@@ -9,18 +9,18 @@ import br.edu.facear.crm.entity.TipoEmpresa;
 public class ProdutoBO implements InterfaceBO<Produto>{
 	ProdutoDAO produtodao = new ProdutoDAO();
 	@Override
-	public void salvar(Produto produto) throws Exception {
+	public void Cadastrar(Produto produto) throws Exception {
 		if(produto.getNome() == null){
 			throw new Exception("Nome do produto é inválido");
 		}else if(produto.getPreco() == null){
 			throw new Exception("Preço do produto é inválido");
 		}
-		produtodao.salvar(produto);
+		produtodao.Cadastrar(produto);
 	}
 
 	@Override
-	public List<Produto> listar() throws Exception {
-		List<Produto> listaproduto= produtodao.listar();
+	public List<Produto> Listar() throws Exception {
+		List<Produto> listaproduto= produtodao.Listar();
 		if(listaproduto == null){
 			throw new Exception("Nenhumm produto cadastrado");
 		}
@@ -28,17 +28,17 @@ public class ProdutoBO implements InterfaceBO<Produto>{
 	}
 
 	@Override
-	public void editar(Produto produto) throws Exception {
+	public void Alterar(Produto produto) throws Exception {
 		if(produto.getNome() == null) {
 			throw new Exception("Nome do produto é Invalido");
 		}else if(produto.getPreco() == null) {
 			throw new Exception("Preço do produto é Invalido");
 		}
-		produtodao.editar(produto);	
+		produtodao.Alterar(produto);	
 	}
 
 	@Override
-	public Produto getObjectById(Long id) throws Exception {
+	public Produto BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Produto pesquisado é inválido");
 		}
@@ -46,15 +46,15 @@ public class ProdutoBO implements InterfaceBO<Produto>{
 			throw new Exception("Produto pesquisado é inválido");
 		}
 		
-		return produtodao.getObjectById(id);
+		return produtodao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Produto produto) throws Exception {
+	public void Excluir(Produto produto) throws Exception {
 		if(produto.getNome() == null) {
 			throw new Exception("produto selecionado é inválido.");
 		}
-		produtodao.excluir(produto);			
+		produtodao.Excluir(produto);			
 	}
 	
 }

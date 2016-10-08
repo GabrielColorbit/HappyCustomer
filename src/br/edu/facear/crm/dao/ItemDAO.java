@@ -11,34 +11,34 @@ public class ItemDAO implements InterfaceDAO<Item>{
 	EntityManager em = Connection.getEntityManager();
 
 	@Override
-	public void salvar(Item o) throws CrmException {
+	public void Cadastrar(Item o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public List<Item> listar() {
+	public List<Item> Listar() {
 		Query q = em.createQuery("select a from Item a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(Item o) {
+	public void Alterar(Item o) {
 		em.getTransaction().begin();
 		em.merge(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public Item getObjectById(Long id) {
+	public Item BuscarID(Long id) {
 		return em.find(Item.class, id);	
 
 	}
 
 	@Override
-	public void excluir(Item o) {
+	public void Excluir(Item o) {
 		em.getTransaction().begin();
 		em.remove(o);
 		em.getTransaction().commit();			

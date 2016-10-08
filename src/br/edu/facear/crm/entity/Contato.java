@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name = "\"Contato\"")
+@Table(name = "\"TB_CONTATO\"")
 public class Contato {
 
 	@Id

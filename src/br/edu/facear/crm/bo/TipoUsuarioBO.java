@@ -8,16 +8,16 @@ import br.edu.facear.crm.entity.TipoUsuario;
 public class TipoUsuarioBO implements InterfaceBO<TipoUsuario>{
 	TipoUsuarioDAO tudao = new TipoUsuarioDAO();
 	@Override
-	public void salvar(TipoUsuario o) throws Exception {
+	public void Cadastrar(TipoUsuario o) throws Exception {
 		if(o.getNome() == null){
 			throw new Exception("Nome do tipo de usuário é inválido");
 		}
-		tudao.salvar(o);
+		tudao.Cadastrar(o);
 	}
 
 	@Override
-	public List<TipoUsuario> listar() throws Exception {
-		List<TipoUsuario> tu= tudao.listar();
+	public List<TipoUsuario> Listar() throws Exception {
+		List<TipoUsuario> tu= tudao.Listar();
 		if(tu == null){
 			throw new Exception("Nenhuma tipo de usuário cadastrado");
 		}
@@ -25,15 +25,15 @@ public class TipoUsuarioBO implements InterfaceBO<TipoUsuario>{
 	}
 
 	@Override
-	public void editar(TipoUsuario o) throws Exception {
+	public void Alterar(TipoUsuario o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Nome do tipo de usuário é inválido");
 		}
-		tudao.editar(o);			
+		tudao.Alterar(o);			
 	}
 
 	@Override
-	public TipoUsuario getObjectById(Long id) throws Exception {
+	public TipoUsuario BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Tipo de usuário pesquisado é Inválido");
 		}
@@ -41,15 +41,15 @@ public class TipoUsuarioBO implements InterfaceBO<TipoUsuario>{
 			throw new Exception("Tipo de usuário Pesquisado é Inválido");
 		}
 		
-		return tudao.getObjectById(id);
+		return tudao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(TipoUsuario o) throws Exception {
+	public void Excluir(TipoUsuario o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Tipo de usuario selecionado é inválido.");
 		}		
-		tudao.excluir(o);				
+		tudao.Excluir(o);				
 	}
 
 }

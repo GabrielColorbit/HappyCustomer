@@ -8,18 +8,18 @@ import br.edu.facear.crm.entity.Negocio;
 public class NegocioBO implements InterfaceBO<Negocio> {
 	NegocioDAO ndao =  new NegocioDAO();
 	@Override
-	public void salvar(Negocio o) throws Exception {
+	public void Cadastrar(Negocio o) throws Exception {
 		if(o.getEmpresa() == null ||
 		   o.getData() == null){
 
 			throw new Exception("Preencher todos os campos do negocio");
 		}
-		ndao.salvar(o);				
+		ndao.Cadastrar(o);				
 	}
 
 	@Override
-	public List<Negocio> listar() throws Exception {
-		List<Negocio> n = ndao.listar();
+	public List<Negocio> Listar() throws Exception {
+		List<Negocio> n = ndao.Listar();
 		if(n == null){
 			throw new Exception("Nenhuma negocio cadastrado");
 		}
@@ -27,32 +27,32 @@ public class NegocioBO implements InterfaceBO<Negocio> {
 	}
 
 	@Override
-	public void editar(Negocio o) throws Exception {
+	public void Alterar(Negocio o) throws Exception {
 		if(o.getEmpresa() == null ||
 		   o.getData() == null){
 
 			throw new Exception("Preencher todos os campos do negocio");
 		}
-		ndao.editar(o);				
+		ndao.Alterar(o);				
 	}
 
 	@Override
-	public Negocio getObjectById(Long id) throws Exception {
+	public Negocio BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Item pesquisado é Inválido");
 		}
 		else if(id <= 0) {
 			throw new Exception("Item Pesquisado é Inválido");
 		}
-		return ndao.getObjectById(id);
+		return ndao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Negocio o) throws Exception {
+	public void Excluir(Negocio o) throws Exception {
 		if(o.getId() == null) {
 			throw new Exception("Negocio Selecionada é inválido.");
 		}		
-		ndao.excluir(o);				
+		ndao.Excluir(o);				
 	}
 
 }

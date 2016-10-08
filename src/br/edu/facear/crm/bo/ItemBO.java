@@ -8,19 +8,19 @@ import br.edu.facear.crm.entity.Item;
 public class ItemBO  implements InterfaceBO<Item>{
 	ItemDAO idao = new ItemDAO();
 	@Override
-	public void salvar(Item o) throws Exception {
+	public void Cadastrar(Item o) throws Exception {
 		if(o.getProduto() == null ||
 		   o.getNegocio() == null||
 		   o.getQuantidade() == null){
 
 			throw new Exception("Preencher todos os campos do item");
 		}
-		idao.salvar(o);		
+		idao.Cadastrar(o);		
 	}
 
 	@Override
-	public List<Item> listar() throws Exception {
-		List<Item> i = idao.listar();
+	public List<Item> Listar() throws Exception {
+		List<Item> i = idao.Listar();
 		if(i == null){
 			throw new Exception("Nenhuma item cadastrado");
 		}
@@ -28,33 +28,33 @@ public class ItemBO  implements InterfaceBO<Item>{
 	}
 
 	@Override
-	public void editar(Item o) throws Exception {
+	public void Alterar(Item o) throws Exception {
 		if(o.getProduto() == null ||
 		   o.getNegocio() == null||
 		   o.getQuantidade() == null){
 
 			throw new Exception("Preencher todos os campos do item");
 		}
-		idao.editar(o);				
+		idao.Alterar(o);				
 	}
 
 	@Override
-	public Item getObjectById(Long id) throws Exception {
+	public Item BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Item pesquisado é Inválido");
 		}
 		else if(id <= 0) {
 			throw new Exception("Item Pesquisado é Inválido");
 		}
-		return idao.getObjectById(id);
+		return idao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Item o) throws Exception {
+	public void Excluir(Item o) throws Exception {
 		if(o.getId() == null) {
 			throw new Exception("Item Selecionada é inválido.");
 		}		
-		idao.excluir(o);		
+		idao.Excluir(o);		
 	}
 
 }

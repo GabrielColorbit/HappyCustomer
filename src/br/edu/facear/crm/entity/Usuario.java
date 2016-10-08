@@ -18,9 +18,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ForeignKey;
 @Entity
-@Table(name="\"Usuario\"")
-@SecondaryTable(name = "health_care", pkJoinColumns = 
-{ @PrimaryKeyJoinColumn(name = "id") })
+@Table(name="\"TB_USUARIO\"")
+/*@SecondaryTable(name = "health_care", pkJoinColumns = 
+{ @PrimaryKeyJoinColumn(name = "id") })*/
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

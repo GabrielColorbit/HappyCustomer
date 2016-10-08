@@ -5,7 +5,7 @@ import javax.persistence.*;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name="\"Item\"")
+@Table(name="\"TB_ITEM\"")
 public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	

@@ -18,7 +18,7 @@ import br.edu.facear.crm.entity.Usuario;
 public class LigacaoBO implements InterfaceBO<Ligacao>{
 	LigacaoDAO ldao =  new LigacaoDAO();
 	@Override
-	public void salvar(Ligacao o) throws Exception {
+	public void Cadastrar(Ligacao o) throws Exception {
 		if(o.getContato() == null ||
    		   o.getUsuario() == null ||
     	   o.getContato() == null ||
@@ -30,13 +30,13 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 				throw new Exception("Preencher todos os campos da ligacao");
 			}
 		
-			ldao.salvar(o);						
+			ldao.Cadastrar(o);						
 			
 	}
 
 	@Override
-	public List<Ligacao> listar() throws Exception {
-		List<Ligacao> l = ldao.listar();
+	public List<Ligacao> Listar() throws Exception {
+		List<Ligacao> l = ldao.Listar();
 		if(l == null){
 			throw new Exception("Nenhuma ligacão cadastrada");
 		}
@@ -44,7 +44,7 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 	}
 
 	@Override
-	public void editar(Ligacao o) throws Exception {
+	public void Alterar(Ligacao o) throws Exception {
 		if(o.getContato() == null ||
    		   o.getUsuario() == null ||
     	   o.getContato() == null ||
@@ -56,26 +56,26 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 				throw new Exception("Preencher todos os campos da ligacao");
 			}
 		
-			ldao.editar(o);				
+			ldao.Alterar(o);				
 	}
 
 	@Override
-	public Ligacao getObjectById(Long id) throws Exception {
+	public Ligacao BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Ligacao pesquisada é inválida");
 		}
 		else if(id <= 0) {
 			throw new Exception("Ligacao pesquisado é inválida");
 		}
-		return ldao.getObjectById(id);
+		return ldao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Ligacao o) throws Exception {
+	public void Excluir(Ligacao o) throws Exception {
 		if(o == null) {
 			throw new Exception("Ligacao Selecionada é inválida.");
 		}		
-		ldao.excluir(o);		
+		ldao.Excluir(o);		
 	}
 
 }

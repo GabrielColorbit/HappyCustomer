@@ -9,16 +9,16 @@ import br.edu.facear.crm.entity.TipoUsuario;
 public class TipoContatoBO implements InterfaceBO<TipoContato>{
 	TipoContatoDAO tcdao = new TipoContatoDAO();
 	@Override
-	public void salvar(TipoContato o) throws Exception {
+	public void Cadastrar(TipoContato o) throws Exception {
 		if(o.getNome() == null){
 			throw new Exception("Nome do tipo de contato é inválido");
 		}
-		tcdao.salvar(o);		
+		tcdao.Cadastrar(o);		
 	}
 
 	@Override
-	public List<TipoContato> listar() throws Exception {
-		List<TipoContato> tc = tcdao.listar();
+	public List<TipoContato> Listar() throws Exception {
+		List<TipoContato> tc = tcdao.Listar();
 		if(tc == null){
 			throw new Exception("Nenhuma tipo de contato cadastrado");
 		}
@@ -26,15 +26,15 @@ public class TipoContatoBO implements InterfaceBO<TipoContato>{
 	}
 
 	@Override
-	public void editar(TipoContato o) throws Exception {
+	public void Alterar(TipoContato o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Nome do tipo de contato é inválido");
 		}
-		tcdao.editar(o);			
+		tcdao.Alterar(o);			
 	}
 
 	@Override
-	public TipoContato getObjectById(Long id) throws Exception {
+	public TipoContato BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Tipo de contato pesquisado é Inválido");
 		}
@@ -42,15 +42,15 @@ public class TipoContatoBO implements InterfaceBO<TipoContato>{
 			throw new Exception("Tipo de contato Pesquisado é Inválido");
 		}
 		
-		return tcdao.getObjectById(id);
+		return tcdao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(TipoContato o) throws Exception {
+	public void Excluir(TipoContato o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Tipo de contato selecionado é inválido.");
 		}		
-		tcdao.excluir(o);		
+		tcdao.Excluir(o);		
 	}
 
 }

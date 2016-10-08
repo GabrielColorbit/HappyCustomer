@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.sun.xml.internal.txw2.annotation.XmlElement;
 
 @Entity
-@Table(name="\"TipoContato\"")
+@Table(name="\"TB_TIPO_CONTATO\"")
 @XmlRootElement(name = "TipoContato")
 public class TipoContato implements Serializable{
 	@Id

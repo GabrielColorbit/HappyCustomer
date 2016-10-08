@@ -11,33 +11,33 @@ import br.edu.facear.crm.entity.TipoUsuario;
 public class TipoUsuarioDAO implements InterfaceDAO<TipoUsuario>{
 	EntityManager em = Connection.getEntityManager();
 	@Override
-	public void salvar(TipoUsuario tipousuario) throws CrmException {
+	public void Cadastrar(TipoUsuario tipousuario) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(tipousuario);
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public List<TipoUsuario> listar() {
+	public List<TipoUsuario> Listar() {
 		Query q = em.createQuery("select a from TipoUsuario a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(TipoUsuario tipousuario) {
+	public void Alterar(TipoUsuario tipousuario) {
 		em.getTransaction().begin();
 		em.merge(tipousuario);
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public TipoUsuario getObjectById(Long id) {
+	public TipoUsuario BuscarID(Long id) {
 		return em.find(TipoUsuario.class, id);
 	}
 
 	@Override
-	public void excluir(TipoUsuario tipousuario) {
+	public void Excluir(TipoUsuario tipousuario) {
 		em.getTransaction().begin();
 		em.remove(tipousuario);
 		em.getTransaction().commit();		

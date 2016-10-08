@@ -12,34 +12,34 @@ public class TipoAtividadeDAO implements InterfaceDAO<TipoAtividade>{
 	EntityManager em = Connection.getEntityManager();
 
 	@Override
-	public void salvar(TipoAtividade o) throws CrmException {
+	public void Cadastrar(TipoAtividade o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
 		em.getTransaction().commit();				
 	}
 
 	@Override
-	public List<TipoAtividade> listar() {
+	public List<TipoAtividade> Listar() {
 		Query q = em.createQuery("select a from TipoAtividade a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(TipoAtividade o) {
+	public void Alterar(TipoAtividade o) {
 		em.getTransaction().begin();
 		em.merge(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public TipoAtividade getObjectById(Long id) {
+	public TipoAtividade BuscarID(Long id) {
 		return em.find(TipoAtividade.class, id);	
 
 	}
 
 	@Override
-	public void excluir(TipoAtividade o) {
+	public void Excluir(TipoAtividade o) {
 		em.getTransaction().begin();
 		em.remove(o);
 		em.getTransaction().commit();			

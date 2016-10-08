@@ -18,7 +18,7 @@ import org.hibernate.annotations.ForeignKey;
 
 
 @Entity
-@Table(name="\"Empresa\"")
+@Table(name="\"TB_EMPRESA\"")
 public class Empresa {
 	
 	@Id

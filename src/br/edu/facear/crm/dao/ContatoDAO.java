@@ -11,33 +11,33 @@ import br.edu.facear.crm.entity.Estado;
 public class ContatoDAO implements InterfaceDAO<Contato> {
 	EntityManager em = Connection.getEntityManager();
 	@Override
-	public void salvar(Contato contato) throws CrmException {
+	public void Cadastrar(Contato contato) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(contato);
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public List<Contato> listar() {
+	public List<Contato> Listar() {
 		Query q = em.createQuery("select a from Contato a");
 	
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(Contato contato) {
+	public void Alterar(Contato contato) {
 		em.getTransaction().begin();
 		em.merge(contato);
 		em.getTransaction().commit();		
 	}
 
 	@Override
-	public Contato getObjectById(Long id) {
+	public Contato BuscarID(Long id) {
 		return em.find(Contato.class, id);	
 	}
 
 	@Override
-	public void excluir(Contato contato) {
+	public void Excluir(Contato contato) {
 		em.getTransaction().begin();
 		em.remove(contato);
 		em.getTransaction().commit();		

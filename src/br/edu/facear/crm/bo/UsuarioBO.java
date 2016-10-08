@@ -18,7 +18,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 	
 	
 	@Override
-	public void salvar(Usuario o) throws Exception {
+	public void Cadastrar(Usuario o) throws Exception {
 		if(o.getNome() == null ||
 		   o.getTipousuario() == null ||
    		   o.getCidade() == null ||
@@ -35,12 +35,12 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		  ){
 			throw new Exception("Preencher todos os campos do usuário");
 		}
-		udao.salvar(o);
+		udao.Cadastrar(o);
 	}
 
 	@Override
-	public List<Usuario> listar() throws Exception {
-		List<Usuario> u= udao.listar();
+	public List<Usuario> Listar() throws Exception {
+		List<Usuario> u= udao.Listar();
 		if(u == null){
 			throw new Exception("Nenhuma usuário cadastrado");
 		}
@@ -48,7 +48,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 	}
 
 	@Override
-	public void editar(Usuario o) throws Exception {
+	public void Alterar(Usuario o) throws Exception {
 		if(o.getNome() == null ||
 		   o.getTipousuario() == null ||
    		   o.getCidade() == null ||
@@ -64,11 +64,11 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 	     ) {
 			throw new Exception("Nome do tipo de usuário é inválido");
 		}
-		udao.editar(o);				
+		udao.Alterar(o);				
 	}
 
 	@Override
-	public Usuario getObjectById(Long id) throws Exception {
+	public Usuario BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Usuário pesquisado é Inválido");
 		}
@@ -76,15 +76,15 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Usuário Pesquisado é Inválido");
 		}
 		
-		return udao.getObjectById(id);
+		return udao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Usuario o) throws Exception {
+	public void Excluir(Usuario o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Usuario Selecionada é inválido.");
 		}		
-		udao.excluir(o);			
+		udao.Excluir(o);			
 	}
 	
 

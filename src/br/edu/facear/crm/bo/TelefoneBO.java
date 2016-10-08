@@ -9,19 +9,19 @@ import br.edu.facear.crm.entity.TipoEmpresa;
 public class TelefoneBO implements InterfaceBO<Telefone>{
 	TelefoneDAO tfDAO = new TelefoneDAO();
 	@Override
-	public void salvar(Telefone telefone) throws Exception {
+	public void Cadastrar(Telefone telefone) throws Exception {
 		if(telefone.getNumero() == null){
 			throw new Exception("Número de telefone é inválido");
 		}
 		else if(telefone.getTipotelefone() == null){
 			throw new Exception("Tipo de telefone é inválido");
 		}
-		tfDAO.salvar(telefone);
+		tfDAO.Cadastrar(telefone);
 	}
 
 	@Override
-	public List<Telefone> listar() throws Exception {
-		List<Telefone> telefones= tfDAO.listar();
+	public List<Telefone> Listar() throws Exception {
+		List<Telefone> telefones= tfDAO.Listar();
 		if(telefones == null){
 			throw new Exception("Nenhumm telefone cadastrado");
 		}
@@ -29,18 +29,18 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 	}
 
 	@Override
-	public void editar(Telefone telefone) throws Exception {
+	public void Alterar(Telefone telefone) throws Exception {
 		if(telefone.getNumero() == null) {
 			throw new Exception("Número de telefoneé Invalido");
 		}
 		if(telefone.getTipotelefone() == null) {
 			throw new Exception("Tipo de Telefone é Invalido");
 		}
-		tfDAO.editar(telefone);					
+		tfDAO.Alterar(telefone);					
 	}
 
 	@Override
-	public Telefone getObjectById(Long id) throws Exception {
+	public Telefone BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Telefone pesquisado é Inválido");
 		}
@@ -48,15 +48,15 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 			throw new Exception("Telefone Pesquisado é Inválido");
 		}
 		
-		return tfDAO.getObjectById(id);
+		return tfDAO.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(Telefone telefone) throws Exception {
+	public void Excluir(Telefone telefone) throws Exception {
 		if(telefone.getNumero() == null) {
 			throw new Exception("Telefone selecionado é Inválido");
 		}		
-		tfDAO.excluir(telefone);			
+		tfDAO.Excluir(telefone);			
 	}
 
 }

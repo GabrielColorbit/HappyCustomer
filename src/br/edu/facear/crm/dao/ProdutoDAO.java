@@ -11,7 +11,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
 	EntityManager em = Connection.getEntityManager();
 
 	@Override
-	public void salvar(Produto produto) throws CrmException {
+	public void Cadastrar(Produto produto) throws CrmException {
 		em.getTransaction().begin();
 		try {
 			em.persist(produto);
@@ -26,26 +26,26 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
 	}
 
 	@Override
-	public List<Produto> listar() {
+	public List<Produto> Listar() {
 		Query q = em.createQuery("select a from Produto a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(Produto produto) {
+	public void Alterar(Produto produto) {
 		em.getTransaction().begin();
 		em.merge(produto);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public Produto getObjectById(Long id) {
+	public Produto BuscarID(Long id) {
 		return em.find(Produto.class, id);	
 	}
 
 	@Override
-	public void excluir(Produto produto) {
+	public void Excluir(Produto produto) {
 		em.getTransaction().begin();
 		em.remove(produto);
 		em.getTransaction().commit();		

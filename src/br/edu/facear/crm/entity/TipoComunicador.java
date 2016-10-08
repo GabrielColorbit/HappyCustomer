@@ -3,7 +3,7 @@ package br.edu.facear.crm.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="\"TipoComunicador\"")
+@Table(name="\"TB_TIPO_COMUNICADOR\"")
 public class TipoComunicador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

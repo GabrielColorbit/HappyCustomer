@@ -9,7 +9,7 @@ import br.edu.facear.crm.entity.Usuario;
 public class ContatoBO implements InterfaceBO<Contato>{
 	ContatoDAO cdao = new ContatoDAO();
 	@Override
-	public void salvar(Contato o) throws Exception {
+	public void Cadastrar(Contato o) throws Exception {
 		if(o.getTipocontato() == null ||
 		   o.getOrigemcontato() == null ||
 		   o.getUsuarioresponsavel() == null ||
@@ -26,12 +26,12 @@ public class ContatoBO implements InterfaceBO<Contato>{
 		   o.getCep() == null 	    ){
 			throw new Exception("Preencher todos os campos do contato");
 		}
-		cdao.salvar(o);		
+		cdao.Cadastrar(o);		
 	}
 
 	@Override
-	public List<Contato> listar() throws Exception {
-		List<Contato> c= cdao.listar();
+	public List<Contato> Listar() throws Exception {
+		List<Contato> c= cdao.Listar();
 		if(c == null){
 			throw new Exception("Nenhum contato cadastrado");
 		}
@@ -39,7 +39,7 @@ public class ContatoBO implements InterfaceBO<Contato>{
 	}
 
 	@Override
-	public void editar(Contato o) throws Exception {
+	public void Alterar(Contato o) throws Exception {
 		if(o.getTipocontato() == null ||
 		   o.getOrigemcontato() == null ||
 		   o.getUsuarioresponsavel() == null ||
@@ -57,27 +57,27 @@ public class ContatoBO implements InterfaceBO<Contato>{
 	    ){
 			throw new Exception("Preencher todos os campos do contato");
 		}
-		cdao.salvar(o);		
+		cdao.Cadastrar(o);		
 	}
 
 	@Override
-	public Contato getObjectById(Long id) throws Exception {
+	public Contato BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Contato pesquisado é Inválido");
 		}
 		else if(id <= 0) {
 			throw new Exception("Contato Pesquisado é Inválido");
 		}
-		return cdao.getObjectById(id);
+		return cdao.BuscarID(id);
 
 	}
 
 	@Override
-	public void excluir(Contato o) throws Exception {
+	public void Excluir(Contato o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Usuario Selecionada é inválido.");
 		}		
-		cdao.excluir(o);		
+		cdao.Excluir(o);		
 	}
 
 		

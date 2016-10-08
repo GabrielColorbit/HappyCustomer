@@ -10,7 +10,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	EmpresaDAO edao  =  new EmpresaDAO();
 	
 	@Override
-	public void salvar(Empresa o) throws Exception {
+	public void Cadastrar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
 		   o.getCidade() == null ||
    		   o.getTelefones() == null ||
@@ -26,13 +26,13 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		   o.getCep() == null 	    ){
 				throw new Exception("Preencher todos os campos da empresa");
 			}
-			edao.salvar(o);				
+			edao.Cadastrar(o);				
 	
 	}
 
 	@Override
-	public List<Empresa> listar() throws Exception {
-		List<Empresa> e = edao.listar();
+	public List<Empresa> Listar() throws Exception {
+		List<Empresa> e = edao.Listar();
 		if(e == null){
 			throw new Exception("Nenhuma empresa cadastrado");
 		}
@@ -40,7 +40,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	}
 
 	@Override
-	public void editar(Empresa o) throws Exception {
+	public void Alterar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
 		   o.getCidade() == null ||
 		   o.getTelefones() == null ||
@@ -56,27 +56,27 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		   o.getCep() == null 	    ){
 				throw new Exception("Preencher todos os campos da empresa");
 			}
-			edao.editar(o);				
+			edao.Alterar(o);				
 	}
 
 	@Override
-	public Empresa getObjectById(Long id) throws Exception {
+	public Empresa BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Empresa pesquisada é inválida");
 		}
 		else if(id <= 0) {
 			throw new Exception("Empresa pesquisado é inválida");
 		}
-		return edao.getObjectById(id);
+		return edao.BuscarID(id);
 
 	}
 
 	@Override
-	public void excluir(Empresa o) throws Exception {
+	public void Excluir(Empresa o) throws Exception {
 		if(o.getNome() == null) {
 			throw new Exception("Empresa Selecionada é inválida.");
 		}		
-		edao.excluir(o);		
+		edao.Excluir(o);		
 	}
 
 }

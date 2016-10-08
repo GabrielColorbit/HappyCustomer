@@ -11,34 +11,34 @@ import br.edu.facear.crm.entity.TipoContato;
 public class TipoContatoDAO implements InterfaceDAO<TipoContato>{
 	EntityManager em = Connection.getEntityManager();
 	@Override
-	public void salvar(TipoContato tipocontato) throws CrmException {
+	public void Cadastrar(TipoContato tipocontato) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(tipocontato);
 		em.getTransaction().commit();		
 	}
 
 	@Override
-	public List<TipoContato> listar() {
+	public List<TipoContato> Listar() {
 		Query q = em.createQuery("select a from TipoContato a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(TipoContato tipocontato) {
+	public void Alterar(TipoContato tipocontato) {
 		em.getTransaction().begin();
 		em.merge(tipocontato);
 		em.getTransaction().commit();		
 	}
 
 	@Override
-	public TipoContato getObjectById(Long id) {
+	public TipoContato BuscarID(Long id) {
 		return em.find(TipoContato.class, id);	
 
 	}
 
 	@Override
-	public void excluir(TipoContato tipocontato) {
+	public void Excluir(TipoContato tipocontato) {
 		em.getTransaction().begin();
 		em.remove(tipocontato);
 		em.getTransaction().commit();			

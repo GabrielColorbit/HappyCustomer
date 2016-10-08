@@ -3,24 +3,23 @@ package br.edu.facear.crm.bo;
 import java.util.List;
 
 import br.edu.facear.crm.dao.TipoTelefoneDAO;
-import br.edu.facear.crm.entity.Cidade;
 import br.edu.facear.crm.entity.TipoTelefone;
 
 public class TipoTelefoneBO implements InterfaceBO<TipoTelefone>{
 	TipoTelefoneDAO tdao = new TipoTelefoneDAO();
 	
 	@Override
-	public void salvar(TipoTelefone tipotelefone) throws Exception {
+	public void Cadastrar(TipoTelefone tipotelefone) throws Exception {
 		
 		if(tipotelefone.getNome() == null){
 			throw new Exception("Nome do tipo de telefone é inválido");
 		}
-		tdao.salvar(tipotelefone);		
+		tdao.Cadastrar(tipotelefone);		
 	}
 
 	@Override
-	public List<TipoTelefone> listar() throws Exception {
-		List<TipoTelefone> tipostelefone= tdao.listar();
+	public List<TipoTelefone> Listar() throws Exception {
+		List<TipoTelefone> tipostelefone= tdao.Listar();
 		if(tipostelefone == null){
 			throw new Exception("Nenhumma Tipo de Telefone cadastrado");
 		}
@@ -28,15 +27,15 @@ public class TipoTelefoneBO implements InterfaceBO<TipoTelefone>{
 	}
 
 	@Override
-	public void editar(TipoTelefone tipotelefone) throws Exception {
+	public void Alterar(TipoTelefone tipotelefone) throws Exception {
 		if(tipotelefone.getNome() == null) {
 			throw new Exception("Nome de Tipo de Telefone é Invalido");
 		}
-		tdao.editar(tipotelefone);			
+		tdao.Alterar(tipotelefone);			
 	}
 
 	@Override
-	public TipoTelefone getObjectById(Long id) throws Exception {
+	public TipoTelefone BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Tipo de Telefone Pesquisado é Inválido");
 		}
@@ -44,15 +43,15 @@ public class TipoTelefoneBO implements InterfaceBO<TipoTelefone>{
 			throw new Exception("Tipo de Telefone Pesquisado é Inválido");
 		}
 		
-		return tdao.getObjectById(id);
+		return tdao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(TipoTelefone tipotelefone) throws Exception {
+	public void Excluir(TipoTelefone tipotelefone) throws Exception {
 		if(tipotelefone.getNome() == null) {
 			throw new Exception("Tipo de telefone selecionado é invalido");
 		}		
-		tdao.excluir(tipotelefone);	
+		tdao.Excluir(tipotelefone);	
 	}
 
 }

@@ -11,34 +11,34 @@ public class NegocioDAO implements InterfaceDAO<Negocio>{
 	EntityManager em = Connection.getEntityManager();
 
 	@Override
-	public void salvar(Negocio o) throws CrmException {
+	public void Cadastrar(Negocio o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public List<Negocio> listar() {
+	public List<Negocio> Listar() {
 		Query q = em.createQuery("select a from Negocio a");
 		
 		return q.getResultList();	
 	}
 
 	@Override
-	public void editar(Negocio o) {
+	public void Alterar(Negocio o) {
 		em.getTransaction().begin();
 		em.merge(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public Negocio getObjectById(Long id) {
+	public Negocio BuscarID(Long id) {
 		return em.find(Negocio.class, id);	
 
 	}
 
 	@Override
-	public void excluir(Negocio o) {
+	public void Excluir(Negocio o) {
 		em.getTransaction().begin();
 		em.remove(o);
 		em.getTransaction().commit();			

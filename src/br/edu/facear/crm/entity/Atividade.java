@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name="\"Atividade\"")
+@Table(name="\"TB_ATIVIDADE\"")
 public class Atividade {
 
 	
@@ -34,7 +34,7 @@ public class Atividade {
 	@ManyToOne
 	@ForeignKey(name="fk_contato")
 	private Contato contato;
-	private StatusAtividade status;
+	private Situacao status;
 	private String nome;
 	private Date datainicio;
 	private Date datafim;
@@ -86,10 +86,10 @@ public class Atividade {
 	public void setContato(Contato contato) {
 		this.contato = contato;
 	}
-	public StatusAtividade getStatus() {
+	public Situacao getStatus() {
 		return status;
 	}
-	public void setStatus(StatusAtividade status) {
+	public void setStatus(Situacao status) {
 		this.status = status;
 	}
 	public Date getDatainicio() {

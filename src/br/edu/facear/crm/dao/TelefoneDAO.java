@@ -12,7 +12,7 @@ public class TelefoneDAO implements InterfaceDAO<Telefone>{
 	EntityManager em = Connection.getEntityManager();
 
 	@Override
-	public void salvar(Telefone telefone) throws CrmException {
+	public void Cadastrar(Telefone telefone) throws CrmException {
 		em.getTransaction().begin();
 		try {
 			em.persist(telefone);
@@ -29,7 +29,7 @@ public class TelefoneDAO implements InterfaceDAO<Telefone>{
 	}
 
 	@Override
-	public List<Telefone> listar() {
+	public List<Telefone> Listar() {
 		Query q = em.createQuery("select a from Telefone a");
 		
 		return q.getResultList();
@@ -37,19 +37,19 @@ public class TelefoneDAO implements InterfaceDAO<Telefone>{
 	}
 
 	@Override
-	public void editar(Telefone telefone) {
+	public void Alterar(Telefone telefone) {
 		em.getTransaction().begin();
 		em.merge(telefone);
 		em.getTransaction().commit();		
 	}
 
 	@Override
-	public Telefone getObjectById(Long id) {
+	public Telefone BuscarID(Long id) {
 		return em.find(Telefone.class, id);	
 	}
 
 	@Override
-	public void excluir(Telefone telefone) {
+	public void Excluir(Telefone telefone) {
 		em.getTransaction().begin();
 		em.remove(telefone);
 		em.getTransaction().commit();

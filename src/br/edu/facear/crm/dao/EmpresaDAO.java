@@ -10,34 +10,34 @@ import br.edu.facear.crm.entity.Empresa;
 public class EmpresaDAO implements InterfaceDAO<Empresa> {
 	EntityManager em = Connection.getEntityManager();
 	@Override
-	public void salvar(Empresa o) throws CrmException {
+	public void Cadastrar(Empresa o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
 		em.getTransaction().commit();		
 	}
 
 	@Override
-	public List<Empresa> listar() {
+	public List<Empresa> Listar() {
 		Query q = em.createQuery("select a from Empresa a");
 		
 		return q.getResultList();
 	}
 
 	@Override
-	public void editar(Empresa o) {
+	public void Alterar(Empresa o) {
 		em.getTransaction().begin();
 		em.merge(o);
 		em.getTransaction().commit();			
 	}
 
 	@Override
-	public Empresa getObjectById(Long id) {
+	public Empresa BuscarID(Long id) {
 		return em.find(Empresa.class, id);	
 
 	}
 
 	@Override
-	public void excluir(Empresa o) {
+	public void Excluir(Empresa o) {
 		em.getTransaction().begin();
 		em.remove(o);
 		em.getTransaction().commit();			

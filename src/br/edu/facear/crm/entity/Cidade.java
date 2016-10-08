@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name="\"Cidade\"")
+@Table(name="\"TB_CIDADE\"")
 public class Cidade {
 
 	@Id

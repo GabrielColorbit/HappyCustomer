@@ -9,17 +9,17 @@ public class TipoEmpresaBO implements InterfaceBO<TipoEmpresa>{
 	TipoEmpresaDAO tedao = new TipoEmpresaDAO();
 
 	@Override
-	public void salvar(TipoEmpresa tipoempresa) throws Exception {
+	public void Cadastrar(TipoEmpresa tipoempresa) throws Exception {
 		if(tipoempresa.getNome() == null){
 			throw new Exception("Nome do tipo de empresa é inválido");
 		}
-		tedao.salvar(tipoempresa);
+		tedao.Cadastrar(tipoempresa);
 				
 	}
 
 	@Override
-	public List<TipoEmpresa> listar() throws Exception {
-		List<TipoEmpresa> tipoempresa= tedao.listar();
+	public List<TipoEmpresa> Listar() throws Exception {
+		List<TipoEmpresa> tipoempresa= tedao.Listar();
 		if(tipoempresa == null){
 			throw new Exception("Nenhumm tipo de empresa cadastrado");
 		}
@@ -27,15 +27,15 @@ public class TipoEmpresaBO implements InterfaceBO<TipoEmpresa>{
 	}
 
 	@Override
-	public void editar(TipoEmpresa tipoempresa) throws Exception {
+	public void Alterar(TipoEmpresa tipoempresa) throws Exception {
 		if(tipoempresa.getNome() == null) {
 			throw new Exception("Nome de tipo de empresa é Invalido");
 		}
-		tedao.editar(tipoempresa);				
+		tedao.Alterar(tipoempresa);				
 	}
 
 	@Override
-	public TipoEmpresa getObjectById(Long id) throws Exception {
+	public TipoEmpresa BuscarID(Long id) throws Exception {
 		if(id == null) {
 			throw new Exception("Tipo de Empresa pesquisado é Inválido");
 		}
@@ -43,15 +43,15 @@ public class TipoEmpresaBO implements InterfaceBO<TipoEmpresa>{
 			throw new Exception("Tipo Telefone Pesquisado é Inválido");
 		}
 		
-		return tedao.getObjectById(id);
+		return tedao.BuscarID(id);
 	}
 
 	@Override
-	public void excluir(TipoEmpresa tipoempresa) throws Exception {
+	public void Excluir(TipoEmpresa tipoempresa) throws Exception {
 		if(tipoempresa.getNome() == null) {
 			throw new Exception("Tipo de Empresa Selecionada é inválido.");
 		}		
-		tedao.excluir(tipoempresa);			
+		tedao.Excluir(tipoempresa);			
 	}
 
 }
