@@ -41,6 +41,7 @@ public class AtividadeDAO implements InterfaceDAO<Atividade>{
 	public void Excluir(Atividade o) {
 		em.getTransaction().begin();
 		em.remove(o);
+		
 		em.getTransaction().commit();			
 	}
 }

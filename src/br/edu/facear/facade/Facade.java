@@ -1,9 +1,8 @@
 package br.edu.facear.facade;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.bo.TipoContatoBO;
-import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.TipoContato;
 
 public class Facade {
@@ -18,7 +17,7 @@ public class Facade {
 	public void alterarTipoContato(TipoContato t) throws Exception{
 		tipocontatoBO.Alterar(t);
 	}
-	public List<TipoContato> listarTipoContato() throws Exception {
+	public ArrayList<TipoContato> listarTipoContato() throws Exception {
 		return tipocontatoBO.Listar();
 	}
 

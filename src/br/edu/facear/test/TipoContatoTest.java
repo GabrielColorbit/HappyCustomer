@@ -41,4 +41,5 @@ public class TipoContatoTest {
 		
 		Assert.assertEquals(true,ts.size() > 0);
 		
-	}}
+	}
+}

@@ -1,10 +1,9 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoContatoDAO;
 import br.edu.facear.crm.entity.TipoContato;
-import br.edu.facear.crm.entity.TipoUsuario;
 
 public class TipoContatoBO implements InterfaceBO<TipoContato>{
 	TipoContatoDAO tcdao = new TipoContatoDAO();
@@ -17,8 +16,8 @@ public class TipoContatoBO implements InterfaceBO<TipoContato>{
 	}
 
 	@Override
-	public List<TipoContato> Listar() throws Exception {
-		List<TipoContato> tc = tcdao.Listar();
+	public ArrayList<TipoContato> Listar() throws Exception {
+		ArrayList<TipoContato> tc = tcdao.Listar();
 		if(tc == null){
 			throw new Exception("Nenhuma tipo de contato cadastrado");
 		}
