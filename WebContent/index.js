@@ -10,7 +10,20 @@
 			function MainCtrl() {
 				this.rodape = {};
 			});
+	
+	angular.module('happyCustomerApp', []).controller('tipocontatoController',function($scope, 
+			$http) {
+					
+					$scope.BuscarInformacao = function() {
 
+					$http.get('http://localhost:8080/e-commerce/rest/restCliente').success(function(data) {
+						$scope.cliente = data["TipoContato"];
+					});
+				};
+
+				$scope.BuscarInformacao();
+			});
+	
 	angular.module('happyCustomerApp', []).controller('tipocontatoController',
 			function($scope) {
 				$scope.listTipoContato = [ {

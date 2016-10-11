@@ -1,11 +1,10 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.facear.crm.entity.Estado;
 import br.edu.facear.crm.entity.TipoContato;
 
 public class TipoContatoDAO implements InterfaceDAO<TipoContato>{
@@ -18,10 +17,10 @@ public class TipoContatoDAO implements InterfaceDAO<TipoContato>{
 	}
 
 	@Override
-	public List<TipoContato> Listar() {
+	public ArrayList<TipoContato> Listar() {
 		Query q = em.createQuery("select a from TipoContato a");
 		
-		return q.getResultList();
+		return (ArrayList<TipoContato>) q.getResultList();
 	}
 
 	@Override

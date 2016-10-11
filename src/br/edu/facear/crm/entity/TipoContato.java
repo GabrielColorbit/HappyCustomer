@@ -1,7 +1,5 @@
 package br.edu.facear.crm.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +11,8 @@ import com.sun.xml.internal.txw2.annotation.XmlElement;
 
 @Entity
 @Table(name="\"TB_TIPO_CONTATO\"")
-@XmlRootElement(name = "TipoContato")
-public class TipoContato implements Serializable{
+@XmlRootElement
+public final class TipoContato{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

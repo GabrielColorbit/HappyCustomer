@@ -1,5 +1,6 @@
 package br.edu.facear.facade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.facear.crm.bo.*;
@@ -53,7 +54,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoContato> ListarTipoContato() throws Exception {
+	public ArrayList<TipoContato> ListarTipoContato() throws Exception {
 		return tipocontatoBO.Listar();
 	}
 
