@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.TipoContato;
-import br.edu.facear.facade.Facade;
+import br.edu.facear.facade.FacadeHappyCustomer;
 import junit.framework.Assert;
 
 public class TipoContatoTest {
@@ -17,17 +17,17 @@ public class TipoContatoTest {
 	public void testCadastroTipoContato() throws Exception{
 		TipoContato a = new TipoContato();
 		a.setNome("Prospect");
-		Facade f = new Facade();
-		f.cadastrarTipoContato(a);
+		FacadeHappyCustomer f = new FacadeHappyCustomer();
+		f.CadastrarTipoContato(a);
 		Assert.assertEquals(true, a.getId() != null);
 	}
 	@Test
 	public void testAterarTipoCOntato() throws Exception{
-		Facade f = new Facade();
-		TipoContato t = f.buscarTipoContatoPorId(1l);
+		FacadeHappyCustomer f = new FacadeHappyCustomer();
+		TipoContato t = f.BuscarTipoContatoPorId(1l);
 		t.setNome("Administrador");
-		f.alterarTipoContato(t);
-		t = f.buscarTipoContatoPorId(1l);
+		f.AlterarTipoContato(t);
+		t = f.BuscarTipoContatoPorId(1l);
 		
 		Assert.assertEquals(true, t.getNome().equals("Administrador"));
 	}
@@ -35,9 +35,9 @@ public class TipoContatoTest {
 	@Test
 	public void testListarTipoContato() throws Exception {
 		List<TipoContato> ts = new ArrayList<TipoContato>();
-		Facade f = new Facade();
+		FacadeHappyCustomer f = new FacadeHappyCustomer();
 		
-		ts = f.listarTipoContato();
+		ts = f.ListarTipoContato();
 		
 		Assert.assertEquals(true,ts.size() > 0);
 		
