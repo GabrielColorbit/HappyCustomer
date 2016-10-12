@@ -16,7 +16,7 @@ public class TipoContatoTest {
 	@Test
 	public void testCadastroTipoContato() throws Exception{
 		TipoContato a = new TipoContato();
-		a.setNome("Prospect");
+		a.setNome("FUCK Created");
 		Facade f = new Facade();
 		f.cadastrarTipoContato(a);
 		Assert.assertEquals(true, a.getId() != null);
@@ -25,7 +25,7 @@ public class TipoContatoTest {
 	public void testAterarTipoCOntato() throws Exception{
 		Facade f = new Facade();
 		TipoContato t = f.buscarTipoContatoPorId(1l);
-		t.setNome("Administrador");
+		t.setNome("FUCK");
 		f.alterarTipoContato(t);
 		t = f.buscarTipoContatoPorId(1l);
 		

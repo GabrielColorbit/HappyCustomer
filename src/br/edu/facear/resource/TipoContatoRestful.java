@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import br.edu.facear.crm.entity.TipoContato;
 import br.edu.facear.facade.Facade;
 
-@Path("/tipocontato")
+@Path("/restTipoContato")
 public class TipoContatoRestful {
 	
 	@GET
