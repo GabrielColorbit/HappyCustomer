@@ -7,40 +7,47 @@ import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.TipoContato;
 
-public class TipoContatoDAO implements InterfaceDAO<TipoContato>{
+public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(TipoContato tipocontato) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(tipocontato);
-		em.getTransaction().commit();		
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public ArrayList<TipoContato> Listar() {
-		Query q = em.createQuery("select a from TipoContato a");
-		
-		return (ArrayList<TipoContato>) q.getResultList();
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(TipoContato tipocontato) {
 		em.getTransaction().begin();
 		em.merge(tipocontato);
-		em.getTransaction().commit();		
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public TipoContato BuscarID(Long id) {
-		return em.find(TipoContato.class, id);	
-
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(TipoContato tipocontato) {
 		em.getTransaction().begin();
 		em.remove(tipocontato);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
+	// LISTAR
+	@Override
+	public ArrayList<TipoContato> Listar() {
+		Query tipocontato = em.createQuery("from TipoContato a");
+
+		return (ArrayList<TipoContato>) tipocontato.getResultList();
+	}
+
+	// BUSCAR ID
+	@Override
+	public TipoContato BuscarID(Long tipocontato) {
+		return em.find(TipoContato.class, tipocontato);
+
+	}
 }

@@ -12,7 +12,7 @@ public class TipoContatoBO implements InterfaceBO<TipoContato>{
 		if(o.getNome() == null){
 			throw new Exception("Nome do tipo de contato é inválido");
 		}
-		tcdao.Cadastrar(o);		
+		tcdao.Cadastrar(o);
 	}
 
 	@Override
@@ -51,5 +51,4 @@ public class TipoContatoBO implements InterfaceBO<TipoContato>{
 		}		
 		tcdao.Excluir(o);		
 	}
-
 }
