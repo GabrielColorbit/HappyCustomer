@@ -9,23 +9,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.sun.xml.internal.txw2.annotation.XmlElement;
 
+@XmlRootElement
 @Entity
 @Table(name="\"TB_TIPO_CONTATO\"")
-@XmlRootElement
 public final class TipoContato{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	
-	@XmlElement
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	@XmlElement
 	public String getNome() {
 		return nome;
 	}

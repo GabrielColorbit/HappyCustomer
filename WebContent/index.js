@@ -11,31 +11,20 @@
 				this.rodape = {};
 			});
 	
-	angular.module('happyCustomerApp', []).controller('tipocontatoController',function($scope, 
-			$http) {
-					
-					$scope.BuscarInformacao = function() {
 
-					$http.get('http://localhost:8080/e-commerce/rest/restCliente').success(function(data) {
-						$scope.cliente = data["TipoContato"];
-					});
-				};
-
-				$scope.BuscarInformacao();
-			});
 	
 	angular.module('happyCustomerApp', []).controller('tipocontatoController',
 			function($scope) {
-				$scope.listTipoContato = [ {
-					id : 1,
-					nome : 'Prospect'
-				}, {
-					id : 2,
-					nome : 'Administrador'
-				}, {
-					id : 3,
-					nome : 'Diretor'
-				} ];
+//				$scope.listTipoContato = [ {
+//					id : 1,
+//					nome : 'Prospect'
+//				}, {
+//					id : 2,
+//					nome : 'Administrador'
+//				}, {
+//					id : 3,
+//					nome : 'Diretor'
+//				} ];
 
 				$scope.add = function() {
 					$scope.listTipoContato.push({
@@ -56,8 +45,8 @@
 					var index = getSelectedIndex(id);
 					var TipoContato = $scope.listTipoContato[index];
 
-					$scope.id = TipoContato.id;
-					$scope.nome = TipoContato.nome;
+					$scope.tipoContato.id = TipoContato.id;
+					$scope.tipoContato.nome = TipoContato.nome;
 
 				};
 

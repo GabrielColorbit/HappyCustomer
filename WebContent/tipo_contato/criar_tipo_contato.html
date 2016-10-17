@@ -55,9 +55,81 @@
 			</div>
 		</div>
 	</header>
+<script>
 
+var app = angular. module('happyCustomerApp', []);
+	app.controller('HttpGetController', function($scope, 
+			$http) {
+		$scope.BuscarInformacao = function() {
+			$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
+			.success(function(data) {
+				$scope.tipoContato = data["tipoContato"];
+			});
+		};
+	
+		$scope.BuscarInformacao();
+	});
+	app.controller("HttpPostController", function($scope,
+			$http) {
 
-	<section class="grid form_tipo_ontato" ng-controller="tipocontatoController">
+		$scope.EnviarInformacao = function() {
+
+			var parameter = JSON.stringify({
+				type : "tipoContato",
+				id : $scope.tipoContato.id,
+				nome : $scope.tipoContato.nome
+			});
+
+			var config = {
+				headers : {
+					'Content-Type' : 'application/json;charset=utf-8;'
+				}
+			}
+
+			$http.post(
+					'http://localhost:8080/CRM/rest/restTipoContato/Salvar',
+					parameter, config).success(
+					function(data, status, headers, config) {
+						$scope.Resposta = 'Tipo Contato Salvo com Sucesso!';
+						
+						
+					}).error(
+					function(data, status, header, config) {
+						$scope.Resposta = "Data: " + data + "<hr />status: "
+								+ status + "<hr />headers: " + header
+								+ "<hr />config: " + config;
+					});
+		};
+
+	});
+</script>
+		
+	<section class="grid form_tipo_ontato" ng-controller="HttpPostController">
+		<div class="container">
+			{{ Resposta }}
+			<h3>Informações do Tipo de Contato</h3>
+			<table>
+
+				<tr> 
+					<td>id</td>
+					<td><input type="text" name="id"  ng-model="tipoContato.id"></td>
+				</tr>
+
+				<tr>
+					<td>Nome</td>
+					<td><input type="text" name="nome"  ng-model="tipoContato.nome"></td>					
+				</tr>
+
+				<tr>
+					<td><input type="button" value="salvar" ng-click="EnviarInformacao()"></td>					
+					
+				</tr>
+			 </table>
+			
+		</div>
+	</section>			
+	
+	<section class="grid form_tipo_ontato" ng-controller="HttpGetController">
 		<div class="container">
 			<button id="botao" ng-click="BuscarInformacao()">Buscar</button>
 			<table>
@@ -66,44 +138,19 @@
 					<th>Nome</th>
 					<th><a href="#">Adicionar</a><th>
 				</tr>
-				<tr ng-repeat="tipocontato in listTipoContato">
-					<td>{{tipocontato.id}}</td>
-					<td>{{tipocontato.nome}}</td>
+				<tr ng-repeat="tp in tipoContato">
+					<td>{{tp.id}}</td>
+					<td>{{tp.nome}}</td>
 					<td>
-						<a href="#" ng-click='del(tipocontato.id)'>Excluir</a>
-						<a href="#" ng-click='selectEdit(tipocontato.id)'>Editar</a>
-					<td>
+						<a href="#" ng-click='del(tp.id)'>Excluir</a>
+						<a href="#" ng-click='selectEdit(tp.id)'>Editar</a>
+					</td>
 				</tr>
 				
 			</table>
-			<h3>Informações do Tipo de Contato</h3>
-			<table>
-				<tr> 
-					<td>id</td>
-					<td><input type="text" ng-model="id"></td>
-				</tr>
-				<tr>
-					<td>Nome</td>
-					<td><input type="text" ng-model="nome"></td>					
-				</tr>
-				<tr>
-					<td><input type="button" value="adicionar" ng-click="add()"></td>					
-					<td><input type="button" value="salvar" ng-click="edit()"></td>					
-				</tr>
-			 </table>
-			
-		</div>
-	</section>			
-	
-<script>
+			</div>
+		</section>			
 
-
-  
-  
-  
-
-
-</script>
 
 	<!-- Portfolio Grid Section -->
 	<section class="grid form_tipo_ontato">

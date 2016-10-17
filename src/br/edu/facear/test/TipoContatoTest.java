@@ -18,7 +18,7 @@ public class TipoContatoTest {
 	@Test
 	public void testCadastroTipoContato() throws Exception {
 		TipoContato tipocontato = new TipoContato();
-		tipocontato.setNome("FUCK New");
+		tipocontato.setNome("Operador");
 		facade.CadastrarTipoContato(tipocontato);
 		Assert.assertEquals(true, tipocontato.getId() != null);
 	}
