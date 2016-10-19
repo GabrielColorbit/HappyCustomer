@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+
 import br.edu.facear.crm.entity.TipoContato;
 
 public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
@@ -47,7 +48,8 @@ public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
 	// BUSCAR ID
 	@Override
 	public TipoContato BuscarID(Long tipocontato) {
-		return em.find(TipoContato.class, tipocontato);
+		return em.find(TipoContato.class, tipocontato );
 
 	}
+
 }
