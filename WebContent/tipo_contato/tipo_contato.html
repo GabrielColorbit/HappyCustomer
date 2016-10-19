@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app=happyCustomerApp>
 
 <head>
 
@@ -34,97 +34,83 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script src="/CRM/js/angular.min.js"></script>
+<script src="/CRM/js/angular-route.min.js"></script>
 <script src="/CRM/index.js"></script>
 <script src="/CRM/happyCustomer.js"></script>
+<script src="/CRM/tipo_contato/controller.js"></script>
+
 </head>
 
-<body id="page-top" ng-app=happyCustomerApp>
+<body id="page-top" >
+
+
 
 	<!-- Navigation -->
 	<topo></topo>
+	<div ng-controller="TipoContatoController">	
 
 	<!-- Header -->
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="intro-text">
-						<span class="name">Tipos de Contato</span>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="intro-text">
+							<span class="name">Tipos de Contato</span>
+						</div>
 					</div>
 				</div>
 			</div>
+		</header>
+	
+	
+		<div ng-view>
+		
+			
 		</div>
-	</header>
 
-	<!-- Portfolio Grid Section -->
-	<section class="grid atividades">
-		<div class="container">
-
-			<div class="row">
-				<div class="table-scrollable table-scrollable-borderless">
-					<div class="col-sm-6 col-xs-12  search_bar">
-						<input type="text" class="form-control"
-							placeholder="Buscar Tipo de Contato" id="Nome do contato"
-							required
-							data-validation-required-message="Por favor insira um nome">
+	
+			<!-- Portfolio Grid Section -->
+		<section class="grid tipo_contato">
+			<div class="container">
+				<label class="alert">{{ Resposta }}</label>
+				<div class="row">
+					<div class="table-scrollable table-scrollable-borderless">
+						<div class="col-sm-6 col-xs-12  search_bar">
+							<input type="text" class="form-control" ng-model="tipoContato.id" placeholder="Buscar Tipo de Contato" id="Nome do contato" required data-validation-required-message="Por favor insira um nome">
+							<a href="javascript:void(0)" ng-click='BuscarInformacao()'></a>
+						</div>
+						<table class="table table-hover table-light col-xs-12">
+							<thead>
+								<tr class="uppercase">
+									<th>Id</th>
+									<th>Nome</th>
+									<th><a class="btn btn-success btn-sm"
+										href="#/cadastrar">Adicionar</a>
+									</th>
+	
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="tp in tipoContatolist">
+	
+									<td>{{tp.id}}</td>
+									<td>{{tp.nome}}</td>
+	
+									<td><a class="btn btn-warning btn-sm" href="#/editar" ng-click='SelecionarParaEditar(tp.id)'>Editar</a></td>
+								</tr>
+								
+							</tbody>
+						</table>
 					</div>
-					<table class="table table-hover table-light col-xs-12">
-						<thead>
-							<tr class="uppercase">
-								<th>Id</th>
-								<th>Nome</th>
-								<th><a class="btn btn-success btn-sm"
-									href="/CRM/tipo_contato/criar_tipo_contato.html">Adicionar</a>
-								</th>
-
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-
-								<td>1</td>
-								<td>Suporte</td>
-
-								<td><a class="btn btn-warning btn-sm"
-									href="/CRM/tipo_contato/editar_tipo_contato.html">Editar</a></td>
-							</tr>
-							<tr>
-
-								<td>2</td>
-								<td>Atendimento</td>
-
-								<td><a class="btn btn-warning btn-sm"
-									href="/CRM/tipo_contato/editar_tipo_contato.html">Editar</a></td>
-							</tr>
-							<tr>
-
-								<td>3</td>
-								<td>Migração</td>
-
-								<td><a class="btn btn-warning btn-sm"
-									href="/CRM/tipo_contato/editar_tipo_contato.html">Editar</a></td>
-							</tr>
-
-						</tbody>
-					</table>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	
+	
 
-
-
-
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div
-		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-		<a class="btn btn-primary" href="#page-top"> <i
-			class="fa fa-chevron-up"></i>
-		</a>
+	
 	</div>
-
-
-	<!-- Footer -->
+		<!-- Footer -->
 	<rodape></rodape>
 
 </body>

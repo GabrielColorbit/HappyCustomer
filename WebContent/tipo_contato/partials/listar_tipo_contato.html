@@ -1,0 +1,38 @@
+		<!-- Portfolio Grid Section -->
+		<section class="grid tipo_contato">
+			<div class="container">
+				<label class="alert">{{ Resposta }}</label>
+				<div class="row">
+					<div class="table-scrollable table-scrollable-borderless">
+						<div class="col-sm-6 col-xs-12  search_bar">
+							<input type="text" class="form-control" ng-model="tipoContato.id" placeholder="Buscar Tipo de Contato" id="Nome do contato" required data-validation-required-message="Por favor insira um nome">
+							<a href="javascript:void(0)" ng-click='BuscarInformacao()'></a>
+						</div>
+						<table class="table table-hover table-light col-xs-12">
+							<thead>
+								<tr class="uppercase">
+									<th>Id</th>
+									<th>Nome</th>
+									<th><a class="btn btn-success btn-sm"
+										href="#/Cadastrar">Adicionar</a>
+									</th>
+	
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="tp in tipoContatolist">
+	
+									<td>{{tp.id}}</td>
+									<td>{{tp.nome}}</td>
+	
+									<td><a class="btn btn-warning btn-sm" href="#/editar" ng-click='SelecionarParaEditar(tp.id)'>Editar</a></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+	
