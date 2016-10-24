@@ -12,15 +12,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
+
+@XmlRootElement
 @Entity
 @Table(name="\"TB_USUARIO\"")
-/*@SecondaryTable(name = "health_care", pkJoinColumns = 
-{ @PrimaryKeyJoinColumn(name = "id") })*/
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,8 +34,8 @@ public class Usuario {
 	   
     @ManyToMany
     @JoinTable(name="usuario_telefones", joinColumns={
-    		@JoinColumn(name = "UsuarioID") }, inverseJoinColumns = {
-			@JoinColumn(name = "TelefoneID") })
+    		@JoinColumn(name = "usuario_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "telefone_id") })
     private List<Telefone> telefones;
     
     
@@ -52,78 +52,91 @@ public class Usuario {
 	public Long getId() {
 		return id;
 	}
+	@XmlElement
 	public void setId(Long id) {
 		this.id = id;
 	}
 	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
+	@XmlElement
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
 	public Cidade getCidade() {
 		return cidade;
 	}
+	@XmlElement
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 	public String getEmail() {
 		return email;
 	}
+	@XmlElement
 	public void setEmail(String email) {
 		this.email = email;
 	}
 	public String getSenha() {
 		return senha;
 	}
+	@XmlElement
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	public String getNome() {
 		return nome;
 	}
+	@XmlElement
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public String getCpf() {
 		return cpf;
 	}
+	@XmlElement
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public Genero getGenero() {
 		return genero;
 	}
+	@XmlElement
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
 	public String getCargo() {
 		return cargo;
 	}
+	@XmlElement
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
 	public Date getDatanascimento() {
 		return datanascimento;
 	}
+	@XmlElement
 	public void setDatanascimento(Date datanascimento) {
 		this.datanascimento = datanascimento;
 	}
 	public String getEndereco() {
 		return endereco;
 	}
+	@XmlElement
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public Long getNumero() {
 		return numero;
 	}
+	@XmlElement
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
 	public Long getCep() {
 		return cep;
 	}
+	@XmlElement
 	public void setCep(Long cep) {
 		this.cep = cep;
 	}
@@ -134,6 +147,7 @@ public class Usuario {
 	public List getTelefones() {
 		return telefones;
 	}
+	@XmlElement
 	public void setTelefones(List telefones) {
 		this.telefones = telefones;
 	}
@@ -245,6 +259,25 @@ public class Usuario {
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones, String email,
+			String senha, String nome, String cpf, Genero genero, String cargo, Date datanascimento, String endereco,
+			Long numero, Long cep) {
+		super();
+		this.id = id;
+		this.tipousuario = tipousuario;
+		this.cidade = cidade;
+		this.telefones = telefones;
+		this.email = email;
+		this.senha = senha;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.genero = genero;
+		this.cargo = cargo;
+		this.datanascimento = datanascimento;
+		this.endereco = endereco;
+		this.numero = numero;
+		this.cep = cep;
 	}
 	
 }

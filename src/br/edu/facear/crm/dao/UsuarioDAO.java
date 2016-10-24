@@ -1,11 +1,10 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.facear.crm.entity.Estado;
 import br.edu.facear.crm.entity.Usuario;
 
 public class UsuarioDAO implements InterfaceDAO<Usuario>{
@@ -18,10 +17,10 @@ public class UsuarioDAO implements InterfaceDAO<Usuario>{
 	}
 
 	@Override
-	public List<Usuario> Listar() {
+	public ArrayList<Usuario> Listar() {
 		Query q = em.createQuery("select a from Usuario a");
 		
-		return q.getResultList();
+		return (ArrayList<Usuario>) q.getResultList();
 	}
 
 	@Override

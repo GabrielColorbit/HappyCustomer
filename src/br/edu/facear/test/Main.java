@@ -51,23 +51,23 @@ import br.edu.facear.crm.entity.Usuario;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		gerenciarTipoTelefone();
-//		gerenciarTipoEmpresa();
-//		gerenciarTelefone();
-//		gerenciarProduto();
-//		gerenciarEstado();
-//		gerenciarCidade();
-//		gerenciarOrigemContato();
-//		gerenciarTipoUsuario();
-//		gerenciarUsuario();
-//		gerenciarTipoContato();
-//		gerenciarContato();		
-//		gerenciarTipoComunicador();
-//		gerenciarTipoAtividade();
-//		gerenciarEmpresa();
-//		gerenciarNegocio();
-//		gerenciarItem();
-//		gerenciarAtividade();
-//		gerenciarLigacao();
+		gerenciarTipoEmpresa();
+		gerenciarTelefone();
+		gerenciarProduto();
+		gerenciarEstado();
+		gerenciarCidade();
+		gerenciarOrigemContato();
+		gerenciarTipoUsuario();
+		gerenciarTipoComunicador();
+		gerenciarUsuario();
+		gerenciarTipoContato();
+		gerenciarTipoAtividade();
+		gerenciarEmpresa();
+		gerenciarContato();		
+		gerenciarNegocio();
+		gerenciarItem();
+		gerenciarAtividade();
+		gerenciarLigacao();
 
 	}
 	public static void gerenciarTipoTelefone() throws Exception{
@@ -152,9 +152,9 @@ public class Main {
 		produtoBO.Cadastrar(produto);
 		
 
-//		System.out.println("Busca Produtos:");
+		System.out.println("Busca Produtos:");
 		produto = produtoBO.BuscarID(1l);
-//		System.out.println( "id: "+produto.getId() +" Nome: "+produto.getNome()+" Preço: "+produto.getPreco());
+		System.out.println( "id: "+produto.getId() +" Nome: "+produto.getNome()+" Preço: "+produto.getPreco());
 		
 		produto.setNome("Teste ProdutoBO Alterar2");
 		produto.setPreco(1.99f);
@@ -166,7 +166,7 @@ public class Main {
 //		System.out.println("Produtos: ");
 		List<Produto> lista_p =  produtoBO.Listar();
 		for(Produto current_p : lista_p){
-//			System.out.println( "id: "+current_p.getId() +" Nome: "+current_p.getNome()+" Preço: "+current_p.getPreco());
+			System.out.println( "id: "+current_p.getId() +" Nome: "+current_p.getNome()+" Preço: "+current_p.getPreco());
 
 		}	
 		
@@ -180,7 +180,7 @@ public class Main {
 		eBO.Cadastrar(e);
 		
 //		System.out.println("Busca Estado:");
-		e = eBO.BuscarID(3l);
+		e = eBO.BuscarID(1l);
 		System.out.println(e.getId() +" - "+e.getNome());
 		
 		e.setNome("Belo Horizonte");		
@@ -315,7 +315,7 @@ public class Main {
 		t = new TelefoneBO().BuscarID(1l);
 		t2 = new TelefoneBO().BuscarID(2l);
 		
-		List<Telefone> telefones = new ArrayList<Telefone>();
+		ArrayList telefones = new ArrayList<Telefone>();
 		telefones.add(t);
 		telefones.add(t2);
 		us.setTelefones(telefones);
@@ -331,7 +331,7 @@ public class Main {
 		+" Endereço: "+us.getEndereco()+" Numero: "+us.getNumero()+" Cep: "+us.getCep()	);
 		us = usBO.BuscarID(1l);
 		us.setCpf("111.000.000.00");
-		usBO.Alterar(us);
+//		usBO.Alterar(us);
 		
 		
 

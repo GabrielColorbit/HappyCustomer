@@ -1,5 +1,6 @@
 package br.edu.facear.crm.bo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 	}
 
 	@Override
-	public List<Usuario> Listar() throws Exception {
-		List<Usuario> u= udao.Listar();
+	public ArrayList<Usuario> Listar() throws Exception {
+		ArrayList<Usuario> u= udao.Listar();
 		if(u == null){
 			throw new Exception("Nenhuma usuário cadastrado");
 		}

@@ -1,7 +1,9 @@
 package br.edu.facear.crm.entity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 @Table(name="\"TB_TIPO_ATIVIDADE\"")
 public class TipoAtividade {

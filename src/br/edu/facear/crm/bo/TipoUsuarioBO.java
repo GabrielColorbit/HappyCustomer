@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoUsuarioDAO;
 import br.edu.facear.crm.entity.TipoUsuario;
@@ -16,8 +16,8 @@ public class TipoUsuarioBO implements InterfaceBO<TipoUsuario>{
 	}
 
 	@Override
-	public List<TipoUsuario> Listar() throws Exception {
-		List<TipoUsuario> tu= tudao.Listar();
+	public ArrayList<TipoUsuario> Listar() throws Exception {
+		ArrayList<TipoUsuario> tu= tudao.Listar();
 		if(tu == null){
 			throw new Exception("Nenhuma tipo de usuário cadastrado");
 		}

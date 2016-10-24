@@ -1,67 +1,25 @@
- 
-	
-<!-- 		<section class="grid form_tipo_ontato"> -->
-			
-		
-<!-- 			<div class="container"> -->
-<!-- 				<div ng-view></div> -->
-<!-- 				{{ Resposta }} -->
-<!-- 				<h3>Informações do Tipo de Contato</h3> -->
-<!-- 				<table> -->
-	
-<!-- 					<tr>  -->
-<!-- 						<td>id</td> -->
-<!-- 						<td><input type="text" name="id"  ng-model="tipoContato.id"></td> -->
-<!-- 					</tr> -->
-	
-<!-- 					<tr> -->
-<!-- 						<td>Nome</td> -->
-<!-- 						<td><input type="text" name="nome"  ng-model="tipoContato.nome"></td>					 -->
-<!-- 					</tr> -->
-	
-<!-- 					<tr> -->
-<!-- 						<td><input type="button" value="salvar" ng-click="EnviarInformacao()"></td>					 -->
-						
-<!-- 					</tr> -->
-<!-- 				 </table> -->
-				
-<!-- 			</div> -->
-	
-<!-- 			<div class="container"> -->
-<!-- 				<button id="botao" ng-click="BuscarInformacao()">Buscar</button> -->
-<!-- 				<table> -->
-<!-- 					<tr> -->
-<!-- 						<th>ID</th> -->
-<!-- 						<th>Nome</th> -->
-<!-- 						<th><a href="#">Adicionar</a></th> -->
-<!-- 					</tr> -->
-<!-- 					<tr ng-repeat="tp in tipoContatolist"> -->
-<!-- 						<td>{{tp.id}}</td> -->
-<!-- 						<td>{{tp.nome}}</td> -->
-<!-- 						<td> -->
-<!-- 							<a href="#" ng-click='del(tp.id)'>Excluir</a> -->
-<!-- 							<a href="#/editar" ng-click='SelecionarParaEditar(tp.id)'>Editar</a> -->
-<!-- 						</td> -->
-<!-- 					</tr> -->
-					
-<!-- 				</table> -->
-			
-	
-			
-			
-<!-- 			</div> -->
-		
-<!-- 		</section>			 -->
-	
-	
+		<!-- Header -->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="intro-text">
+							<span class="name">{{Titulo}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 		<!-- Portfolio Grid Section -->
-		<section class="grid form_tipo_ontato">
+		<section class="grid form_tipo_ontato" ng-controller="TipoContatoController">
 			<div class="container">
 	
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2">
 						<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 						<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+						{{Resposta}}
+						
 						<form name="sentMessage" id="contactForm" novalidate>
 							<div class="row control-group">
 								<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
@@ -81,7 +39,7 @@
 								<div class="form-group btn-group col-xs-12">
 	
 								
-								<a class="btn btn-danger btn-lg to-left" href="#/listar">Voltar</a>
+								<a class="btn btn-danger btn-lg to-left" href="#/TipoContato">Voltar</a>
 									<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
 								</div>
 							</div>

@@ -3,8 +3,44 @@ package br.edu.facear.facade;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.facear.crm.bo.*;
-import br.edu.facear.crm.entity.*;
+import br.edu.facear.crm.bo.AtividadeBO;
+import br.edu.facear.crm.bo.CidadeBO;
+import br.edu.facear.crm.bo.ComunicadorBO;
+import br.edu.facear.crm.bo.ContatoBO;
+import br.edu.facear.crm.bo.EmpresaBO;
+import br.edu.facear.crm.bo.EstadoBO;
+import br.edu.facear.crm.bo.ItemBO;
+import br.edu.facear.crm.bo.LigacaoBO;
+import br.edu.facear.crm.bo.NegocioBO;
+import br.edu.facear.crm.bo.OrigemContatoBO;
+import br.edu.facear.crm.bo.ProdutoBO;
+import br.edu.facear.crm.bo.TelefoneBO;
+import br.edu.facear.crm.bo.TipoAtividadeBO;
+import br.edu.facear.crm.bo.TipoComunicadorBO;
+import br.edu.facear.crm.bo.TipoContatoBO;
+import br.edu.facear.crm.bo.TipoEmpresaBO;
+import br.edu.facear.crm.bo.TipoTelefoneBO;
+import br.edu.facear.crm.bo.TipoUsuarioBO;
+import br.edu.facear.crm.bo.UsuarioBO;
+import br.edu.facear.crm.entity.Atividade;
+import br.edu.facear.crm.entity.Cidade;
+import br.edu.facear.crm.entity.Comunicador;
+import br.edu.facear.crm.entity.Contato;
+import br.edu.facear.crm.entity.Empresa;
+import br.edu.facear.crm.entity.Estado;
+import br.edu.facear.crm.entity.Item;
+import br.edu.facear.crm.entity.Ligacao;
+import br.edu.facear.crm.entity.Negocio;
+import br.edu.facear.crm.entity.OrigemContato;
+import br.edu.facear.crm.entity.Produto;
+import br.edu.facear.crm.entity.Telefone;
+import br.edu.facear.crm.entity.TipoAtividade;
+import br.edu.facear.crm.entity.TipoComunicador;
+import br.edu.facear.crm.entity.TipoContato;
+import br.edu.facear.crm.entity.TipoEmpresa;
+import br.edu.facear.crm.entity.TipoTelefone;
+import br.edu.facear.crm.entity.TipoUsuario;
+import br.edu.facear.crm.entity.Usuario;
 
 public class FacadeHappyCustomer {
 
@@ -141,7 +177,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoUsuario> ListarTipoUsuario() throws Exception {
+	public ArrayList<TipoUsuario> ListarTipoUsuario() throws Exception {
 		return tipousuarioBO.Listar();
 	}
 
@@ -518,7 +554,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Usuario> ListarUsuario() throws Exception {
+	public ArrayList<Usuario> ListarUsuario() throws Exception {
 		return usuarioBO.Listar();
 	}
 
