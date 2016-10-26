@@ -26,8 +26,8 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		   o.getCep() == null 	    ){
 				throw new Exception("Preencher todos os campos da empresa");
 			}
-			edao.Cadastrar(o);				
-	
+						
+	        edao.Cadastrar(o);
 	}
 
 	@Override
