@@ -8,7 +8,7 @@ import br.edu.facear.crm.entity.Empresa;
 
 public class EmpresaBO implements InterfaceBO<Empresa>{
 	EmpresaDAO edao  =  new EmpresaDAO();
-	//carioa
+	//car
 	@Override
 	public void Cadastrar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
