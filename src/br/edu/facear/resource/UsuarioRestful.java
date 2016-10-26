@@ -20,7 +20,7 @@ public class UsuarioRestful {
 	@Path("/listarTodos")
 	@Produces("application/json")
 	public ArrayList<Usuario> findAll() throws Exception{
-				
+		
 		return new FacadeHappyCustomer().ListarUsuario();
 	}
 	
