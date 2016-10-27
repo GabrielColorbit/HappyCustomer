@@ -10,7 +10,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -18,9 +17,10 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class UsuarioRestful {
 	@GET
 	@Path("/listarTodos")
-	@Produces("application/json")
-	public ArrayList<Usuario> findAll() throws Exception{
+	@Produces({ MediaType.APPLICATION_JSON })
+	public ArrayList<Usuario>  findAll() throws Exception{
 				
+		
 		return new FacadeHappyCustomer().ListarUsuario();
 	}
 	
@@ -36,13 +36,14 @@ public class UsuarioRestful {
 			new FacadeHappyCustomer().AlterarUsuario(usuario);	
 
 	}
+
 	@GET
 	@Path("/Editar/{id}")
 	@Produces("application/json")
-	public Usuario editarUsuario(@PathParam(value = "id") String codigo) throws Exception{
+	public Usuario editarUsuario(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
 		Usuario u = new FacadeHappyCustomer().BuscarUsuarioPorId(id);
-		
+
 		return u;
 	}
 }

@@ -1,27 +1,34 @@
 package br.edu.facear.crm.entity;
 
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
 @Entity
 @Table(name="\"TB_USUARIO\"")
-public class Usuario {
+public class Usuario implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -32,10 +39,10 @@ public class Usuario {
 	@ForeignKey(name="fk_cidade")
 	private Cidade cidade;	
 	   
-    @ManyToMany
-    @JoinTable(name="usuario_telefones", joinColumns={
-    		@JoinColumn(name = "usuario_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "telefone_id") })
+   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   @JoinTable(name="usuario_telefones",
+	             joinColumns={@JoinColumn(name = "usuario_id")},
+	             inverseJoinColumns={@JoinColumn(name = "telefone_id")})
     private List<Telefone> telefones;
     
     
@@ -49,108 +56,114 @@ public class Usuario {
 	private String endereco;
 	private Long numero;
 	private Long cep;
+	@JsonManagedReference
 	public Long getId() {
 		return id;
 	}
-	@XmlElement
 	public void setId(Long id) {
 		this.id = id;
 	}
+	@JsonManagedReference
 	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
-	@XmlElement
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
+	@JsonManagedReference
 	public Cidade getCidade() {
 		return cidade;
 	}
-	@XmlElement
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+	@JsonManagedReference
 	public String getEmail() {
 		return email;
 	}
-	@XmlElement
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@JsonManagedReference
 	public String getSenha() {
 		return senha;
 	}
-	@XmlElement
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	@JsonManagedReference
 	public String getNome() {
 		return nome;
 	}
-	@XmlElement
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	@JsonManagedReference
 	public String getCpf() {
 		return cpf;
 	}
-	@XmlElement
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	@JsonManagedReference
 	public Genero getGenero() {
 		return genero;
 	}
-	@XmlElement
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+	@JsonManagedReference
 	public String getCargo() {
 		return cargo;
 	}
-	@XmlElement
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	@JsonManagedReference
 	public Date getDatanascimento() {
 		return datanascimento;
 	}
-	@XmlElement
 	public void setDatanascimento(Date datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+	@JsonManagedReference
 	public String getEndereco() {
 		return endereco;
 	}
-	@XmlElement
+	
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	@JsonManagedReference
 	public Long getNumero() {
 		return numero;
 	}
-	@XmlElement
+	
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+	@JsonManagedReference
 	public Long getCep() {
 		return cep;
 	}
-	@XmlElement
 	public void setCep(Long cep) {
 		this.cep = cep;
 	}
 
  
 	
+
 	
-	public List getTelefones() {
+	public List<Telefone> getTelefones() {
 		return telefones;
 	}
-	@XmlElement
-	public void setTelefones(List telefones) {
+	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
 	}
+
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", telefones=" + telefones
@@ -174,7 +187,6 @@ public class Usuario {
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
-		result = prime * result + ((telefones == null) ? 0 : telefones.hashCode());
 		result = prime * result + ((tipousuario == null) ? 0 : tipousuario.hashCode());
 		return result;
 	}
@@ -244,11 +256,7 @@ public class Usuario {
 				return false;
 		} else if (!senha.equals(other.senha))
 			return false;
-		if (telefones == null) {
-			if (other.telefones != null)
-				return false;
-		} else if (!telefones.equals(other.telefones))
-			return false;
+
 		if (tipousuario == null) {
 			if (other.tipousuario != null)
 				return false;
@@ -279,5 +287,6 @@ public class Usuario {
 		this.numero = numero;
 		this.cep = cep;
 	}
+
 	
 }

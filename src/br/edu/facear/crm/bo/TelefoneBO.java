@@ -1,10 +1,10 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TelefoneDAO;
 import br.edu.facear.crm.entity.Telefone;
-import br.edu.facear.crm.entity.TipoEmpresa;
+import br.edu.facear.crm.entity.Usuario;
 
 public class TelefoneBO implements InterfaceBO<Telefone>{
 	TelefoneDAO tfDAO = new TelefoneDAO();
@@ -20,8 +20,8 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 	}
 
 	@Override
-	public List<Telefone> Listar() throws Exception {
-		List<Telefone> telefones= tfDAO.Listar();
+	public ArrayList<Telefone> Listar() throws Exception {
+		ArrayList<Telefone> telefones= tfDAO.Listar();
 		if(telefones == null){
 			throw new Exception("Nenhumm telefone cadastrado");
 		}

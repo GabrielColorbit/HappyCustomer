@@ -1,0 +1,57 @@
+  <meta charset="UTF-8">
+
+<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-text">
+							<span class="name">{{Titulo}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="grid cidades">
+		<div class="container">
+
+			<div class="row">
+				<div class="table-scrollable table-scrollable-borderless">
+					<div class="col-sm-6 col-xs-12  search_bar">
+						<input type="text"  ng-model="procurar" class="form-control"
+							placeholder="Buscar Cidade" id="Nome do contato" required
+							data-validation-required-message="Por favor insira um nome">
+					</div>
+					<table class="table table-hover table-light col-xs-12">
+						<thead>
+							<tr class="uppercase">
+								<th>Cidade</th>
+								<th>Estado</th>
+								<th>
+									<a class="btn btn-success btn-sm" href="#/Cidade/Cadastrar">Adicionar</a>
+								</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr dir-paginate="c in cidades |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+								
+								<td>{{c.nome}}</td>
+								<td>{{c.estado.nome}}</td>
+								<td><a class="btn btn-warning btn-sm" href="#/Cidade/Editar/{{c.id}}" >Editar</a></td>
+
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="col-xs-12">
+					<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+

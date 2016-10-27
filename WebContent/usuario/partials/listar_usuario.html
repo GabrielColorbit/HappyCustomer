@@ -1,0 +1,68 @@
+  <meta charset="UTF-8">
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-text">
+						<span class="name">{{Titulo}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Portfolio Grid Section -->
+	<section class="grid users">
+		<div class="container">
+
+			<div class="row">
+				<div class="table-scrollable table-scrollable-borderless">
+					<div class="col-sm-6 col-xs-12  search_bar">
+						<input type="text" class="form-control" ng-model="procurar"
+							placeholder="Buscar Usuário" id="Nome do contato" required
+							data-validation-required-message="Por favor insira um nome">
+					</div>
+					<table class="table table-hover table-light col-xs-12">
+						<thead>
+							<tr class="uppercase">
+								<th ></th>
+								<th ng-click="ordenar('nome')">Nome</th>
+								<th ng-click="ordenar('cargo')">Cargo</th>
+								<th >Tarefas</th>
+								<th class="m_view" ng-click="ordenar('email')">E-mail</th>
+								<th>
+									<a class="btn btn-success btn-sm" href="#/Usuario/Cadastrar">Adicionar</a>
+								</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr dir-paginate="u in usuariolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+								
+								<td class="fit"><img class="user-pic"
+									src="../CRM/img/users/avatar4.jpg">
+								</td>
+								<td>
+									<a href="javascript:;" class="primary-link">{{u.nome}}</a>
+								</td>
+								<td>{{u.cargo}}</td>
+								<td>45</td>
+								<td class="d_view">{{u.email}}</td>
+
+									<td><a class="btn btn-warning btn-sm" href="#/Usuario/Editar/{{u.id}}" >Editar</a></td>
+
+							</tr>
+							
+
+						</tbody>
+					</table>
+				</div>
+				<div class="col-xs-12">
+					<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+				</div>
+			</div>
+		</div>
+	</section>
+

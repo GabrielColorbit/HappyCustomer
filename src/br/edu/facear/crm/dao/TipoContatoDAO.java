@@ -40,7 +40,7 @@ public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
 	// LISTAR
 	@Override
 	public ArrayList<TipoContato> Listar() {
-		Query tipocontato = em.createQuery("from TipoContato a order by nome");
+		Query tipocontato = em.createQuery("from TipoContato a order by id");
 
 		return (ArrayList<TipoContato>) tipocontato.getResultList();
 	}

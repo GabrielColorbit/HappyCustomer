@@ -1,6 +1,7 @@
 package br.edu.facear.crm.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -20,7 +21,7 @@ public class UsuarioDAO implements InterfaceDAO<Usuario>{
 	public ArrayList<Usuario> Listar() {
 		Query q = em.createQuery("select a from Usuario a");
 		
-		return (ArrayList<Usuario>) q.getResultList();
+		return  (ArrayList<Usuario>) q.getResultList();
 	}
 
 	@Override

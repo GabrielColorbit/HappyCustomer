@@ -50,24 +50,24 @@ import br.edu.facear.crm.entity.Usuario;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		gerenciarTipoTelefone();
-		gerenciarTipoEmpresa();
-		gerenciarTelefone();
-		gerenciarProduto();
+//		gerenciarTipoTelefone();
+//		gerenciarTipoEmpresa();
+//		gerenciarTelefone();
+//		gerenciarProduto();
 		gerenciarEstado();
-		gerenciarCidade();
-		gerenciarOrigemContato();
-		gerenciarTipoUsuario();
-		gerenciarTipoComunicador();
-		gerenciarUsuario();
-		gerenciarTipoContato();
-		gerenciarTipoAtividade();
-		gerenciarEmpresa();
-		gerenciarContato();		
-		gerenciarNegocio();
-		gerenciarItem();
-		gerenciarAtividade();
-		gerenciarLigacao();
+//		gerenciarCidade();
+//		gerenciarOrigemContato();
+//		gerenciarTipoUsuario();
+//		gerenciarTipoComunicador();
+//		gerenciarUsuario();
+//		gerenciarTipoContato();
+//		gerenciarTipoAtividade();
+//		gerenciarEmpresa();
+//		gerenciarContato();		
+//		gerenciarNegocio();
+//		gerenciarItem();
+//		gerenciarAtividade();
+//		gerenciarLigacao();
 
 	}
 	public static void gerenciarTipoTelefone() throws Exception{
@@ -315,10 +315,10 @@ public class Main {
 		t = new TelefoneBO().BuscarID(1l);
 		t2 = new TelefoneBO().BuscarID(2l);
 		
-		ArrayList telefones = new ArrayList<Telefone>();
-		telefones.add(t);
-		telefones.add(t2);
-		us.setTelefones(telefones);
+//		ArrayList telefones = new ArrayList<Telefone>();
+//		telefones.add(t);
+//		telefones.add(t2);
+//		us.setTelefones(telefones);
 		usBO.Cadastrar(us);
 
 

@@ -1,12 +1,11 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Telefone;
-import br.edu.facear.crm.entity.TipoTelefone;
 
 public class TelefoneDAO implements InterfaceDAO<Telefone>{
 	EntityManager em = Connection.getEntityManager();
@@ -29,10 +28,10 @@ public class TelefoneDAO implements InterfaceDAO<Telefone>{
 	}
 
 	@Override
-	public List<Telefone> Listar() {
+	public ArrayList<Telefone> Listar() {
 		Query q = em.createQuery("select a from Telefone a");
 		
-		return q.getResultList();
+		return (ArrayList<Telefone>) q.getResultList();
 
 	}
 

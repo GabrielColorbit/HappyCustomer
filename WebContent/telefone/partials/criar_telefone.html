@@ -1,0 +1,51 @@
+		<!-- Header -->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="intro-text">
+							<span class="name">{{Titulo}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Portfolio Grid Section -->
+		<section class="grid form_tipo_ontato" ng-controller="TipoContatoController">
+			<div class="container">
+	
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+						<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+						{{Resposta}}
+						
+						<form name="sentMessage" id="contactForm" novalidate>
+							<div class="row control-group">
+								<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+									<label>Nome</label> <input type="text" class="form-control"
+										placeholder="Nome" id="nome" required
+										data-validation-required-message="Por favor insira um nome" ng-model="tipoContato.nome">
+									<p class="help-block text-danger"></p>
+								</div>
+	
+	
+							</div>
+	
+	
+	
+							<div id="success"></div>
+							<div class="row">
+								<div class="form-group btn-group col-xs-12">
+	
+								
+								<a class="btn btn-danger btn-lg to-left" href="#/TipoContato">Voltar</a>
+									<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	

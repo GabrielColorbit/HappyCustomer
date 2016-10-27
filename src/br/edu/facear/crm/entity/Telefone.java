@@ -1,5 +1,7 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,12 +11,13 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
 @Entity
 @Table(name="\"TB_TELEFONE\"")
-public class Telefone {
+public class Telefone implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -23,26 +26,26 @@ public class Telefone {
 	private TipoTelefone tipotelefone;
 	private Long numero;
 
+	@JsonManagedReference
 	public Long getId() {
 		return id;
 	}
 
-	@XmlElement
 	public void setId(Long id) {
 		this.id = id;
 	}
+	@JsonManagedReference
 	public TipoTelefone getTipotelefone() {
 		return tipotelefone;
 	}
-	@XmlElement
 	public void setTipotelefone(TipoTelefone tipotelefone) {
 		this.tipotelefone = tipotelefone;
 	}
+	@JsonManagedReference
 	public Long getNumero() {
 		return numero;
 	}
 	
-	@XmlElement
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
@@ -81,10 +84,12 @@ public class Telefone {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Telefone [id=" + id + ", tipotelefone=" + tipotelefone + ", numero=" + numero + "]";
 	}
+
 	public Telefone() {
 		super();
 		// TODO Auto-generated constructor stub
