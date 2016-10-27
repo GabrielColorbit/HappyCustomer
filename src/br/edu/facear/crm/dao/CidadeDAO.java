@@ -19,7 +19,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
 
 	@Override
 	public List<Cidade> Listar() {
-		Query q = em.createQuery("select a from Cidade a");
+		Query q = em.createQuery("select a from Cidade a order by id");
 		
 		return q.getResultList();
 	}

@@ -1,0 +1,59 @@
+		
+  <meta charset="UTF-8">
+		
+		<!-- Header -->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="intro-text">
+							<span class="name">{{Titulo}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>	
+		<!-- Portfolio Grid Section -->
+		<section class="grid tipo_contato">
+			<div class="container">
+				
+				<div class="row">
+					<div class="table-scrollable table-scrollable-borderless">
+						<div class="col-sm-6 col-xs-12  search_bar">
+					
+							<input type="text"  ng-model="procurar" class="form-control" ng-model="tipoContato.id" placeholder="Buscar Tipo de Contato" id="Nome do contato" required data-validation-required-message="Por favor insira um nome">
+							<a href="javascript:void(0)"></a>
+						</div>
+						<table class="table table-hover table-light col-xs-12">
+							<thead>
+								<tr class="uppercase">
+									<th ng-click="ordenar('id')">Id</th>
+									<th ng-click="ordenar('nome')">Nome</th>
+									<th>
+										<a class="btn btn-success btn-sm" href="#/TipoContato/Cadastrar">Adicionar</a>
+									</th>
+	
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate="tp in tipoContatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+	
+									<td >{{tp.id}}</td>
+									<td >{{tp.nome}}</td>
+	
+									<td><a class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.id}}" >Editar</a></td>
+								</tr>
+								
+							</tbody>
+						</table>
+						
+					</div>
+					<div class="col-xs-12">
+						<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+					</div>
+
+				</div>
+			</div>
+		</section>
+	
+	

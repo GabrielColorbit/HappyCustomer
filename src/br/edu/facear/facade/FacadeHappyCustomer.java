@@ -293,7 +293,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Telefone> ListarTelefone() throws Exception {
+	public ArrayList<Telefone> ListarTelefone() throws Exception {
 		return telefoneBO.Listar();
 	}
 

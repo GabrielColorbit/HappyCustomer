@@ -31,7 +31,7 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 			}
 		
 			ldao.Cadastrar(o);						
-			
+			//mechi aqui porra
 	}
 
 	@Override

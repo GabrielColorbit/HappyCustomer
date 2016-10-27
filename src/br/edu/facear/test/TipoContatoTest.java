@@ -14,6 +14,7 @@ public class TipoContatoTest {
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 	@SuppressWarnings("deprecation")
 	
+<<<<<<< HEAD
 	// CADASTRAR
 	//@Test
 	public void testCadastroTipoContato() throws Exception {
@@ -23,6 +24,17 @@ public class TipoContatoTest {
 		Assert.assertEquals(true, TipoContato.getId() != null);
 	}
 
+=======
+	// CADASTRANDO CORRETAMENTO AGORA
+	@Test
+	public void testCadastroTipoContato() throws Exception {
+		TipoContato tipocontato = new TipoContato();
+		tipocontato.setNome("Operador");
+		facade.CadastrarTipoContato(tipocontato);
+		Assert.assertEquals(true, tipocontato.getId() != null);
+	}//aqui consegui arrumar
+	/*
+>>>>>>> origin/master
 	// ALTERAR
 	@Test
 	public void testAterarTipoContato() throws Exception {

@@ -54,12 +54,20 @@ public class Main {
 //		gerenciarTipoEmpresa();
 //		gerenciarTelefone();
 //		gerenciarProduto();
+<<<<<<< HEAD
 //		gerenciarEstado();
+=======
+		gerenciarEstado();
+>>>>>>> origin/master
 //		gerenciarCidade();
 //		gerenciarOrigemContato();
 //		gerenciarTipoUsuario();
 //		gerenciarTipoComunicador();
+<<<<<<< HEAD
 		gerenciarUsuario();
+=======
+//		gerenciarUsuario();
+>>>>>>> origin/master
 //		gerenciarTipoContato();
 //		gerenciarTipoAtividade();
 //		gerenciarEmpresa();
@@ -315,10 +323,10 @@ public class Main {
 		t = new TelefoneBO().BuscarID(1l);
 		t2 = new TelefoneBO().BuscarID(2l);
 		
-		ArrayList telefones = new ArrayList<Telefone>();
-		telefones.add(t);
-		telefones.add(t2);
-		us.setTelefones(telefones);
+//		ArrayList telefones = new ArrayList<Telefone>();
+//		telefones.add(t);
+//		telefones.add(t2);
+//		us.setTelefones(telefones);
 		usBO.Cadastrar(us);
 
 

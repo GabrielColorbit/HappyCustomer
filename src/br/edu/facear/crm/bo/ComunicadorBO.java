@@ -15,6 +15,7 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 		tcdao.Cadastrar(o);		
 	}
 
+	//mechi aqui caraio
 	@Override
 	public List<Comunicador> Listar() throws Exception {
 		List<Comunicador> tc= tcdao.Listar();

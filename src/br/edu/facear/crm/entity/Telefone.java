@@ -1,5 +1,7 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,16 +11,22 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
 // CRIA TABELA
 @Entity
+<<<<<<< HEAD
 @Table(name = "\"TB_TELEFONE\"")
 
 public class Telefone {
 
 	// CHAVE PRIMARIA
+=======
+@Table(name="\"TB_TELEFONE\"")
+public class Telefone implements Serializable {
+>>>>>>> origin/master
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
@@ -31,7 +39,11 @@ public class Telefone {
 	// ATRIBUTOS
 	private String numero;
 
+<<<<<<< HEAD
 	// GETTERS E SETTERS
+=======
+	@JsonManagedReference
+>>>>>>> origin/master
 	public Long getId() {
 		return id;
 	}
@@ -39,6 +51,7 @@ public class Telefone {
 	public void setId(Long id) {
 		this.id = id;
 	}
+<<<<<<< HEAD
 
 	public TipoTelefone getId_tipotelefone() {
 		return id_tipotelefone;
@@ -53,6 +66,21 @@ public class Telefone {
 	}
 
 	public void setNumero(String numero) {
+=======
+	@JsonManagedReference
+	public TipoTelefone getTipotelefone() {
+		return tipotelefone;
+	}
+	public void setTipotelefone(TipoTelefone tipotelefone) {
+		this.tipotelefone = tipotelefone;
+	}
+	@JsonManagedReference
+	public Long getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(Long numero) {
+>>>>>>> origin/master
 		this.numero = numero;
 	}
 
@@ -101,6 +129,7 @@ public class Telefone {
 		return true;
 	}
 
+<<<<<<< HEAD
 	// CONSTRUCTOR USING FIELDS
 
 	/**
@@ -109,6 +138,18 @@ public class Telefone {
 	 * @param numero
 	 */
 	public Telefone(Long id, TipoTelefone id_tipotelefone, String numero) {
+=======
+	@Override
+	public String toString() {
+		return "Telefone [id=" + id + ", tipotelefone=" + tipotelefone + ", numero=" + numero + "]";
+	}
+
+	public Telefone() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Telefone(Long id, TipoTelefone tipotelefone, Long numero) {
+>>>>>>> origin/master
 		super();
 		this.id = id;
 		this.id_tipotelefone = id_tipotelefone;
