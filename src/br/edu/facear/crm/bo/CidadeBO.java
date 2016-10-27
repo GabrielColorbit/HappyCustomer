@@ -11,7 +11,7 @@ public class CidadeBO implements InterfaceBO<Cidade>{
 	@Override
 	public void Cadastrar(Cidade cidade) throws Exception {
 			
-//		validação de campos vazios
+//		validação de campos vazios mechi aqui
 
 		if(cidade.getNome() == null) {
 			throw new Exception("Nome da Cidade é Invalido");

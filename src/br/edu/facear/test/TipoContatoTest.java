@@ -14,14 +14,14 @@ public class TipoContatoTest {
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 	@SuppressWarnings("deprecation")
 	
-	// CADASTRAR
+	// CADASTRANDO CORRETAMENTO AGORA
 	@Test
 	public void testCadastroTipoContato() throws Exception {
 		TipoContato tipocontato = new TipoContato();
 		tipocontato.setNome("Operador");
 		facade.CadastrarTipoContato(tipocontato);
 		Assert.assertEquals(true, tipocontato.getId() != null);
-	}
+	}//aqui consegui arrumar
 	/*
 	// ALTERAR
 	@Test

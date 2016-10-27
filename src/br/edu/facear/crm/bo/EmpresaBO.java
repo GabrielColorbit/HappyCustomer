@@ -8,7 +8,7 @@ import br.edu.facear.crm.entity.Empresa;
 
 public class EmpresaBO implements InterfaceBO<Empresa>{
 	EmpresaDAO edao  =  new EmpresaDAO();
-	
+	//car
 	@Override
 	public void Cadastrar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
@@ -26,8 +26,8 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		   o.getCep() == null 	    ){
 				throw new Exception("Preencher todos os campos da empresa");
 			}
-			edao.Cadastrar(o);				
-	
+						
+	        edao.Cadastrar(o);
 	}
 
 	@Override
