@@ -25,9 +25,9 @@ public class CidadeTest {
 		
 		Cidade.setNome("Curitiba");
 		Estado.setId(1l);
-		Cidade.setId_estado(Estado);
+		Cidade.setEstado(Estado);
 		facade.CadastrarCidade(Cidade);
-		Assert.assertEquals(true, Cidade.getId() != null && Cidade.getId_estado() != null);
+		Assert.assertEquals(true, Cidade.getId() != null && Cidade.getEstado() != null);
 	}
 
 	// ALTERAR
@@ -36,7 +36,7 @@ public class CidadeTest {
 		Cidade Cidade = facade.BuscarCidadePorId(1l);
 		Cidade.setNome("Guarulhos");
 		Estado.setId(2l);
-		Cidade.setId_estado(Estado);
+		Cidade.setEstado(Estado);
 		facade.AlterarCidade(Cidade);
 		Assert.assertEquals(true, Cidade.getNome().equals("Guarulhos"));
 	}
@@ -58,7 +58,7 @@ public class CidadeTest {
 		Assert.assertEquals(true, Cidade.size() > 0);
 		System.out.println("CIDADE(S) CADASTRADA(S)");
 		for (Cidade Cidade2 : Cidade) {
-			System.out.println("Id: "+Cidade2.getId()+"  Nome: "+Cidade2.getNome()+"  Tipo Estado:"+Cidade2.getId_estado());
+			System.out.println("Id: "+Cidade2.getId()+"  Nome: "+Cidade2.getNome()+"  Tipo Estado:"+Cidade2.getEstado().getNome());
 		}
 	}
 }

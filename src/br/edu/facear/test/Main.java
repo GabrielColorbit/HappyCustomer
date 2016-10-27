@@ -54,20 +54,14 @@ public class Main {
 //		gerenciarTipoEmpresa();
 //		gerenciarTelefone();
 //		gerenciarProduto();
-<<<<<<< HEAD
 //		gerenciarEstado();
-=======
 		gerenciarEstado();
->>>>>>> origin/master
 //		gerenciarCidade();
 //		gerenciarOrigemContato();
 //		gerenciarTipoUsuario();
 //		gerenciarTipoComunicador();
-<<<<<<< HEAD
-		gerenciarUsuario();
-=======
 //		gerenciarUsuario();
->>>>>>> origin/master
+//		gerenciarUsuario();
 //		gerenciarTipoContato();
 //		gerenciarTipoAtividade();
 //		gerenciarEmpresa();
@@ -131,14 +125,14 @@ public class Main {
 		tipotelefone = tipotelefoneBO.BuscarID(1l);
 		
 		telefone.setTipotelefone(tipotelefone);
-		telefone.setNumero(4188888888l);
+		telefone.setNumero("4188888888");
 		telefoneBO.Cadastrar(telefone);
 //		System.out.println("Busca Telefone:");
 		telefone = telefoneBO.BuscarID(1l);
 //		System.out.println(telefone.getId() +" - "+telefone.getNumero() + "- tipotelefone:" + telefone.getTipotelefone().getNome());
 		
 //		/*Alterar telefone*/
-		telefone.setNumero(4191758834l);		
+		telefone.setNumero("4191758834");		
 		telefoneBO.Alterar(telefone);
 //		telefoneBO.Excluir(telefone);
 
@@ -242,7 +236,7 @@ public class Main {
 		OrigemContato o = new OrigemContato();
 
 		/*cadastro de origem do contato*/
-		o.setDescricao("Instagram");
+		o.setNome("Instagram");
 		oBO.Cadastrar(o);
 		
 		
@@ -250,7 +244,7 @@ public class Main {
 		o = oBO.BuscarID(1l);
 //		System.out.println(o.getId() +" - "+o.getDescricao());
 		
-		o.setDescricao("Telegram");		
+		o.setNome("Telegram");		
 		oBO.Alterar(o);
 		
 

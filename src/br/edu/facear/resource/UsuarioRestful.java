@@ -17,15 +17,9 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class UsuarioRestful {
 	@GET
 	@Path("/listarTodos")
-<<<<<<< HEAD
 	@Produces({ MediaType.APPLICATION_JSON })
 	public ArrayList<Usuario>  findAll() throws Exception{
 				
-=======
-	@Produces("application/json")
-	public ArrayList<Usuario> findAll() throws Exception{
->>>>>>> origin/master
-		
 		return new FacadeHappyCustomer().ListarUsuario();
 	}
 	

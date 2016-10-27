@@ -22,26 +22,26 @@ public class Comunicador {
 	// CHAVE(S) ESTRANGEIRA(S)
 	@ManyToOne
 	@ForeignKey(name = "fk_tipocomunicador")
-	private TipoComunicador id_tipocomunicador;
+	private TipoComunicador tipocomunicador;
 
 	// ATRIBUTO(S)
 	private String nome;
 
-	// GETTERS E SETTERS
 	public Long getId() {
 		return id;
 	}
 
+	// GETTERS E SETTERS
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public TipoComunicador getId_tipocomunicador() {
-		return id_tipocomunicador;
+	public TipoComunicador getTipocomunicador() {
+		return tipocomunicador;
 	}
 
-	public void setId_tipocomunicador(TipoComunicador id_tipocomunicador) {
-		this.id_tipocomunicador = id_tipocomunicador;
+	public void setTipocomunicador(TipoComunicador tipocomunicador) {
+		this.tipocomunicador = tipocomunicador;
 	}
 
 	public String getNome() {
@@ -58,8 +58,8 @@ public class Comunicador {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((id_tipocomunicador == null) ? 0 : id_tipocomunicador.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((tipocomunicador == null) ? 0 : tipocomunicador.hashCode());
 		return result;
 	}
 
@@ -78,15 +78,15 @@ public class Comunicador {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (id_tipocomunicador == null) {
-			if (other.id_tipocomunicador != null)
-				return false;
-		} else if (!id_tipocomunicador.equals(other.id_tipocomunicador))
-			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
 		} else if (!nome.equals(other.nome))
+			return false;
+		if (tipocomunicador == null) {
+			if (other.tipocomunicador != null)
+				return false;
+		} else if (!tipocomunicador.equals(other.tipocomunicador))
 			return false;
 		return true;
 	}
@@ -94,19 +94,19 @@ public class Comunicador {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Comunicador [id=" + id + ", id_tipocomunicador=" + id_tipocomunicador + ", nome=" + nome + "]";
+		return "Comunicador [id=" + id + ", tipocomunicador=" + tipocomunicador + ", nome=" + nome + "]";
 	}
 
 	// CONSTRUCTOR USING FIELDS
 	/**
 	 * @param id
-	 * @param id_tipocomunicador
+	 * @param tipocomunicador
 	 * @param nome
 	 */
-	public Comunicador(Long id, TipoComunicador id_tipocomunicador, String nome) {
+	public Comunicador(Long id, TipoComunicador tipocomunicador, String nome) {
 		super();
 		this.id = id;
-		this.id_tipocomunicador = id_tipocomunicador;
+		this.tipocomunicador = tipocomunicador;
 		this.nome = nome;
 	}
 

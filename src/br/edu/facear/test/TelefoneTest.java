@@ -25,9 +25,9 @@ public class TelefoneTest {
 		
 		Telefone.setNumero("123456789");
 		TipoTelefone.setId(1l);
-		Telefone.setId_tipotelefone(TipoTelefone);
+		Telefone.setTipotelefone(TipoTelefone);
 		facade.CadastrarTelefone(Telefone);
-		Assert.assertEquals(true, Telefone.getId() != null && Telefone.getId_tipotelefone()!= null);
+		Assert.assertEquals(true, Telefone.getId() != null && Telefone.getTipotelefone()!= null);
 	}
 
 	// ALTERAR
@@ -37,7 +37,7 @@ public class TelefoneTest {
 		Telefone Telefone = facade.BuscarTelefonePorId(2l);
 		Telefone.setNumero("987654321");
 		TipoTelefone.setId(3l);
-		Telefone.setId_tipotelefone(TipoTelefone);
+		Telefone.setTipotelefone(TipoTelefone);
 		facade.AlterarTelefone(Telefone);
 		Assert.assertEquals(true, Telefone.getNumero().equals("987654321"));
 	}
@@ -61,7 +61,7 @@ public class TelefoneTest {
 		Assert.assertEquals(true, Telefone.size() > 0);
 		System.out.println("TELEFONE(S) CADASTRADO(S)");
 		for (Telefone Telefone2 : Telefone) {
-			System.out.println("Id: "+Telefone2.getId()+"  Número: "+Telefone2.getNumero()+"Tipo Telefone: "+Telefone2.getId_tipotelefone());
+			System.out.println("Id: "+Telefone2.getId()+"  Número: "+Telefone2.getNumero()+"Tipo Telefone: "+Telefone2.getTipotelefone());
 		}
 	}
 }

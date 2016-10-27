@@ -23,9 +23,9 @@ public class ComunicadorTest {
 	public void testCadastroComunicador() throws Exception {
 		Comunicador.setNome("comunicadorTest@facebook.com");
 		TipoComunicador.setId(1l);
-		Comunicador.setId_tipocomunicador(TipoComunicador);
+		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.CadastrarComunicador(Comunicador);
-		Assert.assertEquals(true, Comunicador.getId() != null && Comunicador.getId_tipocomunicador() != null);
+		Assert.assertEquals(true, Comunicador.getId() != null && Comunicador.getTipocomunicador() != null);
 	}
 
 	// ALTERAR
@@ -35,7 +35,7 @@ public class ComunicadorTest {
 		Comunicador Comunicador = facade.BuscarComunicadorPorId(2l);
 		Comunicador.setNome("comunicadorTest@gmail.com");
 		TipoComunicador.setId(2l);
-		Comunicador.setId_tipocomunicador(TipoComunicador);
+		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.AlterarComunicador(Comunicador);
 		Assert.assertEquals(true, Comunicador.getNome().equals("comunicadorTest@gmail.com"));
 	}
@@ -57,7 +57,7 @@ public class ComunicadorTest {
 		Assert.assertEquals(true, Comunicador.size() > 0);
 		System.out.println("ORIGENS DE CONTATO(S) CADASTRADO(S)");
 		for (Comunicador Comunicador2 : Comunicador) {
-			System.out.println("Id: "+Comunicador2.getId()+"  Nome: "+Comunicador2.getNome()+"Tipo Comunicador: "+Comunicador2.getId_tipocomunicador());
+			System.out.println("Id: "+Comunicador2.getId()+"  Nome: "+Comunicador2.getNome()+"Tipo Comunicador: "+Comunicador2.getTipocomunicador().getNome());
 		}
 	}
 }
