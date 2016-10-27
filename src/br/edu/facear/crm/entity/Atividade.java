@@ -12,14 +12,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
 @XmlRootElement
+//CRIA TABELA
 @Entity
 @Table(name="\"TB_ATIVIDADE\"")
 public class Atividade {
-
 	
+	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
+	
+	
+	
 	@ManyToOne
 	@ForeignKey(name="fk_usuario")
 	private Usuario usuario;

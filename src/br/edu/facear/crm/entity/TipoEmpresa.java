@@ -6,26 +6,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="\"TB_TIPO_EMPRESA\"")
+// CRIA TABELA
+@Table(name = "\"TB_TIPO_EMPRESA\"")
+
 public class TipoEmpresa {
+
+	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
+
+	// ATRIBUTOS
 	private String nome;
+
+	// GETTERS E SETTERS
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	// HASHCODE
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -34,6 +46,8 @@ public class TipoEmpresa {
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
+
+	// EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -55,15 +69,30 @@ public class TipoEmpresa {
 			return false;
 		return true;
 	}
+
+	// TO STRING
 	@Override
 	public String toString() {
 		return "TipoEmpresa [id=" + id + ", nome=" + nome + "]";
 	}
+
+	// CONSTRUCTOR USING FIELDS
+	/**
+	 * 
+	 */
 	public TipoEmpresa() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
+	// CONSTRUCTORS FROM SUPERCLASS
+	/**
+	 * @param id
+	 * @param nome
+	 */
+	public TipoEmpresa(Long id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
 }

@@ -16,7 +16,7 @@ public class CidadeBO implements InterfaceBO<Cidade>{
 		if(cidade.getNome() == null) {
 			throw new Exception("Nome da Cidade é Invalido");
 		}		
-		else if(cidade.getEstado().getNome() == null) {
+		else if(cidade.getNome() == null) {
 			throw new Exception("Estado é Invalido");
 		}
 		cDAO.Cadastrar(cidade);
@@ -38,7 +38,7 @@ public class CidadeBO implements InterfaceBO<Cidade>{
 		if(cidade.getNome() == null) {
 			throw new Exception("Nome da Cidade é Invalido");
 		}
-		else if(cidade.getEstado().getNome() == null) {
+		else if(cidade.getNome() == null) {
 			throw new Exception("Nome Estado é Invalido");
 		}
 		cDAO.Alterar(cidade);		

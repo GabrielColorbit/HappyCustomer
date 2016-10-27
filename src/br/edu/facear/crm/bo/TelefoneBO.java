@@ -13,7 +13,7 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 		if(telefone.getNumero() == null){
 			throw new Exception("Número de telefone é inválido");
 		}
-		else if(telefone.getTipotelefone() == null){
+		else if(telefone.getId_tipotelefone() == null){
 			throw new Exception("Tipo de telefone é inválido");
 		}
 		tfDAO.Cadastrar(telefone);
@@ -33,7 +33,7 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 		if(telefone.getNumero() == null) {
 			throw new Exception("Número de telefoneé Invalido");
 		}
-		if(telefone.getTipotelefone() == null) {
+		if(telefone.getId_tipotelefone() == null) {
 			throw new Exception("Tipo de Telefone é Invalido");
 		}
 		tfDAO.Alterar(telefone);					

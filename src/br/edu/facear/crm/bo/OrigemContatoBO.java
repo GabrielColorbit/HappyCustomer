@@ -10,7 +10,7 @@ public class OrigemContatoBO implements InterfaceBO<OrigemContato>{
 	
 	@Override
 	public void Cadastrar(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getDescricao() == null){
+		if(origemcontato.getNome() == null){
 			throw new Exception("Descrição é inválida");
 		}
 		ocdao.Cadastrar(origemcontato);		
@@ -27,7 +27,7 @@ public class OrigemContatoBO implements InterfaceBO<OrigemContato>{
 
 	@Override
 	public void Alterar(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getDescricao() == null) {
+		if(origemcontato.getNome() == null) {
 			throw new Exception("Descrição é Invalida");
 		}
 		ocdao.Alterar(origemcontato);			
@@ -47,7 +47,7 @@ public class OrigemContatoBO implements InterfaceBO<OrigemContato>{
 
 	@Override
 	public void Excluir(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getDescricao() == null) {
+		if(origemcontato.getNome() == null) {
 			throw new Exception("Origem de Contato Selecionado é inválido.");
 		}		
 		ocdao.Excluir(origemcontato);			

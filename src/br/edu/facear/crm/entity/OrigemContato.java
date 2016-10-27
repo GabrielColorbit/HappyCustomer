@@ -6,36 +6,48 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//CRIA TABELA
 @Entity
-@Table(name="\"TB_ORIGEM_CONTATO\"")
+@Table(name = "\"TB_ORIGEM_CONTATO\"")
+
 public class OrigemContato {
-	
-	
+
+	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
-	private String descricao;
-	
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+
+	// ATRIBUTOS
+	private String nome;
+
+	// GETTERS E SETTERS
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	// HASHCODE
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
+
+	// EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -45,22 +57,42 @@ public class OrigemContato {
 		if (getClass() != obj.getClass())
 			return false;
 		OrigemContato other = (OrigemContato) obj;
-		if (descricao == null) {
-			if (other.descricao != null)
-				return false;
-		} else if (!descricao.equals(other.descricao))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
 		return true;
 	}
+
+	// TO STRING
 	@Override
 	public String toString() {
-		return "OrigemContato [id=" + id + ", descricao=" + descricao + "]";
+		return "OrigemContato [id=" + id + ", nome=" + nome + "]";
 	}
-	
-	
+
+	// CONSTRUCTOR USING FIELDS
+	/**
+	 * @param id
+	 * @param nome
+	 */
+	public OrigemContato(Long id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
+
+	// CONSTRUCTORS FROM SUPERCLASS
+	/**
+	 * 
+	 */
+	public OrigemContato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }

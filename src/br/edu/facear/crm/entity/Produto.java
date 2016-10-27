@@ -7,14 +7,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+//CRIA TABELA
 @Table(name="\"TB_PRODUTO\"")
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
+	
+	// ATRIBUTOS
 	private String nome;
 	private Float preco;
+	
+	// GETTERS E SETTERS
 	public Long getId() {
 		return id;
 	}
@@ -72,10 +77,4 @@ public class Produto {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
-	
-	
 }

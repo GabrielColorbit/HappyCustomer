@@ -11,25 +11,37 @@ import com.sun.xml.internal.txw2.annotation.XmlElement;
 
 @XmlRootElement
 @Entity
-@Table(name="\"TB_TIPO_CONTATO\"")
-public final class TipoContato{
+// CRIA TABELA
+@Table(name = "\"TB_TIPO_CONTATO\"")
+
+public final class TipoContato {
+
+	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
+
+	// ATRIBUTOS
 	private String nome;
-	
+
+	// GETTERS E SETTERS
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	// HASHCODE
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -38,6 +50,8 @@ public final class TipoContato{
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
+
+	// EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -59,21 +73,30 @@ public final class TipoContato{
 			return false;
 		return true;
 	}
+
+	// TO STRING
 	@Override
 	public String toString() {
 		return "TipoContato [id=" + id + ", nome=" + nome + "]";
 	}
 
-	public TipoContato() {
-		super();
-	}
+	// CONSTRUCTOR USING FIELDS
+	/**
+	 * @param id
+	 * @param nome
+	 */
 	public TipoContato(Long id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
 	}
-	
-	
-	
-	
+
+	// CONSTRUCTORS FROM SUPERCLASS
+	/**
+	 * 
+	 */
+	public TipoContato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }
