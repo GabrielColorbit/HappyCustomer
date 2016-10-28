@@ -3,9 +3,6 @@ package br.edu.facear.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.ForeignKey;
-
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.junit.Assert;
 import org.junit.Test;
 

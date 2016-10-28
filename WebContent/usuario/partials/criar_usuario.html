@@ -1,3 +1,6 @@
+<meta charset="UTF-8">
+
+
 <!-- Header -->
 <header>
 	<div class="container">
@@ -46,34 +49,36 @@
 
 						<div
 							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Gênero</label> <select id="tipo_usuario"
-								class="form-control" required
-								data-validation-required-message="Por favor selecione um tipo de usuário">
-								<option value="default">Gênero</option>
-								<option value="volvo">Masculino</option>
-								<option value="saab">Feminino</option>
+							<label>GÃªnero</label> 								
+							<select ng-model="usuario.genero" ng-default="Genero" class="form-control" required data-validation-required-message="Por favor selecione um gÃªnero de usuÃ¡rio">
+								 
+								 <option value="masculino">Masculino</option>
+								 <option value="feminino">Feminino</option>
 							</select>
+							<p class="help-block text-danger"></p>
+							
 						</div>
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cargo</label> <input type="text" class="form-control"
-									placeholder="Cargo" id="Cargo" required
-									data-validation-required-message="Please enter your cargo.">
+								<label>Cargo</label> 
+								<input type="text" ng-model="usuario.cargo"  class="form-control" placeholder="Cargo" id="Cargo" required data-validation-required-message="Por favor digite um cargo.">
 								<p class="help-block text-danger"></p>
 							</div>
 
 
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Tipo de Usuário</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Tipo de Usuário</option>
-									<option value="volvo">Operador</option>
-									<option value="saab">Administrador</option>
-								</select>
-								<p class="help-block text-danger"></p>
+								<label>Tipo de UsuÃ¡rio</label> 								
+								      
+    								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuÃ¡rio" ng-model="usuario.tipousuario">
+								
+										<option ng-repeat="tipousuario in tiposusuario" value="{{tipousuario.id}}">{{tipousuario.nome}}</option>
+	
+									</select>
+							      
+								<p class="help-block text-danger"></p>								
+								
 							</div>
 						</div>
 						<div class="row control-group">
@@ -88,9 +93,8 @@
 
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>CEP</label> <input type="number" class="form-control"
-									placeholder="CEP" id="CEP" required
-									data-validation-required-message="Please enter your email address.">
+								<label>CEP</label>
+								 <input type="number" ng-model="usuario.cep"  class="form-control" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -99,9 +103,9 @@
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
 								<label>Estado</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuÃ¡rio" ng-model="usuario.tipousuario">
 								
-									<option ng-repeat="estado in estados" value="{{estado.id}}">{{estado.nome}}</option>
+									<option ng-repeat="estado in estados" value="{{estado}}">{{estado.nome +' - '+estado.pais}}</option>
 
 								</select>
 								<p class="help-block text-danger"></p>
@@ -110,7 +114,7 @@
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
 								<label>Cidade</label> 
-								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
+								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuÃ¡rio">
 									<option ng-repeat="cidade in cidades" value="{{cidade.id}}">{{cidade.nome}}</option>
 								</select>
 								<p class="help-block text-danger"></p>
@@ -120,13 +124,13 @@
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Endereço</label> 
+								<label>EndereÃ§o</label> 
 								<input type="tel" class="form-control"  data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Número</label> 
+								<label>NÃºmero</label> 
 								<input type="number" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>

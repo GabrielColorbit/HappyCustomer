@@ -1,6 +1,8 @@
 var myControllers = angular.module('UsuarioControllers',[]);
 
-myControllers.controller('ListarUsuarioController', function($scope,$http) {
+
+
+myControllers.controller('ListarUsuarioController', function($scope,$http, svc) {
 	$scope.Titulo = "Usuários";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
@@ -9,15 +11,15 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 		});
 		$http.get('http://localhost:8080/CRM/rest/restEstado/listarTodos')
 		.success(function(data) {
-			$scope.usuarios = data["estado"];
+			$scope.estados = data["estado"];
 		});
 		$http.get('http://localhost:8080/CRM/rest/restCidade/listarTodos')
 		.success(function(data) {
-			$scope.usuarios = data["cidade"];
+			$scope.cidades = data["cidade"];
 		});
 		$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
 		.success(function(data) {
-			$scope.usuarios = data["tipousuario"];
+			$scope.tiposusuario = data["tipousuario"];
 		});
 	};
 	$scope.BuscarInformacao();
@@ -27,10 +29,9 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
     };
 });
 myControllers.controller('GetUsuarioController', function($scope, $routeParams,$http) {
-	$scope.Titulo = "Editar Tipo de Contato";
-
+	$scope.Titulo = "Editar Usuário";
 	if($routeParams.tipocontatoId){
-		$http.get('http://localhost:8080/CRM/rest/restTipoContato/Editar/'+$routeParams.tipocontatoId)
+		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.tipocontatoId)
 		.success(function(data) {
 			$scope.tipoContato = data;
 			var tipoContato =  new Object();
@@ -40,12 +41,30 @@ myControllers.controller('GetUsuarioController', function($scope, $routeParams,$
 	}
 });
 myControllers.controller('CadastrarUsuarioController', function($scope, $routeParams,$http) {
+
+
+
 	
 	$scope.Titulo = "Cadastrar Tipo de Contato";
 	
 });
 myControllers.controller('UsuarioController', function($scope, $routeParams,$http) {
-	
+	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+	.success(function(data) {
+		$scope.usuarios = data["usuario"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restEstado/listarTodos')
+	.success(function(data) {
+		$scope.estados = data["estado"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restCidade/listarTodos')
+	.success(function(data) {
+		$scope.cidades = data["cidade"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
+	.success(function(data) {
+		$scope.tiposusuario = data["tipoUsuario"];
+	});
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({
