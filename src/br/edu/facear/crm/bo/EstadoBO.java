@@ -13,6 +13,9 @@ public class EstadoBO implements InterfaceBO<Estado> {
 		if(estado.getNome() == null){
 			throw new Exception("Nome do estado é inválido");
 		}
+		if(estado.getPais() == null){
+			throw new Exception("Selecione um país.");
+		}		
 		estadoDAO.Cadastrar(estado);
 	}
 
@@ -30,13 +33,16 @@ public class EstadoBO implements InterfaceBO<Estado> {
 		if(estado.getNome() == null) {
 			throw new Exception("Nome do estado é Invalido");
 		}
+		if(estado.getPais() == null){
+			throw new Exception("Selecione um país.");
+		}			
 		estadoDAO.Alterar(estado);		
 	}
 
 	@Override
 	public Estado BuscarID(Long id) throws Exception {
 		if(id == null) {
-			throw new Exception("Estado pesquisado é intálido.");
+			throw new Exception("Estado pesquisado é inválido.");
 		}
 		else if(id <= 0) {
 			throw new Exception("Estado pesquisado é inválido.");
