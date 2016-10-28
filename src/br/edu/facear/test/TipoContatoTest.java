@@ -16,7 +16,7 @@ public class TipoContatoTest {
 	@SuppressWarnings("deprecation")
 
 	// CADASTRAR
-	// @Test
+	@Test
 	public void testCadastroTipoContato() throws Exception {
 		TipoContato TipoContato = new TipoContato();
 		TipoContato.setNome("Prospect");

@@ -15,7 +15,7 @@ public class EstadoTest {
 	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
-	//@Test
+	@Test
 	public void testCadastroEstado() throws Exception {
 		Estado Estado = new Estado();
 		Estado.setNome("São Paulo");
@@ -25,7 +25,7 @@ public class EstadoTest {
 	}
 
 	// ALTERAR
-	@Test
+	//@Test
 	public void testAterarEstado() throws Exception {
 		Estado Estado = facade.BuscarEstadoPorId(2l);
 		Estado.setNome("Santa Catarina");

@@ -23,7 +23,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		if(o.getNome() == null ||
 		   o.getTipousuario() == null ||
    		   o.getCidade() == null ||
-		   o.getEmail() == null ||
+		   o.getBairro() == null ||
 		   o.getSenha() == null ||
 		   o.getCpf() == null ||
 		   o.getGenero() == null ||
@@ -53,7 +53,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		if(o.getNome() == null ||
 		   o.getTipousuario() == null ||
    		   o.getCidade() == null ||
-		   o.getEmail() == null ||
+		   o.getBairro() == null ||
 		   o.getSenha() == null ||
 		   o.getCpf() == null ||
 		   o.getGenero() == null ||

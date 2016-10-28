@@ -297,7 +297,7 @@ public class Main {
 		Cidade c = new Cidade();
 		c = cBO.BuscarID(1l);
 		us.setCidade(c);
-		us.setEmail("Teste@colorbit.com.br");
+		us.setBairro("Teste@colorbit.com.br");
 		us.setSenha("123");
 		us.setNome("Teste teste");
 		us.setCpf("080.779.555.55");
@@ -309,7 +309,7 @@ public class Main {
 		us.setDatanascimento(calendar.getTime());
 		us.setEndereco("Rua dos zef");
 		us.setNumero(126l);
-		us.setCep(81170680l);
+		us.setCep("81170680");
 		
 		
 		Telefone t = new Telefone();
@@ -329,7 +329,7 @@ public class Main {
 		System.out.println("Busca Usuario:");
 		us = usBO.BuscarID(1l);
 		System.out.println("id: "+	us.getId()+" nome: "+us.getNome() +" tipoUsuario: "+us.getTipousuario().getNome() +" Estado: "+us.getCidade().getEstado().getNome() +" Cidade: "+us.getCidade().getNome() 
-		+" Email: "+us.getEmail()+" Senha: "+us.getSenha()+" cpf: "+us.getCpf()+" Genero: "+us.getGenero().toString()+" Cargo: "+us.getCargo() +" DataNascimento "+us.getDatanascimento().toString()
+		+" Email: "+us.getBairro()+" Senha: "+us.getSenha()+" cpf: "+us.getCpf()+" Genero: "+us.getGenero().toString()+" Cargo: "+us.getCargo() +" DataNascimento "+us.getDatanascimento().toString()
 		+" Endereço: "+us.getEndereco()+" Numero: "+us.getNumero()+" Cep: "+us.getCep()	);
 		us = usBO.BuscarID(1l);
 		us.setCpf("111.000.000.00");
@@ -341,7 +341,7 @@ public class Main {
 		List<Usuario> lista_tc =  usBO.Listar();
 		for(Usuario current_tc : lista_tc){
 			System.out.println("id: "+	current_tc.getId()+" nome: "+current_tc.getNome() +" tipoUsuario: "+current_tc.getTipousuario().getNome() +" Estado: "+current_tc.getCidade().getEstado().getNome() +" Cidade: "+current_tc.getCidade().getNome() 
-					+" Email: "+current_tc.getEmail()+" Senha: "+current_tc.getSenha()+" cpf: "+current_tc.getCpf()+" Genero: "+current_tc.getGenero().toString()+" Cargo: "+current_tc.getCargo() +" DataNascimento "+current_tc.getDatanascimento().toString()
+					+" Email: "+current_tc.getBairro()+" Senha: "+current_tc.getSenha()+" cpf: "+current_tc.getCpf()+" Genero: "+current_tc.getGenero().toString()+" Cargo: "+current_tc.getCargo() +" DataNascimento "+current_tc.getDatanascimento().toString()
 					+" Endereço: "+current_tc.getEndereco()+" Numero: "+current_tc.getNumero()+" Cep: "+current_tc.getCep()	);		}	
 		
 		

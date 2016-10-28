@@ -20,7 +20,7 @@ public class CidadeTest {
 	Estado Estado = new Estado();
 	
 	// CADASTRAR
-	//@Test
+	@Test
 	public void testCadastroCidade() throws Exception {
 		
 		Cidade.setNome("Curitiba");
