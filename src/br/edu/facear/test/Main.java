@@ -50,16 +50,16 @@ import br.edu.facear.crm.entity.Usuario;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-//		gerenciarTipoTelefone();
-//		gerenciarTipoEmpresa();
-//		gerenciarTelefone();
-//		gerenciarProduto();
-//		gerenciarEstado();
+		gerenciarTipoTelefone();
+		gerenciarTipoEmpresa();
+		gerenciarTelefone();
+		gerenciarProduto();
 		gerenciarEstado();
-//		gerenciarCidade();
-//		gerenciarOrigemContato();
-//		gerenciarTipoUsuario();
-//		gerenciarTipoComunicador();
+		gerenciarEstado();
+		gerenciarCidade();
+		gerenciarOrigemContato();
+		gerenciarTipoUsuario();
+		gerenciarTipoComunicador();
 //		gerenciarUsuario();
 //		gerenciarUsuario();
 //		gerenciarTipoContato();
@@ -179,6 +179,7 @@ public class Main {
 
 		/*cadastro de estado*/
 		e.setNome("Pernambuco");
+		e.setPais("Republica das Bananas");
 		eBO.Cadastrar(e);
 		
 //		System.out.println("Busca Estado:");
