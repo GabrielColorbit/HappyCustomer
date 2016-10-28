@@ -35,8 +35,7 @@
 							<label>Estado</label> 
 
 							    <select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-							      ng-options="estado.nome for estado in estados track by estado.id"
-							      ng-model="cidade.estado"></select>
+							      ng-options="estado.nome estado.pais for estado in estados track by estado.id" ng-model="cidade.estado"></select>
 								<p class="help-block text-danger"></p>
 							
 						</div>

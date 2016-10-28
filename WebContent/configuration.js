@@ -26,7 +26,7 @@ app.config(function ($routeProvider) {
         when('/TipoContato/Cadastrar', {templateUrl: 'tipo_contato/partials/criar_tipo_contato.html', controller:'CadastrarTipoContatoController'}).
         
         //Paths of Usuario    
-        when('/Usuario/Editar/:tipocontatoId', {templateUrl: 'usuario/partials/editar_usuario.html', controller: 'GetUsuarioController'}).
+        when('/Usuario/Editar/:usuarioId', {templateUrl: 'usuario/partials/editar_usuario.html', controller: 'GetUsuarioController'}).
         when('/Usuario', {templateUrl: 'usuario/partials/listar_usuario.html', controller: 'ListarUsuarioController'}).
         when('/Usuario/Cadastrar', {templateUrl: 'usuario/partials/criar_usuario.html', controller:'CadastrarUsuarioController'}).
         
