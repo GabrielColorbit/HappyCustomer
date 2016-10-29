@@ -1,5 +1,12 @@
 package br.edu.facear.crm.entity;
 
-public enum Genero {
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public enum Genero implements Serializable{
 	masculino, feminino;
+
+	 
 }

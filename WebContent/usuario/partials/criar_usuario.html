@@ -24,61 +24,58 @@
 				<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 				{{Resposta}}
 				<form name="sentMessage" id="contactForm" novalidate>
-					<div class="row control-group">
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Nome</label> 
-							<input type="text" ng-model="usuario.nome" class="form-control" placeholder="Nome" id="nome" ng-model="usuario.nome" required data-validation-required-message="Por favor insira um nome">
-							<p class="help-block text-danger"></p>
-						</div>
-
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Email</label> 
-							<input type="email" ng-model="usuario.email" class="form-control" placeholder="Email" id="Email" required data-validation-required-message="Por favor insira um Email">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>CPF</label> 
-							<input type="text" ng-model="usuario.email"  class="form-control" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
-							<p class="help-block text-danger"></p>
-						</div>
-
-						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Gênero</label> 								
-							<select ng-model="usuario.genero" ng-default="Genero" class="form-control" required data-validation-required-message="Por favor selecione um gênero de usuário">
-								 
-								 <option value="masculino">Masculino</option>
-								 <option value="feminino">Feminino</option>
-							</select>
-							<p class="help-block text-danger"></p>
-							
-						</div>
 						<div class="row control-group">
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Nome</label>
+								<input type="text" ng-model="usuario.nome" class="form-control" placeholder="Nome" id="nome" ng-model="usuario.nome" required data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cargo</label> 
-								<input type="text" ng-model="usuario.cargo"  class="form-control" placeholder="Cargo" id="Cargo" required data-validation-required-message="Por favor digite um cargo.">
+								<label>Email</label>
+								<input type="email" ng-model="usuario.email" class="form-control" placeholder="Email" id="Email" required data-validation-required-message="Por favor insira um Email">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+						<div class="row control-group">
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+								<label>CPF</label>
+								<input type="text" ng-model="usuario.email"  class="form-control" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Gênero</label>
+								<select   ng-model="usuario.genero"  class="form-control" required data-validation-required-message="Por favor selecione um gênero de usuário">
+									<option value="default">Genero</option>
+									<option ng-repeat="genero in generos" value="{{genero}}">{{genero}}</option>
+
+								</select>
+								<p class="help-block text-danger"></p>
+
+							</div>
+						</div>
+
+						<div class="row control-group">
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cargo</label>
+								<input type="text" ng-model="usuario.cargo"  class="form-control" placeholder="Cargo" required data-validation-required-message="Por favor digite um cargo.">
 								<p class="help-block text-danger"></p>
 							</div>
 
 
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Tipo de Usuário</label> 								
-								      
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Tipo de Usuário</label>
+
     								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário" ng-model="usuario.tipousuario">
-								
+
 										<option ng-repeat="tipousuario in tiposusuario" value="{{tipousuario.id}}">{{tipousuario.nome}}</option>
-	
+
 									</select>
-							      
-								<p class="help-block text-danger"></p>								
-								
+
+								<p class="help-block text-danger"></p>
+
 							</div>
 						</div>
 						<div class="row control-group">
@@ -102,9 +99,9 @@
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Estado</label> 
+								<label>Estado</label>
 								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário" ng-model="usuario.tipousuario">
-								
+
 									<option ng-repeat="estado in estados" value="{{estado}}">{{estado.nome +' - '+estado.pais}}</option>
 
 								</select>
@@ -113,7 +110,7 @@
 
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cidade</label> 
+								<label>Cidade</label>
 								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário">
 									<option ng-repeat="cidade in cidades" value="{{cidade.id}}">{{cidade.nome}}</option>
 								</select>
@@ -124,14 +121,14 @@
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Endereço</label> 
-								<input type="tel" class="form-control"  data-validation-required-message="Please enter your phone number.">
+								<label>Endereço</label>
+								<input type="tel" class="form-control"  data-validation-required-message="Please enter your phone number." placeholder="Endereço">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Número</label> 
-								<input type="number" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+								<label>Número</label>
+								<input type="number" class="form-control" placeholder="Número id="phone" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -152,8 +149,6 @@
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
-
-
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
@@ -163,6 +158,7 @@
 								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
 							</div>
 						</div>
+
 				</form>
 			</div>
 		</div>

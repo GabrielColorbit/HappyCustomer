@@ -21,7 +21,7 @@ public class CidadeRestful {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<Cidade> findAll() throws Exception{
-				
+
 		return (ArrayList<Cidade>) new FacadeHappyCustomer().ListarCidade();
 	}
 	@POST
@@ -31,9 +31,9 @@ public class CidadeRestful {
 	@Path("/Salvar")
 	public void cadastrarCliente(Cidade cidade) throws Exception {
 		if(cidade.getId() == null)
-			new FacadeHappyCustomer().CadastrarCidade(cidade);	
+			new FacadeHappyCustomer().CadastrarCidade(cidade);
 		else
-			new FacadeHappyCustomer().AlterarCidade(cidade);	
+			new FacadeHappyCustomer().AlterarCidade(cidade);
 
 	}
 	@GET
@@ -42,9 +42,8 @@ public class CidadeRestful {
 	public Cidade editarCidade(@PathParam(value = "id") String codigo) throws Exception{
 		Long id = Long.parseUnsignedLong(codigo);
 		Cidade cidade = new FacadeHappyCustomer().BuscarCidadePorId(id);
-		
 		return cidade;
 	}
-	
-	
+
+
 }

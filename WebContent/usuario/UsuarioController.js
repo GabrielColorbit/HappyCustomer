@@ -9,18 +9,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http, svc) 
 		.success(function(data) {
 			$scope.usuarios = data["usuario"];
 		});
-		$http.get('http://localhost:8080/CRM/rest/restEstado/listarTodos')
-		.success(function(data) {
-			$scope.estados = data["estado"];
-		});
-		$http.get('http://localhost:8080/CRM/rest/restCidade/listarTodos')
-		.success(function(data) {
-			$scope.cidades = data["cidade"];
-		});
-		$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
-		.success(function(data) {
-			$scope.tiposusuario = data["tipousuario"];
-		});
+
 	};
 	$scope.BuscarInformacao();
 	$scope.ordenar = function(keyname){
@@ -35,7 +24,7 @@ myControllers.controller('GetUsuarioController', function($scope, $routeParams,$
 		.success(function(data) {
 			$scope.tipoContato = data;
 			var tipoContato =  new Object();
-			tipoContato = $scope.tipoContato 
+			tipoContato = $scope.tipoContato
 
 		});
 	}
@@ -44,14 +33,16 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $routePa
 
 
 
-	
+
 	$scope.Titulo = "Cadastrar Tipo de Contato";
-	
+
 });
 myControllers.controller('UsuarioController', function($scope, $routeParams,$http) {
-	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+
+
+	$http.get('http://localhost:8080/CRM/rest/restGenero/listarTodos')
 	.success(function(data) {
-		$scope.usuarios = data["usuario"];
+		$scope.generos = data["genero"];
 	});
 	$http.get('http://localhost:8080/CRM/rest/restEstado/listarTodos')
 	.success(function(data) {
@@ -66,39 +57,39 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 		$scope.tiposusuario = data["tipoUsuario"];
 	});
 	$scope.EnviarInformacao = function() {
-		
+
 		var parameter = JSON.stringify({
 			type : "usuario",
 			id : $scope.usuario.id,
 			nome : $scope.usuario.nome,
 			tipousuario : $scope.usuario.tipousuario,
-			cidade : $scope.cidade,
-			telefones: $scope.telefones,
-			email : $scope.email,
-			senha : $scope.senha,
-			cpf : $scope.cpf,
-			genero : $scope.genero,
-			cargo : $scope.cargo,
-			datanascimento : $scope.datanascimento,
-			endereco : $scope.endereco,
-			numero : $scope.numero,
-			cep : $scope.cep
-			
-			
+			cidade : $scope.usuario.cidade,
+			telefones: $scope.usuario.telefones,
+			email : $scope.usuario.email,
+			senha : $scope.usuario.senha,
+			cpf : $scope.usuario.cpf,
+			genero : $scope.usuario.genero,
+			cargo : $scope.usuario.cargo,
+			datanascimento : $scope.usuario.datanascimento,
+			endereco : $scope.usuarioendereco,
+			numero : $scope.usuario.numero,
+			cep : $scope.usuario.cep
+
+
 		});
 		var config = {
 			headers : {
 				'Content-Type' : 'application/json;charset=utf-8;'
 			}
 		}
-		
+
 		$http.post(
 				'http://localhost:8080/CRM/rest/restTipoContato/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
 					$scope.Resposta = 'Tipo Contato Salvo com Sucesso!';
-					
-					
+
+
 				}).error(
 				function(data, status, header, config) {
 					$scope.Resposta = "Data: " + data + "<hr />status: "
@@ -106,6 +97,5 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 							+ "<hr />config: " + config;
 				});
 	   };
-	
-});
 
+});
