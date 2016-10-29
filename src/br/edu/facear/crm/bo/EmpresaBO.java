@@ -12,10 +12,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	@Override
 	public void Cadastrar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
-		   o.getCidade() == null ||
-   		   o.getTelefones() == null ||
-    	   o.getContatos() == null ||
-		   o.getNome() == null ||
+		   o.getRazaosocial() == null ||
 		   o.getCnpj() == null ||
 		   o.getDatacadastro() == null ||
 		   o.getStatus() == null ||
@@ -43,9 +40,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	public void Alterar(Empresa o) throws Exception {
 		if(o.getTipoempresa() == null ||
 		   o.getCidade() == null ||
-		   o.getTelefones() == null ||
-		   o.getContatos() == null ||
-		   o.getNome() == null ||
+		   o.getRazaosocial() == null ||
 		   o.getCnpj() == null ||
 		   o.getDatacadastro() == null ||
 		   o.getStatus() == null ||
@@ -73,10 +68,9 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 
 	@Override
 	public void Excluir(Empresa o) throws Exception {
-		if(o.getNome() == null) {
+		if(o.getRazaosocial() == null) {
 			throw new Exception("Empresa Selecionada é inválida.");
 		}		
-		edao.Excluir(o);		
+		edao.Excluir(o);	
 	}
-
 }

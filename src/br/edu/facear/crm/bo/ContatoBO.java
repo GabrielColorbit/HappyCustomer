@@ -15,7 +15,6 @@ public class ContatoBO implements InterfaceBO<Contato>{
 		   o.getUsuarioresponsavel() == null ||
    		   o.getCidade() == null ||
     	   o.getNome() == null ||
-		   o.getEmail() == null ||
 		   o.getCpf() == null ||
 		   o.getFoto() == null ||
 		   o.getGenero() == null ||
@@ -45,7 +44,6 @@ public class ContatoBO implements InterfaceBO<Contato>{
 		   o.getUsuarioresponsavel() == null ||
    		   o.getCidade() == null ||
     	   o.getNome() == null ||
-		   o.getEmail() == null ||
 		   o.getCpf() == null ||
 		   o.getFoto() == null ||
 		   o.getGenero() == null ||
