@@ -29,7 +29,7 @@ public class ProdutoTest {
 	// ALTERAR
 	//@Test
 	public void testAterarProduto() throws Exception {
-		Produto Produto = facade.BuscarProdutoPorId(3l);
+		Produto Produto = facade.BuscarProdutoPorId(2l);
 		Produto.setNome("Coca-Cola");
 		Produto.setPreco(5.78f);
 		facade.AlterarProduto(Produto);
