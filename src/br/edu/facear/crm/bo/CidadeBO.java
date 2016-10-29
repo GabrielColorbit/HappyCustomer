@@ -11,14 +11,17 @@ public class CidadeBO implements InterfaceBO<Cidade>{
 	@Override
 	public void Cadastrar(Cidade cidade) throws Exception {
 			
-//		validação de campos vazios mechi aqui
+
 
 		if(cidade.getNome() == null) {
 			throw new Exception("Nome da Cidade é Invalido");
 		}		
-		else if(cidade.getNome() == null) {
-			throw new Exception("Estado é Invalido");
+		else if(cidade.getEstado() ==  null){
+			throw new Exception("Selecione um estado.");
 		}
+		
+		
+		
 		cDAO.Cadastrar(cidade);
 		
 		
@@ -38,9 +41,11 @@ public class CidadeBO implements InterfaceBO<Cidade>{
 		if(cidade.getNome() == null) {
 			throw new Exception("Nome da Cidade é Invalido");
 		}
-		else if(cidade.getNome() == null) {
+		else if(cidade.getEstado() == null) {
 			throw new Exception("Nome Estado é Invalido");
 		}
+		
+		
 		cDAO.Alterar(cidade);		
 	}
 

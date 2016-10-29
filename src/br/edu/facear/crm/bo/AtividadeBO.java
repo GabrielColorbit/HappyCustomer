@@ -9,23 +9,38 @@ import br.edu.facear.crm.entity.Empresa;
 public class AtividadeBO implements InterfaceBO<Atividade>{
 	AtividadeDAO adao =  new AtividadeDAO();
 	@Override
-	public void Cadastrar(Atividade o) throws Exception {
-		if(o.getUsuario() == null ||
-		   o.getEmpresa() == null ||
-   		   o.getTipoatividade() == null ||
-    	   o.getContato() == null ||
-		   o.getNome() == null ||
-		   o.getTipocomunicador() == null ||
-		   o.getStatus() == null ||
-		   o.getDatainicio() == null ||
-		   o.getDatafim() == null ||
-		   o.getDescricao() == null ){
-				throw new Exception("Preencher todos os campos da atividade");
-			}
+	public void Cadastrar(Atividade atividade) throws Exception {
+		if(atividade.getUsuario() == null) {
+			throw new Exception("Selecione um Usuário");
+		}else if(atividade.getEmpresa() ==  null){
+			throw new Exception("Selecione uma Empresa.");
+		}
+		else if(atividade.getTipoatividade() ==  null){
+			throw new Exception("Selecione uma Atividade.");
+		}
+		else if(atividade.getTipocomunicador() ==  null){
+			throw new Exception("Selecione um Comunicador.");
+		}else if(atividade.getContato() ==  null){
+			throw new Exception("Selecione uma Contato.");
+		}
+		else if(atividade.getStatus() ==  null){
+			throw new Exception("Selecione um Status.");
+		}
+		else if(atividade.getNome() ==  null){
+			throw new Exception("Nome da atividade Invalido.");
+		}else if(atividade.getDatainicio() ==  null){
+			throw new Exception("Data Invalida.");
+		}
+		else if(atividade.getDatafim() ==  null){
+			throw new Exception("Data Invalida.");
+		}else if(atividade.getDescricao() ==  null){
+			throw new Exception("Nome da Descrição Invalida.");
+		}
 		
-			adao.Cadastrar(o);		
+		
+			adao.Cadastrar(atividade);		
 	}
-	//mechi aqui porra
+	
 
 	@Override
 	public List<Atividade> Listar() throws Exception {
@@ -37,21 +52,36 @@ public class AtividadeBO implements InterfaceBO<Atividade>{
 	}
 
 	@Override
-	public void Alterar(Atividade o) throws Exception {
-		if(o.getUsuario() == null ||
-		   o.getEmpresa() == null ||
-		   o.getTipoatividade() == null ||
-		   o.getContato() == null ||
-		   o.getNome() == null ||
-		   o.getTipocomunicador() == null ||
-		   o.getStatus() == null ||
-		   o.getDatainicio() == null ||
-		   o.getDatafim() == null ||
-		   o.getDescricao() == null ){
-				throw new Exception("Preencher todos os campos da atividade");
-			}
+	public void Alterar(Atividade atividade) throws Exception {
 		
-			adao.Alterar(o);	
+		if(atividade.getUsuario() == null) {
+			throw new Exception("Selecione um Usuário");
+		}else if(atividade.getEmpresa() ==  null){
+			throw new Exception("Selecione uma Empresa.");
+		}
+		else if(atividade.getTipoatividade() ==  null){
+			throw new Exception("Selecione uma Atividade.");
+		}
+		else if(atividade.getTipocomunicador() ==  null){
+			throw new Exception("Selecione um Comunicador.");
+		}else if(atividade.getContato() ==  null){
+			throw new Exception("Selecione uma Contato.");
+		}
+		else if(atividade.getStatus() ==  null){
+			throw new Exception("Selecione um Status.");
+		}
+		else if(atividade.getNome() ==  null){
+			throw new Exception("Nome da atividade Invalido.");
+		}else if(atividade.getDatainicio() ==  null){
+			throw new Exception("Data Invalida.");
+		}
+		else if(atividade.getDatafim() ==  null){
+			throw new Exception("Data Invalida.");
+		}else if(atividade.getDescricao() ==  null){
+			throw new Exception("Nome da Descrição Invalida.");
+		}
+		
+			adao.Alterar(atividade);	
 	}
 
 	@Override

@@ -9,24 +9,30 @@ import br.edu.facear.crm.entity.Usuario;
 public class ContatoBO implements InterfaceBO<Contato>{
 	ContatoDAO cdao = new ContatoDAO();
 	@Override
-	public void Cadastrar(Contato o) throws Exception {
-		if(o.getTipocontato() == null ||
-		   o.getOrigemcontato() == null ||
-		   o.getUsuarioresponsavel() == null ||
-   		   o.getCidade() == null ||
-    	   o.getNome() == null ||
-		   o.getEmail() == null ||
-		   o.getCpf() == null ||
-		   o.getFoto() == null ||
-		   o.getGenero() == null ||
-		   o.getCargo() == null ||
-		   o.getDatanascimento() == null ||
-		   o.getEndereco() == null ||
-		   o.getNumero() == null ||
-		   o.getCep() == null 	    ){
-			throw new Exception("Preencher todos os campos do contato");
+	public void Cadastrar(Contato contato) throws Exception {
+		
+		if(contato.getTipocontato() == null) {
+			throw new Exception("Selecione um Tipo de Contato");
+		}		
+		else if(contato.getOrigemcontato() ==  null){
+			throw new Exception("Selecione uma Origem de Contato.");
 		}
-		cdao.Cadastrar(o);		
+		else if(contato.getUsuarioresponsavel() ==  null){
+			throw new Exception("Selecione um Usuário Responsavel.");
+		}
+		else if(contato.getCidade() ==  null){
+			throw new Exception("Selecione uma Cidade.");
+		}
+		else if(contato.getTipocomunicador() ==  null){
+			throw new Exception("Selecione um Tipo Comunicador.");
+		}
+		else if(contato.getTipocomunicador() ==  null){
+			throw new Exception("Selecione um Tipo Comunicador.");
+		}
+		
+		
+		
+		cdao.Cadastrar(contato);		
 	}
 
 	@Override
