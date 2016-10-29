@@ -42,15 +42,15 @@ public class Usuario {
 	// TELEFONES
 	//@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@ManyToMany
-	@JoinTable(name = "TB_TELEFONE_USUARIO", joinColumns = {
+	@JoinTable(name = "\"TB_TELEFONE_USUARIO\"", joinColumns = {
 	@JoinColumn(name = "id_usuario") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_usuario;
 
 	// COMUNICADORES
 	@ManyToMany
-	@JoinTable(name = "TB_COMUNICADOR_USUARIO", joinColumns = {
-	@JoinColumn(name = "id_usuario_") }, inverseJoinColumns = {
+	@JoinTable(name = "\"TB_COMUNICADOR_USUARIO\"", joinColumns = {
+	@JoinColumn(name = "id_usuario") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_comunicador") })
 	private List<Comunicador> comunicadores_usuario;
 

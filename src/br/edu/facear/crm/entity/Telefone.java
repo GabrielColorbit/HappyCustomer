@@ -35,12 +35,12 @@ public class Telefone {
 	private List<Usuario> usuarios;
 
 	// TELEFONE_EMPRESAS
-	//@ManyToMany(mappedBy = "telefones_empresa")
-	//private List<Empresa> empresas;
+	@ManyToMany(mappedBy = "telefones_empresa")
+	private List<Empresa> empresas;
 
 	// TELEFONE_CONTATOS
-	//@ManyToMany(mappedBy = "telefones_contato")
-	//private List<Contato> contatos;
+	@ManyToMany(mappedBy = "telefones_contato")
+	private List<Contato> contatos;
 
 	// ATRIBUTOS
 	private String numero;

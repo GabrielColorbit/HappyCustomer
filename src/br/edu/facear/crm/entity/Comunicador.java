@@ -32,15 +32,13 @@ public class Comunicador {
 	private List<Usuario> usuarios;
 
 	// COMUNICADOR_EMPRESAS
-	//@ManyToMany(mappedBy = "comunicadores_empresa")
-	//private List<Empresa> empresas;
+	@ManyToMany(mappedBy = "comunicadores_empresa")
+	private List<Empresa> empresas;
 
 	// COMUNICADOR_CONTATOS
-	//@ManyToMany(mappedBy = "comunicadores_contato")
-	//private List<Contato> contatos;
+	@ManyToMany(mappedBy = "comunicadores_contato")
+	private List<Contato> contatos;
 
-	
-	
 	// ATRIBUTO(S)
 	private String nome;
 

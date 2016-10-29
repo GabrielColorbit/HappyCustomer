@@ -9,6 +9,7 @@ import br.edu.facear.crm.entity.Usuario;
 public class ContatoBO implements InterfaceBO<Contato>{
 	ContatoDAO cdao = new ContatoDAO();
 	@Override
+<<<<<<< HEAD
 	public void Cadastrar(Contato contato) throws Exception {
 		
 		if(contato.getTipocontato() == null) {
@@ -16,6 +17,23 @@ public class ContatoBO implements InterfaceBO<Contato>{
 		}		
 		else if(contato.getOrigemcontato() ==  null){
 			throw new Exception("Selecione uma Origem de Contato.");
+=======
+	public void Cadastrar(Contato o) throws Exception {
+		if(o.getTipocontato() == null ||
+		   o.getOrigemcontato() == null ||
+		   o.getUsuarioresponsavel() == null ||
+   		   o.getCidade() == null ||
+    	   o.getNome() == null ||
+		   o.getCpf() == null ||
+		   o.getFoto() == null ||
+		   o.getGenero() == null ||
+		   o.getCargo() == null ||
+		   o.getDatanascimento() == null ||
+		   o.getEndereco() == null ||
+		   o.getNumero() == null ||
+		   o.getCep() == null 	    ){
+			throw new Exception("Preencher todos os campos do contato");
+>>>>>>> origin/master
 		}
 		else if(contato.getUsuarioresponsavel() ==  null){
 			throw new Exception("Selecione um Usuário Responsavel.");
@@ -51,7 +69,6 @@ public class ContatoBO implements InterfaceBO<Contato>{
 		   o.getUsuarioresponsavel() == null ||
    		   o.getCidade() == null ||
     	   o.getNome() == null ||
-		   o.getEmail() == null ||
 		   o.getCpf() == null ||
 		   o.getFoto() == null ||
 		   o.getGenero() == null ||

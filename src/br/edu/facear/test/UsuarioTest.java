@@ -36,9 +36,10 @@ public class UsuarioTest {
 	//SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 	
 	// CADASTRAR
-	//@Test
+	@Test
 	public void testCadastroUsuario() throws Exception {
 		
+		//ATRIBUTOS
 		Usuario.setNome("Luiz");
 		Usuario.setCpf("09788163904");
 		Calendar datanascimento = new GregorianCalendar(9,05,1997);
@@ -48,16 +49,6 @@ public class UsuarioTest {
 		Usuario.setComplemento("Próximo a Cocelpa");
 		Usuario.setCep("83707350");
 		Usuario.setBairro("Jardim Alvorada");
-		
-		Cidade.setId(1l);
-		Usuario.setCidade(Cidade);
-		//usuárioVO.setMunicípio("Araucária");
-		//usuárioVO.setUF("PR");
-		//usuárioVO.setPais("Brasil");
-		
-		TipoUsuario.setId(1l);
-		Usuario.setTipousuario(TipoUsuario);
-		
 		Usuario.setGenero(Genero.masculino);
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
@@ -66,7 +57,15 @@ public class UsuarioTest {
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.ativo);
 		
-		//CADASTRANDO TELEFONE
+		//CIDADE
+		Cidade.setId(1l);
+		Usuario.setCidade(Cidade);
+		
+		//TIPO
+		TipoUsuario.setId(1l);
+		Usuario.setTipousuario(TipoUsuario);
+		
+		//TELEFONE
 		Telefone.setNumero("(41) 9613-5114");
 		TipoTelefone.setId(1l);
 		Telefone.setTipotelefone(TipoTelefone);
@@ -76,7 +75,7 @@ public class UsuarioTest {
 		telefones_usuario.add(Telefone);
 		Usuario.setTelefones_usuario(telefones_usuario);
 		
-		//CADASTRANDO COMUNICADOR
+		//COMUNICADOR
 		Comunicador.setNome("luizhenrique@gmail.com");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
@@ -86,6 +85,7 @@ public class UsuarioTest {
 		comunicadores_usuario.add(Comunicador);
 		Usuario.setComunicadores_usuario(comunicadores_usuario);
 		
+		//CADASTRAR
 		facade.CadastrarUsuario(Usuario);
 		Assert.assertEquals(true, Usuario.getId() != null);
 	}
@@ -96,6 +96,7 @@ public class UsuarioTest {
 		
 		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 
+		//ATRIBUTOS
 		Usuario.setNome("Gabriel");
 		Usuario.setCpf("09788163904");
 		Calendar datanascimento = new GregorianCalendar(30,9,1994);
@@ -105,16 +106,6 @@ public class UsuarioTest {
 		Usuario.setComplemento("Próximo ao Terminal CIC");
 		Usuario.setCep("83707000");
 		Usuario.setBairro("CIC");
-		
-		Cidade.setId(1l);
-		Usuario.setCidade(Cidade);
-		//usuárioVO.setMunicípio("Araucária");
-		//usuárioVO.setUF("PR");
-		//usuárioVO.setPais("Brasil");
-		
-		TipoUsuario.setId(1l);
-		Usuario.setTipousuario(TipoUsuario);
-		
 		Usuario.setGenero(Genero.feminino);
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
@@ -123,35 +114,43 @@ public class UsuarioTest {
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.inativo);
 		
-		//CADASTRANDO TELEFONE
+		//CIDADE
+		Cidade.setId(1l);
+		Usuario.setCidade(Cidade);
+		
+		//TIPO DE USUÁRIO
+		TipoUsuario.setId(1l);
+		Usuario.setTipousuario(TipoUsuario);
+		
+		// ALTERANDO TELEFONE
+		Telefone Telefone = facade.BuscarTelefonePorId(1l);
 		Telefone.setNumero("(41) 8554-7070");
 		TipoTelefone.setId(1l);
 		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
+		facade.AlterarTelefone(Telefone);
 		
 		List<Telefone> telefones_usuario = new ArrayList<Telefone>();
 		telefones_usuario.add(Telefone);
 		Usuario.setTelefones_usuario(telefones_usuario);
 		
-		//CADASTRANDO COMUNICADOR
+		// ALTERANDO COMUNICADOR
+		Comunicador Comunicador = facade.BuscarComunicadorPorId(1l);
 		Comunicador.setNome("gabrielumbelino@gmail.com");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
+		facade.AlterarComunicador(Comunicador);
 		
 		List<Comunicador> comunicadores_usuario = new ArrayList<Comunicador>();
 		comunicadores_usuario.add(Comunicador);
 		Usuario.setComunicadores_usuario(comunicadores_usuario);
 		
-		facade.CadastrarUsuario(Usuario);
-		Assert.assertEquals(true, Usuario.getId() != null);
-		
+		//ALTERAR	
 		facade.AlterarUsuario(Usuario);
 		Assert.assertEquals(true, Usuario.getNome().equals("Gabriel"));
 	}
 	
 	//EXCLUIR
-	@Test
+	//@Test
 	public void testExcluirUsuario() throws Exception {
 		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 		facade.ExcluirUsuario(Usuario);

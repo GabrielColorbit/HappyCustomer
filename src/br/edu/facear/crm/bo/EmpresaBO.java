@@ -10,6 +10,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	EmpresaDAO edao  =  new EmpresaDAO();
 	//car
 	@Override
+<<<<<<< HEAD
 	public void Cadastrar(Empresa empresa) throws Exception {
 					
 
@@ -58,6 +59,23 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		
 		
 	        edao.Cadastrar(empresa);
+=======
+	public void Cadastrar(Empresa o) throws Exception {
+		if(o.getTipoempresa() == null ||
+		   o.getRazaosocial() == null ||
+		   o.getCnpj() == null ||
+		   o.getDatacadastro() == null ||
+		   o.getStatus() == null ||
+		   o.getRamo() == null ||
+		   o.getSite() == null ||
+		   o.getEndereco() == null ||
+		   o.getNumero() == null ||
+		   o.getCep() == null 	    ){
+				throw new Exception("Preencher todos os campos da empresa");
+			}
+						
+	        edao.Cadastrar(o);
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -70,6 +88,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void Alterar(Empresa empresa) throws Exception {
 		
 		
@@ -119,6 +138,23 @@ else if(empresa.getCep() ==  null){
 		
 		
 			edao.Alterar(empresa);				
+=======
+	public void Alterar(Empresa o) throws Exception {
+		if(o.getTipoempresa() == null ||
+		   o.getCidade() == null ||
+		   o.getRazaosocial() == null ||
+		   o.getCnpj() == null ||
+		   o.getDatacadastro() == null ||
+		   o.getStatus() == null ||
+		   o.getRamo() == null ||
+		   o.getSite() == null ||
+		   o.getEndereco() == null ||
+		   o.getNumero() == null ||
+		   o.getCep() == null 	    ){
+				throw new Exception("Preencher todos os campos da empresa");
+			}
+			edao.Alterar(o);				
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -135,10 +171,9 @@ else if(empresa.getCep() ==  null){
 
 	@Override
 	public void Excluir(Empresa o) throws Exception {
-		if(o.getNome() == null) {
+		if(o.getRazaosocial() == null) {
 			throw new Exception("Empresa Selecionada é inválida.");
 		}		
-		edao.Excluir(o);		
+		edao.Excluir(o);	
 	}
-
 }
