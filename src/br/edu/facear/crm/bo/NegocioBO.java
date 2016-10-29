@@ -8,13 +8,16 @@ import br.edu.facear.crm.entity.Negocio;
 public class NegocioBO implements InterfaceBO<Negocio> {
 	NegocioDAO ndao =  new NegocioDAO();
 	@Override
-	public void Cadastrar(Negocio o) throws Exception {
-		if(o.getEmpresa() == null ||
-		   o.getData() == null){
-
-			throw new Exception("Preencher todos os campos do negocio");
+	public void Cadastrar(Negocio negocio) throws Exception {
+	
+		if(negocio.getEmpresa() == null) {
+			throw new Exception("Selecione Tipo Empresa");
+		}		
+		else if(negocio.getData() ==  null){
+			throw new Exception("Date Informado Invalido .");
 		}
-		ndao.Cadastrar(o);				
+		
+		ndao.Cadastrar(negocio);				
 	}
 
 	@Override
@@ -27,13 +30,17 @@ public class NegocioBO implements InterfaceBO<Negocio> {
 	}
 
 	@Override
-	public void Alterar(Negocio o) throws Exception {
-		if(o.getEmpresa() == null ||
-		   o.getData() == null){
+	public void Alterar(Negocio negocio) throws Exception {
+	
 
-			throw new Exception("Preencher todos os campos do negocio");
+		if(negocio.getEmpresa() == null) {
+			throw new Exception("Selecione Tipo Empresa");
+		}		
+		else if(negocio.getData() ==  null){
+			throw new Exception("Date Informado Invalido .");
 		}
-		ndao.Alterar(o);				
+		
+		ndao.Alterar(negocio);				
 	}
 
 	@Override

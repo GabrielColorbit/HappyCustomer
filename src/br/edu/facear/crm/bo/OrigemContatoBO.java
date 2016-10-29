@@ -11,7 +11,7 @@ public class OrigemContatoBO implements InterfaceBO<OrigemContato>{
 	@Override
 	public void Cadastrar(OrigemContato origemcontato) throws Exception {
 		if(origemcontato.getNome() == null){
-			throw new Exception("Descrição é inválida");
+			throw new Exception("Nome é inválido");
 		}
 		ocdao.Cadastrar(origemcontato);		
 	}

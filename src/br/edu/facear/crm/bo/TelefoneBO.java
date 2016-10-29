@@ -10,12 +10,13 @@ public class TelefoneBO implements InterfaceBO<Telefone>{
 	TelefoneDAO tfDAO = new TelefoneDAO();
 	@Override
 	public void Cadastrar(Telefone telefone) throws Exception {
-		if(telefone.getNumero() == null){
-			throw new Exception("Número de telefone é inválido");
+		if(telefone.getTipotelefone() == null){
+			throw new Exception("Selecione um Tipo de Telefone");
 		}
-		else if(telefone.getTipotelefone() == null){
-			throw new Exception("Tipo de telefone é inválido");
+		else if(telefone.getNumero() == null){
+			throw new Exception("Numero Informado invalido");
 		}
+		
 		tfDAO.Cadastrar(telefone);
 	}
 

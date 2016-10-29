@@ -10,7 +10,6 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	EmpresaDAO edao  =  new EmpresaDAO();
 	//car
 	@Override
-<<<<<<< HEAD
 	public void Cadastrar(Empresa empresa) throws Exception {
 					
 
@@ -20,15 +19,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		else if(empresa.getCidade() ==  null){
 			throw new Exception("Selecione uma cidade .");
 		}
-		else if(empresa.getTelefones() ==  null){
-			throw new Exception("Selecione uma telefone .");
-		}
-		else if(empresa.getContatos() ==  null){
-			throw new Exception("Selecione um Contato .");
-		}
-		else if(empresa.getNome() ==  null){
-			throw new Exception(" Nome Informado Invalido .");
-		}
+
 		else if(empresa.getCnpj() ==  null){
 			throw new Exception("Cnpj Informado Invalido .");
 		}
@@ -59,23 +50,7 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 		
 		
 	        edao.Cadastrar(empresa);
-=======
-	public void Cadastrar(Empresa o) throws Exception {
-		if(o.getTipoempresa() == null ||
-		   o.getRazaosocial() == null ||
-		   o.getCnpj() == null ||
-		   o.getDatacadastro() == null ||
-		   o.getStatus() == null ||
-		   o.getRamo() == null ||
-		   o.getSite() == null ||
-		   o.getEndereco() == null ||
-		   o.getNumero() == null ||
-		   o.getCep() == null 	    ){
-				throw new Exception("Preencher todos os campos da empresa");
-			}
-						
-	        edao.Cadastrar(o);
->>>>>>> origin/master
+
 	}
 
 	@Override
@@ -88,7 +63,6 @@ public class EmpresaBO implements InterfaceBO<Empresa>{
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void Alterar(Empresa empresa) throws Exception {
 		
 		
@@ -99,15 +73,7 @@ if(empresa.getTipoempresa() == null) {
 else if(empresa.getCidade() ==  null){
 	throw new Exception("Selecione uma cidade .");
 }
-else if(empresa.getTelefones() ==  null){
-	throw new Exception("Selecione uma telefone .");
-}
-else if(empresa.getContatos() ==  null){
-	throw new Exception("Selecione um Contato .");
-}
-else if(empresa.getNome() ==  null){
-	throw new Exception(" Nome Informado Invalido .");
-}
+
 else if(empresa.getCnpj() ==  null){
 	throw new Exception("Cnpj Informado Invalido .");
 }
@@ -131,31 +97,10 @@ else if(empresa.getEndereco() ==  null){
 }
 else if(empresa.getCep() ==  null){
 	throw new Exception(" Cep Informado Invalido ");
-}
-
-
-
-		
-		
+}	
 			edao.Alterar(empresa);				
-=======
-	public void Alterar(Empresa o) throws Exception {
-		if(o.getTipoempresa() == null ||
-		   o.getCidade() == null ||
-		   o.getRazaosocial() == null ||
-		   o.getCnpj() == null ||
-		   o.getDatacadastro() == null ||
-		   o.getStatus() == null ||
-		   o.getRamo() == null ||
-		   o.getSite() == null ||
-		   o.getEndereco() == null ||
-		   o.getNumero() == null ||
-		   o.getCep() == null 	    ){
-				throw new Exception("Preencher todos os campos da empresa");
-			}
-			edao.Alterar(o);				
->>>>>>> origin/master
 	}
+	
 
 	@Override
 	public Empresa BuscarID(Long id) throws Exception {
