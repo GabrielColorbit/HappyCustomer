@@ -20,20 +20,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 	
 	@Override
 	public void Cadastrar(Usuario o) throws Exception {
-		if(o.getNome() == null ||
-		   o.getTipousuario() == null ||
-   		   o.getCidade() == null ||
-		   o.getBairro() == null ||
-		   o.getSenha() == null ||
-		   o.getCpf() == null ||
-		   o.getGenero() == null ||
-		   o.getCargo() == null ||
-		   o.getDatanascimento() == null ||
-		   o.getEndereco() == null ||
-		   o.getNumero() == null ||
-		   o.getCep() == null    
-				
-		  ){
+		if(o.getNome() == null ){
 			throw new Exception("Preencher todos os campos do usuário");
 		}
 		udao.Cadastrar(o);

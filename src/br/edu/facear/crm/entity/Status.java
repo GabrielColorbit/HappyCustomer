@@ -1,5 +1,10 @@
 package br.edu.facear.crm.entity;
 
-public enum Status {
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public enum Status implements Serializable{
 	ativo, inativo;
 }
