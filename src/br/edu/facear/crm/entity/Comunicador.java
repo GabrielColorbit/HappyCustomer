@@ -38,6 +38,10 @@ public class Comunicador {
 	// COMUNICADOR_CONTATOS
 	@ManyToMany(mappedBy = "comunicadores_contato")
 	private List<Contato> contatos;
+	
+	// COMUNICADOR_CONTATOS
+	@ManyToMany(mappedBy = "comunicadores_atividade")
+	private List<Atividade> atividades;
 
 	// ATRIBUTO(S)
 	private String nome;

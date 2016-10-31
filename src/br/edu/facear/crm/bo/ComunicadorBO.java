@@ -11,8 +11,6 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 	public void Cadastrar(Comunicador comunicador) throws Exception {
 		if(comunicador.getTipocomunicador() == null){
 			throw new Exception("Selecione um Tipo Comunicador");
-		}else if(comunicador.getUsuarios() ==  null){
-			throw new Exception("Selecione um Usuário.");
 		}
 		else if(comunicador.getNome() ==  null){
 			throw new Exception("Nome Invalido.");
