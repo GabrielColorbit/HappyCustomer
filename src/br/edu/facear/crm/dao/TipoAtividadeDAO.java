@@ -6,43 +6,46 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.TipoAtividade;
-import br.edu.facear.crm.entity.TipoComunicador;
 
-public class TipoAtividadeDAO implements InterfaceDAO<TipoAtividade>{
+public class TipoAtividadeDAO implements InterfaceDAO<TipoAtividade> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
 
+	// CADASTRAR
 	@Override
 	public void Cadastrar(TipoAtividade o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
-		em.getTransaction().commit();				
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public List<TipoAtividade> Listar() {
-		Query q = em.createQuery("select a from TipoAtividade a");
-		
-		return q.getResultList();
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(TipoAtividade o) {
 		em.getTransaction().begin();
 		em.merge(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public TipoAtividade BuscarID(Long id) {
-		return em.find(TipoAtividade.class, id);	
-
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(TipoAtividade o) {
 		em.getTransaction().begin();
 		em.remove(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
+	// LISTAR
+	@Override
+	public List<TipoAtividade> Listar() {
+		Query q = em.createQuery("from TipoAtividade a order by id");
+		return q.getResultList();
+	}
+
+	// BUSCAR ID
+	@Override
+	public TipoAtividade BuscarID(Long id) {
+		return em.find(TipoAtividade.class, id);
+	}
 }

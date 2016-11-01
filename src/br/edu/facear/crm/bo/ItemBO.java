@@ -6,15 +6,17 @@ import br.edu.facear.crm.dao.ItemDAO;
 import br.edu.facear.crm.entity.Item;
 
 public class ItemBO  implements InterfaceBO<Item>{
+	
 	ItemDAO idao = new ItemDAO();
+	
+	//CADASTRAR
 	@Override
 	public void Cadastrar(Item item) throws Exception {
-		
 		if(item.getProduto() == null) {
-			throw new Exception("Selecione um Produto");
+			throw new Exception("Selecione um Produto!");
 		}		
 		else if(item.getNegocio() ==  null){
-			throw new Exception("Selecione um Negócio.");
+			throw new Exception("Selecione um Negócio!");
 		}
 		else if(item.getQuantidade() ==  null){
 			throw new Exception("Quantidade Fornecida Invalido.");

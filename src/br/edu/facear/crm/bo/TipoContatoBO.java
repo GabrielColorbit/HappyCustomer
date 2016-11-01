@@ -5,50 +5,61 @@ import java.util.ArrayList;
 import br.edu.facear.crm.dao.TipoContatoDAO;
 import br.edu.facear.crm.entity.TipoContato;
 
-public class TipoContatoBO implements InterfaceBO<TipoContato>{
-	TipoContatoDAO tcdao = new TipoContatoDAO();
+public class TipoContatoBO implements InterfaceBO<TipoContato> {
+
+	TipoContatoDAO tipocontatoDAO = new TipoContatoDAO();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(TipoContato o) throws Exception {
-		if(o.getNome() == null){
-			throw new Exception("Nome do tipo de contato é inválido");
+		if (o.getNome() == null) {
+			throw new Exception("Nome do tipo de contato é inválido!");
 		}
-		tcdao.Cadastrar(o);
+		else if (o.getNome().isEmpty()) {
+			throw new Exception("Preencha o campo nome!");
+		}
+		tipocontatoDAO.Cadastrar(o);
 	}
 
-	@Override
-	public ArrayList<TipoContato> Listar() throws Exception {
-		ArrayList<TipoContato> tc = tcdao.Listar();
-		if(tc == null){
-			throw new Exception("Nenhuma tipo de contato cadastrado");
-		}
-		return tc;
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(TipoContato o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Nome do tipo de contato é inválido");
+		if (o.getNome() == null) {
+			throw new Exception("Nome do tipo de contato é inválido!");
 		}
-		tcdao.Alterar(o);			
+		else if (o.getNome().isEmpty()) {
+			throw new Exception("Preencha o campo nome!");
+		}
+		tipocontatoDAO.Alterar(o);
 	}
 
-	@Override
-	public TipoContato BuscarID(Long id) throws Exception {
-		if(id == null) {
-			throw new Exception("Tipo de contato pesquisado é Inválido");
-		}
-		else if(id <= 0) {
-			throw new Exception("Tipo de contato Pesquisado é Inválido");
-		}
-		
-		return tcdao.BuscarID(id);
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(TipoContato o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Tipo de contato selecionado é inválido.");
-		}		
-		tcdao.Excluir(o);		
+		if (o.getNome() == null) {
+			throw new Exception("Tipo de contato selecionado é inválido!");
+		}
+		tipocontatoDAO.Excluir(o);
+	}
+
+	// LISTAR
+	@Override
+	public ArrayList<TipoContato> Listar() throws Exception {
+		ArrayList<TipoContato> tipocontato = tipocontatoDAO.Listar();
+		if (tipocontato == null) {
+			throw new Exception("Nenhum tipo de contato cadastrado!");
+		}
+		return tipocontato;
+	}
+
+	// BUSCAR ID
+	@Override
+	public TipoContato BuscarID(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("Tipo de contato pesquisado é inválido!");
+		} else if (id <= 0) {
+			throw new Exception("Tipo de contato pesquisado é inválido!");
+		}
+		return tipocontatoDAO.BuscarID(id);
 	}
 }

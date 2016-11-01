@@ -6,61 +6,60 @@ import br.edu.facear.crm.dao.ComunicadorDAO;
 import br.edu.facear.crm.entity.Comunicador;
 
 public class ComunicadorBO implements InterfaceBO<Comunicador> {
-	ComunicadorDAO tcdao = new ComunicadorDAO();
+
+	ComunicadorDAO comunicadorDAO = new ComunicadorDAO();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(Comunicador comunicador) throws Exception {
-		if(comunicador.getTipocomunicador() == null){
-			throw new Exception("Selecione um Tipo Comunicador");
+		if (comunicador.getNome() == null) {
+			throw new Exception("Nome do comunicador é invalido!");
 		}
-		else if(comunicador.getNome() ==  null){
-			throw new Exception("Nome Invalido.");
+		else if (comunicador.getTipocomunicador() == null) {
+			throw new Exception("Selecione um Tipo de Comunicador!");
 		}
-		
-		tcdao.Cadastrar(comunicador);		
+		comunicadorDAO.Cadastrar(comunicador);
 	}
 
-	
-	@Override
-	public List<Comunicador> Listar() throws Exception {
-		List<Comunicador> tc= tcdao.Listar();
-		if(tc == null){
-			throw new Exception("Nenhum comunicador cadastrado");
-		}
-		return tc;
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(Comunicador comunicador) throws Exception {
-		if(comunicador.getTipocomunicador() == null){
-			throw new Exception("Selecione um Tipo Comunicador");
-		}else if(comunicador.getUsuarios() ==  null){
-			throw new Exception("Selecione um Usuário.");
+		if (comunicador.getNome() == null) {
+			throw new Exception("Nome do comunicador é invalido!");
 		}
-		else if(comunicador.getNome() ==  null){
-			throw new Exception("Nome Invalido.");
+		else if (comunicador.getTipocomunicador() == null) {
+			throw new Exception("Selecione um Tipo de Comunicador!");
 		}
-		
-		tcdao.Alterar(comunicador);			
+		comunicadorDAO.Alterar(comunicador);
 	}
 
-	@Override
-	public Comunicador BuscarID(Long id) throws Exception {
-		if(id == null) {
-			throw new Exception("Comunicador pesquisado é Inválido");
-		}
-		else if(id <= 0) {
-			throw new Exception("Comunicador Pesquisado é Inválido");
-		}
-		
-		return tcdao.BuscarID(id);
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(Comunicador o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Comunicador selecionado é inválido.");
-		}		
-		tcdao.Excluir(o);			
+		if (o.getNome() == null) {
+			throw new Exception("Comunicador selecionado é inválido!");
+		}
+		comunicadorDAO.Excluir(o);
 	}
 
+	// LISTAR
+	@Override
+	public List<Comunicador> Listar() throws Exception {
+		List<Comunicador> comunicadores = comunicadorDAO.Listar();
+		if (comunicadores == null) {
+			throw new Exception("Nenhum comunicador cadastrado!");
+		}
+		return comunicadores;
+	}
+
+	// BUSCAR ID
+	@Override
+	public Comunicador BuscarID(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("Comunicador pesquisado é Inválido!");
+		} else if (id <= 0) {
+			throw new Exception("Comunicador Pesquisado é Inválido!");
+		}
+		return comunicadorDAO.BuscarID(id);
+	}
 }

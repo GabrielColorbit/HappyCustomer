@@ -13,13 +13,12 @@ import org.junit.Assert;
 public class TipoEmpresaTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoEmpresa() throws Exception {
 		TipoEmpresa TipoEmpresa = new TipoEmpresa();
-		TipoEmpresa.setNome("Telecomunicações");
+		TipoEmpresa.setNome(null);
 		facade.CadastrarTipoEmpresa(TipoEmpresa);
 		Assert.assertEquals(true, TipoEmpresa.getId() != null);
 	}

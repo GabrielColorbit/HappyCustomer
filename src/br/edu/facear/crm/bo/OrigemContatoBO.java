@@ -5,52 +5,55 @@ import java.util.List;
 import br.edu.facear.crm.dao.OrigemContatoDAO;
 import br.edu.facear.crm.entity.OrigemContato;
 
-public class OrigemContatoBO implements InterfaceBO<OrigemContato>{
-	OrigemContatoDAO ocdao = new OrigemContatoDAO();
-	
+public class OrigemContatoBO implements InterfaceBO<OrigemContato> {
+
+	OrigemContatoDAO origemcontatoDAO = new OrigemContatoDAO();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getNome() == null){
-			throw new Exception("Nome é inválido");
+		if (origemcontato.getNome() == null) {
+			throw new Exception("Nome da origem de contato é inválido!");
 		}
-		ocdao.Cadastrar(origemcontato);		
+		origemcontatoDAO.Cadastrar(origemcontato);
 	}
 
+	// ALTERAR
+	@Override
+	public void Alterar(OrigemContato origemcontato) throws Exception {
+		if (origemcontato.getNome() == null) {
+			throw new Exception("Nome da origem de contato é inválido!");
+		}
+		origemcontatoDAO.Alterar(origemcontato);
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(OrigemContato origemcontato) throws Exception {
+		if (origemcontato.getNome() == null) {
+			throw new Exception("Origem de Contato Selecionada é inválida!");
+		}
+		origemcontatoDAO.Excluir(origemcontato);
+	}
+
+	// BUSCAR ID
+	@Override
+	public OrigemContato BuscarID(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("Origem de Contato Pesquisada é Inválida!");
+		} else if (id <= 0) {
+			throw new Exception("Origem de Contato Pesquisada é Inválida!");
+		}
+		return origemcontatoDAO.BuscarID(id);
+	}
+
+	// LISTAR
 	@Override
 	public List<OrigemContato> Listar() throws Exception {
-		List<OrigemContato> listaorigemcontato = ocdao.Listar();
-		if(listaorigemcontato == null){
+		List<OrigemContato> listaorigemcontato = origemcontatoDAO.Listar();
+		if (listaorigemcontato == null) {
 			throw new Exception("Nenhuma origem de contato cadastrada");
 		}
 		return listaorigemcontato;
 	}
-
-	@Override
-	public void Alterar(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getNome() == null) {
-			throw new Exception("Descrição é Invalida");
-		}
-		ocdao.Alterar(origemcontato);			
-	}
-
-	@Override
-	public OrigemContato BuscarID(Long id) throws Exception {
-		if(id == null) {
-			throw new Exception("Origem de Contato pesquisado é Inválido");
-		}
-		else if(id <= 0) {
-			throw new Exception("Origem de Contato Pesquisado é Inválido");
-		}
-		
-		return ocdao.BuscarID(id);
-	}
-
-	@Override
-	public void Excluir(OrigemContato origemcontato) throws Exception {
-		if(origemcontato.getNome() == null) {
-			throw new Exception("Origem de Contato Selecionado é inválido.");
-		}		
-		ocdao.Excluir(origemcontato);			
-	}
-
 }

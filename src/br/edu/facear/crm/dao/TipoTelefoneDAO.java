@@ -7,49 +7,44 @@ import javax.persistence.Query;
 import br.edu.facear.crm.entity.TipoTelefone;
 
 public class TipoTelefoneDAO implements InterfaceDAO<TipoTelefone> {
-	
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
-	
+
+	// CADASTRAR
 	@Override
-	public void Cadastrar(TipoTelefone tipotelefone) throws CrmException {
+	public void Cadastrar(TipoTelefone o) throws CrmException {
 		em.getTransaction().begin();
-		try {
-			em.persist(tipotelefone);
-		} catch (Exception ex) {
-			if (ex.getCause().toString().contains("Unique key")) {
-				throw new CrmException("O campo nome não pode ser único!!");
-			}else{
-				throw new CrmException(ex.getCause().toString());
-			}
-		}
+		em.persist(o);
 		em.getTransaction().commit();
 	}
 
+	// ALTERAR
+	@Override
+	public void Alterar(TipoTelefone o) {
+		em.getTransaction().begin();
+		em.merge(o);
+		em.getTransaction().commit();
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(TipoTelefone o) {
+		em.getTransaction().begin();
+		em.remove(o);
+		em.getTransaction().commit();
+	}
+
+	// LISTAR
 	@Override
 	public List<TipoTelefone> Listar() {
-		
-		EntityManager em = Connection.getEntityManager();
-		Query q = em.createQuery("from TipoTelefone");
-		
+		Query q = em.createQuery("from TipoTelefone a order by id");
 		return q.getResultList();
 	}
 
-	@Override
-	public void Alterar(TipoTelefone tipotelefone) {
-		em.getTransaction().begin();
-		em.merge(tipotelefone);
-		em.getTransaction().commit();
-	}
-
+	// BUSCAR ID
 	@Override
 	public TipoTelefone BuscarID(Long id) {
-		return em.find(TipoTelefone.class, id);	
-	}
-
-	@Override
-	public void Excluir(TipoTelefone tipotelefone) {
-		em.getTransaction().begin();
-		em.remove(tipotelefone);
-		em.getTransaction().commit();		
+		return em.find(TipoTelefone.class, id);
 	}
 }

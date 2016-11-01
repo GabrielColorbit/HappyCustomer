@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-
 import br.edu.facear.crm.entity.TipoContato;
 
 public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
@@ -15,41 +14,38 @@ public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
 
 	// CADASTRAR
 	@Override
-	public void Cadastrar(TipoContato tipocontato) throws CrmException {
+	public void Cadastrar(TipoContato o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(tipocontato);
+		em.persist(o);
 		em.getTransaction().commit();
 	}
 
 	// ALTERAR
 	@Override
-	public void Alterar(TipoContato tipocontato) {
+	public void Alterar(TipoContato o) {
 		em.getTransaction().begin();
-		em.merge(tipocontato);
+		em.merge(o);
 		em.getTransaction().commit();
 	}
 
 	// EXCLUIR
 	@Override
-	public void Excluir(TipoContato tipocontato) {
+	public void Excluir(TipoContato o) {
 		em.getTransaction().begin();
-		em.remove(tipocontato);
+		em.remove(o);
 		em.getTransaction().commit();
 	}
 
 	// LISTAR
 	@Override
 	public ArrayList<TipoContato> Listar() {
-		Query tipocontato = em.createQuery("from TipoContato a order by id");
-
-		return (ArrayList<TipoContato>) tipocontato.getResultList();
+		Query q = em.createQuery("from TipoContato a order by id");
+		return (ArrayList<TipoContato>) q.getResultList();
 	}
 
 	// BUSCAR ID
 	@Override
-	public TipoContato BuscarID(Long tipocontato) {
-		return em.find(TipoContato.class, tipocontato );
-
+	public TipoContato BuscarID(Long id) {
+		return em.find(TipoContato.class, id);
 	}
-
 }

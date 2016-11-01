@@ -7,41 +7,45 @@ import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Negocio;
 
-public class NegocioDAO implements InterfaceDAO<Negocio>{
+public class NegocioDAO implements InterfaceDAO<Negocio> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
 
+	// CADASTRAR
 	@Override
 	public void Cadastrar(Negocio o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public List<Negocio> Listar() {
-		Query q = em.createQuery("select a from Negocio a");
-		
-		return q.getResultList();	
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(Negocio o) {
 		em.getTransaction().begin();
 		em.merge(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public Negocio BuscarID(Long id) {
-		return em.find(Negocio.class, id);	
-
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(Negocio o) {
 		em.getTransaction().begin();
 		em.remove(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
+	// LISTAR
+	@Override
+	public List<Negocio> Listar() {
+		Query q = em.createQuery("from Negocio a order by id");
+		return q.getResultList();
+	}
+
+	// BUSCAR ID
+	@Override
+	public Negocio BuscarID(Long id) {
+		return em.find(Negocio.class, id);
+	}
 }

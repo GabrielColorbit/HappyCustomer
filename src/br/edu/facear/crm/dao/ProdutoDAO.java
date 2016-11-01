@@ -7,49 +7,45 @@ import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Produto;
 
-public class ProdutoDAO implements InterfaceDAO<Produto>{
+public class ProdutoDAO implements InterfaceDAO<Produto> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
 
+	// CADASTRAR
 	@Override
-	public void Cadastrar(Produto produto) throws CrmException {
+	public void Cadastrar(Produto o) throws CrmException {
 		em.getTransaction().begin();
-		try {
-			em.persist(produto);
-		} catch (Exception ex) {
-			if (ex.getCause().toString().contains("Unique key")) {
-				throw new CrmException("O campo nome não pode ser único!!");
-			}else{
-				throw new CrmException(ex.getCause().toString());
-			}
-		}
-		em.getTransaction().commit();		
+		em.persist(o);
+		em.getTransaction().commit();
 	}
 
+	// ALTERAR
+	@Override
+	public void Alterar(Produto o) {
+		em.getTransaction().begin();
+		em.merge(o);
+		em.getTransaction().commit();
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(Produto o) {
+		em.getTransaction().begin();
+		em.remove(o);
+		em.getTransaction().commit();
+	}
+
+	// LISTAR
 	@Override
 	public List<Produto> Listar() {
-		Query q = em.createQuery("select a from Produto a");
-		
+		Query q = em.createQuery("from Produto a order by id");
 		return q.getResultList();
 	}
 
-	@Override
-	public void Alterar(Produto produto) {
-		em.getTransaction().begin();
-		em.merge(produto);
-		em.getTransaction().commit();			
-	}
-
+	// BUSCAR ID
 	@Override
 	public Produto BuscarID(Long id) {
-		return em.find(Produto.class, id);	
+		return em.find(Produto.class, id);
 	}
-
-	@Override
-	public void Excluir(Produto produto) {
-		em.getTransaction().begin();
-		em.remove(produto);
-		em.getTransaction().commit();		
-	}
-	
-
 }

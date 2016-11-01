@@ -6,42 +6,46 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.TipoComunicador;
-import br.edu.facear.crm.entity.TipoContato;
 
-public class TipoComunicadorDAO implements InterfaceDAO<TipoComunicador>{
+public class TipoComunicadorDAO implements InterfaceDAO<TipoComunicador> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(TipoComunicador o) throws CrmException {
 		em.getTransaction().begin();
 		em.persist(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public List<TipoComunicador> Listar() {
-		Query q = em.createQuery("select a from TipoComunicador a");
-		
-		return q.getResultList();
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(TipoComunicador o) {
 		em.getTransaction().begin();
 		em.merge(o);
-		em.getTransaction().commit();			
+		em.getTransaction().commit();
 	}
 
-	@Override
-	public TipoComunicador BuscarID(Long id) {
-		return em.find(TipoComunicador.class, id);	
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(TipoComunicador o) {
 		em.getTransaction().begin();
 		em.remove(o);
-		em.getTransaction().commit();	
-		
+		em.getTransaction().commit();
 	}
 
+	// LISTAR
+	@Override
+	public List<TipoComunicador> Listar() {
+		Query q = em.createQuery("from TipoComunicador a order by id");
+		return q.getResultList();
+	}
+
+	// BUSCAR ID
+	@Override
+	public TipoComunicador BuscarID(Long id) {
+		return em.find(TipoComunicador.class, id);
+	}
 }

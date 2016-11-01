@@ -6,41 +6,46 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Contato;
-import br.edu.facear.crm.entity.Estado;
 
 public class ContatoDAO implements InterfaceDAO<Contato> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
+
+	// CADASTRAR
 	@Override
-	public void Cadastrar(Contato contato) throws CrmException {
+	public void Cadastrar(Contato o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(contato);
+		em.persist(o);
 		em.getTransaction().commit();
 	}
 
+	// ALTERAR
+	@Override
+	public void Alterar(Contato o) {
+		em.getTransaction().begin();
+		em.merge(o);
+		em.getTransaction().commit();
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(Contato o) {
+		em.getTransaction().begin();
+		em.remove(o);
+		em.getTransaction().commit();
+	}
+
+	// LISTAR
 	@Override
 	public List<Contato> Listar() {
-		Query q = em.createQuery("select a from Contato a");
-	
+		Query q = em.createQuery("from Contato a order by id");
 		return q.getResultList();
 	}
 
-	@Override
-	public void Alterar(Contato contato) {
-		em.getTransaction().begin();
-		em.merge(contato);
-		em.getTransaction().commit();		
-	}
-
+	// BUSCAR ID
 	@Override
 	public Contato BuscarID(Long id) {
-		return em.find(Contato.class, id);	
+		return em.find(Contato.class, id);
 	}
-
-	@Override
-	public void Excluir(Contato contato) {
-		em.getTransaction().begin();
-		em.remove(contato);
-		em.getTransaction().commit();		
-	}
-	
 }
