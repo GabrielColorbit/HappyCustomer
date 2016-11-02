@@ -3,7 +3,6 @@ package br.edu.facear.crm.bo;
 import java.util.List;
 
 import br.edu.facear.crm.dao.CidadeDAO;
-import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.entity.Cidade;
 
 public class CidadeBO implements InterfaceBO<Cidade> {

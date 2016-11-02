@@ -12,13 +12,12 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class TipoTelefoneTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoTelefone() throws Exception {
 		TipoTelefone TipoTelefone = new TipoTelefone();
-		TipoTelefone.setNome("Celular");
+		TipoTelefone.setNome("");
 		facade.CadastrarTipoTelefone(TipoTelefone);
 		Assert.assertEquals(true, TipoTelefone.getId() != null);
 	}

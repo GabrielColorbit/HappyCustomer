@@ -1,22 +1,13 @@
 package br.edu.facear.crm.bo;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.ForeignKey;
 
 import br.edu.facear.crm.dao.UsuarioDAO;
-import br.edu.facear.crm.entity.Cidade;
-import br.edu.facear.crm.entity.Genero;
-import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
 
 public class UsuarioBO implements InterfaceBO<Usuario> {
 
-	UsuarioDAO udao = new UsuarioDAO();
+	UsuarioDAO usuarioDAO = new UsuarioDAO();
 
 	// CADASTRAR
 	@Override
@@ -60,17 +51,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Status Fornecido Invalido.");
 		}
 
-		udao.Cadastrar(usuario);
-	}
-
-	// LISTAR
-	@Override
-	public ArrayList<Usuario> Listar() throws Exception {
-		ArrayList<Usuario> u = udao.Listar();
-		if (u == null) {
-			throw new Exception("Nenhuma usuário cadastrado");
-		}
-		return u;
+		usuarioDAO.Cadastrar(usuario);
 	}
 
 	// ALTERAR
@@ -115,7 +96,16 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Status Fornecido Invalido.");
 		}
 
-		udao.Alterar(usuario);
+		usuarioDAO.Alterar(usuario);
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(Usuario o) throws Exception {
+		if (o.getNome() == null) {
+			throw new Exception("Usuario Selecionada é inválido.");
+		}
+		usuarioDAO.Excluir(o);
 	}
 
 	// BUSCAR ID
@@ -127,15 +117,16 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Usuário Pesquisado é Inválido");
 		}
 
-		return udao.BuscarID(id);
+		return usuarioDAO.BuscarID(id);
 	}
 
-	// EXCLUIR
+	// LISTAR
 	@Override
-	public void Excluir(Usuario o) throws Exception {
-		if (o.getNome() == null) {
-			throw new Exception("Usuario Selecionada é inválido.");
+	public ArrayList<Usuario> Listar() throws Exception {
+		ArrayList<Usuario> u = usuarioDAO.Listar();
+		if (u == null) {
+			throw new Exception("Nenhuma usuário cadastrado");
 		}
-		udao.Excluir(o);
+		return u;
 	}
 }
