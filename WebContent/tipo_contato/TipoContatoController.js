@@ -1,14 +1,16 @@
 var myControllers = angular.module('TipoContatoControllers',[]);
 
 myControllers.controller('ListarTipoContatoController', function($scope,$http) {
-	$scope.Titulo = "Tipos de Contato";
+	$scope.Titulo = "Tipos de Contatos";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 		.success(function(data) {
 			$scope.tipoContatolist = data["tipoContato"];
+			$scope.Quantidade = $scope.tipoContatolist.length+' Tipos de Contatos Encontrados!' ;
 		});
 	};
 	$scope.BuscarInformacao();
+	
 	$scope.ordenar = function(keyname){
         $scope.sortKey = keyname;
         $scope.reverse = !$scope.reverse;
@@ -37,7 +39,7 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({
-			type : "tipoContato",
+			type : "origemContato",
 			id : $scope.tipoContato.id,
 			nome : $scope.tipoContato.nome
 		});
@@ -51,7 +53,7 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 				'http://localhost:8080/CRM/rest/restTipoContato/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Tipo Contato Salvo com Sucesso!';
+					$scope.Resposta = 'TipoContato ('+$scope.tipoContato.nome+') Salvo com Sucesso!';
 					
 					
 				}).error(
@@ -59,5 +61,21 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 					$scope.Resposta = data ;
 				});
 	   };
+	   $scope.Excluir = function(id){
+		   if(id){
+				
+				$http.post('http://localhost:8080/CRM/rest/restTipoContato/Excluir/'+id)
+					.success(
+					function(data, status) {
+						$scope.Resposta = 'Tipo de Contato Excluído com Sucesso!';
+						$scope.BuscarInformacao();
+						
+					}).error(
+					function(data, status) {
+						$scope.Resposta = data ;
+					});
+			   };
+			
+			};
 	
 });

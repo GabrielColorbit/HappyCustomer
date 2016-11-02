@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.ContatoDAO;
 import br.edu.facear.crm.entity.Contato;
@@ -117,8 +117,8 @@ public class ContatoBO implements InterfaceBO<Contato> {
 
 	// LISTAR
 	@Override
-	public List<Contato> Listar() throws Exception {
-		List<Contato> c = contatoDAO.Listar();
+	public ArrayList<Contato> Listar() throws Exception {
+		ArrayList<Contato> c = contatoDAO.Listar();
 		if (c == null) {
 			throw new Exception("Nenhum contato cadastrado");
 		}

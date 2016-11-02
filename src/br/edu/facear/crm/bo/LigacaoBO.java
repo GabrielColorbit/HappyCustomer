@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.LigacaoDAO;
 import br.edu.facear.crm.entity.Ligacao;
@@ -71,8 +71,8 @@ public class LigacaoBO implements InterfaceBO<Ligacao> {
 
 	// LISTAR
 	@Override
-	public List<Ligacao> Listar() throws Exception {
-		List<Ligacao> l = ligacaoDAO.Listar();
+	public ArrayList<Ligacao> Listar() throws Exception {
+		ArrayList<Ligacao> l = ligacaoDAO.Listar();
 		if (l == null) {
 			throw new Exception("Nenhuma ligacão cadastrada");
 		}

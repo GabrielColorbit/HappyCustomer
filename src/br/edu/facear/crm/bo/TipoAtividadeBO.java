@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoAtividadeDAO;
 import br.edu.facear.crm.entity.TipoAtividade;
@@ -44,8 +44,8 @@ public class TipoAtividadeBO implements InterfaceBO<TipoAtividade> {
 
 	// LISTAR
 	@Override
-	public List<TipoAtividade> Listar() throws Exception {
-		List<TipoAtividade> tipoatividade = tipoatividadeDAO.Listar();
+	public ArrayList<TipoAtividade> Listar() throws Exception {
+		ArrayList<TipoAtividade> tipoatividade = tipoatividadeDAO.Listar();
 		if (tipoatividade == null) {
 			throw new Exception("Nenhuma Tipo de Atividade Cadastrada!");
 		}

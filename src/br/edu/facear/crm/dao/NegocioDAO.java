@@ -1,12 +1,11 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Negocio;
-import br.edu.facear.crm.entity.TipoComunicador;
 
 public class NegocioDAO implements InterfaceDAO<Negocio> {
 
@@ -40,9 +39,9 @@ public class NegocioDAO implements InterfaceDAO<Negocio> {
 
 	// LISTAR
 	@Override
-	public List<Negocio> Listar() {
+	public ArrayList<Negocio> Listar() {
 		Query q = em.createQuery("from Negocio a order by id");
-		return q.getResultList();
+		return (ArrayList<Negocio>) q.getResultList();
 	}
 
 	// BUSCAR ID

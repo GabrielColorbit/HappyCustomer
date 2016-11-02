@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.EstadoDAO;
 import br.edu.facear.crm.entity.Estado;
@@ -44,8 +44,8 @@ public class EstadoBO implements InterfaceBO<Estado> {
 
 	// LISTAR
 	@Override
-	public List<Estado> Listar() throws Exception {
-		List<Estado> estados = estadoDAO.Listar();
+	public ArrayList<Estado> Listar() throws Exception {
+		ArrayList<Estado> estados = estadoDAO.Listar();
 		if (estados == null) {
 			throw new Exception("Nenhumm estado cadastrado!");
 		}

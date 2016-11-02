@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.ProdutoDAO;
 import br.edu.facear.crm.entity.Produto;
@@ -42,8 +42,8 @@ public class ProdutoBO implements InterfaceBO<Produto> {
 
 	// LISTAR
 	@Override
-	public List<Produto> Listar() throws Exception {
-		List<Produto> produtos = produtoDAO.Listar();
+	public ArrayList<Produto> Listar() throws Exception {
+		ArrayList<Produto> produtos = produtoDAO.Listar();
 		if (produtos == null) {
 			throw new Exception("Nenhumm produto cadastrado!");
 		}

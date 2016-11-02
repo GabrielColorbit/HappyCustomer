@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.AtividadeDAO;
 import br.edu.facear.crm.entity.Atividade;
@@ -73,8 +73,8 @@ public class AtividadeBO implements InterfaceBO<Atividade> {
 
 	// LISTAR
 	@Override
-	public List<Atividade> Listar() throws Exception {
-		List<Atividade> a = atividadeDAO.Listar();
+	public ArrayList<Atividade> Listar() throws Exception {
+		ArrayList<Atividade> a = atividadeDAO.Listar();
 		if (a == null) {
 			throw new Exception("Nenhuma Atividade cadastrada");
 		}

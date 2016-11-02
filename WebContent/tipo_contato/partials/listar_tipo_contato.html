@@ -14,7 +14,7 @@
 </header>
 
 <!-- Portfolio Grid Section -->
-<section class="grid tipo_contato">
+<section class="grid tipo_contato" ng-controller="TipoContatoController">
 	<div class="container">
 
 		<div class="row">
@@ -38,9 +38,11 @@
 							<td>{{tp.id}}</td>
 							<td>{{tp.nome}}</td>
 
-							<td>
-							<a class="btn btn-danger btn-sm" href="#/TipoContato/Excluir/{{tp.id}}">Excluir</a> 
-							<a class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.id}}">Editar</a></td>
+							<td class="btn-group">
+							<div class="to-right btn-group">
+								<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(tp.id)'>Excluir</a> 
+								<a class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.id}}">Editar</a>
+							</div>
 						</tr>
 
 					</tbody>

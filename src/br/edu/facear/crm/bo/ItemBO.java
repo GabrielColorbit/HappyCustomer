@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.ItemDAO;
 import br.edu.facear.crm.entity.Item;
@@ -60,8 +60,8 @@ public class ItemBO implements InterfaceBO<Item> {
 
 	// LISTAR
 	@Override
-	public List<Item> Listar() throws Exception {
-		List<Item> i = idao.Listar();
+	public ArrayList<Item> Listar() throws Exception {
+		ArrayList<Item> i = idao.Listar();
 		if (i == null) {
 			throw new Exception("Nenhuma item cadastrado");
 		}
