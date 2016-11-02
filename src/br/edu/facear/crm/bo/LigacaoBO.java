@@ -23,10 +23,10 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 		if(ligacao.getContato() == null) {
 			throw new Exception("Selecione um Contato");
 		}		
-		else if(ligacao.getAtividade() ==  null){
-			throw new Exception("Selecione uma Atividade.");
-		}
-		else if(ligacao.getUsuario() ==  null){
+		//else if(ligacao.getAtividade() ==  null){
+		//	throw new Exception("Selecione uma Atividade.");
+		//}
+		else if(ligacao.getUsuarioresponsavel() ==  null){
 			throw new Exception("Selecione um Usuario.");
 		}
 		else if(ligacao.getEmpresa() ==  null){
@@ -69,7 +69,7 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 		else if(ligacao.getAtividade() ==  null){
 			throw new Exception("Selecione uma Atividade.");
 		}
-		else if(ligacao.getUsuario() ==  null){
+		else if(ligacao.getUsuarioresponsavel() ==  null){
 			throw new Exception("Selecione um Usuario.");
 		}
 		else if(ligacao.getEmpresa() ==  null){

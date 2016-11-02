@@ -109,7 +109,7 @@ public class ContatoTest {
 	}
 
 	// ALTERAR
-	// @Test
+	//@Test
 	public void testAterarContato() throws Exception {
 
 		Contato Contato = facade.BuscarContatoPorId(2l);
@@ -148,7 +148,7 @@ public class ContatoTest {
 		Contato.setOrigemcontato(OrigemContato);
 		
 		// ALTERANDO TELEFONE
-		Telefone Telefone = facade.BuscarTelefonePorId(1l);
+		Telefone Telefone = facade.BuscarTelefonePorId(2l);
 		Telefone.setNumero("(41) 8776-4532");
 		TipoTelefone.setId(1l);
 		Telefone.setTipotelefone(TipoTelefone);
@@ -183,7 +183,7 @@ public class ContatoTest {
 	// EXCLUIR
 	//@Test
 	public void testExcluirContato() throws Exception {
-		Contato Contato = facade.BuscarContatoPorId(2l);
+		Contato Contato = facade.BuscarContatoPorId(3l);
 		facade.ExcluirContato(Contato);
 		// Usuario = facade.BuscarUsuarioPorId(1l);
 		// Assert.assertEquals(true, Usuario.getId() == null);

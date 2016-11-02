@@ -39,7 +39,7 @@ public class EmpresaTest {
 	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
 
 	// CADASTRAR
-	@Test
+	//@Test
 	public void testCadastrarEmpresa() throws Exception {
 
 		// ATRIBUTOS
@@ -91,7 +91,7 @@ public class EmpresaTest {
 		Empresa.setComunicadores_empresa(comunicadores_empresa);
 		
 		// CADASTRANDO CONTATOS
-		Contato.setId(1l);
+		Contato.setId(3l);
 		List<Contato> contatos_empresa = new ArrayList<Contato>();
 		contatos_empresa.add(Contato);
 		Empresa.setContatos_empresa(contatos_empresa);
@@ -105,7 +105,7 @@ public class EmpresaTest {
 	//@Test
 	public void testAterarEmpresa() throws Exception {
 
-		Empresa Empresa = facade.BuscarEmpresaPorId(2l);
+		Empresa Empresa = facade.BuscarEmpresaPorId(3l);
 
 		// ATRIBUTOS
 		Empresa.setRazaosocial("Facear");
@@ -167,9 +167,9 @@ public class EmpresaTest {
 	}
 
 	// EXCLUIR
-	//@Test
+	@Test
 	public void testExcluirEmpresa() throws Exception {
-		Empresa Empresa = facade.BuscarEmpresaPorId(2l);
+		Empresa Empresa = facade.BuscarEmpresaPorId(7l);
 		facade.ExcluirEmpresa(Empresa);
 		// Usuario = facade.BuscarUsuarioPorId(1l);
 		// Assert.assertEquals(true, Usuario.getId() == null);

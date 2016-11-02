@@ -10,7 +10,7 @@ public class AtividadeBO implements InterfaceBO<Atividade>{
 	AtividadeDAO adao =  new AtividadeDAO();
 	@Override
 	public void Cadastrar(Atividade atividade) throws Exception {
-		if(atividade.getUsuario() == null) {
+		if(atividade.getUsuarioresponsavel() == null) {
 			throw new Exception("Selecione um Usuário");
 		}else if(atividade.getEmpresa() ==  null){
 			throw new Exception("Selecione uma Empresa.");
@@ -18,12 +18,10 @@ public class AtividadeBO implements InterfaceBO<Atividade>{
 		else if(atividade.getTipoatividade() ==  null){
 			throw new Exception("Selecione uma Atividade.");
 		}
-		else if(atividade.getTipocomunicador() ==  null){
-			throw new Exception("Selecione um Comunicador.");
-		}else if(atividade.getContato() ==  null){
+		else if(atividade.getContato() ==  null){
 			throw new Exception("Selecione uma Contato.");
 		}
-		else if(atividade.getStatus() ==  null){
+		else if(atividade.getSituacao() ==  null){
 			throw new Exception("Selecione um Status.");
 		}
 		else if(atividade.getNome() ==  null){
@@ -54,7 +52,7 @@ public class AtividadeBO implements InterfaceBO<Atividade>{
 	@Override
 	public void Alterar(Atividade atividade) throws Exception {
 		
-		if(atividade.getUsuario() == null) {
+		if(atividade.getUsuarioresponsavel() == null) {
 			throw new Exception("Selecione um Usuário");
 		}else if(atividade.getEmpresa() ==  null){
 			throw new Exception("Selecione uma Empresa.");
@@ -62,12 +60,10 @@ public class AtividadeBO implements InterfaceBO<Atividade>{
 		else if(atividade.getTipoatividade() ==  null){
 			throw new Exception("Selecione uma Atividade.");
 		}
-		else if(atividade.getTipocomunicador() ==  null){
-			throw new Exception("Selecione um Comunicador.");
-		}else if(atividade.getContato() ==  null){
+		else if(atividade.getContato() ==  null){
 			throw new Exception("Selecione uma Contato.");
 		}
-		else if(atividade.getStatus() ==  null){
+		else if(atividade.getSituacao() ==  null){
 			throw new Exception("Selecione um Status.");
 		}
 		else if(atividade.getNome() ==  null){
