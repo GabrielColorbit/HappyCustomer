@@ -8,14 +8,20 @@ import br.edu.facear.crm.entity.Comunicador;
 public class ComunicadorBO implements InterfaceBO<Comunicador> {
 	ComunicadorDAO tcdao = new ComunicadorDAO();
 	@Override
-	public void Cadastrar(Comunicador o) throws Exception {
-		if(o.getNome() == null){
-			throw new Exception("Nome do comunicador é inválido");
+	public void Cadastrar(Comunicador comunicador) throws Exception {
+		if(comunicador.getTipocomunicador() == null){
+			throw new Exception("Selecione um Tipo Comunicador");
+		}else if(comunicador.getUsuarios() ==  null){
+			throw new Exception("Selecione um Usuário.");
 		}
-		tcdao.Cadastrar(o);		
+		else if(comunicador.getNome() ==  null){
+			throw new Exception("Nome Invalido.");
+		}
+		
+		tcdao.Cadastrar(comunicador);		
 	}
 
-	//mechi aqui caraio
+	
 	@Override
 	public List<Comunicador> Listar() throws Exception {
 		List<Comunicador> tc= tcdao.Listar();
@@ -26,11 +32,17 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 	}
 
 	@Override
-	public void Alterar(Comunicador o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Nome do comunicador é inválido");
+	public void Alterar(Comunicador comunicador) throws Exception {
+		if(comunicador.getTipocomunicador() == null){
+			throw new Exception("Selecione um Tipo Comunicador");
+		}else if(comunicador.getUsuarios() ==  null){
+			throw new Exception("Selecione um Usuário.");
 		}
-		tcdao.Alterar(o);			
+		else if(comunicador.getNome() ==  null){
+			throw new Exception("Nome Invalido.");
+		}
+		
+		tcdao.Alterar(comunicador);			
 	}
 
 	@Override

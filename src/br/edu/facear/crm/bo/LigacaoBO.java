@@ -18,21 +18,37 @@ import br.edu.facear.crm.entity.Usuario;
 public class LigacaoBO implements InterfaceBO<Ligacao>{
 	LigacaoDAO ldao =  new LigacaoDAO();
 	@Override
-	public void Cadastrar(Ligacao o) throws Exception {
-		if(o.getContato() == null ||
-   		   o.getUsuario() == null ||
-    	   o.getContato() == null ||
-		   o.getEmpresa() == null ||
-		   o.getDuracao() == null ||
-		   o.getData() == null ||
-		   o.getTipoligacao() == null ||
-		   o.getResumo() == null ){
-				throw new Exception("Preencher todos os campos da ligacao");
-			}
+	public void Cadastrar(Ligacao ligacao) throws Exception {
+	
+		if(ligacao.getContato() == null) {
+			throw new Exception("Selecione um Contato");
+		}		
+		else if(ligacao.getAtividade() ==  null){
+			throw new Exception("Selecione uma Atividade.");
+		}
+		else if(ligacao.getUsuario() ==  null){
+			throw new Exception("Selecione um Usuario.");
+		}
+		else if(ligacao.getEmpresa() ==  null){
+			throw new Exception("Selecione uma Empresa.");
+		}
+		else if(ligacao.getDuracao() ==  null){
+			throw new Exception("Duracao Informada Invalida");
+		}
+		else if(ligacao.getData() ==  null){
+			throw new Exception("Data Informada Invalida");
+		}
+		else if(ligacao.getTipoligacao() ==  null){
+			throw new Exception("Selecione um Tipo de Ligacao");
+		}
+		else if(ligacao.getResumo() ==  null){
+			throw new Exception("Resumo Informado Invalido");
+		}
 		
-			ldao.Cadastrar(o);						
-			//mechi aqui porra
-	}
+		
+		
+			ldao.Cadastrar(ligacao);						
+				}
 
 	@Override
 	public List<Ligacao> Listar() throws Exception {
@@ -44,19 +60,35 @@ public class LigacaoBO implements InterfaceBO<Ligacao>{
 	}
 
 	@Override
-	public void Alterar(Ligacao o) throws Exception {
-		if(o.getContato() == null ||
-   		   o.getUsuario() == null ||
-    	   o.getContato() == null ||
-		   o.getEmpresa() == null ||
-		   o.getDuracao() == null ||
-		   o.getData() == null ||
-		   o.getTipoligacao() == null ||
-		   o.getResumo() == null ){
-				throw new Exception("Preencher todos os campos da ligacao");
-			}
+	public void Alterar(Ligacao ligacao) throws Exception {
+	
 		
-			ldao.Alterar(o);				
+		if(ligacao.getContato() == null) {
+			throw new Exception("Selecione um Contato");
+		}		
+		else if(ligacao.getAtividade() ==  null){
+			throw new Exception("Selecione uma Atividade.");
+		}
+		else if(ligacao.getUsuario() ==  null){
+			throw new Exception("Selecione um Usuario.");
+		}
+		else if(ligacao.getEmpresa() ==  null){
+			throw new Exception("Selecione uma Empresa.");
+		}
+		else if(ligacao.getDuracao() ==  null){
+			throw new Exception("Duracao Informada Invalida");
+		}
+		else if(ligacao.getData() ==  null){
+			throw new Exception("Data Informada Invalida");
+		}
+		else if(ligacao.getTipoligacao() ==  null){
+			throw new Exception("Selecione um Tipo de Ligacao");
+		}
+		else if(ligacao.getResumo() ==  null){
+			throw new Exception("Resumo Informado Invalido");
+		}
+		
+			ldao.Alterar(ligacao);				
 	}
 
 	@Override

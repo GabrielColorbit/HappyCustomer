@@ -40,7 +40,7 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $routePa
 });
 myControllers.controller('UsuarioController', function($scope, $routeParams,$http) {
 
-	
+
 	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
 	.success(function(data) {
 		$scope.usuarios = data["usuario"];
@@ -72,7 +72,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
     $scope.usuario = {
     		datanascimento: new Date(1990, 11, 28, 14, 57)
     };
-	
+
 	$scope.EnviarInformacao = function() {
 
 		var parameter = JSON.stringify({
@@ -117,23 +117,62 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 							+ "<hr />config: " + config;
 				});
 	   };
-	   
+
 	   //crud in view
-	   
-		$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
-		.success(function(data) {
-			$scope.tipostelefone = data["tipoTelefone"];
-		});
-       $scope.UserTelefones = [];
-       $scope.addTelefone = function () {
-           $scope.UserTelefones.push($scope.telefone);
-       }
-       $scope.removeTelefone= function (telefone) {
-           
-           var index=$scope.UserTelefones.indexOf(telefone)
-           $scope.UserTelefones.splice(index,1);     
-       }
-	   
-	   
+
+
+	   $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
+   		.success(function(data) {
+   			$scope.tipostelefone = data["tipoTelefone"];
+   		});
+      
+ 		$scope.listTelefones=[];
+ 		$scope.add = function(){
+ 			
+ 			if($scope.telefone.id == null || $scope.telefone.id == '' ){
+ 				autoincrement();
+ 				$scope.listTelefones.push({
+ 	  				id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
+ 	  			});
+ 			}else{
+ 	  			var index =$scope.telefone.id;
+ 	  			$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
+ 	  			$scope.listTelefones[index].numero = $scope.telefone.numero;
+ 			}
+
+  			
+  			
+  			$scope.telefone.id = '';
+  		 	$scope.telefone.tipotelefone = '';
+  			$scope.telefone.numero = '';
+  		}
+
+  		$scope.selectEdit = function(id){
+			var Telefone = $scope.listTelefones[id];
+			$scope.telefone.id = Telefone.id;
+			$scope.telefone.tipotelefone = Telefone.tipotelefone;
+			$scope.telefone.numero = Telefone.numero;
+  		};
+		$scope.del = function(id){
+			var result = confirm('Tem certeza?');
+			if (result === true){
+				var index = getSelectedIndex(id);
+				$scope.listTelefone.splice(index, 1);
+			}
+		};
+  		function getSelectedIndex(id){
+  			for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
+  				if($scope.listTelefone[i].id == id)
+  					return i;
+  			return 1;
+ 					
+  		}
+  		function autoincrement(){
+  			$scope.telefone.id = Object.keys($scope.listTelefones).length;
+  			if($scope.telefone.id == 0){
+  				$scope.telefone.id = 1
+  			}
+  		}
+       
 
 });

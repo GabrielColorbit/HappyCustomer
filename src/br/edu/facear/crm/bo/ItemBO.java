@@ -8,14 +8,21 @@ import br.edu.facear.crm.entity.Item;
 public class ItemBO  implements InterfaceBO<Item>{
 	ItemDAO idao = new ItemDAO();
 	@Override
-	public void Cadastrar(Item o) throws Exception {
-		if(o.getProduto() == null ||
-		   o.getNegocio() == null||
-		   o.getQuantidade() == null){
-
-			throw new Exception("Preencher todos os campos do item");
+	public void Cadastrar(Item item) throws Exception {
+		
+		if(item.getProduto() == null) {
+			throw new Exception("Selecione um Produto");
+		}		
+		else if(item.getNegocio() ==  null){
+			throw new Exception("Selecione um Negócio.");
 		}
-		idao.Cadastrar(o);		
+		else if(item.getQuantidade() ==  null){
+			throw new Exception("Quantidade Fornecida Invalido.");
+		}
+		
+		
+		
+		idao.Cadastrar(item);		
 	}
 
 	@Override
@@ -28,14 +35,19 @@ public class ItemBO  implements InterfaceBO<Item>{
 	}
 
 	@Override
-	public void Alterar(Item o) throws Exception {
-		if(o.getProduto() == null ||
-		   o.getNegocio() == null||
-		   o.getQuantidade() == null){
+	public void Alterar(Item item) throws Exception {
 
-			throw new Exception("Preencher todos os campos do item");
+		if(item.getProduto() == null) {
+			throw new Exception("Selecione um Produto");
+		}		
+		else if(item.getNegocio() ==  null){
+			throw new Exception("Selecione um Negócio.");
 		}
-		idao.Alterar(o);				
+		else if(item.getQuantidade() ==  null){
+			throw new Exception("Quantidade Fornecida Invalido.");
+		}
+		
+		idao.Alterar(item);				
 	}
 
 	@Override

@@ -172,8 +172,8 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
 										<label>Tipo Telefone</label> 
-										
-										<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
+										<input type="hidden" ng-model="telefone.id" />
+										<select class="form-control" id="tipotelefone" required data-validation-required-message="Por favor selecione um tipo de usuário"
 										    ng-options="tipotelefone.nome for tipotelefone in tipostelefone track by tipotelefone.id" ng-model="telefone.tipotelefone" >    
 										    <option value="">Tipo Telefone</option>
 										</select>	
@@ -182,7 +182,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Número</label> 
-										<input type="text" ng-model="telefone.numero" class="form-control" placeholder="Número"
+										<input type="text" id="numero" ng-model="telefone.numero" class="form-control" placeholder="Número"
 											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
@@ -190,7 +190,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)"  ng-click='addTelefone()'>+</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>+</a>
 
 								</div>
 
@@ -205,15 +205,20 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th>Id</th>
 											<th>Numero</th>
 											<th>Tipo</th>
 										</tr>
 									</thead>
 									<tbody>
-									   <tr ng-repeat="telefone in UserTelefones">
+									   <tr data-ng-repeat="telefone in listTelefones">
+							                <td>{{telefone.id}}</td>
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
-											<td class="btn-group"><a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='removeTelefone(telefone)'>remover</a></td>
+											<td class="btn-group">
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>ver</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>remover</a>
+											</td>
 										</tr>
 										
 									</tbody>
