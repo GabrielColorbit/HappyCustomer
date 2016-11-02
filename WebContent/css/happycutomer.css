@@ -233,6 +233,13 @@ section
 {
 	padding: 30px 0 30px 0px;
 }
+
+div.ng-scope section{
+	
+margin-bottom: 39px;
+	
+background: #fff;
+}
 section h2
 {
 	font-size: 3em;

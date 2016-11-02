@@ -60,6 +60,17 @@ public class Main {
 		gerenciarOrigemContato();
 		gerenciarTipoUsuario();
 		gerenciarTipoComunicador();
+<<<<<<< HEAD
+		gerenciarUsuario();
+		gerenciarTipoContato();
+		gerenciarTipoAtividade();
+//		gerenciarEmpresa();
+//		gerenciarContato();		
+//		gerenciarNegocio();
+//		gerenciarItem();
+//		gerenciarAtividade();
+//		gerenciarLigacao();
+=======
 		// gerenciarUsuario();
 		// gerenciarUsuario();
 		// gerenciarTipoContato();
@@ -70,6 +81,7 @@ public class Main {
 		// gerenciarItem();
 		// gerenciarAtividade();
 		// gerenciarLigacao();
+>>>>>>> origin/master
 
 	}
 

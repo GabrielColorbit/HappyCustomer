@@ -3,8 +3,13 @@ var app = angular.module('happyCustomerApp', [
 	'angularUtils.directives.dirPagination',
 	'UsuarioControllers',
 	'TipoContatoControllers',
+<<<<<<< HEAD
 	'CidadeControllers',
 	'TipoUsuarioControllers'
+=======
+	'TipoTelefoneControllers',
+	'CidadeControllers'
+>>>>>>> origin/master
 ]);
 
 app.controller('MainCtrl',
@@ -36,7 +41,11 @@ app.config(function ($routeProvider) {
         when('/Telefone', {templateUrl: 'telefone/partials/listar_telefone.html', controller: 'ListarTelefoneController'}).
         when('/Telefone/Cadastrar', {templateUrl: 'telefone/partials/criar_telefone.html', controller:'CadastrarTelefoneController'}).
         
+<<<<<<< HEAD
         //Paths of Cidade  
+=======
+        //Paths of Cidade    
+>>>>>>> origin/master
         when('/Cidade/Editar/:cidadeId', {templateUrl: 'cidade/partials/editar_cidade.html', controller: 'GetCidadeController'}).
         when('/Cidade', {templateUrl: 'cidade/partials/listar_cidade.html', controller: 'ListarCidadeController'}).
         when('/Cidade/Cadastrar', {templateUrl: 'cidade/partials/criar_cidade.html', controller:'CadastrarCidadeController'}).

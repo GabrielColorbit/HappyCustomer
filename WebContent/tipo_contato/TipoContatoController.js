@@ -56,9 +56,7 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 					
 				}).error(
 				function(data, status, header, config) {
-					$scope.Resposta = "Data: " + data + "<hr />status: "
-							+ status + "<hr />headers: " + header
-							+ "<hr />config: " + config;
+					$scope.Resposta = data ;
 				});
 	   };
 	
