@@ -14,30 +14,29 @@ import br.edu.facear.crm.entity.Status;
 @Path("/restCollections")
 public class EnumRestful {
 
-	
 	@GET
 	@Path("/genders")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-   public ArrayList<Genero> returnGenero(){
-		
-	
+	public ArrayList<Genero> returnGenero() {
+
 		ArrayList<Genero> genderList = new ArrayList<Genero>();
-		for(Genero g : Genero.values()) {
+		for (Genero g : Genero.values()) {
 			genderList.add(g);
-		}		
+		}
 		return genderList;
-   }
+	}
+
 	@GET
 	@Path("/status")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-   public ArrayList<Status> returnStatus(){
-		
+	public ArrayList<Status> returnStatus() {
+
 		ArrayList<Status> statusList = new ArrayList<Status>();
-		for(Status s : Status.values()) {
+		for (Status s : Status.values()) {
 			statusList.add(s);
-		}		
+		}
 		return statusList;
-   }
+	}
 }

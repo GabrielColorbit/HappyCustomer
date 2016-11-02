@@ -1,3 +1,4 @@
+  <meta charset="UTF-8">
 
 <!-- Header -->
 <header>
@@ -26,7 +27,7 @@
 				<table class="table table-hover table-light col-xs-12">
 					<thead>
 						<tr class="uppercase">
-							<th ng-click="ordenar('tipoContatoID')">Id</th>
+							<th ng-click="ordenar('id')">Id</th>
 							<th ng-click="ordenar('nome')">Nome</th>
 							<th><a class="btn btn-success btn-sm to-right" href="#/TipoContato/Cadastrar">Adicionar</a></th>
 						</tr>
@@ -39,7 +40,7 @@
 
 							<td>
 							<a class="btn btn-danger btn-sm" href="#/TipoContato/Excluir/{{tp.id}}">Excluir</a> 
-							<a class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.tipoContatoID}}">Editar</a></td>
+							<a class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.id}}">Editar</a></td>
 						</tr>
 
 					</tbody>

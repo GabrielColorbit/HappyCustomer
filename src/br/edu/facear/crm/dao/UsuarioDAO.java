@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.facear.crm.entity.TipoComunicador;
 import br.edu.facear.crm.entity.Usuario;
 
 public class UsuarioDAO implements InterfaceDAO<Usuario> {
@@ -14,24 +15,25 @@ public class UsuarioDAO implements InterfaceDAO<Usuario> {
 
 	// CADASTRAR
 	@Override
-	public void Cadastrar(Usuario ususario) throws CrmException {
+	public void Cadastrar(Usuario o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(ususario);
+		em.persist(o);
 		em.getTransaction().commit();
 	}
 
 	// ALTERAR
 	@Override
-	public void Alterar(Usuario usuario) {
+	public void Alterar(Usuario o) {
 		em.getTransaction().begin();
-		em.merge(usuario);
+		em.merge(o);
 		em.getTransaction().commit();
 	}
 
 	// EXCLUIR
 	@Override
-	public void Excluir(Usuario usuario) {
+	public void Excluir(Usuario o) {
 		em.getTransaction().begin();
+		Usuario usuario = em.merge(o);
 		em.remove(usuario);
 		em.getTransaction().commit();
 	}

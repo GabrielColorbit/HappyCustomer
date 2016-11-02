@@ -1,6 +1,6 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -32,15 +32,16 @@ public class OrigemContatoDAO implements InterfaceDAO<OrigemContato> {
 	@Override
 	public void Excluir(OrigemContato o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		OrigemContato origemcontato = em.merge(o);
+		em.remove(origemcontato);
 		em.getTransaction().commit();
 	}
 
 	// LISTAR
 	@Override
-	public List<OrigemContato> Listar() {
+	public ArrayList<OrigemContato> Listar() {
 		Query q = em.createQuery("from OrigemContato a order by id");
-		return q.getResultList();
+		return (ArrayList<OrigemContato>) q.getResultList();
 	}
 
 	// BUSCAR ID

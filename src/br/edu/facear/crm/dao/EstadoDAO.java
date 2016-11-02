@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Estado;
+import br.edu.facear.crm.entity.TipoComunicador;
 
 public class EstadoDAO implements InterfaceDAO<Estado> {
 
@@ -14,24 +15,25 @@ public class EstadoDAO implements InterfaceDAO<Estado> {
 
 	// CADASTRAR
 	@Override
-	public void Cadastrar(Estado estado) throws CrmException {
+	public void Cadastrar(Estado o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(estado);
+		em.persist(o);
 		em.getTransaction().commit();
 	}
 
 	// ALTERAR
 	@Override
-	public void Alterar(Estado estado) {
+	public void Alterar(Estado o) {
 		em.getTransaction().begin();
-		em.merge(estado);
+		em.merge(o);
 		em.getTransaction().commit();
 	}
 
 	// EXCLUIR
 	@Override
-	public void Excluir(Estado estado) {
+	public void Excluir(Estado o) {
 		em.getTransaction().begin();
+		Estado estado = em.merge(o);
 		em.remove(estado);
 		em.getTransaction().commit();
 	}

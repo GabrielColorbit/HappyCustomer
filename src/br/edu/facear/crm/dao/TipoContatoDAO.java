@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.facear.crm.entity.TipoComunicador;
 import br.edu.facear.crm.entity.TipoContato;
 
 public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
@@ -32,7 +33,8 @@ public class TipoContatoDAO implements InterfaceDAO<TipoContato> {
 	@Override
 	public void Excluir(TipoContato o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		TipoContato tipocontato = em.merge(o);
+		em.remove(tipocontato);
 		em.getTransaction().commit();
 	}
 

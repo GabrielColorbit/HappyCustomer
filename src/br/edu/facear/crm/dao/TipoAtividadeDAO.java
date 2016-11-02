@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.facear.crm.entity.OrigemContato;
 import br.edu.facear.crm.entity.TipoAtividade;
 
 public class TipoAtividadeDAO implements InterfaceDAO<TipoAtividade> {
@@ -32,7 +33,8 @@ public class TipoAtividadeDAO implements InterfaceDAO<TipoAtividade> {
 	@Override
 	public void Excluir(TipoAtividade o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		TipoAtividade tipoatividade = em.merge(o);
+		em.remove(tipoatividade);
 		em.getTransaction().commit();
 	}
 

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Item;
+import br.edu.facear.crm.entity.TipoComunicador;
 
 public class ItemDAO implements InterfaceDAO<Item> {
 
@@ -32,7 +33,8 @@ public class ItemDAO implements InterfaceDAO<Item> {
 	@Override
 	public void Excluir(Item o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		Item item = em.merge(o);
+		em.remove(item);
 		em.getTransaction().commit();
 	}
 

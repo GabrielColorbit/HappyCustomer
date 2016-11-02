@@ -18,22 +18,22 @@ public class TipoTelefoneRestful {
 	@GET
 	@Path("/listarTodos")
 	@Produces({ MediaType.APPLICATION_JSON })
-	public ArrayList<TipoTelefone>  findAll() throws Exception{
-				
+	public ArrayList<TipoTelefone> findAll() throws Exception {
+
 		return (ArrayList<TipoTelefone>) new FacadeHappyCustomer().ListarTipoTelefone();
 	}
+
 	@POST
-	@Consumes({MediaType.APPLICATION_FORM_URLENCODED,
-		MediaType.APPLICATION_JSON})
+	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(TipoTelefone tipotelefone) throws Exception {
-		if(tipotelefone.getId() == null)
-			new FacadeHappyCustomer().CadastrarTipoTelefone(tipotelefone);	
+		if (tipotelefone.getId() == null)
+			new FacadeHappyCustomer().CadastrarTipoTelefone(tipotelefone);
 		else
-			new FacadeHappyCustomer().AlterarTipoTelefone(tipotelefone);	
-
+			new FacadeHappyCustomer().AlterarTipoTelefone(tipotelefone);
 	}
+
 	@GET
 	@Path("/Editar/{id}")
 	@Produces("application/json")
@@ -42,7 +42,5 @@ public class TipoTelefoneRestful {
 		TipoTelefone u = new FacadeHappyCustomer().BuscarTipoTelefonePorId(id);
 
 		return u;
-	}	
-	
+	}
 }
-

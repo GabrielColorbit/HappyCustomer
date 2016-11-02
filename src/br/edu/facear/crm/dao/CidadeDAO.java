@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Cidade;
+import br.edu.facear.crm.entity.TipoComunicador;
 
 public class CidadeDAO implements InterfaceDAO<Cidade> {
 
@@ -32,7 +33,8 @@ public class CidadeDAO implements InterfaceDAO<Cidade> {
 	@Override
 	public void Excluir(Cidade o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		Cidade cidade = em.merge(o);
+		em.remove(cidade);
 		em.getTransaction().commit();
 	}
 

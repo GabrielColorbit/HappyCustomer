@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Telefone;
+import br.edu.facear.crm.entity.TipoComunicador;
 
 public class TelefoneDAO implements InterfaceDAO<Telefone> {
 
@@ -32,7 +33,8 @@ public class TelefoneDAO implements InterfaceDAO<Telefone> {
 	@Override
 	public void Excluir(Telefone o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		Telefone telefone = em.merge(o);
+		em.remove(telefone);
 		em.getTransaction().commit();
 	}
 

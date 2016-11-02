@@ -50,13 +50,6 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		} else if (usuario.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");
 		}
-<<<<<<< HEAD
-=======
-		
-		udao.Cadastrar(usuario);
-
-	}
->>>>>>> origin/master
 
 		usuarioDAO.Cadastrar(usuario);
 	}

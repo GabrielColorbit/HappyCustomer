@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.OrigemContatoDAO;
 import br.edu.facear.crm.entity.OrigemContato;
@@ -49,8 +49,8 @@ public class OrigemContatoBO implements InterfaceBO<OrigemContato> {
 
 	// LISTAR
 	@Override
-	public List<OrigemContato> Listar() throws Exception {
-		List<OrigemContato> listaorigemcontato = origemcontatoDAO.Listar();
+	public ArrayList<OrigemContato> Listar() throws Exception {
+		ArrayList<OrigemContato> listaorigemcontato = origemcontatoDAO.Listar();
 		if (listaorigemcontato == null) {
 			throw new Exception("Nenhuma origem de contato cadastrada");
 		}

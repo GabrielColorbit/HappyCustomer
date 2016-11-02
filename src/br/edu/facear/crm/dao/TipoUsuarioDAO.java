@@ -32,7 +32,8 @@ public class TipoUsuarioDAO implements InterfaceDAO<TipoUsuario> {
 	@Override
 	public void Excluir(TipoUsuario o) {
 		em.getTransaction().begin();
-		em.remove(o);
+		TipoUsuario tipousuario = em.merge(o);
+		em.remove(tipousuario);
 		em.getTransaction().commit();
 	}
 
