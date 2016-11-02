@@ -71,7 +71,7 @@ public class TipoEmpresaBean {
 			// FacesMessage(FacesMessage.SEVERITY_INFO,
 			// tipoempresa.toString(), "Tipo Empresa Cadastrada Com Sucesso!"));
 
-			Listar();
+		Listar();
 			return "tipo_empresa.xhtml";
 
 		} else {
