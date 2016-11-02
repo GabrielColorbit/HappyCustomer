@@ -119,7 +119,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<OrigemContato> ListarOrigemContato() throws Exception {
+	public ArrayList<OrigemContato> ListarOrigemContato() throws Exception {
 		return origemcontatoBO.Listar();
 	}
 

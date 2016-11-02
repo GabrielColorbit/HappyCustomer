@@ -1,44 +1,52 @@
 package br.edu.facear.crm.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.facear.crm.entity.Estado;
 import br.edu.facear.crm.entity.OrigemContato;
 
 public class OrigemContatoDAO implements InterfaceDAO<OrigemContato> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
+
+	// CADASTRAR
 	@Override
-	public void Cadastrar(OrigemContato origemcontato) throws CrmException {
+	public void Cadastrar(OrigemContato o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(origemcontato);
-		em.getTransaction().commit();		
+		em.persist(o);
+		em.getTransaction().commit();
 	}
 
+	// ALTERAR
 	@Override
-	public List<OrigemContato> Listar() {
-		Query q = em.createQuery("select a from OrigemContato a");
-		return q.getResultList();
-	}
-
-	@Override
-	public void Alterar(OrigemContato origemcontato) {
+	public void Alterar(OrigemContato o) {
 		em.getTransaction().begin();
-		em.merge(origemcontato);
-		em.getTransaction().commit();		
+		em.merge(o);
+		em.getTransaction().commit();
 	}
 
+	// EXCLUIR
+	@Override
+	public void Excluir(OrigemContato o) {
+		em.getTransaction().begin();
+		OrigemContato origemcontato = em.merge(o);
+		em.remove(origemcontato);
+		em.getTransaction().commit();
+	}
+
+	// LISTAR
+	@Override
+	public ArrayList<OrigemContato> Listar() {
+		Query q = em.createQuery("from OrigemContato a order by id");
+		return (ArrayList<OrigemContato>) q.getResultList();
+	}
+
+	// BUSCAR ID
 	@Override
 	public OrigemContato BuscarID(Long id) {
-		return em.find(OrigemContato.class, id);	
+		return em.find(OrigemContato.class, id);
 	}
-	@Override
-	public void Excluir(OrigemContato origemcontato) {
-		em.getTransaction().begin();
-		em.remove(origemcontato);
-		em.getTransaction().commit();			
-	}
-
 }

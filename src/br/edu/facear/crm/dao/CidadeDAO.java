@@ -6,41 +6,48 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.facear.crm.entity.Cidade;
-import br.edu.facear.crm.entity.Estado;
+import br.edu.facear.crm.entity.TipoComunicador;
 
 public class CidadeDAO implements InterfaceDAO<Cidade> {
+
+	// CONECTA AO BANCO
 	EntityManager em = Connection.getEntityManager();
+
+	// CADASTRAR
 	@Override
-	public void Cadastrar(Cidade cidade) throws CrmException {
+	public void Cadastrar(Cidade o) throws CrmException {
 		em.getTransaction().begin();
-		em.persist(cidade);
-		em.getTransaction().commit();		
+		em.persist(o);
+		em.getTransaction().commit();
 	}
 
+	// ALTERAR
+	@Override
+	public void Alterar(Cidade o) {
+		em.getTransaction().begin();
+		em.merge(o);
+		em.getTransaction().commit();
+	}
+
+	// EXCLUIR
+	@Override
+	public void Excluir(Cidade o) {
+		em.getTransaction().begin();
+		Cidade cidade = em.merge(o);
+		em.remove(cidade);
+		em.getTransaction().commit();
+	}
+
+	// LISTAR
 	@Override
 	public List<Cidade> Listar() {
-		Query q = em.createQuery("select a from Cidade a order by id");
-		
+		Query q = em.createQuery("from Cidade a order by id");
 		return q.getResultList();
 	}
 
-	@Override
-	public void Alterar(Cidade cidade) {
-		em.getTransaction().begin();
-		em.merge(cidade);
-		em.getTransaction().commit();		
-	}
-
+	// BUSCAR ID
 	@Override
 	public Cidade BuscarID(Long id) {
-		return em.find(Cidade.class, id);	
+		return em.find(Cidade.class, id);
 	}
-
-	@Override
-	public void Excluir(Cidade cidade) {
-		em.getTransaction().begin();
-		em.remove(cidade);
-		em.getTransaction().commit();	
-	}
-
 }

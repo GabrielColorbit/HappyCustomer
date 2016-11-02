@@ -15,6 +15,7 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restTipoUsuario")
 public class TipoUsuarioRestful {
+	
 	@GET
 	@Path("/listarTodos")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -23,6 +24,7 @@ public class TipoUsuarioRestful {
 
 		return new FacadeHappyCustomer().ListarTipoUsuario();
 	}
+
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
@@ -33,7 +35,7 @@ public class TipoUsuarioRestful {
 		else
 			new FacadeHappyCustomer().AlterarTipoUsuario(tipoUsuario);
 	}
-	
+
 	@GET
 	@Path("/Editar/{id}")
 	@Produces("application/json")
@@ -42,5 +44,15 @@ public class TipoUsuarioRestful {
 		TipoUsuario tu = new FacadeHappyCustomer().BuscarTipoUsuarioPorId(id);
 
 		return tu;
+	}
+
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirTipoUsuario(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		TipoUsuario tu = new FacadeHappyCustomer().BuscarTipoUsuarioPorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirTipoUsuario(tu);
 	}
 }

@@ -11,9 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Telefone;
-import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
-
 
 @Path("/restTelefone")
 public class TelefoneRestful {
@@ -21,22 +19,20 @@ public class TelefoneRestful {
 	@Path("/listarTodos")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ArrayList<Telefone> findAll() throws Exception{
-				
+	public ArrayList<Telefone> findAll() throws Exception {
+
 		return new FacadeHappyCustomer().ListarTelefone();
 	}
-	
+
 	@POST
-	@Consumes({MediaType.APPLICATION_FORM_URLENCODED,
-		MediaType.APPLICATION_JSON})
+	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarTelefone(Telefone telefone) throws Exception {
-		if(telefone.getId() == null)
-			new FacadeHappyCustomer().CadastrarTelefone(telefone);	
+		if (telefone.getId() == null)
+			new FacadeHappyCustomer().CadastrarTelefone(telefone);
 		else
-			new FacadeHappyCustomer().AlterarTelefone(telefone);	
-
+			new FacadeHappyCustomer().AlterarTelefone(telefone);
 	}
 
 	@GET
@@ -48,8 +44,4 @@ public class TelefoneRestful {
 
 		return u;
 	}
-	
-	
-	
-	
 }

@@ -61,4 +61,3 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 	   };
 	
 });
-

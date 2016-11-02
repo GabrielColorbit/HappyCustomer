@@ -3,8 +3,9 @@ var app = angular.module('happyCustomerApp', [
 	'angularUtils.directives.dirPagination',
 	'UsuarioControllers',
 	'TipoContatoControllers',
-	'TipoTelefoneControllers',
-	'CidadeControllers'
+	'CidadeControllers',
+	'TipoUsuarioControllers',
+	'OrigemContatoControllers'
 ]);
 
 app.controller('MainCtrl',
@@ -35,14 +36,24 @@ app.config(function ($routeProvider) {
         when('/Telefone/Editar/:telefoneId', {templateUrl: 'telefone/partials/editar_telefone.html', controller: 'GetTelefoneController'}).
         when('/Telefone', {templateUrl: 'telefone/partials/listar_telefone.html', controller: 'ListarTelefoneController'}).
         when('/Telefone/Cadastrar', {templateUrl: 'telefone/partials/criar_telefone.html', controller:'CadastrarTelefoneController'}).
-        
+
         //Paths of Cidade    
         when('/Cidade/Editar/:cidadeId', {templateUrl: 'cidade/partials/editar_cidade.html', controller: 'GetCidadeController'}).
         when('/Cidade', {templateUrl: 'cidade/partials/listar_cidade.html', controller: 'ListarCidadeController'}).
         when('/Cidade/Cadastrar', {templateUrl: 'cidade/partials/criar_cidade.html', controller:'CadastrarCidadeController'}).
         
+        //Paths of Tipo Usuário
+        when('/TipoUsuario/Editar/:tipousuarioId', {templateUrl: 'tipo_usuario/partials/editar_tipo_usuario.html', controller: 'GetTipoUsuarioController'}).
+        when('/TipoUsuario', {templateUrl: 'tipo_usuario/partials/listar_tipo_usuario.html', controller: 'ListarTipoUsuarioController'}).
+        when('/TipoUsuario/Cadastrar', {templateUrl: 'tipo_usuario/partials/criar_tipo_usuario.html', controller:'CadastrarTipoUsuarioController'}).
         
-        //Paths of Tipo Contato
+        //Paths of Origem Contato
+        when('/OrigemContato/Editar/:origemcontatoId', {templateUrl: 'origem_contato/partials/editar_origem_contato.html', controller: 'GetOrigemContatoController'}).
+        when('/OrigemContato', {templateUrl: 'origem_contato/partials/listar_origem_contato.html', controller: 'ListarOrigemContatoController'}).
+        when('/OrigemContato/Cadastrar', {templateUrl: 'origem_contato/partials/criar_origem_contato.html', controller:'CadastrarOrigemContatoController'}).
+        
+        
+        //Paths of Home
         otherwise({redirectTo: '/Home'});
 });
 
