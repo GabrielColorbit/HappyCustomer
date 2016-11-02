@@ -32,25 +32,13 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 		}
 		comunicadorDAO.Alterar(comunicador);
 	}
-
+	
 	// EXCLUIR
-	@Override
-<<<<<<< HEAD
-	public void Alterar(Comunicador comunicador) throws Exception {
-		if(comunicador.getNome() ==  null){
-			throw new Exception("Nome Invalido.");
-		}
-		else if(comunicador.getTipocomunicador() == null){
-			throw new Exception("Selecione um Tipo Comunicador");
-		}		
-		tcdao.Alterar(comunicador);			
-=======
 	public void Excluir(Comunicador o) throws Exception {
 		if (o.getNome() == null) {
 			throw new Exception("Comunicador selecionado é inválido!");
 		}
 		comunicadorDAO.Excluir(o);
->>>>>>> origin/master
 	}
 
 	// LISTAR

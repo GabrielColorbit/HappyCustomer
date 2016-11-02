@@ -30,15 +30,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr dir-paginate="tu in origemContatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+						<tr dir-paginate="oc in origemContatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 
 							<td>{{oc.id}}</td>
 							<td>{{oc.nome}}</td>
 
 							<td class="btn-group">
 							<div class="to-right btn-group">
-								<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(tu.id)'>Excluir</a> 
-								<a class="btn btn-warning btn-sm" href="#/OrigemContato/Editar/{{tu.id}}">Editar</a>
+								<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(oc.id)'>Excluir</a> 
+								<a class="btn btn-warning btn-sm" href="#/OrigemContato/Editar/{{oc.id}}">Editar</a>
 							</div>
 						</td>
 						</tr>

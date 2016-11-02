@@ -17,7 +17,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Selecione um Tipo Usuario");
 		} else if (usuario.getCidade() == null) {
 			throw new Exception("Selecione uma Cidade.");
-<<<<<<< HEAD
+
 		}
 		else if(usuario.getTelefones_usuario() ==  null){
 //			throw new Exception("Selecione um um Telefone.");
@@ -26,13 +26,12 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			//throw new Exception("Selecione um Comunicador Usuário.");
 		//}
 		else if(usuario.getNome() ==  null){
-=======
+
 		} else if (usuario.getTelefones_usuario() == null) {
 			throw new Exception("Selecione um um Telefone.");
 		} else if (usuario.getComunicadores_usuario() == null) {
 			throw new Exception("Selecione um Comunicador Usuário.");
 		} else if (usuario.getNome() == null) {
->>>>>>> origin/master
 			throw new Exception("Nome do Usuário Invalido.");
 		} else if (usuario.getCpf() == null) {
 			throw new Exception("Fornecido Cpf  Invaliado.");
@@ -54,17 +53,14 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Genero Fornecido Invalido.");
 		} else if (usuario.getCargo() == null) {
 			throw new Exception("Cargo Fornecido Invalido.");
-<<<<<<< HEAD
 		}
 		//else if(usuario.getFoto() ==  null){
 			//throw new Exception("Foto Fornecido Invalido.");
 		//}
 		else if(usuario.getDatacadastro() ==  null){
-=======
 		} else if (usuario.getFoto() == null) {
 			throw new Exception("Foto Fornecido Invalido.");
 		} else if (usuario.getDatacadastro() == null) {
->>>>>>> origin/master
 			throw new Exception("Data Fornecida Invalida.");
 		} else if (usuario.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");

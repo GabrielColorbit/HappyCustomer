@@ -30,7 +30,6 @@ public class UsuarioRestful {
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(Usuario usuario) throws Exception {
-<<<<<<< HEAD
 		
 		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 		for(Telefone t : usuario.getTelefones_usuario()){
@@ -40,10 +39,9 @@ public class UsuarioRestful {
 		usuario.setTelefones_usuario(telefonelist);
 		if(usuario.getId() == null)
 			new FacadeHappyCustomer().CadastrarUsuario(usuario);	
-=======
 		if (usuario.getId() == null)
 			new FacadeHappyCustomer().CadastrarUsuario(usuario);
->>>>>>> origin/master
+
 		else
 			new FacadeHappyCustomer().AlterarUsuario(usuario);
 
