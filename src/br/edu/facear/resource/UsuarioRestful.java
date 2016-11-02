@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -29,6 +30,13 @@ public class UsuarioRestful {
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(Usuario usuario) throws Exception {
+		
+		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+		for(Telefone t : usuario.getTelefones_usuario()){
+			new FacadeHappyCustomer().CadastrarTelefone(t);
+			telefonelist.add(t);
+		}
+		usuario.setTelefones_usuario(telefonelist);
 		if(usuario.getId() == null)
 			new FacadeHappyCustomer().CadastrarUsuario(usuario);	
 		else

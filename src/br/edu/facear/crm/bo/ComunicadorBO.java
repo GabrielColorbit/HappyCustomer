@@ -31,15 +31,12 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 
 	@Override
 	public void Alterar(Comunicador comunicador) throws Exception {
-		if(comunicador.getTipocomunicador() == null){
-			throw new Exception("Selecione um Tipo Comunicador");
-		}else if(comunicador.getUsuarios() ==  null){
-			throw new Exception("Selecione um Usuário.");
-		}
-		else if(comunicador.getNome() ==  null){
+		if(comunicador.getNome() ==  null){
 			throw new Exception("Nome Invalido.");
 		}
-		
+		else if(comunicador.getTipocomunicador() == null){
+			throw new Exception("Selecione um Tipo Comunicador");
+		}		
 		tcdao.Alterar(comunicador);			
 	}
 
