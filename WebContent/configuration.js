@@ -8,7 +8,8 @@ var app = angular.module('happyCustomerApp', [
 	'OrigemContatoControllers',
 	'TipoAtividadeControllers',
 	'TipoTelefoneControllers',
-	'TipoComunicadorControllers'
+	'TipoComunicadorControllers',
+	'TipoEmpresaControllers'
 ]);
 
 app.controller('MainCtrl',
@@ -69,6 +70,11 @@ app.config(function ($routeProvider) {
         when('/TipoComunicador/Editar/:tipocomunicadorId', {templateUrl: 'tipo_comunicador/partials/editar_tipo_comunicador.html', controller: 'GetTipoComunicadorController'}).
         when('/TipoComunicador', {templateUrl: 'tipo_comunicador/partials/listar_tipo_comunicador.html', controller: 'ListarTipoComunicadorController'}).
         when('/TipoComunicador/Cadastrar', {templateUrl: 'tipo_comunicador/partials/criar_tipo_comunicador.html', controller:'CadastrarTipoComunicadorController'}).
+
+        //Paths of Tipo Empresa   
+        when('/TipoEmpresa/Editar/:tipoempresaId', {templateUrl: 'tipo_empresa/partials/editar_tipo_empresa.html', controller: 'GetTipoEmpresaController'}).
+        when('/TipoEmpresa', {templateUrl: 'tipo_empresa/partials/listar_tipo_empresa.html', controller: 'ListarTipoEmpresaController'}).
+        when('/TipoEmpresa/Cadastrar', {templateUrl: 'tipo_empresa/partials/criar_tipo_empresa.html', controller:'CadastrarTipoEmpresaController'}).
 
         
         //Paths of Home

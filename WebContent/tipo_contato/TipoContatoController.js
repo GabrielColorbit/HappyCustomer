@@ -39,7 +39,7 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({
-			type : "origemContato",
+			type : "tipoContato",
 			id : $scope.tipoContato.id,
 			nome : $scope.tipoContato.nome
 		});
