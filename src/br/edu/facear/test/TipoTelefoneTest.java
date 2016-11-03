@@ -17,7 +17,7 @@ public class TipoTelefoneTest {
 	@Test
 	public void testCadastroTipoTelefone() throws Exception {
 		TipoTelefone TipoTelefone = new TipoTelefone();
-		TipoTelefone.setNome("");
+		TipoTelefone.setNome("Residêncial");
 		facade.CadastrarTipoTelefone(TipoTelefone);
 		Assert.assertEquals(true, TipoTelefone.getId() != null);
 	}

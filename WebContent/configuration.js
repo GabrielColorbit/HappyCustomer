@@ -6,7 +6,9 @@ var app = angular.module('happyCustomerApp', [
 	'CidadeControllers',
 	'TipoUsuarioControllers',
 	'OrigemContatoControllers',
-	'TipoAtividadeControllers'
+	'TipoAtividadeControllers',
+	'TipoTelefoneControllers',
+	'TipoComunicadorControllers'
 ]);
 
 app.controller('MainCtrl',
@@ -57,6 +59,17 @@ app.config(function ($routeProvider) {
         when('/TipoAtividade/Editar/:tipoatividadeId', {templateUrl: 'tipo_atividade/partials/editar_tipo_atividade.html', controller: 'GetTipoAtividadeController'}).
         when('/TipoAtividade', {templateUrl: 'tipo_atividade/partials/listar_tipo_atividade.html', controller: 'ListarTipoAtividadeController'}).
         when('/TipoAtividade/Cadastrar', {templateUrl: 'tipo_atividade/partials/criar_tipo_atividade.html', controller:'CadastrarTipoAtividadeController'}).
+        
+        //Paths of Tipo Telefone    
+        when('/TipoTelefone/Editar/:tipotelefoneId', {templateUrl: 'tipo_telefone/partials/editar_tipo_telefone.html', controller: 'GetTipoTelefoneController'}).
+        when('/TipoTelefone', {templateUrl: 'tipo_telefone/partials/listar_tipo_telefone.html', controller: 'ListarTipoTelefoneController'}).
+        when('/TipoTelefone/Cadastrar', {templateUrl: 'tipo_telefone/partials/criar_tipo_telefone.html', controller:'CadastrarTipoTelefoneController'}).
+
+        //Paths of Tipo Comunicador  
+        when('/TipoComunicador/Editar/:tipocomunicadorId', {templateUrl: 'tipo_comunicador/partials/editar_tipo_comunicador.html', controller: 'GetTipoComunicadorController'}).
+        when('/TipoComunicador', {templateUrl: 'tipo_comunicador/partials/listar_tipo_comunicador.html', controller: 'ListarTipoComunicadorController'}).
+        when('/TipoComunicador/Cadastrar', {templateUrl: 'tipo_comunicador/partials/criar_tipo_comunicador.html', controller:'CadastrarTipoComunicadorController'}).
+
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});

@@ -15,6 +15,7 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restTipoTelefone")
 public class TipoTelefoneRestful {
+	
 	@GET
 	@Path("/listarTodos")
 	@Produces({ MediaType.APPLICATION_JSON })
@@ -39,8 +40,18 @@ public class TipoTelefoneRestful {
 	@Produces("application/json")
 	public TipoTelefone editarTipoTelefone(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		TipoTelefone u = new FacadeHappyCustomer().BuscarTipoTelefonePorId(id);
+		TipoTelefone tt = new FacadeHappyCustomer().BuscarTipoTelefonePorId(id);
 
-		return u;
+		return tt;
+	}
+	
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirTipoTelefone(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		TipoTelefone tt = new FacadeHappyCustomer().BuscarTipoTelefonePorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirTipoTelefone(tt);
 	}
 }

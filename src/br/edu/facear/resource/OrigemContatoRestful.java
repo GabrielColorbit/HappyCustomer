@@ -24,6 +24,7 @@ public class OrigemContatoRestful {
 
 		return new FacadeHappyCustomer().ListarOrigemContato();
 	}
+	
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
@@ -44,6 +45,7 @@ public class OrigemContatoRestful {
 
 		return oc;
 	}
+	
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
