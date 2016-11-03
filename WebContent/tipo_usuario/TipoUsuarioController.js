@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoUsuarioControllers',[]);
 
 myControllers.controller('ListarTipoUsuarioController', function($scope,$http) {
-	$scope.Titulo = "Tipos de Usuário";
+	$scope.Titulo = "Tipo de Usuário";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
 		.success(function(data) {

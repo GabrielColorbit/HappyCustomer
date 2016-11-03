@@ -1,7 +1,7 @@
 var myControllers = angular.module('OrigemContatoControllers',[]);
 
 myControllers.controller('ListarOrigemContatoController', function($scope,$http) {
-	$scope.Titulo = "Origens de Contatos";
+	$scope.Titulo = "Origem de Contato";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restOrigemContato/listarTodos')
 		.success(function(data) {

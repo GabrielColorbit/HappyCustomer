@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoContatoControllers',[]);
 
 myControllers.controller('ListarTipoContatoController', function($scope,$http) {
-	$scope.Titulo = "Tipos de Contatos";
+	$scope.Titulo = "Tipo de Contato";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 		.success(function(data) {

@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoAtividadeControllers',[]);
 
 myControllers.controller('ListarTipoAtividadeController', function($scope,$http) {
-	$scope.Titulo = "Tipos de Atividades";
+	$scope.Titulo = "Tipo de Atividade";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
 		.success(function(data) {

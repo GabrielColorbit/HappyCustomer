@@ -27,7 +27,7 @@
 						<tr class="uppercase">
 							<th ng-click="ordenar('id')">Id</th>
 							<th ng-click="ordenar('nome')">Nome</th>
-							<th><a class="btn btn-success btn-sm to-right" href="#/TipoAtividade/Cadastrar">Adicionar</a></th>
+							<th><a title="Adicionar {{Titulo}}" class="btn btn-success btn-sm to-right" href="#/TipoAtividade/Cadastrar">Adicionar</a></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -38,8 +38,8 @@
 
 								<td class="btn-group">
 								<div class="to-right btn-group">
-									<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(ta.id)'>Excluir</a> 
-									<a class="btn btn-warning btn-sm" href="#/TipoAtividade/Editar/{{ta.id}}">Editar</a>
+									<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/TipoAtividade/Editar/{{ta.id}}">Editar</a>
+									<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(ta.id)'>Excluir</a> 
 								</div>
 							</td>
 						</tr>
