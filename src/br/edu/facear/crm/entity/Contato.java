@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ForeignKey;
@@ -46,14 +47,14 @@ public class Contato {
 	
 	// TELEFONES
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@ManyToMany
+	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_CONTATO\"", joinColumns = {
 	@JoinColumn(name = "id_contato") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_contato;
 	
 	// COMUNICADORES
-	@ManyToMany
+	@OneToMany
 	@JoinTable(name = "\"TB_COMUNICADOR_CONTATO\"", joinColumns = {
 	@JoinColumn(name = "id_contato") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_comunicador") })

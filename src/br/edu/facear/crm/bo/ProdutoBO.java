@@ -1,60 +1,63 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.ProdutoDAO;
 import br.edu.facear.crm.entity.Produto;
-import br.edu.facear.crm.entity.TipoEmpresa;
 
-public class ProdutoBO implements InterfaceBO<Produto>{
-	ProdutoDAO produtodao = new ProdutoDAO();
+public class ProdutoBO implements InterfaceBO<Produto> {
+
+	ProdutoDAO produtoDAO = new ProdutoDAO();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(Produto produto) throws Exception {
-		if(produto.getNome() == null){
-			throw new Exception("Nome do produto é inválido");
-		}else if(produto.getPreco() == null){
-			throw new Exception("Preço do produto é inválido");
+		if (produto.getNome() == null) {
+			throw new Exception("Nome do produto é inválido!");
+		} else if (produto.getPreco() == null) {
+			throw new Exception("Preço do produto é inválido!");
 		}
-		produtodao.Cadastrar(produto);
+		produtoDAO.Cadastrar(produto);
 	}
 
-	@Override
-	public List<Produto> Listar() throws Exception {
-		List<Produto> listaproduto= produtodao.Listar();
-		if(listaproduto == null){
-			throw new Exception("Nenhumm produto cadastrado");
-		}
-		return listaproduto;
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(Produto produto) throws Exception {
-		if(produto.getNome() == null) {
-			throw new Exception("Nome do produto é Invalido");
-		}else if(produto.getPreco() == null) {
-			throw new Exception("Preço do produto é Invalido");
+		if (produto.getNome() == null) {
+			throw new Exception("Nome do produto é inválido!");
+		} else if (produto.getPreco() == null) {
+			throw new Exception("Preço do produto é inválido!");
 		}
-		produtodao.Alterar(produto);	
+		produtoDAO.Alterar(produto);
 	}
 
-	@Override
-	public Produto BuscarID(Long id) throws Exception {
-		if(id == null) {
-			throw new Exception("Produto pesquisado é inválido");
-		}
-		else if(id <= 0) {
-			throw new Exception("Produto pesquisado é inválido");
-		}
-		
-		return produtodao.BuscarID(id);
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(Produto produto) throws Exception {
-		if(produto.getNome() == null) {
-			throw new Exception("produto selecionado é inválido.");
+		if (produto.getNome() == null) {
+			throw new Exception("Produto selecionado é inválido!");
 		}
-		produtodao.Excluir(produto);			
+		produtoDAO.Excluir(produto);
 	}
-	
+
+	// LISTAR
+	@Override
+	public ArrayList<Produto> Listar() throws Exception {
+		ArrayList<Produto> produtos = produtoDAO.Listar();
+		if (produtos == null) {
+			throw new Exception("Nenhumm produto cadastrado!");
+		}
+		return produtos;
+	}
+
+	// BUSCAR ID
+	@Override
+	public Produto BuscarID(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("Produto pesquisado é inválido!");
+		} else if (id <= 0) {
+			throw new Exception("Produto pesquisado é inválido!");
+		}
+		return produtoDAO.BuscarID(id);
+	}
 }

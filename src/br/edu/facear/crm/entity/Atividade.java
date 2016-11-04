@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -47,7 +47,7 @@ public class Atividade {
 	// RELACIONAMENTOS MUITOS PRA MUITOS
 	
 	// COMUNICADORES
-	@ManyToMany
+	@OneToMany
 	@JoinTable(name = "\"TB_COMUNICADOR_ATIVIDADE\"", joinColumns = {
 	@JoinColumn(name = "id_atividade") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_comunicador") })

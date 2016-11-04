@@ -1,57 +1,65 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoAtividadeDAO;
 import br.edu.facear.crm.entity.TipoAtividade;
-import br.edu.facear.crm.entity.TipoComunicador;
 
-public class TipoAtividadeBO implements InterfaceBO<TipoAtividade>{
-	TipoAtividadeDAO tadao = new TipoAtividadeDAO();
+public class TipoAtividadeBO implements InterfaceBO<TipoAtividade> {
 
+	TipoAtividadeDAO tipoatividadeDAO = new TipoAtividadeDAO();
+
+	// CADASTRAR
 	@Override
 	public void Cadastrar(TipoAtividade o) throws Exception {
-		if(o.getNome() == null){
-			throw new Exception("Nome do tipo de atividade é inválido");
+		if (o.getNome() == null) {
+			throw new Exception("Nome do tipo de atividade Inválido!");
 		}
-		tadao.Cadastrar(o);			
+		else if (o.getNome().isEmpty()) {
+			throw new Exception("Preencha o campo nome!");
+		}
+		tipoatividadeDAO.Cadastrar(o);
 	}
 
-	@Override
-	public List<TipoAtividade> Listar() throws Exception {
-		List<TipoAtividade> ta= tadao.Listar();
-		if(ta == null){
-			throw new Exception("Nenhuma tipo de atividade cadastrado");
-		}
-		return ta;
-	}
-
+	// ALTERAR
 	@Override
 	public void Alterar(TipoAtividade o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Nome do tipo de atividade é inválido");
+		if (o.getNome() == null) {
+			throw new Exception("Nome do tipo de atividade Inválido!");
 		}
-		tadao.Alterar(o);			
+		else if (o.getNome().isEmpty()) {
+			throw new Exception("Preencha o campo nome!");
+		}
+		tipoatividadeDAO.Alterar(o);
 	}
 
-	@Override
-	public TipoAtividade BuscarID(Long id) throws Exception {
-		if(id == null) {
-			throw new Exception("Tipo de atividade pesquisado é inválido");
-		}
-		else if(id <= 0) {
-			throw new Exception("Tipo de atividade Pesquisado é inválido");
-		}
-		
-		return tadao.BuscarID(id);
-	}
-
+	// EXCLUIR
 	@Override
 	public void Excluir(TipoAtividade o) throws Exception {
-		if(o.getNome() == null) {
-			throw new Exception("Tipo de atividade selecionado é inválido.");
-		}		
-		tadao.Excluir(o);			
+		if (o.getNome() == null) {
+			throw new Exception("Tipo de Atividade Selecionada é Inválida!");
+		}
+		tipoatividadeDAO.Excluir(o);
 	}
 
+	// LISTAR
+	@Override
+	public ArrayList<TipoAtividade> Listar() throws Exception {
+		ArrayList<TipoAtividade> tipoatividade = tipoatividadeDAO.Listar();
+		if (tipoatividade == null) {
+			throw new Exception("Nenhuma Tipo de Atividade Cadastrada!");
+		}
+		return tipoatividade;
+	}
+
+	// BUSCAR ID
+	@Override
+	public TipoAtividade BuscarID(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("Tipo de Atividade Pesquisado é Inválido!");
+		} else if (id <= 0) {
+			throw new Exception("Tipo de Atividade Pesquisado é Inválido!");
+		}
+		return tipoatividadeDAO.BuscarID(id);
+	}
 }

@@ -589,7 +589,9 @@ select.form-control{
 .form-group .btn-group{
     padding-top: 24px;
 }
-
+tr td.btn-group{
+	padding: 0 8px!important;
+}
 .to-left{float:left;}
 .to-right{float: right!important;}
 form{
@@ -618,13 +620,13 @@ form{
 
 
 
-.table tr .btn{
-    float: right;
-}
+.table tr .btn{float: right;}
 .table tr:first-child td.btn-group{
     border-top: none;
 }
-.table tr td.btn-group .btn{float: left;}
+.table tr td.btn-group .btn{
+    float: left;
+}
 .search_bar{padding:0}
 .search_bar > input{
 	background: rgba(0,0,0,0.04);

@@ -1,7 +1,6 @@
 package br.edu.facear.facade;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.edu.facear.crm.bo.AtividadeBO;
 import br.edu.facear.crm.bo.CidadeBO;
@@ -119,7 +118,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<OrigemContato> ListarOrigemContato() throws Exception {
+	public ArrayList<OrigemContato> ListarOrigemContato() throws Exception {
 		return origemcontatoBO.Listar();
 	}
 
@@ -148,7 +147,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoEmpresa> ListarTipoEmpresa() throws Exception {
+	public ArrayList<TipoEmpresa> ListarTipoEmpresa() throws Exception {
 		return tipoempresaBO.Listar();
 	}
 
@@ -206,7 +205,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoTelefone> ListarTipoTelefone() throws Exception {
+	public ArrayList<TipoTelefone> ListarTipoTelefone() throws Exception {
 		return tipotelefoneBO.Listar();
 	}
 
@@ -235,7 +234,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoComunicador> ListarTipoComunicador() throws Exception {
+	public ArrayList<TipoComunicador> ListarTipoComunicador() throws Exception {
 		return tipocomunicadorBO.Listar();
 	}
 
@@ -264,7 +263,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<TipoAtividade> ListarTipoAtividade() throws Exception {
+	public ArrayList<TipoAtividade> ListarTipoAtividade() throws Exception {
 		return tipoatividadeBO.Listar();
 	}
 
@@ -322,7 +321,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Comunicador> ListarComunicador() throws Exception {
+	public ArrayList<Comunicador> ListarComunicador() throws Exception {
 		return comunicadorBO.Listar();
 	}
 
@@ -351,7 +350,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Produto> ListarProduto() throws Exception {
+	public ArrayList<Produto> ListarProduto() throws Exception {
 		return produtoBO.Listar();
 	}
 
@@ -380,7 +379,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Estado> ListarEstado() throws Exception {
+	public ArrayList<Estado> ListarEstado() throws Exception {
 		return estadoBO.Listar();
 	}
 
@@ -409,7 +408,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Cidade> ListarCidade() throws Exception {
+	public ArrayList<Cidade> ListarCidade() throws Exception {
 		return cidadeBO.Listar();
 	}
 
@@ -438,7 +437,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Negocio> ListarNegocio() throws Exception {
+	public ArrayList<Negocio> ListarNegocio() throws Exception {
 		return negocioBO.Listar();
 	}
 
@@ -467,7 +466,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Item> ListarItem() throws Exception {
+	public ArrayList<Item> ListarItem() throws Exception {
 		return itemBO.Listar();
 	}
 
@@ -496,7 +495,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Atividade> ListarAtividade() throws Exception {
+	public ArrayList<Atividade> ListarAtividade() throws Exception {
 		return atividadeBO.Listar();
 	}
 
@@ -525,7 +524,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Ligacao> ListarLigacao() throws Exception {
+	public ArrayList<Ligacao> ListarLigacao() throws Exception {
 		return ligacaoBO.Listar();
 	}
 
@@ -583,7 +582,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Contato> ListarContato() throws Exception {
+	public ArrayList<Contato> ListarContato() throws Exception {
 		return contatoBO.Listar();
 	}
 
@@ -612,7 +611,7 @@ public class FacadeHappyCustomer {
 	}
 
 	// LISTAR
-	public List<Empresa> ListarEmpresa() throws Exception {
+	public ArrayList<Empresa> ListarEmpresa() throws Exception {
 		return empresaBO.Listar();
 	}
 

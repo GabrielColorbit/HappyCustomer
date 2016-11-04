@@ -20,5 +20,5 @@ public interface InterfaceBO<CRM> {
 
 	// INTERFACE BUSCAR PELO ID - "GetObjectById"
 	public CRM BuscarID(Long id) throws Exception;
-
+	
 }
