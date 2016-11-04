@@ -9,7 +9,8 @@ var app = angular.module('happyCustomerApp', [
 	'TipoAtividadeControllers',
 	'TipoTelefoneControllers',
 	'TipoComunicadorControllers',
-	'TipoEmpresaControllers'
+	'TipoEmpresaControllers',
+	'EstadoControllers'
 ]);
 
 app.controller('MainCtrl',
@@ -76,6 +77,17 @@ app.config(function ($routeProvider) {
         when('/TipoEmpresa', {templateUrl: 'tipo_empresa/partials/listar_tipo_empresa.html', controller: 'ListarTipoEmpresaController'}).
         when('/TipoEmpresa/Cadastrar', {templateUrl: 'tipo_empresa/partials/criar_tipo_empresa.html', controller:'CadastrarTipoEmpresaController'}).
 
+        //Paths of Produto
+        when('/Produto/Editar/:produtoId', {templateUrl: 'produto/partials/editar_produto.html', controller: 'GetProdutoController'}).
+        when('/Produto', {templateUrl: 'produto/partials/listar_produto.html', controller: 'ListarProdutoController'}).
+        when('/Produto/Cadastrar', {templateUrl: 'produto/partials/criar_produto.html', controller:'CadastrarProdutoController'}).
+
+        //Paths of Estado
+        when('/Estado/Editar/:estadoId', {templateUrl: 'estado/partials/editar_estado.html', controller: 'GetEstadoController'}).
+        when('/Estado', {templateUrl: 'estado/partials/listar_estado.html', controller: 'ListarEstadoController'}).
+        when('/Estado/Cadastrar', {templateUrl: 'estado/partials/criar_estado.html', controller:'CadastrarEstadoController'}).
+
+       
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});

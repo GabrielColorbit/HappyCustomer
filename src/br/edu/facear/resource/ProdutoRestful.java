@@ -10,48 +10,48 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.edu.facear.crm.entity.Estado;
+import br.edu.facear.crm.entity.Produto;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
-@Path("/restEstado")
-public class EstadoRestful {
-
+@Path("/restProduto")
+public class ProdutoRestful {
+	
 	@GET
 	@Path("/listarTodos")
 	@Produces({ MediaType.APPLICATION_JSON })
-	public ArrayList<Estado> findAll() throws Exception {
+	public ArrayList<Produto> findAll() throws Exception {
 
-		return (ArrayList<Estado>) new FacadeHappyCustomer().ListarEstado();
+		return (ArrayList<Produto>) new FacadeHappyCustomer().ListarProduto();
 	}
 
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
 	@Path("/Salvar")
-	public void cadastrarCliente(Estado Estado) throws Exception {
-		if (Estado.getId() == null)
-			new FacadeHappyCustomer().CadastrarEstado(Estado);
+	public void cadastrarCliente(Produto produto) throws Exception {
+		if (produto.getId() == null)
+			new FacadeHappyCustomer().CadastrarProduto(produto);
 		else
-			new FacadeHappyCustomer().AlterarEstado(Estado);
+			new FacadeHappyCustomer().AlterarProduto(produto);
 	}
 
 	@GET
 	@Path("/Editar/{id}")
 	@Produces("application/json")
-	public Estado editarEstado(@PathParam(value = "id") String codigo) throws Exception {
+	public Produto editarProduto(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Estado e = new FacadeHappyCustomer().BuscarEstadoPorId(id);
+		Produto p = new FacadeHappyCustomer().BuscarProdutoPorId(id);
 
-		return e;
+		return p;
 	}
 	
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
-	public void excluirEstado(@PathParam(value = "id") String codigo) throws Exception {
+	public void excluirProduto(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Estado e = new FacadeHappyCustomer().BuscarEstadoPorId(id);
+		Produto p = new FacadeHappyCustomer().BuscarProdutoPorId(id);
 		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
-		fhc.ExcluirEstado(e);
+		fhc.ExcluirProduto(p);
 	}
 }

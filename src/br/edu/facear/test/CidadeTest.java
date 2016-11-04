@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import br.edu.facear.crm.entity.Cidade;
 import br.edu.facear.crm.entity.Estado;
-import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class CidadeTest {
@@ -23,7 +22,7 @@ public class CidadeTest {
 	@Test
 	public void testCadastroCidade() throws Exception {
 		
-		Cidade.setNome("Curitiba");
+		Cidade.setNome("Araucária");
 		Estado.setId(1l);
 		Cidade.setEstado(Estado);
 		facade.CadastrarCidade(Cidade);

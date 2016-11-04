@@ -22,6 +22,7 @@
 				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 				<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 				{{Resposta}}
+				
 				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row control-group">
 						<div
@@ -32,12 +33,12 @@
 						</div>
 
 						<div class="form-group col-xs-6 floating-label-form-group controls">
-							<label>Estado</label> 
+							<label>Estado</label>
 
-							    <select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-							      ng-options="estado.nome estado.pais for estado in estados track by estado.id" ng-model="cidade.estado">
-							      
-							      </select>
+							    <select class="form-control" required data-validation-required-message="Por favor selecione um estado"
+								    ng-options="estado.nome for estado in estados track by estado.id" ng-model="cidade.estado" >    
+								    <option value="">Estado</option>
+								</select>	
 								<p class="help-block text-danger"></p>
 							
 						</div>
