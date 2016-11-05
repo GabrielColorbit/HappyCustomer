@@ -66,29 +66,7 @@ public class UsuarioRestful {
 		return u;
 	}
 	
-    @POST
-    @Path("/file")
-    @Consumes({MediaType.MULTIPART_FORM_DATA})
-    public Response uploadFile(
-            @FormDataParam("file") InputStream fileInputStream,
-            @FormDataParam("file") FormDataContentDisposition fileMetaData) throws Exception {
-        try {
-            int read = 0;
-            byte[] bytes = new byte[1024];
-            File file = new File(fileMetaData.getFileName());
-            System.out.println("Upload File Path : "+file.getAbsolutePath());
-            OutputStream out = new FileOutputStream(file);
-            while ((read = fileInputStream.read(bytes)) != -1) {
-                out.write(bytes, 0, read);
-            }
-            out.flush();
-            out.close();
-        } catch (IOException e) {
-            throw (e);
-        }
-        return Response.ok("Data uploaded successfully !!").build();
-    }	
-	
+
 	
 	
 }
