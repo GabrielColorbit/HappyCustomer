@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoTelefoneDAO;
 import br.edu.facear.crm.entity.TipoTelefone;
@@ -44,8 +44,8 @@ public class TipoTelefoneBO implements InterfaceBO<TipoTelefone> {
 
 	// LISTAR
 	@Override
-	public List<TipoTelefone> Listar() throws Exception {
-		List<TipoTelefone> tipotelefone = tipotelefoneDAO.Listar();
+	public ArrayList<TipoTelefone> Listar() throws Exception {
+		ArrayList<TipoTelefone> tipotelefone = tipotelefoneDAO.Listar();
 		if (tipotelefone == null) {
 			throw new Exception("Nenhum Tipo de Telefone cadastrado!");
 		}

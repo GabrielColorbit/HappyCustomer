@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.EmpresaDAO;
 import br.edu.facear.crm.entity.Empresa;
@@ -79,8 +79,8 @@ public class EmpresaBO implements InterfaceBO<Empresa> {
 
 	// LISTAR
 	@Override
-	public List<Empresa> Listar() throws Exception {
-		List<Empresa> e = empresaDAO.Listar();
+	public ArrayList<Empresa> Listar() throws Exception {
+		ArrayList<Empresa> e = empresaDAO.Listar();
 		if (e == null) {
 			throw new Exception("Nenhuma empresa cadastrado");
 		}

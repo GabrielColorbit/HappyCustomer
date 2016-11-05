@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoComunicadorDAO;
 import br.edu.facear.crm.entity.TipoComunicador;
@@ -44,8 +44,8 @@ public class TipoComunicadorBO implements InterfaceBO<TipoComunicador> {
 
 	// LISTAR
 	@Override
-	public List<TipoComunicador> Listar() throws Exception {
-		List<TipoComunicador> tipocomunicador = tipocomunicadorDAO.Listar();
+	public ArrayList<TipoComunicador> Listar() throws Exception {
+		ArrayList<TipoComunicador> tipocomunicador = tipocomunicadorDAO.Listar();
 		if (tipocomunicador == null) {
 			throw new Exception("Nenhuma tipo de comunicador cadastrado!");
 		}

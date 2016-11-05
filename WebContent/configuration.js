@@ -5,7 +5,8 @@ var app = angular.module('happyCustomerApp', [
 	'TipoContatoControllers',
 	'CidadeControllers',
 	'TipoUsuarioControllers',
-	'OrigemContatoControllers'
+	'OrigemContatoControllers',
+	'TipoAtividadeControllers'
 ]);
 
 app.controller('MainCtrl',
@@ -52,6 +53,10 @@ app.config(function ($routeProvider) {
         when('/OrigemContato', {templateUrl: 'origem_contato/partials/listar_origem_contato.html', controller: 'ListarOrigemContatoController'}).
         when('/OrigemContato/Cadastrar', {templateUrl: 'origem_contato/partials/criar_origem_contato.html', controller:'CadastrarOrigemContatoController'}).
         
+        //Paths of Tipo Atividade
+        when('/TipoAtividade/Editar/:tipoatividadeId', {templateUrl: 'tipo_atividade/partials/editar_tipo_atividade.html', controller: 'GetTipoAtividadeController'}).
+        when('/TipoAtividade', {templateUrl: 'tipo_atividade/partials/listar_tipo_atividade.html', controller: 'ListarTipoAtividadeController'}).
+        when('/TipoAtividade/Cadastrar', {templateUrl: 'tipo_atividade/partials/criar_tipo_atividade.html', controller:'CadastrarTipoAtividadeController'}).
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});

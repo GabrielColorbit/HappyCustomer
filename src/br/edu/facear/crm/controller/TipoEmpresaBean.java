@@ -57,15 +57,16 @@ public class TipoEmpresaBean {
 
 	// SALVAR - CADASTRAR/EXCLUIR
 	public String salvar() throws Exception {
-		
+
 		// CADASTRAR
 		if (tipoempresa.getId() == null || tipoempresa.getId().equals(0l)) {
 			if (tipoempresa.getId().equals(0l)) {
 				tipoempresa.setId(null);
-			}			
-			
+			}
+
 			facade.CadastrarTipoEmpresa(tipoempresa);
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Tipo Empresa Cadastrada Com Sucesso!"));
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage("Tipo Empresa Cadastrada Com Sucesso!"));
 
 			// FacesContext.getCurrentInstance().addMessage(null, new
 			// FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -75,7 +76,7 @@ public class TipoEmpresaBean {
 			return "tipo_empresa.xhtml";
 
 		} else {
-			
+
 			facade.AlterarTipoEmpresa(tipoempresa);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Tipo Empresa Alterada Com Sucesso!"));
 
@@ -103,12 +104,10 @@ public class TipoEmpresaBean {
 	public void excluir(TipoEmpresa tipoempresa) throws Exception {
 		facade.ExcluirTipoEmpresa(tipoempresa);
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Tipo Empresa Excluída Com Sucesso!"));
-		// FacesContext.getCurrentInstance().addMessage("myform:senha", new
-		// FacesMessage("Erro: Senha errada"));
+
 		Listar();
 	}
-
-	// LISTAR
+	// listando
 	@PostConstruct
 	public void Listar() {
 		try {
@@ -118,4 +117,5 @@ public class TipoEmpresaBean {
 			e.printStackTrace();
 		}
 	}
+
 }

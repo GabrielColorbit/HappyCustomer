@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.NegocioDAO;
 import br.edu.facear.crm.entity.Negocio;
@@ -44,8 +44,8 @@ public class NegocioBO implements InterfaceBO<Negocio> {
 
 	// LISTAR
 	@Override
-	public List<Negocio> Listar() throws Exception {
-		List<Negocio> n = negocioDAO.Listar();
+	public ArrayList<Negocio> Listar() throws Exception {
+		ArrayList<Negocio> n = negocioDAO.Listar();
 		if (n == null) {
 			throw new Exception("Nenhuma negocio cadastrado");
 		}

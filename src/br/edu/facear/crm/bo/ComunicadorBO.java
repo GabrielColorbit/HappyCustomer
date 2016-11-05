@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.ComunicadorDAO;
 import br.edu.facear.crm.entity.Comunicador;
@@ -43,8 +43,8 @@ public class ComunicadorBO implements InterfaceBO<Comunicador> {
 
 	// LISTAR
 	@Override
-	public List<Comunicador> Listar() throws Exception {
-		List<Comunicador> comunicadores = comunicadorDAO.Listar();
+	public ArrayList<Comunicador> Listar() throws Exception {
+		ArrayList<Comunicador> comunicadores = comunicadorDAO.Listar();
 		if (comunicadores == null) {
 			throw new Exception("Nenhum comunicador cadastrado!");
 		}

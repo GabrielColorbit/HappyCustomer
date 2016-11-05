@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.CidadeDAO;
 import br.edu.facear.crm.entity.Cidade;
@@ -42,8 +42,8 @@ public class CidadeBO implements InterfaceBO<Cidade> {
 
 	// LISTAR
 	@Override
-	public List<Cidade> Listar() throws Exception {
-		List<Cidade> cidades = cidadeDAO.Listar();
+	public ArrayList<Cidade> Listar() throws Exception {
+		ArrayList<Cidade> cidades = cidadeDAO.Listar();
 		if (cidades == null) {
 			throw new Exception("Nenhuma cidade cadastrada!");
 		}

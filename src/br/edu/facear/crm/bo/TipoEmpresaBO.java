@@ -1,6 +1,6 @@
 package br.edu.facear.crm.bo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import br.edu.facear.crm.dao.TipoEmpresaDAO;
 import br.edu.facear.crm.entity.TipoEmpresa;
@@ -44,8 +44,8 @@ public class TipoEmpresaBO implements InterfaceBO<TipoEmpresa> {
 
 	// LISTAR
 	@Override
-	public List<TipoEmpresa> Listar() throws Exception {
-		List<TipoEmpresa> tipoempresa = tipoempresaDAO.Listar();
+	public ArrayList<TipoEmpresa> Listar() throws Exception {
+		ArrayList<TipoEmpresa> tipoempresa = tipoempresaDAO.Listar();
 		if (tipoempresa == null) {
 			throw new Exception("Nenhum tipo de empresa cadastrada!");
 		}
