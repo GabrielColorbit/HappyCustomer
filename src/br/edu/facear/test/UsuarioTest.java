@@ -81,9 +81,6 @@ public class UsuarioTest {
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.CadastrarComunicador(Comunicador);
 		
-		List<Comunicador> comunicadores_usuario = new ArrayList<Comunicador>();
-		comunicadores_usuario.add(Comunicador);
-		Usuario.setComunicadores_usuario(comunicadores_usuario);
 		
 		//CADASTRAR
 		facade.CadastrarUsuario(Usuario);
@@ -140,10 +137,7 @@ public class UsuarioTest {
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.AlterarComunicador(Comunicador);
 		
-		List<Comunicador> comunicadores_usuario = new ArrayList<Comunicador>();
-		comunicadores_usuario.add(Comunicador);
-		Usuario.setComunicadores_usuario(comunicadores_usuario);
-		
+	
 		//ALTERAR	
 		facade.AlterarUsuario(Usuario);
 		Assert.assertEquals(true, Usuario.getNome().equals("Gabriel"));

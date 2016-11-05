@@ -18,11 +18,10 @@ public class TipoContatoRestful {
 
 	@GET
 	@Path("/listarTodos")
-	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<TipoContato> findAll() throws Exception {
-
-		return new FacadeHappyCustomer().ListarTipoContato();
+		ArrayList<TipoContato> tiposContatos = new FacadeHappyCustomer().ListarTipoContato();
+		return tiposContatos;
 	}
 
 	@POST

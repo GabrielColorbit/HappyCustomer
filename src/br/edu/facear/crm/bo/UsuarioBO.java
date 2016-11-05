@@ -29,8 +29,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 
 		} else if (usuario.getTelefones_usuario() == null) {
 			throw new Exception("Selecione um um Telefone.");
-		} else if (usuario.getComunicadores_usuario() == null) {
-			throw new Exception("Selecione um Comunicador Usuário.");
+		
 		} else if (usuario.getNome() == null) {
 			throw new Exception("Nome do Usuário Invalido.");
 		} else if (usuario.getCpf() == null) {
@@ -79,8 +78,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Selecione uma Cidade.");
 		} else if (usuario.getTelefones_usuario() == null) {
 			throw new Exception("Selecione um um Telefone.");
-		} else if (usuario.getComunicadores_usuario() == null) {
-			throw new Exception("Selecione um Comunicador Usuário.");
+
 		} else if (usuario.getNome() == null) {
 			throw new Exception("Nome do Usuário Invalido.");
 		} else if (usuario.getCpf() == null) {
@@ -103,13 +101,16 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Genero Fornecido Invalido.");
 		} else if (usuario.getCargo() == null) {
 			throw new Exception("Cargo Fornecido Invalido.");
-		} else if (usuario.getFoto() == null) {
-			throw new Exception("Foto Fornecido Invalido.");
-		} else if (usuario.getDatacadastro() == null) {
+		} 
+//		else if (usuario.getFoto() == null) {
+//			throw new Exception("Foto Fornecido Invalido.");
+//		} 
+		else if (usuario.getDatacadastro() == null) {
 			throw new Exception("Data Fornecida Invalida.");
-		} else if (usuario.getStatus() == null) {
-			throw new Exception("Status Fornecido Invalido.");
-		}
+		} 
+//		else if (usuario.getStatus() == null) {
+//			throw new Exception("Status Fornecido Invalido.");
+//		}
 
 		usuarioDAO.Alterar(usuario);
 	}
