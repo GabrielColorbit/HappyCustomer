@@ -1,26 +1,12 @@
 var myControllers = angular.module('TipoContatoControllers',[]);
 
 myControllers.controller('ListarTipoContatoController', function($scope,$http) {
-<<<<<<< HEAD
-	$scope.Titulo = "Tipos de Contato";
-	$scope.tipoContatolist = [];
-	$scope.BuscarInformacao = function() {
-		$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
-		.success(function(data) {
-//			$scope.tipoContatolist = data["tipoContato"];
-			if(data["tipoContato"].length !== '[object Array]'){
-				console.log(data["tipoContato"].length);
-			}
-			
-			
-=======
 	$scope.Titulo = "Tipos de Contatos";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 		.success(function(data) {
 			$scope.tipoContatolist = data["tipoContato"];
 			$scope.Quantidade = $scope.tipoContatolist.length+' Tipos de Contatos Encontrados!' ;
->>>>>>> origin/master
 		});
 	};
 	$scope.BuscarInformacao();
