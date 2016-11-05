@@ -35,7 +35,7 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $routePa
 
 	$scope.Resposta = 'Preencher campos de cadastro';
 
-	$scope.Titulo = "Cadastrar Tipo de Contato";
+	$scope.Titulo = "Cadastrar Usuário";
 
 });
 myControllers.controller('UsuarioController', function($scope, $routeParams,$http) {
@@ -135,22 +135,28 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
  		$scope.listTelefones=[];
  		$scope.add = function(){
  			
- 			if($scope.telefone.id == null){
- 				autoincrement();
- 				$scope.listTelefones.push({
- 	  				id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
- 	  			});
- 			}else{
- 	  			var index =$scope.telefone.id;
- 	  			$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
- 	  			$scope.listTelefones[index].numero = $scope.telefone.numero;
+ 			if(validarCampos()){
+ 				if($scope.telefone.id == null){
+		 				autoincrement();
+		 				$scope.listTelefones.push({
+		 	  				id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
+		 	  			});
+		 			}else{
+		 	  			var index =$scope.telefone.id;
+		 	  			$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
+		 	  			$scope.listTelefones[index].numero = $scope.telefone.numero;
+		 			}
+	 				$scope.telefone.id = null;
+	 	  		 	$scope.telefone.tipotelefone = '';
+	 	  			$scope.telefone.numero = '';
  			}
+ 			
+ 			
+ 				 			
 
   			
   			
-  			$scope.telefone.id = null;
-  		 	$scope.telefone.tipotelefone = '';
-  			$scope.telefone.numero = '';
+  			
   		}
 
   		$scope.selectEdit = function(id){
@@ -175,6 +181,22 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
   		function autoincrement(){
   			$scope.telefone.id = Object.keys($scope.listTelefones).length;
   		}
-       
+        function validarCampos(){
+        	var i;
+        	if($scope.telefone){
+ 				if(! $scope.telefone.numero ){
+ 					alert("O campo número de telefone está vázio, favor preencher o campo.");
+ 					i = false;
+ 				}else if(! $scope.telefone.tipotelefone){
+ 					alert("O campo tipo de telefone está vázio, favor preencher o campo.");
+ 				}else{
+ 					i = true
+ 				}
+ 			}else{
+ 				alert("Favor preencher os campos Número e Tipo de Telefone");
+ 				i = false;
+ 			}
+        	return i;
+        }
 
 });

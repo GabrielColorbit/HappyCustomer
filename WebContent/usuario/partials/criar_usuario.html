@@ -25,6 +25,31 @@
 				
 				
 				<form name="sentMessage" id="contactForm" novalidate>
+							<div class="form-group last">
+								<label class="control-label col-md-3">Foto</label>
+								<div class="col-md-9">
+									<div class="fileinput fileinput-new" data-provides="fileinput">
+										<div class="fileinput-new thumbnail"
+											style="width: 200px; height: 150px;">
+											<img
+												src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=sem+imagem"
+												alt="">
+										</div>
+										<div class="fileinput-preview fileinput-exists thumbnail"
+											style="max-width: 200px; max-height: 150px;"></div>
+										<div>
+											<span class="btn default btn-file"> <span
+												class="fileinput-new"> Selecionar imagem </span> <span
+												class="fileinput-exists"> Mudar imagem </span> <input
+												type="file" name="...">
+											</span> <a href="javascript:;" class="btn red fileinput-exists"
+												data-dismiss="fileinput"> Remover </a>
+										</div>
+									</div>
+								</div>
+							</div>				
+				
+				
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Nome</label>
@@ -190,7 +215,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>+</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>salvar</a>
 
 								</div>
 
@@ -200,23 +225,22 @@
 
 
 						<div class="row ">
-							<h3>Comunicadores da Atividade</h3>
+							<h3>Telefones do Usuário</h3>
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-											<th>Id</th>
 											<th>Numero</th>
 											<th>Tipo</th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-							                <td>{{telefone.id}}</td>
+							                
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>ver</a>
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>editar</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>remover</a>
 											</td>
 										</tr>
@@ -234,8 +258,7 @@
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 
-								<a class="btn btn-danger btn-lg to-left"
-									href="#/Usuario">Voltar</a>
+								<a class="btn btn-danger btn-lg to-left" href="#/Usuario">Voltar</a>
 								<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
 							</div>
 						</div>
