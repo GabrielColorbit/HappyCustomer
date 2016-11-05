@@ -9,9 +9,13 @@ var app = angular.module('happyCustomerApp', [
 	'TipoAtividadeControllers',
 	'TipoTelefoneControllers',
 	'TipoComunicadorControllers',
+<<<<<<< HEAD
 	'TipoEmpresaControllers',
 	'EstadoControllers',
 	'ProdutoControllers'
+=======
+	'TipoEmpresaControllers'
+>>>>>>> CRUD Tipo Empresa OK
 ]);
 
 app.controller('MainCtrl',
@@ -78,6 +82,7 @@ app.config(function ($routeProvider) {
         when('/TipoEmpresa', {templateUrl: 'tipo_empresa/partials/listar_tipo_empresa.html', controller: 'ListarTipoEmpresaController'}).
         when('/TipoEmpresa/Cadastrar', {templateUrl: 'tipo_empresa/partials/criar_tipo_empresa.html', controller:'CadastrarTipoEmpresaController'}).
 
+<<<<<<< HEAD
         //Paths of Produto
         when('/Produto/Editar/:produtoId', {templateUrl: 'produto/partials/editar_produto.html', controller: 'GetProdutoController'}).
         when('/Produto', {templateUrl: 'produto/partials/listar_produto.html', controller: 'ListarProdutoController'}).
@@ -89,6 +94,8 @@ app.config(function ($routeProvider) {
         when('/Estado/Cadastrar', {templateUrl: 'estado/partials/criar_estado.html', controller:'CadastrarEstadoController'}).
 
        
+=======
+>>>>>>> CRUD Tipo Empresa OK
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});
