@@ -1,6 +1,5 @@
-
   <meta charset="UTF-8">
-
+  
 <!-- Header -->
 <header>
 	<div class="container">
@@ -35,23 +34,20 @@
 						<div class="form-group col-xs-6 floating-label-form-group controls">
 							<label>Estado</label>
 
-							    <select class="form-control" required data-validation-required-message="Por favor selecione um estado"
+		
+							    
+							    
+								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
 								    ng-options="estado.nome for estado in estados track by estado.id" ng-model="cidade.estado" >    
-								    <option value="">Estado</option>
-								</select>	
+								    <option value="" selected>Estados</option>
+								</select>	  
+							      
+							      
 								<p class="help-block text-danger"></p>
 							
 						</div>
-
-
-
 					</div>
-
-
-
-
-
-
+					
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group btn-group col-xs-12">

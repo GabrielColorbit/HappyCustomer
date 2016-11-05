@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Cidade;
+import br.edu.facear.crm.entity.Estado;
 import br.edu.facear.crm.entity.OrigemContato;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -42,7 +43,17 @@ public class CidadeRestful {
 	@Produces("application/json")
 	public Cidade editarCidade(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Cidade cidade = new FacadeHappyCustomer().BuscarCidadePorId(id);
-		return cidade;
+		Cidade c = new FacadeHappyCustomer().BuscarCidadePorId(id);
+		return c;
+	}
+	
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirCidade(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		Cidade c = new FacadeHappyCustomer().BuscarCidadePorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirCidade(c);
 	}
 }

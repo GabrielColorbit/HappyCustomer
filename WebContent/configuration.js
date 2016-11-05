@@ -10,7 +10,8 @@ var app = angular.module('happyCustomerApp', [
 	'TipoTelefoneControllers',
 	'TipoComunicadorControllers',
 	'TipoEmpresaControllers',
-	'EstadoControllers'
+	'EstadoControllers',
+	'ProdutoControllers'
 ]);
 
 app.controller('MainCtrl',

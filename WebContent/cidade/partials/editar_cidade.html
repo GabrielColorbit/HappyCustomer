@@ -1,11 +1,10 @@
   <meta charset="UTF-8">
-
 	<header>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="intro-text">
-						<span class="name">Editar Cidade</span>
+						<span class="name">{{Titulo}}</span>
 					</div>
 				</div>
 			</div>
@@ -20,6 +19,7 @@
 					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					{{Resposta}}
+					
 					<form name="sentMessage" id="contactForm" novalidate>
 						<div class="row control-group">
 							<input type="hidden"id="nome" ng-model="cidade.id">
@@ -27,27 +27,21 @@
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
 								<label>Cidade</label> 
-								<input type="text" ng-model="cidade.nome" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor insira um nome">
+								<input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor insira um nome" ng-model="cidade.nome">
 
 								<p class="help-block text-danger"></p>
 							</div>
 
 							<div class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Empresa</label> 
+								<label>Estado</label> 
 							    <select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-							      ng-options="estado.nome for estado in estados track by estado.id"
-							      ng-model="cidade.estado"></select>
-							      <p class="help-block text-danger"></p>
+								    ng-options="estado.nome for estado in estados track by estado.id" ng-model="cidade.estado" >    
+								    <option value="" selected>Estados</option>
+								</select>	  
+							      								<p class="help-block text-danger"></p>
+							      
 							</div>
-
-
-
 						</div>
-
-
-
-
-
 
 						<div id="success"></div>
 						<div class="row">
@@ -63,4 +57,3 @@
 			</div>
 		</div>
 	</section>
-
