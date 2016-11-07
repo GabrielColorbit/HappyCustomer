@@ -87,6 +87,7 @@ public final class TipoContato {
 	 */
 	public TipoContato(Long id, String nome) {
 		super();
+		
 		this.id = id;
 		this.nome = nome;
 	}
