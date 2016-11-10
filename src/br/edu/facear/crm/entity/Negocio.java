@@ -8,9 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
 
+@XmlRootElement
 @Entity
 //CRIA TABELA
 @Table(name="\"TB_NEGOCIO\"")
@@ -24,27 +26,18 @@ public class Negocio {
 	
 	// CHAVE(S) ESTRANGEIRA(S)
 	@ManyToOne
-	@ForeignKey(name = "fk_usuarioresponsavel")
-	private Usuario usuarioresponsavel;
-
-	@ManyToOne
 	@ForeignKey(name = "fk_empresa")
 	private Empresa empresa;
 	
 	// ATRIBUTOS
 	private String nome;
 	private Date data;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public Usuario getUsuarioresponsavel() {
-		return usuarioresponsavel;
-	}
-	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
-		this.usuarioresponsavel = usuarioresponsavel;
 	}
 	public Empresa getEmpresa() {
 		return empresa;
@@ -72,7 +65,6 @@ public class Negocio {
 		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
 	@Override
@@ -104,29 +96,21 @@ public class Negocio {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
-		if (usuarioresponsavel == null) {
-			if (other.usuarioresponsavel != null)
-				return false;
-		} else if (!usuarioresponsavel.equals(other.usuarioresponsavel))
-			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Negocio [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", empresa=" + empresa + ", nome="
-				+ nome + ", data=" + data + "]";
+		return "Negocio [id=" + id + ", empresa=" + empresa + ", nome=" + nome + ", data=" + data + "]";
 	}
 	/**
 	 * @param id
-	 * @param usuarioresponsavel
 	 * @param empresa
 	 * @param nome
 	 * @param data
 	 */
-	public Negocio(Long id, Usuario usuarioresponsavel, Empresa empresa, String nome, Date data) {
+	public Negocio(Long id, Empresa empresa, String nome, Date data) {
 		super();
 		this.id = id;
-		this.usuarioresponsavel = usuarioresponsavel;
 		this.empresa = empresa;
 		this.nome = nome;
 		this.data = data;

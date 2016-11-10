@@ -1,6 +1,8 @@
 package br.edu.facear.crm.entity;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,9 +15,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
 
+@XmlRootElement
 @Entity
 //CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
@@ -62,7 +66,8 @@ public class Contato {
 	
 	// EMPRESAS
 	@ManyToMany(mappedBy = "contatos_empresa")
-	private List<Empresa> empresas;
+	private Collection<Empresa> empresas_contato;
+
 	
 	// ATRIBUTOS
 	private String nome;
@@ -78,8 +83,6 @@ public class Contato {
 	private String foto;
 	private Date datacadastro;
 	private Status status;
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -122,11 +125,11 @@ public class Contato {
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
-	public List<Empresa> getEmpresas() {
-		return empresas;
+	public Collection<Empresa> getEmpresas_contato() {
+		return empresas_contato;
 	}
-	public void setEmpresas(List<Empresa> empresas) {
-		this.empresas = empresas;
+	public void setEmpresas_contato(Collection<Empresa> empresas_contato) {
+		this.empresas_contato = empresas_contato;
 	}
 	public String getNome() {
 		return nome;
@@ -219,7 +222,7 @@ public class Contato {
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
-		result = prime * result + ((empresas == null) ? 0 : empresas.hashCode());
+		result = prime * result + ((empresas_contato == null) ? 0 : empresas_contato.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
@@ -287,10 +290,10 @@ public class Contato {
 				return false;
 		} else if (!datanascimento.equals(other.datanascimento))
 			return false;
-		if (empresas == null) {
-			if (other.empresas != null)
+		if (empresas_contato == null) {
+			if (other.empresas_contato != null)
 				return false;
-		} else if (!empresas.equals(other.empresas))
+		} else if (!empresas_contato.equals(other.empresas_contato))
 			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
@@ -348,16 +351,25 @@ public class Contato {
 		final int maxLen = 10;
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
 				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato="
-				+ (telefones_contato != null ? telefones_contato.subList(0, Math.min(telefones_contato.size(), maxLen))
-						: null)
-				+ ", comunicadores_contato="
-				+ (comunicadores_contato != null
-						? comunicadores_contato.subList(0, Math.min(comunicadores_contato.size(), maxLen)) : null)
-				+ ", empresas=" + (empresas != null ? empresas.subList(0, Math.min(empresas.size(), maxLen)) : null)
+				+ (telefones_contato != null ? toString(telefones_contato, maxLen) : null) + ", comunicadores_contato="
+				+ (comunicadores_contato != null ? toString(comunicadores_contato, maxLen) : null)
+				+ ", empresas_contato=" + (empresas_contato != null ? toString(empresas_contato, maxLen) : null)
 				+ ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco
 				+ ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro
 				+ ", genero=" + genero + ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro
 				+ ", status=" + status + "]";
+	}
+	private String toString(Collection<?> collection, int maxLen) {
+		StringBuilder builder = new StringBuilder();
+		builder.append("[");
+		int i = 0;
+		for (Iterator<?> iterator = collection.iterator(); iterator.hasNext() && i < maxLen; i++) {
+			if (i > 0)
+				builder.append(", ");
+			builder.append(iterator.next());
+		}
+		builder.append("]");
+		return builder.toString();
 	}
 	/**
 	 * @param id
@@ -367,7 +379,7 @@ public class Contato {
 	 * @param cidade
 	 * @param telefones_contato
 	 * @param comunicadores_contato
-	 * @param empresas
+	 * @param empresas_contato
 	 * @param nome
 	 * @param cpf
 	 * @param datanascimento
@@ -384,9 +396,9 @@ public class Contato {
 	 */
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
 			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
-			List<Empresa> empresas, String nome, String cpf, Date datanascimento, String endereco, Long numero,
-			String complemento, String cep, String bairro, Genero genero, String cargo, String foto, Date datacadastro,
-			Status status) {
+			Collection<Empresa> empresas_contato, String nome, String cpf, Date datanascimento, String endereco,
+			Long numero, String complemento, String cep, String bairro, Genero genero, String cargo, String foto,
+			Date datacadastro, Status status) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -395,7 +407,7 @@ public class Contato {
 		this.cidade = cidade;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
-		this.empresas = empresas;
+		this.empresas_contato = empresas_contato;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanascimento = datanascimento;
@@ -416,5 +428,8 @@ public class Contato {
 	public Contato() {
 		super();
 		// TODO Auto-generated constructor stub
-	}	
+	}
+	
+	
+	
 }

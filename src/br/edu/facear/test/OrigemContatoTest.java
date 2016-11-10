@@ -13,8 +13,6 @@ public class OrigemContatoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-	@SuppressWarnings("deprecation")
-
 	// CADASTRAR
 	@Test
 	public void testCadastroOrigemContato() throws Exception {

@@ -12,8 +12,7 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class EstadoTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
-	
+
 	// CADASTRAR
 	@Test
 	public void testCadastroEstado() throws Exception {

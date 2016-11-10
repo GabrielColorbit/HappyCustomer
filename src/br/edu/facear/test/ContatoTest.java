@@ -25,8 +25,7 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class ContatoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
-
+	
 	Contato Contato = new Contato();
 	Empresa Empresa = new Empresa();
 	Usuario Usuario = new Usuario();
@@ -98,10 +97,10 @@ public class ContatoTest {
 		Contato.setComunicadores_contato(comunicadores_contato);
 		
 		// CADASTRANDO EMPRESAS
-		Empresa.setId(1l);
+		/*Empresa.setId(1l);
 		List<Empresa> empresas_contato = new ArrayList<Empresa>();
 		empresas_contato.add(Empresa);
-		Contato.setEmpresas(empresas_contato);
+		Contato.setEmpresas_contato(empresas_contato);*/
 
 		// CADASTRAR
 		facade.CadastrarContato(Contato);
@@ -190,14 +189,14 @@ public class ContatoTest {
 	}
 
 	// LISTAR
-	// @Test
+	//@Test
 	public void testListarContato() throws Exception {
 		List<Contato> Contato = new ArrayList<Contato>();
 		Contato = facade.ListarContato();
 		Assert.assertEquals(true, Contato.size() > 0);
 		System.out.println("CONTATO(S) CADASTRADO(S)");
 		for (Contato Contato2 : Contato) {
-			System.out.println("Id: " + Contato2.getId() + "  Nome: " + Contato2.getNome() + "Tipo Contato: "
+			System.out.println("Id: " + Contato2.getId() + "  Nome: " + Contato2.getNome() + "  Tipo Contato: "
 					+ Contato2.getTipocontato().getNome());
 		}
 	}

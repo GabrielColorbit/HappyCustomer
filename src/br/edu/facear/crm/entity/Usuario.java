@@ -47,6 +47,13 @@ public class Usuario {
 	@JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_usuario;
 
+	// COMUNICADORES
+	//@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
+	@JoinTable(name = "\"TB_COMUNICADOR_USUARIO\"", joinColumns = {
+	@JoinColumn(name = "id_usuario") }, inverseJoinColumns = {
+	@JoinColumn(name = "id_comunicador") })
+	private List<Comunicador> comunicadores_usuario;
 
 	// ATRIBUTOS
 	private String nome;

@@ -13,8 +13,6 @@ public class TipoContatoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-	@SuppressWarnings("deprecation")
-
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoContato() throws Exception {

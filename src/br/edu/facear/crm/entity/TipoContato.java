@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.sun.xml.internal.txw2.annotation.XmlElement;
-
 @XmlRootElement
 @Entity
 // CRIA TABELA

@@ -13,7 +13,6 @@ import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Item;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.crm.entity.Produto;
-import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class NegocioTest {
@@ -21,11 +20,9 @@ public class NegocioTest {
 	SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Negocio Negocio = new Negocio();
 	Produto Produto = new Produto();
-	Usuario Usuario = new Usuario();
 	Empresa Empresa = new Empresa();
 	
 	Item Item = new Item();
@@ -38,10 +35,6 @@ public class NegocioTest {
 		Negocio.setNome("Compra de Comida");
 		Calendar data = new GregorianCalendar(29,10,2016);
 		Negocio.setData(data.getTime());
-		
-		//USUÁRIO RESPONSÁVEL PELO NEGÓCIO
-		Usuario.setId(1l);
-		Negocio.setUsuarioresponsavel(Usuario);
 		
 		//EMPRESA RESPONSÁVEL PELO NEGÓCIO
 		Empresa.setId(1l);
@@ -69,10 +62,6 @@ public class NegocioTest {
 				Negocio.setNome("Compra de Bebida");
 				Calendar data = new GregorianCalendar(30,10,2016);
 				Negocio.setData(data.getTime());
-				
-				//USUÁRIO RESPONSÁVEL PELO NEGÓCIO
-				Usuario.setId(2l);
-				Negocio.setUsuarioresponsavel(Usuario);
 				
 				//EMPRESA RESPONSÁVEL PELO NEGÓCIO
 				Empresa.setId(3l);

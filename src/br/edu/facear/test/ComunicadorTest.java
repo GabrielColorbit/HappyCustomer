@@ -13,7 +13,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class ComunicadorTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Comunicador Comunicador = new Comunicador();
 	TipoComunicador TipoComunicador = new TipoComunicador();

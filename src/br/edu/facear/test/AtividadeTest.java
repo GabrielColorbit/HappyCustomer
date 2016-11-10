@@ -2,13 +2,9 @@ package br.edu.facear.test;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.ForeignKey;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,19 +12,15 @@ import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
 import br.edu.facear.crm.entity.Empresa;
-import br.edu.facear.crm.entity.Ligacao;
 import br.edu.facear.crm.entity.Situacao;
-import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.TipoAtividade;
 import br.edu.facear.crm.entity.TipoComunicador;
-import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class AtividadeTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Atividade Atividade = new Atividade();
 	Usuario Usuario = new Usuario();

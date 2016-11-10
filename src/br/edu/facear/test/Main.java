@@ -49,27 +49,27 @@ import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
 
 public class Main {
+	
 	public static void main(String[] args) throws Exception {
+		
 		gerenciarTipoTelefone();
 		gerenciarTipoEmpresa();
 		gerenciarTelefone();
 		gerenciarProduto();
 		gerenciarEstado();
-		gerenciarEstado();
 		gerenciarCidade();
 		gerenciarOrigemContato();
 		gerenciarTipoUsuario();
 		gerenciarTipoComunicador();
-		gerenciarUsuario();
 		gerenciarTipoContato();
 		gerenciarTipoAtividade();
+//		gerenciarUsuario();
 //		gerenciarEmpresa();
 //		gerenciarContato();		
 //		gerenciarNegocio();
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-
 
 	}
 

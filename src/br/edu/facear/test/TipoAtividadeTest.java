@@ -13,8 +13,6 @@ public class TipoAtividadeTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-	@SuppressWarnings("deprecation")
-
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoAtividade() throws Exception {

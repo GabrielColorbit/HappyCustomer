@@ -7,14 +7,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.edu.facear.crm.entity.Telefone;
-import br.edu.facear.crm.entity.TipoComunicador;
 import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class TelefoneTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Telefone Telefone = new Telefone();
 	TipoTelefone TipoTelefone = new TipoTelefone();

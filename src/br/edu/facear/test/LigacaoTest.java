@@ -3,7 +3,6 @@ package br.edu.facear.test;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -23,7 +22,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class LigacaoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 
 	Ligacao Ligacao = new Ligacao();
 	Usuario Usuario = new Usuario();
@@ -40,8 +38,8 @@ public class LigacaoTest {
 	public void testCadastrarLigacao() throws Exception {
 
 		// ATRIBUTOS
-		//Calendar data = new GregorianCalendar(31, 10, 2016);
-		//Ligacao.setData(data.getTime());
+		Calendar data = new GregorianCalendar(31, 10, 2016);
+		Ligacao.setData(data.getTime());
 		//Ligacao.setData(sdf.format(new Date(("31/10/2016")));
 		Ligacao.setDuracao("02:10s");
 		Ligacao.setTipoligacao(TipoLigacao.efetuada);
@@ -60,8 +58,8 @@ public class LigacaoTest {
 		Ligacao.setEmpresa(Empresa);
 
 		// ATIVIDADE RELACIONADA COM A LIGAÇÃO
-		Atividade.setId(1l);
-		Ligacao.setAtividade(Atividade);
+//		Atividade.setId(1l);
+//		Ligacao.setAtividade(Atividade);
 
 		// CADASTRAR
 		facade.CadastrarLigacao(Ligacao);

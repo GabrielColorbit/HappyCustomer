@@ -2,7 +2,6 @@ package br.edu.facear.test;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -16,15 +15,14 @@ import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Status;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.TipoComunicador;
-import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.TipoEmpresa;
+import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class EmpresaTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 
 	Empresa Empresa = new Empresa();
 	Contato Contato = new Contato();
@@ -39,7 +37,7 @@ public class EmpresaTest {
 	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
 
 	// CADASTRAR
-	//@Test
+	@Test
 	public void testCadastrarEmpresa() throws Exception {
 
 		// ATRIBUTOS
@@ -67,7 +65,7 @@ public class EmpresaTest {
 		Empresa.setTipoempresa(TipoEmpresa);
 
 		// USUÁRIO RESPONSÁVEL PELA EMPRESA
-		Usuario.setId(1l);
+		Usuario.setId(2l);
 		Empresa.setUsuarioresponsavel(Usuario);
 
 		// CADASTRANDO TELEFONE
@@ -91,10 +89,10 @@ public class EmpresaTest {
 		Empresa.setComunicadores_empresa(comunicadores_empresa);
 		
 		// CADASTRANDO CONTATOS
-		Contato.setId(3l);
+		/*Contato.setId(1l);
 		List<Contato> contatos_empresa = new ArrayList<Contato>();
 		contatos_empresa.add(Contato);
-		Empresa.setContatos_empresa(contatos_empresa);
+		Empresa.setContatos_empresa(contatos_empresa);*/
 
 		// CADASTRAR
 		facade.CadastrarEmpresa(Empresa);
@@ -167,7 +165,7 @@ public class EmpresaTest {
 	}
 
 	// EXCLUIR
-	@Test
+	//@Test
 	public void testExcluirEmpresa() throws Exception {
 		Empresa Empresa = facade.BuscarEmpresaPorId(7l);
 		facade.ExcluirEmpresa(Empresa);
@@ -176,14 +174,14 @@ public class EmpresaTest {
 	}
 
 	// LISTAR
-	// @Test
+	@Test
 	public void testListarEmpresa() throws Exception {
 		List<Empresa> Empresa = new ArrayList<Empresa>();
 		Empresa = facade.ListarEmpresa();
 		Assert.assertEquals(true, Empresa.size() > 0);
 		System.out.println("EMPRESA(S) CADASTRADO(S)");
 		for (Empresa Empresa2 : Empresa) {
-			System.out.println("Id: " + Empresa2.getId() + "  Razão Social: " + Empresa2.getRazaosocial() + "Tipo Empresa: "
+			System.out.println("Id: " + Empresa2.getId() + "  Razão Social: " + Empresa2.getRazaosocial() + "  Tipo Empresa: "
 					+ Empresa2.getTipoempresa().getNome());
 		}
 	}

@@ -25,9 +25,11 @@ public class ContatoBO implements InterfaceBO<Contato> {
 			throw new Exception("Selecione um Telefone.");
 		} else if (contato.getComunicadores_contato() == null) {
 			throw new Exception("Selecione um Comunicador Contato.");
-		} else if (contato.getEmpresas() == null) {
-			throw new Exception("Selecione uma Empresa.");
-		} else if (contato.getNome() == null) {
+		} 
+//		else if (contato.getEmpresas() == null) {
+//			throw new Exception("Selecione uma Empresa.");
+//		}
+		else if (contato.getNome() == null) {
 			throw new Exception("Nome Fornecido Invalido.");
 		} else if (contato.getCpf() == null) {
 			throw new Exception("Cpf Fornecido Invalido.");
@@ -72,11 +74,14 @@ public class ContatoBO implements InterfaceBO<Contato> {
 			throw new Exception("Selecione uma Cidade.");
 		} else if (contato.getTelefones_contato() == null) {
 			throw new Exception("Selecione um Telefone.");
-		} else if (contato.getComunicadores_contato() == null) {
+		} 
+		else if (contato.getComunicadores_contato() == null) {
 			throw new Exception("Selecione um Comunicador Contato.");
-		} else if (contato.getEmpresas() == null) {
-			throw new Exception("Selecione uma Empresa.");
-		} else if (contato.getNome() == null) {
+		}
+//		else if (contato.getEmpresas() == null) {
+//			throw new Exception("Selecione uma Empresa.");
+//		}
+		else if (contato.getNome() == null) {
 			throw new Exception("Nome Fornecido Invalido.");
 		} else if (contato.getCpf() == null) {
 			throw new Exception("Cpf Fornecido Invalido.");

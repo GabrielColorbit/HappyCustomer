@@ -11,8 +11,9 @@ var app = angular.module('happyCustomerApp', [
 	'TipoComunicadorControllers',
 	'TipoEmpresaControllers',
 	'EstadoControllers',
-	'ProdutoControllers'
-
+	'ProdutoControllers',
+	'NegocioControllers'
+	
 ]);
 
 app.controller('MainCtrl',
@@ -29,7 +30,7 @@ app.config(function ($routeProvider) {
 		//Paths of Home 
     	when('/Home/', {templateUrl: 'home/home.html'}).
     
-    	//Paths of Tipo Contato    
+    	//Paths of Tipo Contato
         when('/TipoContato/Editar/:tipocontatoId', {templateUrl: 'tipo_contato/partials/editar_tipo_contato.html', controller: 'GetTipoContatoController'}).
         when('/TipoContato', {templateUrl: 'tipo_contato/partials/listar_tipo_contato.html', controller: 'ListarTipoContatoController'}).
         when('/TipoContato/Cadastrar', {templateUrl: 'tipo_contato/partials/criar_tipo_contato.html', controller:'CadastrarTipoContatoController'}).
@@ -78,6 +79,7 @@ app.config(function ($routeProvider) {
         when('/TipoEmpresa/Editar/:tipoempresaId', {templateUrl: 'tipo_empresa/partials/editar_tipo_empresa.html', controller: 'GetTipoEmpresaController'}).
         when('/TipoEmpresa', {templateUrl: 'tipo_empresa/partials/listar_tipo_empresa.html', controller: 'ListarTipoEmpresaController'}).
         when('/TipoEmpresa/Cadastrar', {templateUrl: 'tipo_empresa/partials/criar_tipo_empresa.html', controller:'CadastrarTipoEmpresaController'}).
+     
         //Paths of Produto
         when('/Produto/Editar/:produtoId', {templateUrl: 'produto/partials/editar_produto.html', controller: 'GetProdutoController'}).
         when('/Produto', {templateUrl: 'produto/partials/listar_produto.html', controller: 'ListarProdutoController'}).
@@ -88,8 +90,13 @@ app.config(function ($routeProvider) {
         when('/Estado', {templateUrl: 'estado/partials/listar_estado.html', controller: 'ListarEstadoController'}).
         when('/Estado/Cadastrar', {templateUrl: 'estado/partials/criar_estado.html', controller:'CadastrarEstadoController'}).
 
-       
-
+        
+        //Paths of Negocio
+        when('/Negocio/Editar/:negocioId', {templateUrl: 'negocio/partials/editar_negocio.html', controller: 'GetNegocioController'}).
+        when('/Negocio', {templateUrl: 'negocio/partials/listar_negocio.html', controller: 'ListarNegocioController'}).
+        when('/Negocio/Cadastrar', {templateUrl: 'negocio/partials/criar_negocio.html', controller:'CadastrarNegocioController'}).
+        
+        
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});

@@ -12,7 +12,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class TipoComunicadorTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test

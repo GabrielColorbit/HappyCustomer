@@ -13,7 +13,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class CidadeTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Cidade Cidade = new Cidade();
 	Estado Estado = new Estado();
