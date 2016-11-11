@@ -4,5 +4,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public enum Situacao {
-	aberto, cancelado, paralisado, finalizado
+	Aberto, Cancelado, Paralisado, Finalizado
 }

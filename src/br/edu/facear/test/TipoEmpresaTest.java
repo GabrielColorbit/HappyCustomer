@@ -17,10 +17,12 @@ public class TipoEmpresaTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoEmpresa() throws Exception {
-		TipoEmpresa TipoEmpresa = new TipoEmpresa();
-		TipoEmpresa.setNome(null);
-		facade.CadastrarTipoEmpresa(TipoEmpresa);
-		Assert.assertEquals(true, TipoEmpresa.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			TipoEmpresa TipoEmpresa = new TipoEmpresa();
+			TipoEmpresa.setNome(null);
+			facade.CadastrarTipoEmpresa(TipoEmpresa);
+			Assert.assertEquals(true, TipoEmpresa.getId() != null);
+		}
 	}
 	
 	// ALTERAR

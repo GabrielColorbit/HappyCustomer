@@ -1,10 +1,5 @@
 package br.edu.facear.resource;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
@@ -13,14 +8,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import org.glassfish.jersey.media.multipart.FormDataParam;
-
-import com.sun.jersey.core.header.FormDataContentDisposition;
-
+import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
@@ -47,7 +37,16 @@ public class UsuarioRestful {
 			new FacadeHappyCustomer().CadastrarTelefone(t);
 			telefonelist.add(t);
 		}
+		
+		ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+		for(Comunicador c : usuario.getComunicadores_usuario()){
+			new FacadeHappyCustomer().CadastrarComunicador(c);
+			comunicadorlist.add(c);
+		}
+		
 		usuario.setTelefones_usuario(telefonelist);
+		usuario.setComunicadores_usuario(comunicadorlist);
+		
 		if(usuario.getId() == null)
 			new FacadeHappyCustomer().CadastrarUsuario(usuario);	
 

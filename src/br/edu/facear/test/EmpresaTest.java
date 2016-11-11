@@ -40,63 +40,65 @@ public class EmpresaTest {
 	@Test
 	public void testCadastrarEmpresa() throws Exception {
 
-		// ATRIBUTOS
-		Empresa.setRazaosocial("Gelopar Refrigeração Paranaense Ltda");
-		Empresa.setCnpj("75190074000160");
-		Empresa.setInscricaoestadual("1352678934");
-		Empresa.setEndereco("Rua Dr. Eli Volpato");
-		Empresa.setNumero(250l);
-		Empresa.setComplemento("Próximo a Petrobrás");
-		Empresa.setCep("83707250");
-		Empresa.setBairro("Chapada");
-		Empresa.setSite("www.gelopar.com.br");
-		Empresa.setRamo("Refrigeração");
-		Empresa.setLogo("C:\\Downloads\\Gelopar.png");
-		Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
-		Empresa.setDatacadastro(datacadastro.getTime());
-		Empresa.setStatus(Status.ativo);
-
-		// CIDADE
-		Cidade.setId(1l);
-		Empresa.setCidade(Cidade);
-
-		// TIPO DE EMPRESA
-		TipoEmpresa.setId(1l);
-		Empresa.setTipoempresa(TipoEmpresa);
-
-		// USUÁRIO RESPONSÁVEL PELA EMPRESA
-		Usuario.setId(2l);
-		Empresa.setUsuarioresponsavel(Usuario);
-
-		// CADASTRANDO TELEFONE
-		Telefone.setNumero("(41) 3641-1361");
-		TipoTelefone.setId(1l);
-		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
-
-		List<Telefone> telefones_empresa = new ArrayList<Telefone>();
-		telefones_empresa.add(Telefone);
-		Empresa.setTelefones_empresa(telefones_empresa);
-
-		// CADASTRANDO COMUNICADOR
-		Comunicador.setNome("gelopar@gelopar.com");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
-
-		List<Comunicador> comunicadores_empresa = new ArrayList<Comunicador>();
-		comunicadores_empresa.add(Comunicador);
-		Empresa.setComunicadores_empresa(comunicadores_empresa);
-		
-		// CADASTRANDO CONTATOS
-		/*Contato.setId(1l);
-		List<Contato> contatos_empresa = new ArrayList<Contato>();
-		contatos_empresa.add(Contato);
-		Empresa.setContatos_empresa(contatos_empresa);*/
-
-		// CADASTRAR
-		facade.CadastrarEmpresa(Empresa);
-		Assert.assertEquals(true, Empresa.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			// ATRIBUTOS
+			Empresa.setRazaosocial("Gelopar Refrigeração Paranaense Ltda");
+			Empresa.setCnpj("75190074000160");
+			Empresa.setInscricaoestadual("1352678934");
+			Empresa.setEndereco("Rua Dr. Eli Volpato");
+			Empresa.setNumero(250l);
+			Empresa.setComplemento("Próximo a Petrobrás");
+			Empresa.setCep("83707250");
+			Empresa.setBairro("Chapada");
+			Empresa.setSite("www.gelopar.com.br");
+			Empresa.setRamo("Refrigeração");
+			Empresa.setLogo("C:\\Downloads\\Gelopar.png");
+			Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
+			Empresa.setDatacadastro(datacadastro.getTime());
+			Empresa.setStatus(Status.Ativo);
+	
+			// CIDADE
+			Cidade.setId(1l);
+			Empresa.setCidade(Cidade);
+	
+			// TIPO DE EMPRESA
+			TipoEmpresa.setId(1l);
+			Empresa.setTipoempresa(TipoEmpresa);
+	
+			// USUÁRIO RESPONSÁVEL PELA EMPRESA
+			Usuario.setId(3l);
+			Empresa.setUsuarioresponsavel(Usuario);
+	
+			// CADASTRANDO TELEFONE
+			Telefone.setNumero("(41) 3641-1361");
+			TipoTelefone.setId(1l);
+			Telefone.setTipotelefone(TipoTelefone);
+			facade.CadastrarTelefone(Telefone);
+	
+			List<Telefone> telefones_empresa = new ArrayList<Telefone>();
+			telefones_empresa.add(Telefone);
+			Empresa.setTelefones_empresa(telefones_empresa);
+	
+			// CADASTRANDO COMUNICADOR
+			Comunicador.setNome("gelopar@gelopar.com");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
+	
+			List<Comunicador> comunicadores_empresa = new ArrayList<Comunicador>();
+			comunicadores_empresa.add(Comunicador);
+			Empresa.setComunicadores_empresa(comunicadores_empresa);
+			
+			// CADASTRANDO CONTATOS
+			/*Contato.setId(1l);
+			List<Contato> contatos_empresa = new ArrayList<Contato>();
+			contatos_empresa.add(Contato);
+			Empresa.setContatos_empresa(contatos_empresa);*/
+	
+			// CADASTRAR
+			facade.CadastrarEmpresa(Empresa);
+			Assert.assertEquals(true, Empresa.getId() != null);
+		}
 	}
 
 	// ALTERAR
@@ -119,7 +121,7 @@ public class EmpresaTest {
 		Empresa.setLogo("C:\\Downloads\\Facear.png");
 		Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
 		Empresa.setDatacadastro(datacadastro.getTime());
-		Empresa.setStatus(Status.inativo);
+		Empresa.setStatus(Status.Inativo);
 
 		// CIDADE
 		Cidade.setId(1l);

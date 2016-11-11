@@ -71,7 +71,6 @@ public class Usuario {
 	private String foto;
 	private Date datacadastro;
 	private Status status;
-	
 	public Long getId() {
 		return id;
 	}
@@ -96,18 +95,23 @@ public class Usuario {
 	public void setTelefones_usuario(List<Telefone> telefones_usuario) {
 		this.telefones_usuario = telefones_usuario;
 	}
-
-	public String getEmail() {
-		return email;
+	public List<Comunicador> getComunicadores_usuario() {
+		return comunicadores_usuario;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setComunicadores_usuario(List<Comunicador> comunicadores_usuario) {
+		this.comunicadores_usuario = comunicadores_usuario;
 	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getCpf() {
 		return cpf;
@@ -187,16 +191,6 @@ public class Usuario {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", telefones_usuario="
-				+ telefones_usuario + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", datanascimento="
-				+ datanascimento + ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento
-				+ ", cep=" + cep + ", bairro=" + bairro + ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo
-				+ ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -206,6 +200,7 @@ public class Usuario {
 		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((cidade == null) ? 0 : cidade.hashCode());
 		result = prime * result + ((complemento == null) ? 0 : complemento.hashCode());
+		result = prime * result + ((comunicadores_usuario == null) ? 0 : comunicadores_usuario.hashCode());
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
@@ -255,6 +250,11 @@ public class Usuario {
 			if (other.complemento != null)
 				return false;
 		} else if (!complemento.equals(other.complemento))
+			return false;
+		if (comunicadores_usuario == null) {
+			if (other.comunicadores_usuario != null)
+				return false;
+		} else if (!comunicadores_usuario.equals(other.comunicadores_usuario))
 			return false;
 		if (cpf == null) {
 			if (other.cpf != null)
@@ -322,15 +322,52 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	
-	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones_usuario, String nome,
-			String email, String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
-			String bairro, String senha, Genero genero, String cargo, String foto, Date datacadastro, Status status) {
+	@Override
+	public String toString() {
+		final int maxLen = 10;
+		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", telefones_usuario="
+				+ (telefones_usuario != null ? telefones_usuario.subList(0, Math.min(telefones_usuario.size(), maxLen))
+						: null)
+				+ ", comunicadores_usuario="
+				+ (comunicadores_usuario != null
+						? comunicadores_usuario.subList(0, Math.min(comunicadores_usuario.size(), maxLen)) : null)
+				+ ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", datanascimento=" + datanascimento
+				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
+				+ ", bairro=" + bairro + ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo + ", foto="
+				+ foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
+	}
+	/**
+	 * @param id
+	 * @param tipousuario
+	 * @param cidade
+	 * @param telefones_usuario
+	 * @param comunicadores_usuario
+	 * @param nome
+	 * @param email
+	 * @param cpf
+	 * @param datanascimento
+	 * @param endereco
+	 * @param numero
+	 * @param complemento
+	 * @param cep
+	 * @param bairro
+	 * @param senha
+	 * @param genero
+	 * @param cargo
+	 * @param foto
+	 * @param datacadastro
+	 * @param status
+	 */
+	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones_usuario,
+			List<Comunicador> comunicadores_usuario, String nome, String email, String cpf, Date datanascimento,
+			String endereco, Long numero, String complemento, String cep, String bairro, String senha, Genero genero,
+			String cargo, String foto, Date datacadastro, Status status) {
 		super();
 		this.id = id;
 		this.tipousuario = tipousuario;
 		this.cidade = cidade;
 		this.telefones_usuario = telefones_usuario;
+		this.comunicadores_usuario = comunicadores_usuario;
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;

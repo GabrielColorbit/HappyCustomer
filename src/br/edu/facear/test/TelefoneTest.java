@@ -20,12 +20,13 @@ public class TelefoneTest {
 	// CADASTRAR
 	//@Test
 	public void testCadastroTelefone() throws Exception {
-		
-		Telefone.setNumero("123456789");
-		TipoTelefone.setId(1l);
-		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
-		Assert.assertEquals(true, Telefone.getId() != null && Telefone.getTipotelefone()!= null);
+		for (int i = 0; i < 2; i++) {
+			Telefone.setNumero("123456789");
+			TipoTelefone.setId(1l);
+			Telefone.setTipotelefone(TipoTelefone);
+			facade.CadastrarTelefone(Telefone);
+			Assert.assertEquals(true, Telefone.getId() != null && Telefone.getTipotelefone()!= null);
+		}
 	}
 
 	// ALTERAR

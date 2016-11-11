@@ -12,7 +12,11 @@ var app = angular.module('happyCustomerApp', [
 	'TipoEmpresaControllers',
 	'EstadoControllers',
 	'ProdutoControllers',
-	'NegocioControllers'
+	'NegocioControllers',
+	'EmpresaControllers',
+	'ContatoControllers',
+	'AtividadeControllers',
+	'LigacaoControllers'
 	
 ]);
 
@@ -90,13 +94,30 @@ app.config(function ($routeProvider) {
         when('/Estado', {templateUrl: 'estado/partials/listar_estado.html', controller: 'ListarEstadoController'}).
         when('/Estado/Cadastrar', {templateUrl: 'estado/partials/criar_estado.html', controller:'CadastrarEstadoController'}).
 
-        
         //Paths of Negocio
         when('/Negocio/Editar/:negocioId', {templateUrl: 'negocio/partials/editar_negocio.html', controller: 'GetNegocioController'}).
         when('/Negocio', {templateUrl: 'negocio/partials/listar_negocio.html', controller: 'ListarNegocioController'}).
         when('/Negocio/Cadastrar', {templateUrl: 'negocio/partials/criar_negocio.html', controller:'CadastrarNegocioController'}).
         
+        //Paths of Empresa
+        when('/Empresa/Editar/:empresaId', {templateUrl: 'empresa/partials/editar_empresa.html', controller: 'GetEmpresaController'}).
+        when('/Empresa', {templateUrl: 'empresa/partials/listar_empresa.html', controller: 'ListarEmpresaController'}).
+        when('/Empresa/Cadastrar', {templateUrl: 'empresa/partials/criar_empresa.html', controller:'CadastrarEmpresaController'}).
         
+        //Paths of Contato
+        when('/Contato/Editar/:contatoId', {templateUrl: 'contato/partials/editar_contato.html', controller: 'GetContatoController'}).
+        when('/Contato', {templateUrl: 'contato/partials/listar_contato.html', controller: 'ListarContatoController'}).
+        when('/Contato/Cadastrar', {templateUrl: 'contato/partials/criar_contato.html', controller:'CadastrarContatoController'}).
+        
+        //Paths of Atividade
+        when('/Atividade/Editar/:atividadeId', {templateUrl: 'atividade/partials/editar_atividade.html', controller: 'GetAtividadeController'}).
+        when('/Atividade', {templateUrl: 'atividade/partials/listar_atividade.html', controller: 'ListarAtividadeController'}).
+        when('/Atividade/Cadastrar', {templateUrl: 'atividade/partials/criar_atividade.html', controller:'CadastrarAtividadeController'}).
+       
+        //Paths of Ligacao
+        when('/Ligacao/Editar/:ligacaoId', {templateUrl: 'ligacao/partials/editar_ligacao.html', controller: 'GetLigacaoController'}).
+        when('/Ligacao', {templateUrl: 'ligacao/partials/listar_ligacao.html', controller: 'ListarLigacaoController'}).
+        when('/Ligacao/Cadastrar', {templateUrl: 'ligacao/partials/criar_ligacao.html', controller:'CadastrarLigacaoController'}).
         
         //Paths of Home
         otherwise({redirectTo: '/Home'});

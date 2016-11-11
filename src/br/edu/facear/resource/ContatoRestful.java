@@ -11,18 +11,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Contato;
-import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restContato")
 public class ContatoRestful {
-	
+
 	@GET
 	@Path("/listarTodos")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public ArrayList<Contato> findAll() throws Exception {
 
-		return new FacadeHappyCustomer().ListarContato();
+		return (ArrayList<Contato>) new FacadeHappyCustomer().ListarContato();
 	}
 
 	@POST
@@ -30,19 +29,10 @@ public class ContatoRestful {
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(Contato Contato) throws Exception {
-		
-		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-		/*for(Telefone t : Contato.getTelefones_Contato()){
-			new FacadeHappyCustomer().CadastrarTelefone(t);
-			telefonelist.add(t);
-		}
-		Contato.setTelefones_Contato(telefonelist);
-		if(Contato.getId() == null)
-			new FacadeHappyCustomer().CadastrarContato(Contato);	
-
+		if (Contato.getId() == null)
+			new FacadeHappyCustomer().CadastrarContato(Contato);
 		else
 			new FacadeHappyCustomer().AlterarContato(Contato);
-		 */
 	}
 
 	@GET
@@ -50,12 +40,18 @@ public class ContatoRestful {
 	@Produces("application/json")
 	public Contato editarContato(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Contato u = new FacadeHappyCustomer().BuscarContatoPorId(id);
+		Contato c = new FacadeHappyCustomer().BuscarContatoPorId(id);
 
-		return u;
+		return c;
 	}
 	
-
-	
-	
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirContato(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		Contato c = new FacadeHappyCustomer().BuscarContatoPorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirContato(c);
+	}
 }

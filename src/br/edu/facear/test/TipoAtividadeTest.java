@@ -16,7 +16,7 @@ public class TipoAtividadeTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoAtividade() throws Exception {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 2; i++) {
 			TipoAtividade TipoAtividade = new TipoAtividade();
 			TipoAtividade.setNome("Formatação");
 			facade.CadastrarTipoAtividade(TipoAtividade);

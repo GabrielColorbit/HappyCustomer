@@ -60,6 +60,7 @@ myControllers.controller('OrigemContatoController', function($scope, $routeParam
 				function(data, status, header, config) {
 					$scope.Resposta = data ;
 				});
+				$scope.BuscarInformacao();
 	   };
 	   $scope.Excluir = function(id){
 		   if(id){

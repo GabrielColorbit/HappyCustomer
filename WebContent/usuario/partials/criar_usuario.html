@@ -1,6 +1,4 @@
 <meta charset="UTF-8">
-
-
 <!-- Header -->
 <header>
 	<div class="container">
@@ -118,10 +116,10 @@
 
 						<div class="row control-group">
 							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Estado</label>
+								<label>Estado - País</label>
 								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um estado." >
 
-									<option ng-repeat="estado in estados" value="estado" ng-selected="$first">{{estado.nome +'('+ estado.pais +')' }}</option>
+									<option ng-repeat="estado in estados" value="estado" ng-selected="$first">{{estado.nome + ' - ' + estado.pais}}</option>
 
 								</select>
 								<p class="help-block text-danger"></p>

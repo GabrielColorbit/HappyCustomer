@@ -16,7 +16,7 @@ public class OrigemContatoTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroOrigemContato() throws Exception {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 2; i++) {
 			OrigemContato OrigemContato = new OrigemContato();
 			OrigemContato.setNome("E-mail");
 			facade.CadastrarOrigemContato(OrigemContato);

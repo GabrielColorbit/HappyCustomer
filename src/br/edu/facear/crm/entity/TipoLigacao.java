@@ -4,5 +4,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public enum TipoLigacao {
-	efetuada, recebida
+	Efetuada, Recebida
 }

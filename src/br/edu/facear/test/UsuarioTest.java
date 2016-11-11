@@ -1,6 +1,5 @@
 package br.edu.facear.test;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -23,7 +22,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class UsuarioTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Usuario Usuario = new Usuario();
 	TipoUsuario TipoUsuario = new TipoUsuario();
@@ -39,52 +37,57 @@ public class UsuarioTest {
 	@Test
 	public void testCadastroUsuario() throws Exception {
 		
-		//ATRIBUTOS
-		Usuario.setNome("Luiz");
-		Usuario.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(9,05,1997);
-		Usuario.setDatanascimento(datanascimento.getTime());
-		Usuario.setEndereco("Rua João Halinski");
-		Usuario.setNumero(44l);
-		Usuario.setComplemento("Próximo a Cocelpa");
-		Usuario.setCep("83707350");
-		Usuario.setBairro("Jardim Alvorada");
-		Usuario.setGenero(Genero.masculino);
-		Usuario.setCargo("Programador");
-		Usuario.setSenha("12345678");
-		Usuario.setFoto("C:\\Downloads\\Eu.jpeg");
-		Calendar datacadastro = new GregorianCalendar(27,10,2016);
-		Usuario.setDatacadastro(datacadastro.getTime());
-		Usuario.setStatus(Status.ativo);
-		
-		//CIDADE
-		Cidade.setId(1l);
-		Usuario.setCidade(Cidade);
-		
-		//TIPO
-		TipoUsuario.setId(1l);
-		Usuario.setTipousuario(TipoUsuario);
-		
-		//TELEFONE
-		Telefone.setNumero("(41) 9613-5114");
-		TipoTelefone.setId(1l);
-		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
-		
-		List<Telefone> telefones_usuario = new ArrayList<Telefone>();
-		telefones_usuario.add(Telefone);
-		Usuario.setTelefones_usuario(telefones_usuario);
-		
-		//COMUNICADOR
-		Comunicador.setNome("luizhenrique@gmail.com");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
-		
-		
-		//CADASTRAR
-		facade.CadastrarUsuario(Usuario);
-		Assert.assertEquals(true, Usuario.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			//ATRIBUTOS
+			Usuario.setNome("Luiz");
+			Usuario.setCpf("09788163904");
+			Calendar datanascimento = new GregorianCalendar(9,05,1997);
+			Usuario.setDatanascimento(datanascimento.getTime());
+			Usuario.setEndereco("Rua João Halinski");
+			Usuario.setNumero(44l);
+			Usuario.setComplemento("Próximo a Cocelpa");
+			Usuario.setCep("83707350");
+			Usuario.setBairro("Jardim Alvorada");
+			Usuario.setGenero(Genero.Masculino);
+			Usuario.setCargo("Programador");
+			Usuario.setSenha("12345678");
+			Usuario.setFoto("C:\\Downloads\\Eu.jpeg");
+			Calendar datacadastro = new GregorianCalendar(27,10,2016);
+			Usuario.setDatacadastro(datacadastro.getTime());
+			Usuario.setStatus(Status.Ativo);
+			
+			//CIDADE
+			Cidade.setId(1l);
+			Usuario.setCidade(Cidade);
+			
+			//TIPO
+			TipoUsuario.setId(1l);
+			Usuario.setTipousuario(TipoUsuario);
+			
+			//TELEFONE
+			Telefone.setNumero("(41) 9613-5114");
+			TipoTelefone.setId(1l);
+			Telefone.setTipotelefone(TipoTelefone);
+			facade.CadastrarTelefone(Telefone);
+			
+			List<Telefone> telefones_usuario = new ArrayList<Telefone>();
+			telefones_usuario.add(Telefone);
+			Usuario.setTelefones_usuario(telefones_usuario);
+			
+			//COMUNICADOR
+			Comunicador.setNome("luizhenrique@gmail.com");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
+			
+			List<Comunicador> comunicadores_usuario = new ArrayList<Comunicador>();
+			comunicadores_usuario.add(Comunicador);
+			Usuario.setComunicadores_usuario(comunicadores_usuario);
+			
+			//CADASTRAR
+			facade.CadastrarUsuario(Usuario);
+			Assert.assertEquals(true, Usuario.getId() != null);
+		}
 	}
 
 	// ALTERAR
@@ -103,13 +106,13 @@ public class UsuarioTest {
 		Usuario.setComplemento("Próximo ao Terminal CIC");
 		Usuario.setCep("83707000");
 		Usuario.setBairro("CIC");
-		Usuario.setGenero(Genero.feminino);
+		Usuario.setGenero(Genero.Feminino);
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
 		Usuario.setFoto("C:\\Downloads\\Gabriel.jpeg");
 		Calendar datacadastro = new GregorianCalendar(28,10,2016);
 		Usuario.setDatacadastro(datacadastro.getTime());
-		Usuario.setStatus(Status.inativo);
+		Usuario.setStatus(Status.Inativo);
 		
 		//CIDADE
 		Cidade.setId(1l);

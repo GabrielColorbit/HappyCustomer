@@ -69,6 +69,10 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	.success(function(data) {
 		$scope.telefones = data["telefone"];
 	});
+	$http.get('http://localhost:8080/CRM/rest/restComunicador/listarTodos')
+	.success(function(data) {
+		$scope.comunicadores = data["comunicador"];
+	});
     $scope.usuario = {
     		datanascimento: new Date(1990, 11, 28, 14, 57)
     };
@@ -99,8 +103,8 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			bairro: $scope.usuario.bairro,
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
-			telefones_usuario : $scope.usuario.telefones_usuario
-
+			telefones_usuario : $scope.usuario.telefones_usuario,
+			comunicadores_usuario : $scope.usuario.comunicadores_usuario
 
 		});
 		var config = {

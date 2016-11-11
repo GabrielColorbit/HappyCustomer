@@ -31,25 +31,27 @@ public class NegocioTest {
 	@Test
 	public void testCadastroNegocio() throws Exception {
 		
-		//ATRIBUTOS NEGÓCIO
-		Negocio.setNome("Compra de Comida");
-		Calendar data = new GregorianCalendar(29,10,2016);
-		Negocio.setData(data.getTime());
-		
-		//EMPRESA RESPONSÁVEL PELO NEGÓCIO
-		Empresa.setId(1l);
-		Negocio.setEmpresa(Empresa);
-		
-		facade.CadastrarNegocio(Negocio);
-		Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
-		//TERMINA NEGÓCIO E JA INICIA O ITENS
-		
-		//ITENS DO NEGÓCIO
-		Produto.setId(1l);
-		Item.setProduto(Produto);
-		Item.setNegocio(Negocio);
-		Item.setQuantidade(2l);
-		facade.CadastrarItem(Item);		
+		for (int i = 0; i < 2; i++) {
+			//ATRIBUTOS NEGÓCIO
+			Negocio.setNome("Compra de Comida");
+			Calendar data = new GregorianCalendar(29,10,2016);
+			Negocio.setData(data.getTime());
+			
+			//EMPRESA RESPONSÁVEL PELO NEGÓCIO
+			Empresa.setId(7l);
+			Negocio.setEmpresa(Empresa);
+			
+			facade.CadastrarNegocio(Negocio);
+			Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
+			//TERMINA NEGÓCIO E JA INICIA O ITENS
+			
+			//ITENS DO NEGÓCIO
+			Produto.setId(1l);
+			Item.setProduto(Produto);
+			Item.setNegocio(Negocio);
+			Item.setQuantidade(2l);
+			facade.CadastrarItem(Item);		
+		}
 	}
 
 	// ALTERAR

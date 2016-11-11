@@ -21,7 +21,7 @@
 				<div class="table-scrollable table-scrollable-borderless">
 					<div class="col-sm-6 col-xs-12  search_bar">
 						<input type="text" class="form-control" ng-model="procurar"
-							placeholder="Buscar Usuário" id="Nome do contato" required
+							placeholder="Buscar Usuário" id="Nome do usuário" required
 							data-validation-required-message="Por favor insira um nome">
 					</div>
 					<table class="table table-hover table-light col-xs-12">
@@ -29,6 +29,7 @@
 							<tr class="uppercase">
 								<th ></th>
 								<th ng-click="ordenar('nome')">Nome</th>
+								<th ng-click="ordenar('tipousuario')">Tipo</th>
 								<th ng-click="ordenar('cargo')">Cargo</th>
 								<th class="m_view" ng-click="ordenar('status')">Status</th>
 								<th class="m_view">Tarefas</th>
@@ -47,12 +48,16 @@
 								<td>
 									<a href="javascript:;" class="primary-link">{{u.nome}}</a>
 								</td>
+								<td>{{u.tipousuario.nome}}</td>
 								<td>{{u.cargo}}</td>
 								
 								<td class="d_view">{{u.status}}</td>
 								<td>45</td>
-									<td><a class="btn btn-warning btn-sm" href="#/Usuario/Editar/{{u.id}}" >Editar</a></td>
-
+								<td class="btn-group">
+								<div class="to-right btn-group">
+									<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/Usuario/Editar/{{u.id}}">Editar</a>
+									<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(u.id)'>Excluir</a> 
+								</div>		
 							</tr>
 							
 
@@ -65,4 +70,3 @@
 			</div>
 		</div>
 	</section>
-

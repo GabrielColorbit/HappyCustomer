@@ -37,33 +37,35 @@ public class LigacaoTest {
 	@Test
 	public void testCadastrarLigacao() throws Exception {
 
-		// ATRIBUTOS
-		Calendar data = new GregorianCalendar(31, 10, 2016);
-		Ligacao.setData(data.getTime());
-		//Ligacao.setData(sdf.format(new Date(("31/10/2016")));
-		Ligacao.setDuracao("02:10s");
-		Ligacao.setTipoligacao(TipoLigacao.efetuada);
-		Ligacao.setResumo("Liguei pra informar que a máquina foi consertada.");
-
-		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
-		Usuario.setId(1l);
-		Ligacao.setUsuarioresponsavel(Usuario);
-
-		// CONTATO RESPONSÁVEL PELA LIGAÇÃO
-		Contato.setId(1l);
-		Ligacao.setContato(Contato);
-
-		// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
-		Empresa.setId(1l);
-		Ligacao.setEmpresa(Empresa);
-
-		// ATIVIDADE RELACIONADA COM A LIGAÇÃO
-//		Atividade.setId(1l);
-//		Ligacao.setAtividade(Atividade);
-
-		// CADASTRAR
-		facade.CadastrarLigacao(Ligacao);
-		Assert.assertEquals(true, Ligacao.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			// ATRIBUTOS
+			Calendar data = new GregorianCalendar(31, 10, 2016);
+			Ligacao.setData(data.getTime());
+			//Ligacao.setData(sdf.format(new Date(("31/10/2016")));
+			Ligacao.setDuracao("02:10s");
+			Ligacao.setTipoligacao(TipoLigacao.Efetuada);
+			Ligacao.setResumo("Liguei pra informar que a máquina foi consertada.");
+	
+			// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
+			Usuario.setId(5l);
+			Ligacao.setUsuarioresponsavel(Usuario);
+	
+			// CONTATO RESPONSÁVEL PELA LIGAÇÃO
+			Contato.setId(6l);
+			Ligacao.setContato(Contato);
+	
+			// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
+			Empresa.setId(7l);
+			Ligacao.setEmpresa(Empresa);
+	
+			// ATIVIDADE RELACIONADA COM A LIGAÇÃO
+	//		Atividade.setId(1l);
+	//		Ligacao.setAtividade(Atividade);
+	
+			// CADASTRAR
+			facade.CadastrarLigacao(Ligacao);
+			Assert.assertEquals(true, Ligacao.getId() != null);
+		}
 	}
 
 	// ALTERAR
@@ -76,7 +78,7 @@ public class LigacaoTest {
 		Calendar data = new GregorianCalendar(01, 11, 2016);
 		Ligacao.setData(data.getTime());
 		Ligacao.setDuracao("10:57s");
-		Ligacao.setTipoligacao(TipoLigacao.recebida);
+		Ligacao.setTipoligacao(TipoLigacao.Recebida);
 		Ligacao.setResumo("Ligou agradecendo pelo conserto da máquina.");
 
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
