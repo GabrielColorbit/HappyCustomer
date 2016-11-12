@@ -38,14 +38,16 @@ public class UsuarioRestful {
 			telefonelist.add(t);
 		}
 		
-		ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+		/*ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
 		for(Comunicador c : usuario.getComunicadores_usuario()){
 			new FacadeHappyCustomer().CadastrarComunicador(c);
 			comunicadorlist.add(c);
 		}
+		usuario.setComunicadores_usuario(comunicadorlist);
+		*/
 		
 		usuario.setTelefones_usuario(telefonelist);
-		usuario.setComunicadores_usuario(comunicadorlist);
+		
 		
 		if(usuario.getId() == null)
 			new FacadeHappyCustomer().CadastrarUsuario(usuario);	
