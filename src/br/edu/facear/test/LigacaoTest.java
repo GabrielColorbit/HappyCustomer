@@ -47,15 +47,15 @@ public class LigacaoTest {
 			Ligacao.setResumo("Liguei pra informar que a máquina foi consertada.");
 	
 			// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
-			Usuario.setId(5l);
+			Usuario.setId(1l);
 			Ligacao.setUsuarioresponsavel(Usuario);
 	
 			// CONTATO RESPONSÁVEL PELA LIGAÇÃO
-			Contato.setId(6l);
+			Contato.setId(2l);
 			Ligacao.setContato(Contato);
 	
 			// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
-			Empresa.setId(7l);
+			Empresa.setId(3l);
 			Ligacao.setEmpresa(Empresa);
 	
 			// ATIVIDADE RELACIONADA COM A LIGAÇÃO

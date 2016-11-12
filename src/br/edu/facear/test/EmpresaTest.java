@@ -40,7 +40,7 @@ public class EmpresaTest {
 	@Test
 	public void testCadastrarEmpresa() throws Exception {
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 3; i++) {
 			// ATRIBUTOS
 			Empresa.setRazaosocial("Gelopar Refrigeração Paranaense Ltda");
 			Empresa.setCnpj("75190074000160");
@@ -66,7 +66,7 @@ public class EmpresaTest {
 			Empresa.setTipoempresa(TipoEmpresa);
 	
 			// USUÁRIO RESPONSÁVEL PELA EMPRESA
-			Usuario.setId(3l);
+			Usuario.setId(1l);
 			Empresa.setUsuarioresponsavel(Usuario);
 	
 			// CADASTRANDO TELEFONE

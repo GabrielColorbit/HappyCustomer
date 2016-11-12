@@ -52,9 +52,11 @@ public class EmpresaBO implements InterfaceBO<Empresa> {
 			throw new Exception("Cnpj Informado Invalido .");
 		} else if (empresa.getRazaosocial() == null) {
 			throw new Exception(" Razão Social Informado Invalido ");
-		} else if (empresa.getDatacadastro() == null) {
-			throw new Exception(" Data de Cadastro Informado Invalido ");
-		} else if (empresa.getStatus() == null) {
+		} 
+//		else if (empresa.getDatacadastro() == null) {
+//			throw new Exception(" Data de Cadastro Informado Invalido ");
+//		} 
+		else if (empresa.getStatus() == null) {
 			throw new Exception(" Status Informado Invalido ");
 		} else if (empresa.getRamo() == null) {
 			throw new Exception("Ramo Informado Invalido ");

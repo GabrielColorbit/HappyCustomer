@@ -19,17 +19,17 @@ public class LigacaoBO implements InterfaceBO<Ligacao> {
 		// else if(ligacao.getAtividade() == null){
 		// throw new Exception("Selecione uma Atividade.");
 		// }
-		else if (ligacao.getUsuarioresponsavel() == null) {
-			throw new Exception("Selecione um Usuario.");
-		} else if (ligacao.getEmpresa() == null) {
+		else if (ligacao.getEmpresa() == null) {
 			throw new Exception("Selecione uma Empresa.");
 		} else if (ligacao.getDuracao() == null) {
 			throw new Exception("Duracao Informada Invalida");
 		} else if (ligacao.getData() == null) {
 			throw new Exception("Data Informada Invalida");
-		} else if (ligacao.getTipoligacao() == null) {
-			throw new Exception("Selecione um Tipo de Ligacao");
-		} else if (ligacao.getResumo() == null) {
+		} 
+//		else if (ligacao.getTipoligacao() == null) {
+//			throw new Exception("Selecione um Tipo de Ligacao");
+//		} 
+		else if (ligacao.getResumo() == null) {
 			throw new Exception("Resumo Informado Invalido");
 		}
 		ligacaoDAO.Cadastrar(ligacao);
@@ -41,11 +41,14 @@ public class LigacaoBO implements InterfaceBO<Ligacao> {
 
 		if (ligacao.getContato() == null) {
 			throw new Exception("Selecione um Contato");
-		} else if (ligacao.getAtividade() == null) {
-			throw new Exception("Selecione uma Atividade.");
-		} else if (ligacao.getUsuarioresponsavel() == null) {
-			throw new Exception("Selecione um Usuario.");
-		} else if (ligacao.getEmpresa() == null) {
+		} 
+//		else if (ligacao.getAtividade() == null) {
+//			throw new Exception("Selecione uma Atividade.");
+//		} 
+//		else if (ligacao.getUsuarioresponsavel() == null) {
+//			throw new Exception("Selecione um Usuario.");
+//		} 
+		else if (ligacao.getEmpresa() == null) {
 			throw new Exception("Selecione uma Empresa.");
 		} else if (ligacao.getDuracao() == null) {
 			throw new Exception("Duracao Informada Invalida");

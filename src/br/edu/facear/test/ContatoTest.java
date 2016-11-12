@@ -40,7 +40,7 @@ public class ContatoTest {
 	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
 
 	// CADASTRAR
-	@Test
+	//@Test
 	public void testCadastrarContato() throws Exception {
 		
 		for (int i = 0; i < 2; i++) {
@@ -70,7 +70,7 @@ public class ContatoTest {
 			Contato.setTipocontato(TipoContato);
 	
 			// USUÁRIO RESPONSÁVEL PELO CONTATO
-			Usuario.setId(3l);
+			Usuario.setId(1l);
 			Contato.setUsuarioresponsavel(Usuario);
 			
 			//ORIGEM DO CONTATO
@@ -110,13 +110,13 @@ public class ContatoTest {
 	}
 
 	// ALTERAR
-	//@Test
+	@Test
 	public void testAterarContato() throws Exception {
 
 		Contato Contato = facade.BuscarContatoPorId(2l);
 
 		// ATRIBUTOS
-		Contato.setNome("Guilherme");
+		Contato.setNome("Gabriel");
 		Contato.setCpf("19765478239");
 		Calendar datanascimento = new GregorianCalendar(15,06,1992);
 		Contato.setDatanascimento(datanascimento.getTime());
@@ -178,7 +178,7 @@ public class ContatoTest {
 
 		//ALTERAR
 		facade.AlterarContato(Contato);
-		Assert.assertEquals(true, Contato.getNome().equals("Guilherme"));
+		Assert.assertEquals(true, Contato.getNome().equals("Gabriel"));
 	}
 
 	// EXCLUIR

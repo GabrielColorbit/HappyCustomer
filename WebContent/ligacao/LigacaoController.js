@@ -35,25 +35,38 @@ myControllers.controller('CadastrarLigacaoController', function($scope, $routePa
 });
 myControllers.controller('LigacaoController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
+	.success(function(data) {
+		$scope.contatos = data["contato"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
+	.success(function(data) {
+		$scope.empresas = data["empresa"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
+	.success(function(data) {
+		$scope.situacoes = data["situacao"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
+	.success(function(data) {
+		$scope.tiposligacao = data["ligacao"];
+	});
+	
+	
+	
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({
 			
 			type : "ligacao",
 			id : $scope.ligacao.id,
-			usuarioresponsavel : $scope.ligacao.usuarioresponsavel,
-			empresa : $scope.ligacao.empresa,
 			contato : $scope.ligacao.contato,
+			empresa : $scope.ligacao.empresa,
 			tipoligacao : $scope.ligacao.tipoligacao,
 					
-			nome : $scope.ligacao.nome,
-			datacadastro : $scope.ligacao.datacadastro,
-			datainicio : $scope.ligacao.datainicio,
-			datafim : $scope.ligacao.datafim,
-			descricao : $scope.ligacao.descricao,
-			situacao: $scope.ligacao.situacao,			
-			
-			comunicadores_ligacao : $scope.ligacao.comunicadores_ligacao
+			data : $scope.ligacao.data,
+			duracao : $scope.ligacao.duracao,
+			resumo: $scope.ligacao.resumo		
 
 		});
 

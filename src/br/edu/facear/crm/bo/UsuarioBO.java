@@ -55,9 +55,11 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			//throw new Exception("Foto Fornecido Invalido.");
 		//}
 		else if(usuario.getDatacadastro() ==  null){
-		} else if (usuario.getFoto() == null) {
-			throw new Exception("Foto Fornecido Invalido.");
-		} else if (usuario.getDatacadastro() == null) {
+		} 
+//		else if (usuario.getFoto() == null) {
+//			throw new Exception("Foto Fornecido Invalido.");
+//		} 
+		else if (usuario.getDatacadastro() == null) {
 			throw new Exception("Data Fornecida Invalida.");
 		} else if (usuario.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");

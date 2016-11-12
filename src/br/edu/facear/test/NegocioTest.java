@@ -38,7 +38,7 @@ public class NegocioTest {
 			Negocio.setData(data.getTime());
 			
 			//EMPRESA RESPONSÁVEL PELO NEGÓCIO
-			Empresa.setId(7l);
+			Empresa.setId(3l);
 			Negocio.setEmpresa(Empresa);
 			
 			facade.CadastrarNegocio(Negocio);

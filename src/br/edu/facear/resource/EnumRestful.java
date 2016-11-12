@@ -9,7 +9,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Genero;
+import br.edu.facear.crm.entity.Situacao;
 import br.edu.facear.crm.entity.Status;
+import br.edu.facear.crm.entity.TipoLigacao;
 
 @Path("/restCollections")
 public class EnumRestful {
@@ -38,5 +40,31 @@ public class EnumRestful {
 			statusList.add(s);
 		}
 		return statusList;
+	}
+	
+	@GET
+	@Path("/tipoligacao")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<TipoLigacao> returnTipoLigacao() {
+
+		ArrayList<TipoLigacao> tipoligacaoList = new ArrayList<TipoLigacao>();
+		for (TipoLigacao tl : TipoLigacao.values()) {
+			tipoligacaoList.add(tl);
+		}
+		return tipoligacaoList;
+	}
+	
+	@GET
+	@Path("/situacao")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<Situacao> returnSituacao() {
+
+		ArrayList<Situacao> situacaoList = new ArrayList<Situacao>();
+		for (Situacao s : Situacao.values()) {
+			situacaoList.add(s);
+		}
+		return situacaoList;
 	}
 }

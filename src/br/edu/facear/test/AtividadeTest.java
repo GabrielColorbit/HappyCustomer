@@ -34,7 +34,7 @@ public class AtividadeTest {
 	@Test
 	public void testCadastroAtividade() throws Exception {
 		
-		for (int i = 0; i < 2; i++) {
+		//for (int i = 0; i < 3; i++) {
 			Atividade.setNome("Conserto Mackbook");
 			Calendar datacadastro = new GregorianCalendar(31, 10, 2016);
 			Atividade.setDatacadastro(datacadastro.getTime());
@@ -46,15 +46,15 @@ public class AtividadeTest {
 			Atividade.setSituacao(Situacao.Aberto);
 			
 			// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
-			Usuario.setId(5l);
+			Usuario.setId(1l);
 			Atividade.setUsuarioresponsavel(Usuario);
 	
 			// CONTATO RESPONSÁVEL PELA ATIVIDADE
-			Contato.setId(6l);
+			Contato.setId(2l);
 			Atividade.setContato(Contato);
 	
 			// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-			Empresa.setId(7l);
+			Empresa.setId(3l);
 			Atividade.setEmpresa(Empresa);
 			
 			// TIPO DE ATIVIDADE
@@ -74,7 +74,7 @@ public class AtividadeTest {
 			//CADASTRAR
 			facade.CadastrarAtividade(Atividade);
 			Assert.assertEquals(true, Atividade.getId() != null);
-		}
+	//	}
 	}
 
 	// ALTERAR
