@@ -1,5 +1,6 @@
 package br.edu.facear.crm.entity;
 
+import java.io.File;
 import java.util.Date;
 import java.util.List;
 
@@ -61,9 +62,10 @@ public class Usuario {
 	private String senha;
 	private Genero genero;
 	private String cargo;
-	private String foto;
+	private String caminho_foto;
 	private Date datacadastro;
 	private Status status;
+	private File foto;
 	
 	public Long getId() {
 		return id;
@@ -162,12 +164,7 @@ public class Usuario {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+
 	public Date getDatacadastro() {
 		return datacadastro;
 	}
@@ -180,21 +177,36 @@ public class Usuario {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-
-
+	public String getCaminho_foto() {
+		return caminho_foto;
+	}
+	public void setCaminho_foto(String caminho_foto) {
+		this.caminho_foto = caminho_foto;
+	}
+	public File getFoto() {
+		return foto;
+	}
+	public void setFoto(File foto) {
+		this.foto = foto;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", telefones_usuario="
 				+ telefones_usuario + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", datanascimento="
 				+ datanascimento + ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento
 				+ ", cep=" + cep + ", bairro=" + bairro + ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo
-				+ ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
+				+ ", caminho_foto=" + caminho_foto + ", datacadastro=" + datacadastro + ", status=" + status + ", foto="
+				+ foto + "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
+		result = prime * result + ((caminho_foto == null) ? 0 : caminho_foto.hashCode());
 		result = prime * result + ((cargo == null) ? 0 : cargo.hashCode());
 		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((cidade == null) ? 0 : cidade.hashCode());
@@ -228,6 +240,11 @@ public class Usuario {
 			if (other.bairro != null)
 				return false;
 		} else if (!bairro.equals(other.bairro))
+			return false;
+		if (caminho_foto == null) {
+			if (other.caminho_foto != null)
+				return false;
+		} else if (!caminho_foto.equals(other.caminho_foto))
 			return false;
 		if (cargo == null) {
 			if (other.cargo != null)
@@ -318,7 +335,8 @@ public class Usuario {
 	
 	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones_usuario, String nome,
 			String email, String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
-			String bairro, String senha, Genero genero, String cargo, String foto, Date datacadastro, Status status) {
+			String bairro, String senha, Genero genero, String cargo, String caminho_foto, Date datacadastro,
+			Status status, File foto) {
 		super();
 		this.id = id;
 		this.tipousuario = tipousuario;
@@ -336,9 +354,10 @@ public class Usuario {
 		this.senha = senha;
 		this.genero = genero;
 		this.cargo = cargo;
-		this.foto = foto;
+		this.caminho_foto = caminho_foto;
 		this.datacadastro = datacadastro;
 		this.status = status;
+		this.foto = foto;
 	}
 	/**
 	 * 

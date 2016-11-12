@@ -52,7 +52,7 @@ public class UsuarioTest {
 		Usuario.setGenero(Genero.masculino);
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
-		Usuario.setFoto("C:\\Downloads\\Eu.jpeg");
+		Usuario.setCaminho_foto("C:\\Downloads\\Eu.jpeg");
 		Calendar datacadastro = new GregorianCalendar(27,10,2016);
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.ativo);
@@ -106,7 +106,7 @@ public class UsuarioTest {
 		Usuario.setGenero(Genero.feminino);
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
-		Usuario.setFoto("C:\\Downloads\\Gabriel.jpeg");
+		Usuario.setCaminho_foto("C:\\Downloads\\Gabriel.jpeg");
 		Calendar datacadastro = new GregorianCalendar(28,10,2016);
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.inativo);

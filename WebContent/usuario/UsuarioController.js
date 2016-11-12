@@ -69,17 +69,60 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	.success(function(data) {
 		$scope.telefones = data["telefone"];
 	});
-    $scope.usuario = {
-    		datanascimento: new Date(1990, 11, 28, 14, 57)
-    };
+	
+	
+
+		
+	  $scope.fileNameChanged = function (ele) {
+    	  var files = ele.files;
+    	  var l = files.length;
+    	  var namesArr = [];
+
+    	  for (var i = 0; i < l; i++) {
+    	    namesArr.push(files[i].name);
+    	    $scope.usuario.foto = namesArr;
+    	  }
+    
+  		$scope.UploadImagem = function() {
+  			var uploadUrl="http://localhost:8080/CRM/rest/restUsuario/upload";
+  			var formData=new FormData();
+  			formData.append("usuario.foto",$scope.usuario.foto.files[0]);
+  			 $http({
+  		        method: 'POST',
+  		        url: uploadUrl,
+  		        headers: {'Content-Type': false},
+  		        data: formData,
+  		        transformRequest: function(data, headersGetterFunction) {
+  		                        return data;
+  		         }
+  		     })
+  		    .success(function(data, status) {   
+  	                alert("success");
+  		     })	
+      
+    	}
+	
+			
+		
+		
+	   };
+
+    
+    
 
 	$scope.EnviarInformacao = function() {
+		
+		
 		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
 			$scope.listTelefones[i].id = null;			
 		}
-		
+	    $scope.usuario = {
+	    		datanascimento: new Date(1990, 11, 28, 14, 57),
+	    };
+	    
+	
+	    
 		$scope.usuario.telefones_usuario = $scope.listTelefones;
-		
 		var parameter = JSON.stringify({
 			type : "usuario",
 			id : $scope.usuario.id,
@@ -99,7 +142,8 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			bairro: $scope.usuario.bairro,
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
-			telefones_usuario : $scope.usuario.telefones_usuario
+			telefones_usuario : $scope.usuario.telefones_usuario,
+			foto : $scope.usuario.foto123
 
 
 		});

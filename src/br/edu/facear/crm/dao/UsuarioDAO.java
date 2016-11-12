@@ -15,9 +15,14 @@ public class UsuarioDAO implements InterfaceDAO<Usuario> {
 
 	// CADASTRAR
 	@Override
-	public void Cadastrar(Usuario o) throws CrmException {
+	public void Cadastrar(Usuario o){
 		em.getTransaction().begin();
-		em.persist(o);
+		try {
+			em.persist(o);
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		
 		em.getTransaction().commit();
 	}
 

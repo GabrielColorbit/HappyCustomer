@@ -22,9 +22,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		else if(usuario.getTelefones_usuario() ==  null){
 //			throw new Exception("Selecione um um Telefone.");
 		}
-		//else if(usuario.getComunicadores_usuario() ==  null){
-			//throw new Exception("Selecione um Comunicador Usuário.");
-		//}
+
 		else if(usuario.getNome() ==  null){
 
 		} else if (usuario.getTelefones_usuario() == null) {
