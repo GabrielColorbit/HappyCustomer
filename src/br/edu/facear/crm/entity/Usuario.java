@@ -72,11 +72,9 @@ public class Usuario {
 	private String caminho_foto;
 	private Date datacadastro;
 	private Status status;
-<<<<<<< HEAD
 	private File foto;
 	
-=======
->>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
+
 	public Long getId() {
 		return id;
 	}
@@ -192,7 +190,6 @@ public class Usuario {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
 	public String getCaminho_foto() {
 		return caminho_foto;
 	}
@@ -217,8 +214,6 @@ public class Usuario {
 				+ foto + "]";
 	}
 	
-=======
->>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -356,54 +351,11 @@ public class Usuario {
 			return false;
 		return true;
 	}
-<<<<<<< HEAD
 	
 	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones_usuario, String nome,
 			String email, String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
 			String bairro, String senha, Genero genero, String cargo, String caminho_foto, Date datacadastro,
 			Status status, File foto) {
-=======
-	@Override
-	public String toString() {
-		final int maxLen = 10;
-		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", telefones_usuario="
-				+ (telefones_usuario != null ? telefones_usuario.subList(0, Math.min(telefones_usuario.size(), maxLen))
-						: null)
-				+ ", comunicadores_usuario="
-				+ (comunicadores_usuario != null
-						? comunicadores_usuario.subList(0, Math.min(comunicadores_usuario.size(), maxLen)) : null)
-				+ ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", datanascimento=" + datanascimento
-				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
-				+ ", bairro=" + bairro + ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo + ", foto="
-				+ foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
-	}
-	/**
-	 * @param id
-	 * @param tipousuario
-	 * @param cidade
-	 * @param telefones_usuario
-	 * @param comunicadores_usuario
-	 * @param nome
-	 * @param email
-	 * @param cpf
-	 * @param datanascimento
-	 * @param endereco
-	 * @param numero
-	 * @param complemento
-	 * @param cep
-	 * @param bairro
-	 * @param senha
-	 * @param genero
-	 * @param cargo
-	 * @param foto
-	 * @param datacadastro
-	 * @param status
-	 */
-	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, List<Telefone> telefones_usuario,
-			List<Comunicador> comunicadores_usuario, String nome, String email, String cpf, Date datanascimento,
-			String endereco, Long numero, String complemento, String cep, String bairro, String senha, Genero genero,
-			String cargo, String foto, Date datacadastro, Status status) {
->>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
 		super();
 		this.id = id;
 		this.tipousuario = tipousuario;
