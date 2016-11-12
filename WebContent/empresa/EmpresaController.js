@@ -36,6 +36,12 @@ myControllers.controller('CadastrarEmpresaController', function($scope, $routePa
 });
 myControllers.controller('EmpresaController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
+	.success(function(data) {
+		
+		$scope.tiposempresa = data["tipoEmpresa"];
+	});
+	
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({

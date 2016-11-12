@@ -139,8 +139,6 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			nome : $scope.usuario.nome,
 			tipousuario : $scope.usuario.tipousuario,
 			cidade : $scope.usuario.cidade,
-			telefones: $scope.usuario.telefones,
-			email : $scope.usuario.email,
 			senha : $scope.usuario.senha,
 			cpf : $scope.usuario.cpf,
 			genero : $scope.usuario.genero,
