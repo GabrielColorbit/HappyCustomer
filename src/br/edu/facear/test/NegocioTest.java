@@ -13,7 +13,6 @@ import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Item;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.crm.entity.Produto;
-import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class NegocioTest {
@@ -21,11 +20,9 @@ public class NegocioTest {
 	SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Negocio Negocio = new Negocio();
 	Produto Produto = new Produto();
-	Usuario Usuario = new Usuario();
 	Empresa Empresa = new Empresa();
 	
 	Item Item = new Item();
@@ -34,29 +31,27 @@ public class NegocioTest {
 	@Test
 	public void testCadastroNegocio() throws Exception {
 		
-		//ATRIBUTOS NEGÓCIO
-		Negocio.setNome("Compra de Comida");
-		Calendar data = new GregorianCalendar(29,10,2016);
-		Negocio.setData(data.getTime());
-		
-		//USUÁRIO RESPONSÁVEL PELO NEGÓCIO
-		Usuario.setId(1l);
-		Negocio.setUsuarioresponsavel(Usuario);
-		
-		//EMPRESA RESPONSÁVEL PELO NEGÓCIO
-		Empresa.setId(1l);
-		Negocio.setEmpresa(Empresa);
-		
-		facade.CadastrarNegocio(Negocio);
-		Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
-		//TERMINA NEGÓCIO E JA INICIA O ITENS
-		
-		//ITENS DO NEGÓCIO
-		Produto.setId(1l);
-		Item.setProduto(Produto);
-		Item.setNegocio(Negocio);
-		Item.setQuantidade(2l);
-		facade.CadastrarItem(Item);		
+		for (int i = 0; i < 2; i++) {
+			//ATRIBUTOS NEGÓCIO
+			Negocio.setNome("Compra de Comida");
+			Calendar data = new GregorianCalendar(29,10,2016);
+			Negocio.setData(data.getTime());
+			
+			//EMPRESA RESPONSÁVEL PELO NEGÓCIO
+			Empresa.setId(7l);
+			Negocio.setEmpresa(Empresa);
+			
+			facade.CadastrarNegocio(Negocio);
+			Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
+			//TERMINA NEGÓCIO E JA INICIA O ITENS
+			
+			//ITENS DO NEGÓCIO
+			Produto.setId(1l);
+			Item.setProduto(Produto);
+			Item.setNegocio(Negocio);
+			Item.setQuantidade(2l);
+			facade.CadastrarItem(Item);		
+		}
 	}
 
 	// ALTERAR
@@ -69,10 +64,6 @@ public class NegocioTest {
 				Negocio.setNome("Compra de Bebida");
 				Calendar data = new GregorianCalendar(30,10,2016);
 				Negocio.setData(data.getTime());
-				
-				//USUÁRIO RESPONSÁVEL PELO NEGÓCIO
-				Usuario.setId(2l);
-				Negocio.setUsuarioresponsavel(Usuario);
 				
 				//EMPRESA RESPONSÁVEL PELO NEGÓCIO
 				Empresa.setId(3l);

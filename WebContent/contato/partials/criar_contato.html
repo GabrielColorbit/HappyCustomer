@@ -1,3 +1,4 @@
+<<<<<<< HEAD:WebContent/contato/criar_contato.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -545,3 +546,555 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Happy Customer</title>
+<link rel="shortcut icon" href="../img/profile.ico" type="image/x-icon">
+
+<!-- Bootstrap Core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Theme CSS -->
+<link href="../css/happycutomer.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script src="/CRM/js/angular.min.js"></script>
+<script src="/CRM/index.js"></script>
+<script src="/CRM/happyCustomer.js"></script>
+
+</head>
+
+<body id="page-top" class="criar_contato" ng-app=happyCustomerApp>
+
+	<!-- Navigation -->
+	<topo></topo>
+
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-text">
+						<span class="name">Criar Contato</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Portfolio Grid Section -->
+	<section class="grid contatos">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					<form name="sentMessage" id="contactForm" novalidate>
+						<div class="row control-group">
+							<div class="form-group last">
+								<label class="control-label col-md-3">Foto</label>
+								<div class="col-md-9">
+									<div class="fileinput fileinput-new" data-provides="fileinput">
+										<div class="fileinput-new thumbnail"
+											style="width: 200px; height: 150px;">
+											<img
+												src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=sem+imagem"
+												alt="">
+										</div>
+										<div class="fileinput-preview fileinput-exists thumbnail"
+											style="max-width: 200px; max-height: 150px;"></div>
+										<div>
+											<span class="btn default btn-file"> <span
+												class="fileinput-new"> Selecionar imagem </span> <span
+												class="fileinput-exists"> Mudar imagem </span> <input
+												type="file" name="...">
+											</span> <a href="javascript:;" class="btn red fileinput-exists"
+												data-dismiss="fileinput"> Remover </a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Nome do contato</label> <input type="text"
+									class="form-control" placeholder="Nome do contato"
+									id="Nome do contato" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Tipo de Contato</label> <select id="Tipo de Contato"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
+
+									<option value="default">Tipo de Contato</option>
+									<option value="volvo">Telefone</option>
+									<option value="saab">Redes social</option>
+
+								</select>
+								<p class="help-block text-danger"></p>
+
+							</div>
+
+						</div>
+						<div class="row control-group">
+
+
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Origem contato</label> <select id="Origem contato"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
+
+									<option value="default">Origem contato</option>
+									<option value="volvo">Minutos</option>
+									<option value="saab">Segundos</option>
+								</select>
+							</div>
+
+
+						</div>
+
+						<div class="row control-group">
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cpf</label> <input type="text" class="form-control"
+									placeholder="Cpf" id="Cpf" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Usuario resp</label> <select id="Usuario resp"
+									class="form-control" required
+									data-validation-required-message="Por favor selecione um tipo de usuário">
+
+									<option value="default">Usuario resp</option>
+									<option value="volvo">Minutos</option>
+									<option value="saab">Segundos</option>
+								</select>
+							</div>
+
+						</div>
+
+
+						<div class="row control-group">
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cidade</label> <select id="Cidade" class="form-control"
+									required
+									data-validation-required-message="Por favor selecione uma Cidade">
+
+									<option value="default">Cidade</option>
+									<option value="volvo">Minutos</option>
+									<option value="saab">Segundos</option>
+								</select>
+							</div>
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Estado</label> <select id="Estado" class="form-control"
+									required
+									data-validation-required-message="Por favor selecione uma Cidade">
+
+									<option value="default">Estado</option>
+									<option value="volvo">Minutos</option>
+									<option value="saab">Segundos</option>
+								</select>
+							</div>
+
+
+						</div>
+
+
+						<div class="row control-group">
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Endereco</label> <input type="text" class="form-control"
+									placeholder="Endereco" id="Endereco" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Numero</label> <input type="text" class="form-control"
+									placeholder="Numero" id="Numero" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+
+
+						</div>
+
+
+						<div class="row control-group">
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Genero</label> <select id="Genero" class="form-control"
+									required
+									data-validation-required-message="Por favor selecione uma Genero">
+
+									<option value="default">Genero</option>
+									<option value="volvo">Masculino</option>
+									<option value="saab">Feminino</option>
+								</select>
+							</div>
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cargo</label> <select id="Cargo" class="form-control"
+									required
+									data-validation-required-message="Por favor selecione uma Genero">
+
+									<option value="default">Cargo</option>
+									<option value="volvo">Gerente</option>
+									<option value="saab">Porteiro</option>
+								</select>
+							</div>
+
+						</div>
+
+
+
+						<div class="row control-group">
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Data</label> <input type="date" value="2016-09-28"
+									class="form-control" placeholder="data" id="data_inicio"
+									required
+									data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Cep</label> <input type="text" class="form-control"
+									placeholder="Cep" id="Cep" required
+									data-validation-required-message="Por favor insira um nome">
+								<p class="help-block text-danger"></p>
+							</div>
+
+						</div>
+
+
+						<!-- telefone-->
+						<div class="row control-group">
+							<h3>Telefone</h3>
+
+
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<div class="col-xs-10">
+									<div class="col-xs-6  ">
+										<label>Número</label> <input type="text" class="form-control"
+											placeholder="Descrição" id="Nome do contato" required
+											data-validation-required-message="Por favor insira um nome">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="col-xs-6  ">
+										<label>Tipos </label> <select id="tipo_usuario"
+											class="form-control" required
+											data-validation-required-message="Por favor selecione um tipo de usuário">
+											<option value="default">Tipos</option>
+											<option value="volvo">Fixo</option>
+											<option value="saab">Móvel</option>
+											<option value="volvo">Empresarial</option>
+										</select>
+										<p class="help-block text-danger"></p>
+
+									</div>
+
+
+								</div>
+								<div class="col-xs-2 btn-group">
+									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="row ">
+							<h3>Telefones do Contato</h3>
+							<div class="table-scrollable table-scrollable-borderless">
+								<table class="table table-hover table-light col-xs-12">
+									<thead>
+										<tr class="uppercase">
+											<th>ID</th>
+											<th>Numero</th>
+											<th>Tipo</th>
+
+											<th></th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+
+											<td>2</td>
+											<td>41 9999 9999</td>
+											<td>Fixo</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+										</tr>
+										<tr>
+
+											<td>1</td>
+											<td>41 3333 3333</td>
+											<td>Movel</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+
+										</tr>
+										<tr>
+
+											<td>3</td>
+											<td>Empresarial</td>
+											<td>+55 (041) 9999-9999</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+
+
+						<!-- empresa-->
+						<div class="row control-group">
+							<h3>Empresas</h3>
+
+
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<div class="col-xs-10">
+
+									<div class="col-xs-12  ">
+										<label>Empresas </label> <select id="tipo_usuario"
+											class="form-control" required
+											data-validation-required-message="Por favor selecione um tipo de usuário">
+											<option value="default">Apple</option>
+											<option value="volvo">Volvo</option>
+											<option value="saab">Microsoft</option>
+											<option value="volvo">IBM</option>
+										</select>
+										<p class="help-block text-danger"></p>
+
+									</div>
+
+
+								</div>
+								<div class="col-xs-2 btn-group">
+									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="row ">
+							<h3>Empresas do Contato</h3>
+							<div class="table-scrollable table-scrollable-borderless">
+								<table class="table table-hover table-light col-xs-12">
+									<thead>
+										<tr class="uppercase">
+											<th>ID</th>
+											<th>Nome</th>
+
+											<th></th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+
+											<td>2</td>
+											<td>IBM</td>
+
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+										</tr>
+										<tr>
+
+											<td>1</td>
+											<td>Facear</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+
+
+						<!-- comunicador-->
+						<div class="row control-group">
+							<h3>Comunicador</h3>
+
+
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<div class="col-xs-10">
+									<div class="col-xs-6  ">
+										<label>Tipos de Comunicador: </label> <select
+											id="tipo_usuario" class="form-control" required
+											data-validation-required-message="Por favor selecione um tipo de usuário">
+											<option value="default">Tipo de Comunicador</option>
+											<option value="volvo">1 - WhatsApp</option>
+											<option value="saab">2 - Facebook</option>
+											<option value="volvo">3 - E-mail</option>
+										</select>
+										<p class="help-block text-danger"></p>
+
+									</div>
+									<div class="col-xs-6  ">
+										<label>Descrição</label> <input type="text"
+											class="form-control" placeholder="Descrição"
+											id="Nome do contato" required
+											data-validation-required-message="Por favor insira um nome">
+										<p class="help-block text-danger"></p>
+									</div>
+
+								</div>
+								<div class="col-xs-2 btn-group">
+									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="row ">
+							<h3>Comunicadores do Contato</h3>
+							<div class="table-scrollable table-scrollable-borderless">
+								<table class="table table-hover table-light col-xs-12">
+									<thead>
+										<tr class="uppercase">
+											<th>ID</th>
+											<th>Tipo</th>
+											<th>Descrição</th>
+
+											<th></th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+
+											<td>1</td>
+											<td>Facebook</td>
+											<td>www.facebook.com/jose</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+										</tr>
+										<tr>
+
+											<td>1</td>
+											<td>Whatsapp</td>
+											<td>+55 (041) 9999-9999</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+
+										</tr>
+										<tr>
+
+											<td>1</td>
+											<td>Telefone</td>
+											<td>+55 (041) 9999-9999</td>
+											<td><a class="btn btn-danger btn-sm"
+												href="javascript:void(0)">remover</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+
+
+
+						<div id="success"></div>
+						<div class="row">
+							<div class="form-group btn-group col-xs-12">
+
+								<a class="btn btn-danger btn-lg to-left"
+									href="/CRM/contato/contato.html">Voltar</a>
+								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Footer -->
+	<rodape></rodape>
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div
+		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+		<a class="btn btn-primary" href="#page-top"> <i
+			class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="/CRM/vendor/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/CRM/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/CRM/vendor/bootstrap/js/bootstrap-fileinput.js"
+		type="text/javascript"></script>
+	<link href="/CRM/vendor/bootstrap/css/bootstrap-fileinput.css"
+		rel="stylesheet" type="text/css">
+
+</body>
+
+</html>
+>>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c:WebContent/contato/partials/criar_contato.html

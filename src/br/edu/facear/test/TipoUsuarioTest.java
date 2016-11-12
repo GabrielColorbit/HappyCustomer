@@ -12,15 +12,16 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class TipoUsuarioTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoUsuario() throws Exception {
-		TipoUsuario TipoUsuario = new TipoUsuario();
-		TipoUsuario.setNome("Operador");
-		facade.CadastrarTipoUsuario(TipoUsuario);
-		Assert.assertEquals(true, TipoUsuario.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			TipoUsuario TipoUsuario = new TipoUsuario();
+			TipoUsuario.setNome("Operador");
+			facade.CadastrarTipoUsuario(TipoUsuario);
+			Assert.assertEquals(true, TipoUsuario.getId() != null);
+		}
 	}
 	
 	// ALTERAR

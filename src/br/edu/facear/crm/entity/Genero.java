@@ -6,7 +6,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public enum Genero implements Serializable{
-	masculino, feminino;
-
-	 
+	Masculino, Feminino;	 
 }

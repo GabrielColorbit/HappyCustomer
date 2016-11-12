@@ -7,14 +7,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.edu.facear.crm.entity.Telefone;
-import br.edu.facear.crm.entity.TipoComunicador;
 import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class TelefoneTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Telefone Telefone = new Telefone();
 	TipoTelefone TipoTelefone = new TipoTelefone();
@@ -22,12 +20,13 @@ public class TelefoneTest {
 	// CADASTRAR
 	//@Test
 	public void testCadastroTelefone() throws Exception {
-		
-		Telefone.setNumero("123456789");
-		TipoTelefone.setId(1l);
-		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
-		Assert.assertEquals(true, Telefone.getId() != null && Telefone.getTipotelefone()!= null);
+		for (int i = 0; i < 2; i++) {
+			Telefone.setNumero("123456789");
+			TipoTelefone.setId(1l);
+			Telefone.setTipotelefone(TipoTelefone);
+			facade.CadastrarTelefone(Telefone);
+			Assert.assertEquals(true, Telefone.getId() != null && Telefone.getTipotelefone()!= null);
+		}
 	}
 
 	// ALTERAR

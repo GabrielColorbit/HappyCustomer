@@ -16,10 +16,12 @@ public class TipoTelefoneTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoTelefone() throws Exception {
-		TipoTelefone TipoTelefone = new TipoTelefone();
-		TipoTelefone.setNome("Residêncial");
-		facade.CadastrarTipoTelefone(TipoTelefone);
-		Assert.assertEquals(true, TipoTelefone.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			TipoTelefone TipoTelefone = new TipoTelefone();
+			TipoTelefone.setNome("Residêncial");
+			facade.CadastrarTipoTelefone(TipoTelefone);
+			Assert.assertEquals(true, TipoTelefone.getId() != null);
+		}
 	}
 
 	// ALTERAR

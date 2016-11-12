@@ -25,8 +25,7 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class ContatoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
-
+	
 	Contato Contato = new Contato();
 	Empresa Empresa = new Empresa();
 	Usuario Usuario = new Usuario();
@@ -44,68 +43,70 @@ public class ContatoTest {
 	@Test
 	public void testCadastrarContato() throws Exception {
 		
-		// ATRIBUTOS
-		Contato.setNome("Luiz");
-		Contato.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(9,05,1997);
-		Contato.setDatanascimento(datanascimento.getTime());
-		Contato.setEndereco("Rua João Halinski");
-		Contato.setNumero(44l);
-		Contato.setComplemento("Próximo a Cocelpa");
-		Contato.setCep("83707350");
-		Contato.setBairro("Jardim Alvorada");
-		Contato.setGenero(Genero.masculino);
-		Contato.setCargo("Programador");
-		Contato.setFoto("C:\\Downloads\\Gelopar.png");
-		Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
-		Contato.setDatacadastro(datacadastro.getTime());
-		Contato.setStatus(Status.ativo);
-		
-		// CIDADE
-		Cidade.setId(1l);
-		Contato.setCidade(Cidade);
-
-		// TIPO DE CONTATO
-		TipoContato.setId(1l);
-		Contato.setTipocontato(TipoContato);
-
-		// USUÁRIO RESPONSÁVEL PELO CONTATO
-		Usuario.setId(1l);
-		Contato.setUsuarioresponsavel(Usuario);
-		
-		//ORIGEM DO CONTATO
-		OrigemContato.setId(1l);
-		Contato.setOrigemcontato(OrigemContato);
-		
-		// CADASTRANDO TELEFONE
-		Telefone.setNumero("(41) 9613-5114");
-		TipoTelefone.setId(1l);
-		Telefone.setTipotelefone(TipoTelefone);
-		facade.CadastrarTelefone(Telefone);
-
-		List<Telefone> telefones_contato = new ArrayList<Telefone>();
-		telefones_contato.add(Telefone);
-		Contato.setTelefones_contato(telefones_contato);
-
-		// CADASTRANDO COMUNICADOR
-		Comunicador.setNome("gelopar@gelopar.com");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
-
-		List<Comunicador> comunicadores_contato = new ArrayList<Comunicador>();
-		comunicadores_contato.add(Comunicador);
-		Contato.setComunicadores_contato(comunicadores_contato);
-		
-		// CADASTRANDO EMPRESAS
-		Empresa.setId(1l);
-		List<Empresa> empresas_contato = new ArrayList<Empresa>();
-		empresas_contato.add(Empresa);
-		Contato.setEmpresas(empresas_contato);
-
-		// CADASTRAR
-		facade.CadastrarContato(Contato);
-		Assert.assertEquals(true, Contato.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			// ATRIBUTOS
+			Contato.setNome("Luiz");
+			Contato.setCpf("09788163904");
+			Calendar datanascimento = new GregorianCalendar(9,05,1997);
+			Contato.setDatanascimento(datanascimento.getTime());
+			Contato.setEndereco("Rua João Halinski");
+			Contato.setNumero(44l);
+			Contato.setComplemento("Próximo a Cocelpa");
+			Contato.setCep("83707350");
+			Contato.setBairro("Jardim Alvorada");
+			Contato.setGenero(Genero.Masculino);
+			Contato.setCargo("Programador");
+			Contato.setFoto("C:\\Downloads\\Gelopar.png");
+			Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
+			Contato.setDatacadastro(datacadastro.getTime());
+			Contato.setStatus(Status.Ativo);
+			
+			// CIDADE
+			Cidade.setId(1l);
+			Contato.setCidade(Cidade);
+	
+			// TIPO DE CONTATO
+			TipoContato.setId(1l);
+			Contato.setTipocontato(TipoContato);
+	
+			// USUÁRIO RESPONSÁVEL PELO CONTATO
+			Usuario.setId(3l);
+			Contato.setUsuarioresponsavel(Usuario);
+			
+			//ORIGEM DO CONTATO
+			OrigemContato.setId(1l);
+			Contato.setOrigemcontato(OrigemContato);
+			
+			// CADASTRANDO TELEFONE
+			Telefone.setNumero("(41) 9613-5114");
+			TipoTelefone.setId(1l);
+			Telefone.setTipotelefone(TipoTelefone);
+			facade.CadastrarTelefone(Telefone);
+	
+			List<Telefone> telefones_contato = new ArrayList<Telefone>();
+			telefones_contato.add(Telefone);
+			Contato.setTelefones_contato(telefones_contato);
+	
+			// CADASTRANDO COMUNICADOR
+			Comunicador.setNome("gelopar@gelopar.com");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
+	
+			List<Comunicador> comunicadores_contato = new ArrayList<Comunicador>();
+			comunicadores_contato.add(Comunicador);
+			Contato.setComunicadores_contato(comunicadores_contato);
+			
+			// CADASTRANDO EMPRESAS
+			/*Empresa.setId(1l);
+			List<Empresa> empresas_contato = new ArrayList<Empresa>();
+			empresas_contato.add(Empresa);
+			Contato.setEmpresas_contato(empresas_contato);*/
+	
+			// CADASTRAR
+			facade.CadastrarContato(Contato);
+			Assert.assertEquals(true, Contato.getId() != null);
+		}
 	}
 
 	// ALTERAR
@@ -124,12 +125,12 @@ public class ContatoTest {
 		Contato.setComplemento("Próximo ao Terminal do Cabral");
 		Contato.setCep("83707567");
 		Contato.setBairro("Centro");
-		Contato.setGenero(Genero.masculino);
+		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Analista");
 		Contato.setFoto("C:\\Downloads\\Guilhermer.jpeg");
 		Calendar datacadastro = new GregorianCalendar(29, 10, 2016);
 		Contato.setDatacadastro(datacadastro.getTime());
-		Contato.setStatus(Status.inativo);
+		Contato.setStatus(Status.Inativo);
 		
 		// CIDADE
 		Cidade.setId(1l);
@@ -190,14 +191,14 @@ public class ContatoTest {
 	}
 
 	// LISTAR
-	// @Test
+	//@Test
 	public void testListarContato() throws Exception {
 		List<Contato> Contato = new ArrayList<Contato>();
 		Contato = facade.ListarContato();
 		Assert.assertEquals(true, Contato.size() > 0);
 		System.out.println("CONTATO(S) CADASTRADO(S)");
 		for (Contato Contato2 : Contato) {
-			System.out.println("Id: " + Contato2.getId() + "  Nome: " + Contato2.getNome() + "Tipo Contato: "
+			System.out.println("Id: " + Contato2.getId() + "  Nome: " + Contato2.getNome() + "  Tipo Contato: "
 					+ Contato2.getTipocontato().getNome());
 		}
 	}

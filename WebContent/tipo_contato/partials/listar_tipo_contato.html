@@ -33,15 +33,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr dir-paginate="tp in tipoContatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+						<tr dir-paginate="tc in tipoContatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 
-							<td>{{tp.id}}</td>
-							<td>{{tp.nome}}</td>
+							<td>{{tc.id}}</td>
+							<td>{{tc.nome}}</td>
 
 							<td class="btn-group">
 							<div class="to-right btn-group">
-								<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tp.id}}">Editar</a>
-								<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(tp.id)'>Excluir</a> 
+								<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/TipoContato/Editar/{{tc.id}}">Editar</a>
+								<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(tc.id)'>Excluir</a> 
 							</div>
 						</tr>
 					<tr>

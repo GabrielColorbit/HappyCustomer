@@ -69,6 +69,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	.success(function(data) {
 		$scope.telefones = data["telefone"];
 	});
+<<<<<<< HEAD
 	
 	
 
@@ -109,6 +110,15 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 
     
     
+=======
+	$http.get('http://localhost:8080/CRM/rest/restComunicador/listarTodos')
+	.success(function(data) {
+		$scope.comunicadores = data["comunicador"];
+	});
+    $scope.usuario = {
+    		datanascimento: new Date(1990, 11, 28, 14, 57)
+    };
+>>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
 
 	$scope.EnviarInformacao = function() {
 		
@@ -143,8 +153,12 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
 			telefones_usuario : $scope.usuario.telefones_usuario,
+<<<<<<< HEAD
 			foto : $scope.usuario.foto123
 
+=======
+			comunicadores_usuario : $scope.usuario.comunicadores_usuario
+>>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
 
 		});
 		var config = {

@@ -9,9 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
 
+@XmlRootElement
 //CRIA TABELA
 @Entity
 @Table(name = "\"TB_COMUNICADOR\"")
@@ -28,8 +30,8 @@ public class Comunicador {
 	private TipoComunicador tipocomunicador;
 
 	// COMUNICADOR_USUARIOS
-	// @ManyToMany(mappedBy = "comunicadores_usuario")
-	// private List<Usuario> usuarios;
+	@ManyToMany(mappedBy = "comunicadores_usuario")
+	private List<Usuario> usuarios;
 
 	// COMUNICADOR_EMPRESAS
 	// @ManyToMany(mappedBy = "comunicadores_empresa")

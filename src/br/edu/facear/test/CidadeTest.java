@@ -13,7 +13,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class CidadeTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Cidade Cidade = new Cidade();
 	Estado Estado = new Estado();
@@ -21,12 +20,13 @@ public class CidadeTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroCidade() throws Exception {
-		
-		Cidade.setNome("Araucária");
-		Estado.setId(1l);
-		Cidade.setEstado(Estado);
-		facade.CadastrarCidade(Cidade);
-		Assert.assertEquals(true, Cidade.getId() != null && Cidade.getEstado() != null);
+		for (int i = 0; i < 2; i++) {
+			Cidade.setNome("Araucária");
+			Estado.setId(1l);
+			Cidade.setEstado(Estado);
+			facade.CadastrarCidade(Cidade);
+			Assert.assertEquals(true, Cidade.getId() != null && Cidade.getEstado() != null);
+		}
 	}
 
 	// ALTERAR

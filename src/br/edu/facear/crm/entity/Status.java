@@ -6,5 +6,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public enum Status implements Serializable{
-	ativo, inativo;
+	Ativo, Inativo;
 }

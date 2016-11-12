@@ -13,11 +13,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ForeignKey;
 
-@Entity
+@XmlRootElement
 //CRIA TABELA
+@Entity
 @Table(name = "\"TB_EMPRESA\"")
 
 public class Empresa {
@@ -78,6 +80,7 @@ public class Empresa {
 	private String logo;
 	private Date datacadastro;
 	private Status status;
+	
 	public Long getId() {
 		return id;
 	}

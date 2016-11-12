@@ -1,0 +1,74 @@
+<meta charset="UTF-8">
+<!-- Header -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="intro-text">
+					<span class="name">{{Titulo}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section class="grid empresa">
+	<div class="container">
+
+		<div class="row">
+			<div class="table-scrollable table-scrollable-borderless">
+				<div class="col-sm-6 col-xs-12  search_bar">
+				<input type="text" class="form-control" ng-model="procurar"
+						placeholder="Buscar Empresa" id="Nome da empresa" required
+						data-validation-required-message="Por favor insira um nome">
+				</div>
+				<table class="table table-hover table-light col-xs-12">
+					<thead>
+						<tr class="uppercase">
+							<th ></th>
+							<th ng-click="ordenar('razaosocial')">Razão Social</th>
+							<th ng-click="ordenar('tipoempresa')">Tipo</th>
+							<th ng-click="ordenar('ramo')">Ramo</th>
+							<th ng-click="ordenar('site')">Site</th>
+							<th class="m_view" ng-click="ordenar('status')">Status</th>
+							<th class="m_view">Negócios</th>
+							<th>
+								<a class="btn btn-success btn-sm" href="#/Empresa/Cadastrar">Adicionar</a>
+							</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="e in empresalist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+	
+							
+							<td class="fit"><img class="user-pic"
+								src="../CRM/img/companies/gelopar.jpg">
+							</td>
+							<td>{{e.razaosocial}}</td>
+							<td>{{e.tipoempresa.nome}}</td>
+							<td>{{e.ramo}}</td>
+							<td>
+								<a href="javascript:;" class="primary-link">{{e.site}}</a>
+							</td>
+							
+							<td class="d_view">{{e.status}}</td>
+							<td>15</td>
+							
+							<td class="btn-group">
+							<div class="to-right btn-group">
+								<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/Empresa/Editar/{{e.id}}">Editar</a>
+								<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(e.id)'>Excluir</a> 
+							</div>							
+						</tr>					
+
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12">
+				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+			</div>
+		</div>
+	</div>
+</section>

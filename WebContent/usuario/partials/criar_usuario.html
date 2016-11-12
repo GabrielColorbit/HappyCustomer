@@ -1,6 +1,9 @@
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <link href="/CRM/vendor/bootstrap/css/bootstrap-fileinput.css" rel="stylesheet" type="text/css">
 
+=======
+>>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c
 <!-- Header -->
 <header>
 	<div class="container">
@@ -126,10 +129,10 @@
 
 						<div class="row control-group">
 							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Estado</label>
+								<label>Estado - País</label>
 								<select id="tipo_usuario" class="form-control" required data-validation-required-message="Por favor selecione um estado." >
 
-									<option ng-repeat="estado in estados" value="estado" ng-selected="$first">{{estado.nome +'('+ estado.pais +')' }}</option>
+									<option ng-repeat="estado in estados" value="estado" ng-selected="$first">{{estado.nome + ' - ' + estado.pais}}</option>
 
 								</select>
 								<p class="help-block text-danger"></p>

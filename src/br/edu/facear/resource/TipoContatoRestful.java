@@ -44,4 +44,14 @@ public class TipoContatoRestful {
 
 		return tc;
 	}
+	
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirTipoContato(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		TipoContato tc = new FacadeHappyCustomer().BuscarTipoContatoPorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirTipoContato(tc);
+	}
 }

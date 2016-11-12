@@ -25,7 +25,7 @@
 				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row control-group">
 						<div
-							class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Nome</label> <input type="text" class="form-control"
 								value="Suporte" placeholder="Nome" id="nome" required
 								data-validation-required-message="Por favor insira um nome" ng-model="tipoEmpresa.nome">
@@ -38,8 +38,8 @@
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group btn-group col-xs-12">
-							<a title="Voltar Para Lista de Tipo de Empresa" class="btn btn-danger btn-lg to-left" href="#/TipoEmpresa">Voltar</a>
-								<button title="Salvar Tipo de Empresa" type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
+							<a class="btn btn-danger btn-lg to-left" href="#/TipoEmpresa">Voltar</a>
+							<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/TipoEmpresa">Salvar</a>		
 						</div>
 					</div>
 				</form>

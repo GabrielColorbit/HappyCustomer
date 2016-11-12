@@ -49,27 +49,27 @@ import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
 
 public class Main {
+	
 	public static void main(String[] args) throws Exception {
+		
 		gerenciarTipoTelefone();
 		gerenciarTipoEmpresa();
 		gerenciarTelefone();
 		gerenciarProduto();
 		gerenciarEstado();
-		gerenciarEstado();
 		gerenciarCidade();
 		gerenciarOrigemContato();
 		gerenciarTipoUsuario();
 		gerenciarTipoComunicador();
-		gerenciarUsuario();
 		gerenciarTipoContato();
 		gerenciarTipoAtividade();
+//		gerenciarUsuario();
 //		gerenciarEmpresa();
 //		gerenciarContato();		
 //		gerenciarNegocio();
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-
 
 	}
 
@@ -306,7 +306,7 @@ public class Main {
 		us.setSenha("123");
 		us.setNome("Teste teste");
 		us.setCpf("080.779.555.55");
-		us.setGenero(Genero.masculino);
+		us.setGenero(Genero.Masculino);
 		us.setCargo("cargo de teste");
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
@@ -408,7 +408,7 @@ public class Main {
 		co.setNome("Chappie");
 		co.setCpf("111.111.111.11");
 		co.setFoto("C://localhost/fake_path");
-		co.setGenero(Genero.masculino);
+		co.setGenero(Genero.Masculino);
 		co.setCargo("iam CEO, bitch!");
 
 		// date formating
@@ -517,7 +517,7 @@ public class Main {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 1993);
 		e.setDatacadastro(calendar.getTime());
-		e.setStatus(Status.ativo);
+		e.setStatus(Status.Ativo);
 		e.setRamo("Tecnologia");
 		e.setSite("https://www.boobox.com");
 		e.setEndereco("Rua do vale do silicio");
@@ -667,7 +667,7 @@ public class Main {
 		Contato c = new ContatoBO().BuscarID(1l);
 		a.setContato(c);
 
-		a.setSituacao(Situacao.finalizado);
+		a.setSituacao(Situacao.Finalizado);
 
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
@@ -722,7 +722,7 @@ public class Main {
 		Calendar calendar = new GregorianCalendar(20, 9, 2016);
 		l.setData(calendar.getTime());
 
-		l.setTipoligacao(TipoLigacao.efetuada);
+		l.setTipoligacao(TipoLigacao.Efetuada);
 		l.setResumo("falar sobre assuntos peculiares");
 
 		lbo.Cadastrar(l);

@@ -24,7 +24,7 @@ myControllers.controller('GetTipoContatoController', function($scope, $routePara
 		.success(function(data) {
 			$scope.tipoContato = data;
 			var tipoContato =  new Object();
-			tipoContato = $scope.tipoContato 
+			tipoContato = $scope.tipoContato
 
 		});
 	}
@@ -53,7 +53,7 @@ myControllers.controller('TipoContatoController', function($scope, $routeParams,
 				'http://localhost:8080/CRM/rest/restTipoContato/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'TipoContato ('+$scope.tipoContato.nome+') Salvo com Sucesso!';
+					$scope.Resposta = 'Tipo Contato ('+$scope.tipoContato.nome+') Salvo com Sucesso!';
 					
 					
 				}).error(

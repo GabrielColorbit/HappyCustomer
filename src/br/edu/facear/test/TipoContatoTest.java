@@ -13,15 +13,15 @@ public class TipoContatoTest {
 
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-	@SuppressWarnings("deprecation")
-
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoContato() throws Exception {
-		TipoContato TipoContato = new TipoContato();
-		TipoContato.setNome("Prospect");
-		facade.CadastrarTipoContato(TipoContato);
-		Assert.assertEquals(true, TipoContato.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			TipoContato TipoContato = new TipoContato();
+			TipoContato.setNome("Prospect");
+			facade.CadastrarTipoContato(TipoContato);
+			Assert.assertEquals(true, TipoContato.getId() != null);
+		}
 	}
 
 	// ALTERAR

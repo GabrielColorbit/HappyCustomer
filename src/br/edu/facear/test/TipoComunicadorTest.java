@@ -12,15 +12,16 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class TipoComunicadorTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test
 	public void testCadastroTipoComunicador() throws Exception {
-		TipoComunicador TipoComunicador = new TipoComunicador();
-		TipoComunicador.setNome("Whatsapp");
-		facade.CadastrarTipoComunicador(TipoComunicador);
-		Assert.assertEquals(true, TipoComunicador.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			TipoComunicador TipoComunicador = new TipoComunicador();
+			TipoComunicador.setNome("Whatsapp");
+			facade.CadastrarTipoComunicador(TipoComunicador);
+			Assert.assertEquals(true, TipoComunicador.getId() != null);
+		}
 	}
 
 	// ALTERAR

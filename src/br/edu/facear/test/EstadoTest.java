@@ -12,16 +12,17 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class EstadoTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
-	
+
 	// CADASTRAR
 	@Test
 	public void testCadastroEstado() throws Exception {
-		Estado Estado = new Estado();
-		Estado.setNome("São Paulo");
-		Estado.setPais("Brasil");
-		facade.CadastrarEstado(Estado);
-		Assert.assertEquals(true, Estado.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			Estado Estado = new Estado();
+			Estado.setNome("São Paulo");
+			Estado.setPais("Brasil");
+			facade.CadastrarEstado(Estado);
+			Assert.assertEquals(true, Estado.getId() != null);
+		}
 	}
 
 	// ALTERAR

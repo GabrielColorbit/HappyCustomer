@@ -2,13 +2,9 @@ package br.edu.facear.test;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.ForeignKey;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,19 +12,15 @@ import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
 import br.edu.facear.crm.entity.Empresa;
-import br.edu.facear.crm.entity.Ligacao;
 import br.edu.facear.crm.entity.Situacao;
-import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.TipoAtividade;
 import br.edu.facear.crm.entity.TipoComunicador;
-import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class AtividadeTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Atividade Atividade = new Atividade();
 	Usuario Usuario = new Usuario();
@@ -42,45 +34,47 @@ public class AtividadeTest {
 	@Test
 	public void testCadastroAtividade() throws Exception {
 		
-		Atividade.setNome("Conserto Mackbook");
-		Calendar datacadastro = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatacadastro(datacadastro.getTime());
-		Calendar datainicio = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatainicio(datainicio.getTime());
-		Calendar datafim = new GregorianCalendar(02, 11, 2016);
-		Atividade.setDatafim(datafim.getTime());
-		Atividade.setDescricao("Vamos estar consertando o mackbook.");
-		Atividade.setSituacao(Situacao.aberto);
-		
-		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
-		Usuario.setId(1l);
-		Atividade.setUsuarioresponsavel(Usuario);
-
-		// CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Contato.setId(1l);
-		Atividade.setContato(Contato);
-
-		// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Empresa.setId(1l);
-		Atividade.setEmpresa(Empresa);
-		
-		// TIPO DE ATIVIDADE
-		TipoAtividade.setId(1l);
-		Atividade.setTipoatividade(TipoAtividade);
-		
-		// CADASTRANDO COMUNICADOR
-		Comunicador.setNome("atividade1@atividade1.com");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
-
-		List<Comunicador> comunicadores_atividade = new ArrayList<Comunicador>();
-		comunicadores_atividade.add(Comunicador);
-		Atividade.setComunicadores_atividade(comunicadores_atividade);
-		
-		//CADASTRAR
-		facade.CadastrarAtividade(Atividade);
-		Assert.assertEquals(true, Atividade.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			Atividade.setNome("Conserto Mackbook");
+			Calendar datacadastro = new GregorianCalendar(31, 10, 2016);
+			Atividade.setDatacadastro(datacadastro.getTime());
+			Calendar datainicio = new GregorianCalendar(31, 10, 2016);
+			Atividade.setDatainicio(datainicio.getTime());
+			Calendar datafim = new GregorianCalendar(02, 11, 2016);
+			Atividade.setDatafim(datafim.getTime());
+			Atividade.setDescricao("Vamos estar consertando o mackbook.");
+			Atividade.setSituacao(Situacao.Aberto);
+			
+			// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
+			Usuario.setId(5l);
+			Atividade.setUsuarioresponsavel(Usuario);
+	
+			// CONTATO RESPONSÁVEL PELA ATIVIDADE
+			Contato.setId(6l);
+			Atividade.setContato(Contato);
+	
+			// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
+			Empresa.setId(7l);
+			Atividade.setEmpresa(Empresa);
+			
+			// TIPO DE ATIVIDADE
+			TipoAtividade.setId(1l);
+			Atividade.setTipoatividade(TipoAtividade);
+			
+			// CADASTRANDO COMUNICADOR
+			Comunicador.setNome("atividade1@atividade1.com");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
+	
+			List<Comunicador> comunicadores_atividade = new ArrayList<Comunicador>();
+			comunicadores_atividade.add(Comunicador);
+			Atividade.setComunicadores_atividade(comunicadores_atividade);
+			
+			//CADASTRAR
+			facade.CadastrarAtividade(Atividade);
+			Assert.assertEquals(true, Atividade.getId() != null);
+		}
 	}
 
 	// ALTERAR
@@ -96,7 +90,7 @@ public class AtividadeTest {
 		Calendar datafim = new GregorianCalendar(02, 11, 2016);
 		Atividade.setDatafim(datafim.getTime());
 		Atividade.setDescricao("Foi consertando o ativebook.");
-		Atividade.setSituacao(Situacao.finalizado);
+		Atividade.setSituacao(Situacao.Finalizado);
 		
 		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
 		Usuario.setId(1l);

@@ -13,7 +13,6 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class ComunicadorTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	Comunicador Comunicador = new Comunicador();
 	TipoComunicador TipoComunicador = new TipoComunicador();
@@ -21,11 +20,13 @@ public class ComunicadorTest {
 	// CADASTRAR
 	@Test
 	public void testCadastroComunicador() throws Exception {
-		Comunicador.setNome("comunicadorTest@facebook.com");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
-		Assert.assertEquals(true, Comunicador.getId() != null && Comunicador.getTipocomunicador() != null);
+		for (int i = 0; i < 2; i++) {
+			Comunicador.setNome("comunicadorTest@facebook.com");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
+			Assert.assertEquals(true, Comunicador.getId() != null && Comunicador.getTipocomunicador() != null);
+		}
 	}
 
 	// ALTERAR

@@ -12,18 +12,17 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 public class ProdutoTest {
 	
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	@SuppressWarnings("deprecation")
 	
 	// CADASTRAR
 	@Test
 	public void testCadastroProduto() throws Exception {
-		Produto Produto = new Produto();
-		Produto.setNome("Coxinha");
-		Produto.setPreco(2.59f);
-
-		facade.CadastrarProduto(Produto);
-		
-		Assert.assertEquals(true, Produto.getId() != null);
+		for (int i = 0; i < 2; i++) {
+			Produto Produto = new Produto();
+			Produto.setNome("Coxinha");
+			Produto.setPreco(2.59f);
+			facade.CadastrarProduto(Produto);
+			Assert.assertEquals(true, Produto.getId() != null);
+		}
 	}
 	
 	// ALTERAR

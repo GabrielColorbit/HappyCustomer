@@ -1,0 +1,69 @@
+<meta charset="UTF-8">
+<!-- Header -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="intro-text">
+					<span class="name">{{Titulo}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section class="grid ligacoes">
+	<div class="container">
+
+		<div class="row">
+			<div class="table-scrollable table-scrollable-borderless">
+				<div class="col-sm-6 col-xs-12  search_bar">
+					<input type="text" class="form-control" ng-model="procurar"
+					placeholder="Buscar Ligação" id="Nome da ligacao" required
+					data-validation-required-message="Por favor insira um nome">
+				</div>
+				<table class="table table-hover table-light col-xs-12">
+					<thead>
+					<tr class="uppercase">
+					
+						<th ng-click="ordenar('usuario')">Usuário</th>
+						<th ng-click="ordenar('contato')">Contato</th>
+						<th ng-click="ordenar('empresa')">Empresa</th>
+						<th ng-click="ordenar('data')">Data</th>
+						<th ng-click="ordenar('duracao')">Duração</th>
+						<th ng-click="ordenar('tipo')">Tipo</th>
+						<th ng-click="ordenar('atividade')">Atividade</th>
+						<th>
+							<a class="btn btn-success btn-sm" href="#/Ligacao/Cadastrar">Adicionar</a>
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="l in ligacaolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+						
+						<td>{{l.usuarioresponsavel.nome}}</td>
+						<td>{{l.contato.nome}}</td>
+						<td>{{l.empresa.razaosocial}}</td>
+						<td>{{l.data}}</td>
+						<td>{{l.duracao}}</td>	
+						<td>{{l.tipoligacao}}</td>
+						<td>Sim</td>
+						
+						<td class="btn-group">
+						<div class="to-right btn-group">
+							<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/Ligacao/Editar/{{l.id}}">Editar</a>
+							<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(l.id)'>Excluir</a> 
+						</div>			
+					</tr>
+
+				</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12">
+				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+			</div>
+		</div>
+	</div>
+</section>
