@@ -15,13 +15,13 @@ public class OrigemContatoTest {
 
 	// CADASTRAR
 	@Test
-	public void testCadastroOrigemContato() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			OrigemContato OrigemContato = new OrigemContato();
-			OrigemContato.setNome("E-mail");
-			facade.CadastrarOrigemContato(OrigemContato);
-			Assert.assertEquals(true, OrigemContato.getId() != null);
-		}
+	public void testCadastrarOrigemContato() throws Exception {
+
+		OrigemContato OrigemContato = new OrigemContato();
+		OrigemContato.setNome("E-mail");
+		facade.CadastrarOrigemContato(OrigemContato);
+		Assert.assertEquals(true, OrigemContato.getId() != null);
+
 	}
 
 	// ALTERAR

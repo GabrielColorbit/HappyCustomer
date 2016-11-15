@@ -15,17 +15,17 @@ public class TipoAtividadeTest {
 
 	// CADASTRAR
 	@Test
-	public void testCadastroTipoAtividade() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			TipoAtividade TipoAtividade = new TipoAtividade();
-			TipoAtividade.setNome("Formatação");
-			facade.CadastrarTipoAtividade(TipoAtividade);
-			Assert.assertEquals(true, TipoAtividade.getId() != null);
-		}
+	public void testCadastrarTipoAtividade() throws Exception {
+
+		TipoAtividade TipoAtividade = new TipoAtividade();
+		TipoAtividade.setNome("Formatação");
+		facade.CadastrarTipoAtividade(TipoAtividade);
+		Assert.assertEquals(true, TipoAtividade.getId() != null);
+
 	}
 
 	// ALTERAR
-	//@Test
+	// @Test
 	public void testAterarTipoAtividade() throws Exception {
 		TipoAtividade TipoAtividade = facade.BuscarTipoAtividadePorId(2l);
 		TipoAtividade.setNome("Conserto");
@@ -34,7 +34,7 @@ public class TipoAtividadeTest {
 	}
 
 	// EXCLUIR
-	//@Test
+	// @Test
 	public void testExcluirTipoAtividade() throws Exception {
 		TipoAtividade TipoAtividade = facade.BuscarTipoAtividadePorId(1l);
 		facade.ExcluirTipoAtividade(TipoAtividade);

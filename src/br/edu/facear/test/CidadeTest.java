@@ -11,26 +11,25 @@ import br.edu.facear.crm.entity.Estado;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class CidadeTest {
-	
+
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	
+
 	Cidade Cidade = new Cidade();
 	Estado Estado = new Estado();
-	
+
 	// CADASTRAR
 	@Test
-	public void testCadastroCidade() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			Cidade.setNome("Araucária");
-			Estado.setId(1l);
-			Cidade.setEstado(Estado);
-			facade.CadastrarCidade(Cidade);
-			Assert.assertEquals(true, Cidade.getId() != null && Cidade.getEstado() != null);
-		}
+	public void testCadastrarCidade() throws Exception {
+
+		Cidade.setNome("Araucária");
+		Estado.setId(1l);
+		Cidade.setEstado(Estado);
+		facade.CadastrarCidade(Cidade);
+		Assert.assertEquals(true, Cidade.getId() != null && Cidade.getEstado() != null);
 	}
 
 	// ALTERAR
-	//@Test
+	// @Test
 	public void testAterarCidade() throws Exception {
 		Cidade Cidade = facade.BuscarCidadePorId(1l);
 		Cidade.setNome("Guarulhos");
@@ -39,25 +38,26 @@ public class CidadeTest {
 		facade.AlterarCidade(Cidade);
 		Assert.assertEquals(true, Cidade.getNome().equals("Guarulhos"));
 	}
-	
-	//EXCLUIR
-	//@Test
+
+	// EXCLUIR
+	// @Test
 	public void testExcluirCidade() throws Exception {
 		Cidade Cidade = facade.BuscarCidadePorId(1l);
 		facade.ExcluirCidade(Cidade);
-		//Cidade = facade.BuscarCidadePorId(1l);
-		//Assert.assertEquals(true, Cidade.getId() == null);
+		// Cidade = facade.BuscarCidadePorId(1l);
+		// Assert.assertEquals(true, Cidade.getId() == null);
 	}
-	
+
 	// LISTAR
-	//@Test
+	// @Test
 	public void testListarCidade() throws Exception {
 		List<Cidade> Cidade = new ArrayList<Cidade>();
 		Cidade = facade.ListarCidade();
 		Assert.assertEquals(true, Cidade.size() > 0);
 		System.out.println("CIDADE(S) CADASTRADA(S)");
 		for (Cidade Cidade2 : Cidade) {
-			System.out.println("Id: "+Cidade2.getId()+"  Nome: "+Cidade2.getNome()+"  Tipo Estado:"+Cidade2.getEstado().getNome());
+			System.out.println("Id: " + Cidade2.getId() + "  Nome: " + Cidade2.getNome() + "  Tipo Estado:"
+					+ Cidade2.getEstado().getNome());
 		}
 	}
 }

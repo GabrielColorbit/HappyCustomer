@@ -20,28 +20,27 @@ import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class UsuarioTest {
-	
+
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	
+
 	Usuario Usuario = new Usuario();
 	TipoUsuario TipoUsuario = new TipoUsuario();
 	Cidade Cidade = new Cidade();
 	Telefone Telefone = new Telefone();
 	TipoTelefone TipoTelefone = new TipoTelefone();
 	Comunicador Comunicador = new Comunicador();
-	TipoComunicador TipoComunicador = new TipoComunicador(); 
-	
-	//SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
-	
+	TipoComunicador TipoComunicador = new TipoComunicador();
+
+	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
+
 	// CADASTRAR
 	@Test
-	public void testCadastroUsuario() throws Exception {
-		
+	public void testCadastrarUsuario() throws Exception {
 
-		//ATRIBUTOS
+		// ATRIBUTOS
 		Usuario.setNome("Luiz");
 		Usuario.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(9,05,1997);
+		Calendar datanascimento = new GregorianCalendar(9, 05, 1997);
 		Usuario.setDatanascimento(datanascimento.getTime());
 		Usuario.setEndereco("Rua João Halinski");
 		Usuario.setNumero(44l);
@@ -52,50 +51,49 @@ public class UsuarioTest {
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
 		Usuario.setCaminho_foto("C:\\Downloads\\Eu.jpeg");
-		Calendar datacadastro = new GregorianCalendar(27,10,2016);
+		Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.Ativo);
-		
-		//CIDADE
+
+		// CIDADE
 		Cidade.setId(1l);
 		Usuario.setCidade(Cidade);
-		
-		//TIPO
+
+		// TIPO
 		TipoUsuario.setId(1l);
 		Usuario.setTipousuario(TipoUsuario);
-		
-		//TELEFONE
+
+		// TELEFONE
 		Telefone.setNumero("(41) 9613-5114");
 		TipoTelefone.setId(1l);
 		Telefone.setTipotelefone(TipoTelefone);
 		facade.CadastrarTelefone(Telefone);
-		
+
 		List<Telefone> telefones_usuario = new ArrayList<Telefone>();
 		telefones_usuario.add(Telefone);
 		Usuario.setTelefones_usuario(telefones_usuario);
-		
-		//COMUNICADOR
+
+		// COMUNICADOR
 		Comunicador.setNome("luizhenrique@gmail.com");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.CadastrarComunicador(Comunicador);
-		
-		
-		//CADASTRAR
+
+		// CADASTRAR
 		facade.CadastrarUsuario(Usuario);
 		Assert.assertEquals(true, Usuario.getId() != null);
 	}
 
 	// ALTERAR
-	//@Test
+	// @Test
 	public void testAterarUsuario() throws Exception {
-		
+
 		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 
-		//ATRIBUTOS
+		// ATRIBUTOS
 		Usuario.setNome("Gabriel");
 		Usuario.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(30,9,1994);
+		Calendar datanascimento = new GregorianCalendar(30, 9, 1994);
 		Usuario.setDatanascimento(datanascimento.getTime());
 		Usuario.setEndereco("Rua Antonio");
 		Usuario.setNumero(156l);
@@ -106,60 +104,60 @@ public class UsuarioTest {
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
 		Usuario.setCaminho_foto("C:\\Downloads\\Gabriel.jpeg");
-		Calendar datacadastro = new GregorianCalendar(28,10,2016);
+		Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
 		Usuario.setDatacadastro(datacadastro.getTime());
 		Usuario.setStatus(Status.Inativo);
-		
-		//CIDADE
+
+		// CIDADE
 		Cidade.setId(1l);
 		Usuario.setCidade(Cidade);
-		
-		//TIPO DE USUÁRIO
+
+		// TIPO DE USUÁRIO
 		TipoUsuario.setId(1l);
 		Usuario.setTipousuario(TipoUsuario);
-		
+
 		// ALTERANDO TELEFONE
-		Telefone Telefone = facade.BuscarTelefonePorId(1l);
+		Telefone Telefone = facade.BuscarTelefonePorId(2l);
 		Telefone.setNumero("(41) 8554-7070");
 		TipoTelefone.setId(1l);
 		Telefone.setTipotelefone(TipoTelefone);
 		facade.AlterarTelefone(Telefone);
-		
+
 		List<Telefone> telefones_usuario = new ArrayList<Telefone>();
 		telefones_usuario.add(Telefone);
 		Usuario.setTelefones_usuario(telefones_usuario);
-		
+
 		// ALTERANDO COMUNICADOR
 		Comunicador Comunicador = facade.BuscarComunicadorPorId(1l);
 		Comunicador.setNome("gabrielumbelino@gmail.com");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.AlterarComunicador(Comunicador);
-		
-	
-		//ALTERAR	
+
+		// ALTERAR
 		facade.AlterarUsuario(Usuario);
 		Assert.assertEquals(true, Usuario.getNome().equals("Gabriel"));
 	}
-	
-	//EXCLUIR
-	//@Test
+
+	// EXCLUIR
+	// @Test
 	public void testExcluirUsuario() throws Exception {
 		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 		facade.ExcluirUsuario(Usuario);
-		//Usuario = facade.BuscarUsuarioPorId(1l);
-		//Assert.assertEquals(true, Usuario.getId() == null);
+		// Usuario = facade.BuscarUsuarioPorId(1l);
+		// Assert.assertEquals(true, Usuario.getId() == null);
 	}
-	
+
 	// LISTAR
-	//@Test
+	// @Test
 	public void testListarUsuario() throws Exception {
 		List<Usuario> Usuario = new ArrayList<Usuario>();
 		Usuario = facade.ListarUsuario();
 		Assert.assertEquals(true, Usuario.size() > 0);
 		System.out.println("USUÁRIOS(S) CADASTRADO(S)");
 		for (Usuario Usuario2 : Usuario) {
-			System.out.println("Id: "+Usuario2.getId()+"  Nome: "+Usuario2.getNome()+"Tipo Usuario: "+Usuario2.getTipousuario().getNome());
+			System.out.println("Id: " + Usuario2.getId() + "  Nome: " + Usuario2.getNome() + "Tipo Usuario: "
+					+ Usuario2.getTipousuario().getNome());
 		}
 	}
 }

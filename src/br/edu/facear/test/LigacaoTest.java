@@ -41,27 +41,27 @@ public class LigacaoTest {
 			// ATRIBUTOS
 			Calendar data = new GregorianCalendar(31, 10, 2016);
 			Ligacao.setData(data.getTime());
-			//Ligacao.setData(sdf.format(new Date(("31/10/2016")));
+			// Ligacao.setData(sdf.format(new Date(("31/10/2016")));
 			Ligacao.setDuracao("02:10s");
 			Ligacao.setTipoligacao(TipoLigacao.Efetuada);
 			Ligacao.setResumo("Liguei pra informar que a máquina foi consertada.");
-	
+
 			// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
 			Usuario.setId(1l);
 			Ligacao.setUsuarioresponsavel(Usuario);
-	
+
 			// CONTATO RESPONSÁVEL PELA LIGAÇÃO
 			Contato.setId(1l);
 			Ligacao.setContato(Contato);
-	
+
 			// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
 			Empresa.setId(1l);
 			Ligacao.setEmpresa(Empresa);
-	
+
 			// ATIVIDADE RELACIONADA COM A LIGAÇÃO
-	//		Atividade.setId(1l);
-	//		Ligacao.setAtividade(Atividade);
-	
+			// Atividade.setId(1l);
+			// Ligacao.setAtividade(Atividade);
+
 			// CADASTRAR
 			facade.CadastrarLigacao(Ligacao);
 			Assert.assertEquals(true, Ligacao.getId() != null);
@@ -72,7 +72,7 @@ public class LigacaoTest {
 	// @Test
 	public void testAterarLigacao() throws Exception {
 
-		Empresa Empresa = facade.BuscarEmpresaPorId(3l);
+		Ligacao Ligacao = facade.BuscarLigacaoPorId(2l);
 
 		// ATRIBUTOS
 		Calendar data = new GregorianCalendar(01, 11, 2016);
@@ -82,15 +82,15 @@ public class LigacaoTest {
 		Ligacao.setResumo("Ligou agradecendo pelo conserto da máquina.");
 
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
-		Usuario.setId(1l);
+		Usuario.setId(2l);
 		Ligacao.setUsuarioresponsavel(Usuario);
 
 		// CONTATO RESPONSÁVEL PELA LIGAÇÃO
-		Contato.setId(1l);
+		Contato.setId(2l);
 		Ligacao.setContato(Contato);
 
 		// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
-		Empresa.setId(1l);
+		Empresa.setId(2l);
 		Ligacao.setEmpresa(Empresa);
 
 		// ATIVIDADE RELACIONADA COM A LIGAÇÃO
@@ -103,7 +103,7 @@ public class LigacaoTest {
 	}
 
 	// EXCLUIR
-	//@Test
+	// @Test
 	public void testExcluirLigacao() throws Exception {
 		Ligacao Ligacao = facade.BuscarLigacaoPorId(1l);
 		facade.ExcluirLigacao(Ligacao);

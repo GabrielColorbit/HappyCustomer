@@ -10,47 +10,47 @@ import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class TipoUsuarioTest {
-	
+
 	FacadeHappyCustomer facade = new FacadeHappyCustomer();
-	
+
 	// CADASTRAR
 	@Test
-	public void testCadastroTipoUsuario() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			TipoUsuario TipoUsuario = new TipoUsuario();
-			TipoUsuario.setNome("Operador");
-			facade.CadastrarTipoUsuario(TipoUsuario);
-			Assert.assertEquals(true, TipoUsuario.getId() != null);
-		}
+	public void testCadastrarTipoUsuario() throws Exception {
+
+		TipoUsuario TipoUsuario = new TipoUsuario();
+		TipoUsuario.setNome("Operador");
+		facade.CadastrarTipoUsuario(TipoUsuario);
+		Assert.assertEquals(true, TipoUsuario.getId() != null);
+
 	}
-	
+
 	// ALTERAR
-	//@Test
+	// @Test
 	public void testAterarTipoUsuario() throws Exception {
-		TipoUsuario TipoUsuario = facade.BuscarTipoUsuarioPorId(4l);
+		TipoUsuario TipoUsuario = facade.BuscarTipoUsuarioPorId(2l);
 		TipoUsuario.setNome("Administrador");
 		facade.AlterarTipoUsuario(TipoUsuario);
 		Assert.assertEquals(true, TipoUsuario.getNome().equals("Administrador"));
 	}
-	
-	//EXCLUIR
-	//@Test
+
+	// EXCLUIR
+	// @Test
 	public void testExcluirTipoUsuario() throws Exception {
 		TipoUsuario TipoUsuario = facade.BuscarTipoUsuarioPorId(1l);
 		facade.ExcluirTipoUsuario(TipoUsuario);
-		//TipoUsuario = facade.BuscarTipoUsuarioPorId(1l);
-		//Assert.assertEquals(true, TipoUsuario.getTipoUsuarioID() == null);
+		// TipoUsuario = facade.BuscarTipoUsuarioPorId(1l);
+		// Assert.assertEquals(true, TipoUsuario.getTipoUsuarioID() == null);
 	}
-	
+
 	// LISTAR
-	//@Test
+	// @Test
 	public void testListarTipoUsuario() throws Exception {
 		List<TipoUsuario> TipoUsuario = new ArrayList<TipoUsuario>();
 		TipoUsuario = facade.ListarTipoUsuario();
 		Assert.assertEquals(true, TipoUsuario.size() > 0);
 		System.out.println("TIPOS DE USUÁRIO(S) CADASTRADO(S)");
 		for (TipoUsuario TipoUsuario2 : TipoUsuario) {
-			System.out.println("Id: "+TipoUsuario2.getId()+"  Nome: "+TipoUsuario2.getNome());
+			System.out.println("Id: " + TipoUsuario2.getId() + "  Nome: " + TipoUsuario2.getNome());
 		}
 	}
 }

@@ -15,22 +15,21 @@ public class TipoComunicadorTest {
 	
 	// CADASTRAR
 	@Test
-	public void testCadastroTipoComunicador() throws Exception {
-		for (int i = 0; i < 2; i++) {
+	public void testCadastrarTipoComunicador() throws Exception {
+	
 			TipoComunicador TipoComunicador = new TipoComunicador();
-			TipoComunicador.setNome("Whatsapp");
+			TipoComunicador.setNome("Skype");
 			facade.CadastrarTipoComunicador(TipoComunicador);
 			Assert.assertEquals(true, TipoComunicador.getId() != null);
-		}
 	}
 
 	// ALTERAR
 	//@Test
 	public void testAterarTipoComunicador() throws Exception {
 		TipoComunicador TipoComunicador = facade.BuscarTipoComunicadorPorId(1l);
-		TipoComunicador.setNome("Whatsapp");
+		TipoComunicador.setNome("Facebook");
 		facade.AlterarTipoComunicador(TipoComunicador);
-		Assert.assertEquals(true, TipoComunicador.getNome().equals("Whatsapp"));
+		Assert.assertEquals(true, TipoComunicador.getNome().equals("Facebook"));
 	}
 	
 	//EXCLUIR

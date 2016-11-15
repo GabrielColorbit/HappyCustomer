@@ -15,19 +15,20 @@ public class TipoContatoTest {
 
 	// CADASTRAR
 	@Test
-	public void testCadastroTipoContato() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			TipoContato TipoContato = new TipoContato();
-			TipoContato.setNome("Prospect");
-			facade.CadastrarTipoContato(TipoContato);
-			Assert.assertEquals(true, TipoContato.getId() != null);
-		}
+	public void testCadastrarTipoContato() throws Exception {
+
+		TipoContato TipoContato = new TipoContato();
+		TipoContato.setNome("Prospect");
+		facade.CadastrarTipoContato(TipoContato);
+		Assert.assertEquals(true, TipoContato.getId() != null);
+
 	}
 
 	// ALTERAR
-	//@Test
+	// @Test
 	public void testAterarTipoContato() throws Exception {
-		TipoContato TipoContato = facade.BuscarTipoContatoPorId(5l);
+
+		TipoContato TipoContato = facade.BuscarTipoContatoPorId(2l);
 		TipoContato.setNome("Cliente");
 		facade.AlterarTipoContato(TipoContato);
 		Assert.assertEquals(true, TipoContato.getNome().equals("Cliente"));

@@ -44,10 +44,9 @@ public class Ligacao {
 	// ATRIBUTOS
 	private Date data;
 	private String duracao;
+	private String telefone;
 	private TipoLigacao tipoligacao;
 	private String resumo;
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -90,6 +89,12 @@ public class Ligacao {
 	public void setDuracao(String duracao) {
 		this.duracao = duracao;
 	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	public TipoLigacao getTipoligacao() {
 		return tipoligacao;
 	}
@@ -113,6 +118,7 @@ public class Ligacao {
 		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((resumo == null) ? 0 : resumo.hashCode());
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		result = prime * result + ((tipoligacao == null) ? 0 : tipoligacao.hashCode());
 		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
@@ -161,6 +167,11 @@ public class Ligacao {
 				return false;
 		} else if (!resumo.equals(other.resumo))
 			return false;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
+			return false;
 		if (tipoligacao != other.tipoligacao)
 			return false;
 		if (usuarioresponsavel == null) {
@@ -174,7 +185,7 @@ public class Ligacao {
 	public String toString() {
 		return "Ligacao [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
 				+ ", empresa=" + empresa + ", atividade=" + atividade + ", data=" + data + ", duracao=" + duracao
-				+ ", tipoligacao=" + tipoligacao + ", resumo=" + resumo + "]";
+				+ ", telefone=" + telefone + ", tipoligacao=" + tipoligacao + ", resumo=" + resumo + "]";
 	}
 	/**
 	 * @param id
@@ -184,11 +195,12 @@ public class Ligacao {
 	 * @param atividade
 	 * @param data
 	 * @param duracao
+	 * @param telefone
 	 * @param tipoligacao
 	 * @param resumo
 	 */
 	public Ligacao(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, Atividade atividade,
-			Date data, String duracao, TipoLigacao tipoligacao, String resumo) {
+			Date data, String duracao, String telefone, TipoLigacao tipoligacao, String resumo) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -197,6 +209,7 @@ public class Ligacao {
 		this.atividade = atividade;
 		this.data = data;
 		this.duracao = duracao;
+		this.telefone = telefone;
 		this.tipoligacao = tipoligacao;
 		this.resumo = resumo;
 	}
@@ -206,5 +219,5 @@ public class Ligacao {
 	public Ligacao() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
+	}	
 }

@@ -35,6 +35,28 @@ myControllers.controller('CadastrarAtividadeController', function($scope, $route
 });
 myControllers.controller('AtividadeController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
+	.success(function(data) {
+		$scope.situacoes = data["situacao"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
+	.success(function(data) {
+		$scope.contatos = data["contato"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
+	.success(function(data) {
+		$scope.empresas = data["empresa"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+	.success(function(data) {
+		$scope.usuarios = data["usuario"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
+	.success(function(data) {
+		
+		$scope.tiposatividade = data["tipoAtividade"];
+	});
+	
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({

@@ -43,15 +43,14 @@ myControllers.controller('LigacaoController', function($scope, $routeParams,$htt
 	.success(function(data) {
 		$scope.empresas = data["empresa"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
-	.success(function(data) {
-		$scope.situacoes = data["situacao"];
-	});
 	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
 	.success(function(data) {
 		$scope.tiposligacao = data["tipoLigacao"];
 	});
-	
+	$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos')
+	.success(function(data) {
+		$scope.telefones = data["telefone"];
+	});
 	
 	
 	$scope.EnviarInformacao = function() {		
@@ -62,6 +61,7 @@ myControllers.controller('LigacaoController', function($scope, $routeParams,$htt
 			id : $scope.ligacao.id,
 			contato : $scope.ligacao.contato,
 			empresa : $scope.ligacao.empresa,
+			telefone : $scope.ligacao.telefone,
 			tipoligacao : $scope.ligacao.tipoligacao,
 					
 			data : $scope.ligacao.data,
