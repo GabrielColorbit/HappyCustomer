@@ -20,7 +20,7 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 @Table(name="\"TB_ATIVIDADE\"")
 public class Atividade {
-	
+
 	// CHAVE PRIMARIA
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
@@ -134,7 +134,7 @@ public class Atividade {
 	public void setSituacao(Situacao situacao) {
 		this.situacao = situacao;
 	}
-	@Override
+	@Override  
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

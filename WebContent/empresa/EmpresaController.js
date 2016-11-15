@@ -16,7 +16,7 @@ myControllers.controller('ListarEmpresaController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetEmpresaController', function($scope, $routeParams,$http) {
+myControllers.controller('GetEmpresaController', function($scope, $routeParams,$http, $filter) {
 	$scope.Titulo = "Editar Empresa";
 
 	if($routeParams.empresaId){
@@ -25,7 +25,7 @@ myControllers.controller('GetEmpresaController', function($scope, $routeParams,$
 			$scope.empresa = data;
 			var empresa =  new Object();
 			empresa = $scope.empresa 
-
+			$scope.empresa.datacadastro = $filter('date')(empresa.datacadastro, "yyyy-MM-dd");
 		});
 	}
 });
