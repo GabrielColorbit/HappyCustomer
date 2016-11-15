@@ -6,7 +6,7 @@ public class MainTest {
 
 		for (int i = 0; i < 2; i++) {
 
-			// TIPO USUÁRIO
+			// TIPO USUARIO
 			TipoUsuarioTest tipousuariotest = new TipoUsuarioTest();
 			tipousuariotest.testCadastrarTipoUsuario();
 
