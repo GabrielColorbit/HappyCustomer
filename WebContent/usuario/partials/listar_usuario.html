@@ -42,8 +42,8 @@
 						<tbody>
 							<tr dir-paginate="u in usuarios |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 								
-								<td class="fit"><img class="user-pic"
-									src="../CRM/img/users/avatar4.jpg">
+								<td class="fit">
+									<img class="user-pic" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{u.idfoto}}">
 								</td>
 								<td>
 									<a href="javascript:;" class="primary-link">{{u.nome}}</a>

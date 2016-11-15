@@ -1,5 +1,7 @@
 <meta charset="UTF-8">
 <link href="/CRM/vendor/bootstrap/css/bootstrap-fileinput.css" rel="stylesheet" type="text/css">
+
+
 <!-- Header -->
 <header>
 	<div class="container">
@@ -16,7 +18,12 @@
 <!-- Portfolio Grid Section -->
 <section class="grid users" ng-controller="UsuarioController">
 	<div class="container">
+    
+    
 
+    
+    
+    
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
 				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -25,43 +32,48 @@
 				
 				<form name="sentMessage" id="contactForm" novalidate  enctype="multipart/form-data">
 							<div class="form-group last">
-								<label class="control-label">
-								<a class="btn btn-success btn-sm to-left" href="javascript:void(0)" data-ng-click='UploadImagem()'>Upload</a>
-								</label>
-								<div class="col-md-9">
-									<div class="fileinput fileinput-new" data-provides="fileinput">
-										<div class="fileinput-new thumbnail" style="width: 400px; height: 300px;">
-											<img src="http://www.placehold.it/400x300/EFEFEF/AAAAAA&amp;text=selecione+uma+imagem" alt="">
-										</div>
-										
-										
-										
-										<div class="fileinput-preview fileinput-exists thumbnail"
-											style="max-width: 200px; max-height: 150px;"></div>
-										<div>
-											<span class="btn default btn-file"> <span
-												class="fileinput-new"> Selecionar imagem </span> 
-												<span class="fileinput-exists"> Mudar imagem </span> 
-										
-										    	
-										
-												
-												<input type="hidden"  onchange="angular.element(this).scope().fileNameChanged(this)>
-												
-											</span> 
-											<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remover </a>
-										</div>
-									</div>
-								</div>
+						        <div>Selecione a imagem do perfil do usuário</div>
+						        
+						        <div ngf-drop ng-model="picFile" ngf-pattern="image/*"  class="cropArea col-xs-7" >
+						             
+						            <img-crop image="picFile  | ngfDataUrl"                 
+						            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+						            </img-crop>
+						           
+						           
+						        </div>
+						        <div class="col-xs-5">
+						        	<div class="form-group btn-group col-xs-12">
+										<button ngf-select ng-model="picFile" accept="image/*" class="btn btn-default btn-sm to-left"> Selecionar Imagem</button>
+								        <button ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success btn-sm to-left" >Enviar Imagem</button> 						        	
+						        	
+						        	</div>
+							        
+							        
+
+							        <div class="image_circle">
+										<img class="image_user" id="ItemPreview" />
+						             
+							            <!-- <img ng-src="{{croppedDataUrl}}" /> -->
+								        					            
+							        </div>
+						        	<div class="form-group btn-group col-xs-12">
+										<span class="success">{{imagemresult}}</span>
+								        <span class="danger" ng-show="errorMsg">{{errorMsg}}</span>							        	
+						        	</div>
+	
+						        </div>
+						       
 							</div>				
 				
 				
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Nome</label>
-								<input type="text" ng-model="usuario.nome" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor insira um nome">
+								<input type="hidden" ng-model="foto.id"/>
+								<input type="text"  class="form-control" placeholder="Nome" id="nome" ng-model="usuario.nome" required data-validation-required-message="Por favor insira um nome">
+
 								<p class="help-block text-danger"></p>
-								<input type="file" multiple onchange="angular.element(this).scope().fileNameChanged(this)">
 							</div>
 
 

@@ -2,6 +2,8 @@ var app = angular.module('happyCustomerApp', [
 	'ngRoute', 
 	'angularUtils.directives.dirPagination',
 	'angularFileUpload',
+	'ngFileUpload',	
+	'ngImgCrop',		
 	'UsuarioControllers',
 	'TipoContatoControllers',
 	'CidadeControllers',

@@ -9,6 +9,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 		.success(function(data) {
 			$scope.usuarios = data["usuario"];
 		});
+		
 
 	};
 	$scope.BuscarInformacao();
@@ -19,15 +20,21 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 });
 myControllers.controller('GetUsuarioController', function($scope, $routeParams,$http) {
 	$scope.Titulo = "Editar Usuário";
-	if($routeParams.tipocontatoId){
-		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.tipocontatoId)
+	if($routeParams.usuarioId){
+		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
 		.success(function(data) {
 			$scope.usuario = data;
 			var usuario=  new Object();
 			usuario = $scope.usuario
-
+			
+			$scope.listTelefones=[];
+			$scope.listTelefones = usuario.telefones_usuario;
 		});
 	}
+	for(var telefone in $scope.listTelefones){
+		console.log(telefone.numero);
+	}
+	
 });
 myControllers.controller('CadastrarUsuarioController', function($scope, $routeParams,$http) {
 
@@ -38,13 +45,40 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Usuário";
 
 });
-myControllers.controller('UsuarioController', function($scope, $routeParams,$http) {
+myControllers.controller('UsuarioController', function($scope, $routeParams,$http, Upload, $timeout) {
+	 $scope.upload = function (dataUrl, name) {
+		 
+	 
+        Upload.upload({
+            url: 'http://localhost:8080/CRM/rest/restUsuario/upload',
+            data: {
+                file: Upload.dataUrltoBlob(dataUrl, name)
+            },
+        }).success(function(data) {
+        	
+        	var foto = data;
+        	
+        	$scope.foto = foto;
+        	$scope.RetornaImagemBase64(foto.id);
+			
+    	}).error(
+			function(data) {
+				$scope.Resposta = "Erro ao enviar imagem: "+data;							
+		});
+    }
+	$scope.RetornaImagemBase64 = function (idimage){
+		
+		//pegando foto de usuario cadastrada temporareamente
+		 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
+		.success(function(data) {
+			document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
+		});
+		
+	}
+	
 
 
-	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-	.success(function(data) {
-		$scope.usuarios = data["usuario"];
-	});
+	
 	$http.get('http://localhost:8080/CRM/rest/restCollections/genders')
 	.success(function(data) {
 		$scope.generos = data["genero"];
@@ -70,44 +104,6 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 		$scope.telefones = data["telefone"];
 	});
 
-	
-	
-
-		
-	  $scope.fileNameChanged = function (ele) {
-    	  var files = ele.files;
-    	  var l = files.length;
-    	  var namesArr = [];
-
-    	  for (var i = 0; i < l; i++) {
-    	    namesArr.push(files[i].name);
-    	    $scope.usuario.foto = namesArr;
-    	  }
-    
-  		$scope.UploadImagem = function() {
-  			var uploadUrl="http://localhost:8080/CRM/rest/restUsuario/upload";
-  			var formData=new FormData();
-  			formData.append("usuario.foto",$scope.usuario.foto.files[0]);
-  			 $http({
-  		        method: 'POST',
-  		        url: uploadUrl,
-  		        headers: {'Content-Type': false},
-  		        data: formData,
-  		        transformRequest: function(data, headersGetterFunction) {
-  		                        return data;
-  		         }
-  		     })
-  		    .success(function(data, status) {   
-  	                alert("success");
-  		     })	
-      
-    	}
-	
-			
-		
-		
-	   };
-
     
     
 	$scope.EnviarInformacao = function() {
@@ -116,9 +112,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
 			$scope.listTelefones[i].id = null;			
 		}
-	    $scope.usuario = {
-	    		datanascimento: new Date(1990, 11, 28, 14, 57),
-	    };
+
 	    
 	
 	    
@@ -141,7 +135,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
 			telefones_usuario : $scope.usuario.telefones_usuario,
-			foto : $scope.usuario.foto123
+			idfoto : $scope.foto.id
 
 
 
@@ -156,8 +150,8 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 				'http://localhost:8080/CRM/rest/restUsuario/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!';
 
+					alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
 
 				}).error(
 				function(data, status, header, config) {

@@ -1,0 +1,72 @@
+/* line 1, ../../source/scss/ng-img-crop.scss */
+img-crop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+/* line 7, ../../source/scss/ng-img-crop.scss */
+img-crop canvas {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* mobile webkit */
+}
+.image_circle label{
+	content:"resultado:";
+	position: absolute;
+	top: 62px;
+	z-index: 999;
+}
+.image_circle{
+	border-radius:100%;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	z-index: 0;
+	display: block;
+	width: 200px;
+	height: 200px;
+	background: #fff;
+	border: none;
+}
+.image_circle img{
+	width: 101%;
+	height: 101%;
+	margin: -1px -1px;
+} 
+	.cropArea {
+	    background: #E4E4E4;
+	    overflow: hidden;
+	    width: 410px;
+	    height: 320px;
+	    padding: 0;
+	}
+	form .progress {
+	    line-height: 15px;
+	}
+	.progress {
+	    display: inline-block;
+	    width: 100px;
+	    border: 3px groove #CCC;
+	}
+	.progress div {
+	    font-size: smaller;
+	    background: orange;
+	    width: 0;
+	}
+
+	.success{
+    color: green;
+    font-size: 14px;
+    font-weight: 800;
+}
+	.danger{
+    color: maroon;
+    font-size: 14px;
+    font-weight: 800;
+}

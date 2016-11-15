@@ -63,7 +63,7 @@ public class Main {
 		gerenciarTipoComunicador();
 		gerenciarTipoContato();
 		gerenciarTipoAtividade();
-//		gerenciarUsuario();
+		gerenciarUsuario();
 //		gerenciarEmpresa();
 //		gerenciarContato();		
 //		gerenciarNegocio();
