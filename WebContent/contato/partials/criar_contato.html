@@ -1,57 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>Happy Customer</title>
-<link rel="shortcut icon" href="../img/profile.ico" type="image/x-icon">
-
-<!-- Bootstrap Core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Theme CSS -->
-<link href="../css/happycutomer.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<script src="/CRM/js/angular.min.js"></script>
-<script src="/CRM/index.js"></script>
-<script src="/CRM/happyCustomer.js"></script>
-
-</head>
-
-<body id="page-top" class="criar_contato" ng-app=happyCustomerApp>
-
-	<!-- Navigation -->
-	<topo></topo>
-
-
+<meta charset="UTF-8">
 	<!-- Header -->
 	<header>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="intro-text">
-						<span class="name">Criar Contato</span>
+						<span class="name">{{Titulo}}</span>
 					</div>
 				</div>
 			</div>
@@ -59,239 +13,228 @@
 	</header>
 
 	<!-- Portfolio Grid Section -->
-	<section class="grid contatos">
+	<section class="grid contatos" ng-controller="ContatoController">
 		<div class="container">
 
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					
 					<form name="sentMessage" id="contactForm" novalidate>
+						
 						<div class="row control-group">
-							<div class="form-group last">
-								<label class="control-label col-md-3">Foto</label>
-								<div class="col-md-9">
-									<div class="fileinput fileinput-new" data-provides="fileinput">
-										<div class="fileinput-new thumbnail"
-											style="width: 200px; height: 150px;">
-											<img
-												src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=sem+imagem"
-												alt="">
-										</div>
-										<div class="fileinput-preview fileinput-exists thumbnail"
-											style="max-width: 200px; max-height: 150px;"></div>
-										<div>
-											<span class="btn default btn-file"> <span
-												class="fileinput-new"> Selecionar imagem </span> <span
-												class="fileinput-exists"> Mudar imagem </span> <input
-												type="file" name="...">
-											</span> <a href="javascript:;" class="btn red fileinput-exists"
-												data-dismiss="fileinput"> Remover </a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Nome do contato</label> <input type="text"
-									class="form-control" placeholder="Nome do contato"
-									id="Nome do contato" required
-									data-validation-required-message="Por favor insira um nome">
-								<p class="help-block text-danger"></p>
-							</div>
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Tipo de Contato</label> <select id="Tipo de Contato"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-
-									<option value="default">Tipo de Contato</option>
-									<option value="volvo">Telefone</option>
-									<option value="saab">Redes social</option>
-
-								</select>
-								<p class="help-block text-danger"></p>
-
-							</div>
-
-						</div>
-						<div class="row control-group">
-
-
+							
+							<h3>Dados Gerais</h3>
+						
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
-								<label>Origem contato</label> <select id="Origem contato"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-
-									<option value="default">Origem contato</option>
-									<option value="volvo">Minutos</option>
-									<option value="saab">Segundos</option>
-								</select>
-							</div>
-
-
-						</div>
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cpf</label> <input type="text" class="form-control"
-									placeholder="Cpf" id="Cpf" required
-									data-validation-required-message="Por favor insira um nome">
-								<p class="help-block text-danger"></p>
-							</div>
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Usuario resp</label> <select id="Usuario resp"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-
-									<option value="default">Usuario resp</option>
-									<option value="volvo">Minutos</option>
-									<option value="saab">Segundos</option>
-								</select>
-							</div>
-
-						</div>
-
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cidade</label> <select id="Cidade" class="form-control"
-									required
-									data-validation-required-message="Por favor selecione uma Cidade">
-
-									<option value="default">Cidade</option>
-									<option value="volvo">Minutos</option>
-									<option value="saab">Segundos</option>
-								</select>
-							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Estado</label> <select id="Estado" class="form-control"
-									required
-									data-validation-required-message="Por favor selecione uma Cidade">
-
-									<option value="default">Estado</option>
-									<option value="volvo">Minutos</option>
-									<option value="saab">Segundos</option>
-								</select>
-							</div>
-
-
-						</div>
-
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Endereco</label> <input type="text" class="form-control"
-									placeholder="Endereco" id="Endereco" required
-									data-validation-required-message="Por favor insira um nome">
-								<p class="help-block text-danger"></p>
-							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Numero</label> <input type="text" class="form-control"
-									placeholder="Numero" id="Numero" required
-									data-validation-required-message="Por favor insira um nome">
-								<p class="help-block text-danger"></p>
-							</div>
-
-
-						</div>
-
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Genero</label> <select id="Genero" class="form-control"
-									required
-									data-validation-required-message="Por favor selecione uma Genero">
-
-									<option value="default">Genero</option>
-									<option value="volvo">Masculino</option>
-									<option value="saab">Feminino</option>
-								</select>
-							</div>
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cargo</label> <select id="Cargo" class="form-control"
-									required
-									data-validation-required-message="Por favor selecione uma Genero">
-
-									<option value="default">Cargo</option>
-									<option value="volvo">Gerente</option>
-									<option value="saab">Porteiro</option>
-								</select>
-							</div>
-
-						</div>
-
-
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Data</label> <input type="date" value="2016-09-28"
-									class="form-control" placeholder="data" id="data_inicio"
-									required
-									data-validation-required-message="Please enter your name.">
-								<p class="help-block text-danger"></p>
-							</div>
-
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Cep</label> <input type="text" class="form-control"
-									placeholder="Cep" id="Cep" required
+								<label>Nome</label> 
+								<input type="text" ng-model="contato.nome" class="form-control"
+									placeholder="Nome" id="nome" required
 									data-validation-required-message="Por favor insira um nome">
 								<p class="help-block text-danger"></p>
 							</div>
 
 						</div>
 
+						<div class="row control-group">
 
-						<!-- telefone-->
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Tipo</label> 
+								
+								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
+									    ng-options="tipocontato.nome for tipocontato in tiposcontato track by tipocontato.id" ng-model="contato.tipocontato" >    
+									    <option value="">Tipo</option>
+									</select>	
+
+								<p class="help-block text-danger"></p>
+
+							</div>
+							
+							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data de Cadastro</label> 
+								<input type="date" class="form-control" placeholder="Data de Cadastro" ng-model="contato.datacadastro" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+						</div>
+						
+						<div class="row control-group">
+
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Origem</label> 
+								
+								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
+									    ng-options="origemcontato.nome for origemcontato in origenscontato track by origemcontato.id" ng-model="contato.origemcontato" >    
+									    <option value="">Origem Contato</option>
+									</select>	
+
+								<p class="help-block text-danger"></p>
+
+							</div>
+							
+						</div>	
+						
+						<div class="row control-group">
+
+							<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>CPF</label> <input ng-model="contato.cpf" type="text" class="form-control"
+									placeholder="CPF" id="cpf" required
+									data-validation-required-message="Por favor insira um cpf">
+
+								<p class="help-block text-danger"></p>
+							</div>
+							
+							<div
+									class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
+									<label>Data de Nascimento</label> <input ng-model="contato.datanascimento" type="date" class="form-control"
+									placeholder="Data de Nascimetno" id="data_nascimento" required
+									data-validation-required-message="Por favor insira uma data de nascimento">
+
+								<p class="help-block text-danger"></p>
+							</div>
+
+						</div>
+						
+						<div class="row control-group">
+
+							<div 
+								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
+								<label>Gênero</label>
+
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um gênero"
+							    ng-options="genero for genero in generos" ng-model="contato.genero" >    
+								    <option value="">Gênero</option>
+								</select>	
+								<p class="help-block text-danger"></p>
+
+							</div>
+							
+							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
+								<label>Cargo</label>
+								<input type="text" ng-model="contato.cargo"  class="form-control" placeholder="Cargo" required data-validation-required-message="Por favor digite um cargo.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+						</div>
+						
+
+						<div class="row control-group">
+							<div
+								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
+								<label>Endereço</label>
+								<input type="text" class="form-control" ng-model="contato.endereco" data-validation-required-message="Please enter your phone number." placeholder="Endereço">
+								<p class="help-block text-danger"></p>
+							</div>
+							
+							<div
+								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
+								<label>Bairro</label>
+								<input type="text" ng-model="contato.bairro" class="form-control" placeholder="Bairro" id="Bairro" required data-validation-required-message="Por favor preencha o campo bairro.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+						</div>
+						
+						<div class="row control-group">
+							<div 
+								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
+								<label>Número</label>
+								<input type="number" ng-model="contato.numero" id="numero" class="form-control" placeholder="Número" required data-validation-required-message="Please enter your phone number.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group col-xs-12 col-sm-6  floating-label-form-group controls">
+								<label>CEP</label>
+								 <input type="number" ng-model="contato.cep"  class="form-control" placeholder="CEP" id="cep" required data-validation-required-message="Please enter your email address.">
+								<p class="help-block text-danger"></p>
+							</div>
+							
+						</div>
+						
+						<div class="row control-group">
+
+							<div class="form-group col-xs-12   floating-label-form-group controls">
+								<label>Complemento</label>
+								<input type="tel" class="form-control" ng-model="contato.complemento" data-validation-required-message="Please enter your phone number." placeholder="Complemento">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+		
+						<div class="row control-group">
+								<div
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Cidade</label> 
+								
+								<select class="form-control" required data-validation-required-message="Por favor selecione uma cidade"
+									    ng-options="cidade.nome for cidade in cidades track by cidade.id" ng-model="contato.cidade" >    
+									    <option value="">Cidade</option>
+									</select>	
+
+								<p class="help-block text-danger"></p>
+
+							</div>
+
+									
+							<div 
+								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
+								<label>Estado / País</label>
+								<select id="estado" class="form-control" required data-validation-required-message="Por favor selecione um estado." >
+									 <option value="">Estado / País</option>
+									<option ng-repeat="estado in estados">{{estado.nome + ' / ' + estado.pais}}</option>
+
+								</select>
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+
+						<div class="row control-group">
+
+							<div class="form-group col-xs-12  floating-label-form-group controls">
+								<label>Status</label> 
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
+							    ng-options="status for status in statuslist" ng-model="contato.status" >    
+								    <option value="">Status</option>
+								</select>	
+							 	<p class="help-block text-danger"></p>
+							</div>
+							
+						</div>
+
+
 						<div class="row control-group">
 							<h3>Telefone</h3>
 
 
-							<div
-								class="form-group col-xs-12 floating-label-form-group controls">
+							<div class="col-xs-12 ">
 								<div class="col-xs-10">
-									<div class="col-xs-6  ">
-										<label>Número</label> <input type="text" class="form-control"
-											placeholder="Descrição" id="Nome do contato" required
+
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
+										<label>Número</label> 
+										<input type="text" id="numero" ng-model="telefone.numero" class="form-control" placeholder="Número"
+											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
-									<div class="col-xs-6  ">
-										<label>Tipos </label> <select id="tipo_usuario"
-											class="form-control" required
-											data-validation-required-message="Por favor selecione um tipo de usuário">
-											<option value="default">Tipos</option>
-											<option value="volvo">Fixo</option>
-											<option value="saab">Móvel</option>
-											<option value="volvo">Empresarial</option>
-										</select>
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
+										<label>Tipo Telefone</label> 
+										<input type="hidden" ng-model="telefone.id" />
+										<select class="form-control" id="tipotelefone" required data-validation-required-message="Por favor selecione um tipo de usuário"
+										    ng-options="tipotelefone.nome for tipotelefone in tipostelefone track by tipotelefone.id" ng-model="telefone.tipotelefone" >    
+										    <option value="">Tipo Telefone</option>
+										</select>	
 										<p class="help-block text-danger"></p>
-
 									</div>
 
+									
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>salvar</a>
 
 								</div>
 
@@ -306,213 +249,35 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-											<th>ID</th>
 											<th>Numero</th>
 											<th>Tipo</th>
-
-											<th></th>
-
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-
-											<td>2</td>
-											<td>41 9999 9999</td>
-											<td>Fixo</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
+									   <tr data-ng-repeat="telefone in listTelefones">
+							                
+							                <td>{{telefone.numero}}</td>
+							                <td>{{telefone.tipotelefone.nome}}</td>
+											<td class="btn-group">
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>remover</a>
+											</td>
 										</tr>
-										<tr>
-
-											<td>1</td>
-											<td>41 3333 3333</td>
-											<td>Movel</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-
-										</tr>
-										<tr>
-
-											<td>3</td>
-											<td>Empresarial</td>
-											<td>+55 (041) 9999-9999</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
+										
 									</tbody>
 								</table>
 							</div>
 
 						</div>
+						
 
 
-						<!-- empresa-->
-						<div class="row control-group">
-							<h3>Empresas</h3>
-
-
-							<div
-								class="form-group col-xs-12 floating-label-form-group controls">
-								<div class="col-xs-10">
-
-									<div class="col-xs-12  ">
-										<label>Empresas </label> <select id="tipo_usuario"
-											class="form-control" required
-											data-validation-required-message="Por favor selecione um tipo de usuário">
-											<option value="default">Apple</option>
-											<option value="volvo">Volvo</option>
-											<option value="saab">Microsoft</option>
-											<option value="volvo">IBM</option>
-										</select>
-										<p class="help-block text-danger"></p>
-
-									</div>
-
-
-								</div>
-								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
-
-								</div>
-
-
-							</div>
-						</div>
-
-
-						<div class="row ">
-							<h3>Empresas do Contato</h3>
-							<div class="table-scrollable table-scrollable-borderless">
-								<table class="table table-hover table-light col-xs-12">
-									<thead>
-										<tr class="uppercase">
-											<th>ID</th>
-											<th>Nome</th>
-
-											<th></th>
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-
-											<td>2</td>
-											<td>IBM</td>
-
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										<tr>
-
-											<td>1</td>
-											<td>Facear</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-
-										</tr>
-
-									</tbody>
-								</table>
-							</div>
-
-						</div>
-
-
-						<!-- comunicador-->
-						<div class="row control-group">
-							<h3>Comunicador</h3>
-
-
-							<div
-								class="form-group col-xs-12 floating-label-form-group controls">
-								<div class="col-xs-10">
-									<div class="col-xs-6  ">
-										<label>Tipos de Comunicador: </label> <select
-											id="tipo_usuario" class="form-control" required
-											data-validation-required-message="Por favor selecione um tipo de usuário">
-											<option value="default">Tipo de Comunicador</option>
-											<option value="volvo">1 - WhatsApp</option>
-											<option value="saab">2 - Facebook</option>
-											<option value="volvo">3 - E-mail</option>
-										</select>
-										<p class="help-block text-danger"></p>
-
-									</div>
-									<div class="col-xs-6  ">
-										<label>Descrição</label> <input type="text"
-											class="form-control" placeholder="Descrição"
-											id="Nome do contato" required
-											data-validation-required-message="Por favor insira um nome">
-										<p class="help-block text-danger"></p>
-									</div>
-
-								</div>
-								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
-
-								</div>
-
-
-							</div>
-						</div>
-
-
-						<div class="row ">
-							<h3>Comunicadores do Contato</h3>
-							<div class="table-scrollable table-scrollable-borderless">
-								<table class="table table-hover table-light col-xs-12">
-									<thead>
-										<tr class="uppercase">
-											<th>ID</th>
-											<th>Tipo</th>
-											<th>Descrição</th>
-
-											<th></th>
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-
-											<td>1</td>
-											<td>Facebook</td>
-											<td>www.facebook.com/jose</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										<tr>
-
-											<td>1</td>
-											<td>Whatsapp</td>
-											<td>+55 (041) 9999-9999</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-
-										</tr>
-										<tr>
-
-											<td>1</td>
-											<td>Telefone</td>
-											<td>+55 (041) 9999-9999</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-						</div>
-
-
-
-						<div id="success"></div>
+						<div id="success">{{Resposta}}</div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 
-								<a class="btn btn-danger btn-lg to-left"
-									href="/CRM/contato/contato.html">Voltar</a>
-								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
+								<a class="btn btn-danger btn-lg to-left" href="#/Contato">Voltar</a>
+								<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
 							</div>
 						</div>
 					</form>
@@ -520,32 +285,3 @@
 			</div>
 		</div>
 	</section>
-
-
-
-	<!-- Footer -->
-	<rodape></rodape>
-
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div
-		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-		<a class="btn btn-primary" href="#page-top"> <i
-			class="fa fa-chevron-up"></i>
-		</a>
-	</div>
-
-
-	<!-- jQuery -->
-	<script src="/CRM/vendor/jquery/jquery.min.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="/CRM/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/CRM/vendor/bootstrap/js/bootstrap-fileinput.js"
-		type="text/javascript"></script>
-	<link href="/CRM/vendor/bootstrap/css/bootstrap-fileinput.css"
-		rel="stylesheet" type="text/css">
-
-</body>
-
-</html>
->>>>>>> 7f1585005b8af0481226dab2231eee3987d7179c:WebContent/contato/partials/criar_contato.html

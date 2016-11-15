@@ -78,7 +78,7 @@ public class Empresa {
 	private String ramo;
 	private String site;
 	private String logo;
-	private Date datacadastro;
+	private String datacadastro;
 	private Status status;
 	
 	public Long getId() {
@@ -189,10 +189,10 @@ public class Empresa {
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
-	public Date getDatacadastro() {
+	public String getDatacadastro() {
 		return datacadastro;
 	}
-	public void setDatacadastro(Date datacadastro) {
+	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
 	public Status getStatus() {
@@ -337,48 +337,17 @@ public class Empresa {
 	}
 	@Override
 	public String toString() {
-		final int maxLen = 10;
 		return "Empresa [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipoempresa=" + tipoempresa
-				+ ", cidade=" + cidade + ", telefones_empresa="
-				+ (telefones_empresa != null ? telefones_empresa.subList(0, Math.min(telefones_empresa.size(), maxLen))
-						: null)
-				+ ", comunicadores_empresa="
-				+ (comunicadores_empresa != null
-						? comunicadores_empresa.subList(0, Math.min(comunicadores_empresa.size(), maxLen)) : null)
-				+ ", contatos_empresa="
-				+ (contatos_empresa != null ? contatos_empresa.subList(0, Math.min(contatos_empresa.size(), maxLen))
-						: null)
-				+ ", razaosocial=" + razaosocial + ", cnpj=" + cnpj + ", inscricaoestadual=" + inscricaoestadual
-				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
-				+ ", bairro=" + bairro + ", ramo=" + ramo + ", site=" + site + ", logo=" + logo + ", datacadastro="
-				+ datacadastro + ", status=" + status + "]";
+				+ ", cidade=" + cidade + ", telefones_empresa=" + telefones_empresa + ", comunicadores_empresa="
+				+ comunicadores_empresa + ", contatos_empresa=" + contatos_empresa + ", razaosocial=" + razaosocial
+				+ ", cnpj=" + cnpj + ", inscricaoestadual=" + inscricaoestadual + ", endereco=" + endereco + ", numero="
+				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", ramo=" + ramo
+				+ ", site=" + site + ", logo=" + logo + ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
-	/**
-	 * @param id
-	 * @param usuarioresponsavel
-	 * @param tipoempresa
-	 * @param cidade
-	 * @param telefones_empresa
-	 * @param comunicadores_empresa
-	 * @param contatos_empresa
-	 * @param razaosocial
-	 * @param cnpj
-	 * @param inscricaoestadual
-	 * @param endereco
-	 * @param numero
-	 * @param complemento
-	 * @param cep
-	 * @param bairro
-	 * @param ramo
-	 * @param site
-	 * @param logo
-	 * @param datacadastro
-	 * @param status
-	 */
 	public Empresa(Long id, Usuario usuarioresponsavel, TipoEmpresa tipoempresa, Cidade cidade,
 			List<Telefone> telefones_empresa, List<Comunicador> comunicadores_empresa, List<Contato> contatos_empresa,
 			String razaosocial, String cnpj, String inscricaoestadual, String endereco, Long numero, String complemento,
-			String cep, String bairro, String ramo, String site, String logo, Date datacadastro, Status status) {
+			String cep, String bairro, String ramo, String site, String logo, String datacadastro, Status status) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -401,9 +370,6 @@ public class Empresa {
 		this.datacadastro = datacadastro;
 		this.status = status;
 	}
-	/**
-	 * 
-	 */
 	public Empresa() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -83,6 +83,7 @@ public class Contato {
 	private String foto;
 	private Date datacadastro;
 	private Status status;
+	
 	public Long getId() {
 		return id;
 	}

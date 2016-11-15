@@ -36,6 +36,15 @@ myControllers.controller('CadastrarNegocioController', function($scope, $routePa
 });
 myControllers.controller('NegocioController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
+	.success(function(data) {
+		$scope.empresas = data["empresa"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restProduto/listarTodos')
+	.success(function(data) {
+		$scope.produtos = data["produto"];
+	});
+	
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({

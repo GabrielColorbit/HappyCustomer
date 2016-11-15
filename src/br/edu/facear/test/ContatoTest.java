@@ -70,7 +70,7 @@ public class ContatoTest {
 			Contato.setTipocontato(TipoContato);
 	
 			// USUÁRIO RESPONSÁVEL PELO CONTATO
-			Usuario.setId(1l);
+			Usuario.setId(2l);
 			Contato.setUsuarioresponsavel(Usuario);
 			
 			//ORIGEM DO CONTATO

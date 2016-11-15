@@ -1,7 +1,7 @@
 var myControllers = angular.module('LigacaoControllers',[]);
 
 myControllers.controller('ListarLigacaoController', function($scope,$http) {
-	$scope.Titulo = "Ligacões";
+	$scope.Titulo = "Ligações";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restLigacao/listarTodos')
 		.success(function(data) {
@@ -16,7 +16,7 @@ myControllers.controller('ListarLigacaoController', function($scope,$http) {
     };
 });
 myControllers.controller('GetLigacaoController', function($scope, $routeParams,$http) {
-	$scope.Titulo = "Editar Ligacao";
+	$scope.Titulo = "Editar Ligação";
 
 	if($routeParams.ligacaoId){
 		$http.get('http://localhost:8080/CRM/rest/restLigacao/Editar/'+$routeParams.ligacaoId)
@@ -30,7 +30,7 @@ myControllers.controller('GetLigacaoController', function($scope, $routeParams,$
 });
 myControllers.controller('CadastrarLigacaoController', function($scope, $routeParams,$http) {
 	
-	$scope.Titulo = "Cadastrar Ligacao";
+	$scope.Titulo = "Cadastrar Ligação";
 	
 });
 myControllers.controller('LigacaoController', function($scope, $routeParams,$http) {

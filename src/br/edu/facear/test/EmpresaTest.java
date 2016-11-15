@@ -53,8 +53,8 @@ public class EmpresaTest {
 			Empresa.setSite("www.gelopar.com.br");
 			Empresa.setRamo("Refrigeração");
 			Empresa.setLogo("C:\\Downloads\\Gelopar.png");
-			Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
-			Empresa.setDatacadastro(datacadastro.getTime());
+			//Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
+			Empresa.setDatacadastro("15/11/2016");
 			Empresa.setStatus(Status.Ativo);
 	
 			// CIDADE
@@ -66,7 +66,7 @@ public class EmpresaTest {
 			Empresa.setTipoempresa(TipoEmpresa);
 	
 			// USUÁRIO RESPONSÁVEL PELA EMPRESA
-			Usuario.setId(1l);
+			Usuario.setId(2l);
 			Empresa.setUsuarioresponsavel(Usuario);
 	
 			// CADASTRANDO TELEFONE
@@ -119,8 +119,8 @@ public class EmpresaTest {
 		Empresa.setSite("www.facear.com.br");
 		Empresa.setRamo("Faculdade");
 		Empresa.setLogo("C:\\Downloads\\Facear.png");
-		Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
-		Empresa.setDatacadastro(datacadastro.getTime());
+		//Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
+		Empresa.setDatacadastro("15/11/2016");
 		Empresa.setStatus(Status.Inativo);
 
 		// CIDADE

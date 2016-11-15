@@ -13,19 +13,21 @@ public class ContatoBO implements InterfaceBO<Contato> {
 	@Override
 	public void Cadastrar(Contato contato) throws Exception {
 
-		if (contato.getUsuarioresponsavel() == null) {
-			throw new Exception("Selecione um Usuário Responsavel");
-		} else if (contato.getTipocontato() == null) {
+//		if (contato.getUsuarioresponsavel() == null) {
+//			throw new Exception("Selecione um Usuário Responsavel");
+//		}
+		if (contato.getTipocontato() == null) {
 			throw new Exception("Selecione uma Tipo de Contato.");
 		} else if (contato.getOrigemcontato() == null) {
 			throw new Exception("Selecione um Origem Contato.");
 		} else if (contato.getCidade() == null) {
 			throw new Exception("Selecione uma Cidade.");
-		} else if (contato.getTelefones_contato() == null) {
-			throw new Exception("Selecione um Telefone.");
-		} else if (contato.getComunicadores_contato() == null) {
-			throw new Exception("Selecione um Comunicador Contato.");
 		} 
+//		else if (contato.getTelefones_contato() == null) {
+//			throw new Exception("Selecione um Telefone.");
+//		} else if (contato.getComunicadores_contato() == null) {
+//			throw new Exception("Selecione um Comunicador Contato.");
+//		} 
 //		else if (contato.getEmpresas() == null) {
 //			throw new Exception("Selecione uma Empresa.");
 //		}
@@ -49,10 +51,12 @@ public class ContatoBO implements InterfaceBO<Contato> {
 			throw new Exception("Genero Fornecido Invalido.");
 		} else if (contato.getCargo() == null) {
 			throw new Exception("Cargo Fornecido Invalido.");
-		} else if (contato.getFoto() == null) {
-			throw new Exception("Foto Fornecida Invalido.");
-		} else if (contato.getDatacadastro() == null) {
-			throw new Exception("Data de Cdastro Fornecido Invalido.");
+		} 
+//		else if (contato.getFoto() == null) {
+//			throw new Exception("Foto Fornecida Invalido.");
+//		} 
+		else if (contato.getDatacadastro() == null) {
+			throw new Exception("Data de Cadastro Fornecida Invalida.");
 		} else if (contato.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");
 		}
@@ -101,9 +105,11 @@ public class ContatoBO implements InterfaceBO<Contato> {
 			throw new Exception("Genero Fornecido Invalido.");
 		} else if (contato.getCargo() == null) {
 			throw new Exception("Cargo Fornecido Invalido.");
-		} else if (contato.getFoto() == null) {
-			throw new Exception("Foto Fornecida Invalido.");
-		} else if (contato.getDatacadastro() == null) {
+		} 
+//		else if (contato.getFoto() == null) {
+//			throw new Exception("Foto Fornecida Invalido.");
+//		} 
+		else if (contato.getDatacadastro() == null) {
 			throw new Exception("Data de Cdastro Fornecido Invalido.");
 		} else if (contato.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");

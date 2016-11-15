@@ -516,7 +516,7 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		e.setDatacadastro(calendar.getTime());
+		e.setDatacadastro("15/11/2016");
 		e.setStatus(Status.Ativo);
 		e.setRamo("Tecnologia");
 		e.setSite("https://www.boobox.com");

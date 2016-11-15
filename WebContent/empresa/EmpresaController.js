@@ -61,6 +61,7 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 			type : "empresa",
 			id : $scope.empresa.id,
 			tipoempresa : $scope.empresa.tipoempresa,
+			datacadastro : $scope.empresa.datacadastro,
 			cidade : $scope.empresa.cidade,
 			
 			razaosocial : $scope.empresa.razaosocial,

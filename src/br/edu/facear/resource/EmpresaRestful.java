@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Empresa;
-import br.edu.facear.crm.entity.OrigemContato;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restEmpresa")

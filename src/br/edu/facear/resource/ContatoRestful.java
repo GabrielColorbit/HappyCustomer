@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Contato;
+import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restContato")
@@ -28,11 +29,25 @@ public class ContatoRestful {
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")
 	@Path("/Salvar")
-	public void cadastrarCliente(Contato Contato) throws Exception {
-		if (Contato.getId() == null)
-			new FacadeHappyCustomer().CadastrarContato(Contato);
+	public void cadastrarCliente(Contato contato) throws Exception {
+		
+		//TELEFONES
+		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+		for(Telefone t : contato.getTelefones_contato()){
+			new FacadeHappyCustomer().CadastrarTelefone(t);
+			telefonelist.add(t);
+		}
+		
+		contato.setTelefones_contato(telefonelist);
+		
+		//COMUNICADOR
+		
+		
+		//CONTATO
+		if (contato.getId() == null)
+			new FacadeHappyCustomer().CadastrarContato(contato);
 		else
-			new FacadeHappyCustomer().AlterarContato(Contato);
+			new FacadeHappyCustomer().AlterarContato(contato);
 	}
 
 	@GET
