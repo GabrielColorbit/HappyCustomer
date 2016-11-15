@@ -19,7 +19,7 @@ public class TipoEmpresaTest {
 	public void testCadastroTipoEmpresa() throws Exception {
 		for (int i = 0; i < 2; i++) {
 			TipoEmpresa TipoEmpresa = new TipoEmpresa();
-			TipoEmpresa.setNome(null);
+			TipoEmpresa.setNome("Comunicações");
 			facade.CadastrarTipoEmpresa(TipoEmpresa);
 			Assert.assertEquals(true, TipoEmpresa.getId() != null);
 		}

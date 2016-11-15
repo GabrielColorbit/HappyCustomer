@@ -51,11 +51,11 @@ public class LigacaoTest {
 			Ligacao.setUsuarioresponsavel(Usuario);
 	
 			// CONTATO RESPONSÁVEL PELA LIGAÇÃO
-			Contato.setId(2l);
+			Contato.setId(1l);
 			Ligacao.setContato(Contato);
 	
 			// EMPRESA DO CONTATO RESPONSÁVEL PELA LIGAÇÃO
-			Empresa.setId(3l);
+			Empresa.setId(1l);
 			Ligacao.setEmpresa(Empresa);
 	
 			// ATIVIDADE RELACIONADA COM A LIGAÇÃO

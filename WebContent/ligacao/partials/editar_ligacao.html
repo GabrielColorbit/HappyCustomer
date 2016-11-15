@@ -28,7 +28,7 @@
 		
 						<input type="hidden"id="nome" ng-model="ligacao.id">
 			
-						<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls ">
+						<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Contato</label> 
 							<input type="hidden" ng-model="empresa.id" />
 							<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
@@ -38,7 +38,7 @@
 							<p class="help-block text-danger"></p>
 						</div>
 						
-						<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls ">
+						<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Empresa</label> 
 							<input type="hidden" ng-model="empresa.id" />
 							<select class="form-control" id="empresacontato" required data-validation-required-message="Por favor selecione um contato"
@@ -53,7 +53,7 @@
 					
 					<div class="row control-group">
 
-						<div class="form-group col-xs-4  floating-label-form-group controls">
+						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Tipo</label> 
 		      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
 						    ng-options="situacao for situacao in situacoes" ng-model="ligacao.tipoligacao" >    
@@ -62,9 +62,8 @@
 						 	<p class="help-block text-danger"></p>
 						</div>						
 						
-						<div
-							class="form-group col-xs-4 floating-label-form-group controls">
-							<label>Duração</label> <input type="text" class="form-control"
+						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+						<label>Duração</label> <input type="text" class="form-control"
 								placeholder="Duração" id="Duracao" required
 								data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
 							<p class="help-block text-danger"></p>
@@ -72,7 +71,7 @@
 						
 						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Data</label> 
-							<input type="date" class="form-control" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
+							<input type="datetime" class="form-control" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
 							<p class="help-block text-danger"></p>
 						</div>
 						
@@ -80,8 +79,8 @@
 					
 					<div class="row control-group">
 
-						<div
-							class="form-group  col-xs-12 floating-label-form-group controls">
+						<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+						
 							<label>Resumo</label>
 							<textarea type="text" class="form-control"
 								placeholder="Resumo" id="Descricao" required
