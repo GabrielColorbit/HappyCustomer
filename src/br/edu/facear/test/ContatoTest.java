@@ -40,7 +40,7 @@ public class ContatoTest {
 	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
 
 	// CADASTRAR
-	//@Test
+	@Test
 	public void testCadastrarContato() throws Exception {
 		
 		for (int i = 0; i < 2; i++) {
@@ -110,7 +110,7 @@ public class ContatoTest {
 	}
 
 	// ALTERAR
-	@Test
+	//@Test
 	public void testAterarContato() throws Exception {
 
 		Contato Contato = facade.BuscarContatoPorId(2l);

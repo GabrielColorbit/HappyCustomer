@@ -29,7 +29,7 @@ public class UsuarioTest {
 	Telefone Telefone = new Telefone();
 	TipoTelefone TipoTelefone = new TipoTelefone();
 	Comunicador Comunicador = new Comunicador();
-	TipoComunicador TipoComunicador = new TipoComunicador();
+	TipoComunicador TipoComunicador = new TipoComunicador(); 
 	
 	//SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 	

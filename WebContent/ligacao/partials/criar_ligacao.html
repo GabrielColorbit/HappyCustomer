@@ -26,24 +26,29 @@
 
 					<div class="row control-group">
 			
-						<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls ">
-							<label>Contato</label> 
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+								
 							<input type="hidden" ng-model="empresa.id" />
-							<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
-							    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="ligacao.contato" >    
+							
+							<label>Contato</label>
+							<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+						    ng-options="contato.nome for contato in contatos" ng-model="ligacao.contato" >    
 							    <option value="">Contato</option>
-							</select>	
+							</select>											
+
 							<p class="help-block text-danger"></p>
+							
 						</div>
 						
-						<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls ">
-							<label>Empresa</label> 
-							<input type="hidden" ng-model="empresa.id" />
-							<select class="form-control" id="empresacontato" required data-validation-required-message="Por favor selecione um contato"
-							    ng-options="empresa.razaosocial for empresa in empresas track by empresa.id" ng-model="ligacao.empresa" >    
+						<div class="form-group col-xs-12 floating-label-form-group controls ">
+							
+							<label>Empresa</label>
+							<select class="form-control" required data-validation-required-message="Por favor selecione uma empresa"
+						    ng-options="empresa.razaosocial for empresa in empresas" ng-model="ligacao.empresa" >    
 							    <option value="">Empresa</option>
-							</select>	
-							<p class="help-block text-danger"></p>
+							</select>			
+								
+								<p class="help-block text-danger"></p>
 						</div>
 						
 
@@ -57,6 +62,7 @@
 						    ng-options="tipoligacao for tipoligacao in tiposligacao" ng-model="ligacao.tipoligacao" >    
 							    <option value="">Tipo</option>
 							</select>	
+
 						 	<p class="help-block text-danger"></p>
 						</div>						
 						

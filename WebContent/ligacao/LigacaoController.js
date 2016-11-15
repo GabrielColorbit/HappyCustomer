@@ -49,12 +49,12 @@ myControllers.controller('LigacaoController', function($scope, $routeParams,$htt
 	});
 	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
 	.success(function(data) {
-		$scope.tiposligacao = data["ligacao"];
+		$scope.tiposligacao = data["tipoLigacao"];
 	});
 	
 	
 	
-	$scope.EnviarInformacao = function() {
+	$scope.EnviarInformacao = function() {		
 		
 		var parameter = JSON.stringify({
 			
