@@ -24,7 +24,7 @@
 				<table class="table table-hover table-light col-xs-12">
 					<thead>
 						<tr class="uppercase">
-							<th ng-click="ordenar('id')">Id</th>
+							
 							<th ng-click="ordenar('nome')">Nome</th>
 							<th ng-click="ordenar('pais')">Pais</th>
 							<th><a class="btn btn-success btn-sm to-right" href="#/Estado/Cadastrar">Adicionar</a></th>
@@ -33,7 +33,7 @@
 					<tbody>
 						<tr dir-paginate="e in estadolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 
-							<td>{{e.id}}</td>
+							
 							<td>{{e.nome}}</td>
 							<td>{{e.pais}}</td>
 
