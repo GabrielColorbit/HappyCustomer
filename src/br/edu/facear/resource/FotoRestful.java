@@ -44,11 +44,7 @@ public class FotoRestful {
 		Long id = Long.parseUnsignedLong(codigo);
 		Foto f = new FotoDAO().BuscarID(id);
 		
-		
-//		String base64 = new String(Base64.encode(f.getImagem()));
-//	    ResponseBuilder response = Response.ok((Object) base64);
-//	    
-	    ResponseBuilder response = Response.ok((	f.getImagem()) );
+		ResponseBuilder response = Response.ok((	f.getImagem()) );
 	    
 	    
 		 return response.build();
