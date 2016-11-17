@@ -42,6 +42,8 @@ public class LigacaoTest {
 			Calendar data = new GregorianCalendar(31, 10, 2016);
 			Ligacao.setData(data.getTime());
 			// Ligacao.setData(sdf.format(new Date(("31/10/2016")));
+			Telefone.setId(1l);
+			Ligacao.setTelefone(Telefone);
 			Ligacao.setDuracao("02:10s");
 			Ligacao.setTipoligacao(TipoLigacao.Efetuada);
 			Ligacao.setResumo("Liguei pra informar que a máquina foi consertada.");

@@ -20,102 +20,119 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					
 					<form name="sentMessage" id="contactForm" novalidate>
 						<div class="row control-group">
+						
+							<input type="hidden"id="nome" ng-model="atividade.id">
+							
+							<div class="row control-group">
+							
+							<h3>Dados Gerais</h3>
+						
 							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Nome</label> <input type="text" class="form-control"
-									value="Macbook Air com defeito no display." placeholder="Nome"
-									id="nome" required
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Nome</label> 
+								<input type="text" ng-model="atividade.nome" class="form-control"
+									placeholder="Nome" id="nome" required
 									data-validation-required-message="Por favor insira um nome">
 								<p class="help-block text-danger"></p>
 							</div>
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Tipo de Atividade</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-
-									<option value="default">Tipo de Atividade</option>
-									<option value="volvo" selected>Industria</option>
-									<option value="saab">Varejo</option>
-								</select>
-								<p class="help-block text-danger"></p>
 
 							</div>
 
+						
+						
+						<div class="row control-group">
+							
+						<div 
+							class="form-group col-xs-6 floating-label-form-group controls">
+							<label>Usuário Responsável</label>
+							<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+						    ng-options="usuario.nome for usuario in usuarios track by usuario.id" ng-model="atividade.usuarioresponsavel" >    
+							    <option value="">Usuário Responsável</option>
+							</select>											
+
+							<p class="help-block text-danger"></p>
+							
+						</div>
+						
+						<div
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Tipo de Atividade</label> 								
+								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
+									    ng-options="tipoatividade.nome for tipoatividade in tiposatividade track by tipoatividade.id" ng-model="atividade.tipoatividade" >    
+									    <option value="">Tipo de Atividade</option>
+									</select>	
+
+								<p class="help-block text-danger"></p>
+
+							</div>
+						
+							
 						</div>
 
 						<div class="row control-group">
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Empresa</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Empresa</option>
-									<option value="volvo">Samsung</option>
-									<option value="saab" selected>Apple</option>
-								</select>
-								<p class="help-block text-danger"></p>
+						
+						<div
+						
+							class="form-group col-xs-6 floating-label-form-group controls">
+							<label>Contato</label>
+							<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+						    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="atividade.contato" >    
+							    <option value="">Contato</option>
+							</select>											
 
-							</div>
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Contato</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Contato</option>
-									<option value="volvo">Guilherme</option>
-									<option value="saab">Gabriel</option>
-								</select>
-								<p class="help-block text-danger"></p>
-							</div>
-
-
+							<p class="help-block text-danger"></p>
+							
 						</div>
-
-						<div class="row control-group">
-
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Usuario Responsável:</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Usuario Responsável</option>
-									<option value="volvo">Gabriel Ferreira</option>
-									<option value="saab">Marcão</option>
-								</select>
+						
+						<div 
+							class="form-group col-xs-6 floating-label-form-group controls">
+							<label>Empresa</label>
+							<select class="form-control" required data-validation-required-message="Por favor selecione uma empresa"
+						    ng-options="empresa.razaosocial for empresa in empresas track by empresa.id" ng-model="atividade.empresa" >    
+							    <option value="">Empresa</option>
+							</select>			
+								
 								<p class="help-block text-danger"></p>
-							</div>
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Situação</label> <select id="tipo_usuario"
-									class="form-control" required
-									data-validation-required-message="Por favor selecione um tipo de usuário">
-									<option value="default">Situação</option>
-									<option value="volvo" selected>Aberto</option>
-									<option value="saab">Paralisado</option>
-									<option value="saab">Cancelado</option>
-									<option value="saab">Finalizado</option>
-								</select>
-								<p class="help-block text-danger"></p>
-							</div>
+						</div>
 
 						</div>
 
 						<div class="row control-group">
 
+							<div 
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data de Cadastro</label> 
+								<input type="date" class="form-control" placeholder="Data de Cadastro" ng-model="atividade.datacadastro" id="data_cadastro" required data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div 
+								class="form-group col-xs-6 floating-label-form-group controls">
+								<label>Situação</label> 
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
+							    ng-options="situacao for situacao in situacoes" ng-model="atividade.situacao" >    
+								    <option value="">Situação</option>
+								</select>	
+							 	<p class="help-block text-danger"></p>
+							</div>
+						</div>
+
+						<div class="row control-group">
+
 							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Data Inicio</label> <input type="date" value="2016-09-23"
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data Inicio</label> <input type="date" ng-model="atividade.datainicio
 									class="form-control" placeholder="data_inicio" id="data_inicio"
 									required
 									data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-								<label>Data Fim</label> <input type="date" value="2016-09-30"
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data Fim</label> <input type="date" ng-model="atividade.datafim
 									class="form-control" placeholder="data_fim" id="data_fim"
 									required
 									data-validation-required-message="Please enter your name.">
@@ -123,14 +140,14 @@
 							</div>
 
 						</div>
+
 						<div class="row control-group">
 
 							<div
-								class="form-group col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+								class="form-group col-xs-6 floating-label-form-group controls">
 								<label>Descriçao</label>
-								<textarea class="form-control"
-									placeholder="Foi constatado que a maquina estava, com o interior da placa mãe derretida. Então será feita devolução do valor integrau para o cliente."
-									id="Descricao" required
+								<textarea type="text" ng-model="atividade.descricao" class="form-control"
+									placeholder="Descricao" id="Descricao" required
 									data-validation-required-message="Por favor insira um nome"></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
@@ -138,6 +155,7 @@
 
 						</div>
 
+						</div>
 
 
 						<div class="row control-group">
@@ -232,7 +250,7 @@
 											<td>00:20:21</td>
 
 											<td class="btn-group"><a class="btn btn-success  btn-sm"
-												target="_blank" href="/CRM/ligacao/editar_ligacao.html">ver</a>
+												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
 										</tr>
 										<tr>
@@ -242,7 +260,7 @@
 											<td>+55 (041) 9999-9999</td>
 											<td>00:20:21</td>
 											<td class="btn-group"><a class="btn btn-success  btn-sm"
-												target="_blank" href="/CRM/ligacao/editar_ligacao.html">ver</a>
+												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
 
 										</tr>
@@ -253,7 +271,7 @@
 											<td>+55 (041) 9999-9999</td>
 											<td>00:20:21</td>
 											<td class="btn-group"><a class="btn btn-success btn-sm"
-												target="_blank" href="/CRM/ligacao/editar_ligacao.html">ver</a>
+												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
 										</tr>
 									</tbody>
@@ -338,6 +356,7 @@
 											<td class="btn-group"><a class="btn btn-danger btn-sm"
 												href="javascript:void(0)">remover</a></td>
 										</tr>
+										</tr>
 										<tr>
 
 											<td>2</td>
@@ -347,6 +366,7 @@
 											<td class="btn-group"><a class="btn btn-danger btn-sm"
 												href="javascript:void(0)">remover</a></td>
 										</tr>
+
 										</tr>
 										<tr>
 
@@ -357,6 +377,7 @@
 											<td class="btn-group"><a class="btn btn-danger btn-sm"
 												href="javascript:void(0)">remover</a></td>
 										</tr>
+										</tr>
 									</tbody>
 								</table>
 							</div>
@@ -365,48 +386,16 @@
 
 
 
-
-						<div id="success"></div>
-						<div class="row">
-							<div class="form-group btn-group col-xs-12">
-								<a class="btn btn-danger btn-lg to-left"
-									href="/CRM/atividade/atividade.html">Voltar</a>
-								<button type="submit" class="btn btn-success btn-lg to-right">Salvar</button>
-							</div>
+					{{Resposta}}
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group btn-group col-xs-12">
+							<a class="btn btn-danger btn-lg to-left" href="#/Atividade">Voltar</a>
+							<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</a>		
 						</div>
+					</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-
-
-
-
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div
-		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-		<a class="btn btn-primary" href="#page-top"> <i
-			class="fa fa-chevron-up"></i>
-		</a>
-	</div>
-
-	<!-- Footer -->
-	<rodape></rodape>
-</body>
-<!-- jQuery -->
-<script src="/CRM/vendor/jquery/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/CRM//vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Contact Form JavaScript -->
-<script src="/CRM/js/jqBootstrapValidation.js"></script>
-<script src="/CRM/js/contact_me.js"></script>
-<script src="/CRM/js/freelancer.min.js"></script>
-</html>

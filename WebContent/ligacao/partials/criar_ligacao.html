@@ -23,36 +23,48 @@
 				
 				<form name="sentMessage" id="contactForm" novalidate>
 
-
-					<div class="row control-group">
-			
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-								
-							<input type="hidden" ng-model="empresa.id" />
+						<div class="row control-group">
 							
-							<label>Contato</label>
-							<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
-						    ng-options="contato.nome for contato in contatos" ng-model="ligacao.contato" >    
-							    <option value="">Contato</option>
-							</select>											
-
-							<p class="help-block text-danger"></p>
+							<div class="form-group col-xs-12  floating-label-form-group controls">
+								<label>Usuário Responsável</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+							    ng-options="usuario.nome for usuario in usuarios" ng-model="ligacao.usuarioresponsavel" >    
+								    <option value="">Usuário Responsável</option>
+								</select>											
+	
+								<p class="help-block text-danger"></p>
+								
+							</div>
 							
 						</div>
+
+						<div class="row control-group">
+			
+							<div class="form-group col-xs-6 floating-label-form-group controls">
+																	
+								<label>Contato</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+							    ng-options="contato.nome for contato in contatos" ng-model="ligacao.contato" >    
+								    <option value="">Contato</option>
+								</select>											
+	
+								<p class="help-block text-danger"></p>
+								
+							</div>
 						
-						<div class="form-group col-xs-12 floating-label-form-group controls ">
+							<div class="form-group col-xs-6 floating-label-form-group controls ">
 							
-							<label>Empresa</label>
-							<select class="form-control" required data-validation-required-message="Por favor selecione uma empresa"
-						    ng-options="empresa.razaosocial for empresa in empresas" ng-model="ligacao.empresa" >    
-							    <option value="">Empresa</option>
-							</select>			
+								<label>Empresa</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione uma empresa"
+							    ng-options="empresa.razaosocial for empresa in empresas" ng-model="ligacao.empresa" >    
+								    <option value="">Empresa</option>
+								</select>			
 								
 								<p class="help-block text-danger"></p>
-						</div>
+							</div>
 						
 
-					</div>
+						</div>
 					
 					<div class="row control-group">
 
@@ -61,10 +73,10 @@
 		      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
 						    ng-options="telefone.numero for telefone in telefones" ng-model="ligacao.telefone" >   
 							    <option value="">Telefone</option>
-							</select>	
+							</select>
 
 						 	<p class="help-block text-danger"></p>
-						</div>	
+						</div>
 
 						<div class="form-group col-xs-6  floating-label-form-group controls">
 							<label>Tipo de Ligação</label> 
@@ -108,16 +120,13 @@
 						</div>
 
 					</div>
-
-					</div>
 			
-
+					{{Resposta}}
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group btn-group col-xs-12">
-
 							<a class="btn btn-danger btn-lg to-left" href="#/Ligacao">Voltar</a>
-							<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Ligacao">Salvar</a>
+							<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</a>		
 						</div>
 					</div>
 				</form>

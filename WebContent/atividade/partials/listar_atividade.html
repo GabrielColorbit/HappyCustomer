@@ -13,7 +13,7 @@
 </header>
 
 <!-- Portfolio Grid Section -->
-<section class="grid atividades">
+<section class="grid atividades" ng-controller="AtividadeController">
 	<div class="container">
 
 		<div class="row">
@@ -27,12 +27,12 @@
 					<thead>
 					<tr class="uppercase">
 						
-						<th ng-click="ordenar('nome')">Nome</th>
-						<th ng-click="ordenar('tipoatividade')">Tipo</th>
 						<th ng-click="ordenar('usuario')">Usuário</th>
 						<th ng-click="ordenar('contato')">Contato</th>
 						<th ng-click="ordenar('empresa')">Empresa</th>
-						<th ng-click="ordenar('datacadastro')">Data de Cadastro</th>
+						<th ng-click="ordenar('nome')">Nome</th>
+						<th ng-click="ordenar('tipoatividade')">Tipo de Atividade</th>
+						<!-- <th ng-click="ordenar('datacadastro')">Data de Cadastro</th> -->
 						<th ng-click="ordenar('situacao')">Situação</th>
 						<th>
 							<a class="btn btn-success btn-sm" href="#/Atividade/Cadastrar">Adicionar</a>
@@ -43,19 +43,19 @@
 				<tbody>
 					<tr dir-paginate="a in atividadelist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 						
-						<td>{{a.nome}}</td>
-						<td>{{a.tipoatividade.nome}}</td>
 						<td>{{a.usuarioresponsavel.nome}}</td>
 						<td>{{a.contato.nome}}</td>
 						<td>{{a.empresa.razaosocial}}</td>
-						<td>{{a.datacadastro}}</td>
+						<td>{{a.nome}}</td>
+						<td>{{a.tipoatividade.nome}}</td>
+						<!--  <td>{{a.datacadastro}}</td> -->
 						<td>{{a.situacao}}</td>
 						
 						<td class="btn-group">
 						<div class="to-right btn-group">
 							<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/Atividade/Editar/{{a.id}}">Editar</a>
 							<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(a.id)'>Excluir</a> 
-						</div>			
+						</div>	
 					</tr>
 					
 

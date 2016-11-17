@@ -52,9 +52,11 @@ public class LigacaoBO implements InterfaceBO<Ligacao> {
 			throw new Exception("Selecione uma Empresa.");
 		} else if (ligacao.getDuracao() == null) {
 			throw new Exception("Duracao Informada Invalida");
-		} else if (ligacao.getData() == null) {
-			throw new Exception("Data Informada Invalida");
-		} else if (ligacao.getTipoligacao() == null) {
+		}
+//		else if (ligacao.getData() == null) {
+//			throw new Exception("Data Informada Invalida");
+//		}
+		else if (ligacao.getTipoligacao() == null) {
 			throw new Exception("Selecione um Tipo de Ligacao");
 		} else if (ligacao.getResumo() == null) {
 			throw new Exception("Resumo Informado Invalido");

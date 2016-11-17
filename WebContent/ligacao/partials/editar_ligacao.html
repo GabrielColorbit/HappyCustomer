@@ -23,14 +23,31 @@
 				
 				<form name="sentMessage" id="contactForm" novalidate>
 
+					<input type="hidden"id="nome" ng-model="ligacao.id">
+	
+					<div class="row control-group">
+							
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Usuário Responsável</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+							    ng-options="usuario.nome for usuario in usuarios track by usuario.id" ng-model="ligacao.usuarioresponsavel" >    
+								    <option value="">Usuário Responsável</option>
+								</select>											
+	
+								<p class="help-block text-danger"></p>
+								
+							</div>
+							
+					</div>
 
 					<div class="row control-group">
 		
 						<input type="hidden"id="nome" ng-model="ligacao.id">
 			
-						<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+							
 							<label>Contato</label> 
-							<input type="hidden" ng-model="empresa.id" />
 							<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
 							    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="ligacao.contato" >    
 							    <option value="">Contato</option>
@@ -38,9 +55,9 @@
 							<p class="help-block text-danger"></p>
 						</div>
 						
-						<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+							
 							<label>Empresa</label> 
-							<input type="hidden" ng-model="empresa.id" />
 							<select class="form-control" id="empresacontato" required data-validation-required-message="Por favor selecione um contato"
 							    ng-options="empresa.razaosocial for empresa in empresas track by empresa.id" ng-model="ligacao.empresa" >    
 							    <option value="">Empresa</option>
@@ -52,8 +69,18 @@
 					</div>
 					
 					<div class="row control-group">
+					
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+							<label>Telefone</label> 
+		      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
+						    ng-options="telefone.numero for telefone in telefones track by telefone.id" ng-model="ligacao.telefone" >   
+							    <option value="">Telefone</option>
+							</select>
 
-						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+						 	<p class="help-block text-danger"></p>
+						</div>
+
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Tipo</label> 
 		      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
 						    ng-options="tipoligacao for tipoligacao in tiposligacao" ng-model="ligacao.tipoligacao" >    
@@ -61,16 +88,20 @@
 							</select>	
 
 						 	<p class="help-block text-danger"></p>
-						</div>					
+						</div>			
 						
-						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+					</div>			
+				
+					<div class="row control-group">
+			
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 						<label>Duração</label> <input type="text" class="form-control"
 								placeholder="Duração" id="Duracao" required
 								data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
 							<p class="help-block text-danger"></p>
 						</div>
 						
-						<div class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Data</label> 
 							<input type="datetime" class="form-control" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
 							<p class="help-block text-danger"></p>
@@ -89,10 +120,7 @@
 							<p class="help-block text-danger"></p>
 						</div>
 
-					</div>
-
-					</div>
-			
+					</div>			
 
 					<div id="success"></div>
 					<div class="row">

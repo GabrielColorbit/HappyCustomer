@@ -35,6 +35,10 @@ myControllers.controller('CadastrarLigacaoController', function($scope, $routePa
 });
 myControllers.controller('LigacaoController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+	.success(function(data) {
+		$scope.usuarios = data["usuario"];
+	});
 	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
 	.success(function(data) {
 		$scope.contatos = data["contato"];
@@ -59,6 +63,7 @@ myControllers.controller('LigacaoController', function($scope, $routeParams,$htt
 			
 			type : "ligacao",
 			id : $scope.ligacao.id,
+			usuarioresponsavel : $scope.ligacao.usuarioresponsavel,
 			contato : $scope.ligacao.contato,
 			empresa : $scope.ligacao.empresa,
 			telefone : $scope.ligacao.telefone,

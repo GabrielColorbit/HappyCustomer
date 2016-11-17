@@ -38,13 +38,16 @@ public class Ligacao {
 	private Empresa empresa;
 	
 	@ManyToOne
+	@ForeignKey(name="fk_telefone")
+	private Telefone telefone;
+	
+	@ManyToOne
 	@ForeignKey(name="fk_atividade")
 	private Atividade atividade;
 	
 	// ATRIBUTOS
 	private Date data;
 	private String duracao;
-	private String telefone;
 	private TipoLigacao tipoligacao;
 	private String resumo;
 	public Long getId() {
@@ -71,6 +74,12 @@ public class Ligacao {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
+	public Telefone getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
 	public Atividade getAtividade() {
 		return atividade;
 	}
@@ -88,12 +97,6 @@ public class Ligacao {
 	}
 	public void setDuracao(String duracao) {
 		this.duracao = duracao;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 	public TipoLigacao getTipoligacao() {
 		return tipoligacao;
@@ -184,32 +187,32 @@ public class Ligacao {
 	@Override
 	public String toString() {
 		return "Ligacao [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
-				+ ", empresa=" + empresa + ", atividade=" + atividade + ", data=" + data + ", duracao=" + duracao
-				+ ", telefone=" + telefone + ", tipoligacao=" + tipoligacao + ", resumo=" + resumo + "]";
+				+ ", empresa=" + empresa + ", telefone=" + telefone + ", atividade=" + atividade + ", data=" + data
+				+ ", duracao=" + duracao + ", tipoligacao=" + tipoligacao + ", resumo=" + resumo + "]";
 	}
 	/**
 	 * @param id
 	 * @param usuarioresponsavel
 	 * @param contato
 	 * @param empresa
+	 * @param telefone
 	 * @param atividade
 	 * @param data
 	 * @param duracao
-	 * @param telefone
 	 * @param tipoligacao
 	 * @param resumo
 	 */
-	public Ligacao(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, Atividade atividade,
-			Date data, String duracao, String telefone, TipoLigacao tipoligacao, String resumo) {
+	public Ligacao(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, Telefone telefone,
+			Atividade atividade, Date data, String duracao, TipoLigacao tipoligacao, String resumo) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
 		this.contato = contato;
 		this.empresa = empresa;
+		this.telefone = telefone;
 		this.atividade = atividade;
 		this.data = data;
 		this.duracao = duracao;
-		this.telefone = telefone;
 		this.tipoligacao = tipoligacao;
 		this.resumo = resumo;
 	}
@@ -219,5 +222,5 @@ public class Ligacao {
 	public Ligacao() {
 		super();
 		// TODO Auto-generated constructor stub
-	}	
+	}
 }

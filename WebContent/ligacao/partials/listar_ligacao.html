@@ -32,9 +32,9 @@
 						<th ng-click="ordenar('empresa')">Empresa</th>
 						<th ng-click="ordenar('data')">Data</th>
 						<th ng-click="ordenar('telefone')">Telefone</th>
-						<th ng-click="ordenar('tipoligacao')">Tipo de Ligação</th>
+						<th ng-click="ordenar('tipoligacao')">Tipo</th>
 						<th ng-click="ordenar('duracao')">Duração</th>
-						<th ng-click="ordenar('atividade')">Possui Atividade</th>
+						<th ng-click="ordenar('atividade')">Atividade</th>
 						<th>
 							<a class="btn btn-success btn-sm" href="#/Ligacao/Cadastrar">Adicionar</a>
 						</th>
@@ -48,10 +48,10 @@
 						<td>{{l.contato.nome}}</td>
 						<td>{{l.empresa.razaosocial}}</td>
 						<td>{{l.data}}</td>
-						<td>{{l.telefone}}</td>
+						<td>{{l.telefone.numero}}</td>
 						<td>{{l.tipoligacao}}</td>
 						<td>{{l.duracao}}</td>	
-						<td>Sim</td>
+						<td>Não</td>
 						
 						<td class="btn-group">
 						<div class="to-right btn-group">
