@@ -26,7 +26,10 @@
 						<tr class="uppercase">
 							
 							<th ng-click="ordenar('nome')">Nome</th>
-							<th ng-click="ordenar('estado')">Estado</th>
+							<th ng-click="ordenar('estado.nome')">Estado</th>
+							<th ng-click="ordenar('estado.pais')">Páis</th>
+							
+							
 							<th><a class="btn btn-success btn-sm to-right" href="#/Cidade/Cadastrar">Adicionar</a></th>
 						</tr>
 					</thead>
@@ -36,6 +39,7 @@
 							
 							<td>{{c.nome}}</td>
 							<td>{{c.estado.nome}}</td>
+							<td>{{c.estado.pais}}</td>
 
 							<td class="btn-group">
 							<div class="to-right btn-group">

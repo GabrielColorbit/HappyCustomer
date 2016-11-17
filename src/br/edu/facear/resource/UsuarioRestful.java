@@ -25,6 +25,7 @@ import com.sun.jersey.multipart.FormDataParam;
 
 import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
+import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.crm.entity.Foto;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
@@ -153,6 +154,14 @@ public class UsuarioRestful {
 
 	}
 	
-	
+	@POST
+	@Path("/Excluir/{id}")
+	@Produces("application/json")
+	public void excluirUsuario(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		Usuario u = new FacadeHappyCustomer().BuscarUsuarioPorId(id);
+		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
+		fhc.ExcluirUsuario(u);
+	}
 	
 }

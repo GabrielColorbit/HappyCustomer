@@ -41,7 +41,7 @@ public class EmpresaTest {
 	public void testCadastrarEmpresa() throws Exception {
 
 		// ATRIBUTOS
-		Empresa.setRazaosocial("Gelopar Refrigeração Paranaense Ltda");
+		Empresa.setRazaosocial("Gelopar");
 		Empresa.setCnpj("75190074000160");
 		Empresa.setInscricaoestadual("1352678934");
 		Empresa.setEndereco("Rua Dr. Eli Volpato");

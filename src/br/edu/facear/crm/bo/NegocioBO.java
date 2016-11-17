@@ -13,10 +13,11 @@ public class NegocioBO implements InterfaceBO<Negocio> {
 	@Override
 	public void Cadastrar(Negocio negocio) throws Exception {
 
-		if (negocio.getEmpresa() == null) {
-			throw new Exception("Selecione Tipo Empresa");
-		} else if (negocio.getData() == null) {
-			throw new Exception("Date Informado Invalido .");
+//		if (negocio.getEmpresa() == null) {
+//			throw new Exception("Selecione Tipo Empresa");
+//		}
+		if (negocio.getData() == null) {
+			throw new Exception("Data Informada Inválida .");
 		}
 		negocioDAO.Cadastrar(negocio);
 	}

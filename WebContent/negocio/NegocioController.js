@@ -20,7 +20,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 	$scope.Titulo = "Editar Negócio";
 
 	if($routeParams.negocioId){
-		$http.get('http://localhost:8080/CRM/rest/restNegocio/Editar/'+$routeParams.origemcontatoId)
+		$http.get('http://localhost:8080/CRM/rest/restNegocio/Editar/'+$routeParams.negocioId)
 		.success(function(data) {
 			$scope.negocio = data;
 			var negocio =  new Object();
@@ -50,7 +50,10 @@ myControllers.controller('NegocioController', function($scope, $routeParams,$htt
 		var parameter = JSON.stringify({
 			type : "negocio",
 			id : $scope.negocio.id,
-			nome : $scope.negocio.nome
+			nome : $scope.negocio.nome,
+			empresa : $scope.negocio.empresa,
+			data : $scope.negocio.data
+			
 		});
 		var config = {
 			headers : {

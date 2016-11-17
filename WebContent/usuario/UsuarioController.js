@@ -235,5 +235,21 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
  			}
         	return i;
         }
-
+        $scope.Excluir = function(id){
+ 		   if(id){
+ 				
+ 				$http.post('http://localhost:8080/CRM/rest/restUsuario/Excluir/'+id)
+ 					.success(
+ 					function(data, status) {
+ 						$scope.Resposta = 'Usuário Excluído com Sucesso!';
+ 						$scope.BuscarInformacao();
+ 						
+ 					}).error(
+ 					function(data, status) {
+ 						$scope.Resposta = data ;
+ 					});
+ 			   };
+ 			
+ 			};
+ 	
 });

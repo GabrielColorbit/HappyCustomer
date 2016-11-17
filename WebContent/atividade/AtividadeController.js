@@ -56,6 +56,18 @@ myControllers.controller('AtividadeController', function($scope, $routeParams,$h
 		
 		$scope.tiposatividade = data["tipoAtividade"];
 	});
+	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
+	.success(function(data) {
+		$scope.tiposligacao = data["tipoLigacao"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos')
+	.success(function(data) {
+		$scope.telefones = data["telefone"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
+		.success(function(data) {
+			$scope.tipostelefone = data["tipoTelefone"];
+	});
 	
 	$scope.EnviarInformacao = function() {
 		

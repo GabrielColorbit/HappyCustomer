@@ -38,38 +38,6 @@ public class MainTest {
 			TipoComunicadorTest tipocomunicadortest = new TipoComunicadorTest();
 			tipocomunicadortest.testCadastrarTipoComunicador();
 
-			// ESTADO
-			EstadoTest estadotest = new EstadoTest();
-			estadotest.testCadastrarEstado();
-
-			// CIDADE
-			CidadeTest cidadetest = new CidadeTest();
-			cidadetest.testCadastrarCidade();
-
-			// USUARIO
-			UsuarioTest usuariotest = new UsuarioTest();
-			usuariotest.testCadastrarUsuario();
-
-			// EMPRESA
-			EmpresaTest empresatest = new EmpresaTest();
-			empresatest.testCadastrarEmpresa();
-
-			// CONTATO
-			ContatoTest contatotest = new ContatoTest();
-			contatotest.testCadastrarContato();
-
-			// ATIVIDADE
-			AtividadeTest atividadetest = new AtividadeTest();
-			atividadetest.testCadastrarAtividade();
-
-			// NEGOCIO
-			NegocioTest negociotest = new NegocioTest();
-			negociotest.testCadastrarNegocio();
-
-			// LIGACAO
-			LigacaoTest ligacaotest = new LigacaoTest();
-			ligacaotest.testCadastrarLigacao();
-
 			if (i == 1) {
 
 				// TIPO USUÁRIO
@@ -96,11 +64,50 @@ public class MainTest {
 				// TIPO COMUNICADOR
 				tipocomunicadortest.testAterarTipoComunicador();
 
-				// ESTADO
-				estadotest.testAterarEstado();
+			}
+		}
 
-				// CIDADE
-				cidadetest.testAterarCidade();
+		// ESTADO
+		EstadoTest estadotest = new EstadoTest();
+		estadotest.testCadastrarEstado();
+
+		// CIDADE
+		CidadeTest cidadetest = new CidadeTest();
+		cidadetest.testCadastrarCidade();
+
+		// // ESTADO
+		// estadotest.testAterarEstado();
+		//
+		// // CIDADE
+		// cidadetest.testAterarCidade();
+
+		for (int y = 0; y < 2; y++) {
+
+			// USUARIO
+			UsuarioTest usuariotest = new UsuarioTest();
+			usuariotest.testCadastrarUsuario();
+
+			// EMPRESA
+			EmpresaTest empresatest = new EmpresaTest();
+			empresatest.testCadastrarEmpresa();
+
+			// CONTATO
+			ContatoTest contatotest = new ContatoTest();
+			contatotest.testCadastrarContato();
+
+			// ATIVIDADE
+			AtividadeTest atividadetest = new AtividadeTest();
+			atividadetest.testCadastrarAtividade();
+
+			// NEGOCIO
+			NegocioTest negociotest = new NegocioTest();
+			negociotest.testCadastrarNegocio();
+
+			// LIGACAO
+			LigacaoTest ligacaotest = new LigacaoTest();
+			ligacaotest.testCadastrarLigacao();
+
+			if (y == 1) {
 
 				// USUARIO
 				usuariotest.testAterarUsuario();

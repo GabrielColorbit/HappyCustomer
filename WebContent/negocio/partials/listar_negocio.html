@@ -13,7 +13,7 @@
 </header>
 
 <!-- Portfolio Grid Section -->
-<section class="grid negocios">
+<section class="grid_negocios" ng-controller="NegocioController">
 	<div class="container">
 
 		<div class="row">
@@ -28,8 +28,8 @@
 					<tr class="uppercase">
 						
 						<th ng-click="ordenar('nome')">Nome</th>
-						<th ng-click="ordenar('data')">Data</th>
 						<th ng-click="ordenar('empresa')">Empresa</th>
+						<th ng-click="ordenar('data')">Data</th>
 						<th ng-click="ordenar('valor')">Valor R$</th>
 						<th>
 							<a class="btn btn-success btn-sm" href="#/Negocio/Cadastrar">Adicionar</a>
@@ -41,8 +41,8 @@
 					<tr dir-paginate="n in negociolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 						
 						<td>{{n.nome}}</td>
+						<td>{{n.empresa.razaosocial}}</td>						
 						<td>{{n.data}}</td>
-						<td>{{n.empresa.razaosocial}}</td>
 						<td>563.789,23</td>
 						
 						<td class="btn-group">
