@@ -53,7 +53,10 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 	.success(function(data) {
 		$scope.cidades = data["cidade"];
 	});
-	
+	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
+	.success(function(data) {
+		$scope.contatos = data["contato"];
+	});
 	$scope.EnviarInformacao = function() {
 		
 		var parameter = JSON.stringify({
@@ -100,7 +103,7 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 				});
 	   };
 	   
-	   //TELEFONES
+	   //TiposTelefone
 	   $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
   		.success(function(data) {
   			$scope.tipostelefone = data["tipoTelefone"];
@@ -223,6 +226,7 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 				if(! $scope.telefone.numero ){
 					alert("O campo número de telefone está vázio, favor preencher o campo.");
 					i = false;
+					
 				}else if(! $scope.telefone.tipotelefone){
 					alert("O campo tipo de telefone está vázio, favor preencher o campo.");
 				}else{
@@ -236,11 +240,6 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
        }
        
        
-     //CONTATOS
-	   $http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
-  		.success(function(data) {
-  			$scope.contatos = data["contato"];
-  		});
 	   
        
        //EXCLUIR EMPRESA
@@ -257,8 +256,109 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 					function(data, status) {
 						$scope.Resposta = data ;
 					});
-			   };
-			
-			};
+		   };
+		
+		};
 	
+	
+//Genrenciar comunicadores
+$scope.listComunicadores=[];
+$scope.addComunicador = function(){
+	
+	if(validarComunicador()){
+		if($scope.comunicador.id == null){
+ 				autoincrementComunicador();
+ 				$scope.listComunicadores.push({
+ 	  				id: $scope.comunicador.id ,nome:$scope.comunicador.nome, tipocomunicador:$scope.comunicador.tipocomunicador
+ 	  			});
+ 			}else{
+ 	  			var index =$scope.comunicador.id;
+ 	  			$scope.listComunicadores[index].tipocomunicador = $scope.comunicador.tipocomunicador;
+ 	  			$scope.listComunicadores[index].nome = $scope.comunicador.nome;
+ 			}
+			$scope.comunicador.id = null;
+  		 	$scope.comunicador.tipocomunicador = '';
+  			$scope.comunicador.nome = '';
+	} 			
+	
+}
+
+$scope.selectEditComunicador = function(id){
+	var Comunicador = $scope.listComunicadores[id];
+	$scope.comunicador.id = Comunicador.id;
+	$scope.comunicador.tipocomunicador = Comunicador.tipocomunicador;
+	$scope.comunicador.nome = Comunicador.nome;
+};
+$scope.delComunicador = function(id){
+	var result = confirm('Tem certeza?');
+		if (result === true){
+			$scope.listComunicadores.splice(id, 1);
+		}
+	};
+	function getSelectedIndexComunicador(id){
+		for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++)
+			if($scope.listComunicadores[i].id == id)
+				return i;
+		return 1;
+				
+	}
+	function autoincrementComunicador(){
+		$scope.comunicador.id = Object.keys($scope.listComunicadores).length;
+	}
+   function validarComunicador(){
+   	var i;
+   	if($scope.comunicador){
+			if(! $scope.comunicador.nome ){
+				alert("O campo nome de comunicador está vázio, favor preencher o campo.");
+			i = false;
+			
+		}else if(! $scope.comunicador.tipocomunicador){
+			alert("Selecione um tipo de comunicador para continuar.");
+		}else{
+			i = true
+		}
+	}else{
+		alert("Favor preencher os campos Nome e Tipo de Comunicador");
+			i = false;
+		}
+   	return i;
+   }		
+		
+//Gerenciador de contatos
+$scope.listContatos=[];
+$scope.addContato = function(){
+  if(validarContatos($scope.contato) === true){
+	  $scope.listContatos.push( $scope.contato);  
+  }
+}
+
+$scope.delContato = function(id){
+	var result = confirm('Você deseja excluir um contato da lista?');
+	if (result === true){
+		for(var j = 0; j < $scope.listContatos.length;j ++){
+	   		if($scope.listContatos[j].id == id){
+	   			$scope.listContatos.splice(j, 1);
+	   		} 
+	   	}
+	}
+   	
+};
+function validarContatos(contato){
+	var v = 0;
+	var f = 0;
+   	if($scope.listContatos.length > 0){
+   		for(var j = 0; j < $scope.listContatos.length;j ++){
+   	   		if($scope.listContatos[j].id == contato.id){
+   	   			alert(contato.nome +" já foi adicionado a lista de contatos, favor selecionar outro.");
+   	   			f = 1;
+   	   		}
+   	   	}
+   	}
+   	
+   	if(f > 0){
+   		return false
+   	}else{return true}
+   }	
+		
+		
 });

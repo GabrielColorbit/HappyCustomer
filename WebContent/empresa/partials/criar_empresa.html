@@ -11,7 +11,6 @@
 			</div>
 		</div>
 	</header>
-
 	<!-- Portfolio Grid Section -->
 	<section class="grid form_empresa" ng-controller="EmpresaController">
 		<div class="container">
@@ -59,9 +58,7 @@
 							</div>
 
 						</div>
-						
 						<div class="row control-group">
-
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
 								<label>CNPJ</label> <input ng-model="empresa.cnpj" type="text" class="form-control"
@@ -70,18 +67,14 @@
 
 								<p class="help-block text-danger"></p>
 							</div>
-							
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
 								<label>Inscrição Estadual</label> <input ng-model="empresa.inscricaoestadual" type="text" class="form-control"
 									placeholder="Inscrição Estadual" id="inscricaoestadual" required
 									data-validation-required-message="Por favor insira um nome">
-
 								<p class="help-block text-danger"></p>
 							</div>
-
 						</div>
-						
 						<div class="row control-group">
 
 							<div
@@ -215,7 +208,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Salvar</a>
 
 								</div>
 
@@ -260,10 +253,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Endereço</label> 
-										<input type="email" id="numero" ng-model="comunicador.numero" class="form-control" placeholder="Endereço"
-											id="Nome do contato" required
-											data-validation-required-message="Por favor insira um nome">
-										<p class="help-block text-danger"></p>
+										<input type="text" id="nome_comunicador" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"/> 
 									</div>
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
 										<label>Tipo</label> 
@@ -272,14 +262,13 @@
 										    ng-options="tipocomunicador.nome for tipocomunicador in tiposcomunicador track by tipocomunicador.id" ng-model="comunicador.tipocomunicador" >    
 										    <option value="">Tipo</option>
 										</select>	
-										<p class="help-block text-danger"></p>
 									</div>
 
 									
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar</a>
 
 								</div>
 
@@ -299,13 +288,13 @@
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="telefone in listTelefones">
+									   <tr data-ng-repeat="comunicador in listComunicadores">
 							                
-							                <td>{{comunicador.endereco}}</td>
+							                <td>{{comunicador.nome}}</td>
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(comunicador.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(comunicador.id)'>excluir</a>
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>excluir</a>
 											</td>
 										</tr>
 										
@@ -318,19 +307,17 @@
 						<div class="row control-group">
 							<h3>Contatos</h3>
 
-							<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
+							<div class="form-group col-sm-10 col-xs-12 floating-label-form-group controls ">
 										<label>Contato</label> 
-										<input type="hidden" ng-model="empresa.id" />
 										<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
-										    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="empresa.contato" >    
+										    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="contato" >    
 										    <option value="">Contato</option>
 										</select>	
 										<p class="help-block text-danger"></p>
 							</div>
 							<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
-
-								</div>
+								<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addContato()'>Salvar</a>
+							</div>
 						</div>
 
 						<div class="row ">
@@ -339,16 +326,18 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th>Código</th>
 											<th>Nome</th>
+											<th>Tipo</th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="contato in listContatos">
-							                
+							                <td>{{contato.id}}</td>
 							                <td>{{contato.nome}}</td>
+							                 <td>{{contato.tipocontato.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(contato.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(contato.id)'>excluir</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>excluir</a>
 											</td>
 										</tr>
 										
