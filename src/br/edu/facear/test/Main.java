@@ -53,16 +53,16 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		
 		gerenciarTipoTelefone();
-		gerenciarTipoEmpresa();
-		gerenciarTelefone();
-		gerenciarProduto();
-		gerenciarEstado();
-		gerenciarCidade();
-		gerenciarOrigemContato();
-		gerenciarTipoUsuario();
-		gerenciarTipoComunicador();
-		gerenciarTipoContato();
-		gerenciarTipoAtividade();
+//		gerenciarTipoEmpresa();
+//		gerenciarTelefone();
+//		gerenciarProduto();
+//		gerenciarEstado();
+//		gerenciarCidade();
+//		gerenciarOrigemContato();
+//		gerenciarTipoUsuario();
+//		gerenciarTipoComunicador();
+//		gerenciarTipoContato();
+//		gerenciarTipoAtividade();
 //		gerenciarUsuario();
 //		gerenciarEmpresa();
 //		gerenciarContato();		
