@@ -22,8 +22,6 @@
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					<form name="sentMessage" id="contactForm" novalidate>
 						
-						<h3>Dados Gerais</h3>
-						
 						<div class="row control-group">
 							
 							<div
@@ -57,94 +55,13 @@
 							</div>
 
 						</div>
-					
-						
-						<div class="row control-group">
-						
-							<h3>Adicionar Itens</h3>
-
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>Produto</label> 
-								
-								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
-									    ng-options="produto.nome for produto in produtos track by produto.id" ng-model="item.produto" >    
-									    <option value="">Produto</option>
-									</select>	
-
-								<p class="help-block text-danger"></p>
-
-							</div>
-
-							<div
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<div class="col-xs-6">
-									<label>Quantidade</label> <input type="number"
-										class="form-control" min="1" max="100"
-										placeholder="Quantidade" id="quantidade" required
-										data-validation-required-message="Por favor insira um nome">
-									<p class="help-block text-danger"></p>
-
-								</div>
-								<div class="col-xs-6 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
-
-								</div>
-
-
-							</div>
-						</div>
-
-						<div class="row ">
-							<h3>Itens do Negócio</h3>
-							<div class="table-scrollable table-scrollable-borderless">
-								<table class="table table-hover table-light col-xs-12">
-									<thead>
-										<tr class="uppercase">
-											<th>Produto</th>
-											<th>Quantidade</th>
-											<th>SubTotal</th>
-											<th></th>
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-						</div>
 
 						{{Resposta}}
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Negocio">Voltar</a>
-								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Negocio">Salvar</a>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacaoNegocio()' href="#/Negocio">Salvar</a>
 							</div>
 						</div>
 					</form>

@@ -61,18 +61,17 @@
 								</div>
 
 						</div>
-					
-						
+
 						<div class="row control-group">
 						
-							<h3>Adicionar Itens</h3>
+							<h3>Itens do Negócio</h3>
 
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
 								<label>Produto</label> 
 								
 								<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
-									    ng-options="produto.nome for produto in produtos track by produto.id" ng-model="item.produto" >    
+									    ng-options="produto.nome for produto in produtos track by produto.id" ng-model="item.produto">    
 									    <option value="">Produto</option>
 									</select>	
 
@@ -84,59 +83,45 @@
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
 								<div class="col-xs-6">
 									<label>Quantidade</label> <input type="number"
-										class="form-control" min="1" max="100"
+										class="form-control" min="1" max="100" ng-model="item.quantidade"
 										placeholder="Quantidade" id="quantidade" required
 										data-validation-required-message="Por favor insira um nome">
 									<p class="help-block text-danger"></p>
 
 								</div>
-								<div class="col-xs-6 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
-
+								
+								<div class="col-xs-2 btn-group">
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" ng-click='EnviarInformacaoItem()'>Adicionar</a>
 								</div>
-
 
 							</div>
 						</div>
-
+						
 						<div class="row ">
-							<h3>Itens do Negócio</h3>
+							
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+										
 											<th>Produto</th>
 											<th>Quantidade</th>
-											<th>SubTotal</th>
-											<th></th>
-
+											
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
+									   <tr data-ng-repeat="item in listItens">
+							                
+							                <td>{{item.produto}}</td>
+							                <td>{{item.quantidade}}</td>
+							                
+							                <td class="btn-group">
+											<div class="to-right btn-group">
+												<a title="Editar {{Titulo}}" class="btn btn-warning btn-sm" href="#/Negocio/Editar/{{n.id}}">Editar</a>
+												<a title="Excluir {{Titulo}}" class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='Excluir(n.id)'>Excluir</a> 
+											</div>	
 										</tr>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										<tr>
-
-											<td>Computador</td>
-											<td>2</td>
-											<td>R$ 5.654,12</td>
-											<td><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
+										
 									</tbody>
 								</table>
 							</div>

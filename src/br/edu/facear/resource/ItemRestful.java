@@ -41,8 +41,8 @@ public class ItemRestful {
 	@Produces("application/json")
 	public Item editarItem(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Item l = new FacadeHappyCustomer().BuscarItemPorId(id);
-		return l;
+		Item i = new FacadeHappyCustomer().BuscarItemPorId(id);
+		return i;
 	}
 	
 	@POST
@@ -50,8 +50,8 @@ public class ItemRestful {
 	@Produces("application/json")
 	public void excluirItem(@PathParam(value = "id") String codigo) throws Exception {
 		Long id = Long.parseUnsignedLong(codigo);
-		Item l = new FacadeHappyCustomer().BuscarItemPorId(id);
+		Item i = new FacadeHappyCustomer().BuscarItemPorId(id);
 		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
-		fhc.ExcluirItem(l);
+		fhc.ExcluirItem(i);
 	}
 }
