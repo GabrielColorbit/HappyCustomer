@@ -1,5 +1,6 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -22,8 +23,13 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 @Table(name = "\"TB_EMPRESA\"")
 
-public class Empresa {
+public class Empresa implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// CHAVE PRIMARIA
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT

@@ -65,7 +65,7 @@ public class EmpresaTest {
 		Empresa.setTipoempresa(TipoEmpresa);
 
 		// USUÁRIO RESPONSÁVEL PELA EMPRESA
-		Usuario.setId(1l);
+		Usuario.setId(3l);
 		Empresa.setUsuarioresponsavel(Usuario);
 
 		// CADASTRANDO TELEFONE
@@ -89,11 +89,12 @@ public class EmpresaTest {
 		Empresa.setComunicadores_empresa(comunicadores_empresa);
 
 		// CADASTRANDO CONTATOS
-		/*
-		 * Contato.setId(1l); List<Contato> contatos_empresa = new
-		 * ArrayList<Contato>(); contatos_empresa.add(Contato);
-		 * Empresa.setContatos_empresa(contatos_empresa);
-		 */
+
+		Contato.setId(1l); 
+		List<Contato> contatos_empresa = new ArrayList<Contato>(); 
+		contatos_empresa.add(Contato);
+		Empresa.setContatos_empresa(contatos_empresa);
+		 
 
 		// CADASTRAR
 		facade.CadastrarEmpresa(Empresa);
@@ -131,7 +132,7 @@ public class EmpresaTest {
 		Empresa.setTipoempresa(TipoEmpresa);
 
 		// USUÁRIO RESPONSÁVEL PELA EMPRESA
-		Usuario.setId(1l);
+		Usuario.setId(3l);
 		Empresa.setUsuarioresponsavel(Usuario);
 
 		// ALTERANDO TELEFONE

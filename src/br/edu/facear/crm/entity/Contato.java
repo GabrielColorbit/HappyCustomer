@@ -1,5 +1,6 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
@@ -23,9 +24,14 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 //CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
-public class Contato {
+public class Contato implements Serializable{
 
-	// CHAVE PRIMARIA
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//CHAVE PRIMARIA
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

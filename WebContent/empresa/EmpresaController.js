@@ -59,6 +59,17 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 	});
 	$scope.EnviarInformacao = function() {
 		
+		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
+			$scope.listTelefones[i].id = null;			
+		}
+		for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++){
+			$scope.listComunicadores[i].id = null;			
+		}
+		
+		
+		$scope.empresa.telefones_empresa =  $scope.listTelefones;
+		$scope.empresa.comunicadores_empresa = $scope.listComunicadores;
+		$scope.empresa.contatos_empresa =  $scope.listComunicadores;
 		var parameter = JSON.stringify({
 			
 			type : "empresa",
@@ -66,7 +77,6 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 			tipoempresa : $scope.empresa.tipoempresa,
 			datacadastro : $scope.empresa.datacadastro,
 			cidade : $scope.empresa.cidade,
-			
 			razaosocial : $scope.empresa.razaosocial,
 			cnpj : $scope.empresa.cnpj,
 			inscricaoestadual : $scope.empresa.inscricaoestadual,
@@ -78,10 +88,9 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 			ramo : $scope.empresa.ramo,
 			site : $scope.empresa.site,
 			status: $scope.empresa.status,			
-			
 			telefones_empresa : $scope.empresa.telefones_empresa,
-			comunicadores_empresa : $scope.empresa.comunicadores_empresa
-
+			comunicadores_empresa : $scope.empresa.comunicadores_empresa,
+			contatos_empresa : $scope.empresa.contatos_empresa
 		});
 
 		var config = {
