@@ -591,7 +591,7 @@ public class Main {
 		n.setEmpresa(e);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 2016);
-		n.setData(calendar.getTime());
+		n.setData("19/11/2016");
 
 		nbo.Cadastrar(n);
 
@@ -600,7 +600,7 @@ public class Main {
 		System.out
 				.println(" ID: " + n.getId() + " Empresa: " + n.getEmpresa().getRazaosocial() + "Data: " + n.getData());
 		calendar = new GregorianCalendar(25, 11, 2017);
-		n.setData(calendar.getTime());
+		n.setData("20/11/2016");
 		nbo.Alterar(n);
 
 		System.out.println("Tipo Contato: ");

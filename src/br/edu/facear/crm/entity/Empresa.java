@@ -55,7 +55,8 @@ public class Empresa implements Serializable{
 	
 	// TELEFONES
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	// @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_EMPRESA\"", joinColumns = {
 	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = {
 	@JoinColumn(name = "id_telefone") })
@@ -73,7 +74,6 @@ public class Empresa implements Serializable{
 	@JoinTable(name = "\"TB_EMPRESA_CONTATO\"", joinColumns = {
 	@JoinColumn(name = "id_contato") }, inverseJoinColumns = { 
 	@JoinColumn(name = "id_empresa") })
-	@JsonManagedReference
 	private List<Contato> contatos;
 	
 	// ATRIBUTOS

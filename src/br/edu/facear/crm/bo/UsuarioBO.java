@@ -33,7 +33,7 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 		} else if (usuario.getCpf() == null) {
 			throw new Exception("Fornecido Cpf  Invaliado.");
 		} else if (usuario.getDatanascimento() == null) {
-			throw new Exception("Data de Nascimento Invalido.");
+//			throw new Exception("Data de Nascimento Invalido.");
 		} else if (usuario.getEndereco() == null) {
 			throw new Exception("Endereço Fornecido Invalido.");
 		} else if (usuario.getNumero() == null) {

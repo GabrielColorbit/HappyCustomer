@@ -16,13 +16,8 @@
 </header>
 
 <!-- Portfolio Grid Section -->
-<section class="grid users" ng-controller="UsuarioController">
+<section class="grid users" ng-controller="GetUsuarioController">
 	<div class="container">
-    
-    
-
-    
-    
     
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
@@ -125,21 +120,12 @@
 						
 						<div class="row control-group">
 						
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Data de Nascimento</label> <input type="datetime"
-									class="form-control" value="18/01/1979" id="data_nascimento"
-									required
-									data-validation-required-message="Please enter your name.">
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Data de Nascimento</label> 
-					        	<md-datepicker required ng-model="usuario.datanascimento" md-placeholder="Selecione sua data de nascimento"
-					            md-min-date="minDate" md-max-date="maxDate"></md-datepicker>	
+							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data de Nascimento</label>
+								<input type="text" class="form-control date" placeholder="Data de Nascimento" ng-model="usuario.datanascimento" "id="data_nascimento" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
-	
-
+							
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Senha</label> 
 								<input type="password" ng-model="usuario.senha" class="form-control" placeholder="Senha" id="senha" required data-validation-required-message="Please enter your phone number.">
@@ -254,7 +240,7 @@
 							</div>
 						</div>
 
-
+						
 						<div class="row ">
 							<h3>Telefones do Usuário</h3>
 							<div class="table-scrollable table-scrollable-borderless">
@@ -263,7 +249,7 @@
 										<tr class="uppercase">
 											<th>Numero</th>
 											<th>Tipo</th>
-										</tr>
+										</tr>	
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">

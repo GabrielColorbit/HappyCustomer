@@ -74,9 +74,7 @@ public class Contato implements Serializable{
 	private List<Comunicador> comunicadores_contato;
 	
 	// EMPRESAS
-	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@JsonBackReference
-	@JsonIgnore
+	@ManyToMany(mappedBy = "contatos")
 	private List<Empresa> empresas;
 	
 	// ATRIBUTOS

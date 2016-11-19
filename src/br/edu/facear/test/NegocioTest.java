@@ -37,13 +37,13 @@ public class NegocioTest {
 
 		// ATRIBUTOS NEGÓCIO
 		Negocio.setNome("Compra de Comida");
-		Calendar data = new GregorianCalendar(29, 10, 2016);
-		Negocio.setData(data.getTime());
+		//Calendar data = new GregorianCalendar(29, 10, 2016);
+		Negocio.setData("19/11/2016");
 
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
 		Usuario.setId(1l);
 		Negocio.setUsuarioresponsavel(Usuario);
-		
+		   
 		// EMPRESA RESPONSÁVEL PELO NEGÓCIO
 		Empresa.setId(1l);
 		Negocio.setEmpresa(Empresa);
@@ -73,8 +73,8 @@ public class NegocioTest {
 
 		// ATRIBUTOS NEGÓCIO
 		Negocio.setNome("Compra de Bebida");
-		Calendar data = new GregorianCalendar(30, 10, 2016);
-		Negocio.setData(data.getTime());
+		//Calendar data = new GregorianCalendar(30, 10, 2016);
+		Negocio.setData("20/11/2016");
 		
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
 		Usuario.setId(2l);
