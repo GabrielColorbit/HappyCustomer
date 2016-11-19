@@ -22,6 +22,8 @@ public class Foto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
 	private byte[] imagem;
+	
+	
 	public Long getId() {
 		return id;
 	}

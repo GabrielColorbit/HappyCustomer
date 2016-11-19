@@ -414,7 +414,7 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		co.setDatanascimento(calendar.getTime());
+		co.setDatanascimento("30/09/1994");
 
 		co.setEndereco("rua dos bobos");
 		co.setNumero(0l);

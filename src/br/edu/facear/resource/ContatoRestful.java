@@ -31,13 +31,13 @@ public class ContatoRestful {
 	@Path("/Salvar")
 	public void cadastrarCliente(Contato contato) throws Exception {
 		
-		//TELEFONES
+//		//TELEFONES
 //		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 //		for(Telefone t : contato.getTelefones_contato()){
 //			new FacadeHappyCustomer().CadastrarTelefone(t);
 //			telefonelist.add(t);
 //		}
-//		
+//
 //		contato.setTelefones_contato(telefonelist);
 		
 		//COMUNICADOR
