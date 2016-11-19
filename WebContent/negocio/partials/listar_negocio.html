@@ -15,7 +15,7 @@
 <!-- Portfolio Grid Section -->
 <section class="grid_negocios" ng-controller="NegocioController">
 	<div class="container">
-
+		
 		<div class="row">
 			<div class="table-scrollable table-scrollable-borderless">
 				<div class="col-sm-6 col-xs-12  search_bar">
@@ -23,12 +23,14 @@
 					placeholder="Buscar Negócio" id="Nome do negócio" required
 					data-validation-required-message="Por favor insira um nome">
 				</div>
-				<table class="table table-hover table-light col-xs-12">
+				<table id="tbl" class="table table-hover table-light col-xs-12">
 					<thead>
 					<tr class="uppercase">
 						
-						<th ng-click="ordenar('nome')">Nome</th>
+						<th ng-click="ordenar('usuario')">Usuário</th>
+						<th ng-click="ordenar('nome')">Nome</th>						
 						<th ng-click="ordenar('empresa')">Empresa</th>
+						<th ng-click="ordenar('contato')">Contato</th>
 						<th ng-click="ordenar('data')">Data</th>
 						<th ng-click="ordenar('valor')">Valor R$</th>
 						<th>
@@ -40,8 +42,10 @@
 				<tbody>
 					<tr dir-paginate="n in negociolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 						
+						<td>{{n.usuarioresponsavel.nome}}</td>
 						<td>{{n.nome}}</td>
-						<td>{{n.empresa.razaosocial}}</td>						
+						<td>{{n.empresa.razaosocial}}</td>		
+						<td>{{n.contato.nome}}</td>						
 						<td>{{n.data}}</td>
 						<td>563.789,23</td>
 						
@@ -55,6 +59,7 @@
 
 				</tbody>
 				</table>
+				
 			</div>
 			<div class="col-xs-12">
 				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					

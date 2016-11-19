@@ -26,18 +26,39 @@ public class Negocio {
 	
 	// CHAVE(S) ESTRANGEIRA(S)
 	@ManyToOne
+	@ForeignKey(name="fk_usuario")
+	private Usuario usuarioresponsavel;
+	
+	@ManyToOne
+	@ForeignKey(name = "fk_contato")
+	private Contato contato;
+	
+	@ManyToOne
 	@ForeignKey(name = "fk_empresa")
-	private Empresa empresa;
+	private Empresa empresa;	
 	
 	// ATRIBUTOS
 	private String nome;
 	private Date data;
+	
 	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Usuario getUsuarioresponsavel() {
+		return usuarioresponsavel;
+	}
+	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
+		this.usuarioresponsavel = usuarioresponsavel;
+	}
+	public Contato getContato() {
+		return contato;
+	}
+	public void setContato(Contato contato) {
+		this.contato = contato;
 	}
 	public Empresa getEmpresa() {
 		return empresa;
@@ -61,10 +82,12 @@ public class Negocio {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((contato == null) ? 0 : contato.hashCode());
 		result = prime * result + ((data == null) ? 0 : data.hashCode());
 		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
 	@Override
@@ -76,6 +99,11 @@ public class Negocio {
 		if (getClass() != obj.getClass())
 			return false;
 		Negocio other = (Negocio) obj;
+		if (contato == null) {
+			if (other.contato != null)
+				return false;
+		} else if (!contato.equals(other.contato))
+			return false;
 		if (data == null) {
 			if (other.data != null)
 				return false;
@@ -96,21 +124,31 @@ public class Negocio {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
+		if (usuarioresponsavel == null) {
+			if (other.usuarioresponsavel != null)
+				return false;
+		} else if (!usuarioresponsavel.equals(other.usuarioresponsavel))
+			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Negocio [id=" + id + ", empresa=" + empresa + ", nome=" + nome + ", data=" + data + "]";
+		return "Negocio [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
+				+ ", empresa=" + empresa + ", nome=" + nome + ", data=" + data + "]";
 	}
 	/**
 	 * @param id
+	 * @param usuarioresponsavel
+	 * @param contato
 	 * @param empresa
 	 * @param nome
 	 * @param data
 	 */
-	public Negocio(Long id, Empresa empresa, String nome, Date data) {
+	public Negocio(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, String nome, Date data) {
 		super();
 		this.id = id;
+		this.usuarioresponsavel = usuarioresponsavel;
+		this.contato = contato;
 		this.empresa = empresa;
 		this.nome = nome;
 		this.data = data;

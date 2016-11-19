@@ -36,6 +36,14 @@ myControllers.controller('CadastrarNegocioController', function($scope, $routePa
 });
 myControllers.controller('NegocioController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+	.success(function(data) {
+		$scope.usuarios = data["usuario"];
+	});
+	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
+	.success(function(data) {
+		$scope.contatos = data["contato"];
+	});
 	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
 	.success(function(data) {
 		$scope.empresas = data["empresa"];
@@ -51,7 +59,9 @@ myControllers.controller('NegocioController', function($scope, $routeParams,$htt
 			type : "negocio",
 			id : $scope.negocio.id,
 			nome : $scope.negocio.nome,
+			usuarioresponsavel : $scope.negocio.usuarioresponsavel,
 			empresa : $scope.negocio.empresa,
+			contato : $scope.negocio.contato,
 			data : $scope.negocio.data
 			
 		});

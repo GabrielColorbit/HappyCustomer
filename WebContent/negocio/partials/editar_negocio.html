@@ -40,25 +40,51 @@
 						</div>
 						
 						<div class="row control-group">
-						
+							
 							<div 
 								class="form-group col-xs-8 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Usuário Responsável</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+							    ng-options="usuario.nome for usuario in usuarios track by usuario.id" ng-model="negocio.usuarioresponsavel" >    
+								    <option value="">Usuário Responsável</option>
+								</select>											
+	
+								<p class="help-block text-danger"></p>
 								
+							</div>
+							
+							<div 
+								class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data</label> 
+								<input type="datetime" class="form-control" placeholder="Data" ng-model="negocio.data" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+							
+						</div>
+						
+						<div class="row control-group">
+						
+							<div 
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Contato</label>
+								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
+							    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="negocio.contato" >    
+								    <option value="">Contato</option>
+								</select>											
+	
+								<p class="help-block text-danger"></p>
+								
+							</div>
+						
+							<div 
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Empresa</label>
 								<select class="form-control" ng-model="negocio.empresa" required data-validation-required-message="Por favor selecione uma empresa"
 							    ng-options="empresa.razaosocial for empresa in empresas track by empresa.id">    
 								    <option value="">Empresa</option>
 								</select>			
-									
-									<p class="help-block text-danger"></p>
+								<p class="help-block text-danger"></p>							
 							</div>
-						
-								<div 
-									class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
-									<label>Data</label> 
-									<input type="datetime" class="form-control" placeholder="Data" ng-model="negocio.data" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
-									<p class="help-block text-danger"></p>
-								</div>
 
 						</div>
 
