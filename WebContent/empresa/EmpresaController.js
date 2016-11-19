@@ -69,7 +69,7 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 		
 		$scope.empresa.telefones_empresa =  $scope.listTelefones;
 		$scope.empresa.comunicadores_empresa = $scope.listComunicadores;
-		$scope.empresa.contatos_empresa =  $scope.listComunicadores;
+		$scope.empresa.contatos_empresa =  $scope.listContatos;
 		var parameter = JSON.stringify({
 			
 			type : "empresa",

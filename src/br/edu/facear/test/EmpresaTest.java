@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -93,7 +91,7 @@ public class EmpresaTest {
 		Contato.setId(1l); 
 		List<Contato> contatos_empresa = new ArrayList<Contato>(); 
 		contatos_empresa.add(Contato);
-		Empresa.setContatos_empresa(contatos_empresa);
+		Empresa.setContatos(contatos_empresa);
 		 
 
 		// CADASTRAR

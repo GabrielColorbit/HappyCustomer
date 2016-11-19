@@ -1,12 +1,13 @@
 package br.edu.facear.crm.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,6 +19,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
@@ -29,7 +32,7 @@ public class Contato implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 98309182309812301L;
 
 	//CHAVE PRIMARIA
 	@Id
@@ -71,9 +74,10 @@ public class Contato implements Serializable{
 	private List<Comunicador> comunicadores_contato;
 	
 	// EMPRESAS
-	@ManyToMany(mappedBy = "contatos_empresa")
-	private Collection<Empresa> empresas_contato;
-
+	@OneToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JsonBackReference
+	@JsonIgnore
+	private List<Empresa> empresas;
 	
 	// ATRIBUTOS
 	private String nome;
@@ -89,133 +93,267 @@ public class Contato implements Serializable{
 	private String foto;
 	private Date datacadastro;
 	private Status status;
+
 	
+
 	public Long getId() {
 		return id;
 	}
+
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
+
 	public Usuario getUsuarioresponsavel() {
 		return usuarioresponsavel;
 	}
+
+
+
 	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
 		this.usuarioresponsavel = usuarioresponsavel;
 	}
+
+
+
 	public TipoContato getTipocontato() {
 		return tipocontato;
 	}
+
+
+
 	public void setTipocontato(TipoContato tipocontato) {
 		this.tipocontato = tipocontato;
 	}
+
+
+
 	public OrigemContato getOrigemcontato() {
 		return origemcontato;
 	}
+
+
+
 	public void setOrigemcontato(OrigemContato origemcontato) {
 		this.origemcontato = origemcontato;
 	}
+
+
+
 	public Cidade getCidade() {
 		return cidade;
 	}
+
+
+
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+
+
+
 	public List<Telefone> getTelefones_contato() {
 		return telefones_contato;
 	}
+
+
+
 	public void setTelefones_contato(List<Telefone> telefones_contato) {
 		this.telefones_contato = telefones_contato;
 	}
+
+
+
 	public List<Comunicador> getComunicadores_contato() {
 		return comunicadores_contato;
 	}
+
+
+
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
-	public Collection<Empresa> getEmpresas_contato() {
-		return empresas_contato;
+
+
+
+	public List<Empresa> getEmpresas() {
+		return empresas;
 	}
-	public void setEmpresas_contato(Collection<Empresa> empresas_contato) {
-		this.empresas_contato = empresas_contato;
+
+
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
 	}
+
+
+
 	public String getNome() {
 		return nome;
 	}
+
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+
+
 	public String getCpf() {
 		return cpf;
 	}
+
+
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+
+
 	public Date getDatanascimento() {
 		return datanascimento;
 	}
+
+
+
 	public void setDatanascimento(Date datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+
+
+
 	public String getEndereco() {
 		return endereco;
 	}
+
+
+
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+
+
 	public Long getNumero() {
 		return numero;
 	}
+
+
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
+
+
 	public String getComplemento() {
 		return complemento;
 	}
+
+
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
+
+
 	public String getCep() {
 		return cep;
 	}
+
+
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
+
+
 	public String getBairro() {
 		return bairro;
 	}
+
+
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+
+
+
 	public Genero getGenero() {
 		return genero;
 	}
+
+
+
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
+
+
 	public String getCargo() {
 		return cargo;
 	}
+
+
+
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
+
+
 	public String getFoto() {
 		return foto;
 	}
+
+
+
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+
+
 	public Date getDatacadastro() {
 		return datacadastro;
 	}
+
+
+
 	public void setDatacadastro(Date datacadastro) {
 		this.datacadastro = datacadastro;
 	}
+
+
+
 	public Status getStatus() {
 		return status;
 	}
+
+
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -229,7 +367,7 @@ public class Contato implements Serializable{
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
-		result = prime * result + ((empresas_contato == null) ? 0 : empresas_contato.hashCode());
+		result = prime * result + ((empresas == null) ? 0 : empresas.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
@@ -243,6 +381,9 @@ public class Contato implements Serializable{
 		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
+
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -297,10 +438,10 @@ public class Contato implements Serializable{
 				return false;
 		} else if (!datanascimento.equals(other.datanascimento))
 			return false;
-		if (empresas_contato == null) {
-			if (other.empresas_contato != null)
+		if (empresas == null) {
+			if (other.empresas != null)
 				return false;
-		} else if (!empresas_contato.equals(other.empresas_contato))
+		} else if (!empresas.equals(other.empresas))
 			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
@@ -353,59 +494,26 @@ public class Contato implements Serializable{
 			return false;
 		return true;
 	}
+
+
+
 	@Override
 	public String toString() {
-		final int maxLen = 10;
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
-				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato="
-				+ (telefones_contato != null ? toString(telefones_contato, maxLen) : null) + ", comunicadores_contato="
-				+ (comunicadores_contato != null ? toString(comunicadores_contato, maxLen) : null)
-				+ ", empresas_contato=" + (empresas_contato != null ? toString(empresas_contato, maxLen) : null)
-				+ ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco
-				+ ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro
-				+ ", genero=" + genero + ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro
-				+ ", status=" + status + "]";
+				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
+				+ ", comunicadores_contato=" + comunicadores_contato + ", empresas=" + empresas + ", nome=" + nome
+				+ ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero="
+				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
+				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
-	private String toString(Collection<?> collection, int maxLen) {
-		StringBuilder builder = new StringBuilder();
-		builder.append("[");
-		int i = 0;
-		for (Iterator<?> iterator = collection.iterator(); iterator.hasNext() && i < maxLen; i++) {
-			if (i > 0)
-				builder.append(", ");
-			builder.append(iterator.next());
-		}
-		builder.append("]");
-		return builder.toString();
-	}
-	/**
-	 * @param id
-	 * @param usuarioresponsavel
-	 * @param tipocontato
-	 * @param origemcontato
-	 * @param cidade
-	 * @param telefones_contato
-	 * @param comunicadores_contato
-	 * @param empresas_contato
-	 * @param nome
-	 * @param cpf
-	 * @param datanascimento
-	 * @param endereco
-	 * @param numero
-	 * @param complemento
-	 * @param cep
-	 * @param bairro
-	 * @param genero
-	 * @param cargo
-	 * @param foto
-	 * @param datacadastro
-	 * @param status
-	 */
+
+
+
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
 			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
-			Collection<Empresa> empresas_contato, String nome, String cpf, Date datanascimento, String endereco,
-			Long numero, String complemento, String cep, String bairro, Genero genero, String cargo, String foto,
-			Date datacadastro, Status status) {
+			ArrayList<Empresa> empresas, String nome, String cpf, Date datanascimento, String endereco, Long numero,
+			String complemento, String cep, String bairro, Genero genero, String cargo, String foto, Date datacadastro,
+			Status status) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -414,7 +522,7 @@ public class Contato implements Serializable{
 		this.cidade = cidade;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
-		this.empresas_contato = empresas_contato;
+		this.empresas = empresas;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanascimento = datanascimento;
@@ -429,6 +537,9 @@ public class Contato implements Serializable{
 		this.datacadastro = datacadastro;
 		this.status = status;
 	}
+
+
+
 	/**
 	 * 
 	 */
