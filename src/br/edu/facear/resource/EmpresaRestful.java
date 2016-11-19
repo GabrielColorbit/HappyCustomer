@@ -25,7 +25,7 @@ public class EmpresaRestful {
 	@Produces({ MediaType.APPLICATION_JSON })
 	public ArrayList<Empresa> findAll() throws Exception {
 
-		return (ArrayList<Empresa>) new FacadeHappyCustomer().ListarEmpresa();
+		return (new FacadeHappyCustomer().ListarEmpresa()) ;
 	}
 
 	@POST
@@ -34,7 +34,7 @@ public class EmpresaRestful {
 	@Path("/Salvar")
 	public void cadastrarCliente(Empresa empresa) throws Exception {
 		
-		
+			
 		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 		for(Telefone t : empresa.getTelefones_empresa()){
 			new FacadeHappyCustomer().CadastrarTelefone(t);
@@ -49,13 +49,13 @@ public class EmpresaRestful {
 		}
 		empresa.setComunicadores_empresa(comunicadorlist);
 		
-//		List<Contato> contatos_empresa = new ArrayList<Contato>();
-//		for(Contato c : empresa.getContatos_empresa() ){
-//			contatos_empresa.add(c);
-//		}
-//		
-//		empresa.setContatos_empresa(contatos_empresa);
-//		
+		ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+		for(Contato c : empresa.getContatos() ){
+			contatos_empresa.add(c);
+		}
+		
+		empresa.setContatos(contatos_empresa);
+		
 		
 		if (empresa.getId() == null)
 			new FacadeHappyCustomer().CadastrarEmpresa(empresa);

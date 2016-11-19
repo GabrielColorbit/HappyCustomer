@@ -542,7 +542,7 @@ public class Main {
 		List<Contato> contatos = new ArrayList<Contato>();
 		contatos.add(co);
 		contatos.add(co2);
-		e.setContatos_empresa(contatos);
+		e.setContatos(contatos);
 		eBO.Cadastrar(e);
 
 		// System.out.println("Busca Usuario:");
