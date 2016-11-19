@@ -94,16 +94,17 @@
 				
 					<div class="row control-group">
 			
-						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-						<label>Duração</label> <input type="text" class="form-control"
-								placeholder="Duração" id="Duracao" required
-								data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
+						<div 
+							class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+							<label>Duração</label> <input type="text" class="form-control"
+							placeholder="00min00s" id="Duracao" required
+							data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
 							<p class="help-block text-danger"></p>
 						</div>
 						
 						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Data</label> 
-							<input type="datetime" class="form-control" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
+							<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
 							<p class="help-block text-danger"></p>
 						</div>
 						
@@ -122,12 +123,14 @@
 
 					</div>			
 
+					{{Resposta}}
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group btn-group col-xs-12">
-
-							<a class="btn btn-danger btn-lg to-left" href="#/Ligacao">Voltar</a>
-							<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</a>
+							<div class="form-group btn-group col-xs-12">
+								<a class="btn btn-danger btn-lg to-left" href="#/Ligacao">Voltar</a>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Ligacao">Salvar</a>		
+							</div>
 						</div>
 					</div>
 				</form>

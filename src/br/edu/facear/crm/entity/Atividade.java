@@ -55,13 +55,11 @@ public class Atividade {
 	
 	// ATRIBUTOS
 	private String nome;
-	private Date datacadastro;
-	private Date datainicio;
-	private Date datafim;
+	private String datacadastro;
+	private String datainicio;
+	private String datafim;
 	private String descricao;
 	private Situacao situacao;
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -104,22 +102,22 @@ public class Atividade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getDatacadastro() {
+	public String getDatacadastro() {
 		return datacadastro;
 	}
-	public void setDatacadastro(Date datacadastro) {
+	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
-	public Date getDatainicio() {
+	public String getDatainicio() {
 		return datainicio;
 	}
-	public void setDatainicio(Date datainicio) {
+	public void setDatainicio(String datainicio) {
 		this.datainicio = datainicio;
 	}
-	public Date getDatafim() {
+	public String getDatafim() {
 		return datafim;
 	}
-	public void setDatafim(Date datafim) {
+	public void setDatafim(String datafim) {
 		this.datafim = datafim;
 	}
 	public String getDescricao() {
@@ -134,7 +132,7 @@ public class Atividade {
 	public void setSituacao(Situacao situacao) {
 		this.situacao = situacao;
 	}
-	@Override  
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -245,8 +243,8 @@ public class Atividade {
 	 * @param situacao
 	 */
 	public Atividade(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, TipoAtividade tipoatividade,
-			List<Comunicador> comunicadores_atividade, String nome, Date datacadastro, Date datainicio, Date datafim,
-			String descricao, Situacao situacao) {
+			List<Comunicador> comunicadores_atividade, String nome, String datacadastro, String datainicio,
+			String datafim, String descricao, Situacao situacao) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;

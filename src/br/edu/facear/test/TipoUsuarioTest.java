@@ -30,7 +30,7 @@ public class TipoUsuarioTest {
 		TipoUsuario TipoUsuario = facade.BuscarTipoUsuarioPorId(2l);
 		TipoUsuario.setNome("Operador");
 		facade.AlterarTipoUsuario(TipoUsuario);
-		Assert.assertEquals(true, TipoUsuario.getNome().equals("Administrador"));
+		Assert.assertEquals(true, TipoUsuario.getNome().equals("Operador"));
 	}
 
 	// EXCLUIR

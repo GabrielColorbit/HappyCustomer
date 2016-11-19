@@ -27,13 +27,15 @@ public class NegocioRestful {
 
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
-	@Produces("text/plain")
+	@Produces("application/json")
 	@Path("/Salvar")
-	public void cadastrarCliente(Negocio Negocio) throws Exception {
-		if (Negocio.getId() == null)
-			new FacadeHappyCustomer().CadastrarNegocio(Negocio);
+	public Negocio cadastrarCliente(Negocio negocio) throws Exception {
+		if (negocio.getId() == null)
+			new FacadeHappyCustomer().CadastrarNegocio(negocio);
 		else
-			new FacadeHappyCustomer().AlterarNegocio(Negocio);
+			new FacadeHappyCustomer().AlterarNegocio(negocio);
+		
+		return negocio;
 	}
 
 	@GET

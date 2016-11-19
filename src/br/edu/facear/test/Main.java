@@ -672,9 +672,9 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(20, 9, 2016);
-		a.setDatainicio(calendar.getTime());
+		a.setDatainicio("19/11/2016");
 		Calendar calendarfim = new GregorianCalendar(27, 11, 2016);
-		a.setDatafim(calendarfim.getTime());
+		a.setDatafim("20/11/2016");
 		a.setDescricao("Lorem ipsum");
 		a.setNome("Cadastrar contato para empresa");
 
@@ -720,7 +720,8 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(20, 9, 2016);
-		l.setData(calendar.getTime());
+		//l.setData(calendar.getTime());
+		l.setData("19/11/2016");
 
 		l.setTipoligacao(TipoLigacao.Efetuada);
 		l.setResumo("falar sobre assuntos peculiares");

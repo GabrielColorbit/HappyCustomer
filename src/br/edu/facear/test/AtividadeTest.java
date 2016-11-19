@@ -34,16 +34,13 @@ public class AtividadeTest {
 	@Test
 	public void testCadastrarAtividade() throws Exception {
 
-		Atividade.setNome("Conserto Mackbook");
-		Calendar datacadastro = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatacadastro(datacadastro.getTime());
-		Calendar datainicio = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatainicio(datainicio.getTime());
-		Calendar datafim = new GregorianCalendar(02, 11, 2016);
-		Atividade.setDatafim(datafim.getTime());
-		Atividade.setDescricao("Vamos estar consertando o mackbook.");
+		Atividade.setNome("Celular travando");
+		Atividade.setDatacadastro("20/11/2016");
+		Atividade.setDatainicio("20/11/2016");
+		//Atividade.setDatafim("22/11/2016");
+		Atividade.setDescricao("Vamos verificar a causa do bug.");
 		Atividade.setSituacao(Situacao.Aberto);
-
+		
 		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
 		Usuario.setId(1l);
 		Atividade.setUsuarioresponsavel(Usuario);
@@ -57,7 +54,7 @@ public class AtividadeTest {
 		Atividade.setEmpresa(Empresa);
 
 		// TIPO DE ATIVIDADE
-		TipoAtividade.setId(1l);
+		TipoAtividade.setId(2l);
 		Atividade.setTipoatividade(TipoAtividade);
 
 		// CADASTRANDO COMUNICADOR
@@ -82,14 +79,11 @@ public class AtividadeTest {
 
 		Atividade Atividade = facade.BuscarAtividadePorId(1l);
 
-		Atividade.setNome("Conserto Samsung AtiveBook");
-		Calendar datacadastro = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatacadastro(datacadastro.getTime());
-		Calendar datainicio = new GregorianCalendar(31, 10, 2016);
-		Atividade.setDatacadastro(datainicio.getTime());
-		Calendar datafim = new GregorianCalendar(02, 11, 2016);
-		Atividade.setDatafim(datafim.getTime());
-		Atividade.setDescricao("Foi consertando o ativebook.");
+		Atividade.setNome("Notebook com problema na tela");
+		Atividade.setDatacadastro("19/11/2016");
+		Atividade.setDatainicio("19/11/2016");
+		Atividade.setDatafim("22/11/2016");
+		Atividade.setDescricao("Vamos consertar no prazo de 2 dias.");
 		Atividade.setSituacao(Situacao.Finalizado);
 
 		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
@@ -105,7 +99,7 @@ public class AtividadeTest {
 		Atividade.setEmpresa(Empresa);
 
 		// TIPO DE ATIVIDADE
-		TipoAtividade.setId(1l);
+		TipoAtividade.setId(2l);
 		Atividade.setTipoatividade(TipoAtividade);
 
 		// ALTERANDO COMUNICADOR
@@ -120,7 +114,7 @@ public class AtividadeTest {
 		Atividade.setComunicadores_atividade(comunicadores_atividade);
 
 		facade.AlterarAtividade(Atividade);
-		Assert.assertEquals(true, Atividade.getNome().equals("Conserto Samsung AtiveBook"));
+		Assert.assertEquals(true, Atividade.getNome().equals("Notebook com problema na tela"));
 	}
 
 	// EXCLUIR

@@ -41,7 +41,7 @@ public class EmpresaTest {
 	public void testCadastrarEmpresa() throws Exception {
 
 		// ATRIBUTOS
-		Empresa.setRazaosocial("Gelopar");
+		Empresa.setRazaosocial("Gelopar Refrigeração");
 		Empresa.setCnpj("75190074000160");
 		Empresa.setInscricaoestadual("1352678934");
 		Empresa.setEndereco("Rua Dr. Eli Volpato");
@@ -108,7 +108,7 @@ public class EmpresaTest {
 		Empresa Empresa = facade.BuscarEmpresaPorId(2l);
 
 		// ATRIBUTOS
-		Empresa.setRazaosocial("Facear");
+		Empresa.setRazaosocial("IANDev Sistemas");
 		Empresa.setCnpj("34564234000167");
 		Empresa.setInscricaoestadual("23341256");
 		Empresa.setEndereco("Av. Das Araucárias");
@@ -116,7 +116,7 @@ public class EmpresaTest {
 		Empresa.setComplemento("Próximo ao Terminal Angélica");
 		Empresa.setCep("83707220");
 		Empresa.setBairro("Thomaz Coelho");
-		Empresa.setSite("www.facear.com.br");
+		Empresa.setSite("www.iandev.com.br");
 		Empresa.setRamo("Faculdade");
 		Empresa.setLogo("C:\\Downloads\\Facear.png");
 		// Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
@@ -163,7 +163,7 @@ public class EmpresaTest {
 
 		// ALTERAR
 		facade.AlterarEmpresa(Empresa);
-		Assert.assertEquals(true, Empresa.getRazaosocial().equals("Facear"));
+		Assert.assertEquals(true, Empresa.getRazaosocial().equals("IANDev Sistemas"));
 	}
 
 	// EXCLUIR
