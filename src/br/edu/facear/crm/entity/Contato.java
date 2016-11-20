@@ -27,12 +27,9 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 //CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
-public class Contato implements Serializable{
+public class Contato{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 98309182309812301L;
+
 
 	//CHAVE PRIMARIA
 	@Id
@@ -176,18 +173,6 @@ public class Contato implements Serializable{
 
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
-	}
-
-
-
-	public List<Empresa> getEmpresas() {
-		return empresas;
-	}
-
-
-
-	public void setEmpresas(List<Empresa> empresas) {
-		this.empresas = empresas;
 	}
 
 
@@ -348,9 +333,7 @@ public class Contato implements Serializable{
 
 
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
 
 
 
@@ -367,7 +350,6 @@ public class Contato implements Serializable{
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
-		result = prime * result + ((empresas == null) ? 0 : empresas.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
@@ -438,11 +420,6 @@ public class Contato implements Serializable{
 				return false;
 		} else if (!datanascimento.equals(other.datanascimento))
 			return false;
-		if (empresas == null) {
-			if (other.empresas != null)
-				return false;
-		} else if (!empresas.equals(other.empresas))
-			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -501,19 +478,18 @@ public class Contato implements Serializable{
 	public String toString() {
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
 				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
-				+ ", comunicadores_contato=" + comunicadores_contato + ", empresas=" + empresas + ", nome=" + nome
-				+ ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero="
-				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
+				+ ", comunicadores_contato=" + comunicadores_contato + ", nome=" + nome + ", cpf=" + cpf
+				+ ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero=" + numero
+				+ ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
 				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
 
 
 
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
-			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
-			ArrayList<Empresa> empresas, String nome, String cpf, Date datanascimento, String endereco, Long numero,
-			String complemento, String cep, String bairro, Genero genero, String cargo, String foto, Date datacadastro,
-			Status status) {
+			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato, String nome,
+			String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
+			String bairro, Genero genero, String cargo, String foto, Date datacadastro, Status status) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -522,7 +498,6 @@ public class Contato implements Serializable{
 		this.cidade = cidade;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
-		this.empresas = empresas;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanascimento = datanascimento;

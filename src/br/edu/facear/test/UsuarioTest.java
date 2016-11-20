@@ -56,7 +56,7 @@ public class UsuarioTest {
 		Usuario.setStatus(Status.Ativo);
 
 		// CIDADE
-		Cidade.setId(1l);
+		Cidade.setId(2l);
 		Usuario.setCidade(Cidade);
 
 		// TIPO

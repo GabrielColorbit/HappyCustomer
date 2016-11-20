@@ -9,7 +9,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 		.success(function(data) {
 			$scope.usuarios = data["usuario"];
 		});
-		
+
 
 	};
 	$scope.BuscarInformacao();
@@ -26,7 +26,7 @@ myControllers.controller('GetUsuarioController', function($scope, $routeParams,$
 			$scope.usuario = data;
 			var usuario=  new Object();
 			usuario = $scope.usuario
-			
+
 			$scope.listTelefones=[];
 			$scope.listTelefones = usuario.telefones_usuario;
 		});
@@ -34,7 +34,7 @@ myControllers.controller('GetUsuarioController', function($scope, $routeParams,$
 	for(var telefone in $scope.listTelefones){
 		console.log(telefone.numero);
 	}
-	
+
 });
 myControllers.controller('CadastrarUsuarioController', function($scope, $routeParams,$http) {
 
@@ -45,40 +45,40 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Usuário";
 
 });
-myControllers.controller('UsuarioController', function($scope, $routeParams,$http, Upload, $timeout) {
+myControllers.controller('UsuarioController', function($scope, $routeParams,$http, Upload, $timeout,$location) {
 	 $scope.upload = function (dataUrl, name) {
-		 
-	 
+
+
         Upload.upload({
             url: 'http://localhost:8080/CRM/rest/restUsuario/upload',
             data: {
                 file: Upload.dataUrltoBlob(dataUrl, name)
             },
         }).success(function(data) {
-        	
+
         	var foto = data;
-        	
+
         	$scope.foto = foto;
         	$scope.RetornaImagemBase64(foto.id);
-			
+
     	}).error(
 			function(data) {
-				$scope.Resposta = "Erro ao enviar imagem: "+data;							
+				$scope.Resposta = "Erro ao enviar imagem: "+data;
 		});
     }
 	$scope.RetornaImagemBase64 = function (idimage){
-		
+
 		//pegando foto de usuario cadastrada temporareamente
 		 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
 		.success(function(data) {
 			document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
 		});
-		
+
 	}
-	
 
 
-	
+
+
 	$http.get('http://localhost:8080/CRM/rest/restCollections/genders')
 	.success(function(data) {
 		$scope.generos = data["genero"];
@@ -104,18 +104,18 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 		$scope.telefones = data["telefone"];
 	});
 
-    
-    
+
+
 	$scope.EnviarInformacao = function() {
-		
-		
+
+
 		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-			$scope.listTelefones[i].id = null;			
+			$scope.listTelefones[i].id = null;
 		}
 
-	    
-	
-	    
+
+
+
 		$scope.usuario.telefones_usuario = $scope.listTelefones;
 		var parameter = JSON.stringify({
 			type : "usuario",
@@ -152,6 +152,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 				function(data, status, headers, config) {
 
 					alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
+					$location.path("/Usuario");
 
 				}).error(
 				function(data, status, header, config) {
@@ -168,10 +169,10 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
    		.success(function(data) {
    			$scope.tipostelefone = data["tipoTelefone"];
    		});
-      
+
  		$scope.listTelefones=[];
  		$scope.add = function(){
- 			
+
  			if(validarCampos()){
  				if($scope.telefone.id == null){
 		 				autoincrement();
@@ -187,13 +188,13 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	 	  		 	$scope.telefone.tipotelefone = '';
 	 	  			$scope.telefone.numero = '';
  			}
- 			
- 			
- 				 			
 
-  			
-  			
-  			
+
+
+
+
+
+
   		}
 
   		$scope.selectEdit = function(id){
@@ -213,7 +214,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
   				if($scope.listTelefone[i].id == id)
   					return i;
   			return 1;
- 					
+
   		}
   		function autoincrement(){
   			$scope.telefone.id = Object.keys($scope.listTelefones).length;
@@ -237,19 +238,19 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
         }
         $scope.Excluir = function(id){
  		   if(id){
- 				
+
  				$http.post('http://localhost:8080/CRM/rest/restUsuario/Excluir/'+id)
  					.success(
  					function(data, status) {
  						$scope.Resposta = 'Usuário Excluído com Sucesso!';
  						$scope.BuscarInformacao();
- 						
+
  					}).error(
  					function(data, status) {
  						$scope.Resposta = data ;
  					});
  			   };
- 			
+
  			};
- 	
+
 });

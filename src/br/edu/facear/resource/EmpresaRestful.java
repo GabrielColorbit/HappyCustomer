@@ -33,34 +33,68 @@ public class EmpresaRestful {
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(Empresa empresa) throws Exception {
-		
-			
-		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-		for(Telefone t : empresa.getTelefones_empresa()){
-			new FacadeHappyCustomer().CadastrarTelefone(t);
-			telefonelist.add(t);
+		//Cadastra se a empresa for nova
+		if (empresa.getId() == null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for(Telefone t : empresa.getTelefones_empresa()){
+					new FacadeHappyCustomer().CadastrarTelefone(t);
+					telefonelist.add(t);
+				}
+				empresa.setTelefones_empresa(telefonelist);
+
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for(Comunicador c : empresa.getComunicadores_empresa()){
+					new FacadeHappyCustomer().CadastrarComunicador(c);
+					comunicadorlist.add(c);
+				}
+				empresa.setComunicadores_empresa(comunicadorlist);
+
+				ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+				for(Contato c : empresa.getContatos() ){
+					contatos_empresa.add(c);
+				}
+				empresa.setContatos(contatos_empresa);
+
+				new FacadeHappyCustomer().CadastrarEmpresa(empresa);
 		}
-		empresa.setTelefones_empresa(telefonelist);
-		
-		ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-		for(Comunicador c : empresa.getComunicadores_empresa()){
-			new FacadeHappyCustomer().CadastrarComunicador(c);
-			comunicadorlist.add(c);
-		}
-		empresa.setComunicadores_empresa(comunicadorlist);
-		
-		ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-		for(Contato c : empresa.getContatos() ){
-			contatos_empresa.add(c);
-		}
-		
-		empresa.setContatos(contatos_empresa);
-		
-		
-		if (empresa.getId() == null)
-			new FacadeHappyCustomer().CadastrarEmpresa(empresa);
-		else
+		//altera empresa já criada
+		else{
+			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+			for(Telefone t : empresa.getTelefones_empresa()){
+				if(t.getId() == null){
+					new FacadeHappyCustomer().CadastrarTelefone(t);
+				}else{
+					new FacadeHappyCustomer().AlterarTelefone(t);
+				}
+				telefonelist.add(t);
+			}
+			empresa.setTelefones_empresa(telefonelist);
+
+			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+			for(Comunicador c : empresa.getComunicadores_empresa()){
+				if(c.getId() == null){//cadastra novos comunicadores
+					new FacadeHappyCustomer().CadastrarComunicador(c);
+				}else{//salva alterações em comunicador'
+					new FacadeHappyCustomer().AlterarComunicador(c);
+				}
+				comunicadorlist.add(c);
+			}
+			empresa.setComunicadores_empresa(comunicadorlist);
+
+			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+			for(Contato c : empresa.getContatos() ){
+				contatos_empresa.add(c);
+			}
+			empresa.setContatos(contatos_empresa);
+
+
+
 			new FacadeHappyCustomer().AlterarEmpresa(empresa);
+
+
+
+		}
+
 	}
 
 	@GET
@@ -72,7 +106,7 @@ public class EmpresaRestful {
 
 		return e;
 	}
-	
+
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
@@ -81,6 +115,6 @@ public class EmpresaRestful {
 		Empresa e = new FacadeHappyCustomer().BuscarEmpresaPorId(id);
 		FacadeHappyCustomer fhc = new FacadeHappyCustomer();
 		fhc.ExcluirEmpresa(e);
-		
+
 	}
 }

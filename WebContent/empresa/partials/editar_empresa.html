@@ -13,7 +13,7 @@
 	</header>
 
 	<!-- Portfolio Grid Section -->
-	<section class="grid form_empresa" ng-controller="EmpresaController">
+	<section class="grid form_empresa" ng-controller="GetEmpresaController">
 		<div class="container">
 
 			<div class="row">
@@ -220,7 +220,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>salvar</a>
 
 								</div>
 
@@ -228,25 +228,27 @@
 							</div>
 						</div>
 
-
+						<!-- Gerenciar Telefones da Empresa-->
 						<div class="row ">
 
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th>ID</th>
 											<th>Número</th>
 											<th>Tipo</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-							                
+							                <td>{{telefone.id}}</td>
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>excluir</a>
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>remover</a>
 											</td>
 										</tr>
 										
@@ -256,6 +258,8 @@
 
 						</div>
 						
+						
+						<!-- Gerenciar Comunicadores da Empresa-->
 						<div class="row control-group">
 							<h3>Comunicadores</h3>
 
@@ -265,9 +269,8 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Endereço</label> 
-										<input type="email" id="numero" ng-model="comunicador.numero" class="form-control" placeholder="Endereço"
-											id="Nome do contato" required
-											data-validation-required-message="Por favor insira um nome">
+										<input type="text" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
+											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
@@ -284,7 +287,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>salvar</a>
 
 								</div>
 
@@ -299,18 +302,20 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+										
 											<th>Endereço</th>
 											<th>Tipo</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="telefone in listTelefones">
+									   <tr data-ng-repeat="comunicador in listComunicadores">
 							                
-							                <td>{{comunicador.endereco}}</td>
+							                <td>{{comunicador.id}} - {{comunicador.nome}}</td>
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(comunicador.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(comunicador.id)'>excluir</a>
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>remover</a>
 											</td>
 										</tr>
 										
@@ -327,13 +332,13 @@
 										<label>Contato</label> 
 										<input type="hidden" ng-model="empresa.id" />
 										<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
-										    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="empresa.contato" >    
+										    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="contato" >    
 										    <option value="">Contato</option>
 										</select>	
 										<p class="help-block text-danger"></p>
 							</div>
 							<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addContato()'>adicionar</a>
 
 								</div>
 						</div>
@@ -344,16 +349,17 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th>Id</th>
 											<th>Nome</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="contato in listContatos">
-							                
+							                <td>{{contato.id}}</td>
 							                <td>{{contato.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(contato.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(contato.id)'>excluir</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>remover</a>
 											</td>
 										</tr>
 										

@@ -27,6 +27,7 @@ import br.edu.facear.crm.bo.UsuarioBO;
 import br.edu.facear.crm.dao.EmpresaDAO;
 import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Cidade;
+import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
 import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Estado;
@@ -36,8 +37,8 @@ import br.edu.facear.crm.entity.Ligacao;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.crm.entity.OrigemContato;
 import br.edu.facear.crm.entity.Produto;
-import br.edu.facear.crm.entity.Status;
 import br.edu.facear.crm.entity.Situacao;
+import br.edu.facear.crm.entity.Status;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.TipoAtividade;
 import br.edu.facear.crm.entity.TipoComunicador;
@@ -47,14 +48,15 @@ import br.edu.facear.crm.entity.TipoLigacao;
 import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
+import br.edu.facear.facade.FacadeHappyCustomer;
 
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		gerenciarTipoTelefone();
-		gerenciarTipoEmpresa();
-		gerenciarTelefone();
+//		gerenciarTipoTelefone();
+//		gerenciarTipoEmpresa();
+//		gerenciarTelefone();
 //		gerenciarProduto();
 //		gerenciarEstado();
 //		gerenciarCidade();
@@ -64,7 +66,7 @@ public class Main {
 //		gerenciarTipoContato();
 //		gerenciarTipoAtividade();
 //		gerenciarUsuario();
-//		gerenciarEmpresa();
+		gerenciarEmpresa();
 //		gerenciarContato();		
 //		gerenciarNegocio();
 //		gerenciarItem();
@@ -135,8 +137,8 @@ public class Main {
 		// tipotelefone:" + telefone.getTipotelefone().getNome());
 
 		// /*Alterar telefone*/
-		telefone.setNumero("4191758834");
-		telefoneBO.Alterar(telefone);
+//		telefone.setNumero("4191758834");
+//		telefoneBO.Alterar(telefone);
 		// telefoneBO.Excluir(telefone);
 
 		// System.out.println("Telefone:");
@@ -498,86 +500,72 @@ public class Main {
 	}
 
 	private static void gerenciarEmpresa() throws Exception {
-		EmpresaBO eBO = new EmpresaBO();
-		Empresa e = new Empresa();
+		// ATRIBUTOS
+		Empresa Empresa = new Empresa();
+		Contato Contato = new Contato();
+		Usuario Usuario = new Usuario();
+		TipoEmpresa TipoEmpresa = new TipoEmpresa();
+		Cidade Cidade = new Cidade();
+		Telefone Telefone = new Telefone();
+		TipoTelefone TipoTelefone = new TipoTelefone();
+		Comunicador Comunicador = new Comunicador();
+		FacadeHappyCustomer facade = new FacadeHappyCustomer();
+		TipoComunicador TipoComunicador = new TipoComunicador();
+				Empresa.setRazaosocial("Gelopar");
+				Empresa.setCnpj("75190074000160");
+				Empresa.setInscricaoestadual("1352678934");
+				Empresa.setEndereco("Rua Dr. Eli Volpato");
+				Empresa.setNumero(250l);
+				Empresa.setComplemento("Próximo a Petrobrás");
+				Empresa.setCep("83707250");
+				Empresa.setBairro("Chapada");
+				Empresa.setSite("www.gelopar.com.br");
+				Empresa.setRamo("Refrigeração");
+				Empresa.setLogo("C:\\Downloads\\Gelopar.png");
+				// Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
+				Empresa.setDatacadastro("15/11/2016");
+				Empresa.setStatus(Status.Ativo);
 
-		TipoEmpresaBO teBO = new TipoEmpresaBO();
-		TipoEmpresa te = new TipoEmpresa();
-		te = teBO.BuscarID(1l);
-		e.setTipoempresa(te);
-		CidadeBO cBO = new CidadeBO();
-		Cidade c = new Cidade();
-		c = cBO.BuscarID(1l);
-		e.setCidade(c);
+				// CIDADE
+				Cidade.setId(2l);
+				Empresa.setCidade(Cidade);
 
-		e.setRazaosocial("Boobox");
-		e.setCnpj("000.000.00.000-41");
-		e.setRazaosocial("Facebook LTDA");
-		// date formating
-		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
-		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		e.setDatacadastro("15/11/2016");
-		e.setStatus(Status.Ativo);
-		e.setRamo("Tecnologia");
-		e.setSite("https://www.boobox.com");
-		e.setEndereco("Rua do vale do silicio");
-		e.setNumero(123l);
-		e.setCep("81170640l");
+				// TIPO DE EMPRESA
+				TipoEmpresa.setId(1l);
+				Empresa.setTipoempresa(TipoEmpresa);
 
-		Telefone t = new Telefone();
-		Telefone t2 = new Telefone();
-		t = new TelefoneBO().BuscarID(1l);
-		t2 = new TelefoneBO().BuscarID(2l);
+				// USUÁRIO RESPONSÁVEL PELA EMPRESA
+				Usuario.setId(1l);
+				Empresa.setUsuarioresponsavel(Usuario);
 
-		List<Telefone> telefones = new ArrayList<Telefone>();
-		telefones.add(t);
-		telefones.add(t2);
-		// e.setTelefones(telefones);
+				// CADASTRANDO TELEFONE
+				
+				Telefone = new FacadeHappyCustomer().BuscarTelefonePorId(2l);
 
-		Contato co = new Contato();
-		Contato co2 = new Contato();
-		co = new ContatoBO().BuscarID(1l);
-		co2 = new ContatoBO().BuscarID(2l);
+				List<Telefone> telefones_empresa = new ArrayList<Telefone>();
+				telefones_empresa.add(Telefone);
+				Empresa.setTelefones_empresa(telefones_empresa);
 
-		List<Contato> contatos = new ArrayList<Contato>();
-		contatos.add(co);
-		contatos.add(co2);
-		e.setContatos(contatos);
-		eBO.Cadastrar(e);
+				// CADASTRANDO COMUNICADOR
+				Comunicador.setNome("gelopar@gelopar.com");
+				TipoComunicador.setId(1l);
+				Comunicador.setTipocomunicador(TipoComunicador);
+				facade.CadastrarComunicador(Comunicador);
 
-		// System.out.println("Busca Usuario:");
-		// us = usBO.BuscarID(1l);
-		// System.out.println("id: "+ us.getId()+" nome: "+us.getNome() +"
-		// tipoUsuario: "+us.getTipousuario().getNome() +" Estado:
-		// "+us.getCidade().getEstado().getNome() +" Cidade:
-		// "+us.getCidade().getNome()
-		// +" Email: "+us.getEmail()+" Senha: "+us.getSenha()+" cpf:
-		// "+us.getCpf()+" Genero: "+us.getGenero().toString()+" Cargo:
-		// "+us.getCargo() +" DataNascimento "+us.getDatanascimento().toString()
-		// +" Endereço: "+us.getEndereco()+" Numero: "+us.getNumero()+" Cep:
-		// "+us.getCep() );
-		// us = usBO.BuscarID(1l);
-		// us.setCpf("111.000.000.00");
-		// usBO.Alterar(us);
-		//
-		//
-		//
-		// System.out.println("Lista de Usuarios: ");
-		// List<Usuario> lista_tc = usBO.Listar();
-		// for(Usuario current_tc : lista_tc){
-		// System.out.println("id: "+ current_tc.getId()+" nome:
-		// "+current_tc.getNome() +" tipoUsuario:
-		// "+current_tc.getTipousuario().getNome() +" Estado:
-		// "+current_tc.getCidade().getEstado().getNome() +" Cidade:
-		// "+current_tc.getCidade().getNome()
-		// +" Email: "+current_tc.getEmail()+" Senha: "+current_tc.getSenha()+"
-		// cpf: "+current_tc.getCpf()+" Genero:
-		// "+current_tc.getGenero().toString()+" Cargo: "+current_tc.getCargo()
-		// +" DataNascimento "+current_tc.getDatanascimento().toString()
-		// +" Endereço: "+current_tc.getEndereco()+" Numero:
-		// "+current_tc.getNumero()+" Cep: "+current_tc.getCep() ); }
-		//
+				List<Comunicador> comunicadores_empresa = new ArrayList<Comunicador>();
+				comunicadores_empresa.add(Comunicador);
+				Empresa.setComunicadores_empresa(comunicadores_empresa);
 
+				// CADASTRANDO CONTATOS
+
+				Contato = new FacadeHappyCustomer().BuscarContatoPorId(3l); 
+				List<Contato> contatos_empresa = new ArrayList<Contato>(); 
+				contatos_empresa.add(Contato);
+				Empresa.setContatos(contatos_empresa);
+				 
+
+				// CADASTRAR
+				facade.CadastrarEmpresa(Empresa);
 	}
 
 	public static void gerenciarNegocio() throws Exception {
