@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -46,8 +44,7 @@ public class ContatoTest {
 		// ATRIBUTOS
 		Contato.setNome("Luiz");
 		Contato.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(9, 05, 1997);
-		Contato.setDatanascimento(datanascimento.getTime());
+		Contato.setDatanascimento("09/05/1997");
 		Contato.setEndereco("Rua João Halinski");
 		Contato.setNumero(44l);
 		Contato.setComplemento("Próximo a Cocelpa");
@@ -56,8 +53,7 @@ public class ContatoTest {
 		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Programador");
 		Contato.setFoto("C:\\Downloads\\Gelopar.png");
-		Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
-		Contato.setDatacadastro(datacadastro.getTime());
+		Contato.setDatacadastro("19/11/2016");
 		Contato.setStatus(Status.Ativo);
 
 		// CIDADE
@@ -117,8 +113,7 @@ public class ContatoTest {
 		// ATRIBUTOS
 		Contato.setNome("Gabriel");
 		Contato.setCpf("19765478239");
-		Calendar datanascimento = new GregorianCalendar(15, 06, 1992);
-		Contato.setDatanascimento(datanascimento.getTime());
+		Contato.setDatanascimento("30/09/1994");
 		Contato.setEndereco("Rua Carlos Gomes");
 		Contato.setNumero(110l);
 		Contato.setComplemento("Próximo ao Terminal do Cabral");
@@ -127,8 +122,7 @@ public class ContatoTest {
 		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Analista");
 		Contato.setFoto("C:\\Downloads\\Guilhermer.jpeg");
-		Calendar datacadastro = new GregorianCalendar(29, 10, 2016);
-		Contato.setDatacadastro(datacadastro.getTime());
+		Contato.setDatacadastro("20/11/2016");
 		Contato.setStatus(Status.Inativo);
 
 		// CIDADE

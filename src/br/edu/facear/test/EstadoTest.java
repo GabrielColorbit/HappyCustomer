@@ -22,7 +22,7 @@ public class EstadoTest {
 		for(int i = 0; i<27; i++){
 			
 			if(i == 0){
-				nome = "Acre";
+				nome = "Paraná";
 			}
 			else if(i == 1){
 				nome = "Alagoas";

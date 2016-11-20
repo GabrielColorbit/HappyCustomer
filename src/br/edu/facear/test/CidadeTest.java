@@ -24,15 +24,15 @@ public class CidadeTest {
 		for(int i = 0; i<29; i++){
 			
 			if(i == 0){
-				nome = "Rio Branco";
+				nome = "Curitiba";
 				estado = 1l;
 			}
 			else if(i == 1){
-				nome = "Maceió";
+				nome = "Araucária";
 				estado = 2l;
 			}
 			else if(i == 2){
-				nome = "Macapá";
+				nome = "Quitandinha";
 				estado = 3l;
 			}
 			else if(i == 3){
@@ -84,7 +84,7 @@ public class CidadeTest {
 				estado = 15l;
 			}
 			else if(i == 15){
-				nome = "Curitiba";
+				nome = "Rio Branco";
 				estado = 16l;
 			}
 			else if(i == 16){
@@ -132,11 +132,7 @@ public class CidadeTest {
 				estado = 27l;
 			}
 			else if(i == 27){
-				nome = "Araucária";
-				estado = 16l;
-			}
-			else if(i == 28){
-				nome = "Quitandinha";
+				nome = "Maceió";
 				estado = 16l;
 			}
 		

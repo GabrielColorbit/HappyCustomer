@@ -2,8 +2,6 @@ package br.edu.facear.test;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -39,9 +37,7 @@ public class LigacaoTest {
 
 		for (int i = 0; i < 2; i++) {
 			// ATRIBUTOS
-			Calendar data = new GregorianCalendar(31, 10, 2016);
-			Ligacao.setData(data.getTime());
-			// Ligacao.setData(sdf.format(new Date(("31/10/2016")));
+			Ligacao.setData("19/11/2016");
 			Telefone.setId(1l);
 			Ligacao.setTelefone(Telefone);
 			Ligacao.setDuracao("02:10s");
@@ -77,8 +73,7 @@ public class LigacaoTest {
 		Ligacao Ligacao = facade.BuscarLigacaoPorId(2l);
 
 		// ATRIBUTOS
-		Calendar data = new GregorianCalendar(01, 11, 2016);
-		Ligacao.setData(data.getTime());
+		Ligacao.setData("20/11/2016");
 		Ligacao.setDuracao("10:57s");
 		Ligacao.setTipoligacao(TipoLigacao.Recebida);
 		Ligacao.setResumo("Ligou agradecendo pelo conserto da máquina.");

@@ -1,7 +1,5 @@
 package br.edu.facear.crm.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -46,10 +44,12 @@ public class Ligacao {
 	private Atividade atividade;
 	
 	// ATRIBUTOS
-	private Date data;
+	private String data;
 	private String duracao;
 	private TipoLigacao tipoligacao;
 	private String resumo;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -86,10 +86,10 @@ public class Ligacao {
 	public void setAtividade(Atividade atividade) {
 		this.atividade = atividade;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public String getDuracao() {
@@ -203,7 +203,7 @@ public class Ligacao {
 	 * @param resumo
 	 */
 	public Ligacao(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, Telefone telefone,
-			Atividade atividade, Date data, String duracao, TipoLigacao tipoligacao, String resumo) {
+			Atividade atividade, String data, String duracao, TipoLigacao tipoligacao, String resumo) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;

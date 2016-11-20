@@ -312,8 +312,7 @@ public class Main {
 		us.setCargo("cargo de teste");
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
-		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		us.setDatanascimento(calendar.getTime());
+		us.setDatanascimento("09/051/997");
 		us.setEndereco("Rua dos zef");
 		us.setNumero(126l);
 		us.setCep("81170680");
@@ -416,7 +415,7 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		co.setDatanascimento(calendar.getTime());
+		co.setDatanascimento("30/09/1994");
 
 		co.setEndereco("rua dos bobos");
 		co.setNumero(0l);
@@ -579,7 +578,7 @@ public class Main {
 		n.setEmpresa(e);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(25, 11, 2016);
-		n.setData(calendar.getTime());
+		n.setData("19/11/2016");
 
 		nbo.Cadastrar(n);
 
@@ -588,7 +587,7 @@ public class Main {
 		System.out
 				.println(" ID: " + n.getId() + " Empresa: " + n.getEmpresa().getRazaosocial() + "Data: " + n.getData());
 		calendar = new GregorianCalendar(25, 11, 2017);
-		n.setData(calendar.getTime());
+		n.setData("20/11/2016");
 		nbo.Alterar(n);
 
 		System.out.println("Tipo Contato: ");
@@ -660,9 +659,9 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(20, 9, 2016);
-		a.setDatainicio(calendar.getTime());
+		a.setDatainicio("19/11/2016");
 		Calendar calendarfim = new GregorianCalendar(27, 11, 2016);
-		a.setDatafim(calendarfim.getTime());
+		a.setDatafim("20/11/2016");
 		a.setDescricao("Lorem ipsum");
 		a.setNome("Cadastrar contato para empresa");
 
@@ -708,7 +707,8 @@ public class Main {
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
 		Calendar calendar = new GregorianCalendar(20, 9, 2016);
-		l.setData(calendar.getTime());
+		//l.setData(calendar.getTime());
+		l.setData("19/11/2016");
 
 		l.setTipoligacao(TipoLigacao.Efetuada);
 		l.setResumo("falar sobre assuntos peculiares");

@@ -35,6 +35,10 @@ myControllers.controller('CadastrarContatoController', function($scope, $routePa
 });
 myControllers.controller('ContatoController', function($scope, $routeParams,$http) {
 	
+	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+	.success(function(data) {
+		$scope.usuarios = data["usuario"];
+	});
 	$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 	.success(function(data) {
 		

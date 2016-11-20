@@ -1,7 +1,5 @@
 package br.edu.facear.crm.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,7 +37,7 @@ public class Negocio {
 	
 	// ATRIBUTOS
 	private String nome;
-	private Date data;
+	private String data;
 	
 	
 	public Long getId() {
@@ -72,10 +70,10 @@ public class Negocio {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	@Override
@@ -136,15 +134,7 @@ public class Negocio {
 		return "Negocio [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
 				+ ", empresa=" + empresa + ", nome=" + nome + ", data=" + data + "]";
 	}
-	/**
-	 * @param id
-	 * @param usuarioresponsavel
-	 * @param contato
-	 * @param empresa
-	 * @param nome
-	 * @param data
-	 */
-	public Negocio(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, String nome, Date data) {
+	public Negocio(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, String nome, String data) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -153,9 +143,6 @@ public class Negocio {
 		this.nome = nome;
 		this.data = data;
 	}
-	/**
-	 * 
-	 */
 	public Negocio() {
 		super();
 		// TODO Auto-generated constructor stub

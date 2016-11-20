@@ -2,12 +2,10 @@ package br.edu.facear.crm.entity;
 
 import java.util.Arrays;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -22,6 +20,8 @@ public class Foto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
 	private Long id;
 	private byte[] imagem;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -69,8 +69,4 @@ public class Foto {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-
 }

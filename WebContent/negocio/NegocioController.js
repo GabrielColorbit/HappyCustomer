@@ -25,6 +25,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 			$scope.negocio = data;
 			var negocio =  new Object();
 			negocio = $scope.negocio 
+			$scope.Titulo = "Negócio: "+ negocio.nome;
 
 		});
 	}
@@ -34,7 +35,7 @@ myControllers.controller('CadastrarNegocioController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Negócio";
 	
 });
-myControllers.controller('NegocioController', function($scope, $routeParams,$http) {
+myControllers.controller('NegocioController', function($scope, $routeParams, $http, $location) {
 	
 	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
 	.success(function(data) {
@@ -63,7 +64,6 @@ myControllers.controller('NegocioController', function($scope, $routeParams,$htt
 			empresa : $scope.negocio.empresa,
 			contato : $scope.negocio.contato,
 			data : $scope.negocio.data
-			
 		});
 		var config = {
 			headers : {
@@ -75,7 +75,14 @@ myControllers.controller('NegocioController', function($scope, $routeParams,$htt
 				'http://localhost:8080/CRM/rest/restNegocio/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Negócio ('+$scope.negocio.nome+') Salvo com Sucesso!';
+					$scope.negocio = data;
+					var negocio =  new Object();
+					negocio = $scope.negocio 
+							
+					alert("Negócio: "+ negocio.id +"-"+ negocio.nome +" Salvo com sucesso!");
+	
+					$location.path('/Negocio/Editar/'+negocio.id)
+					
 					
 					
 				}).error(

@@ -76,12 +76,13 @@ public class ContatoBO implements InterfaceBO<Contato> {
 			throw new Exception("Selecione um Origem Contato.");
 		} else if (contato.getCidade() == null) {
 			throw new Exception("Selecione uma Cidade.");
-		} else if (contato.getTelefones_contato() == null) {
-			throw new Exception("Selecione um Telefone.");
 		} 
-		else if (contato.getComunicadores_contato() == null) {
-			throw new Exception("Selecione um Comunicador Contato.");
-		}
+//		else if (contato.getTelefones_contato() == null) {
+//			throw new Exception("Selecione um Telefone.");
+//		} 
+//		else if (contato.getComunicadores_contato() == null) {
+//			throw new Exception("Selecione um Comunicador Contato.");
+//		}
 //		else if (contato.getEmpresas() == null) {
 //			throw new Exception("Selecione uma Empresa.");
 //		}
@@ -110,11 +111,11 @@ public class ContatoBO implements InterfaceBO<Contato> {
 //			throw new Exception("Foto Fornecida Invalido.");
 //		} 
 		else if (contato.getDatacadastro() == null) {
-			throw new Exception("Data de Cdastro Fornecido Invalido.");
+			throw new Exception("Data de Cadastro Fornecido Invalido.");
 		} else if (contato.getStatus() == null) {
 			throw new Exception("Status Fornecido Invalido.");
 		}
-		contatoDAO.Cadastrar(contato);
+		contatoDAO.Alterar(contato);
 	}
 
 	// EXCLUIR

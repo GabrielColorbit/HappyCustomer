@@ -93,16 +93,16 @@
 					<div class="row control-group">					
 						
 						<div
-							class="form-group col-xs-6 floating-label-form-group controls">
+							class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Duração</label> <input type="text" class="form-control"
-								placeholder="Duração" id="Duracao" required
-								data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
+							placeholder="00min00s" id="Duracao" required
+							data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
 							<p class="help-block text-danger"></p>
 						</div>
 						
 						<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 							<label>Data</label> 
-							<input type="date" class="form-control" placeholder="Data de Cadastro" ng-model="ligacao.data" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
+							<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.data" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
 							<p class="help-block text-danger"></p>
 						</div>
 						

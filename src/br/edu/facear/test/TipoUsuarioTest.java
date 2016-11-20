@@ -18,7 +18,7 @@ public class TipoUsuarioTest {
 	public void testCadastrarTipoUsuario() throws Exception {
 
 		TipoUsuario TipoUsuario = new TipoUsuario();
-		TipoUsuario.setNome("Operador");
+		TipoUsuario.setNome("Administrador");
 		facade.CadastrarTipoUsuario(TipoUsuario);
 		Assert.assertEquals(true, TipoUsuario.getId() != null);
 
@@ -28,9 +28,9 @@ public class TipoUsuarioTest {
 	// @Test
 	public void testAterarTipoUsuario() throws Exception {
 		TipoUsuario TipoUsuario = facade.BuscarTipoUsuarioPorId(2l);
-		TipoUsuario.setNome("Administrador");
+		TipoUsuario.setNome("Operador");
 		facade.AlterarTipoUsuario(TipoUsuario);
-		Assert.assertEquals(true, TipoUsuario.getNome().equals("Administrador"));
+		Assert.assertEquals(true, TipoUsuario.getNome().equals("Operador"));
 	}
 
 	// EXCLUIR

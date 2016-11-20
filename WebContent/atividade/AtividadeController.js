@@ -16,15 +16,15 @@ myControllers.controller('ListarAtividadeController', function($scope,$http) {
     };
 });
 myControllers.controller('GetAtividadeController', function($scope, $routeParams,$http) {
-	$scope.Titulo = "Editar Atividade";
+	
 
 	if($routeParams.atividadeId){
 		$http.get('http://localhost:8080/CRM/rest/restAtividade/Editar/'+$routeParams.atividadeId)
 		.success(function(data) {
 			$scope.atividade = data;
 			var atividade =  new Object();
-			atividade = $scope.atividade 
-
+			atividade = $scope.atividade;
+			$scope.Titulo = "Atividade: "+ atividade.nome;
 		});
 	}
 });
@@ -33,7 +33,7 @@ myControllers.controller('CadastrarAtividadeController', function($scope, $route
 	$scope.Titulo = "Cadastrar Atividade";
 	
 });
-myControllers.controller('AtividadeController', function($scope, $routeParams,$http) {
+myControllers.controller('AtividadeController', function($scope, $routeParams, $http, $location) {
 	
 	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
 	.success(function(data) {
@@ -101,8 +101,14 @@ myControllers.controller('AtividadeController', function($scope, $routeParams,$h
 				'http://localhost:8080/CRM/rest/restAtividade/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Atividade ('+$scope.atividade.nome+') Salva com Sucesso!';
 					
+					$scope.atividade = data;
+					var atividade =  new Object();
+					atividade = $scope.atividade 
+					
+					alert("Negócio: "+ atividade.id +"-"+ atividade.nome +" Salvo com sucesso!");
+	
+					$location.path('/Atividade/Editar/'+atividade.id)
 					
 				}).error(
 				function(data, status, header, config) {

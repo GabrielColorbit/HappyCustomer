@@ -27,13 +27,14 @@ public class AtividadeRestful {
 
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
-	@Produces("text/plain")
+	@Produces("application/json")
 	@Path("/Salvar")
-	public void cadastrarCliente(Atividade atividade) throws Exception {
+	public Atividade cadastrarCliente(Atividade atividade) throws Exception {
 		if (atividade.getId() == null)
 			new FacadeHappyCustomer().CadastrarAtividade(atividade);
 		else
 			new FacadeHappyCustomer().AlterarAtividade(atividade);
+		return atividade;
 	}
 
 	@GET
