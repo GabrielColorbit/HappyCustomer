@@ -93,6 +93,7 @@ public class Contato implements Serializable{
 	private String foto;
 	private String datacadastro;
 	private Status status;
+	private long idfoto;
 
 	
 
@@ -361,19 +362,15 @@ public class Contato implements Serializable{
 		this.status = status;
 	}
 
+	public long getIdfoto() {
+		return idfoto;
+	}
 
 
 
-
-
-
-	
-
-
-
-
-
-	
+	public void setIdfoto(long idfoto) {
+		this.idfoto = idfoto;
+	}
 
 
 

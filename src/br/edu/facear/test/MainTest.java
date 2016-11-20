@@ -109,23 +109,23 @@ public class MainTest {
 
 			if (y == 1) {
 
-				// USUARIO
-				usuariotest.testAterarUsuario();
-
-				// EMPRESA
-//				empresatest.testAterarEmpresa();
-
-				// CONTATO
-				contatotest.testAterarContato();
-
-				// ATIVIDADE
-				atividadetest.testAterarAtividade();
-
-				// NEGOCIO
-				negociotest.testAterarNegocio();
-
-				// LIGACAO
-				ligacaotest.testAterarLigacao();
+//				// USUARIO
+//				usuariotest.testAterarUsuario();
+//
+//				// EMPRESA
+////				empresatest.testAterarEmpresa();
+//
+//				// CONTATO
+//				contatotest.testAterarContato();
+//
+//				// ATIVIDADE
+//				atividadetest.testAterarAtividade();
+//
+//				// NEGOCIO
+//				negociotest.testAterarNegocio();
+//
+//				// LIGACAO
+//				ligacaotest.testAterarLigacao();
 
 			}
 		}

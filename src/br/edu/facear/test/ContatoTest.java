@@ -52,7 +52,7 @@ public class ContatoTest {
 		Contato.setBairro("Jardim Alvorada");
 		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Programador");
-		Contato.setFoto("C:\\Downloads\\Gelopar.png");
+		
 		Contato.setDatacadastro("19/11/2016");
 		Contato.setStatus(Status.Ativo);
 
@@ -121,7 +121,6 @@ public class ContatoTest {
 		Contato.setBairro("Centro");
 		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Analista");
-		Contato.setFoto("C:\\Downloads\\Guilhermer.jpeg");
 		Contato.setDatacadastro("20/11/2016");
 		Contato.setStatus(Status.Inativo);
 
