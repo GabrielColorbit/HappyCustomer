@@ -1,5 +1,6 @@
 var myControllers = angular.module('NegocioControllers',[]);
 
+//CONTROLER DE NEGÓCIOS
 myControllers.controller('ListarNegocioController', function($scope,$http) {
 	$scope.Titulo = "Negócios";
 	$scope.BuscarInformacao = function() {
@@ -79,7 +80,7 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 					var negocio =  new Object();
 					negocio = $scope.negocio 
 							
-					alert("Negócio: "+ negocio.id +"-"+ negocio.nome +" Salvo com sucesso!");
+					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
 	
 					$location.path('/Negocio/Editar/'+negocio.id)
 					
@@ -140,6 +141,9 @@ myControllers.controller('GetItemController', function($scope, $routeParams,$htt
 	}
 });
 
+
+
+//CONTROLER DE ITENS
 myControllers.controller('CadastrarItemController', function($scope, $routeParams,$http) {
 	
 	$scope.Titulo = "Cadastrar Negócio";

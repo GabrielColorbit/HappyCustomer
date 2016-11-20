@@ -23,6 +23,42 @@
 					
 					<form name="sentMessage" id="contactForm" novalidate>
 						
+						<div class="form-group last">
+						
+					        <p>Selecione a Imagem do Perfil do Contato.</p>
+					        
+					        <div ngf-drop ng-model="picFile" ngf-pattern="image/*"  class="cropArea col-xs-7" >
+					             
+					            <img-crop image="picFile  | ngfDataUrl"                 
+					            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+					            </img-crop>
+
+							</div>
+					        
+				        	<div class="col-xs-5">
+				        	
+					        	<div class="form-group btn-group col-xs-12">
+									<button ngf-select ng-model="picFile" accept="image/*" class="btn btn-default btn-sm to-left"> Buscar Imagem </button>
+							        <button ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success btn-sm to-left" > Confirmar Imagem </button> 						        	
+					        	
+					        	</div>				        
+						        
+						        <div class="image_circle">
+									<img class="image_user" id="ItemPreview" />
+					             
+						            <!-- <img ng-src="{{croppedDataUrl}}" /> -->
+							        					            
+						        </div>
+						        
+					        	<div class="form-group btn-group col-xs-12">
+									<span class="success">{{imagemresult}}</span>
+							        <span class="danger" ng-show="errorMsg">{{errorMsg}}</span>							        	
+					        	</div>
+
+					        </div>
+					       
+						</div>		
+						
 						<div class="row control-group">
 							
 							<h3>Dados Gerais</h3>
@@ -289,9 +325,8 @@
 						<div id="success">{{Resposta}}</div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
-
 								<a class="btn btn-danger btn-lg to-left" href="#/Contato">Voltar</a>
-								<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Contato">Salvar</button>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Contato">Salvar</a>
 							</div>
 						</div>
 					</form>

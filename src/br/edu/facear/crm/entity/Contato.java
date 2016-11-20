@@ -50,6 +50,8 @@ public class Contato implements Serializable{
 	@ForeignKey(name = "fk_cidade")
 	private Cidade cidade;
 	
+	private Long idfoto;
+	
 	// RELACIONAMENTOS MUITOS PRA MUITOS
 	
 	// TELEFONES
@@ -114,6 +116,12 @@ public class Contato implements Serializable{
 	}
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
+	}
+	public Long getIdfoto() {
+		return idfoto;
+	}
+	public void setIdfoto(Long idfoto) {
+		this.idfoto = idfoto;
 	}
 	public List<Telefone> getTelefones_contato() {
 		return telefones_contato;
@@ -232,6 +240,7 @@ public class Contato implements Serializable{
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((idfoto == null) ? 0 : idfoto.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result + ((origemcontato == null) ? 0 : origemcontato.hashCode());
@@ -317,6 +326,11 @@ public class Contato implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (idfoto == null) {
+			if (other.idfoto != null)
+				return false;
+		} else if (!idfoto.equals(other.idfoto))
+			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
@@ -354,14 +368,15 @@ public class Contato implements Serializable{
 	@Override
 	public String toString() {
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
-				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
-				+ ", comunicadores_contato=" + comunicadores_contato + ", empresas=" + empresas + ", nome=" + nome
-				+ ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero="
-				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
-				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
+				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", idfoto=" + idfoto
+				+ ", telefones_contato=" + telefones_contato + ", comunicadores_contato=" + comunicadores_contato
+				+ ", empresas=" + empresas + ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento
+				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
+				+ ", bairro=" + bairro + ", genero=" + genero + ", cargo=" + cargo + ", foto=" + foto
+				+ ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
-			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
+			Cidade cidade, Long idfoto, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
 			List<Empresa> empresas, String nome, String cpf, String datanascimento, String endereco, Long numero,
 			String complemento, String cep, String bairro, Genero genero, String cargo, String foto,
 			String datacadastro, Status status) {
@@ -371,6 +386,7 @@ public class Contato implements Serializable{
 		this.tipocontato = tipocontato;
 		this.origemcontato = origemcontato;
 		this.cidade = cidade;
+		this.idfoto = idfoto;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
 		this.empresas = empresas;

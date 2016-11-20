@@ -1,7 +1,5 @@
 package br.edu.facear.resource;
 
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,7 +7,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -25,9 +22,7 @@ import com.sun.jersey.multipart.FormDataParam;
 
 import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
-import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.crm.entity.Foto;
-import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -48,6 +43,7 @@ public class UsuarioRestful {
 	@Path("/Salvar")
 	public void cadastrarCliente(Usuario usuario) throws Exception {
 		
+		//TELEFONES
 //		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 //		for(Telefone t : usuario.getTelefones_usuario()){
 //			new FacadeHappyCustomer().CadastrarTelefone(t);

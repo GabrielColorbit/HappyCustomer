@@ -1,7 +1,5 @@
 package br.edu.facear.resource;
 
-import java.awt.image.BufferedImage;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -48,6 +46,5 @@ public class FotoRestful {
 	    
 	    
 		 return response.build();
-	}
-	
+	}	
 }

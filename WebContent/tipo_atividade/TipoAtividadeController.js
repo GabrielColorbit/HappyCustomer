@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoAtividadeControllers',[]);
 
 myControllers.controller('ListarTipoAtividadeController', function($scope,$http) {
-	$scope.Titulo = "Tipo de Atividade";
+	$scope.Titulo = "Tipos de Atividade";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
 		.success(function(data) {
@@ -53,8 +53,8 @@ myControllers.controller('TipoAtividadeController', function($scope, $routeParam
 				'http://localhost:8080/CRM/rest/restTipoAtividade/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'TipoAtividade ('+$scope.tipoAtividade.nome+') Salvo com Sucesso!';
 					
+					alert("Tipo de Atividade: "+ $scope.tipoAtividade.nome +". Salvo Com Sucesso!");					
 					
 				}).error(
 				function(data, status, header, config) {
@@ -62,20 +62,22 @@ myControllers.controller('TipoAtividadeController', function($scope, $routeParam
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restTipoAtividade/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Tipo de Atividade Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
-			
-			};
+		   var result = confirm('Tem Certeza?');
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restTipoAtividade/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Tipo de Atividade: Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+	   };
 	
 });

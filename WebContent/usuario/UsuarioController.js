@@ -1,7 +1,5 @@
 var myControllers = angular.module('UsuarioControllers',[]);
 
-
-
 myControllers.controller('ListarUsuarioController', function($scope,$http) {
 	$scope.Titulo = "Usuários";
 	$scope.BuscarInformacao = function() {
@@ -56,7 +54,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 	    }
 		$scope.RetornaImagemBase64 = function (idimage){
 			
-			//pegando foto de usuario cadastrada temporareamente
+			//pegando foto de usuario cadastrada temporariamente
 			 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
 			.success(function(data) {
 				document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
@@ -347,7 +345,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 				parameter, config).success(
 				function(data, status, headers, config) {
 
-					alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
+					alert( 'Usuário: '+$scope.usuario.nome+'. Salvo Com Sucesso!')
 
 				}).error(
 				function(data, status, header, config) {

@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoComunicadorControllers',[]);
 
 myControllers.controller('ListarTipoComunicadorController', function($scope,$http) {
-	$scope.Titulo = "Tipo de Comunicador";
+	$scope.Titulo = "Tipos de Comunicador";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
 		.success(function(data) {
@@ -53,8 +53,8 @@ myControllers.controller('TipoComunicadorController', function($scope, $routePar
 				'http://localhost:8080/CRM/rest/restTipoComunicador/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Tipo Comunicador ('+$scope.tipoComunicador.nome+') Salvo com Sucesso!';
-					
+				
+					alert("Tipo de Comunicador: "+ $scope.tipoComunicador.nome +". Salvo Com Sucesso!");							
 					
 				}).error(
 				function(data, status, header, config) {

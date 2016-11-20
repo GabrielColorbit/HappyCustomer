@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoUsuarioControllers',[]);
 
 myControllers.controller('ListarTipoUsuarioController', function($scope,$http) {
-	$scope.Titulo = "Tipo de Usuário";
+	$scope.Titulo = "Tipos de Usuário";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
 		.success(function(data) {
@@ -53,8 +53,8 @@ myControllers.controller('TipoUsuarioController', function($scope, $routeParams,
 				'http://localhost:8080/CRM/rest/restTipoUsuario/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Tipo Usuário ('+$scope.tipoUsuario.nome+') Salvo com Sucesso!';
 					
+					alert("Tipo de Usuário: "+ $scope.tipoUsuario.nome +". Salvo Com Sucesso!");								
 					
 				}).error(
 				function(data, status, header, config) {
@@ -67,14 +67,15 @@ myControllers.controller('TipoUsuarioController', function($scope, $routeParams,
 				$http.post('http://localhost:8080/CRM/rest/restTipoUsuario/Excluir/'+id)
 					.success(
 					function(data, status) {
-						$scope.Resposta = 'Tipo Usuário Excluído com Sucesso!';
-						$scope.BuscarInformacao();
+						
+						alert("Tipo de Usuário: "+ $scope.tipoUsuario.nome +". Excluído Com Sucesso!");
+						$scope.BuscarInformacao();		
 						
 					}).error(
 					function(data, status) {
 						$scope.Resposta = data ;
 					});
-			   };
+			   };			   
 			
 			};
 	

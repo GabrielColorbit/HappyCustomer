@@ -1,7 +1,7 @@
 var myControllers = angular.module('TipoEmpresaControllers',[]);
 
 myControllers.controller('ListarTipoEmpresaController', function($scope,$http) {
-	$scope.Titulo = "Tipo de Empresa";
+	$scope.Titulo = "Tipos de Empresa";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
 		.success(function(data) {
@@ -53,8 +53,8 @@ myControllers.controller('TipoEmpresaController', function($scope, $routeParams,
 				'http://localhost:8080/CRM/rest/restTipoEmpresa/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'TipoEmpresa ('+$scope.tipoEmpresa.nome+') Salvo com Sucesso!';
-					
+
+					alert("Tipo de Empresa: "+ $scope.tipoEmpresa.nome +". Salvo Com Sucesso!");					
 					
 				}).error(
 				function(data, status, header, config) {

@@ -54,8 +54,8 @@ myControllers.controller('ProdutoController', function($scope, $routeParams,$htt
 				'http://localhost:8080/CRM/rest/restProduto/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Produto ('+$scope.produto.nome+') Salvo com Sucesso!';
-					
+
+					alert("Produto: "+ $scope.produto.nome +" - Preço: R$ "+ $scope.produto.preco +". Salvo Com Sucesso!");					
 					
 				}).error(
 				function(data, status, header, config) {

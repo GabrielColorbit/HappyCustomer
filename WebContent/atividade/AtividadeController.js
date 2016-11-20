@@ -106,7 +106,7 @@ myControllers.controller('AtividadeController', function($scope, $routeParams, $
 					var atividade =  new Object();
 					atividade = $scope.atividade 
 					
-					alert("Negócio: "+ atividade.id +"-"+ atividade.nome +" Salvo com sucesso!");
+					alert("Atividade: "+ $scope.atividade.nome +". Salva Com Sucesso!");
 	
 					$location.path('/Atividade/Editar/'+atividade.id)
 					

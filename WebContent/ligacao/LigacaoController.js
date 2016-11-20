@@ -85,8 +85,8 @@ myControllers.controller('LigacaoController', function($scope, $routeParams,$htt
 				'http://localhost:8080/CRM/rest/restLigacao/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Ligacao ('+$scope.ligacao.nome+') Salva com Sucesso!';
 					
+					alert("Ligação do Contato:" + $scope.ligacao.contato.nome + " - Empresa: "+ $scope.ligacao.empresa.razaosocial +". Salva Com Sucesso!");					
 					
 				}).error(
 				function(data, status, header, config) {

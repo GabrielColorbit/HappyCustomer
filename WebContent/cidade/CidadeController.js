@@ -1,7 +1,7 @@
 var myControllers = angular.module('CidadeControllers',[]);
 
 myControllers.controller('ListarCidadeController', function($scope,$http) {
-	$scope.Titulo = "Cidade";
+	$scope.Titulo = "Cidades";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restCidade/listarTodos')
 		.success(function(data) {
@@ -60,8 +60,8 @@ myControllers.controller('CidadeController', function($scope, $routeParams,$http
 				'http://localhost:8080/CRM/rest/restCidade/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Cidade ('+$scope.cidade.nome+') Salvo com Sucesso!';
-					
+
+					alert("Cidade: "+ $scope.cidade.nome +" - Estado: "+ $scope.cidade.estado.nome +". Salvo Com Sucesso!");								
 					
 				}).error(
 				function(data, status, header, config) {
