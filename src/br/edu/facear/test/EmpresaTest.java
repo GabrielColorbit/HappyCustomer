@@ -57,7 +57,7 @@ public class EmpresaTest {
 		Empresa.setStatus(Status.Ativo);
 
 		// CIDADE
-		Cidade.setId(1l);
+		Cidade.setId(2l);
 		Empresa.setCidade(Cidade);
 
 		// TIPO DE EMPRESA
@@ -88,12 +88,12 @@ public class EmpresaTest {
 		comunicadores_empresa.add(Comunicador);
 		Empresa.setComunicadores_empresa(comunicadores_empresa);
 
-//		// CADASTRANDO CONTATOS
-//
-//		Contato.setId(1l); 
-//		List<Contato> contatos_empresa = new ArrayList<Contato>(); 
-//		contatos_empresa.add(Contato);
-//		Empresa.setContatos_empresa(contatos_empresa);
+		// CADASTRANDO CONTATOS
+
+		Contato = facade.BuscarContatoPorId(3l);
+		List<Contato> contatos_empresa = new ArrayList<Contato>(); 
+		contatos_empresa.add(Contato);
+		Empresa.setContatos(contatos_empresa);
 		 
 
 		// CADASTRAR

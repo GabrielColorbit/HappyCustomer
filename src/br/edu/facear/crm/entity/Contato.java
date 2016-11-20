@@ -21,12 +21,9 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 //CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
-public class Contato implements Serializable{
+public class Contato{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 98309182309812301L;
+
 
 	//CHAVE PRIMARIA
 	@Id
@@ -135,12 +132,18 @@ public class Contato implements Serializable{
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
+<<<<<<< HEAD
+
+
+
+=======
 	public List<Empresa> getEmpresas() {
 		return empresas;
 	}
 	public void setEmpresas(List<Empresa> empresas) {
 		this.empresas = empresas;
 	}
+>>>>>>> origin/master
 	public String getNome() {
 		return nome;
 	}
@@ -219,9 +222,19 @@ public class Contato implements Serializable{
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+<<<<<<< HEAD
+
+
+
+
+
+
+
+=======
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+>>>>>>> origin/master
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -235,7 +248,6 @@ public class Contato implements Serializable{
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
-		result = prime * result + ((empresas == null) ? 0 : empresas.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
@@ -304,11 +316,6 @@ public class Contato implements Serializable{
 				return false;
 		} else if (!datanascimento.equals(other.datanascimento))
 			return false;
-		if (empresas == null) {
-			if (other.empresas != null)
-				return false;
-		} else if (!empresas.equals(other.empresas))
-			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -368,6 +375,7 @@ public class Contato implements Serializable{
 	@Override
 	public String toString() {
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
+<<<<<<< HEAD
 				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", idfoto=" + idfoto
 				+ ", telefones_contato=" + telefones_contato + ", comunicadores_contato=" + comunicadores_contato
 				+ ", empresas=" + empresas + ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento
@@ -377,9 +385,25 @@ public class Contato implements Serializable{
 	}
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
 			Cidade cidade, Long idfoto, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
+=======
+				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
+				+ ", comunicadores_contato=" + comunicadores_contato + ", nome=" + nome + ", cpf=" + cpf
+				+ ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero=" + numero
+				+ ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
+				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
+	}
+	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
+<<<<<<< HEAD
+			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato, String nome,
+			String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
+			String bairro, Genero genero, String cargo, String foto, Date datacadastro, Status status) {
+=======
+			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
+>>>>>>> origin/master
 			List<Empresa> empresas, String nome, String cpf, String datanascimento, String endereco, Long numero,
 			String complemento, String cep, String bairro, Genero genero, String cargo, String foto,
 			String datacadastro, Status status) {
+>>>>>>> origin/master
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -389,7 +413,6 @@ public class Contato implements Serializable{
 		this.idfoto = idfoto;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
-		this.empresas = empresas;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanascimento = datanascimento;

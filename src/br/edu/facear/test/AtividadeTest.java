@@ -44,11 +44,11 @@ public class AtividadeTest {
 		Atividade.setUsuarioresponsavel(Usuario);
 
 		// CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Contato.setId(1l);
+		Contato.setId(5l);
 		Atividade.setContato(Contato);
 
 		// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Empresa.setId(1l);
+		Empresa.setId(4l);
 		Atividade.setEmpresa(Empresa);
 
 		// TIPO DE ATIVIDADE

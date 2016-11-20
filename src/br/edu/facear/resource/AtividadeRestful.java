@@ -45,7 +45,7 @@ public class AtividadeRestful {
 		Atividade a = new FacadeHappyCustomer().BuscarAtividadePorId(id);
 		return a;
 	}
-	
+
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
