@@ -36,8 +36,8 @@ import br.edu.facear.crm.entity.Ligacao;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.crm.entity.OrigemContato;
 import br.edu.facear.crm.entity.Produto;
-import br.edu.facear.crm.entity.Status;
 import br.edu.facear.crm.entity.Situacao;
+import br.edu.facear.crm.entity.Status;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.TipoAtividade;
 import br.edu.facear.crm.entity.TipoComunicador;
@@ -310,8 +310,7 @@ public class Main {
 		us.setCargo("cargo de teste");
 		// date formating
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy   HH:mm:ss");
-		Calendar calendar = new GregorianCalendar(25, 11, 1993);
-		us.setDatanascimento(calendar.getTime());
+		us.setDatanascimento("09/051/997");
 		us.setEndereco("Rua dos zef");
 		us.setNumero(126l);
 		us.setCep("81170680");

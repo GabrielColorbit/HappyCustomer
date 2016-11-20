@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -124,7 +122,6 @@ public class ContatoTest {
 		Contato.setGenero(Genero.Masculino);
 		Contato.setCargo("Analista");
 		Contato.setFoto("C:\\Downloads\\Guilhermer.jpeg");
-		Calendar datacadastro = new GregorianCalendar(29, 10, 2016);
 		Contato.setDatacadastro("20/11/2016");
 		Contato.setStatus(Status.Inativo);
 

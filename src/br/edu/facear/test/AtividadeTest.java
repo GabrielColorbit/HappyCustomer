@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;

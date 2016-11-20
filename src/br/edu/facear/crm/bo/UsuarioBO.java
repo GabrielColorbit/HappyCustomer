@@ -76,8 +76,8 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Selecione um Tipo Usuario");
 		} else if (usuario.getCidade() == null) {
 			throw new Exception("Selecione uma Cidade.");
-		} else if (usuario.getTelefones_usuario() == null) {
-			throw new Exception("Selecione um um Telefone.");
+//		} else if (usuario.getTelefones_usuario() == null) {
+//			throw new Exception("Selecione um um Telefone.");
 
 		} else if (usuario.getNome() == null) {
 			throw new Exception("Nome do Usuário Invalido.");

@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -31,17 +29,15 @@ public class UsuarioTest {
 	Comunicador Comunicador = new Comunicador();
 	TipoComunicador TipoComunicador = new TipoComunicador();
 
-	// SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy HH:mm:ss");
 
 	// CADASTRAR
 	@Test
 	public void testCadastrarUsuario() throws Exception {
 
 		// ATRIBUTOS
-		Usuario.setNome("Luiz");
+		Usuario.setNome("Luiz Correia");
 		Usuario.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(9, 05, 1997);
-		Usuario.setDatanascimento(datanascimento.getTime());
+		Usuario.setDatanascimento("09/05/1997");
 		Usuario.setEndereco("Rua João Halinski");
 		Usuario.setNumero(44l);
 		Usuario.setComplemento("Próximo a Cocelpa");
@@ -51,8 +47,7 @@ public class UsuarioTest {
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
 		Usuario.setCaminho_foto("C:\\Downloads\\Eu.jpeg");
-		Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
-		Usuario.setDatacadastro(datacadastro.getTime());
+		Usuario.setDatacadastro("19/11/2016");
 		Usuario.setStatus(Status.Ativo);
 
 		// CIDADE
@@ -91,10 +86,9 @@ public class UsuarioTest {
 		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 
 		// ATRIBUTOS
-		Usuario.setNome("Gabriel");
+		Usuario.setNome("Gabriel Umbelino");
 		Usuario.setCpf("09788163904");
-		Calendar datanascimento = new GregorianCalendar(30, 9, 1994);
-		Usuario.setDatanascimento(datanascimento.getTime());
+		Usuario.setDatanascimento("09/05/1997");
 		Usuario.setEndereco("Rua Antonio");
 		Usuario.setNumero(156l);
 		Usuario.setComplemento("Próximo ao Terminal CIC");
@@ -104,8 +98,7 @@ public class UsuarioTest {
 		Usuario.setCargo("Programador");
 		Usuario.setSenha("12345678");
 		Usuario.setCaminho_foto("C:\\Downloads\\Gabriel.jpeg");
-		Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
-		Usuario.setDatacadastro(datacadastro.getTime());
+		Usuario.setDatacadastro("20/11/2016");
 		Usuario.setStatus(Status.Inativo);
 
 		// CIDADE
@@ -136,7 +129,7 @@ public class UsuarioTest {
 
 		// ALTERAR
 		facade.AlterarUsuario(Usuario);
-		Assert.assertEquals(true, Usuario.getNome().equals("Gabriel"));
+		Assert.assertEquals(true, Usuario.getNome().equals("Gabriel Umbelino"));
 	}
 
 	// EXCLUIR

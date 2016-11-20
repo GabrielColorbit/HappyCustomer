@@ -25,8 +25,11 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
 		.success(function(data) {
 			$scope.usuario = data;
-			
 			usuario = $scope.usuario
+			$scope.foto = {
+					"id":$scope.usuario.idfoto
+			}
+		
 		});
 
 	}
@@ -44,6 +47,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 	        	
 	        	$scope.foto = foto;
 	        	$scope.RetornaImagemBase64(foto.id);
+	        	
 				
 	    	}).error(
 				function(data) {
@@ -89,12 +93,9 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		$scope.EnviarInformacao = function() {
 			
 			
-			for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-				$scope.listTelefones[i].id = null;			
-			}
-
-		    
-		
+//			for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
+//				$scope.listTelefones[i].id = null;			
+//			}		
 		    
 			$scope.usuario.telefones_usuario = $scope.listTelefones;
 			var parameter = JSON.stringify({
@@ -108,6 +109,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				genero : $scope.usuario.genero,
 				cargo : $scope.usuario.cargo,
 				datanascimento : $scope.usuario.datanascimento,
+				datacadastro : $scope.usuario.datacadastro,
 				endereco : $scope.usuario.endereco,
 				numero : $scope.usuario.numero,
 				complemento: $scope.usuario.complemento,
@@ -115,9 +117,8 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				status: $scope.usuario.status,
 				cep : $scope.usuario.cep,
 				telefones_usuario : $scope.usuario.telefones_usuario,
+				comunicadores_usuario : $scope.usuario.comunicadores_usuario,
 				idfoto : $scope.foto.id
-
-
 
 			});
 			var config = {
@@ -303,9 +304,9 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	$scope.EnviarInformacao = function() {
 		
 		
-		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-			$scope.listTelefones[i].id = null;			
-		}
+//		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
+//			$scope.listTelefones[i].id = null;			
+//		}
 
 	    
 	
@@ -322,6 +323,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			genero : $scope.usuario.genero,
 			cargo : $scope.usuario.cargo,
 			datanascimento : $scope.usuario.datanascimento,
+			datacadastro : $scope.usuario.datacadastro,
 			endereco : $scope.usuario.endereco,
 			numero : $scope.usuario.numero,
 			complemento: $scope.usuario.complemento,
@@ -329,8 +331,8 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
 			telefones_usuario : $scope.usuario.telefones_usuario,
+			comunicadores_usuario : $scope.usuario.comunicadores_usuario,
 			idfoto : $scope.foto.id
-
 
 
 		});

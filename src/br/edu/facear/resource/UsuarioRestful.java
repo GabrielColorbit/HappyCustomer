@@ -48,13 +48,13 @@ public class UsuarioRestful {
 	@Path("/Salvar")
 	public void cadastrarCliente(Usuario usuario) throws Exception {
 		
-		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-		for(Telefone t : usuario.getTelefones_usuario()){
-			new FacadeHappyCustomer().CadastrarTelefone(t);
-			telefonelist.add(t);
-		}
-		
-		usuario.setTelefones_usuario(telefonelist);
+//		ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+//		for(Telefone t : usuario.getTelefones_usuario()){
+//			new FacadeHappyCustomer().CadastrarTelefone(t);
+//			telefonelist.add(t);
+//		}
+//		
+//		usuario.setTelefones_usuario(telefonelist);
 		
 		
 		if(usuario.getId() == null)
