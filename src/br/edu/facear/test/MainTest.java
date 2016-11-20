@@ -113,7 +113,7 @@ public class MainTest {
 				usuariotest.testAterarUsuario();
 
 				// EMPRESA
-				empresatest.testAterarEmpresa();
+//				empresatest.testAterarEmpresa();
 
 				// CONTATO
 				contatotest.testAterarContato();

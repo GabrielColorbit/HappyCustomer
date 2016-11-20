@@ -57,7 +57,7 @@ public class ContatoTest {
 		Contato.setStatus(Status.Ativo);
 
 		// CIDADE
-		Cidade.setId(2l);
+		Cidade.setId(1l);
 		Contato.setCidade(Cidade);
 
 		// TIPO DE CONTATO

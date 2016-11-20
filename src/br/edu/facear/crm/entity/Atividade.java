@@ -1,5 +1,6 @@
 package br.edu.facear.crm.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,7 +19,13 @@ import org.hibernate.annotations.ForeignKey;
 //CRIA TABELA
 @Entity
 @Table(name="\"TB_ATIVIDADE\"")
-public class Atividade {
+public class Atividade implements Serializable {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8099932501488507072L;
 
 	// CHAVE PRIMARIA
 	@Id
@@ -130,6 +137,11 @@ public class Atividade {
 	}
 	public void setSituacao(Situacao situacao) {
 		this.situacao = situacao;
+	}
+	
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	@Override
 	public int hashCode() {

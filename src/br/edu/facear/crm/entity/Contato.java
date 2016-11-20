@@ -325,12 +325,14 @@ public class Contato implements Serializable{
 
 
 
-	public List<Empresa> getEmpresas() {
-		return empresas;
-	}
+//	public List<Empresa> getEmpresas() {
+//		return empresas;
+//	}
 
 
-
+	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JsonBackReference
+	@JsonIgnore
 	public void setEmpresas(List<Empresa> empresas) {
 		this.empresas = empresas;
 	}
@@ -518,15 +520,6 @@ public class Contato implements Serializable{
 
 
 
-	@Override
-	public String toString() {
-		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
-				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
-				+ ", comunicadores_contato=" + comunicadores_contato + ", empresas=" + empresas + ", nome=" + nome
-				+ ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero="
-				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
-				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
-	}
 
 
 

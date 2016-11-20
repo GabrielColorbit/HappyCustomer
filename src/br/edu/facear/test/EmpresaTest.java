@@ -90,7 +90,7 @@ public class EmpresaTest {
 
 		// CADASTRANDO CONTATOS
 
-		Contato = facade.BuscarContatoPorId(3l);
+		Contato = facade.BuscarContatoPorId(1l);
 		List<Contato> contatos_empresa = new ArrayList<Contato>(); 
 		contatos_empresa.add(Contato);
 		Empresa.setContatos(contatos_empresa);
@@ -156,10 +156,10 @@ public class EmpresaTest {
 		Empresa.setComunicadores_empresa(comunicadores_empresa);
 
 		// ALTERANDO CONTATOS
-		// Contato.setId(1l);
-		// List<Contato> contatos_empresa = new ArrayList<Contato>();
-		// contatos_empresa.add(Contato);
-		// Empresa.setContatos_empresa(contatos_empresa);
+		 Contato.setId(1l);
+		 List<Contato> contatos_empresa = new ArrayList<Contato>();
+		 contatos_empresa.add(Contato);
+		 Empresa.setContatos(contatos_empresa);
 
 		// ALTERAR
 		facade.AlterarEmpresa(Empresa);

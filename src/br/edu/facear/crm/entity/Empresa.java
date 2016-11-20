@@ -25,7 +25,6 @@ import org.hibernate.annotations.ForeignKey;
 //CRIA TABELA
 @Entity
 @Table(name = "\"TB_EMPRESA\"")
-
 public class Empresa implements Serializable{
 	
 	/**
@@ -198,7 +197,11 @@ public class Empresa implements Serializable{
 
 
 
-
+	@ManyToMany
+	@JoinTable(name = "\"TB_EMPRESA_CONTATO\"", joinColumns = {
+	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { 
+	@JoinColumn(name = "id_contato") })
+	@JsonManagedReference
 	public void setContatos(List<Contato> contatos) {
 		this.contatos = contatos;
 	}
@@ -564,18 +567,6 @@ public class Empresa implements Serializable{
 	}
 
 
-
-
-
-	@Override
-	public String toString() {
-		return "Empresa [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipoempresa=" + tipoempresa
-				+ ", cidade=" + cidade + ", telefones_empresa=" + telefones_empresa + ", comunicadores_empresa="
-				+ comunicadores_empresa + ", contatos=" + contatos + ", razaosocial=" + razaosocial + ", cnpj=" + cnpj
-				+ ", inscricaoestadual=" + inscricaoestadual + ", endereco=" + endereco + ", numero=" + numero
-				+ ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", ramo=" + ramo + ", site="
-				+ site + ", logo=" + logo + ", datacadastro=" + datacadastro + ", status=" + status + "]";
-	}
 
 
 
