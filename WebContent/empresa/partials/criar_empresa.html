@@ -208,7 +208,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>Salvar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>salvar</a>
 
 								</div>
 
@@ -223,18 +223,19 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th>id</th>
 											<th>Número</th>
 											<th>Tipo</th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-							                
+			                				<td>{{telefone.id}}</td>
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>excluir</a>
+												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>excluir</a>
 											</td>
 										</tr>
 										
@@ -290,7 +291,7 @@
 									<tbody>
 									   <tr data-ng-repeat="comunicador in listComunicadores">
 							                
-							                <td>{{comunicador.nome}}</td>
+							                <td>{{comunicador.id}} - {{comunicador.nome}}</td>
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 											<td class="btn-group">
 												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>editar</a>
@@ -328,14 +329,13 @@
 										<tr class="uppercase">
 											<th>Código</th>
 											<th>Nome</th>
-											<th>Tipo</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="contato in listContatos">
 							                <td>{{contato.id}}</td>
 							                <td>{{contato.nome}}</td>
-							                 <td>{{contato.tipocontato.nome}}</td>
 											<td class="btn-group">
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>excluir</a>
 											</td>

@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -53,7 +55,6 @@ public class Empresa implements Serializable{
 	
 	// TELEFONES
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
 	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_EMPRESA\"", joinColumns = {
 	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = {

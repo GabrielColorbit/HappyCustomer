@@ -3,7 +3,9 @@ package br.edu.facear.crm.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,15 +17,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
 @Entity
 //CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
-public class Contato{
+public class Contato implements Serializable{
 
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5781467587182894760L;
 
 	//CHAVE PRIMARIA
 	@Id
@@ -65,7 +74,9 @@ public class Contato{
 	private List<Comunicador> comunicadores_contato;
 	
 	// EMPRESAS
-	@ManyToMany(mappedBy = "contatos")
+	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JsonBackReference
+	@JsonIgnore
 	private List<Empresa> empresas;
 	
 	// ATRIBUTOS
@@ -82,138 +93,268 @@ public class Contato{
 	private String foto;
 	private String datacadastro;
 	private Status status;
-	private Long idfoto;
+
 	
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}
+
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
+
 	public Usuario getUsuarioresponsavel() {
 		return usuarioresponsavel;
 	}
+
+
+
 	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
 		this.usuarioresponsavel = usuarioresponsavel;
 	}
+
+
+
 	public TipoContato getTipocontato() {
 		return tipocontato;
 	}
+
+
+
 	public void setTipocontato(TipoContato tipocontato) {
 		this.tipocontato = tipocontato;
 	}
+
+
+
 	public OrigemContato getOrigemcontato() {
 		return origemcontato;
 	}
+
+
+
 	public void setOrigemcontato(OrigemContato origemcontato) {
 		this.origemcontato = origemcontato;
 	}
+
+
+
 	public Cidade getCidade() {
 		return cidade;
 	}
+
+
+
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-	public Long getIdfoto() {
-		return idfoto;
-	}
-	public void setIdfoto(Long idfoto) {
-		this.idfoto = idfoto;
-	}
+
+
+
 	public List<Telefone> getTelefones_contato() {
 		return telefones_contato;
 	}
+
+
+
 	public void setTelefones_contato(List<Telefone> telefones_contato) {
 		this.telefones_contato = telefones_contato;
 	}
+
+
+
 	public List<Comunicador> getComunicadores_contato() {
 		return comunicadores_contato;
 	}
+
+
+
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
 
-	public List<Empresa> getEmpresas() {
-		return empresas;
-	}
-	public void setEmpresas(List<Empresa> empresas) {
-		this.empresas = empresas;
-	}
+
+
 	public String getNome() {
 		return nome;
 	}
+
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+
+
 	public String getCpf() {
 		return cpf;
 	}
+
+
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+
+
+	
+
+
+
 	public String getDatanascimento() {
 		return datanascimento;
 	}
+
+
+
 	public void setDatanascimento(String datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+
+
+
 	public String getEndereco() {
 		return endereco;
 	}
+
+
+
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+
+
 	public Long getNumero() {
 		return numero;
 	}
+
+
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
+
+
 	public String getComplemento() {
 		return complemento;
 	}
+
+
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
+
+
 	public String getCep() {
 		return cep;
 	}
+
+
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
+
+
 	public String getBairro() {
 		return bairro;
 	}
+
+
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+
+
+
 	public Genero getGenero() {
 		return genero;
 	}
+
+
+
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
+
+
 	public String getCargo() {
 		return cargo;
 	}
+
+
+
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
+
+
 	public String getFoto() {
 		return foto;
 	}
+
+
+
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+
+
+
+
+
+	public List<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
+	}
+
+
+
 	public String getDatacadastro() {
 		return datacadastro;
 	}
+
+
+
 	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
+
+
+
 	public Status getStatus() {
 		return status;
 	}
+
+
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
@@ -223,6 +364,14 @@ public class Contato{
 
 
 
+
+	
+
+
+
+
+
+	
 
 
 
@@ -239,11 +388,11 @@ public class Contato{
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datacadastro == null) ? 0 : datacadastro.hashCode());
 		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
+		result = prime * result + ((empresas == null) ? 0 : empresas.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((idfoto == null) ? 0 : idfoto.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result + ((origemcontato == null) ? 0 : origemcontato.hashCode());
@@ -253,6 +402,9 @@ public class Contato{
 		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
+
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -307,6 +459,11 @@ public class Contato{
 				return false;
 		} else if (!datanascimento.equals(other.datanascimento))
 			return false;
+		if (empresas == null) {
+			if (other.empresas != null)
+				return false;
+		} else if (!empresas.equals(other.empresas))
+			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -323,11 +480,6 @@ public class Contato{
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (idfoto == null) {
-			if (other.idfoto != null)
-				return false;
-		} else if (!idfoto.equals(other.idfoto))
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
@@ -364,27 +516,20 @@ public class Contato{
 		return true;
 	}
 
-	
+
+
 	@Override
 	public String toString() {
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
-				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", idfoto=" + idfoto
-				+ ", telefones_contato=" + telefones_contato + ", comunicadores_contato=" + comunicadores_contato
-				+ ", empresas=" + empresas + ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento
-				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
-				+ ", bairro=" + bairro + ", genero=" + genero + ", cargo=" + cargo + ", foto=" + foto
-				+ ", datacadastro=" + datacadastro + ", status=" + status + ", getId()=" + getId()
-				+ ", getUsuarioresponsavel()=" + getUsuarioresponsavel() + ", getTipocontato()=" + getTipocontato()
-				+ ", getOrigemcontato()=" + getOrigemcontato() + ", getCidade()=" + getCidade() + ", getIdfoto()="
-				+ getIdfoto() + ", getTelefones_contato()=" + getTelefones_contato() + ", getComunicadores_contato()="
-				+ getComunicadores_contato() + ", getEmpresas()=" + getEmpresas() + ", getNome()=" + getNome()
-				+ ", getCpf()=" + getCpf() + ", getDatanascimento()=" + getDatanascimento() + ", getEndereco()="
-				+ getEndereco() + ", getNumero()=" + getNumero() + ", getComplemento()=" + getComplemento()
-				+ ", getCep()=" + getCep() + ", getBairro()=" + getBairro() + ", getGenero()=" + getGenero()
-				+ ", getCargo()=" + getCargo() + ", getFoto()=" + getFoto() + ", getDatacadastro()=" + getDatacadastro()
-				+ ", getStatus()=" + getStatus() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
+				+ ", comunicadores_contato=" + comunicadores_contato + ", empresas=" + empresas + ", nome=" + nome
+				+ ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero="
+				+ numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
+				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
+
+
+
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
 			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
 			List<Empresa> empresas, String nome, String cpf, String datanascimento, String endereco, Long numero,
@@ -396,9 +541,9 @@ public class Contato{
 		this.tipocontato = tipocontato;
 		this.origemcontato = origemcontato;
 		this.cidade = cidade;
-		this.idfoto = idfoto;
 		this.telefones_contato = telefones_contato;
 		this.comunicadores_contato = comunicadores_contato;
+		this.empresas = empresas;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanascimento = datanascimento;
@@ -413,8 +558,17 @@ public class Contato{
 		this.datacadastro = datacadastro;
 		this.status = status;
 	}
+
+
+
+	/**
+	 * 
+	 */
 	public Contato() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
 }
