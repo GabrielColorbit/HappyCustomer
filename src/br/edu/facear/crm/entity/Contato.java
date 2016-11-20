@@ -47,8 +47,6 @@ public class Contato{
 	@ForeignKey(name = "fk_cidade")
 	private Cidade cidade;
 	
-	private Long idfoto;
-	
 	// RELACIONAMENTOS MUITOS PRA MUITOS
 	
 	// TELEFONES
@@ -84,6 +82,8 @@ public class Contato{
 	private String foto;
 	private String datacadastro;
 	private Status status;
+	private Long idfoto;
+	
 	public Long getId() {
 		return id;
 	}
@@ -132,18 +132,13 @@ public class Contato{
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
-<<<<<<< HEAD
 
-
-
-=======
 	public List<Empresa> getEmpresas() {
 		return empresas;
 	}
 	public void setEmpresas(List<Empresa> empresas) {
 		this.empresas = empresas;
 	}
->>>>>>> origin/master
 	public String getNome() {
 		return nome;
 	}
@@ -222,7 +217,6 @@ public class Contato{
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
 
 
 
@@ -230,11 +224,8 @@ public class Contato{
 
 
 
-=======
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
->>>>>>> origin/master
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -372,38 +363,33 @@ public class Contato{
 			return false;
 		return true;
 	}
+
+	
 	@Override
 	public String toString() {
 		return "Contato [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", tipocontato=" + tipocontato
-<<<<<<< HEAD
 				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", idfoto=" + idfoto
 				+ ", telefones_contato=" + telefones_contato + ", comunicadores_contato=" + comunicadores_contato
 				+ ", empresas=" + empresas + ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento
 				+ ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep
 				+ ", bairro=" + bairro + ", genero=" + genero + ", cargo=" + cargo + ", foto=" + foto
-				+ ", datacadastro=" + datacadastro + ", status=" + status + "]";
+				+ ", datacadastro=" + datacadastro + ", status=" + status + ", getId()=" + getId()
+				+ ", getUsuarioresponsavel()=" + getUsuarioresponsavel() + ", getTipocontato()=" + getTipocontato()
+				+ ", getOrigemcontato()=" + getOrigemcontato() + ", getCidade()=" + getCidade() + ", getIdfoto()="
+				+ getIdfoto() + ", getTelefones_contato()=" + getTelefones_contato() + ", getComunicadores_contato()="
+				+ getComunicadores_contato() + ", getEmpresas()=" + getEmpresas() + ", getNome()=" + getNome()
+				+ ", getCpf()=" + getCpf() + ", getDatanascimento()=" + getDatanascimento() + ", getEndereco()="
+				+ getEndereco() + ", getNumero()=" + getNumero() + ", getComplemento()=" + getComplemento()
+				+ ", getCep()=" + getCep() + ", getBairro()=" + getBairro() + ", getGenero()=" + getGenero()
+				+ ", getCargo()=" + getCargo() + ", getFoto()=" + getFoto() + ", getDatacadastro()=" + getDatacadastro()
+				+ ", getStatus()=" + getStatus() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
+				+ ", toString()=" + super.toString() + "]";
 	}
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
-			Cidade cidade, Long idfoto, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
-=======
-				+ ", origemcontato=" + origemcontato + ", cidade=" + cidade + ", telefones_contato=" + telefones_contato
-				+ ", comunicadores_contato=" + comunicadores_contato + ", nome=" + nome + ", cpf=" + cpf
-				+ ", datanascimento=" + datanascimento + ", endereco=" + endereco + ", numero=" + numero
-				+ ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro + ", genero=" + genero
-				+ ", cargo=" + cargo + ", foto=" + foto + ", datacadastro=" + datacadastro + ", status=" + status + "]";
-	}
-	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
-<<<<<<< HEAD
-			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato, String nome,
-			String cpf, Date datanascimento, String endereco, Long numero, String complemento, String cep,
-			String bairro, Genero genero, String cargo, String foto, Date datacadastro, Status status) {
-=======
 			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
->>>>>>> origin/master
 			List<Empresa> empresas, String nome, String cpf, String datanascimento, String endereco, Long numero,
 			String complemento, String cep, String bairro, Genero genero, String cargo, String foto,
 			String datacadastro, Status status) {
->>>>>>> origin/master
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;

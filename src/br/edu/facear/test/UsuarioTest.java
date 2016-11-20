@@ -51,7 +51,7 @@ public class UsuarioTest {
 		Usuario.setStatus(Status.Ativo);
 
 		// CIDADE
-		Cidade.setId(2l);
+		Cidade.setId(1l);
 		Usuario.setCidade(Cidade);
 
 		// TIPO
@@ -83,7 +83,7 @@ public class UsuarioTest {
 	// @Test
 	public void testAterarUsuario() throws Exception {
 
-		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
+		Usuario Usuario = facade.BuscarUsuarioPorId(1l);
 
 		// ATRIBUTOS
 		Usuario.setNome("Gabriel Umbelino");

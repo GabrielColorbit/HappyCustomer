@@ -44,15 +44,15 @@ public class AtividadeTest {
 		Atividade.setUsuarioresponsavel(Usuario);
 
 		// CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Contato.setId(5l);
+		Contato.setId(1l);
 		Atividade.setContato(Contato);
 
 		// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Empresa.setId(4l);
+		Empresa.setId(1l);
 		Atividade.setEmpresa(Empresa);
 
 		// TIPO DE ATIVIDADE
-		TipoAtividade.setId(2l);
+		TipoAtividade.setId(1l);
 		Atividade.setTipoatividade(TipoAtividade);
 
 		// CADASTRANDO COMUNICADOR
@@ -75,7 +75,7 @@ public class AtividadeTest {
 	// @Test
 	public void testAterarAtividade() throws Exception {
 
-		Atividade Atividade = facade.BuscarAtividadePorId(1l);
+		Atividade Atividade = facade.BuscarAtividadePorId(2l);
 
 		Atividade.setNome("Notebook com problema na tela");
 		Atividade.setDatacadastro("19/11/2016");
@@ -85,15 +85,15 @@ public class AtividadeTest {
 		Atividade.setSituacao(Situacao.Finalizado);
 
 		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
-		Usuario.setId(1l);
+		Usuario.setId(2l);
 		Atividade.setUsuarioresponsavel(Usuario);
 
 		// CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Contato.setId(1l);
+		Contato.setId(2l);
 		Atividade.setContato(Contato);
 
 		// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Empresa.setId(1l);
+		Empresa.setId(2l);
 		Atividade.setEmpresa(Empresa);
 
 		// TIPO DE ATIVIDADE
@@ -103,7 +103,7 @@ public class AtividadeTest {
 		// ALTERANDO COMUNICADOR
 		Comunicador Comunicador = facade.BuscarComunicadorPorId(1l);
 		Comunicador.setNome("atividade2@atividade2.com");
-		TipoComunicador.setId(1l);
+		TipoComunicador.setId(2l);
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.AlterarComunicador(Comunicador);
 

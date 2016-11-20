@@ -23,26 +23,20 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
 		.success(function(data) {
 			$scope.usuario = data;
-			usuario = $scope.usuario
-<<<<<<< HEAD
+			usuario = $scope.usuario;
 
 			$scope.listTelefones=[];
 			$scope.listTelefones = usuario.telefones_usuario;
-=======
+
 			$scope.foto = {
 					"id":$scope.usuario.idfoto
 			}
 		
->>>>>>> origin/master
+
 		});
 
 	}
-<<<<<<< HEAD
-	for(var telefone in $scope.listTelefones){
-		console.log(telefone.numero);
-	}
 
-=======
 	 $scope.upload = function (dataUrl, name) {
 		 
 			
@@ -244,7 +238,6 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 	 			
 	 			};
 	
->>>>>>> origin/master
 });
 myControllers.controller('CadastrarUsuarioController', function($scope, $rootScope, $routeParams,$http) {
 
@@ -257,13 +250,7 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $rootSco
 });
 myControllers.controller('UsuarioController', function($scope, $routeParams,$http, Upload, $timeout,$location) {
 	 $scope.upload = function (dataUrl, name) {
-<<<<<<< HEAD
 
-
-=======
-		 
-		
->>>>>>> origin/master
         Upload.upload({
             url: 'http://localhost:8080/CRM/rest/restUsuario/upload',
             data: {
@@ -316,23 +303,14 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	});
 
 
-<<<<<<< HEAD
 
 	$scope.EnviarInformacao = function() {
 
 
-		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-			$scope.listTelefones[i].id = null;
-		}
-=======
-    
-	$scope.EnviarInformacao = function() {
-		
-		
 //		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-//			$scope.listTelefones[i].id = null;			
+//			$scope.listTelefones[i].id = null;
 //		}
->>>>>>> origin/master
+
 
 
 
@@ -373,12 +351,9 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 				parameter, config).success(
 				function(data, status, headers, config) {
 
-<<<<<<< HEAD
-					alert( 'Usuário: '+$scope.usuario.nome+'. Salvo Com Sucesso!')
-=======
+
 					alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
 					$location.path("/Usuario");
->>>>>>> origin/master
 
 				}).error(
 				function(data, status, header, config) {
@@ -395,14 +370,9 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
    		.success(function(data) {
    			$scope.tipostelefone = data["tipoTelefone"];
    		});
-<<<<<<< HEAD
 
- 		$scope.listTelefones=[];
-=======
-      
 
 	   	$scope.listTelefones=[];
->>>>>>> origin/master
  		$scope.add = function(){
 
  			if(validarCampos()){
