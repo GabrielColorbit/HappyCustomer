@@ -63,20 +63,28 @@ myControllers.controller('OrigemContatoController', function($scope, $routeParam
 				$scope.BuscarInformacao();
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restOrigemContato/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Origem de Contato Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Origem de Contato?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restOrigemContato/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Origem de Contato Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Origem de Contato Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

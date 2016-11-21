@@ -62,14 +62,15 @@ myControllers.controller('TipoAtividadeController', function($scope, $routeParam
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   var result = confirm('Tem Certeza?');
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Tipo de Atividade?");
 			if (result === true){
 				if(id){
 					
 					$http.post('http://localhost:8080/CRM/rest/restTipoAtividade/Excluir/'+id)
 						.success(
 						function(data, status) {
-							alert("Tipo de Atividade: Excluído Com Sucesso!");
+							alert("Tipo de Atividade Excluído Com Sucesso!");
 							$scope.BuscarInformacao();
 							
 						}).error(
@@ -77,6 +78,10 @@ myControllers.controller('TipoAtividadeController', function($scope, $routeParam
 							$scope.Resposta = data ;
 						});
 				   };
+			}
+			else{
+				alert("Tipo de Atividade Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
 			}
 	   };
 	

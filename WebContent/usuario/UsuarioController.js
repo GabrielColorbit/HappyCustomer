@@ -439,20 +439,28 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
         	return i;
         }
         $scope.Excluir = function(id){
- 		   if(id){
+        	
+        	var result = confirm("Tem Certeza Que Deseja Excluir Este Usuário?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restUsuario/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Usuário Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Usuário Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 
- 				$http.post('http://localhost:8080/CRM/rest/restUsuario/Excluir/'+id)
- 					.success(
- 					function(data, status) {
- 						$scope.Resposta = 'Usuário Excluído com Sucesso!';
- 						$scope.BuscarInformacao();
-
- 					}).error(
- 					function(data, status) {
- 						$scope.Resposta = data ;
- 					});
- 			   };
-
- 			};
+ 		};
 
 });

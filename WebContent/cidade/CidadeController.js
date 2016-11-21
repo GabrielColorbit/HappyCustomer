@@ -69,20 +69,28 @@ myControllers.controller('CidadeController', function($scope, $routeParams,$http
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restCidade/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Cidade Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+
+		   var result = confirm("Tem Certeza Que Deseja Excluir Esta Cidade?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restCidade/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Cidade Excluída Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Cidade Conservada Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

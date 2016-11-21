@@ -63,20 +63,27 @@ myControllers.controller('EstadoController', function($scope, $routeParams,$http
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restEstado/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Estado Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
-			
-			};
+
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Estado?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restEstado/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Estado Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Estado Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
+		};
 	
 });

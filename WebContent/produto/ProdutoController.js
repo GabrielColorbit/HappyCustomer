@@ -63,20 +63,28 @@ myControllers.controller('ProdutoController', function($scope, $routeParams,$htt
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restProduto/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Produto Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Produto?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restProduto/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Produto Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Produto Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

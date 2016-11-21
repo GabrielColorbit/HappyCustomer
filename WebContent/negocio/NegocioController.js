@@ -2,7 +2,7 @@ var myControllers = angular.module('NegocioControllers',[]);
 
 //CONTROLER DE NEGÓCIOS
 myControllers.controller('ListarNegocioController', function($scope,$http) {
-	$scope.Titulo = "Negócios";
+	$scope.Titulo = "Negociações";
 	$scope.BuscarInformacao = function() {
 		$http.get('http://localhost:8080/CRM/rest/restNegocio/listarTodos')
 		.success(function(data) {
@@ -18,7 +18,7 @@ myControllers.controller('ListarNegocioController', function($scope,$http) {
     };
 });
 myControllers.controller('GetNegocioController', function($scope, $routeParams,$http) {
-	$scope.Titulo = 'Editar Negócio'
+	$scope.Titulo = 'Editar Negociação'
 
 	if($routeParams.negocioId){
 		$http.get('http://localhost:8080/CRM/rest/restNegocio/Editar/'+$routeParams.negocioId)
@@ -33,7 +33,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 });
 myControllers.controller('CadastrarNegocioController', function($scope, $routeParams,$http) {
 	
-	$scope.Titulo = "Cadastrar Negócio";
+	$scope.Titulo = "Cadastrar Negociação";
 	
 });
 myControllers.controller('NegocioController', function($scope, $routeParams, $http, $location) {
@@ -92,26 +92,36 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restNegocio/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Negócio Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Esta Negociação?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restNegocio/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Negociação Excluída Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Negociação Conservada Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 			
 			
 	
 });
 
+
+//CONTROLER DE ITENS
 myControllers.controller('ListarItemController', function($scope,$http) {
 	$scope.Titulo = "Itens";
 	$scope.BuscarInformacao = function() {
@@ -142,8 +152,6 @@ myControllers.controller('GetItemController', function($scope, $routeParams,$htt
 });
 
 
-
-//CONTROLER DE ITENS
 myControllers.controller('CadastrarItemController', function($scope, $routeParams,$http) {
 	
 	$scope.Titulo = "Cadastrar Negócio";
@@ -185,20 +193,28 @@ myControllers.controller('ItemController', function($scope, $routeParams,$http) 
 	   };
 	   
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restItem/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Item Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Item?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restItem/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Item Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Item Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

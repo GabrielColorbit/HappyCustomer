@@ -893,21 +893,29 @@ $scope.EnviarInformacao = function() {
 		.success(function(data) {
 			$scope.tiposcomunicador = data["tipoComunicador"];
 		});
-		 //EXCLUIR EMPRESA
+//EXCLUIR EMPRESA
  $scope.Excluir = function(id){
-		 if(id){
-
-			$http.post('http://localhost:8080/CRM/rest/restEmpresa/Excluir/'+id)
-				.success(
-				function(data, status) {
-					$scope.Resposta = 'Empresa Excluída com Sucesso!';
-					$scope.BuscarInformacao();
-
-				}).error(
-				function(data, status) {
-					$scope.Resposta = data ;
-				});
-		 };
+	 
+	 var result = confirm("Tem Certeza Que Deseja Excluir Esta Empresa?");
+		if (result === true){
+			if(id){
+				
+				$http.post('http://localhost:8080/CRM/rest/restEmpresa/Excluir/'+id)
+					.success(
+					function(data, status) {
+						alert("Empresa Excluída Com Sucesso!");
+						$scope.BuscarInformacao();
+						
+					}).error(
+					function(data, status) {
+						$scope.Resposta = data ;
+					});
+			   };
+		}
+		else{
+			alert("Empresa Conservada Com Sucesso!");
+			$scope.BuscarInformacao();
+		}
 
 	};
 //Genrenciar Telefones

@@ -62,20 +62,28 @@ myControllers.controller('TipoEmpresaController', function($scope, $routeParams,
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restTipoEmpresa/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Tipo de Empresa Excluído com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Tipo de Empresa?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restTipoEmpresa/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Tipo de Empresa Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Tipo de Empresa Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

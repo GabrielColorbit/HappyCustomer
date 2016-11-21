@@ -116,20 +116,28 @@ myControllers.controller('AtividadeController', function($scope, $routeParams, $
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restAtividade/Excluir/'+id)
-					.success(
-					function(data, status) {
-						$scope.Resposta = 'Atividade Excluída com Sucesso!';
-						$scope.BuscarInformacao();
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-			   };
+
+		   var result = confirm("Tem Certeza Que Deseja Excluir Esta Atividade?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restAtividade/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Atividade Excluída Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Atividade Conservada Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
 			
-			};
+		};
 	
 });

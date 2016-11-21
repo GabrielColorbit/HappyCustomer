@@ -269,24 +269,28 @@ myControllers.controller('ContatoController', function($scope, $routeParams,$htt
 				});
 	   };
 	   $scope.Excluir = function(id){
-		   if(id){
-				
-				$http.post('http://localhost:8080/CRM/rest/restContato/Excluir/'+id)
-					.success(
-					function(data, status) {
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Este Contato?");
+			if (result === true){
+				if(id){
 					
-						$scope.BuscarInformacao();
-						alert( 'Contato: '+$scope.contato.nome+'. Excluído Com Sucesso!')
-						
-					}).error(
-					function(data, status) {
-						$scope.Resposta = data ;
-					});
-		
-			   };
-			
-			};
-			
+					$http.post('http://localhost:8080/CRM/rest/restContato/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Contato Excluído Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Contato Conservado Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
+	   };
 			 //crud in view
 
 
