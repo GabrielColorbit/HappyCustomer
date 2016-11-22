@@ -25,6 +25,42 @@
 					
 						<input type="hidden"id="nome" ng-model="empresa.id">
 						
+						<div class="form-group last">
+					       
+							<p>Selecione a Imagem da Logo da Empresa.</p>
+					        
+					        <div ngf-drop ng-model="picFile" ngf-pattern="image/*"  class="cropArea col-xs-7" >
+					             
+					            <img-crop image="picFile  | ngfDataUrl"                 
+					            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+					            </img-crop>
+					           
+					           
+					        </div>
+					        <div class="col-xs-5">
+					        	<div class="form-group btn-group col-xs-12">
+									<button ngf-select ng-model="picFile" accept="image/*" class="btn btn-default btn-sm to-left"> Buscar Imagem </button>
+							        <button ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success btn-sm to-left" > Confirmar Imagem </button> 						        	
+					        	
+					        	</div>
+						        
+						        
+
+						        <div class="image_circle">
+									<img class="image_user" id="ItemPreview" src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{empresa.idfoto}}"/>
+	             														    
+						            <!-- <img ng-src="{{croppedDataUrl}}" /> -->
+							        					            
+						        </div>
+					        	<div class="form-group btn-group col-xs-12">
+									<span class="success">{{imagemresult}}</span>
+							        <span class="danger" ng-show="errorMsg">{{errorMsg}}</span>							        	
+					        	</div>
+
+					        </div>
+					       
+						</div>	
+						
 						<h3>Dados Gerais</h3>
 						
 							<div 
@@ -64,7 +100,7 @@
 
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>CNPJ</label> <input ng-model="empresa.cnpj" type="text" class="form-control"
+								<label>CNPJ</label> <input ng-model="empresa.cnpj" type="text" class="form-control cnpj"
 									placeholder="CNPJ" id="cnpj" required
 									data-validation-required-message="Por favor insira um nome">
 
@@ -134,7 +170,7 @@
 							<div 
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>CEP</label>
-								 <input type="text" ng-model="empresa.cep"  class="form-control" placeholder="CEP" id="cep" required data-validation-required-message="Please enter your email address.">
+								 <input type="text" ng-model="empresa.cep"  class="form-control cep" placeholder="CEP" id="cep" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -165,16 +201,16 @@
 
 							</div>
 									
-							<div 
-								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Estado / País</label>
-								<select id="estado" class="form-control" required data-validation-required-message="Por favor selecione um estado." >
-									 <option value="">Estado / País</option>
-									<option ng-repeat="estado in estados">{{estado.nome + ' / ' + estado.pais}}</option>
+							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Estado - País</label>
+								<select  class="form-control estado" required data-validation-required-message="Por favor selecione um estado." >
+
+									<option ng-repeat="estado in estados" value="16" ng-selected="$first">{{estado.nome + ' - ' + estado.pais}}</option>
 
 								</select>
 								<p class="help-block text-danger"></p>
-							</div>
+							</div>							
+
 						</div>
 
 						<div class="row control-group">
@@ -201,7 +237,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Número</label> 
-										<input type="text" id="numero" ng-model="telefone.numero" class="form-control" placeholder="Número"
+										<input type="text" id="numero" ng-model="telefone.numero" class="form-control phone" placeholder="Número"
 											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
@@ -220,7 +256,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>salvar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>Salvar</a>
 
 								</div>
 
@@ -247,8 +283,8 @@
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>remover</a>
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -269,7 +305,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Endereço</label> 
-										<input type="text" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
+										<input type="email" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
 											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
@@ -287,7 +323,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>salvar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar</a>
 
 								</div>
 
@@ -314,8 +350,8 @@
 							                <td>{{comunicador.id}} - {{comunicador.nome}}</td>
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>remover</a>
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -328,7 +364,7 @@
 						<div class="row control-group">
 							<h3>Contatos</h3>
 
-							<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
+							<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls ">
 										<label>Contato</label> 
 										<input type="hidden" ng-model="empresa.id" />
 										<select class="form-control" id="contatoempresa" required data-validation-required-message="Por favor selecione um contato"
@@ -338,7 +374,7 @@
 										<p class="help-block text-danger"></p>
 							</div>
 							<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addContato()'>adicionar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addContato()'>Adicionar</a>
 
 								</div>
 						</div>
@@ -359,7 +395,7 @@
 							                <td>{{contato.id}}</td>
 							                <td>{{contato.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>remover</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -374,7 +410,7 @@
 							<div class="form-group btn-group col-xs-12">
 
 								<a class="btn btn-danger btn-lg to-left" href="#/Empresa">Voltar</a>
-								<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</button>
+								<button type="submit" class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar Empresa</button>
 							</div>
 						</div>
 						

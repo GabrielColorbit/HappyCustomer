@@ -23,22 +23,20 @@ import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
 @Entity
-//CRIA TABELA
+// CRIA TABELA
 @Table(name = "\"TB_CONTATO\"")
-public class Contato implements Serializable{
-
-
+public class Contato implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -5781467587182894760L;
 
-	//CHAVE PRIMARIA
+	// CHAVE PRIMARIA
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	// CHAVE(S) ESTRANGEIRA(S)
 	@ManyToOne
 	@ForeignKey(name = "fk_usuarioresponsavel")
@@ -47,38 +45,36 @@ public class Contato implements Serializable{
 	@ManyToOne
 	@ForeignKey(name = "fk_tipocontato")
 	private TipoContato tipocontato;
-	
+
 	@ManyToOne
 	@ForeignKey(name = "fk_origemcontato")
 	private OrigemContato origemcontato;
-	
+
 	@ManyToOne
 	@ForeignKey(name = "fk_cidade")
 	private Cidade cidade;
-	
+
 	// RELACIONAMENTOS MUITOS PRA MUITOS
-	
+
 	// TELEFONES
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_CONTATO\"", joinColumns = {
-	@JoinColumn(name = "id_contato") }, inverseJoinColumns = {
-	@JoinColumn(name = "id_telefone") })
+			@JoinColumn(name = "id_contato") }, inverseJoinColumns = { @JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_contato;
-	
+
 	// COMUNICADORES
 	@OneToMany
 	@JoinTable(name = "\"TB_COMUNICADOR_CONTATO\"", joinColumns = {
-	@JoinColumn(name = "id_contato") }, inverseJoinColumns = {
-	@JoinColumn(name = "id_comunicador") })
+			@JoinColumn(name = "id_contato") }, inverseJoinColumns = { @JoinColumn(name = "id_comunicador") })
 	private List<Comunicador> comunicadores_contato;
-	
+
 	// EMPRESAS
-	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonBackReference
 	@JsonIgnore
 	private List<Empresa> empresas;
-	
+
 	// ATRIBUTOS
 	private String nome;
 	private String cpf;
@@ -95,268 +91,176 @@ public class Contato implements Serializable{
 	private Status status;
 	private long idfoto;
 
-	
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 
 	public Long getId() {
 		return id;
 	}
 
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 
 	public Usuario getUsuarioresponsavel() {
 		return usuarioresponsavel;
 	}
 
-
-
 	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
 		this.usuarioresponsavel = usuarioresponsavel;
 	}
-
-
 
 	public TipoContato getTipocontato() {
 		return tipocontato;
 	}
 
-
-
 	public void setTipocontato(TipoContato tipocontato) {
 		this.tipocontato = tipocontato;
 	}
-
-
 
 	public OrigemContato getOrigemcontato() {
 		return origemcontato;
 	}
 
-
-
 	public void setOrigemcontato(OrigemContato origemcontato) {
 		this.origemcontato = origemcontato;
 	}
-
-
 
 	public Cidade getCidade() {
 		return cidade;
 	}
 
-
-
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-
-
 
 	public List<Telefone> getTelefones_contato() {
 		return telefones_contato;
 	}
 
-
-
 	public void setTelefones_contato(List<Telefone> telefones_contato) {
 		this.telefones_contato = telefones_contato;
 	}
-
-
 
 	public List<Comunicador> getComunicadores_contato() {
 		return comunicadores_contato;
 	}
 
-
-
 	public void setComunicadores_contato(List<Comunicador> comunicadores_contato) {
 		this.comunicadores_contato = comunicadores_contato;
 	}
-
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-
 
 	public String getCpf() {
 		return cpf;
 	}
 
-
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
-
-
-	
-
-
 
 	public String getDatanascimento() {
 		return datanascimento;
 	}
 
-
-
 	public void setDatanascimento(String datanascimento) {
 		this.datanascimento = datanascimento;
 	}
-
-
 
 	public String getEndereco() {
 		return endereco;
 	}
 
-
-
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
-
 
 	public Long getNumero() {
 		return numero;
 	}
 
-
-
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-
-
 
 	public String getComplemento() {
 		return complemento;
 	}
 
-
-
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-
-
 
 	public String getCep() {
 		return cep;
 	}
 
-
-
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-
 
 	public String getBairro() {
 		return bairro;
 	}
 
-
-
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-
-
 
 	public Genero getGenero() {
 		return genero;
 	}
 
-
-
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-
-
 
 	public String getCargo() {
 		return cargo;
 	}
 
-
-
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-
-
 
 	public String getFoto() {
 		return foto;
 	}
 
-
-
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 
+	// public List<Empresa> getEmpresas() {
+	// return empresas;
+	// }
 
-
-
-
-
-//	public List<Empresa> getEmpresas() {
-//		return empresas;
-//	}
-
-
-	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "contatos", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonBackReference
 	@JsonIgnore
 	public void setEmpresas(List<Empresa> empresas) {
 		this.empresas = empresas;
 	}
 
-
-
 	public String getDatacadastro() {
 		return datacadastro;
 	}
-
-
 
 	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
 
-
-
 	public Status getStatus() {
 		return status;
 	}
-
-
 
 	public void setStatus(Status status) {
 		this.status = status;
@@ -366,13 +270,9 @@ public class Contato implements Serializable{
 		return idfoto;
 	}
 
-
-
 	public void setIdfoto(long idfoto) {
 		this.idfoto = idfoto;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -401,8 +301,6 @@ public class Contato implements Serializable{
 		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -515,11 +413,6 @@ public class Contato implements Serializable{
 		return true;
 	}
 
-
-
-
-
-
 	public Contato(Long id, Usuario usuarioresponsavel, TipoContato tipocontato, OrigemContato origemcontato,
 			Cidade cidade, List<Telefone> telefones_contato, List<Comunicador> comunicadores_contato,
 			List<Empresa> empresas, String nome, String cpf, String datanascimento, String endereco, Long numero,
@@ -549,8 +442,6 @@ public class Contato implements Serializable{
 		this.status = status;
 	}
 
-
-
 	/**
 	 * 
 	 */
@@ -558,7 +449,4 @@ public class Contato implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 }

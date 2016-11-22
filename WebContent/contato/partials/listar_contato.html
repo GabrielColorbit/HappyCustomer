@@ -42,8 +42,8 @@
 						<tr dir-paginate="c in contatolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 							
 							<td class="fit">
-									<img class="user-pic" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{c.idfoto}}">
-								</td>
+								<img class="user-pic" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{c.idfoto}}">
+							</td>
 							<td>{{c.nome}}</td>
 							<td>{{c.tipocontato.nome}}</td>
 							<td>{{c.cargo}}</td>

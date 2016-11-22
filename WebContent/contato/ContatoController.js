@@ -18,6 +18,7 @@ myControllers.controller('ListarContatoController', function($scope,$http) {
 myControllers.controller('GetContatoController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout) {
 	$scope.Titulo = "Editar Contato";
 	var contato =  new Object();
+	
 	if($routeParams.contatoId){
 		$http.get('http://localhost:8080/CRM/rest/restContato/Editar/'+$routeParams.contatoId)
 		.success(function(data) {
@@ -154,7 +155,6 @@ myControllers.controller('CadastrarContatoController', function($scope, $routePa
 myControllers.controller('ContatoController', function($scope, $routeParams,$http, Upload, $timeout) {
 	
 	 $scope.upload = function (dataUrl, name) {
-		 
 			
 	        Upload.upload({
 	            url: 'http://localhost:8080/CRM/rest/restContato/upload',

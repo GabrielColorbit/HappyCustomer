@@ -24,7 +24,8 @@ public class Usuario {
 
 	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO
+														// AUTO-INCREMENT
 	private Long id;
 
 	// CHAVES ESTRANGEIRAS
@@ -36,24 +37,20 @@ public class Usuario {
 	@ForeignKey(name = "fk_cidade")
 	private Cidade cidade;
 
-	private Long idfoto;
-
 	// RELACIONAMENTOS MUITOS PRA MUITOS
 
 	// TELEFONES
-	//@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_USUARIO\"", joinColumns = {
-	@JoinColumn(name = "id_usuario") }, inverseJoinColumns = {
-	@JoinColumn(name = "id_telefone") })
+			@JoinColumn(name = "id_usuario") }, inverseJoinColumns = { @JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_usuario;
 
 	// COMUNICADORES
-	//@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OneToMany
 	@JoinTable(name = "\"TB_COMUNICADOR_USUARIO\"", joinColumns = {
-	@JoinColumn(name = "id_usuario") }, inverseJoinColumns = {
-	@JoinColumn(name = "id_comunicador") })
+			@JoinColumn(name = "id_usuario") }, inverseJoinColumns = { @JoinColumn(name = "id_comunicador") })
 	private List<Comunicador> comunicadores_usuario;
 
 	// ATRIBUTOS
@@ -71,128 +68,168 @@ public class Usuario {
 	private String caminho_foto;
 	private String datacadastro;
 	private Status status;
-	
-	
+	private Long idfoto;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
+
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
+
 	public Cidade getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+
 	public Long getIdfoto() {
 		return idfoto;
 	}
+
 	public void setIdfoto(Long idfoto) {
 		this.idfoto = idfoto;
 	}
+
 	public List<Telefone> getTelefones_usuario() {
 		return telefones_usuario;
 	}
+
 	public void setTelefones_usuario(List<Telefone> telefones_usuario) {
 		this.telefones_usuario = telefones_usuario;
 	}
+
 	public List<Comunicador> getComunicadores_usuario() {
 		return comunicadores_usuario;
 	}
+
 	public void setComunicadores_usuario(List<Comunicador> comunicadores_usuario) {
 		this.comunicadores_usuario = comunicadores_usuario;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	public String getDatanascimento() {
 		return datanascimento;
 	}
+
 	public void setDatanascimento(String datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+
 	public String getEndereco() {
 		return endereco;
 	}
+
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
 	public Long getNumero() {
 		return numero;
 	}
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
 	public String getComplemento() {
 		return complemento;
 	}
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
 	public String getCep() {
 		return cep;
 	}
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
 	public String getBairro() {
 		return bairro;
 	}
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public Genero getGenero() {
 		return genero;
 	}
+
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
 	public String getCargo() {
 		return cargo;
 	}
+
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
 	public String getCaminho_foto() {
 		return caminho_foto;
 	}
+
 	public void setCaminho_foto(String caminho_foto) {
 		this.caminho_foto = caminho_foto;
 	}
+
 	public String getDatacadastro() {
 		return datacadastro;
 	}
+
 	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
+
 	public Status getStatus() {
 		return status;
 	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -219,6 +256,7 @@ public class Usuario {
 		result = prime * result + ((tipousuario == null) ? 0 : tipousuario.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -324,6 +362,7 @@ public class Usuario {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", tipousuario=" + tipousuario + ", cidade=" + cidade + ", idfoto=" + idfoto
@@ -333,6 +372,7 @@ public class Usuario {
 				+ ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo + ", caminho_foto=" + caminho_foto
 				+ ", datacadastro=" + datacadastro + ", status=" + status + "]";
 	}
+
 	public Usuario(Long id, TipoUsuario tipousuario, Cidade cidade, Long idfoto, List<Telefone> telefones_usuario,
 			List<Comunicador> comunicadores_usuario, String nome, String cpf, String datanascimento, String endereco,
 			Long numero, String complemento, String cep, String bairro, String senha, Genero genero, String cargo,
@@ -359,8 +399,9 @@ public class Usuario {
 		this.datacadastro = datacadastro;
 		this.status = status;
 	}
+
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
-	}		
+	}
 }

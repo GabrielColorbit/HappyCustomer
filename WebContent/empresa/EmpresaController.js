@@ -16,15 +16,19 @@ myControllers.controller('ListarEmpresaController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetEmpresaController', function($scope, $routeParams,$http, $filter, $location) {
+myControllers.controller('GetEmpresaController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	$scope.Titulo = "Editar Empresa";
-
+	var empresa =  new Object();
+	
 	if($routeParams.empresaId){
 		$http.get('http://localhost:8080/CRM/rest/restEmpresa/Editar/'+$routeParams.empresaId)
 		.success(function(data) {
-			$scope.empresa = data;
-			var empresa =  new Object();
+			$scope.empresa = data;		
 			empresa = $scope.empresa
+			$scope.foto = {
+					"id":$scope.empresa.idfoto
+			}
+			
 			$scope.empresa.datacadastro = $filter('date')(empresa.datacadastro, "yyyy-MM-dd");
 
 			if($scope.empresa.telefones_empresa){
@@ -70,7 +74,41 @@ myControllers.controller('GetEmpresaController', function($scope, $routeParams,$
 
 
 		});
+		 $scope.upload = function (dataUrl, name) {
+			 
+				
+		        Upload.upload({
+		            url: 'http://localhost:8080/CRM/rest/restEmpresa/upload',
+		            data: {
+		                file: Upload.dataUrltoBlob(dataUrl, name)
+		            },
+		        }).success(function(data) {
+		        	
+		        	var foto = data;
+		        	
+		        	$scope.foto = foto;
+		        	$scope.RetornaImagemBase64(foto.id);
+		        	
+					
+		    	}).error(
+					function(data) {
+						$scope.Resposta = "Erro ao enviar imagem: "+data;							
+				});
+		    }
+			$scope.RetornaImagemBase64 = function (idimage){
+				
+				//pegando foto de contato cadastrada temporariamente
+				 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
+				.success(function(data) {
+					document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
+				});
+				
+			}		
+		 
+			
 	}
+	
+	
 
 	$http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
 	.success(function(data) {
@@ -139,7 +177,9 @@ myControllers.controller('GetEmpresaController', function($scope, $routeParams,$
 					status: $scope.empresa.status,
 					telefones_empresa : $scope.empresa.telefones_empresa,
 					comunicadores_empresa : $scope.empresa.comunicadores_empresa,
-					contatos : $scope.empresa.contatos
+					contatos : $scope.empresa.contatos,
+					
+					idfoto : $scope.foto.id
 				});
 				var config = {
 					headers : {
@@ -149,7 +189,7 @@ myControllers.controller('GetEmpresaController', function($scope, $routeParams,$
 
 				$http.post( 'http://localhost:8080/CRM/rest/restEmpresa/Salvar', parameter, config).success(
 				function(data, status, headers, config) {
-						alert( 'Empresa '+$scope.empresa.nome+' Salva com Sucesso!');
+						alert( 'Empresa "'+$scope.empresa.razaosocial+'" Salva com Sucesso!');
 						$location.path("/Empresa");
 
 				}).error(
@@ -410,8 +450,37 @@ myControllers.controller('CadastrarEmpresaController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Empresa";
 
 });
-myControllers.controller('EmpresaController', function($scope, $routeParams,$http) {
+myControllers.controller('EmpresaController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 
+	$scope.upload = function (dataUrl, name) {
+		
+        Upload.upload({
+            url: 'http://localhost:8080/CRM/rest/restEmpresa/upload',
+            data: {
+                file: Upload.dataUrltoBlob(dataUrl, name)
+            },
+        }).success(function(data) {
+        	
+        	var foto = data;
+        	
+        	$scope.foto = foto;
+        	$scope.RetornaImagemBase64(foto.id);
+			
+    	}).error(
+			function(data) {
+				$scope.Resposta = "Erro ao enviar imagem: "+data;							
+		});
+    }
+	$scope.RetornaImagemBase64 = function (idimage){
+		
+		//pegando foto de usuario cadastrada temporareamente
+		 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
+		.success(function(data) {
+			document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
+		});
+		
+	}
+	
 	$http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
 	.success(function(data) {
 
@@ -474,7 +543,9 @@ myControllers.controller('EmpresaController', function($scope, $routeParams,$htt
 				status: $scope.empresa.status,
 				telefones_empresa : $scope.empresa.telefones_empresa,
 				comunicadores_empresa : $scope.empresa.comunicadores_empresa,
-				contatos : $scope.empresa.contatos
+				contatos : $scope.empresa.contatos,
+				
+				idfoto : $scope.foto.id
 			});
 			var config = {
 				headers : {
@@ -745,7 +816,37 @@ myControllers.controller('CadastrarEmpresaController', function($scope, $routePa
 $scope.Titulo = "Cadastrar Empresa";
 
 });
-myControllers.controller('EmpresaController', function($scope, $routeParams,$http) {
+myControllers.controller('EmpresaController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+	
+	$scope.upload = function (dataUrl, name) {
+		 
+		
+        Upload.upload({
+            url: 'http://localhost:8080/CRM/rest/restEmpresa/upload',
+            data: {
+                file: Upload.dataUrltoBlob(dataUrl, name)
+            },
+        }).success(function(data) {
+        	
+        	var foto = data;
+        	
+        	$scope.foto = foto;
+        	$scope.RetornaImagemBase64(foto.id);
+			
+    	}).error(
+			function(data) {
+				$scope.Resposta = "Erro ao enviar imagem: "+data;							
+		});
+    }
+	$scope.RetornaImagemBase64 = function (idimage){
+		
+		//pegando foto de usuario cadastrada temporareamente
+		 $http.get('http://localhost:8080/CRM/rest/restFoto/RetornaImagemBase64/'+idimage)
+		.success(function(data) {
+			document.getElementById("ItemPreview").src = "data:image/png;base64,"+data;
+		});
+		
+	}
 
 $http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
 .success(function(data) {
@@ -799,7 +900,9 @@ $scope.EnviarInformacao = function() {
 			status: $scope.empresa.status,
 			telefones_empresa : $scope.empresa.telefones_empresa,
 			comunicadores_empresa : $scope.empresa.comunicadores_empresa,
-			contatos : $scope.empresa.contatos
+			contatos : $scope.empresa.contatos,
+			
+			idfoto : $scope.foto.id
 		});
 
 		var config = {
@@ -811,8 +914,7 @@ $scope.EnviarInformacao = function() {
 				'http://localhost:8080/CRM/rest/restEmpresa/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
-					$scope.Resposta = 'Empresa ('+$scope.empresa.nome+') Salva com Sucesso!';
-
+					alert( 'Empresa "'+$scope.empresa.razaosocial+'" Salva com Sucesso!');
 
 				}).error(
 				function(data, status, header, config) {

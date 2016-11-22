@@ -4,9 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,11 +20,11 @@ import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.ForeignKey;
 
 @XmlRootElement
-//CRIA TABELA
+// CRIA TABELA
 @Entity
 @Table(name = "\"TB_EMPRESA\"")
-public class Empresa implements Serializable{
-	
+public class Empresa implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -34,9 +32,10 @@ public class Empresa implements Serializable{
 
 	// CHAVE PRIMARIA
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO AUTO-INCREMENT
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // CRIA O ID COMO
+														// AUTO-INCREMENT
 	private Long id;
-	
+
 	// CHAVE(S) ESTRANGEIRA(S)
 	@ManyToOne
 	@ForeignKey(name = "fk_usuarioresponsavel")
@@ -45,36 +44,33 @@ public class Empresa implements Serializable{
 	@ManyToOne
 	@ForeignKey(name = "fk_tipoempresa")
 	private TipoEmpresa tipoempresa;
-	
+
 	@ManyToOne
 	@ForeignKey(name = "fk_cidade")
 	private Cidade cidade;
-	
+
 	// RELACIONAMENTOS MUITOS PRA MUITOS
-	
+
 	// TELEFONES
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_EMPRESA\"", joinColumns = {
-	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = {
-	@JoinColumn(name = "id_telefone") })
+			@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { @JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_empresa;
-	
+
 	// COMUNICADORES
 	@OneToMany
 	@JoinTable(name = "\"TB_COMUNICADOR_EMPRESA\"", joinColumns = {
-	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { 
-	@JoinColumn(name = "id_comunicador") })
+			@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { @JoinColumn(name = "id_comunicador") })
 	private List<Comunicador> comunicadores_empresa;
-	
+
 	// CONTATOS
 	@ManyToMany
 	@JoinTable(name = "\"TB_EMPRESA_CONTATO\"", joinColumns = {
-	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { 
-	@JoinColumn(name = "id_contato") })
+			@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { @JoinColumn(name = "id_contato") })
 	@JsonManagedReference
 	private List<Contato> contatos;
-	
+
 	// ATRIBUTOS
 	private String razaosocial;
 	private String cnpj;
@@ -86,345 +82,177 @@ public class Empresa implements Serializable{
 	private String bairro;
 	private String ramo;
 	private String site;
-	private String logo;
 	private String datacadastro;
 	private Status status;
-	
-	
-	
-	
-	
+	private long idfoto;
+
+	public long getIdfoto() {
+		return idfoto;
+	}
+
+	public void setIdfoto(long idfoto) {
+		this.idfoto = idfoto;
+	}
+
 	public Long getId() {
 		return id;
 	}
-
-
-
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
-
-
 	public Usuario getUsuarioresponsavel() {
 		return usuarioresponsavel;
 	}
-
-
-
-
 
 	public void setUsuarioresponsavel(Usuario usuarioresponsavel) {
 		this.usuarioresponsavel = usuarioresponsavel;
 	}
 
-
-
-
-
 	public TipoEmpresa getTipoempresa() {
 		return tipoempresa;
 	}
-
-
-
-
 
 	public void setTipoempresa(TipoEmpresa tipoempresa) {
 		this.tipoempresa = tipoempresa;
 	}
 
-
-
-
-
 	public Cidade getCidade() {
 		return cidade;
 	}
-
-
-
-
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 
-
-
-
-
 	public List<Telefone> getTelefones_empresa() {
 		return telefones_empresa;
 	}
-
-
-
-
 
 	public void setTelefones_empresa(List<Telefone> telefones_empresa) {
 		this.telefones_empresa = telefones_empresa;
 	}
 
-
-
-
-
 	public List<Comunicador> getComunicadores_empresa() {
 		return comunicadores_empresa;
 	}
-
-
-
-
 
 	public void setComunicadores_empresa(List<Comunicador> comunicadores_empresa) {
 		this.comunicadores_empresa = comunicadores_empresa;
 	}
 
-
-
-
-
 	public List<Contato> getContatos() {
 		return contatos;
 	}
 
-
-
-
 	@ManyToMany
 	@JoinTable(name = "\"TB_EMPRESA_CONTATO\"", joinColumns = {
-	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { 
-	@JoinColumn(name = "id_contato") })
+			@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { @JoinColumn(name = "id_contato") })
 	@JsonManagedReference
 	public void setContatos(List<Contato> contatos) {
 		this.contatos = contatos;
 	}
 
-
-
-
-
 	public String getRazaosocial() {
 		return razaosocial;
 	}
-
-
-
-
 
 	public void setRazaosocial(String razaosocial) {
 		this.razaosocial = razaosocial;
 	}
 
-
-
-
-
 	public String getCnpj() {
 		return cnpj;
 	}
-
-
-
-
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 
-
-
-
-
 	public String getInscricaoestadual() {
 		return inscricaoestadual;
 	}
-
-
-
-
 
 	public void setInscricaoestadual(String inscricaoestadual) {
 		this.inscricaoestadual = inscricaoestadual;
 	}
 
-
-
-
-
 	public String getEndereco() {
 		return endereco;
 	}
-
-
-
-
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
-
-
-
-
 	public Long getNumero() {
 		return numero;
 	}
-
-
-
-
 
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
 
-
-
-
-
 	public String getComplemento() {
 		return complemento;
 	}
-
-
-
-
 
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
 
-
-
-
-
 	public String getCep() {
 		return cep;
 	}
-
-
-
-
 
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
-
-
-
-
 	public String getBairro() {
 		return bairro;
 	}
-
-
-
-
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
 
-
-
-
-
 	public String getRamo() {
 		return ramo;
 	}
-
-
-
-
 
 	public void setRamo(String ramo) {
 		this.ramo = ramo;
 	}
 
-
-
-
-
 	public String getSite() {
 		return site;
 	}
-
-
-
-
 
 	public void setSite(String site) {
 		this.site = site;
 	}
 
-
-
-
-
-	public String getLogo() {
-		return logo;
-	}
-
-
-
-
-
-	public void setLogo(String logo) {
-		this.logo = logo;
-	}
-
-
-
-
-
 	public String getDatacadastro() {
 		return datacadastro;
 	}
-
-
-
-
 
 	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
 
-
-
-
-
 	public Status getStatus() {
 		return status;
 	}
-
-
-
-
 
 	public void setStatus(Status status) {
 		this.status = status;
 	}
 
-
-
-
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
-
-
 
 	@Override
 	public int hashCode() {
@@ -441,7 +269,6 @@ public class Empresa implements Serializable{
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((inscricaoestadual == null) ? 0 : inscricaoestadual.hashCode());
-		result = prime * result + ((logo == null) ? 0 : logo.hashCode());
 		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result + ((ramo == null) ? 0 : ramo.hashCode());
 		result = prime * result + ((razaosocial == null) ? 0 : razaosocial.hashCode());
@@ -452,10 +279,6 @@ public class Empresa implements Serializable{
 		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
 		return result;
 	}
-
-
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -521,11 +344,6 @@ public class Empresa implements Serializable{
 				return false;
 		} else if (!inscricaoestadual.equals(other.inscricaoestadual))
 			return false;
-		if (logo == null) {
-			if (other.logo != null)
-				return false;
-		} else if (!logo.equals(other.logo))
-			return false;
 		if (numero == null) {
 			if (other.numero != null)
 				return false;
@@ -566,12 +384,6 @@ public class Empresa implements Serializable{
 		return true;
 	}
 
-
-
-
-
-
-
 	public Empresa(Long id, Usuario usuarioresponsavel, TipoEmpresa tipoempresa, Cidade cidade,
 			List<Telefone> telefones_empresa, List<Comunicador> comunicadores_empresa, ArrayList<Contato> contatos,
 			String razaosocial, String cnpj, String inscricaoestadual, String endereco, Long numero, String complemento,
@@ -594,14 +406,9 @@ public class Empresa implements Serializable{
 		this.bairro = bairro;
 		this.ramo = ramo;
 		this.site = site;
-		this.logo = logo;
 		this.datacadastro = datacadastro;
 		this.status = status;
 	}
-
-
-
-
 
 	public Empresa() {
 		super();

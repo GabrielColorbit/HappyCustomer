@@ -1,8 +1,6 @@
 package br.edu.facear.test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.Assert;
@@ -51,8 +49,6 @@ public class EmpresaTest {
 		Empresa.setBairro("Chapada");
 		Empresa.setSite("www.gelopar.com.br");
 		Empresa.setRamo("Refrigeração");
-		Empresa.setLogo("C:\\Downloads\\Gelopar.png");
-		// Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
 		Empresa.setDatacadastro("15/11/2016");
 		Empresa.setStatus(Status.Ativo);
 
@@ -118,8 +114,6 @@ public class EmpresaTest {
 		Empresa.setBairro("Thomaz Coelho");
 		Empresa.setSite("www.iandev.com.br");
 		Empresa.setRamo("Faculdade");
-		Empresa.setLogo("C:\\Downloads\\Facear.png");
-		// Calendar datacadastro = new GregorianCalendar(28, 10, 2016);
 		Empresa.setDatacadastro("15/11/2016");
 		Empresa.setStatus(Status.Inativo);
 

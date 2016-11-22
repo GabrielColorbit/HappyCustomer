@@ -520,7 +520,6 @@ public class Main {
 				Empresa.setBairro("Chapada");
 				Empresa.setSite("www.gelopar.com.br");
 				Empresa.setRamo("Refrigeração");
-				Empresa.setLogo("C:\\Downloads\\Gelopar.png");
 				// Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
 				Empresa.setDatacadastro("15/11/2016");
 				Empresa.setStatus(Status.Ativo);

@@ -42,9 +42,8 @@
 					<tbody>
 						<tr dir-paginate="e in empresalist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
 	
-							
-							<td class="fit"><img class="user-pic"
-								src="../CRM/img/companies/gelopar.jpg">
+							<td class="fit">
+								<img class="user-pic img-circle" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{e.idfoto}}">
 							</td>
 							<td>{{e.razaosocial}}</td>
 							<td>{{e.tipoempresa.nome}}</td>
