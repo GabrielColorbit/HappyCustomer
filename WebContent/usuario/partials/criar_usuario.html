@@ -66,7 +66,11 @@
 				
 						<div class="row control-group">
 						
-							<div class="form-group col-xs-12 floating-label-form-group controls">
+							<div 
+								
+								class="form-group col-xs-12 floating-label-form-group controls">
+							
+								<h3>Dados Gerais</h3>
 							
 								<label>Nome</label>
 								<input type="hidden" ng-model="foto.id"/>
@@ -105,7 +109,7 @@
 						
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
 								<label>CPF</label>
-								<input type="text" ng-model="usuario.cpf"  class="form-control" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
+								<input type="text" ng-model="usuario.cpf"  class="form-control cpf" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -166,7 +170,7 @@
 
 							<div class="form-group col-xs-12 col-sm-6  floating-label-form-group controls">
 								<label>CEP</label>
-								 <input type="number" ng-model="usuario.cep"  class="form-control" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
+								 <input type="number" ng-model="usuario.cep"  class="form-control cep" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -241,7 +245,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Número</label> 
-										<input type="text" id="numero" ng-model="telefone.numero" class="form-control" placeholder="Número"
+										<input type="text" id="numero" ng-model="telefone.numero" class="form-control phone" placeholder="Número"
 											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
@@ -260,7 +264,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>salvar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>Salvar</a>
 
 								</div>
 
@@ -275,19 +279,17 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-											<th>id</th>
 											<th>Número</th>
 											<th>Tipo</th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-			                				<td>{{telefone.id}}</td>
-							                <td>{{telefone.numero}}</td>
+			                			    <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>excluir</a>
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -306,7 +308,7 @@
 
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Endereço</label> 
-										<input type="text" id="nome_comunicador" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"/> 
+										<input type="email" id="nome_comunicador" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"/> 
 									</div>
 									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
 										<label>Tipo</label> 
@@ -343,11 +345,11 @@
 									<tbody>
 									   <tr data-ng-repeat="comunicador in listComunicadores">
 							                
-							                <td>{{comunicador.id}} - {{comunicador.nome}}</td>
+							                <td>{{comunicador.nome}}</td>
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>excluir</a>
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -355,13 +357,12 @@
 								</table>
 							</div>
 
-						</div>	
+						</div>
 						
-						<div id="success">{{Resposta}}</div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Usuario">Voltar</a>
-								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Usuario">Salvar</a>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Usuario">Salvar Usuário</a>
 							</div>
 						</div>
 
@@ -370,4 +371,3 @@
 		</div>
 	</div>
 </section>
-

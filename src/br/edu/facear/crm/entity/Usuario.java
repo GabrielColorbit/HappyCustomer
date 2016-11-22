@@ -68,7 +68,7 @@ public class Usuario {
 	private String caminho_foto;
 	private String datacadastro;
 	private Status status;
-	private Long idfoto;
+	private long idfoto;
 
 	public Long getId() {
 		return id;
@@ -247,13 +247,14 @@ public class Usuario {
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((idfoto == null) ? 0 : idfoto.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((telefones_usuario == null) ? 0 : telefones_usuario.hashCode());
 		result = prime * result + ((tipousuario == null) ? 0 : tipousuario.hashCode());
+		
+		
 		return result;
 	}
 
@@ -327,11 +328,6 @@ public class Usuario {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (idfoto == null) {
-			if (other.idfoto != null)
-				return false;
-		} else if (!idfoto.equals(other.idfoto))
 			return false;
 		if (nome == null) {
 			if (other.nome != null)

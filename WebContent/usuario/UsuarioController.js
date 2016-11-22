@@ -17,7 +17,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout) {
+myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	$scope.Titulo = "Editar Usuário";
 	
 	var usuario=  new Object();
@@ -26,13 +26,14 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		.success(function(data) {
 			$scope.usuario = data;
 			usuario = $scope.usuario;
-
-			$scope.listTelefones=[];
-			$scope.listTelefones = usuario.telefones_usuario;
-
 			$scope.foto = {
 					"id":$scope.usuario.idfoto
 			}
+			
+			$scope.listTelefones=[];
+			$scope.listTelefones = usuario.telefones_usuario;
+
+			
 		
 			if($scope.usuario.telefones_usuario){
 				if($scope.usuario.telefones_usuario.constructor == Array){
@@ -119,6 +120,10 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		.success(function(data) {
 			$scope.tiposusuario = data["tipoUsuario"];
 		});
+		  $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
+		 	.success(function(data) {
+		 		$scope.tipostelefone = data["tipoTelefone"];
+		 	});
 
 
 	    
@@ -166,6 +171,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				cep : $scope.usuario.cep,
 				telefones_usuario : $scope.usuario.telefones_usuario,
 				comunicadores_usuario : $scope.usuario.comunicadores_usuario,
+				
 				idfoto : $scope.foto.id
 
 			});
@@ -396,7 +402,7 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $rootSco
 	$scope.Titulo = "Cadastrar Usuário";
 
 });
-myControllers.controller('UsuarioController', function($scope, $routeParams,$http, Upload, $timeout,$location) {
+myControllers.controller('UsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	 $scope.upload = function (dataUrl, name) {
 
         Upload.upload({
@@ -458,12 +464,27 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 //		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
 //			$scope.listTelefones[i].id = null;
 //		}
+		
+		//limpando ids de novos cadastros de telefone
+		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
+			var x = $scope.listTelefones[i].id;
+			var y = "#";
+			if(x.indexOf(y) !== -1){
+					$scope.listTelefones[i].id = null;
+			}
+		}
+		//limpando ids de novos cadastros de comunicadores
+		for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++){
+			var x = $scope.listComunicadores[i].id;
+			var y = "#";
+			if(x.indexOf(y) !== -1){
+				$scope.listComunicadores[i].id = null;
+			}
+		}
 
-
-
-
-
-		$scope.usuario.telefones_usuario = $scope.listTelefones;
+		$scope.usuario.telefones_usuario =  $scope.listTelefones;
+		$scope.usuario.comunicadores_usuario = $scope.listComunicadores;
+		
 		var parameter = JSON.stringify({
 			type : "usuario",
 			id : $scope.usuario.id,
@@ -484,6 +505,7 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 			cep : $scope.usuario.cep,
 			telefones_usuario : $scope.usuario.telefones_usuario,
 			comunicadores_usuario : $scope.usuario.comunicadores_usuario,
+
 			idfoto : $scope.foto.id
 
 
@@ -510,6 +532,12 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 							+ "<hr />config: " + config;
 				});
 	   };
+	   
+	   //TiposTelefone
+		 $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
+			.success(function(data) {
+				$scope.tipostelefone = data["tipoTelefone"];
+			});
 
 	 //Genrenciar Telefones
 	   $scope.addTelefone = function(){
@@ -593,12 +621,12 @@ myControllers.controller('UsuarioController', function($scope, $routeParams,$htt
 	   		}
 	      	return i;
 	   }
-
-	   //Listar tipos de comunicadores
+	   
+	   //Tipo de Comunicador
 	   $http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
-	   .success(function(data) {
-	   	$scope.tiposcomunicador = data["tipoComunicador"];
-	   });
+		.success(function(data) {
+			$scope.tiposcomunicador = data["tipoComunicador"];
+		});
 
 	   //Genrenciar comunicadores
 	   $scope.addComunicador = function(){

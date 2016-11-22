@@ -68,11 +68,11 @@
 				
 						<div class="row control-group">
 						
-							<h3>Dados Gerais</h3>
-							
-							<div 
-								
+							<div
 								class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+								
+								<h3>Dados Gerais</h3>
+								
 								<label>Nome</label>
 								<input type="hidden" ng-model="foto.id"/>
 								<input type="text"  class="form-control" placeholder="Nome" id="nome" ng-model="usuario.nome" required data-validation-required-message="Por favor insira um nome">
@@ -110,7 +110,7 @@
 						
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>CPF</label>
-								<input type="text" ng-model="usuario.cpf"  class="form-control" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
+								<input type="text" ng-model="usuario.cpf"  class="form-control cpf" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -171,7 +171,7 @@
 
 							<div class="form-group col-xs-12 col-sm-6  floating-label-form-group controls floating-label-form-group-with-value">
 								<label>CEP</label>
-								 <input type="text" ng-model="usuario.cep"  class="form-control" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
+								 <input type="text" ng-model="usuario.cep"  class="form-control cep" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -238,25 +238,25 @@
 
 
 						<div class="row control-group">
-							<h3>Telefone</h3>
-
+						
+							<h3>Telefones</h3>
 
 							<div class="col-xs-12 ">
 								<div class="col-xs-10">
 
-									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
 										<label>Número</label> 
-										<input type="text" id="numero" ng-model="telefone.numero" class="form-control" placeholder="Número"
+										<input type="text" id="numero" ng-model="telefone.numero" class="form-control phone" placeholder="Número"
 											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
-									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-										<label>Tipo Telefone</label> 
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
+										<label>Tipo</label> 
 										<input type="hidden" ng-model="telefone.id" />
 										<select class="form-control" id="tipotelefone" required data-validation-required-message="Por favor selecione um tipo de usuário"
 										    ng-options="tipotelefone.nome for tipotelefone in tipostelefone track by tipotelefone.id" ng-model="telefone.tipotelefone" >    
-										    <option value="">Tipo Telefone</option>
+										    <option value="">Tipo</option>
 										</select>	
 										<p class="help-block text-danger"></p>
 									</div>
@@ -265,7 +265,7 @@
 
 								</div>
 								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='add()'>salvar</a>
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addTelefone()'>Salvar</a>
 
 								</div>
 
@@ -273,25 +273,25 @@
 							</div>
 						</div>
 
-						
+						<!-- Gerenciar Telefones da Empresa-->
 						<div class="row ">
-							<h3>Telefones do Usuário</h3>
+
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
-										<tr class="uppercase">
-											<th>Numero</th>
+										<tr class="uppercase">										
+											<th>Número</th>
 											<th>Tipo</th>
-										</tr>	
+											<th></th>
+										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-							                
 							                <td>{{telefone.numero}}</td>
 							                <td>{{telefone.tipotelefone.nome}}</td>
 											<td class="btn-group">
-												<a class="btn btn-success  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEdit(telefone.id)'>editar</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='del(telefone.id)'>remover</a>
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditTelefone(telefone.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>Excluir</a>
 											</td>
 										</tr>
 										
@@ -300,15 +300,79 @@
 							</div>
 
 						</div>
+						
+						
+						<!-- Gerenciar Comunicadores da Empresa-->
+						<div class="row control-group">
+							<h3>Comunicadores</h3>
 
+
+							<div class="col-xs-12 ">
+								<div class="col-xs-10">
+
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls  ">
+										<label>Endereço</label> 
+										<input type="email" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
+											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls ">
+										<label>Tipo</label> 
+										<input type="hidden" ng-model="comunicador.id" />
+										<select class="form-control" id="tipocomunicador" required data-validation-required-message="Por favor selecione um tipo de comunicador"
+										    ng-options="tipocomunicador.nome for tipocomunicador in tiposcomunicador track by tipocomunicador.id" ng-model="comunicador.tipocomunicador" >    
+										    <option value="">Tipo</option>
+										</select>	
+										<p class="help-block text-danger"></p>
+									</div>
+
+									
+
+								</div>
+								<div class="col-xs-2 btn-group">
+									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar</a>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="row ">
+						
+							<div class="table-scrollable table-scrollable-borderless">
+								<table class="table table-hover table-light col-xs-12">
+									<thead>
+										<tr class="uppercase">
+										
+											<th>Endereço</th>
+											<th>Tipo</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+									   <tr data-ng-repeat="comunicador in listComunicadores">
+							                
+							                <td>{{comunicador.nome}}</td>
+							                <td>{{comunicador.tipocomunicador.nome}}</td>
+											<td class="btn-group">
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
+											</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+
+						</div>
 						
 						
-						
-						<div id="success">{{Resposta}}</div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Usuario">Voltar</a>
-								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Usuario">Salvar</a>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Usuario">Salvar Usuário</a>
 							</div>
 						</div>
 
@@ -317,4 +381,3 @@
 		</div>
 	</div>
 </section>
-

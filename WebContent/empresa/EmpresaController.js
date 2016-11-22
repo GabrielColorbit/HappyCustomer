@@ -523,6 +523,7 @@ myControllers.controller('EmpresaController', function($scope, $rootScope, $rout
 			$scope.empresa.telefones_empresa =  $scope.listTelefones;
 			$scope.empresa.comunicadores_empresa = $scope.listComunicadores;
 			$scope.empresa.contatos =  $scope.listContatos;
+			
 			var parameter = JSON.stringify({
 
 				type : "empresa",
@@ -541,6 +542,7 @@ myControllers.controller('EmpresaController', function($scope, $rootScope, $rout
 				ramo : $scope.empresa.ramo,
 				site : $scope.empresa.site,
 				status: $scope.empresa.status,
+				
 				telefones_empresa : $scope.empresa.telefones_empresa,
 				comunicadores_empresa : $scope.empresa.comunicadores_empresa,
 				contatos : $scope.empresa.contatos,
@@ -990,7 +992,7 @@ $scope.EnviarInformacao = function() {
 		 }
 
 
-		 //COMUNICADORES
+		 //Tipo de Comunicador
 	 $http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
 		.success(function(data) {
 			$scope.tiposcomunicador = data["tipoComunicador"];
