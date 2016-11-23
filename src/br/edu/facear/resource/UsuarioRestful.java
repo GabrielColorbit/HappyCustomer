@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,12 +34,26 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 @Path("/restUsuario")
 public class UsuarioRestful {
 	
+	
+	@GET
+    @Path("/autenticacao")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Object getUserById(@HeaderParam("authorization") String authString){
+        RestAuthenticationFilter raf = new RestAuthenticationFilter();
+        if(!raf.isUserAuthenticated(authString)){
+            return "{\"error\":\"User not authenticated\"}";
+        }
+        return "{\"success\":\"User authenticated!!\"}";
+    }
+	
+	
 	@GET
 	@Path("/listarTodos")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public ArrayList<Usuario> findAll() throws Exception {
 
 		return new FacadeHappyCustomer().ListarUsuario();
+		
 	}
 
 	@POST

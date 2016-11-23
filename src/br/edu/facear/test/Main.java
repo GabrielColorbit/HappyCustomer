@@ -72,9 +72,13 @@ public class Main {
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-
+		validaUsuario();
 	}
 
+	public static void validaUsuario() throws Exception{
+		Usuario u = new FacadeHappyCustomer().BuscarUsuarioPorId(1l);
+	}
+	
 	public static void gerenciarTipoTelefone() throws Exception {
 		TipoTelefoneBO ttBO = new TipoTelefoneBO();
 		TipoTelefone tt = new TipoTelefone();
