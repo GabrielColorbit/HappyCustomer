@@ -31,6 +31,7 @@ myControllers.controller('GetEmpresaController', function($scope, $rootScope, $r
 			
 			$scope.empresa.datacadastro = $filter('date')(empresa.datacadastro, "yyyy-MM-dd");
 
+			//validação de array de telefones
 			if($scope.empresa.telefones_empresa){
 				if($scope.empresa.telefones_empresa.constructor == Array){
 						$scope.listTelefones = $scope.empresa.telefones_empresa;
@@ -157,6 +158,7 @@ myControllers.controller('GetEmpresaController', function($scope, $rootScope, $r
 				$scope.empresa.telefones_empresa =  $scope.listTelefones;
 				$scope.empresa.comunicadores_empresa = $scope.listComunicadores;
 				$scope.empresa.contatos =  $scope.listContatos;
+				
 				var parameter = JSON.stringify({
 
 					type : "empresa",
@@ -175,6 +177,7 @@ myControllers.controller('GetEmpresaController', function($scope, $rootScope, $r
 					ramo : $scope.empresa.ramo,
 					site : $scope.empresa.site,
 					status: $scope.empresa.status,
+					
 					telefones_empresa : $scope.empresa.telefones_empresa,
 					comunicadores_empresa : $scope.empresa.comunicadores_empresa,
 					contatos : $scope.empresa.contatos,
@@ -882,6 +885,7 @@ $scope.EnviarInformacao = function() {
 		$scope.empresa.telefones_empresa =  $scope.listTelefones;
 		$scope.empresa.comunicadores_empresa = $scope.listComunicadores;
 		$scope.empresa.contatos =  $scope.listContatos;
+		
 		var parameter = JSON.stringify({
 
 			type : "empresa",

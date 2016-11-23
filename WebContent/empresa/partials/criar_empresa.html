@@ -361,15 +361,19 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
+											<th></th>
 											<th>Matrícula</th>
 											<th>Nome</th>
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="contato in listContatos">							              
+									   <tr data-ng-repeat="contato in listContatos">
+									   		<td class="fit">
+												<img class="user-pic img-circle" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{contato.idfoto}}">
+											</td>							              
 							                <td>{{contato.id}}</td>
-							                <td>{{contato.nome}}</td>
+							                <td>{{contato.nome}}</td>							                
 							                <td class="btn-group">
 												<a class="btn btn-warning btn-sm" target="_blank" href="#/Contato/Editar/{{contato.id}}">Ver</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delContato(contato.id)'>Excluir</a>

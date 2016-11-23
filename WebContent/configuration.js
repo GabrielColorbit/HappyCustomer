@@ -19,7 +19,8 @@ var app = angular.module('happyCustomerApp', [
 	'EmpresaControllers',
 	'ContatoControllers',
 	'AtividadeControllers',
-	'LigacaoControllers'
+	'LigacaoControllers',
+	'LoginControllers'
 	
 ]);
 
@@ -142,7 +143,9 @@ app.config(function ($routeProvider) {
         when('/Ligacao', {templateUrl: 'ligacao/partials/listar_ligacao.html', controller: 'ListarLigacaoController'}).
         when('/Ligacao/Cadastrar', {templateUrl: 'ligacao/partials/criar_ligacao.html', controller:'CadastrarLigacaoController'}).
         
+        //Paths of Login
+        when('/Login', {templateUrl: 'login/login.html', controller: 'LoginController'}).
+        
         //Paths of Home
         otherwise({redirectTo: '/Home'});
 });
-

@@ -18,7 +18,7 @@ public class TipoTelefoneTest {
 	public void testCadastrarTipoTelefone() throws Exception {
 
 		TipoTelefone TipoTelefone = new TipoTelefone();
-		TipoTelefone.setNome("Residêncial");
+		TipoTelefone.setNome("Celular");
 		facade.CadastrarTipoTelefone(TipoTelefone);
 		Assert.assertEquals(true, TipoTelefone.getId() != null);
 
@@ -28,9 +28,9 @@ public class TipoTelefoneTest {
 	// @Test
 	public void testAterarTipoTelefone() throws Exception {
 		TipoTelefone TipoTelefone = facade.BuscarTipoTelefonePorId(1l);
-		TipoTelefone.setNome("Casa");
+		TipoTelefone.setNome("Residêncial");
 		facade.AlterarTipoTelefone(TipoTelefone);
-		Assert.assertEquals(true, TipoTelefone.getNome().equals("Casa"));
+		Assert.assertEquals(true, TipoTelefone.getNome().equals("Residêncial"));
 	}
 
 	// EXCLUIR

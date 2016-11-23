@@ -45,7 +45,8 @@ public class UsuarioTest {
 		Usuario.setBairro("Jardim Alvorada");
 		Usuario.setGenero(Genero.Masculino);
 		Usuario.setCargo("Programador");
-		Usuario.setSenha("12345678");
+		Usuario.setLogin("luiz");
+		Usuario.setSenha("1234");
 		Usuario.setCaminho_foto("C:\\Downloads\\Eu.jpeg");
 		Usuario.setDatacadastro("19/11/2016");
 		Usuario.setStatus(Status.Ativo);
@@ -73,6 +74,10 @@ public class UsuarioTest {
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.CadastrarComunicador(Comunicador);
+		
+		List<Comunicador> comunicadores_usuario = new ArrayList<Comunicador>();
+		comunicadores_usuario.add(Comunicador);
+		Usuario.setComunicadores_usuario(comunicadores_usuario);
 
 		// CADASTRAR
 		facade.CadastrarUsuario(Usuario);
@@ -96,7 +101,8 @@ public class UsuarioTest {
 		Usuario.setBairro("CIC");
 		Usuario.setGenero(Genero.Feminino);
 		Usuario.setCargo("Programador");
-		Usuario.setSenha("12345678");
+		Usuario.setLogin("gabriel");
+		Usuario.setSenha("4321");
 		Usuario.setCaminho_foto("C:\\Downloads\\Gabriel.jpeg");
 		Usuario.setDatacadastro("20/11/2016");
 		Usuario.setStatus(Status.Inativo);

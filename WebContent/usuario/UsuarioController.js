@@ -18,8 +18,8 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 });
 myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	$scope.Titulo = "Editar Usuário";
-	
 	var usuario=  new Object();
+	
 	if($routeParams.usuarioId){
 		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
 		.success(function(data) {
@@ -33,7 +33,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 			$scope.listTelefones = usuario.telefones_usuario;
 
 			
-		
+		//validação de array de telefones
 			if($scope.usuario.telefones_usuario){
 				if($scope.usuario.telefones_usuario.constructor == Array){
 						$scope.listTelefones = $scope.usuario.telefones_usuario;
@@ -156,6 +156,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				nome : $scope.usuario.nome,
 				tipousuario : $scope.usuario.tipousuario,
 				cidade : $scope.usuario.cidade,
+				login : $scope.usuario.login,
 				senha : $scope.usuario.senha,
 				cpf : $scope.usuario.cpf,
 				genero : $scope.usuario.genero,
@@ -168,6 +169,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				bairro: $scope.usuario.bairro,
 				status: $scope.usuario.status,
 				cep : $scope.usuario.cep,
+				
 				telefones_usuario : $scope.usuario.telefones_usuario,
 				comunicadores_usuario : $scope.usuario.comunicadores_usuario,
 				
@@ -490,6 +492,7 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 			nome : $scope.usuario.nome,
 			tipousuario : $scope.usuario.tipousuario,
 			cidade : $scope.usuario.cidade,
+			login : $scope.usuario.login,
 			senha : $scope.usuario.senha,
 			cpf : $scope.usuario.cpf,
 			genero : $scope.usuario.genero,
@@ -502,6 +505,7 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 			bairro: $scope.usuario.bairro,
 			status: $scope.usuario.status,
 			cep : $scope.usuario.cep,
+			
 			telefones_usuario : $scope.usuario.telefones_usuario,
 			comunicadores_usuario : $scope.usuario.comunicadores_usuario,
 

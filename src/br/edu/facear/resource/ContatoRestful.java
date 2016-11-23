@@ -24,6 +24,7 @@ import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
+import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Foto;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
@@ -61,10 +62,10 @@ public class ContatoRestful {
 			contato.setComunicadores_contato(comunicadorlist);
 
 //			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-//			for (Contato c : contato.getContatos {
+//			for (Contato c : empresa.getContatos()) {
 //				contatos_empresa.add(c);
 //			}
-//			contato.setContatos(contatos_empresa);
+//			empresa.setContatos(contatos_empresa);
 
 			new FacadeHappyCustomer().CadastrarContato(contato);
 		}
@@ -92,17 +93,18 @@ public class ContatoRestful {
 			}
 			contato.setComunicadores_contato(comunicadorlist);
 
-//			ArrayList<Contato> contatos_contato = new ArrayList<Contato>();
-//			for (Contato c : contato.getContatos()) {
-//				contatos_contato.add(c);
+//			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+//			for (Contato c : empresa.getContatos()) {
+//				contatos_empresa.add(c);
 //			}
-//			contato.setContatos(contatos_empresa);
+//			empresa.setContatos(contatos_empresa);
 
 			new FacadeHappyCustomer().AlterarContato(contato);
 
 		}
 
 	}
+
 
 	@GET
 	@Path("/Editar/{id}")
