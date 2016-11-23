@@ -60,7 +60,7 @@ public class Contato implements Serializable {
 	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OneToMany
 	@JoinTable(name = "\"TB_TELEFONE_CONTATO\"", joinColumns = {
-			@JoinColumn(name = "id_contato") }, inverseJoinColumns = { @JoinColumn(name = "id_telefone") })
+	@JoinColumn(name = "id_contato") }, inverseJoinColumns = { @JoinColumn(name = "id_telefone") })
 	private List<Telefone> telefones_contato;
 
 	// COMUNICADORES

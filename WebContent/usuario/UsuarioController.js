@@ -9,7 +9,6 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 			$scope.Quantidade = $scope.usuariolist.length+' Usuários Encontradas!' ;
 		});
 
-
 	};
 	$scope.BuscarInformacao();
 	$scope.ordenar = function(keyname){

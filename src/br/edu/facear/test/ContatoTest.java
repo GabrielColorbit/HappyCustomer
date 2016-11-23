@@ -93,11 +93,11 @@ public class ContatoTest {
 		Contato.setComunicadores_contato(comunicadores_contato);
 
 		// CADASTRANDO EMPRESAS
-		/*
-		 * Empresa.setId(1l); List<Empresa> empresas_contato = new
-		 * ArrayList<Empresa>(); empresas_contato.add(Empresa);
-		 * Contato.setEmpresas_contato(empresas_contato);
-		 */
+		
+//		Empresa.setId(1l);
+//		List<Empresa> empresas_contato = new ArrayList<Empresa>(); 
+//		empresas_contato.add(Empresa);
+//		Contato.setEmpresas(empresas_contato);
 
 		// CADASTRAR
 		facade.CadastrarContato(Contato);

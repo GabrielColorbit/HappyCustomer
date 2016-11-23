@@ -67,7 +67,8 @@ public class Empresa implements Serializable {
 	// CONTATOS
 	@ManyToMany
 	@JoinTable(name = "\"TB_EMPRESA_CONTATO\"", joinColumns = {
-			@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { @JoinColumn(name = "id_contato") })
+	@JoinColumn(name = "id_empresa") }, inverseJoinColumns = { 
+	@JoinColumn(name = "id_contato") })
 	@JsonManagedReference
 	private List<Contato> contatos;
 

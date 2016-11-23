@@ -37,7 +37,7 @@ public class EmpresaRestful {
 	@Produces({ MediaType.APPLICATION_JSON })
 	public ArrayList<Empresa> findAll() throws Exception {
 
-		return (new FacadeHappyCustomer().ListarEmpresa()) ;
+		return (new FacadeHappyCustomer().ListarEmpresa());
 	}
 
 	@POST
@@ -45,37 +45,37 @@ public class EmpresaRestful {
 	@Produces("text/plain")
 	@Path("/Salvar")
 	public void cadastrarCliente(Empresa empresa) throws Exception {
-		//Cadastra se a empresa for nova
-		if (empresa.getId() == null){
-				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-				for(Telefone t : empresa.getTelefones_empresa()){
-					new FacadeHappyCustomer().CadastrarTelefone(t);
-					telefonelist.add(t);
-				}
-				empresa.setTelefones_empresa(telefonelist);
-
-				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-				for(Comunicador c : empresa.getComunicadores_empresa()){
-					new FacadeHappyCustomer().CadastrarComunicador(c);
-					comunicadorlist.add(c);
-				}
-				empresa.setComunicadores_empresa(comunicadorlist);
-
-				ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-				for(Contato c : empresa.getContatos() ){
-					contatos_empresa.add(c);
-				}
-				empresa.setContatos(contatos_empresa);
-
-				new FacadeHappyCustomer().CadastrarEmpresa(empresa);
-		}
-		//altera empresa já criada
-		else{
+		// Cadastra se a empresa for nova
+		if (empresa.getId() == null) {
 			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for(Telefone t : empresa.getTelefones_empresa()){
-				if(t.getId() == null){
+			for (Telefone t : empresa.getTelefones_empresa()) {
+				new FacadeHappyCustomer().CadastrarTelefone(t);
+				telefonelist.add(t);
+			}
+			empresa.setTelefones_empresa(telefonelist);
+
+			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+			for (Comunicador c : empresa.getComunicadores_empresa()) {
+				new FacadeHappyCustomer().CadastrarComunicador(c);
+				comunicadorlist.add(c);
+			}
+			empresa.setComunicadores_empresa(comunicadorlist);
+
+			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+			for (Contato c : empresa.getContatos()) {
+				contatos_empresa.add(c);
+			}
+			empresa.setContatos(contatos_empresa);
+
+			new FacadeHappyCustomer().CadastrarEmpresa(empresa);
+		}
+		// altera empresa já criada
+		else {
+			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+			for (Telefone t : empresa.getTelefones_empresa()) {
+				if (t.getId() == null) {
 					new FacadeHappyCustomer().CadastrarTelefone(t);
-				}else{
+				} else {
 					new FacadeHappyCustomer().AlterarTelefone(t);
 				}
 				telefonelist.add(t);
@@ -83,10 +83,10 @@ public class EmpresaRestful {
 			empresa.setTelefones_empresa(telefonelist);
 
 			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for(Comunicador c : empresa.getComunicadores_empresa()){
-				if(c.getId() == null){//cadastra novos comunicadores
+			for (Comunicador c : empresa.getComunicadores_empresa()) {
+				if (c.getId() == null) {// cadastra novos comunicadores
 					new FacadeHappyCustomer().CadastrarComunicador(c);
-				}else{//salva alterações em comunicador'
+				} else {// salva alterações em comunicador'
 					new FacadeHappyCustomer().AlterarComunicador(c);
 				}
 				comunicadorlist.add(c);
@@ -94,16 +94,12 @@ public class EmpresaRestful {
 			empresa.setComunicadores_empresa(comunicadorlist);
 
 			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-			for(Contato c : empresa.getContatos() ){
+			for (Contato c : empresa.getContatos()) {
 				contatos_empresa.add(c);
 			}
 			empresa.setContatos(contatos_empresa);
 
-
-
 			new FacadeHappyCustomer().AlterarEmpresa(empresa);
-
-
 
 		}
 
@@ -122,64 +118,46 @@ public class EmpresaRestful {
 	@POST
 	@Path("/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
-//	@Produces(MediaType.TEXT_PLAIN)
-//	@Produces("image/png")
+	// @Produces(MediaType.TEXT_PLAIN)
+	// @Produces("image/png")
 	@Produces("application/json")
-	public Foto  uploadFile(
-			@FormDataParam("file") InputStream uploadedInputStream,
+	public Foto uploadFile(@FormDataParam("file") InputStream uploadedInputStream,
 			@FormDataParam("file") FormDataContentDisposition fileDetail) throws CrmException {
-			//transform to byte array
-		
-		
-	 
-		 
+		// transform to byte array
+
 		String uploadedFileLocation = "C://HappyCustomer/Empresas/Imagens/" + fileDetail.getFileName();
 
 		// save it
 		Foto foto = writeToFile(uploadedInputStream, uploadedFileLocation);
-		
-		
-		
-		
-	    return foto;
+
+		return foto;
 
 	}
 
 	// save uploaded file to new location
-	private Foto writeToFile(InputStream uploadedInputStream,
-			String uploadedFileLocation) throws CrmException {
+	private Foto writeToFile(InputStream uploadedInputStream, String uploadedFileLocation) throws CrmException {
 		Foto foto = new Foto();
-		      
-        
+
 		try {
 			byte[] ibytes = IOUtils.toByteArray(uploadedInputStream);
 			System.out.println(ibytes);
 			foto.setImagem(ibytes);
 			FotoDAO fdao = new FotoDAO();
 			fdao.Cadastrar(foto);
-			
 
-			
-			
-			//old saving
+			// old saving
 			OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
-			
+
 			int read = 0;
 			byte[] bytes = new byte[1024];
 
-			
-			
-			
-			
-			
-			
 			out = new FileOutputStream(new File(uploadedFileLocation));
 			while ((read = uploadedInputStream.read(bytes)) != -1) {
 				out.write(bytes, 0, read);
 			}
 			out.flush();
 			out.close();
-			
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -187,7 +165,7 @@ public class EmpresaRestful {
 		return foto;
 
 	}
-	
+
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
