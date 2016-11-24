@@ -281,6 +281,7 @@
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
+									
 
 								</div>
 								<div class="col-xs-2 btn-group">
@@ -298,14 +299,16 @@
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
-										<tr class="uppercase">											
+										<tr class="uppercase">										
+											
 											<th>Tipo</th>
 											<th>Número</th>
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="telefone in listTelefones">							                
+									   <tr data-ng-repeat="telefone in listTelefones">
+							               
 							                <td>{{telefone.tipotelefone.nome}}</td>
 							                <td>{{telefone.numero}}</td>
 											<td class="btn-group">
@@ -343,7 +346,8 @@
 										<input type="email" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
 											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
-									</div>									
+									</div>
+									
 
 								</div>
 								<div class="col-xs-2 btn-group">
@@ -361,17 +365,19 @@
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
-										<tr class="uppercase">											
+										<tr class="uppercase">
+										
 											<th>Tipo</th>
-											<th>Endereço</th>
+											<th>Endereço</th>											
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="comunicador in listComunicadores">							                
+									   <tr data-ng-repeat="comunicador in listComunicadores">
+							                
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 							                <td>{{comunicador.nome}}</td>
-											<td class="btn-group">
+							               	<td class="btn-group">
 												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 											</td>
@@ -384,7 +390,6 @@
 						</div>
 
 
-						<div id="success">{{Resposta}}</div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Contato">Voltar</a>

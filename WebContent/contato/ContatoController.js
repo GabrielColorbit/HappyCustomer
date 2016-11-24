@@ -29,20 +29,6 @@ myControllers.controller('GetContatoController', function($scope, $rootScope, $r
 					"id":$scope.contato.idfoto
 			}
 			
-			//validação de array de telefones
-			if($scope.contato.telefones_contato){
-				if($scope.contato.telefones_contato.constructor == Array){
-						$scope.listTelefones = $scope.contato.telefones_contato;
-				}else{
-					$scope.listTelefones = [];
-					var telefone = $scope.contato.telefones_contato;
-					$scope.listTelefones.push(telefone);
-				}
-			}
-			else{
-				$scope.listTelefones = [];
-			}
-
 			$scope.listTelefones=[];
 			$scope.listTelefones = contato.telefones_contato;
 			

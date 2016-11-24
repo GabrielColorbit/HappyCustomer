@@ -65,6 +65,9 @@ public class UsuarioBO implements InterfaceBO<Usuario> {
 			throw new Exception("Status Fornecido Invalido.");
 		}
 
+		
+			
+
 		usuarioDAO.Cadastrar(usuario);
 	}
 

@@ -70,6 +70,8 @@ public class Usuario {
 	private String datacadastro;
 	private Status status;
 	private long idfoto;
+	
+	
 	public Long getId() {
 		return id;
 	}

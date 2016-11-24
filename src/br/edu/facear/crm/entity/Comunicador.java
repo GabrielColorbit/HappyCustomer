@@ -1,12 +1,9 @@
 package br.edu.facear.crm.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -30,8 +27,8 @@ public class Comunicador {
 	private TipoComunicador tipocomunicador;
 
 	// COMUNICADOR_USUARIOS
-	@ManyToMany(mappedBy = "comunicadores_usuario")
-	private List<Usuario> usuarios;
+	// @ManyToMany(mappedBy = "comunicadores_usuario")
+	// private List<Usuario> usuarios;
 
 	// COMUNICADOR_EMPRESAS
 	// @ManyToMany(mappedBy = "comunicadores_empresa")

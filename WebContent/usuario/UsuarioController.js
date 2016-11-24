@@ -33,7 +33,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 			$scope.listTelefones = usuario.telefones_usuario;
 
 			
-		//validação de array de telefones
+			//validação de array de telefones
 			if($scope.usuario.telefones_usuario){
 				if($scope.usuario.telefones_usuario.constructor == Array){
 						$scope.listTelefones = $scope.usuario.telefones_usuario;
@@ -128,8 +128,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 	    
 		$scope.EnviarInformacao = function() {
 			
-			
-//			//limpando ids de novos cadastros de telefone
+			//limpando ids de novos cadastros de telefone
 			for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
 				var x = $scope.listTelefones[i].id;
 				var y = "#";
@@ -187,6 +186,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 					parameter, config).success(
 					function(data, status, headers, config) {
 
+						$scope.Resposta = 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!';
 						alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
 
 					}).error(
@@ -396,10 +396,6 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 });
 myControllers.controller('CadastrarUsuarioController', function($scope, $rootScope, $routeParams,$http) {
 
-
-
-	$scope.Resposta = 'Preencher campos de cadastro';
-
 	$scope.Titulo = "Cadastrar Usuário";
 
 });
@@ -461,11 +457,6 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 
 	$scope.EnviarInformacao = function() {
 
-
-//		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
-//			$scope.listTelefones[i].id = null;
-//		}
-		
 		//limpando ids de novos cadastros de telefone
 		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++){
 			var x = $scope.listTelefones[i].id;
@@ -524,9 +515,8 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 				parameter, config).success(
 				function(data, status, headers, config) {
 
-
+					$scope.Resposta = 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!';
 					alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!')
-					$location.path("/Usuario");
 
 				}).error(
 				function(data, status, header, config) {
@@ -542,200 +532,219 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 				$scope.tipostelefone = data["tipoTelefone"];
 			});
 
-	 //Genrenciar Telefones
-	   $scope.addTelefone = function(){
+		$scope.listTelefones=[];
+		$scope.add = function(){
 
-	   	if(validarCamposTelefone()){
-	   		if($scope.telefone.id == null){
-	    				autoincrementTelefone();
-	    				$scope.listTelefones.push({
-	    	  				id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
-	    	  			});
-	   					$scope.telefone = { "id": null,"numero": '',"tipotelefone":''};
-	    			}else{
-	    	  			var index = getSelectedIndexTelefone($scope.telefone.id);
+			if(validarCampos()){
+				if($scope.telefone.id == null){
+						autoincrement();
+						$scope.listTelefones.push({
+								id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
+							});
+					}else{
+							var index =$scope.telefone.id;
+							$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
+							$scope.listTelefones[index].numero = $scope.telefone.numero;
+					}
+					$scope.telefone.id = null;
+						$scope.telefone.tipotelefone = '';
+						$scope.telefone.numero = '';
+			}
 
-	    	  			$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
-	    	  			$scope.listTelefones[index].numero = $scope.telefone.numero;
-	    	 				$scope.telefone = {
-	                   "id": null,
-	                   "numero": '',
-	                   "tipotelefone":''
-	             };
-	    			}
-	   	}
+		}
 
-	   	}
-	   $scope.selectEditTelefone = function(id){
+		$scope.selectEdit = function(id){
+			var Telefone = $scope.listTelefones[id];
+			$scope.telefone.id = Telefone.id;
+			$scope.telefone.tipotelefone = Telefone.tipotelefone;
+			$scope.telefone.numero = Telefone.numero;
+		};
+		$scope.del = function(id){
+			var result = confirm('Tem certeza?');
+			if (result === true){
+				$scope.listTelefones.splice(id, 1);
+			}
+		};
+		function getSelectedIndex(id){
+			for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
+				if($scope.listTelefone[i].id == id)
+					return i;
+			return 1;
 
-	   			var SelFone = getSelectedTelefone(id);
-	    			$scope.telefone = {
-	             "id": SelFone.id,
-	             "numero": SelFone.numero,
-	             "tipotelefone":SelFone.tipotelefone
-	         };
+		}
+		function autoincrement(){
+			$scope.telefone.id = Object.keys($scope.listTelefones).length;
+		}
+			 function validarCampos(){
+				var i;
+				if($scope.telefone){
+				if(! $scope.telefone.numero ){
+					alert("O campo número de telefone está vázio, favor preencher o campo.");
+					i = false;
+				}else if(! $scope.telefone.tipotelefone){
+					alert("O campo tipo de telefone está vázio, favor preencher o campo.");
+				}else{
+					i = true
+				}
+			}else{
+				alert("Favor preencher os campos Número e Tipo de Telefone");
+				i = false;
+			}
+				return i;
+			 }
 
-	   	};
-	   $scope.delTelefone = function(id){
-	   	var result = confirm('Você deseja remover o telefone da lista?');
-	   	if (result === true){
-	   		for(var j = 0; j < $scope.listTelefones.length;j ++){
-	   				if($scope.listTelefones[j].id == id){
-	   						$scope.listTelefones.splice(j, 1);
-	   				}
-	   		}
-	   	}
-	   };
-	   function getSelectedTelefone(id){
-	   		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
-	   			if($scope.listTelefones[i].id == id)
-	   				return $scope.listTelefones[i];
-	   		return 1;
 
-	   }
-	   function getSelectedIndexTelefone(id){
-	   		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
-	   			if($scope.listTelefones[i].id == id)
-	   				return i;
-	   		return 1;
-	   }
-	   function autoincrementTelefone(){
-	   		if($scope.listTelefones){
-	   			$scope.telefone.id ="#"+Object.keys($scope.listTelefones).length;
-	   		}else{
-	   			$scope.telefone.id ="#"+1;
-	   		}
+			 //Tipo de Comunicador
+		 $http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
+			.success(function(data) {
+				$scope.tiposcomunicador = data["tipoComunicador"];
+			});
+	
+	//Genrenciar Telefones
+	$scope.listTelefones=[];
+	$scope.addTelefone = function(){
 
-	   	}
-	   function validarCamposTelefone(){
-	      	var i;
-	      	if($scope.telefone){
-	   					if(! $scope.telefone.numero ){
-	   						alert("O campo número de telefone está vázio, favor preencher o campo.");
-	   						i = false;
-	   					}else if(! $scope.telefone.tipotelefone){
-	   						alert("O campo tipo de telefone está vázio, favor preencher o campo.");
-	   					}else{
-	   						i = true
-	   					}
-	   		}else{
-	   			alert("Favor preencher os campos Número e Tipo de Telefone");
-	   			i = false;
-	   		}
-	      	return i;
-	   }
-	   
-	   //Tipo de Comunicador
-	   $http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
-		.success(function(data) {
-			$scope.tiposcomunicador = data["tipoComunicador"];
-		});
+	if(validarCamposTelefone()){
+		if($scope.telefone.id == null){
+				autoincrementTelefone();
+				$scope.listTelefones.push({
+						id: $scope.telefone.id ,numero:$scope.telefone.numero, tipotelefone:$scope.telefone.tipotelefone
+					});
+					$scope.telefone = { "id": null,"numero": '',"tipotelefone":''};
+			}else{
+					var index = getSelectedIndexTelefone($scope.telefone.id);
 
-	   //Genrenciar comunicadores
-	   $scope.addComunicador = function(){
+					$scope.listTelefones[index].tipotelefone = $scope.telefone.tipotelefone;
+					$scope.listTelefones[index].numero = $scope.telefone.numero;
+					$scope.telefone = {
+								"id": null,
+								"numero": '',
+								"tipotelefone":''
+					};
+			}
+	}
 
-	   	if(validarCamposComunicador()){
-	   		if($scope.comunicador.id == null){
-	    				autoincrementComunicador();
-	    				$scope.listComunicadores.push({
-	    	  				id: $scope.comunicador.id ,
-	   						nome:$scope.comunicador.nome,
-	   						tipocomunicador:$scope.comunicador.tipocomunicador
-	    	  			});
-	   					$scope.comunicador = { "id": null,"nome": '',"tipocomunicador":''};
+	}
+	$scope.selectEditTelefone = function(id){
 
-	    			}else{
-	    	  			var index = getSelectedIndexComunicador($scope.comunicador.id);
-	    	  			$scope.listComunicadores[index].tipocomunicador = $scope.comunicador.tipocomunicador;
-	    	  			$scope.listComunicadores[index].nome = $scope.comunicador.nome;
-	   					$scope.comunicador = {
-	   								"id": null,
-	   								"nome": '',
-	   								"tipocomunicador":''
-	   					};
-	    			}
-	   	}
-	   }
-	   $scope.selectEditComunicador = function(id){
-	   			var SelComunicador = getSelectedComunicador(id);
-	   			$scope.comunicador = {
-	   					"id": SelComunicador.id,
-	   					"nome": SelComunicador.nome,
-	   					"tipocomunicador":SelComunicador.tipocomunicador
-	   			};
-	   };
-	   $scope.delComunicador = function(id){
-	   	var result = confirm('Tem certeza?');
-	   		if (result === true){
-	   			for(var j = 0; j < $scope.listComunicadores.length;j ++){
-	   		   		if($scope.listComunicadores[j].id == id){
-	   						$scope.listComunicadores.splice(j, 1);
-	   		   		}
-	   		   	}
-	   		}
-	   };
-	   function getSelectedIndexComunicador(id){
-	   	for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++)
-	   		if($scope.listComunicadores[i].id == id)
-	   			return i;
-	   	return 1;
+			var SelFone = getSelectedTelefone(id);
+			$scope.telefone = {
+					"id": SelFone.id,
+					"numero": SelFone.numero,
+					"tipotelefone":SelFone.tipotelefone
+			};
 
-	   }
-	   function autoincrementComunicador(){
-	   	if($scope.listComunicadores){
-	   			$scope.comunicador.id = "#"+Object.keys($scope.listComunicadores).length;
-	   	}else{
-	   			$scope.comunicador.id = "#"+1;
-	   	}
+	};
+	$scope.delTelefone = function(id){
+	var result = confirm('Você deseja remover o telefone da lista?');
+	if (result === true){
+		for(var j = 0; j < $scope.listTelefones.length;j ++){
+				if($scope.listTelefones[j].id == id){
+						$scope.listTelefones.splice(j, 1);
+				}
+		}
+	}
+	};
+	function getSelectedTelefone(id){
+		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
+			if($scope.listTelefones[i].id == id)
+				return $scope.listTelefones[i];
+		return 1;
 
-	   }
-	   function validarComunicador(){
-	      	var i;
-	      	if($scope.comunicador){
-	   			if(! $scope.comunicador.nome ){
-	   				alert("O campo nome de comunicador está vázio, favor preencher o campo.");
-	   			i = false;
+	}
+	function getSelectedIndexTelefone(id){
+		for(var i=0; i <  Object.keys($scope.listTelefones).length; i ++)
+			if($scope.listTelefones[i].id == id)
+				return i;
+		return 1;
+	}
+	function autoincrementTelefone(){
+		if($scope.listTelefones){
+			$scope.telefone.id ="#"+Object.keys($scope.listTelefones).length;
+		}else{
+			$scope.telefone.id ="#"+1;
+		}
 
-	   		}else if(! $scope.comunicador.tipocomunicador){
-	   			alert("Selecione um tipo de comunicador para continuar.");
-	   		}else{
-	   			i = true
-	   		}
-	   	}else{
-	   		alert("Favor preencher os campos Nome e Tipo de Comunicador");
-	   			i = false;
-	   		}
-	      	return i;
-	   }
-	   function getSelectedComunicador(id){
-	   	for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++)
-	   		if($scope.listComunicadores[i].id == id)
-	   			return $scope.listComunicadores[i];
-	   	return 1;
-	   }
-	   function getSelectedIndexComunicador(id){
-	   		for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++)
-	   			if($scope.listComunicadores[i].id == id)
-	   				return i;
-	   		return 1;
-	   }
-	   function validarCamposComunicador(){
-	      	var i;
-	      	if($scope.comunicador){
-	   					if(! $scope.comunicador.nome ){
-	   						alert("O campo nome do comunicador está vázio, favor preencher o campo.");
-	   						i = false;
-	   					}else if(! $scope.comunicador.tipocomunicador){
-	   						alert("O campo tipo de comunicador está vázio, favor preencher o campo.");
-	   					}else{
-	   						i = true
-	   					}
-	   		}else{
-	   			alert("Favor preencher os campos nome comunicador  e Tipo de comunicador");
-	   			i = false;
-	   		}
-	      	return i;
-	    }
+	}
+	function validarCamposTelefone(){
+		var i;
+		if($scope.telefone){
+					if(! $scope.telefone.numero ){
+						alert("O campo número de telefone está vázio, favor preencher o campo.");
+						i = false;
+					}else if(! $scope.telefone.tipotelefone){
+						alert("O campo tipo de telefone está vázio, favor preencher o campo.");
+					}else{
+						i = true
+					}
+		}else{
+			alert("Favor preencher os campos Número e Tipo de Telefone");
+			i = false;
+		}
+		return i;
+	}
+
+	//Genrenciar comunicadores
+	$scope.listComunicadores=[];
+	$scope.addComunicador = function(){
+
+	if(validarComunicador()){
+		if($scope.comunicador.id == null){
+				autoincrementComunicador();
+				$scope.listComunicadores.push({
+						id: $scope.comunicador.id ,nome:$scope.comunicador.nome, tipocomunicador:$scope.comunicador.tipocomunicador
+					});
+			}else{
+					var index =$scope.comunicador.id;
+					$scope.listComunicadores[index].tipocomunicador = $scope.comunicador.tipocomunicador;
+					$scope.listComunicadores[index].nome = $scope.comunicador.nome;
+			}
+			$scope.comunicador.id = null;
+				$scope.comunicador.tipocomunicador = '';
+				$scope.comunicador.nome = '';
+	}
+
+	}
+	$scope.selectEditComunicador = function(id){
+	var Comunicador = $scope.listComunicadores[id];
+	$scope.comunicador.id = Comunicador.id;
+	$scope.comunicador.tipocomunicador = Comunicador.tipocomunicador;
+	$scope.comunicador.nome = Comunicador.nome;
+	};
+	$scope.delComunicador = function(id){
+	var result = confirm('Tem certeza?');
+		if (result === true){
+			$scope.listComunicadores.splice(id, 1);
+		}
+	};
+	function getSelectedIndexComunicador(id){
+		for(var i=0; i <  Object.keys($scope.listComunicadores).length; i ++)
+			if($scope.listComunicadores[i].id == id)
+				return i;
+		return 1;
+
+	}
+	function autoincrementComunicador(){
+		$scope.comunicador.id = Object.keys($scope.listComunicadores).length;
+	}
+	 function validarComunicador(){
+		var i;
+		if($scope.comunicador){
+			if(! $scope.comunicador.nome ){
+				alert("O campo nome de comunicador está vázio, favor preencher o campo.");
+			i = false;
+
+		}else if(! $scope.comunicador.tipocomunicador){
+			alert("Selecione um tipo de comunicador para continuar.");
+		}else{
+			i = true
+		}
+	}else{
+		alert("Favor preencher os campos Nome e Tipo de Comunicador");
+			i = false;
+		}
+		return i;
+	 }
 	   
         $scope.Excluir = function(id){
         	
