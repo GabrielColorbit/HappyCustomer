@@ -526,6 +526,12 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 				});
 	   };
 
+
+		 $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
+	 	.success(function(data) {
+	 		$scope.tipostelefone = data["tipoTelefone"];
+	 	});
+		 $scope.listTelefones = [];
 		 //Genrenciar Telefones
  			$scope.addTelefone = function(){
 
@@ -614,7 +620,7 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
  			.success(function(data) {
  			 $scope.tiposcomunicador = data["tipoComunicador"];
  			});
-
+ 			$scope.listComunicadores = [];
  			//Genrenciar comunicadores
  			$scope.addComunicador = function(){
 
