@@ -109,7 +109,7 @@
 
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-								<label>CPF</label> <input ng-model="contato.cpf" type="text" class="form-control"
+								<label>CPF</label> <input ng-model="contato.cpf" type="text" class="form-control cpf"
 									placeholder="CPF" id="cpf" required
 									data-validation-required-message="Por favor insira um cpf">
 
@@ -171,13 +171,13 @@
 							<div 
 								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls">
 								<label>Número</label>
-								<input type="number" ng-model="contato.numero" id="numero" class="form-control" placeholder="Número" required data-validation-required-message="Please enter your phone number.">
+								<input type="tex" ng-model="contato.numero" id="numero" class="form-control" placeholder="Número" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
 
 							<div class="form-group col-xs-12 col-sm-6  floating-label-form-group controls">
 								<label>CEP</label>
-								 <input type="number" ng-model="contato.cep"  class="form-control" placeholder="CEP" id="cep" required data-validation-required-message="Please enter your email address.">
+								 <input type="text" ng-model="contato.cep"  class="form-control cep" placeholder="CEP" id="cep" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							
@@ -383,7 +383,7 @@
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Contato">Voltar</a>
-								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()'>Salvar</a>
+								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacao()' href="#/Contato">Salvar</a>
 							</div>
 						</div>
 					</form>

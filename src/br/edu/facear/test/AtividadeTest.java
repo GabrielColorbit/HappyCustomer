@@ -57,6 +57,7 @@ public class AtividadeTest {
 
 		// CADASTRANDO COMUNICADOR
 		Comunicador.setNome("atividade1@atividade1.com");
+		Comunicador.setResumo("Foi comprado um cartão SD de 64GB.");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);
 		facade.CadastrarComunicador(Comunicador);
@@ -78,6 +79,7 @@ public class AtividadeTest {
 		Atividade Atividade = facade.BuscarAtividadePorId(2l);
 
 		Atividade.setNome("Notebook com problema na tela");
+		Comunicador.setResumo("Foi comprado uma tela nova com pelicula de vidro.");
 		Atividade.setDatacadastro("19/11/2016");
 		Atividade.setDatainicio("19/11/2016");
 		Atividade.setDatafim("22/11/2016");

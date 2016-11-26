@@ -44,41 +44,41 @@ public class Comunicador {
 
 	// ATRIBUTO(S)
 	private String nome;
-
+	private String resumo;
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public TipoComunicador getTipocomunicador() {
 		return tipocomunicador;
 	}
-
 	public void setTipocomunicador(TipoComunicador tipocomunicador) {
 		this.tipocomunicador = tipocomunicador;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	public String getResumo() {
+		return resumo;
+	}
+	public void setResumo(String resumo) {
+		this.resumo = resumo;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((resumo == null) ? 0 : resumo.hashCode());
 		result = prime * result + ((tipocomunicador == null) ? 0 : tipocomunicador.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -98,6 +98,11 @@ public class Comunicador {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
+		if (resumo == null) {
+			if (other.resumo != null)
+				return false;
+		} else if (!resumo.equals(other.resumo))
+			return false;
 		if (tipocomunicador == null) {
 			if (other.tipocomunicador != null)
 				return false;
@@ -105,26 +110,24 @@ public class Comunicador {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
-		return "Comunicador [id=" + id + ", tipocomunicador=" + tipocomunicador + ", nome=" + nome + "]";
+		return "Comunicador [id=" + id + ", tipocomunicador=" + tipocomunicador + ", nome=" + nome + ", resumo="
+				+ resumo + "]";
 	}
-
-	public Comunicador(Long id, TipoComunicador tipocomunicador, String nome) {
+	public Comunicador(Long id, TipoComunicador tipocomunicador, String nome, String resumo) {
 		super();
 		this.id = id;
 		this.tipocomunicador = tipocomunicador;
 		this.nome = nome;
+		this.resumo = resumo;
 	}
-
 	public Comunicador() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	
-
+	
 	// GETTERS E SETTERS
 	
 	// HASHCODE

@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Atividade;
+import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restAtividade")
@@ -30,11 +31,31 @@ public class AtividadeRestful {
 	@Produces("application/json")
 	@Path("/Salvar")
 	public Atividade cadastrarCliente(Atividade atividade) throws Exception {
-		if (atividade.getId() == null)
+		// Cadastra se a atividade for nova
+		if (atividade.getId() == null) {
 			new FacadeHappyCustomer().CadastrarAtividade(atividade);
-		else
+		}
+		// altera atividade já criada
+		else {
+			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+			
+			if(atividade.getComunicadores_atividade() != null){
+				for (Comunicador c : atividade.getComunicadores_atividade()) {
+					if (c.getId() == null) {// cadastra novos comunicadores
+						new FacadeHappyCustomer().CadastrarComunicador(c);
+					} else {// salva alterações em comunicador'
+						new FacadeHappyCustomer().AlterarComunicador(c);
+					}
+					comunicadorlist.add(c);
+				}
+				atividade.setComunicadores_atividade(comunicadorlist);
+			}			
+
 			new FacadeHappyCustomer().AlterarAtividade(atividade);
+
+		}
 		return atividade;
+
 	}
 
 	@GET
