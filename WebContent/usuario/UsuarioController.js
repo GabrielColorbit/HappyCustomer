@@ -1,13 +1,22 @@
 var myControllers = angular.module('UsuarioControllers',[]);
 
-myControllers.controller('ListarUsuarioController', function($scope,$http) {
+myControllers.controller('ListarUsuarioController', function($scope,$http,$cookies) {
 	$scope.Titulo = "Usuários";
 	$scope.BuscarInformacao = function() {
-		$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-		.success(function(data) {
+		 var hash = $cookies.get('hash');
+		 var config = {
+				headers : {
+					'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+				}
+			}
+		$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+		.success(function(data, config) {
 			$scope.usuariolist = data["usuario"];
 			$scope.Quantidade = $scope.usuariolist.length+' Usuários Encontradas!' ;
-		});
+		}).error(
+			function(data, config) {
+				alert(data);
+			});
 
 	};
 	$scope.BuscarInformacao();

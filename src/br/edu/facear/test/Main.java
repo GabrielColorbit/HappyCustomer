@@ -49,22 +49,23 @@ import br.edu.facear.crm.entity.TipoTelefone;
 import br.edu.facear.crm.entity.TipoUsuario;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
+import br.edu.facear.resource.AuthenticationService;
 
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		gerenciarTipoTelefone();
-		gerenciarTipoEmpresa();
-		gerenciarTelefone();
-		gerenciarProduto();
-		gerenciarEstado();
-		gerenciarCidade();
-		gerenciarOrigemContato();
-		gerenciarTipoUsuario();
-		gerenciarTipoComunicador();
-		gerenciarTipoContato();
-		gerenciarTipoAtividade();
+//		gerenciarTipoTelefone();
+//		gerenciarTipoEmpresa();
+//		gerenciarTelefone();
+//		gerenciarProduto();
+//		gerenciarEstado();
+//		gerenciarCidade();
+//		gerenciarOrigemContato();
+//		gerenciarTipoUsuario();
+//		gerenciarTipoComunicador();
+//		gerenciarTipoContato();
+//		gerenciarTipoAtividade();
 //		gerenciarUsuario();
 //		gerenciarContato();		
 //		gerenciarEmpresa();
@@ -72,9 +73,29 @@ public class Main {
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-
+		
+		validaUsuario();
 	}
 
+	public static void validaUsuario() throws Exception{
+		
+		Usuario u = new FacadeHappyCustomer().BuscarUsuarioPorId(1l);
+		
+		String hash = u.getLogin()+u.getSenha();
+		String result = new AuthenticationService().getmd5(hash);
+		
+		
+		Usuario u2 = new FacadeHappyCustomer().BuscarUsuarioPorId(1l);
+		
+		String hash2 = u2.getLogin()+u2.getSenha();
+		String result2 = new AuthenticationService().getmd5(hash2);
+		
+		
+		System.out.println("from client: "+result);
+		System.out.println("from server: "+result2);
+		
+	}
+	
 	public static void gerenciarTipoTelefone() throws Exception {
 		TipoTelefoneBO ttBO = new TipoTelefoneBO();
 		TipoTelefone tt = new TipoTelefone();
@@ -163,7 +184,7 @@ public class Main {
 
 		System.out.println("Busca Produtos:");
 		produto = produtoBO.BuscarID(1l);
-		System.out.println("id: " + produto.getId() + " Nome: " + produto.getNome() + " Preço: " + produto.getPreco());
+		System.out.println("id: " + produto.getId() + " Nome: " + produto.getNome() + " Preï¿½o: " + produto.getPreco());
 
 		produto.setNome("Teste ProdutoBO Alterar2");
 		produto.setPreco(1.99f);
@@ -175,7 +196,7 @@ public class Main {
 		List<Produto> lista_p = produtoBO.Listar();
 		for (Produto current_p : lista_p) {
 			System.out.println(
-					"id: " + current_p.getId() + " Nome: " + current_p.getNome() + " Preço: " + current_p.getPreco());
+					"id: " + current_p.getId() + " Nome: " + current_p.getNome() + " Preï¿½o: " + current_p.getPreco());
 
 		}
 
@@ -216,7 +237,7 @@ public class Main {
 		Estado e = new Estado();
 		e = eBO.BuscarID(1l);
 
-		c.setNome("São José dos Campo");
+		c.setNome("Sï¿½o Josï¿½ dos Campo");
 		c.setEstado(e);
 		cBO.Cadastrar(c);
 		//
@@ -225,7 +246,7 @@ public class Main {
 		c = cBO.BuscarID(1l);
 		System.out.println(c.getId() + " - " + c.getNome());
 
-		c.setNome("São José dos Campos");
+		c.setNome("Sï¿½o Josï¿½ dos Campos");
 		cBO.Alterar(c);
 
 		System.out.println("Cidades: ");
@@ -334,7 +355,7 @@ public class Main {
 				+ us.getTipousuario().getNome() + " Estado: " + us.getCidade().getEstado().getNome() + " Cidade: "
 				+ us.getCidade().getNome() + " Email: " + us.getBairro() + " Senha: " + us.getSenha() + " cpf: "
 				+ us.getCpf() + " Genero: " + us.getGenero().toString() + " Cargo: " + us.getCargo()
-				+ " DataNascimento " + us.getDatanascimento().toString() + " Endereço: " + us.getEndereco()
+				+ " DataNascimento " + us.getDatanascimento().toString() + " Endereï¿½o: " + us.getEndereco()
 				+ " Numero: " + us.getNumero() + " Cep: " + us.getCep());
 		us = usBO.BuscarID(1l);
 		us.setCpf("111.000.000.00");
@@ -348,7 +369,7 @@ public class Main {
 					+ " Cidade: " + current_tc.getCidade().getNome() + " Email: " + current_tc.getBairro() + " Senha: "
 					+ current_tc.getSenha() + " cpf: " + current_tc.getCpf() + " Genero: "
 					+ current_tc.getGenero().toString() + " Cargo: " + current_tc.getCargo() + " DataNascimento "
-					+ current_tc.getDatanascimento().toString() + " Endereço: " + current_tc.getEndereco() + " Numero: "
+					+ current_tc.getDatanascimento().toString() + " Endereï¿½o: " + current_tc.getEndereco() + " Numero: "
 					+ current_tc.getNumero() + " Cep: " + current_tc.getCep());
 		}
 
@@ -431,7 +452,7 @@ public class Main {
 				+ co.getUsuarioresponsavel().getNome() + " tipoContato: " + co.getTipocontato().getNome() + " Estado: "
 				+ co.getCidade().getEstado().getNome() + " Cidade: " + co.getCidade().getNome() + " cpf: " + co.getCpf()
 				+ " Genero: " + co.getGenero().toString() + " Cargo: " + co.getCargo() + " DataNascimento "
-				+ co.getDatanascimento().toString() + " Endereço: " + co.getEndereco() + " Numero: " + co.getNumero()
+				+ co.getDatanascimento().toString() + " Endereï¿½o: " + co.getEndereco() + " Numero: " + co.getNumero()
 				+ " Cep: " + co.getCep());
 
 		System.out.println("Cidades: ");
@@ -442,7 +463,7 @@ public class Main {
 					+ current_co.getTipocontato().getNome() + " Estado: " + current_co.getCidade().getEstado().getNome()
 					+ " Cidade: " + current_co.getCidade().getNome() + " cpf: " + current_co.getCpf() + " Genero: "
 					+ current_co.getGenero().toString() + " Cargo: " + current_co.getCargo() + " DataNascimento "
-					+ current_co.getDatanascimento().toString() + " Endereço: " + current_co.getEndereco() + " Numero: "
+					+ current_co.getDatanascimento().toString() + " Endereï¿½o: " + current_co.getEndereco() + " Numero: "
 					+ current_co.getNumero() + " Cep: " + co.getCep());
 		}
 
@@ -515,11 +536,11 @@ public class Main {
 				Empresa.setInscricaoestadual("1352678934");
 				Empresa.setEndereco("Rua Dr. Eli Volpato");
 				Empresa.setNumero(250l);
-				Empresa.setComplemento("Próximo a Petrobrás");
+				Empresa.setComplemento("Prï¿½ximo a Petrobrï¿½s");
 				Empresa.setCep("83707250");
 				Empresa.setBairro("Chapada");
 				Empresa.setSite("www.gelopar.com.br");
-				Empresa.setRamo("Refrigeração");
+				Empresa.setRamo("Refrigeraï¿½ï¿½o");
 				// Calendar datacadastro = new GregorianCalendar(27, 10, 2016);
 				Empresa.setDatacadastro("15/11/2016");
 				Empresa.setStatus(Status.Ativo);
@@ -532,7 +553,7 @@ public class Main {
 				TipoEmpresa.setId(1l);
 				Empresa.setTipoempresa(TipoEmpresa);
 
-				// USUÁRIO RESPONSÁVEL PELA EMPRESA
+				// USUï¿½RIO RESPONSï¿½VEL PELA EMPRESA
 				Usuario.setId(1l);
 				Empresa.setUsuarioresponsavel(Usuario);
 

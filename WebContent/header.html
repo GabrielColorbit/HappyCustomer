@@ -1,8 +1,7 @@
 <meta charset="utf-8" />
 
 <!-- Navigation -->
-<nav id="mainNav"
-	class="navbar navbar-default navbar-fixed-top navbar-custom">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" ng-controller="headerController">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header page-scroll">
@@ -31,7 +30,7 @@
 
 				<li class="menu"><a href="#/Empresa">Empresas</a>
 					<ul class="sub-menu">
-						
+
 						<li class="menu"><a href="#/Ligacao">Ligações</a>
 						</li>
 						<li class="menu"><a href="#/Contato">Contatos</a>
@@ -73,18 +72,17 @@
 
 					</ul></li>
 
-				<li class="menu dropdown-user"><a href="javascript:;"
-					class="dropdown-toggle" data-toggle="dropdown"
-					data-hover="dropdown" data-close-others="true" aria-expanded="true">
-						<img class="user-pic img-circle"
-						src="/CRM/img/users/rodrigo.jpg"> <span
-						class="username username-hide-on-mobile"> Rodrigo </span> <i
-						class="fa fa-angle-down"></i>
+				<li class="menu dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
+						<img class="user-pic img-circle" id="ItemPreview" src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{usuarioLogado.idfoto}}"/>
+				        
+						<span class="username username-hide-on-mobile"> {{usuarioLogado.nome}} </span> 
+						<i class="fa fa-angle-down"></i>
 				</a>
 					<ul class="sub-menu">
-						<li class="menu"><a href="#/Usuario/Editar/1">
+						<li class="menu"><a href="#/Usuario/Editar/{{usuarioLogado.id}}">
 								Meus Dados</a></li>
-						<li class="menu"><a href="/CRM/login/login.html"> Sair</a></li>
+						<li class="menu"><a href="javascript:void(0)" ng-click="Logout()"> Sair</a></li>
 					</ul></li>
 
 

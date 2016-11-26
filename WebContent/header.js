@@ -1,14 +1,13 @@
-(function(angular) {
-	'use strict';
-	function HeaderController() {
+var myControllers = angular.module('HeaderControllers',[]);
+myControllers.controller('headerController', function( $scope, $routeParams, $http,  $cookies, $location,$window) {
 
-	}
+  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
 
-	angular.module('happyCustomerApp').component('header', {
-		templateUrl : 'header.html',
-		controller : HeaderController,
-		bindings : {
-			header : '='
-		}
-	});
-})(window.angular);
+   $scope.Logout = function(){
+	   $cookies.remove("hash");
+	   $cookies.remove("usuarioLogado");
+	   $location.path('/Login');
+	   $window.location.reload();
+   };
+});
+

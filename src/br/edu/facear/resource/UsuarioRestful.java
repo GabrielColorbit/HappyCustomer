@@ -9,11 +9,14 @@ import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.apache.commons.io.IOUtils;
 
@@ -23,8 +26,6 @@ import com.sun.jersey.multipart.FormDataParam;
 import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
 import br.edu.facear.crm.entity.Comunicador;
-import br.edu.facear.crm.entity.Contato;
-import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Foto;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
@@ -35,10 +36,21 @@ public class UsuarioRestful {
 	
 	@GET
 	@Path("/listarTodos")
-	@Produces({ MediaType.APPLICATION_JSON })
-	public ArrayList<Usuario> findAll() throws Exception {
-
-		return new FacadeHappyCustomer().ListarUsuario();
+	@Produces({ MediaType.APPLICATION_JSON})
+	@Consumes({ MediaType.TEXT_PLAIN })
+	public ArrayList<Usuario> findAll(@HeaderParam("hash") String md5hashusuario) throws Exception {
+		//cria variavel de resposta
+		//instancía classe de autenticação 
+		AuthenticationService ra = new AuthenticationService();
+		ArrayList<Usuario> usuarioslist = new ArrayList<>();
+		//valida usuario logado
+		
+		boolean b = new AuthenticationService().RequestAuthentication(md5hashusuario);
+		if(b){
+			usuarioslist = new FacadeHappyCustomer().ListarUsuario();
+			return usuarioslist;
+		}
+		return usuarioslist;
 	}
 
 	@POST
