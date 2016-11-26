@@ -46,9 +46,11 @@
 								<img class="user-pic img-circle" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{e.idfoto}}">
 							</td>
 							<td>{{e.razaosocial}}</td>
-							<td>{{e.tipoempresa.nome}}</td>
-							<td>{{e.ramo}}</td>
 							<td>
+								<a target="_blank" href="#/TipoEmpresa/Editar/{{e.tipoempresa.id}}" class="primary-link">{{e.tipoempresa.nome}}</a>
+							</td>
+							<td>{{e.ramo}}</td>
+							<td>s
 								<a target="_blank" href="http://{{e.site}}" class="primary-link">{{e.site}}</a>
 							</td>
 							
