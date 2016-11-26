@@ -49,7 +49,6 @@ public class LoginRestful {
 	
 	
 	@GET
-<<<<<<< HEAD
 	@Path("/LoadUser/{md5user}")
 	@Consumes({ MediaType.TEXT_PLAIN })
 	@Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
@@ -71,17 +70,7 @@ public class LoginRestful {
 		
 		
 		return usuarioLogado;
-=======
-	@Path("/Logar")
-	public void Logar(Usuario usuario) throws Exception {
-		if ((usuario.getLogin() == "aqui coloca o campo LOGIN da tela login") 
-			&& (usuario.getSenha() == "aqui coloca o campo SENHA da tela login")){
-			//ENTRA
-		}
-		else{
-			//NÃOENTRA
-		}
->>>>>>> origin/master
+
 	}
 
 }

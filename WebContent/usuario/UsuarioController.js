@@ -1,5 +1,8 @@
 var myControllers = angular.module('UsuarioControllers',[]);
 
+
+
+
 myControllers.controller('ListarUsuarioController', function($scope,$http,$cookies) {
 	$scope.Titulo = "Usuários";
 	$scope.BuscarInformacao = function() {
@@ -25,7 +28,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http,$cooki
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location,$cookies,$window) {
 	$scope.Titulo = "Editar Usuário";
 	var usuario =  new Object();
 
@@ -196,6 +199,18 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 					function(data, status, headers, config) {
 
 						alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!');
+						
+					   //atualiza informações usuario logado
+					   var hash = $cookies.get("hash");
+					   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
+						  (function(data) {
+								  var hash = data;
+								  $cookies.putObject('usuarioLogado',data);
+								  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
+								  $window.location.reload();
+					  	});
+						
+						
 
 					}).error(
 					function(data, status, header, config) {
@@ -203,8 +218,14 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 								+ status + "<hr />headers: " + header
 								+ "<hr />config: " + config;
 					});
+					
 		   };
 
+		   
+		   
+		   
+		   
+		   
 
 		 //Genrenciar Telefones
 		   $scope.addTelefone = function(){
