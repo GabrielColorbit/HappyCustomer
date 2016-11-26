@@ -20,16 +20,11 @@ myControllers.controller('LoginController', function( $scope, $routeParams, $htt
 		$http.post('http://localhost:8080/CRM/rest/restLogin/AutenticacaoUsuario', parameter, config).success(
 				function(data, status, headers, config) {
 
-				  var now = new Date();
-				  now.setDate(now.getDate() + (60 * 1000));
-			  
 				  var hash = data;
 		          
 				  $scope.usuario;
 			  		
-				  $cookies.put("hash", hash, {
-		             expires: now
-		          });
+				  $cookies.put("hash", hash);
 				  $scope.LoadUser(hash);
 
 				}).error(
@@ -41,19 +36,11 @@ myControllers.controller('LoginController', function( $scope, $routeParams, $htt
 		   
 		   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
 			  (function(data) {
-					  var now = new Date();
-					  now.setDate(now.getDate() + (60 * 1000));
-				  
 					  var hash = data;
 			          
 					  $scope.usuario;
 				  		
-					  $cookies.put("hash", hash, {
-			             expires: now
-			          });				  
-					  $cookies.putObject('usuarioLogado',data, {
-				             expires: now
-			          });
+					  $cookies.putObject('usuarioLogado',data);
 					  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
 					  alert('Login efetuado como: '+$scope.usuarioLogado.nome)
 					  $location.path('/');
