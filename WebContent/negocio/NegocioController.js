@@ -76,12 +76,13 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 				'http://localhost:8080/CRM/rest/restNegocio/Salvar',
 				parameter, config).success(
 				function(data, status, headers, config) {
+					
 					$scope.negocio = data;
 					var negocio =  new Object();
 					negocio = $scope.negocio 
 							
 					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
-	
+					
 					$location.path('/Negocio/Editar/'+negocio.id)
 					
 					

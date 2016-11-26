@@ -24,7 +24,6 @@ import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
-import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Foto;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
@@ -47,20 +46,24 @@ public class ContatoRestful {
 	public void cadastrarCliente(Contato contato) throws Exception {
 		// Cadastra se o contato for novo
 		if (contato.getId() == null) {
-			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for (Telefone t : contato.getTelefones_contato()) {
-				new FacadeHappyCustomer().CadastrarTelefone(t);
-				telefonelist.add(t);
+			
+			if(contato.getTelefones_contato() != null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for (Telefone t : contato.getTelefones_contato()) {
+					new FacadeHappyCustomer().CadastrarTelefone(t);
+					telefonelist.add(t);
+				}
+				contato.setTelefones_contato(telefonelist);
 			}
-			contato.setTelefones_contato(telefonelist);
 
-			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for (Comunicador c : contato.getComunicadores_contato()) {
-				new FacadeHappyCustomer().CadastrarComunicador(c);
-				comunicadorlist.add(c);
+			if(contato.getComunicadores_contato() != null){
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for (Comunicador c : contato.getComunicadores_contato()) {
+					new FacadeHappyCustomer().CadastrarComunicador(c);
+					comunicadorlist.add(c);
+				}
+				contato.setComunicadores_contato(comunicadorlist);
 			}
-			contato.setComunicadores_contato(comunicadorlist);
-
 //			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
 //			for (Contato c : empresa.getContatos()) {
 //				contatos_empresa.add(c);
@@ -71,28 +74,32 @@ public class ContatoRestful {
 		}
 		// altera contato já criado
 		else {
-			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for (Telefone t : contato.getTelefones_contato()) {
-				if (t.getId() == null) {
-					new FacadeHappyCustomer().CadastrarTelefone(t);
-				} else {
-					new FacadeHappyCustomer().AlterarTelefone(t);
+			
+			if(contato.getTelefones_contato() != null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for (Telefone t : contato.getTelefones_contato()) {
+					if (t.getId() == null) {
+						new FacadeHappyCustomer().CadastrarTelefone(t);
+					} else {
+						new FacadeHappyCustomer().AlterarTelefone(t);
+					}
+					telefonelist.add(t);
 				}
-				telefonelist.add(t);
+				contato.setTelefones_contato(telefonelist);
 			}
-			contato.setTelefones_contato(telefonelist);
 
-			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for (Comunicador c : contato.getComunicadores_contato()) {
-				if (c.getId() == null) {// cadastra novos comunicadores
-					new FacadeHappyCustomer().CadastrarComunicador(c);
-				} else {// salva alterações em comunicador'
-					new FacadeHappyCustomer().AlterarComunicador(c);
+			if(contato.getComunicadores_contato() != null){
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for (Comunicador c : contato.getComunicadores_contato()) {
+					if (c.getId() == null) {// cadastra novos comunicadores
+						new FacadeHappyCustomer().CadastrarComunicador(c);
+					} else {// salva alterações em comunicador'
+						new FacadeHappyCustomer().AlterarComunicador(c);
+					}
+					comunicadorlist.add(c);
 				}
-				comunicadorlist.add(c);
+				contato.setComunicadores_contato(comunicadorlist);
 			}
-			contato.setComunicadores_contato(comunicadorlist);
-
 //			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
 //			for (Contato c : empresa.getContatos()) {
 //				contatos_empresa.add(c);

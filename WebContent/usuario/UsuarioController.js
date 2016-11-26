@@ -18,7 +18,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http) {
 });
 myControllers.controller('GetUsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	$scope.Titulo = "Editar Usuário";
-	var usuario=  new Object();
+	var usuario =  new Object();
 
 	if($routeParams.usuarioId){
 		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
@@ -724,20 +724,20 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
  				 }
  					 return i;
  			 }
- 			
+
  			//EXCLUIR USUÁRIO
 		 	 $scope.Excluir = function(id){
-		 		 
+
 		 		 var result = confirm("Tem Certeza Que Deseja Excluir Este Usuário?");
 		 			if (result === true){
 		 				if(id){
-		 					
+
 		 					$http.post('http://localhost:8080/CRM/rest/restUsuario/Excluir/'+id)
 		 						.success(
 		 						function(data, status) {
 		 							alert("Usuário Excluído Com Sucesso!");
 		 							$scope.BuscarInformacao();
-		 							
+
 		 						}).error(
 		 						function(data, status) {
 		 							$scope.Resposta = data ;

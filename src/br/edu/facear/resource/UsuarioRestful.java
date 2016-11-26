@@ -23,8 +23,6 @@ import com.sun.jersey.multipart.FormDataParam;
 import br.edu.facear.crm.dao.CrmException;
 import br.edu.facear.crm.dao.FotoDAO;
 import br.edu.facear.crm.entity.Comunicador;
-import br.edu.facear.crm.entity.Contato;
-import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Foto;
 import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.crm.entity.Usuario;
@@ -48,48 +46,56 @@ public class UsuarioRestful {
 	public void cadastrarCliente(Usuario usuario) throws Exception {
 		//Cadastra se o usuário for novo
 		if (usuario.getId() == null){
+			
+			if(usuario.getTelefones_usuario() != null){
 				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 				for(Telefone t : usuario.getTelefones_usuario()){
 					new FacadeHappyCustomer().CadastrarTelefone(t);
 					telefonelist.add(t);
 				}
 				usuario.setTelefones_usuario(telefonelist);
-
+			}
+			
+			if(usuario.getComunicadores_usuario() != null){
 				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
 				for(Comunicador c : usuario.getComunicadores_usuario()){
 					new FacadeHappyCustomer().CadastrarComunicador(c);
 					comunicadorlist.add(c);
 				}
 				usuario.setComunicadores_usuario(comunicadorlist);
-
+			}
 				new FacadeHappyCustomer().CadastrarUsuario(usuario);
 		}
 		//altera usuário já criado
 		else{
-			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for(Telefone t : usuario.getTelefones_usuario()){
-				if(t.getId() == null){
-					new FacadeHappyCustomer().CadastrarTelefone(t);
-				}else{
-					new FacadeHappyCustomer().AlterarTelefone(t);
+			
+			if(usuario.getTelefones_usuario() != null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for(Telefone t : usuario.getTelefones_usuario()){
+					if(t.getId() == null){
+						new FacadeHappyCustomer().CadastrarTelefone(t);
+					}else{
+						new FacadeHappyCustomer().AlterarTelefone(t);
+					}
+					telefonelist.add(t);
 				}
-				telefonelist.add(t);
-			}
-			usuario.setTelefones_usuario(telefonelist);
+				usuario.setTelefones_usuario(telefonelist);
+			}			
 
-			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for(Comunicador c : usuario.getComunicadores_usuario()){
-				if(c.getId() == null){//cadastra novos comunicadores
-					new FacadeHappyCustomer().CadastrarComunicador(c);
-				}else{//salva alterações em comunicador'
-					new FacadeHappyCustomer().AlterarComunicador(c);
+			if(usuario.getComunicadores_usuario() != null){
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for(Comunicador c : usuario.getComunicadores_usuario()){
+					if(c.getId() == null){//cadastra novos comunicadores
+						new FacadeHappyCustomer().CadastrarComunicador(c);
+					}else{//salva alterações em comunicador'
+						new FacadeHappyCustomer().AlterarComunicador(c);
+					}
+					comunicadorlist.add(c);
 				}
-				comunicadorlist.add(c);
+				usuario.setComunicadores_usuario(comunicadorlist);
 			}
-			usuario.setComunicadores_usuario(comunicadorlist);
-
+			
 			new FacadeHappyCustomer().AlterarUsuario(usuario);
-
 
 		}
 

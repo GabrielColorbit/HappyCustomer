@@ -47,58 +47,72 @@ public class EmpresaRestful {
 	public void cadastrarCliente(Empresa empresa) throws Exception {
 		// Cadastra se a empresa for nova
 		if (empresa.getId() == null) {
-			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for (Telefone t : empresa.getTelefones_empresa()) {
-				new FacadeHappyCustomer().CadastrarTelefone(t);
-				telefonelist.add(t);
+			
+			if(empresa.getTelefones_empresa() != null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for (Telefone t : empresa.getTelefones_empresa()) {
+					new FacadeHappyCustomer().CadastrarTelefone(t);
+					telefonelist.add(t);
+				}
+				empresa.setTelefones_empresa(telefonelist);
 			}
-			empresa.setTelefones_empresa(telefonelist);
-
-			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for (Comunicador c : empresa.getComunicadores_empresa()) {
-				new FacadeHappyCustomer().CadastrarComunicador(c);
-				comunicadorlist.add(c);
+			
+			if(empresa.getComunicadores_empresa() != null){
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for (Comunicador c : empresa.getComunicadores_empresa()) {
+					new FacadeHappyCustomer().CadastrarComunicador(c);
+					comunicadorlist.add(c);
+				}
+				empresa.setComunicadores_empresa(comunicadorlist);
 			}
-			empresa.setComunicadores_empresa(comunicadorlist);
 
-			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-			for (Contato c : empresa.getContatos()) {
-				contatos_empresa.add(c);
+			if(empresa.getContatos() != null){
+				ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+				for (Contato c : empresa.getContatos()) {
+					contatos_empresa.add(c);
+				}
+				empresa.setContatos(contatos_empresa);
 			}
-			empresa.setContatos(contatos_empresa);
-
+			
 			new FacadeHappyCustomer().CadastrarEmpresa(empresa);
 		}
 		// altera empresa já criada
 		else {
-			ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
-			for (Telefone t : empresa.getTelefones_empresa()) {
-				if (t.getId() == null) {
-					new FacadeHappyCustomer().CadastrarTelefone(t);
-				} else {
-					new FacadeHappyCustomer().AlterarTelefone(t);
+			
+			if(empresa.getTelefones_empresa() != null){
+				ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
+				for (Telefone t : empresa.getTelefones_empresa()) {
+					if (t.getId() == null) {
+						new FacadeHappyCustomer().CadastrarTelefone(t);
+					} else {
+						new FacadeHappyCustomer().AlterarTelefone(t);
+					}
+					telefonelist.add(t);
 				}
-				telefonelist.add(t);
+				empresa.setTelefones_empresa(telefonelist);
 			}
-			empresa.setTelefones_empresa(telefonelist);
 
-			ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
-			for (Comunicador c : empresa.getComunicadores_empresa()) {
-				if (c.getId() == null) {// cadastra novos comunicadores
-					new FacadeHappyCustomer().CadastrarComunicador(c);
-				} else {// salva alterações em comunicador'
-					new FacadeHappyCustomer().AlterarComunicador(c);
+			if(empresa.getComunicadores_empresa() != null){
+				ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
+				for (Comunicador c : empresa.getComunicadores_empresa()) {
+					if (c.getId() == null) {// cadastra novos comunicadores
+						new FacadeHappyCustomer().CadastrarComunicador(c);
+					} else {// salva alterações em comunicador'
+						new FacadeHappyCustomer().AlterarComunicador(c);
+					}
+					comunicadorlist.add(c);
 				}
-				comunicadorlist.add(c);
+				empresa.setComunicadores_empresa(comunicadorlist);
 			}
-			empresa.setComunicadores_empresa(comunicadorlist);
-
-			ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
-			for (Contato c : empresa.getContatos()) {
-				contatos_empresa.add(c);
+			
+			if(empresa.getContatos() != null){
+				ArrayList<Contato> contatos_empresa = new ArrayList<Contato>();
+				for (Contato c : empresa.getContatos()) {
+					contatos_empresa.add(c);
+				}
+				empresa.setContatos(contatos_empresa);
 			}
-			empresa.setContatos(contatos_empresa);
-
+			
 			new FacadeHappyCustomer().AlterarEmpresa(empresa);
 
 		}

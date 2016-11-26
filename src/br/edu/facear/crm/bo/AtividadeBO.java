@@ -55,11 +55,11 @@ public class AtividadeBO implements InterfaceBO<Atividade> {
 			throw new Exception("Selecione um Status.");
 		} else if (atividade.getNome() == null) {
 			throw new Exception("Nome da atividade Invalido.");
-		} else if (atividade.getDatainicio() == null) {
-			throw new Exception("Data Invalida.");
-		} else if (atividade.getDatafim() == null) {
-			throw new Exception("Data Invalida.");
-		} else if (atividade.getDescricao() == null) {
+		} 
+//		else if (atividade.getDatainicio() == null) {
+//			throw new Exception("Data Invalida.");
+//		} 
+		else if (atividade.getDescricao() == null) {
 			throw new Exception("Nome da Descrição Invalida.");
 		}
 

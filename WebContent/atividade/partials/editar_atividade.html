@@ -13,7 +13,7 @@
 	</header>
 
 	<!-- Portfolio Grid Section -->
-	<section class="grid form_atividade" ng-controller="AtividadeController">
+	<section class="grid form_atividade" ng-controller="GetAtividadeController">
 		<div class="container">
 
 			<div class="row">
@@ -28,7 +28,11 @@
 							
 							<div class="row control-group">
 							
-							<h3>Dados Gerais</h3>
+								<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+	
+									<h3>Dados Gerais</h3>
+	
+								</div>
 						
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
@@ -40,8 +44,7 @@
 							</div>
 
 							</div>
-
-						
+													
 						
 						<div class="row control-group">
 							
@@ -156,229 +159,185 @@
 
 
 						<div class="row control-group">
-							<h3>Ligação</h3>
+						
+							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 
+								<h3>Ligações</h3>
 
-							<div class="col-xs-12">
-
-
-
-								<div
-									class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-									<label>Tipo Número</label> <select id="tipo_usuario"
-										class="form-control" required
-										data-validation-required-message="Por favor selecione um tipo de usuário">
-										<option value="default">Tipo Número</option>
-										<option value="whats">Celular</option>
-										<option value="volvo">Residencial</option>
-										<option value="saab">Empresarial</option>
-									</select>
-									<p class="help-block text-danger"></p>
-								</div>
-
-								<div
-									class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-									<label>Número</label> <select id="tipo_usuario"
-										class="form-control" required
-										data-validation-required-message="Por favor selecione um tipo de usuário">
-										<option value="default">Número</option>
-										<option value="whats">41 8888-8888</option>
-										<option value="volvo">41 8888-8888</option>
-										<option value="saab">41 8888-8888</option>
-									</select>
-									<p class="help-block text-danger"></p>
-								</div>
-								<div
-									class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-									<label>Duração</label> <input type="text" class="form-control"
-										placeholder="Duração" id="Nome do contato" required
-										data-validation-required-message="Por favor insira um nome">
-									<p class="help-block text-danger"></p>
-								</div>
-								<div
-									class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-									<label>Resumo</label> <input type="text" class="form-control"
-										placeholder="Resumo" id="Nome do contato" required
-										data-validation-required-message="Por favor insira um nome">
-									<p class="help-block text-danger"></p>
-								</div>
-
-								<div
-									class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-									<label>Tipo</label> <select id="tipo_usuario"
-										class="form-control" required
-										data-validation-required-message="Por favor selecione um tipo de usuário">
-										<option value="default">Tipo</option>
-										<option value="whats">Efetuada</option>
-										<option value="volvo">Recebida</option>
-									</select>
-									<p class="help-block text-danger"></p>
-								</div>
-								<div class="col-xs-6  btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">Salvar
-										Ligação</a>
-								</div>
 							</div>
 
-
+							<div class="form-group col-xs-6  floating-label-form-group controls">
+								<label>Telefone</label> 
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
+							    ng-options="telefone.numero for telefone in telefones" ng-model="ligacao.telefone" >   
+								    <option value="">Telefone</option>
+								</select>
+	
+							 	<p class="help-block text-danger"></p>
+							</div>
+	
+							<div class="form-group col-xs-6  floating-label-form-group controls">
+								<label>Tipo de Ligação</label> 
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
+							    ng-options="tipoligacao for tipoligacao in tiposligacao" ng-model="ligacao.tipoligacao" > 
+								    <option value="">Tipo de Ligação</option>
+								</select>	
+	
+							 	<p class="help-block text-danger"></p>
+							</div>	
+							
+						</div>	
+						
+						<div class="row control-group">					
+							
+							<div
+								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Duração</label> <input type="text" class="form-control"
+								placeholder="00min00s" id="Duracao" required
+								data-validation-required-message="Por favor insira um nome" ng-model="ligacao.duracao">
+								<p class="help-block text-danger"></p>
+							</div>
+							
+							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								<label>Data</label> 
+								<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.data" min="1901-01-01" max="2016-12-31"id="data_cadastro" required data-validation-required-message="Please enter your name.">
+								<p class="help-block text-danger"></p>
+							</div>
+							
 						</div>
+						
+						<div class="row control-group">
+	
+							<div
+								class="form-group  col-xs-12 floating-label-form-group controls">
+								<label>Resumo</label>
+								<textarea type="text" class="form-control"
+									placeholder="Resumo" id="Descricao" required
+									data-validation-required-message="Por favor insira um resumo"  ng-model="ligacao.resumo"></textarea>
+								<p class="help-block text-danger"></p>
+							</div>
+							
+							<div class="col-xs-2 btn-group">
+								<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addLigacao()'>Salvar</a>
+							</div>
+	
+						</div>						
 
 						<div class="row ">
-							<h3>Ligações da Ativdade</h3>
+
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-											<th>ID</th>
-											<th>Tipo Numero</th>
-											<th>Número</th>
-											<th>Duração</th>
-
-											<th></th>
-
+										
+											<th ng-click="ordenar('data')">Data</th>
+											<th ng-click="ordenar('telefone')">Telefone</th>
+											<th ng-click="ordenar('tipoligacao')">Tipo</th>
+											<th ng-click="ordenar('duracao')">Duração</th>
+											
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+									   <tr data-ng-repeat="ligacao in listLigacoes">
 
-											<td>1</td>
-											<td>Telefone</td>
-											<td>+55 (041) 9999-9999</td>
-											<td>00:20:21</td>
-
-											<td class="btn-group"><a class="btn btn-success  btn-sm"
-												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
+											<td>{{ligacao.telefone}}</td>
+											<td>{{ligacao.tipo.telefone.nome}}</td>
+											<td>{{ligacao.duracao}}</td>
+											<td>{ligacao.data}}</td>
+											<td>{{ligacao.resumo}}</td>
+											<th></th>
+											
+											<td class="btn-group">
+												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditLigacao(ligacao.id)'>Editar</a>
+												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delLigacao(ligacao.id)'>Excluir</a>
+											</td>
 										</tr>
-										<tr>
 
-											<td>2</td>
-											<td>Whatsapp</td>
-											<td>+55 (041) 9999-9999</td>
-											<td>00:20:21</td>
-											<td class="btn-group"><a class="btn btn-success  btn-sm"
-												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
-
-										</tr>
-										<tr>
-
-											<td>3</td>
-											<td>Telefone</td>
-											<td>+55 (041) 9999-9999</td>
-											<td>00:20:21</td>
-											<td class="btn-group"><a class="btn btn-success btn-sm"
-												target="_blank" href="/CRM//ligacao/editar_ligacao.html">ver</a>
-												<a class="btn btn-danger btn-sm" href="javascript:void(0)">remover</a></td>
-										</tr>
 									</tbody>
 								</table>
 							</div>
 
 						</div>
-
-
-
-
-
+						
+						<!-- Gerenciar Comunicadores do Usuário -->
 						<div class="row control-group">
-							<h3>Comunicador</h3>
+						
+							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 
+								<h3>Interações</h3>
+
+							</div>
 
 							<div class="col-xs-12 ">
-								<div class="col-xs-10">
 
-
-									<div
-										class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-										<label>Tipo Comunicador</label> <select id="tipo_usuario"
-											class="form-control" required
-											data-validation-required-message="Por favor selecione um tipo de usuário">
-											<option value="default">Tipo Comunicador</option>
-											<option value="whats">1 - WhatsApp</option>
-											<option value="volvo">2 - Facebook</option>
-											<option value="saab">3 - E-mail</option>
+									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls ">
+										<label>Tipo</label>
+										<input type="hidden" ng-model="comunicador.id" />
+										<select class="form-control" id="tipocomunicador" required data-validation-required-message="Por favor selecione um tipo de comunicador"
+										    ng-options="tipocomunicador.nome for tipocomunicador in tiposcomunicador track by tipocomunicador.id" ng-model="comunicador.tipocomunicador" >
+										    <option value="">Tipo</option>
 										</select>
 										<p class="help-block text-danger"></p>
 									</div>
-
-									<div
-										class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-										<label>Descrição</label> <input type="text"
-											class="form-control" placeholder="Descrição"
-											id="Nome do contato" required
-											data-validation-required-message="Por favor insira um nome">
+									<div class="form-group col-sm-8 col-xs-12 floating-label-form-group controls  ">
+										<label>Nome</label>
+										<input type="text" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
+											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
+									
+									<div class="row control-group">
+	
 									<div
-										class="form-group col-sm-4 col-xs-12 floating-label-form-group controls  floating-label-form-group-with-value">
-										<label>Resumo</label> <input type="text" class="form-control"
-											placeholder="Resumo" id="Nome do contato" required
-											data-validation-required-message="Por favor insira um nome">
+										class="form-group  col-xs-12 floating-label-form-group controls">
+										<label>Resumo</label>
+										<textarea type="text" class="form-control"
+											placeholder="Resumo" id="Resumo Interações" required
+											data-validation-required-message="Por favor insira um resumo"  ng-model="comunicador.resumo"></textarea>
 										<p class="help-block text-danger"></p>
 									</div>
-								</div>
-								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)">+</a>
+									
+									<div class="col-xs-2 btn-group">
+										<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar</a>
+									</div>
+	
+									</div>
 
 								</div>
+								
+								<div class="row ">
 
-
+								<div class="table-scrollable table-scrollable-borderless">
+									<table class="table table-hover table-light col-xs-12">
+										<thead>
+											<tr class="uppercase">
+	
+												<th ng-click="ordenar('data')">Tipo</th>
+												<th ng-click="ordenar('telefone')">Descrição</th>
+												<th ng-click="ordenar('tipoligacao')">Resumo</th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										   <tr data-ng-repeat="comunicador in listComunicadores">
+	
+								                <td>{{comunicador.tipocomunicador.nome}}</td>
+								                <td>{{comunicador.nome}}</td>
+								                <td>{{comunicador.resumo}}</td>
+								                
+								               	<td class="btn-group">
+													<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
+													<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
+												</td>
+											</tr>
+	
+										</tbody>
+									</table>
+								</div>
+	
 							</div>
-						</div>
-
-
-						<div class="row ">
-							<h3>Comunicadores da Atividade</h3>
-							<div class="table-scrollable table-scrollable-borderless">
-								<table class="table table-hover table-light col-xs-12">
-									<thead>
-										<tr class="uppercase">
-											<th>ID</th>
-											<th>Tipo</th>
-											<th>Descrição</th>
-											<th>Resumo</th>
-
-											<th></th>
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-
-											<td>1</td>
-											<td>Facebook</td>
-											<td>www.facebook.com/jose</td>
-											<td>alterar cor do produto</td>
-											<td class="btn-group"><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										</tr>
-										<tr>
-
-											<td>2</td>
-											<td>Whatsapp</td>
-											<td>+55 (041) 9999-9999</td>
-											<td>alterar cor do produto</td>
-											<td class="btn-group"><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-
-										</tr>
-										<tr>
-
-											<td>3</td>
-											<td>Telefone</td>
-											<td>+55 (041) 9999-9999</td>
-											<td>alterar cor do produto</td>
-											<td class="btn-group"><a class="btn btn-danger btn-sm"
-												href="javascript:void(0)">remover</a></td>
-										</tr>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
+							
 						</div>
 
 
