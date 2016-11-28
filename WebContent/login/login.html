@@ -12,7 +12,7 @@
 	</header>
 
 	<!-- Portfolio Grid Section -->
-	<section class="grid login">
+	<section class="grid login" ng-controller="LoginController">
 		<div class="container">
 
 			<div class="row">
@@ -20,7 +20,7 @@
 					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					<form name="sentMessage" id="contactForm" novalidate autocomplete="off">
-
+						
 						<div class="row control-group">
 
 							<div
@@ -44,10 +44,21 @@
 						</div>
 
 
-						<div id="success"></div>
+
 						<div class="row">
 							<div class="form-group btn-group  col-xs-12">
-								<a class="btn btn-success btn-lg to-right" ng-click='Login()'>Entrar</a>
+								<div class="col-xs-12 col-sm-8">
+									<div id="success">
+										<h4>{{responseFromLogin}}</h4>
+									</div>								
+								</div>
+								<div class="col-xs-12 col-sm-4">
+
+									<a class="btn btn-success btn-lg to-right" ng-click='Login()'>Entrar</a>
+									<div class="loading"style="-webkit-transform:scale(0.30)">
+										<div></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>

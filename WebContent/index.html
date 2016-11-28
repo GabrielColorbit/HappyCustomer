@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="happyCustomerApp">
 
 <head>
 
@@ -21,10 +21,10 @@
 <link href="/CRM/css/angular.material.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="/CRM/css/loading.css" rel="stylesheet" type="text/css">
 
 <script src="/CRM/js/angular.min.js"></script>
 <script src="/CRM/js/angular-route.min.js"></script>
@@ -68,16 +68,12 @@
 
 </head>
 
-<body id="page-top" class="index" ng-app=happyCustomerApp>
+<body id="page-top" class="index"  >
 
 	<topo></topo>
-
-	<div ng-view>
-
-
-
-
-	</div>
+	
+	
+	<div ng-view></div>
 
 	<!-- Footer -->
 	<rodape></rodape>

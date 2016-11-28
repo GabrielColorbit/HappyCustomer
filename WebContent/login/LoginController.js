@@ -1,9 +1,8 @@
 var myControllers = angular.module('LoginControllers',[]);
 
-myControllers.controller('LoginController', function( $scope, $routeParams, $http,  $cookies,$location,$window) {
+myControllers.controller('LoginController', function( $scope, $routeParams, $http, $cookies,$location,$window,  $timeout,$route) {
 
 
-	
 	   $scope.Login = function() {
 
 		var parameter = JSON.stringify({
@@ -19,32 +18,43 @@ myControllers.controller('LoginController', function( $scope, $routeParams, $htt
 
 		$http.post('http://localhost:8080/CRM/rest/restLogin/AutenticacaoUsuario', parameter, config).success(
 				function(data, status, headers, config) {
-
-				  var hash = data;
-		          
-				  $scope.usuario;
-			  		
-				  $cookies.put("hash", hash);
-				  $scope.LoadUser(hash);
-
+					if(data.indexOf("Login ou senha incorreta") != -1 ){
+						$scope.responseFromLogin = data;
+					}else{
+					  var hash = data;
+					  $cookies.put("hash", hash);
+					  $scope.LoadUser(hash);
+					}
 				}).error(
 				function(data, status, header, config) {
 					alert(data);
 				});
 	   };
 	   $scope.LoadUser = function(hash){
-		   
+
 		   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
 			  (function(data) {
-					  var hash = data;
-			          
-					  $scope.usuario;
-				  		
-					  $cookies.putObject('usuarioLogado',data);
-					  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
-					  alert('Login efetuado como: '+$scope.usuarioLogado.nome)
-					  $location.path('/');
-					  $window.location.reload();
+
+						if(data.id){
+							$cookies.putObject('usuarioLogado',data);
+							$scope.usuarioLogado = $cookies.getObject('usuarioLogado');
+							$scope.responseFromLogin = "Olá "+$scope.usuarioLogado.nome+" bem vindo ao sistema Happy Customer :)";
+							$('.loading').addClass('uil-reload-css');
+							var goHome = function(){
+								$location.path('/Home');
+								var scope = angular.element( document.getElementById("mainNav")).scope();
+							    scope.$apply(function () {
+							        scope.getUsuarioLogado();
+							    });
+							}
+							$timeout(goHome, 1600)
+
+
+						}else{
+							$scope.responseFromLogin = "Login ou senha incorretos."
+						}
+
+
 		  	});
 	   };
 

@@ -20,7 +20,6 @@ h1,h2,h3,h4,h5,h6
 {
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 700;
-	text-transform: uppercase;
 }
 hr.star-light,hr.star-primary
 {
@@ -593,7 +592,7 @@ tr td.btn-group{
 	padding: 0 8px!important;
 }
 .to-left{float:left;}
-.to-right{float: right!important;}
+.to-right{float: right!important;position: relative;}
 form{
     color: #636363;
 }
@@ -676,3 +675,12 @@ width: 50px;
 	
 margin: -14px 0px;
 }    
+
+#success{
+	
+float: left;
+}
+
+.deslogado{
+	display:none;
+}

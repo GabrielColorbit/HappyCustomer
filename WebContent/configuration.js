@@ -26,30 +26,10 @@ var app = angular.module('happyCustomerApp', [
 
 ]);
 
-app.controller('AppCtrl', function($scope) {
-	  $scope.myDate = new Date();
 
-	  $scope.minDate = new Date(
-	      $scope.myDate.getFullYear(),
-	      $scope.myDate.getMonth() - 2,
-	      $scope.myDate.getDate());
-
-	  $scope.maxDate = new Date(
-	      $scope.myDate.getFullYear(),
-	      $scope.myDate.getMonth() + 2,
-	      $scope.myDate.getDate());
-
-	  $scope.onlyWeekendsPredicate = function(date) {
-	    var day = date.getDay();
-	    return day === 0 || day === 6;
-	  };
-	});
-
-
-app.controller('MainCtrl',
-	function MainCtrl($scope) {
-		this.header = {};
-	});
+app.controller('MainCtrl', function MainCtrl($scope) {
+	this.header = {};
+});
 
 app.controller('MainCtrl',
 	function MainCtrl($scope) {
@@ -147,6 +127,7 @@ app.config(function ($routeProvider) {
 
         //Paths of Login
         when('/Login', {templateUrl: 'login/login.html', controller: 'LoginController'}).
+
 
         //Paths of Home
         otherwise({redirectTo: '/Home'});
