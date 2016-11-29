@@ -5,16 +5,20 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 
 		if($scope.usuarioLogado){
 			$scope.menuStatus = "logado";
+			
+			if($scope.usuarioLogado.tipousuario.nome = "Administrador"){
+				$scope.menuTipoUsuario = "Administrador";
+			}else if($scope.usuarioLogado.tipousuario.nome = "Operador"){
+				$scope.menuTipoUsuario = "Operador";
+				
+			}
+			
+			
 		}else{
 			$scope.menuStatus = "deslogado";
 		}
-
-
-
 	}
-	$scope.getUsuarioLogado();
-
-
+   $scope.getUsuarioLogado();
    $scope.Logout = function(){
 	   $cookies.remove("hash");
 	   $cookies.remove("usuarioLogado");

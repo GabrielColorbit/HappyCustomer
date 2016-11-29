@@ -207,6 +207,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 								  var hash = data;
 								  $cookies.putObject('usuarioLogado',data);
 								  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
+								  $location.path('/Usuario');
 								  $window.location.reload();
 					  	});
 						
