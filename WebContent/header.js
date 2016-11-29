@@ -4,15 +4,35 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 		$scope.usuarioLogado = $cookies.getObject('usuarioLogado');
 
 		if($scope.usuarioLogado){
+			
 			$scope.menuStatus = "logado";
 			
-			if($scope.usuarioLogado.tipousuario.nome = "Administrador"){
+			if($scope.usuarioLogado.tipousuario.nome == "Administrador"){
 				$scope.menuTipoUsuario = "Administrador";
-			}else if($scope.usuarioLogado.tipousuario.nome = "Operador"){
-				$scope.menuTipoUsuario = "Operador";
+				//atualiza menu com tipo de usuario
+				setTimeout(function(){
+					var data = $( ".navbar-nav" ).attr("data-userType" );
+					console.log(data);
+					$(".nav > li").hide();
+					$("."+data).fadeIn("fast");
+				}, 200);
+
 				
+			}else if($scope.usuarioLogado.tipousuario.nome == "Operador"){
+				$scope.menuTipoUsuario = "Operador";
+				//atualiza menu com tipo de usuario
+				setTimeout(function(){
+					var data = $( ".navbar-nav" ).attr("data-userType" );
+					console.log(data);
+					$(".nav > li").hide();
+					$("."+data).fadeIn("fast");
+					
+				}, 200);
+
 			}
+
 			
+						
 			
 		}else{
 			$scope.menuStatus = "deslogado";
@@ -27,3 +47,4 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 
    };
 });
+

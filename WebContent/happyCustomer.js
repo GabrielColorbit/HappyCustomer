@@ -9,3 +9,5 @@ app.component('rodape', {
 	controller : HappyCustomerController,
 	bindings : {}
 });
+
+
