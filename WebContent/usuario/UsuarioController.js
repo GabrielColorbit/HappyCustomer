@@ -132,7 +132,7 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 		$http.get('http://localhost:8080/CRM/rest/restCidade/listarTodos')
 		.success(function(data) {
 			$scope.cidades = data["cidade"];
-		});
+		});//aqui lista o comboBox
 		$http.get('http://localhost:8080/CRM/rest/restTipoUsuario/listarTodos')
 		.success(function(data) {
 			$scope.tiposusuario = data["tipoUsuario"];
