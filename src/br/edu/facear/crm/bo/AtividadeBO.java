@@ -7,7 +7,6 @@ import br.edu.facear.crm.entity.Atividade;
                          //TODOS IMPLEMENTES INTERFACE BO PQ?
 public class AtividadeBO implements InterfaceBO<Atividade> {
 
-	//PORQUE INSTANCIAR OBJETO DAO AKI?
 	AtividadeDAO atividadeDAO = new AtividadeDAO();
 
 	// CADASTRAR

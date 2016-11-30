@@ -110,7 +110,7 @@ myControllers.controller('GetEmpresaController', function($scope, $rootScope, $r
 	}
 	
 	
-
+    // aqui listando o atributos de outras telas
 	$http.get('http://localhost:8080/CRM/rest/restTipoEmpresa/listarTodos')
 	.success(function(data) {
 

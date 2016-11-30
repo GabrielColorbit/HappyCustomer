@@ -83,6 +83,8 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 
 	}
 
+	
+	//aqui que pega a foto , onde ta fazendo o upload , passando o endereço
 	 $scope.upload = function (dataUrl, name) {
 
 
@@ -468,7 +470,7 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 
 
 
-
+     //carregando o list é aqui.
 	$http.get('http://localhost:8080/CRM/rest/restCollections/genders')
 	.success(function(data) {
 		$scope.generos = data["genero"];
