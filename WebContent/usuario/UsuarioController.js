@@ -33,7 +33,13 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 	var usuario =  new Object();
 
 	if($routeParams.usuarioId){
-		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId)
+	 var hash = $cookies.get('hash');
+	 var config = {
+			headers : {
+				'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+			}
+		}
+		$http.get('http://localhost:8080/CRM/rest/restUsuario/Editar/'+$routeParams.usuarioId, config)
 		.success(function(data) {
 			$scope.usuario = data;
 			usuario = $scope.usuario;
@@ -187,11 +193,12 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 				idfoto : $scope.foto.id
 
 			});
-			var config = {
-				headers : {
-					'Content-Type' : 'application/json;charset=utf-8;'
+			 var hash = $cookies.get('hash');
+			 var config = {
+					headers : {
+						'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+					}
 				}
-			}
 
 			$http.post(
 					'http://localhost:8080/CRM/rest/restUsuario/Salvar',
@@ -429,7 +436,7 @@ myControllers.controller('CadastrarUsuarioController', function($scope, $rootSco
 	$scope.Titulo = "Cadastrar Usuário";
 
 });
-myControllers.controller('UsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+myControllers.controller('UsuarioController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location,$cookies) {
 	 $scope.upload = function (dataUrl, name) {
 
         Upload.upload({
@@ -534,11 +541,12 @@ myControllers.controller('UsuarioController', function($scope, $rootScope, $rout
 
 
 		});
-		var config = {
-			headers : {
-				'Content-Type' : 'application/json;charset=utf-8;'
+		 var hash = $cookies.get('hash');
+		 var config = {
+				headers : {
+					'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+				}
 			}
-		}
 
 		$http.post(
 				'http://localhost:8080/CRM/rest/restUsuario/Salvar',

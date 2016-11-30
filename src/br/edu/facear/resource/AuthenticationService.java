@@ -23,7 +23,7 @@ public class AuthenticationService {
 	}
 	
 	
-	public boolean RequestAuthentication( String md5hashusuario) throws Exception {
+	public Usuario RequestAuthentication( String md5hashusuario) throws Exception {
 		if(md5hashusuario != null ){
 
 			ArrayList<Usuario> usuarioslist = new FacadeHappyCustomer().ListarUsuario();
@@ -33,14 +33,14 @@ public class AuthenticationService {
 				String md5u = new AuthenticationService().getmd5(uhash);
 				
 				if(md5hashusuario.equals(md5u)){
-					return  true;	
+					return  u;	
 				}
 
 			}
 
 		}
 		
-		return false;
+		return new Usuario();
 	}
 	
 }	
