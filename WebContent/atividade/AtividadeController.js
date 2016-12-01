@@ -19,7 +19,7 @@ myControllers.controller('ListarAtividadeController', function($scope,$http) {
 myControllers.controller('GetAtividadeController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
 	//$scope.Titulo = "Atividade: "+ atividade.nome;
 
-	$scope.Titulo = 'Editar Atividade'; 
+	$scope.Titulo = 'Editar Atividade';
 	var atividade =  new Object();
 
 	if($routeParams.atividadeId){
@@ -47,8 +47,8 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 			.success(function(data) {
 			 $scope.tiposcomunicador = data["tipoComunicador"];
 			});
-			
-			
+
+
 			//validação de array de ligações
 			if($scope.atividade.ligacoes){//caso o array existe
 					if($scope.atividade.ligacoes.constructor == Array){//caso seja um array de objetos
@@ -67,9 +67,9 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 			.success(function(data) {
 				$scope.ligacaolist = data["ligacao"];
 			});
-			
-			
-			
+
+
+
 			$scope.EnviarInformacao = function() {
 
 				//limpando ids de novos cadastros de comunicadores
@@ -82,8 +82,8 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 				}
 
 				$scope.atividade.comunicadores_atividade = $scope.listComunicadores;
-				
-				
+
+
 				//limpando ids de novos cadastros de ligações
 				for(var i=0; i <  Object.keys($scope.listLigacoes).length; i ++){
 					var x = $scope.listLigacoes[i].id;
@@ -127,9 +127,9 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						function(data, status, headers, config) {
 
 							alert("Atividade: "+ $scope.atividade.nome +". Salva Com Sucesso!");
-							
+
 							$location.path("/Atividade");
-							
+
 
 						}).error(
 						function(data, status, header, config) {
@@ -253,7 +253,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						}
 							return i;
 				 }
-				 
+
 				 $http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
 					.success(function(data) {
 						$scope.situacoes = data["situacao"];
@@ -287,8 +287,8 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						.success(function(data) {
 							$scope.tipostelefone = data["tipoTelefone"];
 					});
-				 
-				 
+
+
 				 //Genrenciar ligações
 				 $scope.addLigacao = function(){
 
@@ -298,13 +298,13 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 									$scope.listLigacoes.push({
 											id: $scope.ligacao.id ,
 											telefone:$scope.ligacao.telefone,
-											tipotelefone:$scope.ligacao.tipotelefone,
+											tipoligacao:$scope.ligacao.tipoligacao,
 											duracao:$scope.ligacao.duracao,
-											data:$scope.ligacao.data,
+											datacadastro:$scope.ligacao.datacadastro,
 											resumo:$scope.ligacao.resumo,
-										
+
 										});
-									$scope.comunicador = { "id": null,"telefone": '',"tipotelefone":'',"duracao":'',"data":'',"resumo":''};
+									$scope.ligacao = { "id": null,"telefone": '',"tipotelefone":'',"duracao":'',"data":'',"resumo":''};
 
 								}else{
 										var index = getSelectedIndexLigacao($scope.ligacao.id);
@@ -314,7 +314,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 										$scope.listLigacoes[index].duracao = $scope.ligacao.duracao;
 										$scope.listLigacoes[index].data = $scope.ligacao.data;
 										$scope.listLigacoes[index].resumo = $scope.ligacao.resumo;
-										
+
 									$scope.comunicador = {
 												"id": null,
 												"telefone": '',
@@ -362,32 +362,6 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					}
 
 				 }
-				 function validarLigacao(){
-						var i;
-						if($scope.ligacao){
-						if(! $scope.ligacao.telefone ){
-							alert("O campo nome de interações está vázio, favor preencher o campo.");
-						i = false;
-
-						}else if(! $scope.ligacao.telefone){
-							alert("Selecione um telefone para continuar.");
-						}else if(! $scope.ligacao.tipotelefone){
-							alert("Selecione um tipo de telefone para continuar.");
-						}else if(! $scope.ligacao.duracao){
-							alert("Preencha a duração da ligação.");
-						}else if(! $scope.ligacao.data){
-							alert("Preencha a data para continuar.");
-						}else if(! $scope.ligacao.resumo){
-							alert("Preencha a data para continuar.");
-						}else{
-							i = true
-						}
-					}else{
-						alert("Todos os campos são de preenchimento obrigatório.");
-							i = false;
-						}
-							return i;
-				 }
 				 function getSelectedLigacao(id){
 					for(var i=0; i <  Object.keys($scope.listLigacoes).length; i ++)
 						if($scope.listLigacoes[i].id == id)
@@ -400,26 +374,31 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 								return i;
 						return 1;
 				 }
-				 
+
 				 function validarCamposLigacao(){
 					 var i;
 						if($scope.ligacao){
 						if(! $scope.ligacao.telefone ){
 							alert("O campo nome de interações está vázio, favor preencher o campo.");
-						i = false;
+							i = false;
 
 						}else if(! $scope.ligacao.telefone){
 							alert("Selecione um telefone para continuar.");
+							i = false;
 						}
-//						else if(! $scope.ligacao.tipotelefone){
-//							alert("Selecione um tipo de telefone para continuar.");
-//						}
+						else if(! $scope.ligacao.tipoligacao){
+							alert("Selecione um tipo de telefone para continuar.");
+							i = false;
+						}
 						else if(! $scope.ligacao.duracao){
 							alert("Preencha a duração da ligação.");
-						}else if(! $scope.ligacao.data){
+							i = false;
+						}else if(! $scope.ligacao.datacadastro){
 							alert("Preencha a data para continuar.");
+							i = false;
 						}else if(! $scope.ligacao.resumo){
 							alert("Preencha a data para continuar.");
+							i = false;
 						}else{
 							i = true
 						}
@@ -429,7 +408,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						}
 							return i;
 				 }
-				
+
 
 			   $scope.Excluir = function(id){
 
@@ -455,7 +434,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					}
 
 				};
-				
+
 				$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
 				.success(function(data) {
 					$scope.situacoes = data["situacao"];
@@ -570,9 +549,9 @@ myControllers.controller('AtividadeController', function($scope, $routeParams, $
 					atividade = $scope.atividade
 
 					alert("Atividade: "+ $scope.atividade.nome +". Salva Com Sucesso!");
-					
+
 					$location.path('/Atividade/Editar/'+atividade.id)
-					
+
 
 				}).error(
 				function(data, status, header, config) {
