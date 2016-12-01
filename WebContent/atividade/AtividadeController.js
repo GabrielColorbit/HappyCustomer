@@ -266,10 +266,10 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					.success(function(data) {
 						$scope.empresas = data["empresa"];
 					});
-					$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-					.success(function(data) {
-						$scope.usuarios = data["usuario"];
-					});
+//					$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+//					.success(function(data) {
+//						$scope.usuarios = data["usuario"];
+//					});
 					$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
 					.success(function(data) {
 
@@ -468,10 +468,10 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 				.success(function(data) {
 					$scope.empresas = data["empresa"];
 				});
-				$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-				.success(function(data) {
-					$scope.usuarios = data["usuario"];
-				});
+//				$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+//				.success(function(data) {
+//					$scope.usuarios = data["usuario"];
+//				});
 				$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
 				.success(function(data) {
 
@@ -512,10 +512,10 @@ myControllers.controller('AtividadeController', function($scope, $routeParams, $
 	.success(function(data) {
 		$scope.empresas = data["empresa"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-	.success(function(data) {
-		$scope.usuarios = data["usuario"];
-	});
+//	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
+//	.success(function(data) {
+//		$scope.usuarios = data["usuario"];
+//	});
 	$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
 	.success(function(data) {
 
