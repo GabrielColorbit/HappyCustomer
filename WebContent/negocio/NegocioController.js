@@ -116,90 +116,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 //				$scope.listItens = data["item"];
 //			});
 			
-			$scope.listItens = [];
-			//Genrenciar Itens
-		 	$scope.addItem = function(){
-
-		 	 if(validarCamposItem()){
-		 		 if($scope.item.id == null){
-		 					 autoincrementItem();
-		 					 $scope.listItems.push({
-		 							 id: $scope.item.id , produto:$scope.item.produto, quantidade:$scope.item.quantidade
-		 						 });
-		 					 $scope.item = { "id": null,"produto": '',"quantidade":''};
-		 				 }else{
-		 						 var index = getSelectedIndexItem($scope.item.id);
-
-		 						 $scope.listItens[index].produto = $scope.item.produto;
-		 						 $scope.listItens[index].quantidade = $scope.item.quantidade;
-		 						 $scope.item = {
-		 									"id": null,
-		 									"produto": '',
-		 									"quantidade":''
-		 						};
-		 				 }
-		 	 }
-
-		 	 }
-		 	$scope.selectEditItem = function(id){
-
-		 			 var SelItem = getSelectedItem(id);
-		 				 $scope.item = {
-		 						"id": SelItem.id,
-		 						"produto": SelItem.produto,
-		 						"quantidade":SelItem.quantidade
-		 				};
-
-		 	 };
-		 	 
-		 	$scope.delItem = function(id){
-		 	 var result = confirm('Você deseja remover o item da lista?');
-		 	 if (result === true){
-		 		 for(var j = 0; j < $scope.listItens.length;j ++){
-		 				 if($scope.listItens[j].id == id){
-		 						 $scope.listItens.splice(j, 1);
-		 				 }
-		 		 }
-		 	 }
-		 	};
-		 	function getSelectedItem(id){
-		 		 for(var i=0; i <  Object.keys($scope.listItens).length; i ++)
-		 			 if($scope.listItens[i].id == id)
-		 				 return $scope.listItens[i];
-		 		 return 1;
-
-		 	}
-		 	function getSelectedIndexItem(id){
-		 		 for(var i=0; i <  Object.keys($scope.listItens).length; i ++)
-		 			 if($scope.listItens[i].id == id)
-		 				 return i;
-		 		 return 1;
-		 	}
-		 	function autoincrementItem(){
-		 		 if($scope.listItens){
-		 			 $scope.item.id ="#"+Object.keys($scope.listItens).length;
-		 		 }else{
-		 			 $scope.item.id ="#"+1;
-		 		 }
-
-		 	 }
-		 	function validarCamposItem(){
-		 			 var i;
-		 			 if($scope.item){
-		 					 if(! $scope.item.produto ){
-		 						 alert("Favor selecionar um Produto.");
-		 						 i = false;
-		 					 }else if(! $scope.item.quantidade){
-		 						 alert("Preencha o campo Quantidade.");
-		 					 }else{
-		 						 i = true
-		 					 }
-		 		 }else{
-		 			 alert("Favor preencher os campos Produto e Quantidade.");
-		 			 i = false;
-		 		 }
-		 			 return i;
-		 	}
+			
 		 	
 		 	var config = {
 					headers : {
@@ -223,6 +140,91 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 							$scope.Resposta = data ;
 						});
 			   };
+			   
+			   $scope.listItens = [];
+				//Genrenciar Itens
+			 	$scope.addItem = function(){
+
+			 	 if(validarCamposItem()){
+			 		 if($scope.item.id == null){
+			 					 autoincrementItem();
+			 					 $scope.listItens.push({
+			 							 id: $scope.item.id , produto:$scope.item.produto, quantidade:$scope.item.quantidade
+			 						 });
+			 					 $scope.item = { "id": null,"produto": '',"quantidade":''};
+			 				 }else{
+			 						 var index = getSelectedIndexItem($scope.item.id);
+
+			 						 $scope.listItens[index].produto = $scope.item.produto;
+			 						 $scope.listItens[index].quantidade = $scope.item.quantidade;
+			 						 $scope.item = {
+			 									"id": null,
+			 									"produto": '',
+			 									"quantidade":''
+			 						};
+			 				 }
+			 	 }
+
+			 	 }
+			 	$scope.selectEditItem = function(id){
+
+			 			 var SelItem = getSelectedItem(id);
+			 				 $scope.item = {
+			 						"id": SelItem.id,
+			 						"produto": SelItem.produto,
+			 						"quantidade":SelItem.quantidade
+			 				};
+
+			 	 };
+			 	 
+			 	$scope.delItem = function(id){
+			 	 var result = confirm('Você deseja remover o item da lista?');
+			 	 if (result === true){
+			 		 for(var j = 0; j < $scope.listItens.length;j ++){
+			 				 if($scope.listItens[j].id == id){
+			 						 $scope.listItens.splice(j, 1);
+			 				 }
+			 		 }
+			 	 }
+			 	};
+			 	function getSelectedItem(id){
+			 		 for(var i=0; i <  Object.keys($scope.listItens).length; i ++)
+			 			 if($scope.listItens[i].id == id)
+			 				 return $scope.listItens[i];
+			 		 return 1;
+
+			 	}
+			 	function getSelectedIndexItem(id){
+			 		 for(var i=0; i <  Object.keys($scope.listItens).length; i ++)
+			 			 if($scope.listItens[i].id == id)
+			 				 return i;
+			 		 return 1;
+			 	}
+			 	function autoincrementItem(){
+			 		 if($scope.listItens){
+			 			 $scope.item.id ="#"+Object.keys($scope.listItens).length;
+			 		 }else{
+			 			 $scope.item.id ="#"+1;
+			 		 }
+
+			 	 }
+			 	function validarCamposItem(){
+			 			 var i;
+			 			 if($scope.item){
+			 					 if(! $scope.item.produto ){
+			 						 alert("Favor selecionar um Produto.");
+			 						 i = false;
+			 					 }else if(! $scope.item.quantidade){
+			 						 alert("Preencha o campo Quantidade.");
+			 					 }else{
+			 						 i = true
+			 					 }
+			 		 }else{
+			 			 alert("Favor preencher os campos Produto e Quantidade.");
+			 			 i = false;
+			 		 }
+			 			 return i;
+			 	}
 	   
 });
 

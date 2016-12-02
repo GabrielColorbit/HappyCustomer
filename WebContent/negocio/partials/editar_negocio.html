@@ -96,7 +96,7 @@
 							<div class="col-xs-12 ">
 								<div class="col-xs-10">
 
-									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls ">
+									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls">
 										<label>Produto</label> 
 										<input type="hidden" ng-model="item.id" />
 										<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
@@ -105,7 +105,7 @@
 										</select>	
 										<p class="help-block text-danger"></p>
 									</div>
-									<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  ">
+									<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
 										<label>Quantidade</label> <input type="number"
 											class="form-control" min="1" max="100" ng-model="item.quantidade"
 											placeholder="Quantidade" id="quantidade" required
@@ -131,14 +131,18 @@
 									<thead>
 										<tr class="uppercase">											
 											<th>Produto</th>
+											<th>Preço Unitário</th>
 											<th>Quantidade</th>
+											<th>Subtotal</th>
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="item in listItens">						                
-							             	<td>{{item.produto}}</td>
+							             	<td>{{item.produto.nome}}</td>
+							             	<td>{{item.produto.preco}}</td>
 							                <td>{{item.quantidade}}</td>
+							                <td>{{item.quantidade*item.produto.preco}}</td>
 											<td class="btn-group">
 												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditItem(item.id)'>Editar</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delItem(item.id)'>Excluir</a>
