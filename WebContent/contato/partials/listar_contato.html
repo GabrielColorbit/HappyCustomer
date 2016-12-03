@@ -31,6 +31,7 @@
 							<th ng-click="ordenar('tipocontato')">Tipo</th>
 							<th ng-click="ordenar('cargo')">Cargo</th>
 							<th ng-click="ordenar('origemcontato')">Origem</th>
+							<th ng-click="ordenar('genero')">Gênero</th>
 							<th class="m_view" ng-click="ordenar('status')">Status</th>
 							<th>
 								<a class="btn btn-success btn-sm" href="#/Contato/Cadastrar">Adicionar</a>
@@ -47,7 +48,8 @@
 							<td>{{c.nome}}</td>
 							<td>{{c.tipocontato.nome}}</td>
 							<td>{{c.cargo}}</td>
-							<td>{{c.origemcontato.nome}}</td>							
+							<td>{{c.origemcontato.nome}}</td>
+							<td>{{c.genero}}</td>						
 							<td class="d_view">{{c.status}}</td>
 							
 							<td class="btn-group">

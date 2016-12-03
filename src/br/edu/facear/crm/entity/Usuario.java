@@ -66,144 +66,175 @@ public class Usuario {
 	private String senha;
 	private Genero genero;
 	private String cargo;
-	private String caminho_foto;
 	private String datacadastro;
 	private Status status;
 	private long idfoto;
-	
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
+
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
+
 	public Cidade getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+
 	public List<Telefone> getTelefones_usuario() {
 		return telefones_usuario;
 	}
+
 	public void setTelefones_usuario(List<Telefone> telefones_usuario) {
 		this.telefones_usuario = telefones_usuario;
 	}
+
 	public List<Comunicador> getComunicadores_usuario() {
 		return comunicadores_usuario;
 	}
+
 	public void setComunicadores_usuario(List<Comunicador> comunicadores_usuario) {
 		this.comunicadores_usuario = comunicadores_usuario;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	public String getDatanascimento() {
 		return datanascimento;
 	}
+
 	public void setDatanascimento(String datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+
 	public String getEndereco() {
 		return endereco;
 	}
+
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
 	public Long getNumero() {
 		return numero;
 	}
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
 	public String getComplemento() {
 		return complemento;
 	}
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
 	public String getCep() {
 		return cep;
 	}
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
 	public String getBairro() {
 		return bairro;
 	}
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+
 	public String getLogin() {
 		return login;
 	}
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public Genero getGenero() {
 		return genero;
 	}
+
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
 	public String getCargo() {
 		return cargo;
 	}
+
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getCaminho_foto() {
-		return caminho_foto;
-	}
-	public void setCaminho_foto(String caminho_foto) {
-		this.caminho_foto = caminho_foto;
-	}
+
 	public String getDatacadastro() {
 		return datacadastro;
 	}
+
 	public void setDatacadastro(String datacadastro) {
 		this.datacadastro = datacadastro;
 	}
+
 	public Status getStatus() {
 		return status;
 	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
 	public long getIdfoto() {
 		return idfoto;
 	}
+
 	public void setIdfoto(long idfoto) {
 		this.idfoto = idfoto;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
-		result = prime * result + ((caminho_foto == null) ? 0 : caminho_foto.hashCode());
 		result = prime * result + ((cargo == null) ? 0 : cargo.hashCode());
 		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((cidade == null) ? 0 : cidade.hashCode());
@@ -225,6 +256,7 @@ public class Usuario {
 		result = prime * result + ((tipousuario == null) ? 0 : tipousuario.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -238,11 +270,6 @@ public class Usuario {
 			if (other.bairro != null)
 				return false;
 		} else if (!bairro.equals(other.bairro))
-			return false;
-		if (caminho_foto == null) {
-			if (other.caminho_foto != null)
-				return false;
-		} else if (!caminho_foto.equals(other.caminho_foto))
 			return false;
 		if (cargo == null) {
 			if (other.cargo != null)
@@ -332,6 +359,7 @@ public class Usuario {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		final int maxLen = 10;
@@ -344,9 +372,9 @@ public class Usuario {
 				+ ", nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", endereco=" + endereco
 				+ ", numero=" + numero + ", complemento=" + complemento + ", cep=" + cep + ", bairro=" + bairro
 				+ ", login=" + login + ", senha=" + senha + ", genero=" + genero + ", cargo=" + cargo
-				+ ", caminho_foto=" + caminho_foto + ", datacadastro=" + datacadastro + ", status=" + status
-				+ ", idfoto=" + idfoto + "]";
+				+ ", datacadastro=" + datacadastro + ", status=" + status + ", idfoto=" + idfoto + "]";
 	}
+
 	/**
 	 * @param id
 	 * @param tipousuario
@@ -392,11 +420,11 @@ public class Usuario {
 		this.senha = senha;
 		this.genero = genero;
 		this.cargo = cargo;
-		this.caminho_foto = caminho_foto;
 		this.datacadastro = datacadastro;
 		this.status = status;
 		this.idfoto = idfoto;
 	}
+
 	/**
 	 * 
 	 */

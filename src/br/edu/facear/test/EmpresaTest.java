@@ -37,7 +37,7 @@ public class EmpresaTest {
 	// CADASTRAR
 	@Test
 	public void testCadastrarEmpresa() throws Exception {
-
+		
 		// ATRIBUTOS
 		Empresa.setRazaosocial("Gelopar Refrigeração");
 		Empresa.setCnpj("75190074000160");

@@ -29,10 +29,10 @@
 							<th ></th>
 							<th ng-click="ordenar('razaosocial')">Razão Social</th>
 							<th ng-click="ordenar('tipoempresa')">Tipo</th>
-							<th ng-click="ordenar('ramo')">Ramo</th>
+<!-- 							<th ng-click="ordenar('ramo')">Ramo</th> -->
 							<th ng-click="ordenar('site')">Site</th>
 							<th class="m_view" ng-click="ordenar('status')">Status</th>
-							<th class="m_view">Negócios</th>
+<!-- 							<th class="m_view">Negócios</th> -->
 							<th>
 								<a class="btn btn-success btn-sm" href="#/Empresa/Cadastrar">Adicionar</a>
 							</th>
@@ -46,16 +46,17 @@
 								<img class="user-pic img-circle" style="width:41px;height:41px;"src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{e.idfoto}}">
 							</td>
 							<td>{{e.razaosocial}}</td>
+<!-- 							<td> -->
+<!-- 								<a target="_blank" href="#/TipoEmpresa/Editar/{{e.tipoempresa.id}}" class="primary-link">{{e.tipoempresa.nome}}</a> -->
+<!-- 							</td> -->
+							<td>{{e.tipoempresa.nome}}</td>
+<!-- 							<td>{{e.ramo}}</td> -->
 							<td>
-								<a target="_blank" href="#/TipoEmpresa/Editar/{{e.tipoempresa.id}}" class="primary-link">{{e.tipoempresa.nome}}</a>
-							</td>
-							<td>{{e.ramo}}</td>
-							<td>s
 								<a target="_blank" href="http://{{e.site}}" class="primary-link">{{e.site}}</a>
 							</td>
 							
 							<td class="d_view">{{e.status}}</td>
-							<td>15</td>
+<!-- 							<td>15</td> -->
 							
 							<td class="btn-group">
 							<div class="to-right btn-group">
