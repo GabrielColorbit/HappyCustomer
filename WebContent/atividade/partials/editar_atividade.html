@@ -143,8 +143,7 @@
 
 						<div class="row control-group">
 
-							<div
-								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Descriçao</label>
 								<textarea type="text" class="form-control" ng-model="atividade.descricao"
 									placeholder="Descricao" id="Descricao" required
@@ -160,9 +159,7 @@
 						<div class="row control-group">
 
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-
 								<h3>Ligações</h3>
-
 							</div>
 
 							<div class="form-group col-xs-6  floating-label-form-group controls">
@@ -181,7 +178,6 @@
 							    ng-options="tipoligacao for tipoligacao in tiposligacao" ng-model="ligacao.tipoligacao" >
 								    <option value="">Tipo de Ligação</option>
 								</select>
-
 							 	<p class="help-block text-danger"></p>
 							</div>
 
@@ -199,7 +195,7 @@
 
 							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Data</label>
-								<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.datacadastro" id="data_cadastro" required data-validation-required-message="Please enter your name.">
+								<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
 
@@ -216,8 +212,8 @@
 								<p class="help-block text-danger"></p>
 							</div>
 
-							<div class="col-xs-2 btn-group">
-								<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addLigacao()'>Salvar</a>
+							<div class="col-xs-12 btn-group">
+								<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addLigacao()'>adicionar ligação</a>
 							</div>
 
 						</div>
@@ -228,18 +224,18 @@
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-											<th ng-click="ordenar('data')">Data</th>
-											<th ng-click="ordenar('telefone')">Telefone</th>
-											<th ng-click="ordenar('tipoligacao')">Tipo</th>
-											<th ng-click="ordenar('duracao')">Duração</th>
+											<th >Data</th>
+											<th >Telefone</th>
+											<th >Tipo</th>
+											<th >Duração</th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="ligacao in listLigacoes">
-											<td>{{ligacao.data_cadastro}}</td>
+											<td>{{ligacao.data}}</td>
 											<td>{{ligacao.telefone.numero}}</td>
 											<td>{{ligacao.tipoligacao}}</td>
-											<td>{ligacao.duracao}}</td>
+											<td>{{ligacao.duracao}}</td>
 
 											<td class="btn-group">
 												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditLigacao(ligacao.id)'>Editar</a>
@@ -252,7 +248,11 @@
 							</div>
 
 						</div>
-
+						<div class="row control-group">
+							</br>
+							</br>
+							</br>
+						</div>
 						<!-- Gerenciar Comunicadores do Usuário -->
 						<div class="row control-group">
 
@@ -291,8 +291,8 @@
 										<p class="help-block text-danger"></p>
 									</div>
 
-									<div class="col-xs-2 btn-group">
-										<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar</a>
+									<div class="col-xs-12 btn-group">
+										<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addComunicador()'>adicionar interação</a>
 									</div>
 
 									</div>
@@ -305,7 +305,6 @@
 									<table class="table table-hover table-light col-xs-12">
 										<thead>
 											<tr class="uppercase">
-
 												<th ng-click="ordenar('data')">Tipo</th>
 												<th ng-click="ordenar('telefone')">Descrição</th>
 												<th ng-click="ordenar('tipoligacao')">Resumo</th>
@@ -315,12 +314,9 @@
 										</thead>
 										<tbody>
 										   <tr data-ng-repeat="comunicador in listComunicadores">
-
-								                <td>{{comunicador.tipocomunicador.nome}}</td>
-								                <td>{{comunicador.nome}}</td>
-								                <td>{{comunicador.resumo}}</td>
-
-								               	<td class="btn-group">
+				                <td>{{comunicador.nome}}</td>
+				                <td>{{comunicador.resumo}}</td>
+				               	<td class="btn-group">
 													<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
 													<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 												</td>
@@ -333,7 +329,16 @@
 							</div>
 
 						</div>
-
+						<div class="row control-group">
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+						</div>
 
 
 					{{Resposta}}

@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 
 import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Comunicador;
+import br.edu.facear.crm.entity.Ligacao;
+import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restAtividade")
@@ -51,6 +53,23 @@ public class AtividadeRestful {
 				atividade.setComunicadores_atividade(comunicadorlist);
 			}			
 
+			if(atividade.getLigacoes_atividade() != null){
+				ArrayList<Ligacao> ligacoes = new ArrayList<Ligacao>();
+				for(Ligacao l : atividade.getLigacoes_atividade()){
+					if(l.getId() == null){
+						l.setContato(atividade.getContato());
+						l.setUsuarioresponsavel(atividade.getUsuarioresponsavel());
+						l.setEmpresa(atividade.getEmpresa());
+						new FacadeHappyCustomer().CadastrarLigacao(l);
+					}else{
+						new FacadeHappyCustomer().AlterarLigacao(l);
+					}
+					ligacoes.add(l);
+				}
+				atividade.setLigacoes_atividade(ligacoes);
+			}			
+			
+			
 			new FacadeHappyCustomer().AlterarAtividade(atividade);
 
 		}

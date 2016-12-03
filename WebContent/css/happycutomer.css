@@ -337,6 +337,9 @@ section.success
 	position: relative;
 	height: auto;
 }
+ .floating-label-form-group textarea{
+ 	min-height: 80px;
+ }
 .floating-label-form-group input, .floating-label-form-group textarea,.floating-label-form-group  select
 {
 	background: 0 0;
@@ -349,6 +352,7 @@ section.success
 	position: relative;
 	resize: none;
 	z-index: 1;
+	
 }
 .floating-label-form-group label
 {

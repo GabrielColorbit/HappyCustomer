@@ -1,10 +1,16 @@
 var myControllers = angular.module('AtividadeControllers',[]);
 
-myControllers.controller('ListarAtividadeController', function($scope,$http) {
+myControllers.controller('ListarAtividadeController', function($scope,$http,$cookies) {
 	$scope.Titulo = "Atividades";
 	$scope.BuscarInformacao = function() {
-		$http.get('http://localhost:8080/CRM/rest/restAtividade/listarTodos')
-		.success(function(data) {
+		var hash = $cookies.get('hash');
+		var config = {
+			 headers : {
+				 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+			 }
+		 }
+		$http.get('http://localhost:8080/CRM/rest/restAtividade/listarTodos', config)
+		.success(function(data, config) {
 			$scope.atividadelist = data["atividade"];
 			$scope.Quantidade = $scope.atividadelist.length+' Atividades Encontradas!' ;
 		});
@@ -16,49 +22,100 @@ myControllers.controller('ListarAtividadeController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetAtividadeController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+myControllers.controller('GetAtividadeController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location, $cookies) {
 	//$scope.Titulo = "Atividade: "+ atividade.nome;
+	var hash = $cookies.get('hash');
+	var config = {
+		 headers : {
+			 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+		 }
+	 }
+	 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos', config)
+	 .success(function(data, config) {
+		 $scope.usuarios = data["usuario"];
+	 });
+	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao', config)
+	 .success(function(data, config) {
+		 $scope.situacoes = data["situacao"];
+	 });
+	 $http.get('http://localhost:8080/CRM/rest/restContato/listarTodos', config)
+	 .success(function(data, config) {
+		 $scope.contatos = data["contato"];
+	 });
+	 $http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos', config)
+	 .success(function(data, config) {
+		 $scope.empresas = data["empresa"];
+	 });
+
+	 $http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos', config)
+	 .success(function(data, config) {
+
+		 $scope.tiposatividade = data["tipoAtividade"];
+	 });
+	 $http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao', config)
+	 .success(function(data, config) {
+		 $scope.tiposligacao = data["tipoLigacao"];
+	 });
+	 $http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos', config)
+	 .success(function(data, config) {
+		 $scope.telefones = data["telefone"];
+	 });
+	 $http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos', config)
+		 .success(function(data, config) {
+			 $scope.tipostelefone = data["tipoTelefone"];
+	 });
+
+	 //Listar tipos de comunicadores
+	 $http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos', config)
+	 .success(function(data, config) {
+		$scope.tiposcomunicador = data["tipoComunicador"];
+	 });
+
 
 	$scope.Titulo = 'Editar Atividade';
 	var atividade =  new Object();
 
 	if($routeParams.atividadeId){
-		$http.get('http://localhost:8080/CRM/rest/restAtividade/Editar/'+$routeParams.atividadeId)
-		.success(function(data) {
+
+		$http.get('http://localhost:8080/CRM/rest/restAtividade/Editar/'+$routeParams.atividadeId, config)
+		.success(function(data, config) {
 			$scope.atividade = data;
 			atividade = $scope.atividade
 			$scope.Titulo = "Atividade: "+ atividade.nome;
 
 			//validação de array de comunicadores
-			if($scope.atividade.comunicadores_atividade){//caso o array existe
-					if($scope.atividade.comunicadores_atividade.constructor == Array){//caso seja um array de objetos
+			if($scope.atividade.comunicadores_atividade){
+				//caso o array existe
+					if($scope.atividade.comunicadores_atividade.constructor == Array){
+						//caso seja um array de objetos
 						$scope.listComunicadores = $scope.atividade.comunicadores_atividade;
-					}else{//caso seja um objeto apenas
+					}else{
+						//caso seja um objeto apenas
 						$scope.listComunicadores = [];
 						var comunicador = $scope.atividade.comunicadores_atividade;
 		 				$scope.listComunicadores.push(comunicador);
 					}
-			}else{//caso nao exista
+			}
+			else{
+				//caso nao exista
 				$scope.listComunicadores = [];
 			}
 
-			//Listar tipos de comunicadores
-			$http.get('http://localhost:8080/CRM/rest/restTipoComunicador/listarTodos')
-			.success(function(data) {
-			 $scope.tiposcomunicador = data["tipoComunicador"];
-			});
-
-
 			//validação de array de ligações
-			if($scope.atividade.ligacoes){//caso o array existe
-					if($scope.atividade.ligacoes.constructor == Array){//caso seja um array de objetos
-						$scope.listLigacoes = $scope.atividade.ligacoes;
-					}else{//caso seja um objeto apenas
+			if($scope.atividade.ligacoes_atividade){
+				//caso o array existe
+					if($scope.atividade.ligacoes_atividade.constructor == Array){
+						//caso seja um array de objetos
+						$scope.listLigacoes = $scope.atividade.ligacoes_atividade;
+					}
+					else{//caso seja um objeto apenas
 						$scope.listLigacoes = [];
-						var ligacao = $scope.atividade.ligacoes;
+						var ligacao = $scope.atividade.ligacoes_atividade;
 		 				$scope.listLigacoes.push(ligacao);
 					}
-			}else{//caso nao exista
+			}
+			else{
+				//caso nao exista
 				$scope.listLigacoes = [];
 			}
 
@@ -67,6 +124,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 			.success(function(data) {
 				$scope.ligacaolist = data["ligacao"];
 			});
+
 
 
 
@@ -103,7 +161,6 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					empresa : $scope.atividade.empresa,
 					contato : $scope.atividade.contato,
 					tipoatividade : $scope.atividade.tipoatividade,
-
 					nome : $scope.atividade.nome,
 					datacadastro : $scope.atividade.datacadastro,
 					datainicio : $scope.atividade.datainicio,
@@ -112,7 +169,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					situacao: $scope.atividade.situacao,
 
 					comunicadores_atividade : $scope.atividade.comunicadores_atividade,
-					ligacoes : $scope.atividade.ligacoes
+					ligacoes_atividade : $scope.atividade.ligacoes
 
 				});
 				var config = {
@@ -121,8 +178,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					}
 				}
 
-				$http.post(
-						'http://localhost:8080/CRM/rest/restAtividade/Salvar',
+				$http.post('http://localhost:8080/CRM/rest/restAtividade/Salvar',
 						parameter, config).success(
 						function(data, status, headers, config) {
 
@@ -146,7 +202,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						if($scope.comunicador.id == null){
 									autoincrementComunicador();
 									$scope.listComunicadores.push({
-											id: $scope.comunicador.id ,
+										id: $scope.comunicador.id ,
 										nome:$scope.comunicador.nome,
 										resumo:$scope.comunicador.resumo,
 										tipocomunicador:$scope.comunicador.tipocomunicador
@@ -254,40 +310,6 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 							return i;
 				 }
 
-				 $http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
-					.success(function(data) {
-						$scope.situacoes = data["situacao"];
-					});
-					$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
-					.success(function(data) {
-						$scope.contatos = data["contato"];
-					});
-					$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
-					.success(function(data) {
-						$scope.empresas = data["empresa"];
-					});
-//					$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-//					.success(function(data) {
-//						$scope.usuarios = data["usuario"];
-//					});
-					$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
-					.success(function(data) {
-
-						$scope.tiposatividade = data["tipoAtividade"];
-					});
-					$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
-					.success(function(data) {
-						$scope.tiposligacao = data["tipoLigacao"];
-					});
-					$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos')
-					.success(function(data) {
-						$scope.telefones = data["telefone"];
-					});
-					$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
-						.success(function(data) {
-							$scope.tipostelefone = data["tipoTelefone"];
-					});
-
 
 				 //Genrenciar ligações
 				 $scope.addLigacao = function(){
@@ -300,38 +322,30 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 											telefone:$scope.ligacao.telefone,
 											tipoligacao:$scope.ligacao.tipoligacao,
 											duracao:$scope.ligacao.duracao,
-											datacadastro:$scope.ligacao.datacadastro,
+											data:$scope.ligacao.data,
 											resumo:$scope.ligacao.resumo,
-
 										});
-									$scope.ligacao = { "id": null,"telefone": '',"tipotelefone":'',"duracao":'',"data":'',"resumo":''};
+										$scope.ligacao = { "id": null,"telefone": '',"tipotelefone":'',"duracao":'',"data":'',"resumo":''};
 
 								}else{
 										var index = getSelectedIndexLigacao($scope.ligacao.id);
 										$scope.listLigacoes[index].telefone = $scope.ligacao.telefone;
-										$scope.listLigacoes[index].nome = $scope.comunicador.nome;
-										$scope.listLigacoes[index].tipotelefone = $scope.ligacao.tipotelefone;
+										$scope.listLigacoes[index].telefone = $scope.ligacao.telefone;
+										$scope.listLigacoes[index].tipoligacao = $scope.ligacao.tipoligacao;
 										$scope.listLigacoes[index].duracao = $scope.ligacao.duracao;
 										$scope.listLigacoes[index].data = $scope.ligacao.data;
 										$scope.listLigacoes[index].resumo = $scope.ligacao.resumo;
-
-									$scope.comunicador = {
-												"id": null,
-												"telefone": '',
-												"tipotelefone": '',
-												"duracao":'',
-												"data": '',
-												"resumo": ''
+  									$scope.ligacao = { "id": null, "telefone": '', "tipotelefone": '', "duracao":'', "data": '', "resumo": ''
 									};
 								}
 					}
 				 }
 				 $scope.selectEditLigacao = function(id){
 							var SelLigacao = getSelectedLigacao(id);
-							$scope.comunicador = {
+							$scope.ligacao = {
 									"id": SelLigacao.id,
 									"telefone": SelLigacao.telefone,
-									"tipotelefone": SelLigacao.tipotelefone,
+									"tipoligacao": SelLigacao.tipoligacao,
 									"duracao":SelLigacao.duracao,
 									"data": SelLigacao.data,
 									"resumo": SelLigacao.resumo
@@ -347,13 +361,6 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 								}
 						}
 				 };
-				 function getSelectedIndexLigacao(id){
-					for(var i=0; i <  Object.keys($scope.listLigacoes).length; i ++)
-						if($scope.listLigacoes[i].id == id)
-							return i;
-					return 1;
-
-				 }
 				 function autoincrementLigacao(){
 					if($scope.listLigacoes){
 							$scope.ligacao.id = "#"+Object.keys($scope.listLigacoes).length;
@@ -369,12 +376,12 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 					return 1;
 				 }
 				 function getSelectedIndexLigacao(id){
-						for(var i=0; i <  Object.keys($scope.listLigacoes).length; i ++)
-							if($scope.listLigacoes[i].id == id)
-								return i;
-						return 1;
-				 }
+					for(var i=0; i <  Object.keys($scope.listLigacoes).length; i ++)
+						if($scope.listLigacoes[i].id == id)
+							return i;
+					return 1;
 
+				 }
 				 function validarCamposLigacao(){
 					 var i;
 						if($scope.ligacao){
@@ -393,7 +400,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						else if(! $scope.ligacao.duracao){
 							alert("Preencha a duração da ligação.");
 							i = false;
-						}else if(! $scope.ligacao.datacadastro){
+						}else if(! $scope.ligacao.data){
 							alert("Preencha a data para continuar.");
 							i = false;
 						}else if(! $scope.ligacao.resumo){
@@ -409,9 +416,8 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 							return i;
 				 }
 
-
 			   $scope.Excluir = function(id){
-
+				 	//excluir atividade
 				   var result = confirm("Tem Certeza Que Deseja Excluir Esta Atividade?");
 					if (result === true){
 						if(id){
@@ -447,27 +453,8 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 				.success(function(data) {
 					$scope.empresas = data["empresa"];
 				});
-//				$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-//				.success(function(data) {
-//					$scope.usuarios = data["usuario"];
-//				});
-				$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
-				.success(function(data) {
 
-					$scope.tiposatividade = data["tipoAtividade"];
-				});
-				$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
-				.success(function(data) {
-					$scope.tiposligacao = data["tipoLigacao"];
-				});
-				$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos')
-				.success(function(data) {
-					$scope.telefones = data["telefone"];
-				});
-				$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
-					.success(function(data) {
-						$scope.tipostelefone = data["tipoTelefone"];
-				});
+
 
 		});
 	}
@@ -477,39 +464,47 @@ myControllers.controller('CadastrarAtividadeController', function($scope, $route
 	$scope.Titulo = "Cadastrar Atividade";
 
 });
-myControllers.controller('AtividadeController', function($scope, $routeParams, $http, $location) {
+myControllers.controller('AtividadeController', function($scope, $routeParams, $http, $location, $cookies) {
 
-	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao')
-	.success(function(data) {
+	var hash = $cookies.get('hash');
+	var config = {
+		 headers : {
+			 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+		 }
+	 }
+	 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+ 	.success(function(data, config) {
+ 		$scope.usuarios = data["usuario"];
+ 	});
+
+	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao',config)
+	.success(function(data, config) {
 		$scope.situacoes = data["situacao"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
-	.success(function(data) {
+
+	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos',config)
+	.success(function(data, config) {
 		$scope.contatos = data["contato"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
-	.success(function(data) {
+	$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos',config)
+	.success(function(data, config) {
 		$scope.empresas = data["empresa"];
 	});
-//	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-//	.success(function(data) {
-//		$scope.usuarios = data["usuario"];
-//	});
-	$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos')
-	.success(function(data) {
+	$http.get('http://localhost:8080/CRM/rest/restTipoAtividade/listarTodos',config)
+	.success(function(data, config) {
 
 		$scope.tiposatividade = data["tipoAtividade"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao')
-	.success(function(data) {
+	$http.get('http://localhost:8080/CRM/rest/restCollections/tipoligacao',config)
+	.success(function(data, config) {
 		$scope.tiposligacao = data["tipoLigacao"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos')
-	.success(function(data) {
+	$http.get('http://localhost:8080/CRM/rest/restTelefone/listarTodos',config)
+	.success(function(data, config) {
 		$scope.telefones = data["telefone"];
 	});
-	$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos')
-		.success(function(data) {
+	$http.get('http://localhost:8080/CRM/rest/restTipoTelefone/listarTodos',config)
+		.success(function(data, config) {
 			$scope.tipostelefone = data["tipoTelefone"];
 	});
 

@@ -50,6 +50,13 @@ public class Atividade implements Serializable {
 	@ForeignKey(name="fk_tipoatividade")
 	private TipoAtividade tipoatividade;
 	
+	
+	@OneToMany
+	@JoinTable(name = "\"TB_ATIVIDADE_LIGACAO\"", joinColumns = {
+			@JoinColumn(name = "id_atividade") }, inverseJoinColumns = { @JoinColumn(name = "id_ligacao") })
+	private List<Ligacao> ligacoes_atividade;
+	
+	
 	// RELACIONAMENTOS MUITOS PRA MUITOS
 	
 	// COMUNICADORES
@@ -96,6 +103,12 @@ public class Atividade implements Serializable {
 	public void setTipoatividade(TipoAtividade tipoatividade) {
 		this.tipoatividade = tipoatividade;
 	}
+	public List<Ligacao> getLigacoes_atividade() {
+		return ligacoes_atividade;
+	}
+	public void setLigacoes_atividade(List<Ligacao> ligacoes_atividade) {
+		this.ligacoes_atividade = ligacoes_atividade;
+	}
 	public List<Comunicador> getComunicadores_atividade() {
 		return comunicadores_atividade;
 	}
@@ -138,8 +151,6 @@ public class Atividade implements Serializable {
 	public void setSituacao(Situacao situacao) {
 		this.situacao = situacao;
 	}
-	
-	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -155,6 +166,7 @@ public class Atividade implements Serializable {
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((ligacoes_atividade == null) ? 0 : ligacoes_atividade.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((situacao == null) ? 0 : situacao.hashCode());
 		result = prime * result + ((tipoatividade == null) ? 0 : tipoatividade.hashCode());
@@ -210,6 +222,11 @@ public class Atividade implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (ligacoes_atividade == null) {
+			if (other.ligacoes_atividade != null)
+				return false;
+		} else if (!ligacoes_atividade.equals(other.ligacoes_atividade))
+			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
@@ -231,37 +248,22 @@ public class Atividade implements Serializable {
 	}
 	@Override
 	public String toString() {
-		final int maxLen = 10;
 		return "Atividade [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
-				+ ", empresa=" + empresa + ", tipoatividade=" + tipoatividade + ", comunicadores_atividade="
-				+ (comunicadores_atividade != null
-						? comunicadores_atividade.subList(0, Math.min(comunicadores_atividade.size(), maxLen)) : null)
-				+ ", nome=" + nome + ", datacadastro=" + datacadastro + ", datainicio=" + datainicio + ", datafim="
-				+ datafim + ", descricao=" + descricao + ", situacao=" + situacao + "]";
+				+ ", empresa=" + empresa + ", tipoatividade=" + tipoatividade + ", ligacoes_atividade="
+				+ ligacoes_atividade + ", comunicadores_atividade=" + comunicadores_atividade + ", nome=" + nome
+				+ ", datacadastro=" + datacadastro + ", datainicio=" + datainicio + ", datafim=" + datafim
+				+ ", descricao=" + descricao + ", situacao=" + situacao + "]";
 	}
-	/**
-	 * @param id
-	 * @param usuarioresponsavel
-	 * @param contato
-	 * @param empresa
-	 * @param tipoatividade
-	 * @param comunicadores_atividade
-	 * @param nome
-	 * @param datacadastro
-	 * @param datainicio
-	 * @param datafim
-	 * @param descricao
-	 * @param situacao
-	 */
 	public Atividade(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, TipoAtividade tipoatividade,
-			List<Comunicador> comunicadores_atividade, String nome, String datacadastro, String datainicio,
-			String datafim, String descricao, Situacao situacao) {
+			List<Ligacao> ligacoes_atividade, List<Comunicador> comunicadores_atividade, String nome,
+			String datacadastro, String datainicio, String datafim, String descricao, Situacao situacao) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
 		this.contato = contato;
 		this.empresa = empresa;
 		this.tipoatividade = tipoatividade;
+		this.ligacoes_atividade = ligacoes_atividade;
 		this.comunicadores_atividade = comunicadores_atividade;
 		this.nome = nome;
 		this.datacadastro = datacadastro;
@@ -270,11 +272,14 @@ public class Atividade implements Serializable {
 		this.descricao = descricao;
 		this.situacao = situacao;
 	}
-	/**
-	 * 
-	 */
 	public Atividade() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
+	
+	
 }

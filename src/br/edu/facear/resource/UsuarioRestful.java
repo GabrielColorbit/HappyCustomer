@@ -33,24 +33,24 @@ import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restUsuario")
 public class UsuarioRestful {
-	
+
 	@GET
 	@Path("/listarTodos")
 	@Produces({ MediaType.APPLICATION_JSON})
 	@Consumes({ MediaType.TEXT_PLAIN })
 	public ArrayList<Usuario> findAll(@HeaderParam("hash") String md5hashusuario) throws Exception {
 
-		//instancÌa classe de autenticaÁ„o 
+		//instancùa classe de autenticaùùo
 		AuthenticationService ra = new AuthenticationService();
 		ArrayList<Usuario> usuarioslist = new ArrayList<>();
 		//valida usuario logado
 		Usuario u = new AuthenticationService().RequestAuthentication(md5hashusuario);
 		if(u.getId() != null){
-			if(u.getTipousuario().getNome().equals("Administrador") ){
+//			if(u.getTipousuario().getNome().equals("Administrador") ){
 				usuarioslist = new FacadeHappyCustomer().ListarUsuario();
-				return usuarioslist;	
-			}
-			
+				return usuarioslist;
+//			}
+
 		}
 		return usuarioslist;
 	}
@@ -62,11 +62,12 @@ public class UsuarioRestful {
 	public void cadastrarCliente(Usuario usuario, @HeaderParam("hash") String md5hashusuario) throws Exception {
 		//Cadastra se o usu·rio for novo
 		Usuario u = new AuthenticationService().RequestAuthentication(md5hashusuario);
+		//valida usuario lgoado
 		if(u.getId() != null){
 			if(u.getTipousuario().getNome().equals("Administrador") ){
 
 				if (usuario.getId() == null){
-					
+
 					if(usuario.getTelefones_usuario() != null){
 						ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 						for(Telefone t : usuario.getTelefones_usuario()){
@@ -75,7 +76,7 @@ public class UsuarioRestful {
 						}
 						usuario.setTelefones_usuario(telefonelist);
 					}
-					
+
 					if(usuario.getComunicadores_usuario() != null){
 						ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
 						for(Comunicador c : usuario.getComunicadores_usuario()){
@@ -88,7 +89,7 @@ public class UsuarioRestful {
 				}
 				//altera usu·rio j· criado
 				else{
-					
+
 					if(usuario.getTelefones_usuario() != null){
 						ArrayList<Telefone> telefonelist = new ArrayList<Telefone>();
 						for(Telefone t : usuario.getTelefones_usuario()){
@@ -100,26 +101,28 @@ public class UsuarioRestful {
 							telefonelist.add(t);
 						}
 						usuario.setTelefones_usuario(telefonelist);
-					}			
-		
+					}
+
 					if(usuario.getComunicadores_usuario() != null){
 						ArrayList<Comunicador> comunicadorlist = new ArrayList<Comunicador>();
 						for(Comunicador c : usuario.getComunicadores_usuario()){
 							if(c.getId() == null){//cadastra novos comunicadores
 								new FacadeHappyCustomer().CadastrarComunicador(c);
-							}else{//salva alteraÁıes em comunicador'
+							}
+							else{
+								//salva alteraÁıees em comunicador'
 								new FacadeHappyCustomer().AlterarComunicador(c);
 							}
 							comunicadorlist.add(c);
 						}
 						usuario.setComunicadores_usuario(comunicadorlist);
 					}
-					
+
 					new FacadeHappyCustomer().AlterarUsuario(usuario);
-		
+
 				}
 			}
-			
+
 		}
 
 	}
@@ -129,8 +132,8 @@ public class UsuarioRestful {
 	@Produces("application/json")
 	public Usuario editarUsuario(@PathParam(value = "id") String codigo
 							   , @HeaderParam("hash") String md5hashusuario) throws Exception {
-		
-		
+
+
 		Usuario u = new Usuario();
 		Long id = Long.parseUnsignedLong(codigo);
 		Usuario us = new AuthenticationService().RequestAuthentication(md5hashusuario);
@@ -138,15 +141,15 @@ public class UsuarioRestful {
 			if(us.getTipousuario().getNome().equals("Administrador") ){
 				u= new FacadeHappyCustomer().BuscarUsuarioPorId(id);
 			}else if(us.getTipousuario().getNome().equals("Operador") && us.getId().equals(id) ){
-			//valida se È operador e se o id enviado para ediÁ„o È o mesmo que  do usuario logado
+			//valida se ù operador e se o id enviado para ediùùo ù o mesmo que  do usuario logado
 				u= new FacadeHappyCustomer().BuscarUsuarioPorId(id);
 			}
 		}
-		
+
 
 		return u;
 	}
-	
+
 	@POST
 	@Path("/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -157,18 +160,18 @@ public class UsuarioRestful {
 			@FormDataParam("file") InputStream uploadedInputStream,
 			@FormDataParam("file") FormDataContentDisposition fileDetail) throws CrmException {
 			//transform to byte array
-		
-		
-	 
-		 
+
+
+
+
 		String uploadedFileLocation = "C://HappyCustomer/Usuarios/Imagens/" + fileDetail.getFileName();
 
 		// save it
 		Foto foto = writeToFile(uploadedInputStream, uploadedFileLocation);
-		
-		
-		
-		
+
+
+
+
 	    return foto;
 
 	}
@@ -177,37 +180,37 @@ public class UsuarioRestful {
 	private Foto writeToFile(InputStream uploadedInputStream,
 			String uploadedFileLocation) throws CrmException {
 		Foto foto = new Foto();
-		      
-        
+
+
 		try {
 			byte[] ibytes = IOUtils.toByteArray(uploadedInputStream);
 			System.out.println(ibytes);
 			foto.setImagem(ibytes);
 			FotoDAO fdao = new FotoDAO();
 			fdao.Cadastrar(foto);
-			
 
-			
-			
+
+
+
 			//old saving
 			OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
-			
+
 			int read = 0;
 			byte[] bytes = new byte[1024];
 
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
 			out = new FileOutputStream(new File(uploadedFileLocation));
 			while ((read = uploadedInputStream.read(bytes)) != -1) {
 				out.write(bytes, 0, read);
 			}
 			out.flush();
 			out.close();
-			
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -215,7 +218,7 @@ public class UsuarioRestful {
 		return foto;
 
 	}
-	
+
 	@POST
 	@Path("/Excluir/{id}")
 	@Produces("application/json")
@@ -230,8 +233,8 @@ public class UsuarioRestful {
 				FacadeHappyCustomer fhc = new FacadeHappyCustomer();
 				fhc.ExcluirUsuario(u);
 			}
-		}	
-		
+		}
+
 	}
-	
+
 }
