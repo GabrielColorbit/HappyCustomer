@@ -22,8 +22,9 @@
 					<input type="text" class="form-control" ng-model="procurar"
 					placeholder="Buscar Atividade" id="Nome da atividade" required
 					data-validation-required-message="Por favor insira um nome">
+					
 				</div>
-				<table class="table table-hover table-light col-xs-12">
+				<table id="printarea" class="table table-hover table-light col-xs-12">
 					<thead>
 					<tr class="uppercase">
 						
@@ -63,7 +64,17 @@
 				</table>
 			</div>
 			<div class="col-xs-12">
-				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>					
+				
+		    	<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
+				
+				
+				<a class="btn btn-default btn-sm to-right" href="javascript:print();">Gerar Relatório</a>
+				
+				
+				
+
+				
+									
 			</div>
 		</div>
 	</div>

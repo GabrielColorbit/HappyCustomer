@@ -24,7 +24,8 @@ function callChartAtividade(){
 		var chart = AmCharts.makeChart( "chartdiv", {
 			  "type": "serial",
 			  "addClassNames": true,
-			  "theme": "light",
+			  "theme": "patterns",
+			  "language": "fr",
 			  "autoMargins": false,
 			  "marginLeft": 30,
 			  "marginRight": 8,
@@ -45,15 +46,15 @@ function callChartAtividade(){
 			  "startDuration": 1,
 			  "graphs": [ {
 			    "alphaField": "alpha",
-			    "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+			    "balloonText": "<span style='font-size:12px;'>[[title]] em [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
 			    "fillAlphas": 1,
-			    "title": "atividades",
+			    "title": "Atividades",
 			    "type": "column",
 			    "valueField": "numeroatividade",
 			    "dashLengthField": "dashLengthColumn"
 			  }, {
 			    "id": "graph2",
-			    "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+			    "balloonText": "<span style='font-size:12px;'>[[title]] em [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
 			    "bullet": "round",
 			    "lineThickness": 3,
 			    "bulletSize": 7,
@@ -63,7 +64,7 @@ function callChartAtividade(){
 			    "bulletBorderThickness": 3,
 			    "fillAlphas": 0,
 			    "lineAlpha": 1,
-			    "title": "media",
+			    "title": "Média",
 			    "valueField": "media",
 			    "dashLengthField": "dashLengthLine"
 			  } ],
