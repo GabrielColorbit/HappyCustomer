@@ -25,6 +25,26 @@ public class ItemRestful {
 		return (ArrayList<Item>) new FacadeHappyCustomer().ListarItem();
 	}
 
+
+//	@GET
+//	@Path("/listarItemNegocio/{id}")
+//	@Consumes(MediaType.APPLICATION_JSON)
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public ArrayList<Item> listarPorNegocio(@PathParam(value = "id")String NegocioCod) throws Exception {
+//
+//		
+//		Long idnego = Long.parseLong(NegocioCod);
+//		ArrayList<Item> itemlist = new ArrayList<Item>();
+//		ArrayList<Item> itemlistall = new FacadeHappyCustomer().ListarItem();
+//		for(Item i : itemlistall){
+//			if(i.getNegocio().getId() == idnego ){
+//				itemlist.add(i);
+//			}
+//		}
+//		
+//		return itemlist;
+//	}
+
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })
 	@Produces("text/plain")

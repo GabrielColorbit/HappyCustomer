@@ -30,8 +30,9 @@
 							<th ng-click="ordenar('razaosocial')">Razão Social</th>
 							<th ng-click="ordenar('tipoempresa')">Tipo</th>
 <!-- 							<th ng-click="ordenar('ramo')">Ramo</th> -->
-							<th ng-click="ordenar('site')">Site</th>
+							<th ng-click="ordenar('site')">Site</th>							
 							<th class="m_view" ng-click="ordenar('status')">Status</th>
+							<th ng-click="ordenar('usuario')">Usuário Responsável</th>
 <!-- 							<th class="m_view">Negócios</th> -->
 							<th>
 								<a class="btn btn-success btn-sm" href="#/Empresa/Cadastrar">Adicionar</a>
@@ -53,9 +54,9 @@
 <!-- 							<td>{{e.ramo}}</td> -->
 							<td>
 								<a target="_blank" href="http://{{e.site}}" class="primary-link">{{e.site}}</a>
-							</td>
-							
+							</td>							
 							<td class="d_view">{{e.status}}</td>
+							<td class="d_view">{{e.usuarioresponsavel.nome}}</td>
 <!-- 							<td>15</td> -->
 							
 							<td class="btn-group">

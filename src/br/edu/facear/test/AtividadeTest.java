@@ -57,6 +57,7 @@ public class AtividadeTest {
 
 		// CADASTRANDO COMUNICADOR
 		Comunicador.setNome("atividade1@atividade1.com");
+		Comunicador.setData("04/12/2016");
 		Comunicador.setResumo("Foi comprado um cartão SD de 64GB.");
 		TipoComunicador.setId(1l);
 		Comunicador.setTipocomunicador(TipoComunicador);

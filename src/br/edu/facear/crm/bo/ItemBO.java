@@ -14,9 +14,8 @@ public class ItemBO implements InterfaceBO<Item> {
 	public void Cadastrar(Item item) throws Exception {
 		if (item.getProduto() == null) {
 			throw new Exception("Selecione um Produto!");
-		} else if (item.getNegocio() == null) {
-			throw new Exception("Selecione um Negócio!");
-		} else if (item.getQuantidade() == null) {
+		}
+		else if (item.getQuantidade() == null) {
 			throw new Exception("Quantidade Fornecida Invalido.");
 		}
 
@@ -29,9 +28,8 @@ public class ItemBO implements InterfaceBO<Item> {
 
 		if (item.getProduto() == null) {
 			throw new Exception("Selecione um Produto");
-		} else if (item.getNegocio() == null) {
-			throw new Exception("Selecione um Negócio.");
-		} else if (item.getQuantidade() == null) {
+		}
+		else if (item.getQuantidade() == null) {
 			throw new Exception("Quantidade Fornecida Invalido.");
 		}
 

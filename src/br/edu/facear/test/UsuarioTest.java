@@ -83,10 +83,10 @@ public class UsuarioTest {
 	}
 
 	// ALTERAR
-	// @Test
+	//@Test
 	public void testAterarUsuario() throws Exception {
 
-		Usuario Usuario = facade.BuscarUsuarioPorId(1l);
+		Usuario Usuario = facade.BuscarUsuarioPorId(2l);
 
 		// ATRIBUTOS
 		Usuario.setNome("Gabriel Umbelino");

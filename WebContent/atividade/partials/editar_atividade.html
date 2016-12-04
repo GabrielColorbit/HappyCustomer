@@ -30,7 +30,7 @@
 
 								<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 
-									<h3>Dados Gerais</h3>
+									<h3>DADOS GERAIS</h3>
 
 								</div>
 
@@ -126,8 +126,8 @@
 
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Data Inicio</label> <input type="text"
-									class="form-control date" placeholder="Data Inicio" ng-model="atividade.datainicio"
+								<label>Data Início</label> <input type="text"
+									class="form-control date" placeholder="Data Início" ng-model="atividade.datainicio"
 									id="data_inicio" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
@@ -146,7 +146,7 @@
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Descriçao</label>
 								<textarea type="text" class="form-control" ng-model="atividade.descricao"
-									placeholder="Descricao" id="Descricao" required
+									placeholder="Descrição" id="Descricao" required
 									data-validation-required-message="Por favor insira um nome"></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
@@ -159,10 +159,10 @@
 						<div class="row control-group">
 
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<h3>Ligações</h3>
+								<h3>LIGAÇÕES</h3>
 							</div>
 
-							<div class="form-group col-xs-6  floating-label-form-group controls">
+							<div class="form-group col-xs-6  floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Telefone</label>
 			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
 							    ng-options="telefone.numero for telefone in telefones" ng-model="ligacao.telefone" >
@@ -172,7 +172,7 @@
 							 	<p class="help-block text-danger"></p>
 							</div>
 
-							<div class="form-group col-xs-6  floating-label-form-group controls">
+							<div class="form-group col-xs-6  floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Tipo de Ligação</label>
 			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de ligação"
 							    ng-options="tipoligacao for tipoligacao in tiposligacao" ng-model="ligacao.tipoligacao" >
@@ -194,8 +194,8 @@
 							</div>
 
 							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Data</label>
-								<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
+								<label>Data Registro</label>
+								<input type="text" class="form-control date" placeholder="Data Registro" ng-model="ligacao.data" id="data" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
 
@@ -204,7 +204,7 @@
 						<div class="row control-group">
 
 							<div
-								class="form-group  col-xs-12 floating-label-form-group controls">
+								class="form-group  col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Resumo</label>
 								<textarea type="text" class="form-control"
 									placeholder="Resumo" id="Descricao" required
@@ -213,7 +213,7 @@
 							</div>
 
 							<div class="col-xs-12 btn-group">
-								<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addLigacao()'>adicionar ligação</a>
+								<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addLigacao()'>Salvar Ligação</a>
 							</div>
 
 						</div>
@@ -231,7 +231,7 @@
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="ligacao in listLigacoes">
+									   <tr dir-paginate="ligacao in listLigacoes |filter:procurarligacao|orderBy:sortKey:reverse|itemsPerPage:5">
 											<td>{{ligacao.data}}</td>
 											<td>{{ligacao.telefone.numero}}</td>
 											<td>{{ligacao.tipoligacao}}</td>
@@ -246,6 +246,9 @@
 									</tbody>
 								</table>
 							</div>
+							<div class="col-xs-12">
+								<dir-pagination-controls max-size="3" boundary-links="true"></dir-pagination-controls>					
+							</div>
 
 						</div>
 						<div class="row control-group">
@@ -258,13 +261,13 @@
 
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 
-								<h3>Interações</h3>
+								<h3>INTERAÇÕES</h3>
 
 							</div>
 
 							<div class="col-xs-12 ">
 
-									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls ">
+								<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 										<label>Tipo</label>
 										<input type="hidden" ng-model="comunicador.id" />
 										<select class="form-control" id="tipocomunicador" required data-validation-required-message="Por favor selecione um tipo de comunicador"
@@ -273,9 +276,16 @@
 										</select>
 										<p class="help-block text-danger"></p>
 									</div>
-									<div class="form-group col-sm-8 col-xs-12 floating-label-form-group controls  ">
-										<label>Nome</label>
-										<input type="text" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
+									<div
+										class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+										<label>Data Registro</label> <input type="text"
+										class="form-control date" placeholder="Data Registro" ng-model="comunicador.data" 
+										id="data_registro" required data-validation-required-message="Please enter your name.">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+										<label>Descrição</label>
+										<input type="text" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Descrição"
 											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
@@ -283,7 +293,7 @@
 									<div class="row control-group">
 
 									<div
-										class="form-group  col-xs-12 floating-label-form-group controls">
+										class="form-group  col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 										<label>Resumo</label>
 										<textarea type="text" class="form-control"
 											placeholder="Resumo" id="Resumo Interações" required
@@ -292,7 +302,7 @@
 									</div>
 
 									<div class="col-xs-12 btn-group">
-										<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addComunicador()'>adicionar interação</a>
+										<a class="btn btn-success btn-sm to-right" href="javascript:void(0)" data-ng-click='addComunicador()'>Salvar Interação</a>
 									</div>
 
 									</div>
@@ -304,19 +314,21 @@
 								<div class="table-scrollable table-scrollable-borderless">
 									<table class="table table-hover table-light col-xs-12">
 										<thead>
-											<tr class="uppercase">
-												<th ng-click="ordenar('data')">Tipo</th>
-												<th ng-click="ordenar('telefone')">Descrição</th>
-												<th ng-click="ordenar('tipoligacao')">Resumo</th>
+										
+											<tr class="uppercase">											
+												<th ng-click="ordenar('data')">Data Registro</th>
+												<th ng-click="ordenar('tipo')">Tipo</th>
+												<th ng-click="ordenar('descricao')">Descrição</th>
 												<th></th>
 												<th></th>
 											</tr>
 										</thead>
 										<tbody>
-										   <tr data-ng-repeat="comunicador in listComunicadores">
-				                <td>{{comunicador.nome}}</td>
-				                <td>{{comunicador.resumo}}</td>
-				               	<td class="btn-group">
+										   <tr dir-paginate="comunicador in listComunicadores |filter:procurarinteracao|orderBy:sortKey:reverse|itemsPerPage:5">
+								                <td>{{comunicador.data}}</td>
+								                <td>{{comunicador.tipocomunicador.nome}}</td>
+								                <td>{{comunicador.nome}}</td>
+				               					<td class="btn-group">
 													<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditComunicador(comunicador.id)'>Editar</a>
 													<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 												</td>
@@ -325,17 +337,14 @@
 										</tbody>
 									</table>
 								</div>
+								<div class="col-xs-12">
+									<dir-pagination-controls max-size="3" boundary-links="true"></dir-pagination-controls>					
+								</div>
 
 							</div>
 
 						</div>
 						<div class="row control-group">
-							</br>
-							</br>
-							</br>
-							</br>
-							</br>
-							</br>
 							</br>
 							</br>
 						</div>

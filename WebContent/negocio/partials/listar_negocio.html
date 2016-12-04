@@ -32,7 +32,7 @@
 						<th ng-click="ordenar('empresa')">Empresa</th>
 						<th ng-click="ordenar('contato')">Contato</th>
 						<th ng-click="ordenar('data')">Data</th>
-						<th ng-click="ordenar('valor')">Valor R$</th>
+						<th ng-click="ordenar('valor')">Valor</th>
 						<th>
 							<a class="btn btn-success btn-sm" href="#/Negocio/Cadastrar">Adicionar</a>
 						</th>
@@ -47,7 +47,7 @@
 						<td>{{n.empresa.razaosocial}}</td>		
 						<td>{{n.contato.nome}}</td>						
 						<td>{{n.data}}</td>
-						<td>563.789,23</td>
+						<td>R$ {{n.valor}}</td>
 						
 						<td class="btn-group">
 						<div class="to-right btn-group">

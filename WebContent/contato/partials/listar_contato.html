@@ -33,6 +33,7 @@
 							<th ng-click="ordenar('origemcontato')">Origem</th>
 							<th ng-click="ordenar('genero')">Gênero</th>
 							<th class="m_view" ng-click="ordenar('status')">Status</th>
+							<th ng-click="ordenar('usuario')">Usuário Responsável</th>
 							<th>
 								<a class="btn btn-success btn-sm" href="#/Contato/Cadastrar">Adicionar</a>
 							</th>
@@ -51,6 +52,7 @@
 							<td>{{c.origemcontato.nome}}</td>
 							<td>{{c.genero}}</td>						
 							<td class="d_view">{{c.status}}</td>
+							<td class="d_view">{{c.usuarioresponsavel.nome}}</td>
 							
 							<td class="btn-group">
 							<div class="to-right btn-group">
