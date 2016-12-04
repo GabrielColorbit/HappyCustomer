@@ -10,4 +10,3 @@ app.component('rodape', {
 	bindings : {}
 });
 
-

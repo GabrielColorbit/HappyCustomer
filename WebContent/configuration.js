@@ -22,8 +22,10 @@ var app = angular.module('happyCustomerApp', [
 	'AtividadeControllers',
 	'LigacaoControllers',
 	'LoginControllers',
-	'HeaderControllers'
-
+	'HeaderControllers',
+	'amChartsDirective',
+	'RelatorioController',
+	'zingchart-angularjs'
 ]);
 
 
@@ -60,7 +62,7 @@ app.config(function ($routeProvider) {
         when('/Cidade', {templateUrl: 'cidade/partials/listar_cidade.html', controller: 'ListarCidadeController'}).
         when('/Cidade/Cadastrar', {templateUrl: 'cidade/partials/criar_cidade.html', controller:'CadastrarCidadeController'}).
 
-        //Paths of Tipo Usuário                                                                                        chama o metodo  
+        //Paths of Tipo Usuário                                                                                        chama o metodo
         when('/TipoUsuario/Editar/:tipousuarioId', {templateUrl: 'tipo_usuario/partials/editar_tipo_usuario.html', controller: 'GetTipoUsuarioController'}).
         when('/TipoUsuario', {templateUrl: 'tipo_usuario/partials/listar_tipo_usuario.html', controller: 'ListarTipoUsuarioController'}).
         when('/TipoUsuario/Cadastrar', {templateUrl: 'tipo_usuario/partials/criar_tipo_usuario.html', controller:'CadastrarTipoUsuarioController'}).
@@ -125,10 +127,15 @@ app.config(function ($routeProvider) {
         when('/Ligacao', {templateUrl: 'ligacao/partials/listar_ligacao.html', controller: 'ListarLigacaoController'}).
         when('/Ligacao/Cadastrar', {templateUrl: 'ligacao/partials/criar_ligacao.html', controller:'CadastrarLigacaoController'}).
 
+				when('/Ligacao/Cadastrar', {templateUrl: 'ligacao/partials/criar_ligacao.html', controller:'CadastrarLigacaoController'}).
+
         //Paths of Login
-        when('/Login', {templateUrl: 'login/login.html', controller: 'LoginController'}).
+        when('/Login', {templateUrl: 'login/login.html', controller:'LoginController'}).
+
+        //Paths of Relatorio
+        when('/RelatorioAtividades/:idempresa', {templateUrl: 'relatorio/atividade/atividade.html', controller:'RelatorioAtividadeController'}).
 
 
         //Paths of Home
-        otherwise({redirectTo: '/Home'});
+        otherwise({redirectTo: '/Login'});
 });

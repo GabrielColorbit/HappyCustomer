@@ -64,5 +64,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mimepull-1.9.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-media-multipart-2.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-lib.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

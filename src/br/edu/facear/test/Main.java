@@ -25,7 +25,9 @@ import br.edu.facear.crm.bo.TipoTelefoneBO;
 import br.edu.facear.crm.bo.TipoUsuarioBO;
 import br.edu.facear.crm.bo.UsuarioBO;
 import br.edu.facear.crm.dao.EmpresaDAO;
+import br.edu.facear.crm.dao.RelatorioDAO;
 import br.edu.facear.crm.entity.Atividade;
+import br.edu.facear.crm.entity.AtividadePorEmpresa;
 import br.edu.facear.crm.entity.Cidade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
@@ -73,9 +75,10 @@ public class Main {
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-		
-		validaUsuario();
+//		validaUsuario();
 	}
+	
+
 
 	public static void validaUsuario() throws Exception{
 		

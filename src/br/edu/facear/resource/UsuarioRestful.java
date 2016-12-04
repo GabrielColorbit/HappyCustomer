@@ -40,7 +40,7 @@ public class UsuarioRestful {
 	@Consumes({ MediaType.TEXT_PLAIN })
 	public ArrayList<Usuario> findAll(@HeaderParam("hash") String md5hashusuario) throws Exception {
 
-		//instancùa classe de autenticaùùo
+		//instancia classe de autenticaÁ„o
 		AuthenticationService ra = new AuthenticationService();
 		ArrayList<Usuario> usuarioslist = new ArrayList<>();
 		//valida usuario logado
