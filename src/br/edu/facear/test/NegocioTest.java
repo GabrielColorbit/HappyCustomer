@@ -37,7 +37,7 @@ public class NegocioTest {
 		Negocio.setNome("Compra de Comida");
 		//Calendar data = new GregorianCalendar(29, 10, 2016);
 		Negocio.setData("19/11/2016");
-		Negocio.setValor(135f);
+		Negocio.setValor(0f);
 		
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
 		Usuario.setId(1l);
@@ -81,7 +81,7 @@ public class NegocioTest {
 		Negocio.setNome("Compra de Bebida");
 		//Calendar data = new GregorianCalendar(30, 10, 2016);
 		Negocio.setData("20/11/2016");
-		Negocio.setValor(500f);
+		Negocio.setValor(0f);
 		
 		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
 		Usuario.setId(2l);

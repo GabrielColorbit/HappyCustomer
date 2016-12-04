@@ -187,6 +187,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams, 
 			 		 for(var j = 0; j < $scope.listItens.length;j ++){
 			 				 if($scope.listItens[j].id == id){
 			 						 $scope.listItens.splice(j, 1);
+			 						$scope.Calcular();
 			 				 }
 			 		 }
 			 	 }
