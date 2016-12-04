@@ -15,8 +15,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.apache.commons.io.IOUtils;
 
@@ -40,7 +38,7 @@ public class UsuarioRestful {
 	@Consumes({ MediaType.TEXT_PLAIN })
 	public ArrayList<Usuario> findAll(@HeaderParam("hash") String md5hashusuario) throws Exception {
 
-		//instancia classe de autenticaÁ„o
+		
 		AuthenticationService ra = new AuthenticationService();
 		ArrayList<Usuario> usuarioslist = new ArrayList<>();
 		//valida usuario logado
@@ -48,7 +46,7 @@ public class UsuarioRestful {
 		if(u.getId() != null){
 //			if(u.getTipousuario().getNome().equals("Administrador") ){
 				usuarioslist = new FacadeHappyCustomer().ListarUsuario();
-				return usuarioslist;
+				return usuarioslist;	
 //			}
 
 		}
@@ -60,7 +58,7 @@ public class UsuarioRestful {
 	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/Salvar")
 	public void cadastrarCliente(Usuario usuario, @HeaderParam("hash") String md5hashusuario) throws Exception {
-		//Cadastra se o usu·rio for novo
+		//Cadastra se o usu√°rio for novo
 		Usuario u = new AuthenticationService().RequestAuthentication(md5hashusuario);
 		//valida usuario lgoado
 		if(u.getId() != null){
@@ -87,7 +85,7 @@ public class UsuarioRestful {
 					}
 						new FacadeHappyCustomer().CadastrarUsuario(usuario);
 				}
-				//altera usu·rio j· criado
+				//altera usu√°rio j√° criado
 				else{
 
 					if(usuario.getTelefones_usuario() != null){
@@ -110,7 +108,7 @@ public class UsuarioRestful {
 								new FacadeHappyCustomer().CadastrarComunicador(c);
 							}
 							else{
-								//salva alteraÁıees em comunicador'
+								//salva altera√ß√µees em comunicador'
 								new FacadeHappyCustomer().AlterarComunicador(c);
 							}
 							comunicadorlist.add(c);
@@ -141,7 +139,7 @@ public class UsuarioRestful {
 			if(us.getTipousuario().getNome().equals("Administrador") ){
 				u= new FacadeHappyCustomer().BuscarUsuarioPorId(id);
 			}else if(us.getTipousuario().getNome().equals("Operador") && us.getId().equals(id) ){
-			//valida se ù operador e se o id enviado para ediùùo ù o mesmo que  do usuario logado
+			//valida se ÔøΩ operador e se o id enviado para ediÔøΩÔøΩo ÔøΩ o mesmo que  do usuario logado
 				u= new FacadeHappyCustomer().BuscarUsuarioPorId(id);
 			}
 		}

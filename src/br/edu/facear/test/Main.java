@@ -25,9 +25,7 @@ import br.edu.facear.crm.bo.TipoTelefoneBO;
 import br.edu.facear.crm.bo.TipoUsuarioBO;
 import br.edu.facear.crm.bo.UsuarioBO;
 import br.edu.facear.crm.dao.EmpresaDAO;
-import br.edu.facear.crm.dao.RelatorioDAO;
 import br.edu.facear.crm.entity.Atividade;
-import br.edu.facear.crm.entity.AtividadePorEmpresa;
 import br.edu.facear.crm.entity.Cidade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Contato;
@@ -75,10 +73,9 @@ public class Main {
 //		gerenciarItem();
 //		gerenciarAtividade();
 //		gerenciarLigacao();
-//		validaUsuario();
+		
+		validaUsuario();
 	}
-	
-
 
 	public static void validaUsuario() throws Exception{
 		
@@ -632,7 +629,7 @@ public class Main {
 		/* cadastro de Item */
 		NegocioBO nbo = new NegocioBO();
 		Negocio n = nbo.BuscarID(1l);
-		i.setNegocio(n);
+//		i.setNegocio(n);
 		Produto p = new ProdutoBO().BuscarID(1l);
 		i.setProduto(p);
 		i.setQuantidade(123l);
@@ -641,18 +638,18 @@ public class Main {
 
 		System.out.println("Busca Itens:");
 		i = ibo.BuscarID(1l);
-		System.out.println(" id: " + i.getId() + " Produto:  " + i.getProduto().getNome() + " Quantidade: "
-				+ i.getQuantidade() + " Empresa: " + i.getNegocio().getEmpresa().getRazaosocial());
+//		System.out.println(" id: " + i.getId() + " Produto:  " + i.getProduto().getNome() + " Quantidade: "
+//				+ i.getQuantidade() + " Empresa: " + i.getNegocio().getEmpresa().getRazaosocial());
 		i.setQuantidade(321l);
 		ibo.Alterar(i);
 
 		System.out.println("Itens: ");
 		List<Item> lista_ta = ibo.Listar();
-		for (Item current_i : lista_ta) {
-			System.out.println(" id: " + current_i.getId() + " Produto:  " + current_i.getProduto().getNome()
-					+ " Quantidade: " + current_i.getQuantidade() + " Empresa: "
-					+ current_i.getNegocio().getEmpresa().getRazaosocial());
-		}
+//		for (Item current_i : lista_ta) {
+//			System.out.println(" id: " + current_i.getId() + " Produto:  " + current_i.getProduto().getNome()
+//					+ " Quantidade: " + current_i.getQuantidade() + " Empresa: "
+//					+ current_i.getNegocio().getEmpresa().getRazaosocial());
+//		}
 
 		// taBO.Excluir(ta);
 	}

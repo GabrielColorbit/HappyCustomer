@@ -18,158 +18,157 @@
 <!-- Portfolio Grid Section -->
 <section class="grid users" ng-controller="GetUsuarioController">
 	<div class="container">
-
+    
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
 				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 				<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-
-
+				
+				
 				<form name="sentMessage" id="contactForm" novalidate  enctype="multipart/form-data">
-
+				
 						<input type="hidden" ng-model="usuario.id"/>
-
+					
 						<div class="form-group last">
-
+					       
 							<p>Selecione a Imagem do Perfil do Usuário.</p>
-
+					        
 					        <div ngf-drop ng-model="picFile" ngf-pattern="image/*"  class="cropArea col-xs-7" >
-
-					            <img-crop image="picFile  | ngfDataUrl"
+					             
+					            <img-crop image="picFile  | ngfDataUrl"                 
 					            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
 					            </img-crop>
-
-
+					           
+					           
 					        </div>
 					        <div class="col-xs-5">
 					        	<div class="form-group btn-group col-xs-12">
 									<button ngf-select ng-model="picFile" accept="image/*" class="btn btn-default btn-sm to-left"> Buscar Imagem </button>
-							        <button ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success btn-sm to-left" > Confirmar Imagem </button>
-
+							        <button ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success btn-sm to-left" > Confirmar Imagem </button> 						        	
+					        	
 					        	</div>
-
-
+						        
+						        
 
 						        <div class="image_circle">
 									<img class="image_user" id="ItemPreview" src="http://localhost:8080/CRM/rest/restFoto/RetornaImagem/{{usuario.idfoto}}"/>
 						        </div>
 					        	<div class="form-group btn-group col-xs-12">
 									<span class="success">{{imagemresult}}</span>
-							        <span class="danger" ng-show="errorMsg">{{errorMsg}}</span>
+							        <span class="danger" ng-show="errorMsg">{{errorMsg}}</span>							        	
 					        	</div>
 
 					        </div>
-
-						</div>
-
-
+					       
+						</div>				
+				
+				
 						<div class="row control-group">
-
+						
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 
 								<h3>Dados Gerais</h3>
 
 							</div>
-						<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
-
-
-
+						
+						<div class="form-group col-xs-6 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
+								
 								<label>Nome</label>
 								<input type="hidden" ng-model="foto.id"/>
 								<input type="text"  class="form-control" placeholder="Nome" id="nome" ng-model="usuario.nome" required data-validation-required-message="Por favor insira um nome">
 
 								<p class="help-block text-danger"></p>
-
+								
 							</div>
-
-							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
+							
+							<div class="form-group col-xs-6 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Tipo</label>
 
 
 									<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-									    ng-options="tipousuario.nome for tipousuario in tiposusuario track by tipousuario.id" ng-model="usuario.tipousuario" >
+									    ng-options="tipousuario.nome for tipousuario in tiposusuario track by tipousuario.id" ng-model="usuario.tipousuario" >    
 									    <option value="">Tipo</option>
-									</select>
+									</select>	
 
 								<p class="help-block text-danger"></p>
 
 							</div>
 
 						</div>
-
+						
 						<div class="row control-group">
-
+						
 							<div class="form-group col-xs-6 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Login</label>
+								<label>Login</label> 
 								<input type="text" ng-model="usuario.login" class="form-control" placeholder="Login" id="login" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 							<div class="form-group col-xs-6 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Senha</label>
+								<label>Senha</label> 
 								<input type="password" ng-model="usuario.senha" class="form-control" placeholder="Senha" id="senha" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 						</div>
-
+						
 						<div class="row control-group">
-
+						
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>CPF</label>
 								<input type="text" ng-model="usuario.cpf"  class="form-control cpf" placeholder="CPF" id="CPF" required data-validation-required-message="Por favor insira um CPF">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Data de Nascimento</label>
 								<input type="text" class="form-control date" placeholder="Data de Nascimento" ng-model="usuario.datanascimento" id="data_nascimento" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 						</div>
-
+						
 						<div class="row control-group">
 
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Gênero</label>
 
 			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-							    ng-options="genero for genero in generos" ng-model="usuario.genero" >
+							    ng-options="genero for genero in generos" ng-model="usuario.genero" >    
 								    <option value="">Gênero</option>
-								</select>
+								</select>	
 								<p class="help-block text-danger"></p>
 
 							</div>
-
+							
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Cargo</label>
 								<input type="text" ng-model="usuario.cargo"  class="form-control" placeholder="Cargo" required data-validation-required-message="Por favor digite um cargo.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 						</div>
 
 						<div class="row control-group">
-
+						
 							<div
 								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Endereço</label>
 								<input type="text" class="form-control" ng-model="usuario.endereco" data-validation-required-message="Please enter your phone number." placeholder="Endereço">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 							<div
 								class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Bairro</label>
 								<input type="text" ng-model="usuario.bairro" class="form-control" placeholder="Bairro" id="Bairro" required data-validation-required-message="Por favor preencha o campo bairro.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+						
 						</div>
-
+						
 						<div class="row control-group">
-
+						
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Número</label>
 								<input type="text" ng-model="usuario.numero" class="form-control" placeholder="Número" required data-validation-required-message="Please enter your phone number.">
@@ -181,34 +180,34 @@
 								 <input type="text" ng-model="usuario.cep"  class="form-control cep" placeholder="CEP" id="CEP" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 						</div>
-
+						
 						<div class="row control-group">
-
+						
 							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Complemento</label>
 								<input type="tel" class="form-control" ng-model="usuario.complemento" data-validation-required-message="Please enter your phone number." placeholder="Complemento">
 								<p class="help-block text-danger"></p>
 							</div>
-
-						</div>
+							
+						</div>	
 
 						<div class="row control-group">
-
+						
 							<div
 								class="form-group col-sm-6 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Cidade</label>
-
+								<label>Cidade</label> 
+								
 								<select class="form-control" required data-validation-required-message="Por favor selecione uma cidade"
-									    ng-options="cidade.nome for cidade in cidades track by cidade.id" ng-model="usuario.cidade" >
+									    ng-options="cidade.nome for cidade in cidades track by cidade.id" ng-model="usuario.cidade" >    
 									    <option value="">Cidade</option>
-									</select>
+									</select>	
 
 								<p class="help-block text-danger"></p>
 
 							</div>
-
+							
 							<div class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Estado - País</label>
 								<select  class="form-control estado" required data-validation-required-message="Por favor selecione um estado." >
@@ -217,57 +216,57 @@
 
 								</select>
 								<p class="help-block text-danger"></p>
-							</div>
-
+							</div>					
+							
 						</div>
 						<div class="row control-group">
-
+							
 						</div>
 						<div class="row control-group">
-
+							
 							<div class="form-group col-xs-12 col-sm-6 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Data de Cadastro</label>
 								<input type="text" class="form-control date" placeholder="Data de Cadastro" ng-model="usuario.datacadastro" id="data_cadastro" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
-
+							
 							<div class="form-group col-xs-6  floating-label-form-group controls floating-label-form-group-with-value">
-								<label>Status</label>
+								<label>Status</label> 
 			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
-							    ng-options="status for status in statuslist" ng-model="usuario.status" >
+							    ng-options="status for status in statuslist" ng-model="usuario.status" >    
 								    <option value="">Status</option>
-								</select>
+								</select>	
 							 	<p class="help-block text-danger"></p>
 							</div>
-
-						</div>
+							
+						</div>						
 
 
 
 						<div class="row control-group">
-
+						
 							<h3>Telefones</h3>
 
 							<div class="col-xs-12 ">
 								<div class="col-xs-10">
 
 									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls ">
-										<label>Tipo</label>
+										<label>Tipo</label> 
 										<input type="hidden" ng-model="telefone.id" />
 										<select class="form-control" id="tipotelefone" required data-validation-required-message="Por favor selecione um tipo de usuário"
-										    ng-options="tipotelefone.nome for tipotelefone in tipostelefone track by tipotelefone.id" ng-model="telefone.tipotelefone" >
+										    ng-options="tipotelefone.nome for tipotelefone in tipostelefone track by tipotelefone.id" ng-model="telefone.tipotelefone" >    
 										    <option value="">Tipo</option>
-										</select>
+										</select>	
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  ">
-										<label>Número</label>
+										<label>Número</label> 
 										<input type="text" id="numero" ng-model="telefone.numero" class="form-control phone" placeholder="Número"
 											id="Nome do contato" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
-
+									
 
 								</div>
 								<div class="col-xs-2 btn-group">
@@ -285,8 +284,8 @@
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
-										<tr class="uppercase">
-
+										<tr class="uppercase">										
+											
 											<th>Tipo</th>
 											<th>Número</th>
 											<th></th>
@@ -294,7 +293,7 @@
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="telefone in listTelefones">
-
+							               
 							                <td>{{telefone.tipotelefone.nome}}</td>
 							                <td>{{telefone.numero}}</td>
 											<td class="btn-group">
@@ -302,14 +301,14 @@
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delTelefone(telefone.id)'>Excluir</a>
 											</td>
 										</tr>
-
+										
 									</tbody>
 								</table>
 							</div>
 
 						</div>
-
-
+						
+						
 						<!-- Gerenciar Comunicadores da Empresa-->
 						<div class="row control-group">
 							<h3>Comunicadores</h3>
@@ -319,21 +318,21 @@
 								<div class="col-xs-10">
 
 									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls ">
-										<label>Tipo</label>
+										<label>Tipo</label> 
 										<input type="hidden" ng-model="comunicador.id" />
 										<select class="form-control" id="tipocomunicador" required data-validation-required-message="Por favor selecione um tipo de comunicador"
-										    ng-options="tipocomunicador.nome for tipocomunicador in tiposcomunicador track by tipocomunicador.id" ng-model="comunicador.tipocomunicador" >
+										    ng-options="tipocomunicador.nome for tipocomunicador in tiposcomunicador track by tipocomunicador.id" ng-model="comunicador.tipocomunicador" >    
 										    <option value="">Tipo</option>
-										</select>
+										</select>	
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls  ">
-										<label>Endereço</label>
+										<label>Endereço</label> 
 										<input type="email" id="comunicador.nome" ng-model="comunicador.nome" class="form-control" placeholder="Endereço"
 											id="Nome do Comunicador" required data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
-
+									
 
 								</div>
 								<div class="col-xs-2 btn-group">
@@ -347,20 +346,20 @@
 
 
 						<div class="row ">
-
+						
 							<div class="table-scrollable table-scrollable-borderless">
 								<table class="table table-hover table-light col-xs-12">
 									<thead>
 										<tr class="uppercase">
-
+										
 											<th>Tipo</th>
-											<th>Endereço</th>
+											<th>Endereço</th>											
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									   <tr data-ng-repeat="comunicador in listComunicadores">
-
+							                
 							                <td>{{comunicador.tipocomunicador.nome}}</td>
 							                <td>{{comunicador.nome}}</td>
 							               	<td class="btn-group">
@@ -368,14 +367,14 @@
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delComunicador(comunicador.id)'>Excluir</a>
 											</td>
 										</tr>
-
+										
 									</tbody>
 								</table>
 							</div>
 
 						</div>
-
-
+						
+						
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
 								<a class="btn btn-danger btn-lg to-left" href="#/Usuario">Voltar</a>

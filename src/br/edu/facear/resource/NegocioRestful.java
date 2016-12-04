@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.edu.facear.crm.entity.Item;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -30,11 +31,39 @@ public class NegocioRestful {
 	@Produces("application/json")
 	@Path("/Salvar")
 	public Negocio cadastrarCliente(Negocio negocio) throws Exception {
-		if (negocio.getId() == null)
+		// Cadastra se o negócio for novo
+		if (negocio.getId() == null) {
+			
+			if(negocio.getItens_negocio() != null){
+				ArrayList<Item> itemlist = new ArrayList<Item>();
+				for (Item i : negocio.getItens_negocio()) {
+					new FacadeHappyCustomer().CadastrarItem(i);
+					itemlist.add(i);
+				}
+				negocio.setItens_negocio(itemlist);
+			}
+
 			new FacadeHappyCustomer().CadastrarNegocio(negocio);
-		else
+		}
+		// altera negócio já criado
+		else {
+			
+			if(negocio.getItens_negocio() != null){
+				ArrayList<Item> itemlist = new ArrayList<Item>();
+				for (Item i : negocio.getItens_negocio()) {
+					if (i.getId() == null) {
+						new FacadeHappyCustomer().CadastrarItem(i);
+					} else {
+						new FacadeHappyCustomer().AlterarItem(i);
+					}
+					itemlist.add(i);
+				}
+				negocio.setItens_negocio(itemlist);
+			}
+
 			new FacadeHappyCustomer().AlterarNegocio(negocio);
-		
+
+		}
 		return negocio;
 	}
 

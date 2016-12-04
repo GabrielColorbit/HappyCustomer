@@ -23,9 +23,6 @@ public class Item {
 	private Long id;
 	
 	// CHAVE(S) ESTRANGEIRA(S)
-	@ManyToOne
-	@ForeignKey(name = "fk_negocio")		
-	private Negocio negocio;
 	
 	@ManyToOne
 	@ForeignKey(name = "fk_produto")	
@@ -40,14 +37,6 @@ public class Item {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Negocio getNegocio() {
-		return negocio;
-	}
-
-	public void setNegocio(Negocio negocio) {
-		this.negocio = negocio;
 	}
 
 	public Produto getProduto() {
@@ -71,7 +60,6 @@ public class Item {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((negocio == null) ? 0 : negocio.hashCode());
 		result = prime * result + ((produto == null) ? 0 : produto.hashCode());
 		result = prime * result + ((quantidade == null) ? 0 : quantidade.hashCode());
 		return result;
@@ -91,11 +79,6 @@ public class Item {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (negocio == null) {
-			if (other.negocio != null)
-				return false;
-		} else if (!negocio.equals(other.negocio))
-			return false;
 		if (produto == null) {
 			if (other.produto != null)
 				return false;
@@ -111,26 +94,16 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", negocio=" + negocio + ", produto=" + produto + ", quantidade=" + quantidade + "]";
+		return "Item [id=" + id + ", produto=" + produto + ", quantidade=" + quantidade + "]";
 	}
 
-	/**
-	 * @param id
-	 * @param negocio
-	 * @param produto
-	 * @param quantidade
-	 */
-	public Item(Long id, Negocio negocio, Produto produto, Long quantidade) {
+	public Item(Long id, Produto produto, Long quantidade) {
 		super();
 		this.id = id;
-		this.negocio = negocio;
 		this.produto = produto;
 		this.quantidade = quantidade;
 	}
 
-	/**
-	 * 
-	 */
 	public Item() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -13,7 +13,6 @@ import javax.ws.rs.core.MediaType;
 import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Ligacao;
-import br.edu.facear.crm.entity.Telefone;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
 @Path("/restAtividade")

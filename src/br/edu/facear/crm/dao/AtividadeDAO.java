@@ -1,17 +1,11 @@
 package br.edu.facear.crm.dao;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Locale;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.facear.crm.controller.Configuration;
-
 import br.edu.facear.crm.entity.Atividade;
-
 
 public class AtividadeDAO implements InterfaceDAO<Atividade> {
 

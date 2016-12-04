@@ -44,6 +44,7 @@ public class Comunicador {
 
 	// ATRIBUTO(S)
 	private String nome;
+	private String data;
 	private String resumo;
 	public Long getId() {
 		return id;
@@ -63,6 +64,12 @@ public class Comunicador {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
 	public String getResumo() {
 		return resumo;
 	}
@@ -73,6 +80,7 @@ public class Comunicador {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((data == null) ? 0 : data.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((resumo == null) ? 0 : resumo.hashCode());
@@ -88,6 +96,11 @@ public class Comunicador {
 		if (getClass() != obj.getClass())
 			return false;
 		Comunicador other = (Comunicador) obj;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -112,20 +125,21 @@ public class Comunicador {
 	}
 	@Override
 	public String toString() {
-		return "Comunicador [id=" + id + ", tipocomunicador=" + tipocomunicador + ", nome=" + nome + ", resumo="
-				+ resumo + "]";
+		return "Comunicador [id=" + id + ", tipocomunicador=" + tipocomunicador + ", nome=" + nome + ", data=" + data
+				+ ", resumo=" + resumo + "]";
 	}
-	public Comunicador(Long id, TipoComunicador tipocomunicador, String nome, String resumo) {
+	public Comunicador(Long id, TipoComunicador tipocomunicador, String nome, String data, String resumo) {
 		super();
 		this.id = id;
 		this.tipocomunicador = tipocomunicador;
 		this.nome = nome;
+		this.data = data;
 		this.resumo = resumo;
 	}
 	public Comunicador() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
+	}	
 	
 	
 	// GETTERS E SETTERS
