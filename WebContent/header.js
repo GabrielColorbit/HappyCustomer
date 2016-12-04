@@ -1,12 +1,22 @@
 var myControllers = angular.module('HeaderControllers',[]);
 myControllers.controller('headerController', function( $scope, $routeParams, $http,  $cookies, $location, $window, $compile) {
+
+
+		$scope.sessionValidator = function(){
+			var hash = $cookies.get('hash');
+			if(!hash){
+				$location.path('/Login');
+			}
+		}
+		$scope.sessionValidator();
+
 	$scope.getUsuarioLogado = function(){
 		$scope.usuarioLogado = $cookies.getObject('usuarioLogado');
 
 		if($scope.usuarioLogado){
-			
+
 			$scope.menuStatus = "logado";
-			
+
 			if($scope.usuarioLogado.tipousuario.nome == "Administrador"){
 				$scope.menuTipoUsuario = "Administrador";
 				//atualiza menu com tipo de usuario
@@ -17,7 +27,7 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 					$("."+data).fadeIn("fast");
 				}, 200);
 
-				
+
 			}else if($scope.usuarioLogado.tipousuario.nome == "Operador"){
 				$scope.menuTipoUsuario = "Operador";
 				//atualiza menu com tipo de usuario
@@ -26,14 +36,14 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 					console.log(data);
 					$(".nav > li").hide();
 					$("."+data).fadeIn("fast");
-					
+
 				}, 200);
 
 			}
 
-			
-						
-			
+
+
+
 		}else{
 			$scope.menuStatus = "deslogado";
 		}
@@ -47,4 +57,3 @@ myControllers.controller('headerController', function( $scope, $routeParams, $ht
 
    };
 });
-

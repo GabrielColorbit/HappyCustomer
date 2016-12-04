@@ -14,7 +14,6 @@ import com.google.gson.Gson;
 
 import br.edu.facear.crm.dao.RelatorioDAO;
 import br.edu.facear.crm.entity.AtividadePorEmpresa;
-import net.sf.json.JSONObject;
 
 @Path("/restRelatorio")
 public class RelatorioRestful {
