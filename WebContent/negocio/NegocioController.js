@@ -17,13 +17,22 @@ myControllers.controller('ListarNegocioController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetNegocioController', function($scope, $routeParams,$http) {
-	$scope.Titulo = 'Editar Negociação'
+myControllers.controller('GetNegocioController', function($scope, $routeParams, $http, $location, $cookies) {
+		$scope.Titulo = 'Editar Negociação'
+
+
+		var negocio =  new Object();
 		
-//		$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-//		.success(function(data) {
-//			$scope.usuarios = data["usuario"];
-//		});
+		var hash = $cookies.get('hash');
+		var config = {
+			 headers : {
+				 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+			 }
+		 }
+		 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+	 	.success(function(data, config) {
+	 		$scope.usuarios = data["usuario"];
+	 	});
 		$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
 		.success(function(data) {
 			$scope.contatos = data["contato"];
@@ -36,19 +45,66 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 		.success(function(data) {
 			$scope.produtos = data["produto"];
 		});	
-
+		
 	if($routeParams.negocioId){
 		$http.get('http://localhost:8080/CRM/rest/restNegocio/Editar/'+$routeParams.negocioId)
 		.success(function(data) {
 			$scope.negocio = data;
-			var negocio =  new Object();
-			negocio = $scope.negocio 
+		
+			negocio = $scope.negocio
 			$scope.Titulo = "Negócio: "+ negocio.nome;
+			
+			$scope.listItens=[];
+			$scope.listItens = negocio.itens_negocio;
 
+			//validação de array de itens
+			if($scope.negocio.itens_negocio){
+				if($scope.negocio.itens_negocio.constructor == Array){
+						$scope.listItens = $scope.negocio.itens_negocio;
+				}else{
+					$scope.listItens = [];
+					var item = $scope.negocio.itens_negocio;
+					$scope.listItens.push(item);
+				}
+			}
+			else{//caso nao exista
+				$scope.listItens = [];
+			}
+			//calcula total de negocio
+			$scope.Calcular = function(){
+				if($scope.listItens){
+					
+					var total = 0;
+					for(var x in $scope.listItens){
+						var item = $scope.listItens[x];
+						var subtotal = item.quantidade * item.produto.preco;
+						total = total+ subtotal;
+					}
+					total = Math.round(total * 100) / 100;
+					$scope.total = "Total: R$"+total;
+					
+					$scope.negocio.valor = total;
+				}
+			}
+			$scope.Calcular();
+			
+			
 		});
+		
 	}
 	
-	$scope.EnviarInformacaoNegocio = function() {
+	$scope.EnviarInformacaoNegocio = function() {		
+
+		//limpando ids de novos cadastros de itens
+		for(var i=0; i <  Object.keys($scope.listItens).length; i ++){
+			var x = $scope.listItens[i].id;
+			var y = "#";
+			if(x.indexOf(y) !== -1){
+				$scope.listItens[i].id = null;
+			}
+		}
+		
+		$scope.negocio.itens_negocio =  $scope.listItens;
 		
 		var parameter = JSON.stringify({
 			type : "negocio",
@@ -57,7 +113,10 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 			usuarioresponsavel : $scope.negocio.usuarioresponsavel,
 			empresa : $scope.negocio.empresa,
 			contato : $scope.negocio.contato,
-			data : $scope.negocio.data
+			data : $scope.negocio.data,
+			valor : $scope.negocio.valor,
+			
+			itens_negocio : $scope.negocio.itens_negocio
 			
 		});
 		var config = {
@@ -77,7 +136,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 							
 					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
 					
-					$location.path('/Negocio/Editar/'+negocio.id)
+					$location.path("/Negocio");
 					
 					
 					
@@ -86,62 +145,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 					$scope.Resposta = data ;
 				});
 	   };
-	   
-	   $scope.EnviarInformacaoItem = function() {
-			
-			//limpando ids de novos cadastros de itens
-			for(var i=0; i <  Object.keys($scope.listItens).length; i ++){
-				var x = $scope.listItens[i].id;
-				var y = "#";
-				if(x.indexOf(y) !== -1){
-					$scope.listItens[i].id = null;
-				}
-			}
-
-			$scope.itens = $scope.listItens;
-			
-			var parameter = JSON.stringify({
-				type : "item",
-				id : $scope.item.id,
-				produto : $scope.item.produto,
-				quantidade : $scope.item.quantidade		
-				
-//				item : $scope.itens
-				
-			});
-			
-			
-//			$http.get('http://localhost:8080/CRM/rest/restItem/listarTodos')
-//			.success(function(data) {
-//				$scope.listItens = data["item"];
-//			});
-			
-			
-		 	
-		 	var config = {
-					headers : {
-						'Content-Type' : 'application/json;charset=utf-8;'
-					}
-				}
-				
-				$http.post(
-						'http://localhost:8080/CRM/rest/restItem/Salvar',
-						parameter, config).success(
-						function(data, status, headers, config) {
-							
-							$scope.item = data;
-							var item =  new Object();
-							item = $scope.item 
-									
-							alert("Itens Salvo Com Sucesso!");						
-							
-						}).error(
-						function(data, status, header, config) {
-							$scope.Resposta = data ;
-						});
-			   };
 			   
-			   $scope.listItens = [];
 				//Genrenciar Itens
 			 	$scope.addItem = function(){
 
@@ -164,7 +168,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 			 						};
 			 				 }
 			 	 }
-
+			 	$scope.Calcular();
 			 	 }
 			 	$scope.selectEditItem = function(id){
 
@@ -172,9 +176,9 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams,$
 			 				 $scope.item = {
 			 						"id": SelItem.id,
 			 						"produto": SelItem.produto,
-			 						"quantidade":SelItem.quantidade
+			 						"quantidade": SelItem.quantidade
 			 				};
-
+			 				$scope.Calcular();
 			 	 };
 			 	 
 			 	$scope.delItem = function(id){
@@ -233,12 +237,18 @@ myControllers.controller('CadastrarNegocioController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Negociação";
 	
 });
-myControllers.controller('NegocioController', function($scope, $routeParams, $http, $location) {
+myControllers.controller('NegocioController', function($scope, $routeParams, $http, $location, $cookies) {
 	
-//	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-//	.success(function(data) {
-//		$scope.usuarios = data["usuario"];
-//	});
+	var hash = $cookies.get('hash');
+	var config = {
+		 headers : {
+			 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+		 }
+	 }
+	 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+ 	.success(function(data, config) {
+ 		$scope.usuarios = data["usuario"];
+ 	});
 	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
 	.success(function(data) {
 		$scope.contatos = data["contato"];
@@ -261,14 +271,36 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 			usuarioresponsavel : $scope.negocio.usuarioresponsavel,
 			empresa : $scope.negocio.empresa,
 			contato : $scope.negocio.contato,
-			data : $scope.negocio.data
+			data : $scope.negocio.data,
+			
+			itens_negocio : $scope.negocio.itens_negocio
 			
 		});
 		var config = {
 			headers : {
 				'Content-Type' : 'application/json;charset=utf-8;'
 			}
-		}	
+		}
+		
+		$http.post(
+				'http://localhost:8080/CRM/rest/restNegocio/Salvar',
+				parameter, config).success(
+				function(data, status, headers, config) {
+					
+					$scope.negocio = data;
+					var negocio =  new Object();
+					negocio = $scope.negocio 
+							
+					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
+					
+					$location.path('/Negocio/Editar/'+negocio.id)
+					
+					
+					
+				}).error(
+				function(data, status, header, config) {
+					$scope.Resposta = data ;
+				});
 			
 	};
 	

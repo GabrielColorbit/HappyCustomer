@@ -204,19 +204,22 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 									$scope.listComunicadores.push({
 										id: $scope.comunicador.id ,
 										nome:$scope.comunicador.nome,
+										data:$scope.comunicador.data,
 										resumo:$scope.comunicador.resumo,
 										tipocomunicador:$scope.comunicador.tipocomunicador
 										});
-									$scope.comunicador = { "id": null,"nome": '',"resumo":'',"tipocomunicador":''};
+									$scope.comunicador = { "id": null,"nome": '',"data":'',"resumo":'',"tipocomunicador":''};
 
 								}else{
 										var index = getSelectedIndexComunicador($scope.comunicador.id);
 										$scope.listComunicadores[index].tipocomunicador = $scope.comunicador.tipocomunicador;
 										$scope.listComunicadores[index].nome = $scope.comunicador.nome;
+										$scope.listComunicadores[index].data = $scope.comunicador.data;
 										$scope.listComunicadores[index].resumo = $scope.comunicador.resumo;
 									$scope.comunicador = {
 												"id": null,
 												"nome": '',
+												"data": '',
 												"resumo": '',
 												"tipocomunicador":''
 									};
@@ -228,6 +231,7 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 							$scope.comunicador = {
 									"id": SelComunicador.id,
 									"nome": SelComunicador.nome,
+									"data": SelComunicador.data,
 									"resumo": SelComunicador.resumo,
 									"tipocomunicador":SelComunicador.tipocomunicador
 							};
@@ -265,7 +269,10 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 							i = false;
 
 						}else if(! $scope.comunicador.resumo){
-							alert("O campo resumo de interações está vázio, favor preencher o campo.");
+							alert("O campo data das interações está vázio, favor preenche-lô.")
+							}
+						else if(! $scope.comunicador.resumo){
+								alert("O campo resumo de interações está vázio, favor preencher o campo.");
 						}else if(! $scope.comunicador.tipocomunicador){
 							alert("Selecione um tipo de interações para continuar.");
 						}else{
@@ -299,8 +306,12 @@ myControllers.controller('GetAtividadeController', function($scope, $rootScope, 
 						}else if(! $scope.comunicador.resumo){
 							alert("O campo resumo de interações está vázio, favor preencher o campo.");
 						}else if(! $scope.comunicador.tipocomunicador){
-							alert("Selecione um tipo de interações para continuar.");
-						}else{
+							alert("Selecione um tipo de interações para continuar.");	
+						}
+						else if(! $scope.comunicador.data){
+							alert("Campo data dever ser preenchimento obrigadtório.");
+						}
+						else{
 							i = true
 						}
 					}else{

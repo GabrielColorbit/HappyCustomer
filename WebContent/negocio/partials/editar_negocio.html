@@ -22,7 +22,12 @@
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					<form name="sentMessage" id="contactForm" novalidate>
 						
-						<h3>Dados Gerais</h3>
+					
+							<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+
+								<h3>DADOS GERAIS</h3>
+
+							</div>
 						
 						<div class="row control-group">
 							
@@ -91,36 +96,45 @@
 
 						<div class="row control-group">
 						
-							<h3>Itens do Negócio</h3>
+							<h3>ITENS NEGOCIADOS</h3>
 
 							<div class="col-xs-12 ">
-								<div class="col-xs-10">
-
-									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls">
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 										<label>Produto</label> 
 										<input type="hidden" ng-model="item.id" />
 										<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de contato"
 									   	 ng-options="produto.nome for produto in produtos track by produto.id" ng-model="item.produto">    
 									    	<option value="">Produto</option>
-										</select>	
+										</select>
 										<p class="help-block text-danger"></p>
 									</div>
-									<div class="form-group col-sm-6 col-xs-12 floating-label-form-group controls">
-										<label>Quantidade</label> <input type="number"
-											class="form-control" min="1" max="100" ng-model="item.quantidade"
+									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+										<label>Preço Unitário (R$)</label> <input type="text" disabled 
+											class="form-control" ng-model="item.produto.preco"
+											placeholder="Preço Unitário" id="precounitario" required
+											data-validation-required-message="Por favor insira um nome">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group col-sm-5 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+										<label>Quantidade</label> <input type="text" 
+											class="form-control" ng-model="item.quantidade" min="1" max="100" 
 											placeholder="Quantidade" id="quantidade" required
 											data-validation-required-message="Por favor insira um nome">
 										<p class="help-block text-danger"></p>
 									</div>
+									<div class="form-group col-sm-4 col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+										<label>Sub Total (R$)</label> <input type="text" disabled 
+											class="form-control" ng-model="item.quantidade*item.produto.preco"
+											placeholder="Sub Total" id="subtotal" required
+											data-validation-required-message="Por favor insira um nome">
+										<p class="help-block text-danger"></p>
+									</div>
+									
+									<div class="col-xs-2 btn-group">
+										<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addItem()'>Salvar Item</a>
+									</div>
 
-								</div>
-								<div class="col-xs-2 btn-group">
-									<a class="btn btn-success btn-sm" href="javascript:void(0)" data-ng-click='addItem()'>Adicionar</a>
-
-								</div>
-
-
-							</div>
+								</div>								
 							
 						</div>
 						
@@ -138,29 +152,37 @@
 										</tr>
 									</thead>
 									<tbody>
-									   <tr data-ng-repeat="item in listItens">						                
+									  	<tr dir-paginate="item in listItens |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">					                
 							             	<td>{{item.produto.nome}}</td>
-							             	<td>{{item.produto.preco}}</td>
+							             	<td>R$ {{item.produto.preco}}</td>
 							                <td>{{item.quantidade}}</td>
-							                <td>{{item.quantidade*item.produto.preco}}</td>
+							                <td>R$ {{item.quantidade*item.produto.preco}}</td>
 											<td class="btn-group">
 												<a class="btn btn-warning  btn-sm" target="_blank" href="javascript:void(0)" ng-click='selectEditItem(item.id)'>Editar</a>
 												<a class="btn btn-danger btn-sm" href="javascript:void(0)" ng-click='delItem(item.id)'>Excluir</a>
+												<a class="btn btn-default btn-sm" target="_blank" href="#/Produto/Editar/{{item.produto.id}}">Ver</a>
 											</td>
 										</tr>
 										
 									</tbody>
 								</table>
+								<h3>{{total}}</h3>								
+							</div>
+							<div class="col-xs-12">
+								<dir-pagination-controls max-size="3" boundary-links="true"></dir-pagination-controls>					
 							</div>
 
 						</div>
 						
-						{{Resposta}}
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">
-								<a class="btn btn-danger btn-lg to-left" href="#/Negocio">Voltar</a>
-								<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacaoNegocio()' href="#/Negocio">Salvar</a>
+								<div class="col-sm-6 col-xs-12">
+									<a class="btn btn-danger btn-lg to-left" href="#/Negocio">Voltar</a>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<a class="btn btn-success btn-lg to-right" ng-click='EnviarInformacaoNegocio()'>Salvar</a>
+								</div>
 							</div>
 						</div>
 					</form>

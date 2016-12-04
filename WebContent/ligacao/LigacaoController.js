@@ -33,12 +33,18 @@ myControllers.controller('CadastrarLigacaoController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Ligação";
 	
 });
-myControllers.controller('LigacaoController', function($scope, $routeParams,$http) {
+myControllers.controller('LigacaoController', function($scope, $routeParams,$http, $cookies) {
 	
-	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-	.success(function(data) {
-		$scope.usuarios = data["usuario"];
-	});
+	var hash = $cookies.get('hash');
+	var config = {
+		 headers : {
+			 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+		 }
+	 }
+	 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+ 	.success(function(data, config) {
+ 		$scope.usuarios = data["usuario"];
+ 	});
 	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
 	.success(function(data) {
 		$scope.contatos = data["contato"];

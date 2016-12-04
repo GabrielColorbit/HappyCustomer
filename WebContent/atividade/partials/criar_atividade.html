@@ -26,7 +26,11 @@
 							
 							<div class="row control-group">
 							
-							<h3>Dados Gerais</h3>
+								<div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+
+									<h3>DADOS GERAIS</h3>
+
+								</div>
 						
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
@@ -122,8 +126,8 @@
 
 							<div
 								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Data Inicio</label> <input type="text"
-									class="form-control date" placeholder="Data Inicio" ng-model="atividade.datainicio" 
+								<label>Data Início</label> <input type="text"
+									class="form-control date" placeholder="Data Início" ng-model="atividade.datainicio" 
 									id="data_inicio" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
@@ -140,10 +144,10 @@
 						<div class="row control-group">
 
 							<div
-								class="form-group col-xs-6 floating-label-form-group controls">
-								<label>Descriçao</label>
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Descrição</label>
 								<textarea type="text" class="form-control" ng-model="atividade.descricao"
-									placeholder="Descricao" id="Descricao" required
+									placeholder="Descrição" id="descricao" required
 									data-validation-required-message="Por favor insira um nome"></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
@@ -153,8 +157,6 @@
 
 						</div>
 						
-						
-						{{Resposta}}
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group btn-group col-xs-12">

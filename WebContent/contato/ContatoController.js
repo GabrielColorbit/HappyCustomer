@@ -16,7 +16,7 @@ myControllers.controller('ListarContatoController', function($scope,$http) {
         $scope.reverse = !$scope.reverse;
     };
 });
-myControllers.controller('GetContatoController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+myControllers.controller('GetContatoController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location, $cookies) {
 	$scope.Titulo = "Editar Contato";
 	var contato =  new Object();
 
@@ -91,10 +91,17 @@ myControllers.controller('GetContatoController', function($scope, $rootScope, $r
 
 			}
 
-			$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-			.success(function(data) {
-				$scope.usuarios = data["usuario"];
-			});
+			var hash = $cookies.get('hash');
+			var config = {
+				 headers : {
+					 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+				 }
+			 }
+			 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+		 	.success(function(data, config) {
+		 		$scope.usuarios = data["usuario"];
+		 	});
+			
 			$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 			.success(function(data) {
 
@@ -401,7 +408,7 @@ myControllers.controller('CadastrarContatoController', function($scope, $routePa
 	$scope.Titulo = "Cadastrar Contato";
 
 });
-myControllers.controller('ContatoController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location) {
+myControllers.controller('ContatoController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location, $cookies) {
 
 	 $scope.upload = function (dataUrl, name) {
 
@@ -432,10 +439,17 @@ myControllers.controller('ContatoController', function($scope, $rootScope, $rout
 
 		}
 
-	$http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos')
-	.success(function(data) {
-		$scope.usuarios = data["usuario"];
-	});
+		var hash = $cookies.get('hash');
+		var config = {
+			 headers : {
+				 'Content-Type' : 'application/json;charset=utf-8;','hash' : hash
+			 }
+		 }
+		 $http.get('http://localhost:8080/CRM/rest/restUsuario/listarTodos',config)
+	 	.success(function(data, config) {
+	 		$scope.usuarios = data["usuario"];
+	 	});
+	
 	$http.get('http://localhost:8080/CRM/rest/restTipoContato/listarTodos')
 	.success(function(data) {
 
