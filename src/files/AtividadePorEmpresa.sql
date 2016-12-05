@@ -4,7 +4,7 @@ select
     ,case EXTRACT(month from (to_date(a.datacadastro, 'YYYY-DD-MM') ))
     	when 1 then 'Janeiro'
         when 2 then 'Fevereiro'
-    	when 3 then 'MarÃ§o'
+    	when 3 then 'Março'
         when 4 then 'Abril'
     	when 5 then 'Maio'
         when 6 then 'Junho'
