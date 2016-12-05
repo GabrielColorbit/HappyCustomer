@@ -11,20 +11,20 @@
   </div>
 </header>
 <!-- Portfolio Grid Section -->
-<section ng-controller="RelatorioAtividadeController">
+<section class="grid_usuarios"  ng-controller="RelatorioNegocioEmpresaController">
   <div class="container">
       <div class="row" >
             <div class="col-xs-12">
-	             <div class="row control-group">
-	                <div class="col-sm-9 col-xs-12 ">
+            	<div class="row control-group">
+                	 <div class="col-sm-9 col-xs-12 ">
 						<h2>{{GrahpsTitle}}</h2>
 					</div>
 	     			<div class="col-sm-3 col-xs-12 ">
-						<a class="btn btn-default btn-sm to-right" href="#/Empresa">Voltar </a>
-					</div>	
-	                <h2 id="idEmpresa" class="hidden">{{idEmpresa}}</h2>
-	                <div id="chartAtividadePorEmpresa" style="width: 100%; height: 450px;float:left"></div>
-	            </div>
+						<a class="btn btn-default btn-sm to-right" href="#/Negocio">Voltar </a>
+					</div>
+				</div>	
+                <h2 id="idEmpresa" class="hidden">{{idEmpresa}}</h2>
+                <div id="chartNegocioPorEmpresa" style="width: 100%; height: 400px;"></div>
             </div>
       </div>
   </div>
