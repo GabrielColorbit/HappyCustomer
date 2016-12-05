@@ -1,0 +1,26 @@
+with 
+kpi as(select
+   count(a.id) as atividade
+   ,case a.situacao
+           when 0 then 'Aberto'
+           when 1 then 'Cancelado'
+           when 2 then 'Paralisado'
+           when 3 then 'Finalizado'
+       end   AS situacao
+       ,case a.situacao
+           when 0 then '#67B7DC'
+           when 1 then '#F1F3F4'
+           when 2 then '#FDD400'
+           when 3 then '#84B761'
+       end   AS cor
+       From "TB_ATIVIDADE" a 
+    Group By
+    a.situacao
+       
+)
+select * from kpi      
+
+
+
+
+       

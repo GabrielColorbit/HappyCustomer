@@ -22,7 +22,7 @@
 					<input type="text" ng-model="procurar" class="form-control" ng-model="tipoTelefone.id" placeholder="Buscar Tipo de Telefone" id="Nome do tipo de telefone" required data-validation-required-message="Por favor insira um nome">
 				
 				</div>
-				<table id="printarea" class="table table-hover table-light col-xs-12">
+				<table class="table table-hover table-light col-xs-12">
 					<thead>
 						<tr class="uppercase">
 							
@@ -42,18 +42,17 @@
 							</div>
 						</td>
 						</tr>
-<!-- 						<tr> -->
-<!-- 							<td colspan='3'> -->
-<!-- 								{{Resposta}}<br> -->
-<!-- 								{{Quantidade}} -->
-<!-- 							</td> -->
-<!-- 						</tr> -->
+						<tr>
+							<td colspan='3'>
+								{{Resposta}}<br>
+								{{Quantidade}}
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="col-xs-12">
 				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
-				<a class="btn btn-default btn-sm to-right" href="javascript:print();">Gerar Relatório</a>
 			</div>
 		</div>
 	</div>
