@@ -313,5 +313,29 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 				});
 			
 	};
+	$scope.Excluir = function(id){
+		   
+		   var result = confirm("Tem Certeza Que Deseja Excluir Esta Negociação?");
+			if (result === true){
+				if(id){
+					
+					$http.post('http://localhost:8080/CRM/rest/restNegocio/Excluir/'+id)
+						.success(
+						function(data, status) {
+							alert("Negociação Excluída Com Sucesso!");
+							$scope.BuscarInformacao();
+							
+						}).error(
+						function(data, status) {
+							$scope.Resposta = data ;
+						});
+				   };
+			}
+			else{
+				alert("Negociação Conservada Com Sucesso!");
+				$scope.BuscarInformacao();
+			}
+			
+		};
 	
 });

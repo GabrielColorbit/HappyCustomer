@@ -35,7 +35,16 @@ public class LigacaoTest {
 	@Test
 	public void testCadastrarLigacao() throws Exception {
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i<30; i++){
+			
+			FacadeHappyCustomer facade = new FacadeHappyCustomer();
+
+			Ligacao Ligacao = new Ligacao();
+			Usuario Usuario = new Usuario();
+			Contato Contato = new Contato();
+			Empresa Empresa = new Empresa();
+			Telefone Telefone = new Telefone();
+			
 			// ATRIBUTOS
 			Ligacao.setData("19/11/2016");
 			Telefone.setId(1l);

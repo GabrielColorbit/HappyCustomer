@@ -31,45 +31,61 @@ public class AtividadeTest {
 	// CADASTRAR
 	@Test
 	public void testCadastrarAtividade() throws Exception {
-
-		Atividade.setNome("Celular travando");
-		Atividade.setDatacadastro("20/01/2016");
-		Atividade.setDatainicio("20/11/2016");
-		//Atividade.setDatafim("22/11/2016");
-		Atividade.setDescricao("Vamos verificar a causa do bug.");
-		Atividade.setSituacao(Situacao.Aberto);
 		
-		// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
-		Usuario.setId(1l);
-		Atividade.setUsuarioresponsavel(Usuario);
+		for (int i = 0; i<100; i++){
+			
+			FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-		// CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Contato.setId(1l);
-		Atividade.setContato(Contato);
+			Atividade Atividade = new Atividade();
+			Usuario Usuario = new Usuario();
+			Contato Contato = new Contato();
+			Empresa Empresa = new Empresa();
+			TipoAtividade TipoAtividade = new TipoAtividade();
+			Comunicador Comunicador = new Comunicador();
+			TipoComunicador TipoComunicador = new TipoComunicador();
+			
+			Atividade.setNome("Celular travando");
+			Atividade.setDatacadastro("20/01/2016");
+			Atividade.setDatainicio("20/11/2016");
+			//Atividade.setDatafim("22/11/2016");
+			Atividade.setDescricao("Vamos verificar a causa do bug.");
+			Atividade.setSituacao(Situacao.Aberto);
+			
+			// USUÁRIO RESPONSÁVEL PELA ATIVIDADE
+			Usuario.setId(1l);
+			Atividade.setUsuarioresponsavel(Usuario);
 
-		// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
-		Empresa.setId(1l);
-		Atividade.setEmpresa(Empresa);
+			// CONTATO RESPONSÁVEL PELA ATIVIDADE
+			Contato.setId(1l);
+			Atividade.setContato(Contato);
 
-		// TIPO DE ATIVIDADE
-		TipoAtividade.setId(1l);
-		Atividade.setTipoatividade(TipoAtividade);
+			// EMPRESA DO CONTATO RESPONSÁVEL PELA ATIVIDADE
+			Empresa.setId(1l);
+			Atividade.setEmpresa(Empresa);
 
-		// CADASTRANDO COMUNICADOR
-		Comunicador.setNome("atividade1@atividade1.com");
-		Comunicador.setData("04/12/2016");
-		Comunicador.setResumo("Foi comprado um cartão SD de 64GB.");
-		TipoComunicador.setId(1l);
-		Comunicador.setTipocomunicador(TipoComunicador);
-		facade.CadastrarComunicador(Comunicador);
+			// TIPO DE ATIVIDADE
+			TipoAtividade.setId(1l);
+			Atividade.setTipoatividade(TipoAtividade);
 
-		List<Comunicador> comunicadores_atividade = new ArrayList<Comunicador>();
-		comunicadores_atividade.add(Comunicador);
-		Atividade.setComunicadores_atividade(comunicadores_atividade);
+			// CADASTRANDO COMUNICADOR
+			Comunicador.setNome("atividade1@atividade1.com");
+			Comunicador.setData("01/01/2016");
+			Comunicador.setResumo("Foi comprado um cartão SD de 64GB.");
+			TipoComunicador.setId(1l);
+			Comunicador.setTipocomunicador(TipoComunicador);
+			facade.CadastrarComunicador(Comunicador);
 
-		// CADASTRAR
-		facade.CadastrarAtividade(Atividade);
-		Assert.assertEquals(true, Atividade.getId() != null);
+			List<Comunicador> comunicadores_atividade = new ArrayList<Comunicador>();
+			comunicadores_atividade.add(Comunicador);
+			Atividade.setComunicadores_atividade(comunicadores_atividade);
+
+			// CADASTRAR
+			facade.CadastrarAtividade(Atividade);
+			Assert.assertEquals(true, Atividade.getId() != null);
+			
+		}
+
+		
 
 	}
 

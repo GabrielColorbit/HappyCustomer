@@ -33,45 +33,53 @@ public class NegocioTest {
 	// CADASTRAR
 	@Test
 	public void testCadastrarNegocio() throws Exception {
-
-		// ATRIBUTOS NEGÓCIO
-		Negocio.setNome("Compra de Comida");
-		//Calendar data = new GregorianCalendar(29, 10, 2016);
-		Negocio.setData("19/11/2016");
-		Negocio.setValor(135f);
 		
-		// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
-		Usuario.setId(1l);
-		Negocio.setUsuarioresponsavel(Usuario);
-		   
-		// EMPRESA RESPONSÁVEL PELO NEGÓCIO
-		Empresa.setId(1l);
-		Negocio.setEmpresa(Empresa);
-		
-		//Situacao
-		Negocio.setSituacao(Situacao.Aberto);
-		
-		// CONTATO RESPONSÁVEL PELO NEGÓCIO
-		Contato.setId(1l);
-		Negocio.setContato(Contato);
+		for (int i = 0; i<2; i++){
+			
+			FacadeHappyCustomer facade = new FacadeHappyCustomer();
 
-		facade.CadastrarNegocio(Negocio);
-		Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
-		// TERMINA NEGÓCIO E JA INICIA O ITENS
+			Negocio Negocio = new Negocio();
+			Produto Produto = new Produto();
+			Usuario Usuario = new Usuario();
+			Contato Contato = new Contato();
+			Empresa Empresa = new Empresa();
 
-		Item Item = new Item();
-		// ITENS DO NEGÓCIO
-		Produto.setId(1l);
-		Item.setProduto(Produto);
-		Item.setQuantidade(2l);
-		facade.CadastrarItem(Item);
+			Item Item = new Item();
+			
+			// ATRIBUTOS NEGÓCIO
+			Negocio.setNome("Compra de Comida");
+			//Calendar data = new GregorianCalendar(29, 10, 2016);
+			Negocio.setData("19/11/2016");
+			Negocio.setValor(135f);
+			
+			// USUÁRIO RESPONSÁVEL PELA LIGAÇÃO
+			Usuario.setId(2l);
+			Negocio.setUsuarioresponsavel(Usuario);
+			   
+			// EMPRESA RESPONSÁVEL PELO NEGÓCIO
+			Empresa.setId(10l);
+			Negocio.setEmpresa(Empresa);
+			
+			// CONTATO RESPONSÁVEL PELO NEGÓCIO
+			Contato.setId(10l);
+			Negocio.setContato(Contato);
+						
+			//Situacao
+			Negocio.setSituacao(Situacao.Aberto);
+	
+			facade.CadastrarNegocio(Negocio);
+			Assert.assertEquals(true, Negocio.getId() != null && Negocio.getId() != null);
+			// TERMINA NEGÓCIO E JA INICIA O ITENS
+
+
+			// ITENS DO NEGÓCIO
+			Produto.setId(1l);
+			Item.setProduto(Produto);
+			Item.setQuantidade(2l);
+			facade.CadastrarItem(Item);
+		}
+
 		
-
-		Item Item2 = new Item();
-		Produto.setId(2l);
-		Item2.setProduto(Produto);
-		Item2.setQuantidade(4l);
-		facade.CadastrarItem(Item2);
 
 	}
 
