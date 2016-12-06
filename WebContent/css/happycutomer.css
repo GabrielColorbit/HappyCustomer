@@ -89,8 +89,10 @@ hr.star-primary:after
 }
 
 img.user-pic.img-circle {
-    width: 38px;
-    margin: -10px 0;
+    width: 55px!important;
+    height: 55px!important;
+    margin: -7px 0;
+    border: solid 2px #18bc9c;
 }
 .navbar-default .navbar-header:before{
     content:"";

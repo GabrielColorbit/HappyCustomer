@@ -18,7 +18,7 @@ myControllers.controller('ListarUsuarioController', function($scope,$http,$cooki
 			$scope.Quantidade = $scope.usuariolist.length+' Usuários Encontradas!' ;
 		}).error(
 			function(data, config) {
-				alert(data);
+				console.log(data);
 			});
 
 	};
@@ -208,17 +208,59 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 					function(data, status, headers, config) {
 
 						alert( 'Usuário '+$scope.usuario.nome+' Salvo com Sucesso!');
-						
-					   //atualiza informações usuario logado
-					   var hash = $cookies.get("hash");
-					   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
-						  (function(data) {
-								  var hash = data;
-								  $cookies.putObject('usuarioLogado',data);
-								  $scope.usuarioLogado = $cookies.getObject('usuarioLogado');
-								  $location.path('/Usuario');
-								  $window.location.reload();
-					  	});
+						var usuarioLogado = $scope.usuario;
+						 if(usuarioLogado.id = $scope.usuario.id){
+
+							   var parameter = JSON.stringify({
+									type : "usuario",
+									login : usuarioLogado.login ,
+									senha : usuarioLogado.senha
+								});
+								var config = {
+									headers : {
+										'Content-Type' : 'application/json;charset=utf-8;'
+									}
+								}
+
+								$http.post('http://localhost:8080/CRM/rest/restLogin/AutenticacaoUsuario', parameter, config).success(
+								function(data, status, headers, config) {
+									  var hash = data;
+									  $cookies.put("hash", hash);
+									  $scope.LoadUser(hash);
+								})
+							    $scope.LoadUser = function(hash){
+									   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
+										  (function(data) {
+											if(data.id){
+												$cookies.putObject('usuarioLogado',data);
+												$scope.usuarioLogado = $cookies.getObject('usuarioLogado');
+
+											}else{
+												$scope.responseFromLogin = "Login ou senha incorretos."
+											}
+
+									  	});
+								   };
+								
+
+								
+							 
+							   //atualiza informações usuario logado
+							   var hash = $cookies.get("hash");
+							   $http.get('http://localhost:8080/CRM/rest/restLogin/LoadUser/'+hash  ).success
+								  (function(data) {
+										  var hash = data;
+										   
+										  
+										  
+										  
+										  $location.path('/Usuario');
+										  $window.location.reload();
+							  	});
+							 
+						 }
+						 
+
 						
 						
 
@@ -228,6 +270,8 @@ myControllers.controller('GetUsuarioController', function($scope, $rootScope, $r
 								+ status + "<hr />headers: " + header
 								+ "<hr />config: " + config;
 					});
+			 
+			 
 					
 		   };
 
