@@ -12,6 +12,7 @@ import br.edu.facear.crm.entity.Empresa;
 import br.edu.facear.crm.entity.Item;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.crm.entity.Produto;
+import br.edu.facear.crm.entity.Situacao;
 import br.edu.facear.crm.entity.Usuario;
 import br.edu.facear.facade.FacadeHappyCustomer;
 
@@ -46,6 +47,9 @@ public class NegocioTest {
 		// EMPRESA RESPONSÁVEL PELO NEGÓCIO
 		Empresa.setId(1l);
 		Negocio.setEmpresa(Empresa);
+		
+		//Situacao
+		Negocio.setSituacao(Situacao.Aberto);
 		
 		// CONTATO RESPONSÁVEL PELO NEGÓCIO
 		Contato.setId(1l);

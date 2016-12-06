@@ -1,0 +1,877 @@
+
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\hooks
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\info
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\logs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\logs\refs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\logs\refs\heads
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\logs\refs\remotes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\logs\refs\remotes\origin
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\00
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\01
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\03
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\04
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\05
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\07
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\08
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\09
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\0a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\0b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\0e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\0f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\10
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\11
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\12
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\13
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\14
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\16
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\17
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\18
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\19
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\1b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\1c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\1f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\21
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\22
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\23
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\24
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\25
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\26
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\28
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\2a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\2b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\2c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\2e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\2f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\30
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\31
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\32
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\35
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\36
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\39
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\3f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\40
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\41
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\42
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\43
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\44
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\45
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\47
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\48
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\49
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\4a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\4b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\4c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\4e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\4f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\50
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\51
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\52
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\53
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\54
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\55
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\58
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\5f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\60
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\61
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\62
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\63
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\64
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\65
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\66
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\67
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\68
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\69
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\6f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\70
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\71
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\72
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\74
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\75
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\76
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\77
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\78
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\7f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\80
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\81
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\82
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\84
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\85
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\86
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\87
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\88
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\89
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\8c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\8d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\8f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\90
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\93
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\94
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\96
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\98
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\99
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9a
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9b
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9c
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9d
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9e
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\9f
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a0
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a1
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a2
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a3
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a4
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\a9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ab
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ac
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ad
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ae
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\af
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b0
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b1
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b3
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b4
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b5
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b8
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\b9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ba
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\bc
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\bd
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\be
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\bf
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c0
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c1
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c2
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c3
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c4
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c5
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c6
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c8
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\c9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ca
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\cb
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\cc
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\cd
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ce
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d0
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d1
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d2
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d4
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d5
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d6
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d8
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\d9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\db
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\dc
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\dd
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\de
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e0
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e2
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e3
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e4
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e5
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e6
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e8
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\e9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ea
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\eb
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ec
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ee
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ef
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f1
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f3
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f5
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f7
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f8
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\f9
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\fa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\fb
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\fc
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\fd
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\fe
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\ff
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\info
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\objects\pack
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\refs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\refs\heads
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\refs\remotes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\refs\remotes\origin
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.git\refs\tags
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\.settings
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\crm
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\crm\bo
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\crm\controller
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\crm\dao
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\crm\entity
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\facade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\resource
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\br\edu\facear\test
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\files
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\build\classes\META-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\AtividadeBO.java = 105 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\CidadeBO.java = 63 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\ComunicadorBO.java = 64 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\ContatoBO.java = 150 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\EmpresaBO.java = 102 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\EstadoBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\InterfaceBO.java = 24 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\ItemBO.java = 68 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\LigacaoBO.java = 97 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\NegocioBO.java = 66 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\OrigemContatoBO.java = 59 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\ProdutoBO.java = 63 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TelefoneBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoAtividadeBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoComunicadorBO.java = 66 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoContatoBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoEmpresaBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoTelefoneBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\TipoUsuarioBO.java = 65 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\bo\UsuarioBO.java = 151 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\controller
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\controller\TipoEmpresaBean.java = 121 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\AtividadeDAO.java = 59 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\CidadeDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\ComunicadorDAO.java = 53 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\Connection.java = 14 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\ConnectionJDBC.java = 30 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\ContatoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\CrmException.java = 7 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\EmpresaDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\EstadoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\FotoDAO.java = 46 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\InterfaceDAO.java = 22 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\ItemDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\LigacaoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\NegocioDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\OrigemContatoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\ProdutoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\RelatorioDAO.java = 183 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TelefoneDAO.java = 53 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoAtividadeDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoComunicadorDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoContatoDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoEmpresaDAO.java = 54 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoTelefoneDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\TipoUsuarioDAO.java = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\dao\UsuarioDAO.java = 58 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Atividade.java = 285 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\AtividadePorEmpresa.java = 82 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\AtividadesPorStatus.java = 32 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Cidade.java = 124 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Comunicador.java = 158 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Contato.java = 452 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Empresa.java = 418 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Estado.java = 117 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Foto.java = 72 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Genero.java = 10 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Imagens.java = 12 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Item.java = 111 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Ligacao.java = 226 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Negocio.java = 188 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\NegocioPorContato.java = 37 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\NegocioPorEmpresa.java = 37 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\OrigemContato.java = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Produto.java = 82 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Situacao.java = 8 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Status.java = 10 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Telefone.java = 142 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoAtividade.java = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoComunicador.java = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoContato.java = 101 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoEmpresa.java = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoLigacao.java = 8 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoTelefone.java = 99 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\TipoUsuario.java = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\crm\entity\Usuario.java = 435 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\facade
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\facade\FacadeHappyCustomer.java = 629 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\AtividadeRestful.java = 114 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\AuthenticationService.java = 46 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\CidadeRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\ComunicadorRestful.java = 47 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\ContatoRestful.java = 186 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\EmpresaRestful.java = 193 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\EnumRestful.java = 70 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\EstadoRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\FotoRestful.java = 50 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\ItemRestful.java = 77 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\LigacaoRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\LoginRestful.java = 76 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\NegocioRestful.java = 89 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\OrigemContatoRestful.java = 59 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\ProdutoRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\RelatorioRestful.java = 85 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TelefoneRestful.java = 47 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoAtividadeRestful.java = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoComunicadorRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoContatoRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoEmpresaRestful.java = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoTelefoneRestful.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\TipoUsuarioRestful.java = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\resource\UsuarioRestful.java = 238 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\AtividadeTest.java = 139 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\CidadeTest.java = 183 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\ComunicadorTest.java = 64 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\ContaLinhas.java = 183 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\ContatoTest.java = 197 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\EmpresaTest.java = 184 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\EstadoTest.java = 146 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\LigacaoTest.java = 122 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\Main.java = 756 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\MainTest.java = 133 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\NegocioTest.java = 134 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\OrigemContatoTest.java = 56 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\ProdutoTest.java = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TelefoneTest.java = 67 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoAtividadeTest.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoComunicadorTest.java = 55 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoContatoTest.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoEmpresaTest.java = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoTelefoneTest.java = 56 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\TipoUsuarioTest.java = 56 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\br\edu\facear\test\UsuarioTest.java = 159 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\files
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\src\META-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\angularstuffs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\themes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\home
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\companies
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\portfolio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\users
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\includes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\login
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\META-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\negocio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\less
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\scss
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\jquery
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF\lib
+
+
+
+=============================================
+Sub-pastas do projeto = 374 pastas
+Classes do projeto = 121 classes
+Linhas de codigo do projeto = 12205 linhas

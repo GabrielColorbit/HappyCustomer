@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.edu.facear.crm.dao.NegocioDAO;
 import br.edu.facear.crm.entity.Item;
 import br.edu.facear.crm.entity.Negocio;
 import br.edu.facear.facade.FacadeHappyCustomer;
@@ -24,6 +25,15 @@ public class NegocioRestful {
 	public ArrayList<Negocio> findAll() throws Exception {
 
 		return new FacadeHappyCustomer().ListarNegocio();
+	}
+
+	@GET
+	@Path("/listarNegocioPendente")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<Negocio> listarNegocioPendente() throws Exception {
+
+		return new NegocioDAO().ListarEmAndamento();
 	}
 
 	@POST

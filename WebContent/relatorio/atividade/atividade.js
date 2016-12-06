@@ -21,7 +21,7 @@ function callChartAtividade(){
 			  "autoMargins": false,
 			  "marginLeft": 30,
 			  "marginRight": 8,
-			  "marginTop": 10,
+			  "marginTop": 70,
 			  "marginBottom": 26,
 			  "balloon": {
 			    "adjustBorderColor": false,
@@ -66,6 +66,14 @@ function callChartAtividade(){
 			    "axisAlpha": 0,
 			    "tickLength": 0
 			  },
+			  "valueScrollbar": {
+			        "autoGridCount":true
+			    },
+			    "valueLineBalloonEnabled": true,
+		        "valueLineEnabled": true,
+			    "zoomControl": {
+					"zoomControlEnabled": true
+				},
 			  "export": {
 			    "enabled": true
 			  }

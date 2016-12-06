@@ -1,0 +1,648 @@
+
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\angularstuffs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\themes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\home
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\companies
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\portfolio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\users
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\includes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\login
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\META-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\negocio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\less
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\scss
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\jquery
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF\lib
+
+
+
+=============================================
+Sub-pastas do projeto = 119 pastas
+Classes do projeto = 0 classes
+Linhas de codigo do projeto = 0 linhas
+
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\angularstuffs
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\angularstuffs\heroDetail.html = 7 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials\criar_atividade.html = 171 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials\editar_atividade.html = 365 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\atividade\partials\listar_atividade.html = 74 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\funnel.html = 78 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\pie.html = 76 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\radar.html = 97 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\serial_column.html = 99 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\serial_line.html = 96 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\animate\examples\xy.html = 83 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\gantt_json.html = 70 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\gauge_json.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\map_json.html = 47 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\map_json_external_function.html = 55 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\pie_csv.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\pie_json.html = 44 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\serial2_json.html = 85 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\serial_csv.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\serial_json.html = 108 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\serial_with_dynamic_graphs.html = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\stock_csv_data_and_events.html = 312 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\stock_csv_progressbar.html = 371 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\advanced.html = 257 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\funnel.html = 80 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\gantt.html = 311 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\gauge.html = 77 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\index.html = 63 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\map.html = 209 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\pie1.html = 72 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\pie2.html = 97 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\pie3.html = 84 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\pie4.html = 101 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\radar.html = 92 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\serial1.html = 213 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\serial2.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\serial3.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\stock.html = 223 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\xy.html = 139 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\funnel.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\gantt.html = 304 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\gauge.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\index.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\map.html = 198 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\pie1.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\pie2.html = 73 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\pie3.html = 106 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\radar.html = 67 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\serial1.html = 203 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\serial2.html = 84 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\serial3.html = 103 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\stock.html = 210 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\xy.html = 145 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\charts\themes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials\criar_cidade.html = 59 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials\editar_cidade.html = 57 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\cidade\partials\listar_cidade.html = 65 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials\criar_contato.html = 392 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials\editar_contato.html = 402 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\contato\partials\listar_contato.html = 74 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\css\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials\criar_empresa.html = 418 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials\editar_empresa.html = 438 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\empresa\partials\listar_empresa.html = 79 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials\criar_estado.html = 329 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials\editar_estado.html = 330 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\estado\partials\listar_estado.html = 62 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\home
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\home\home.html = 74 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\companies
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\portfolio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\img\users
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\includes
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\includes\pagination.html = 18 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials\criar_ligacao.html = 142 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials\editar_ligacao.html = 146 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\ligacao\partials\listar_ligacao.html = 74 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\login
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\login\login.html = 73 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\META-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials\criar_negocio.html = 108 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials\editar_negocio.html = 192 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\negocio\partials\listar_negocio.html = 79 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials\criar_origem_contato.html = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials\editar_origem_contato.html = 51 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\origem_contato\partials\listar_origem_contato.html = 59 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\black
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\chalk
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\patterns\white
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\funnel.html = 78 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\pie.html = 76 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\radar.html = 97 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\serial_column.html = 99 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\serial_line.html = 96 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\animate\examples\xy.html = 83 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\gantt_json.html = 70 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\gauge_json.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\map_json.html = 47 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\map_json_external_function.html = 55 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\pie_csv.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\pie_json.html = 44 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\serial2_json.html = 85 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\serial_csv.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\serial_json.html = 108 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\serial_with_dynamic_graphs.html = 100 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\stock_csv_data_and_events.html = 312 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\stock_csv_progressbar.html = 371 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\examples\data
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\dataloader\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\advanced.html = 257 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\funnel.html = 80 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\gantt.html = 311 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\gauge.html = 77 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\index.html = 63 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\map.html = 209 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\pie1.html = 72 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\pie2.html = 97 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\pie3.html = 84 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\pie4.html = 101 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\radar.html = 92 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\serial1.html = 213 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\serial2.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\serial3.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\stock.html = 223 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\xy.html = 139 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\lang
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\blob.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\fabric.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\FileSaver.js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\jszip
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\pdfmake
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\libs\xlsx
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\export\shapes
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\funnel.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\gantt.html = 304 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\gauge.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\index.html = 112 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\map.html = 198 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\pie1.html = 71 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\pie2.html = 73 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\pie3.html = 106 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\radar.html = 67 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\serial1.html = 203 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\serial2.html = 84 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\serial3.html = 103 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\stock.html = 210 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\xy.html = 145 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\plugins\responsive\examples\images
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials\criar_produto.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials\editar_produto.html = 58 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\produto\partials\listar_produto.html = 61 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\atividade
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\atividade\atividade.html = 31 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\atividade\atividadeporstatus.html = 31 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\negocio
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\negocio\negociocontato.html = 31 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\relatorio\negocio\negocioempresa.html = 31 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\criar_telefone.html = 182 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials\criar_telefone.html = 51 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials\editar_telefone.html = 50 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\telefone\partials\listar_telefone.html = 59 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials\criar_tipo_atividade.html = 48 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials\editar_tipo_atividade.html = 48 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_atividade\partials\listar_tipo_atividade.html = 57 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials\criar_tipo_comunicador.html = 50 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials\editar_tipo_comunicador.html = 49 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_comunicador\partials\listar_tipo_comunicador.html = 60 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials\criar_tipo_contato.html = 50 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials\editar_tipo_contato.html = 52 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_contato\partials\listar_tipo_contato.html = 63 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials\criar_tipo_empresa.html = 49 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials\editar_tipo_empresa.html = 49 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_empresa\partials\listar_tipo_empresa.html = 59 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials\criar_tipo_telefone.html = 49 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials\editar_tipo_telefone.html = 49 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_telefone\partials\listar_tipo_telefone.html = 59 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials\criar_tipo_usuario.html = 51 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials\editar_tipo_usuario.html = 51 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\tipo_usuario\partials\listar_tipo_usuario.html = 63 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials\criar_usuario.html = 391 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials\editar_usuario.html = 388 linhas
+	 C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\usuario\partials\listar_usuario.html = 71 linhas
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\bootstrap\js
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\css
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\fonts
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\less
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\font-awesome\scss
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\vendor\jquery
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF
+
+Path = C:\Users\Gabriel\Documents\GitHub\HappyCustomer\WebContent\WEB-INF\lib
+
+
+
+=============================================
+Sub-pastas do projeto = 119 pastas
+Classes do projeto = 156 classes
+Linhas de codigo do projeto = 18857 linhas

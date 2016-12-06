@@ -42,6 +42,7 @@
 						<th ng-click="ordenar('contato')">Contato</th>
 						<th ng-click="ordenar('data')">Data</th>
 						<th ng-click="ordenar('valor')">Valor</th>
+						<th ng-click="ordenar('situacao')">Situação</th>
 						<th>
 							<a class="btn btn-success btn-sm" href="#/Negocio/Cadastrar">Adicionar</a>
 						</th>
@@ -49,7 +50,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr dir-paginate="n in negociolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:5">
+					<tr dir-paginate="n in negociolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:20" class="{{n.situacao}}" >
+					
 						
 						<td>{{n.usuarioresponsavel.nome}}</td>
 						<td>{{n.nome}}</td>
@@ -57,6 +59,7 @@
 						<td>{{n.contato.nome}}</td>						
 						<td>{{n.data}}</td>
 						<td>R$ {{n.valor}}</td>
+						<td>{{n.situacao}}</td>
 						
 						<td class="btn-group">
 						<div class="to-right btn-group">

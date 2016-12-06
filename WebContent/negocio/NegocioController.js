@@ -7,7 +7,7 @@ myControllers.controller('ListarNegocioController', function($scope,$http) {
 		$http.get('http://localhost:8080/CRM/rest/restNegocio/listarTodos')
 		.success(function(data) {
 			$scope.negociolist = data["negocio"];
-			$scope.Quantidade = $scope.negociolist.length+' Negócios Encontrados!' ;
+			$scope.Quantidade = $scope.negociolist.length+' Negociações Encontrados!' ;
 		});
 	};
 	$scope.BuscarInformacao();
@@ -37,6 +37,10 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams, 
 		.success(function(data) {
 			$scope.contatos = data["contato"];
 		});
+		$http.get('http://localhost:8080/CRM/rest/restCollections/situacao', config)
+		 .success(function(data, config) {
+			 $scope.situacoes = data["situacao"];
+		 });
 		$http.get('http://localhost:8080/CRM/rest/restEmpresa/listarTodos')
 		.success(function(data) {
 			$scope.empresas = data["empresa"];
@@ -52,7 +56,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams, 
 			$scope.negocio = data;
 		
 			negocio = $scope.negocio
-			$scope.Titulo = "Negócio: "+ negocio.nome;
+			$scope.Titulo = "Negociação: "+ negocio.nome;
 			
 			$scope.listItens=[];
 			$scope.listItens = negocio.itens_negocio;
@@ -115,6 +119,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams, 
 			contato : $scope.negocio.contato,
 			data : $scope.negocio.data,
 			valor : $scope.negocio.valor,
+			situacao : $scope.negocio.situacao,
 			
 			itens_negocio : $scope.negocio.itens_negocio
 			
@@ -134,7 +139,7 @@ myControllers.controller('GetNegocioController', function($scope, $routeParams, 
 					var negocio =  new Object();
 					negocio = $scope.negocio 
 							
-					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
+					alert("Negociação: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
 					
 					$location.path("/Negocio");
 					
@@ -250,6 +255,10 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
  	.success(function(data, config) {
  		$scope.usuarios = data["usuario"];
  	});
+	$http.get('http://localhost:8080/CRM/rest/restCollections/situacao', config)
+	 .success(function(data, config) {
+		 $scope.situacoes = data["situacao"];
+	 });
 	$http.get('http://localhost:8080/CRM/rest/restContato/listarTodos')
 	.success(function(data) {
 		$scope.contatos = data["contato"];
@@ -273,7 +282,7 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 			empresa : $scope.negocio.empresa,
 			contato : $scope.negocio.contato,
 			data : $scope.negocio.data,
-			
+			situacao : $scope.negocio.situacao,
 			itens_negocio : $scope.negocio.itens_negocio
 			
 		});
@@ -292,7 +301,7 @@ myControllers.controller('NegocioController', function($scope, $routeParams, $ht
 					var negocio =  new Object();
 					negocio = $scope.negocio 
 							
-					alert("Negócio: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
+					alert("Negociação: "+ $scope.negocio.nome +". Salvo Com Sucesso!");
 					
 					$location.path('/Negocio/Editar/'+negocio.id)
 					

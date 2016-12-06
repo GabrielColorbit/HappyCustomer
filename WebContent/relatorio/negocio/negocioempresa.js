@@ -17,6 +17,7 @@ function callChartNegocioEmpresa(){
 		{
 		    "type": "serial",
 		    "theme": "light",
+		     "marginTop": 70,
 		    "dataProvider":proprieties ,
 		    "valueAxes": [{
 		      

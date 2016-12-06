@@ -42,7 +42,7 @@ myControllers.controller('RelatorioNegocioEmpresaController', function($scope, $
 		.success(function(data, config) {
 
 			$scope.empresas = data;
-			$scope.GrahpsTitle =  "Negócios por Empresa ";
+			$scope.GrahpsTitle =  "Negociações por Empresa ";
 			callChartNegocioEmpresa();
 
 		}).error(

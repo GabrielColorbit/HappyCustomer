@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.edu.facear.crm.dao.AtividadeDAO;
 import br.edu.facear.crm.entity.Atividade;
 import br.edu.facear.crm.entity.Comunicador;
 import br.edu.facear.crm.entity.Ligacao;
@@ -26,6 +27,22 @@ public class AtividadeRestful {
 
 		return (ArrayList<Atividade>) new FacadeHappyCustomer().ListarAtividade();
 	}
+	@GET
+	@Path("/listarAtivos")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<Atividade> listarAtividadesAtivo() throws Exception {
+		return (ArrayList<Atividade>) new FacadeHappyCustomer().ListarAtividadesAtivas();
+	}
+	@GET
+	@Path("/listarAtividadeUsuario/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<Atividade> ListarAtividadesUsuario(@PathParam(value = "id") String codigo) throws Exception {
+		Long id = Long.parseUnsignedLong(codigo);
+		return (ArrayList<Atividade>) new AtividadeDAO().ListarAtividadesUsuario(id);
+	}
+	
 
 	@POST
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON })

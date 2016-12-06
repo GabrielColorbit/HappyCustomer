@@ -22,6 +22,7 @@ myControllers.controller('ListarAtividadeController', function($scope,$http,$coo
         $scope.reverse = !$scope.reverse;
     };
 });
+
 myControllers.controller('GetAtividadeController', function($scope, $rootScope, $routeParams,$http, Upload, $timeout, $filter, $location, $cookies) {
 	//$scope.Titulo = "Atividade: "+ atividade.nome;
 	var hash = $cookies.get('hash');

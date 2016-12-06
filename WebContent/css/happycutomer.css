@@ -688,3 +688,18 @@ float: left;
 .deslogado{
 	display:none;
 }
+.Finalizado, .Finalizado:hover{
+	background-color: rgba(130, 180, 97, 0.68)!important;
+}
+
+.Aberto, .Aberto:hover{
+	background-color: rgba(102, 180, 216, 0.72)!important;
+}
+
+.Paralisado, .Paralisado:hover{
+	background-color: rgba(248, 208, 3, 0.64)!important;
+}
+
+.Cancelado, .Cancelado:hover{
+	background-color: rgba(216, 79, 79, 0.85)!important;
+}

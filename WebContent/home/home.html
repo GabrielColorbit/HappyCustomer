@@ -5,12 +5,178 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="intro-text">
-          <span class="name">Home</span>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+
+
+
+<section class="grid atividades" ng-controller="ListarAtividadePorUsuarioController">
+	<div class="container">
+
+		<div class="row">
+	               <div class="row control-group">
+                	<h2>Suas Atividades</h2>
+                </div>	
+			<div class="table-scrollable table-scrollable-borderless">
+				<div class="col-sm-6 col-xs-12  search_bar">
+					<input type="text" class="form-control" ng-model="procurar"
+					placeholder="Buscar Atividade" id="Nome da atividade" required
+					data-validation-required-message="Por favor insira um nome">
+				</div>
+				<table id="printarea" class="table table-hover table-light col-xs-12">
+					<thead>
+					<tr class="uppercase">
+						
+						<th ng-click="ordenar('nome')">Nome</th>
+						<th>Empresa</th>
+						<th ng-click="ordenar('situacao')">Situação</th>
+							<th ng-click="ordenar('datacadastro')">Data</th>
+						<th ><a title="Ver {{Titulo}}" class="btn btn-success btn-sm" href="#/Atividade/">Todas Atividades</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="a in atividadelist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:20" class="{{a.situacao}}">
+						
+
+						<td>{{a.nome}}</td>
+						<td>{{a.empresa.razaosocial}}</td>
+						<td>{{a.situacao}}</td>
+						<td>{{a.datacadastro}}</td>
+						
+						<td class="btn-group">
+						<div class="to-right btn-group">
+							<a title="Ver {{Titulo}}" class="btn btn-default btn-sm" href="#/Atividade/Editar/{{a.id}}">Detalhes</a>
+						</div>
+					</tr>
+					
+
+				</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12">
+				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="grid atividades" ng-controller="ListarAtividadePorDataController">
+	<div class="container">
+
+		<div class="row">
+	               <div class="row control-group">
+                	<h2>Atividades em Aberto</h2>
+                </div>	
+			<div class="table-scrollable table-scrollable-borderless">
+				<div class="col-sm-6 col-xs-12  search_bar">
+					<input type="text" class="form-control" ng-model="procurar"
+					placeholder="Buscar Atividade" id="Nome da atividade" required
+					data-validation-required-message="Por favor insira um nome">
+				</div>
+				<table id="printarea" class="table table-hover table-light col-xs-12">
+					<thead>
+					<tr class="uppercase">
+						
+						<th ng-click="ordenar('nome')">Nome</th>
+						<th>Empresa</th>
+						<th ng-click="ordenar('situacao')">Situação</th>
+						<th ><a title="Ver {{Titulo}}" class="btn btn-success btn-sm" href="#/Atividade/">Todas Atividades</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="a in atividadelist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:20" class="{{a.situacao}}">
+						
+
+						<td>{{a.nome}}</td>
+						<td>{{a.empresa.razaosocial}}</td>
+						<td>{{a.situacao}}</td>
+						
+						<td class="btn-group">
+						<div class="to-right btn-group">
+							<a title="Ver {{Titulo}}" class="btn btn-default btn-sm" href="#/Atividade/Editar/{{a.id}}">Detalhes</a>
+						</div>
+					</tr>
+					
+
+				</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12">
+				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Portfolio Grid Section -->
+<section class="grid_negocios" ng-controller="NegocioAndamentoController">
+	<div class="container">
+		
+		<div class="row">
+               <div class="row control-group">
+                	<h2>Negociações em Andamento</h2>
+                </div>	
+			<div class="table-scrollable table-scrollable-borderless">
+				<div class="col-sm-6 col-xs-12  search_bar">
+					<input type="text" class="form-control" ng-model="procurar"
+					placeholder="Buscar Negociação" id="Nome do negócio" required
+					data-validation-required-message="Por favor insira um nome">
+				</div>
+
+
+
+				<table id="printarea" class="table table-hover table-light col-xs-12">
+					<thead>
+					<tr class="uppercase">
+						
+						<th ng-click="ordenar('usuario')">Usuário</th>
+						<th ng-click="ordenar('nome')">Nome</th>						
+						<th ng-click="ordenar('empresa')">Empresa</th>
+						<th ng-click="ordenar('contato')">Contato</th>
+						<th ng-click="ordenar('data')">Data</th>
+						<th ng-click="ordenar('valor')">Valor</th>
+						<th ng-click="ordenar('situacao')">Situação</th>
+						<th ><a title="Ver {{Titulo}}" class="btn btn-success btn-sm" href="#/Negocio/">Todas Negociações</a></th>
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="n in negociolist |filter:procurar|orderBy:sortKey:reverse|itemsPerPage:20" class="{{n.situacao}}" >
+					
+						
+						<td>{{n.usuarioresponsavel.nome}}</td>
+						<td>{{n.nome}}</td>
+						<td>{{n.empresa.razaosocial}}</td>		
+						<td>{{n.contato.nome}}</td>						
+						<td>{{n.data}}</td>
+						<td>R$ {{n.valor}}</td>
+						<td>{{n.situacao}}</td>
+						
+						<td class="btn-group">
+						<div class="to-right btn-group">
+							<a title="Ver {{Titulo}}" class="btn btn-default btn-sm" href="#/Negocio/Editar/{{n.id}}">Detalhes</a>
+						</div>			
+					</tr>
+					
+
+				</tbody>
+				</table>
+				
+			</div>
+			<div class="col-xs-12">
+				<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
+			</div>
+		</div>
+	</div>
+</section>
+
+
 <section class="grid_usuarios"  ng-controller="RelatorioNegocioEmpresaController">
   <div class="container">
       <div class="row" >
@@ -19,20 +185,7 @@
                 	<h2>{{GrahpsTitle}}</h2>
                 </div>
                 <h2 id="idEmpresa" class="hidden">{{idEmpresa}}</h2>
-                <div id="chartNegocioPorEmpresa" style="width: 100%; height: 500px;"></div>
-            </div>
-      </div>
-  </div>
-</section>
-<section class="grid_usuarios"  ng-controller="RelatorioNegocioContatoController">
-  <div class="container">
-      <div class="row" >
-            <div class="col-xs-12">
-               <div class="row control-group">
-                	<h2>{{GrahpsTitle}}</h2>
-                </div>
-                <h2 id="idEmpresa" class="hidden">{{idEmpresa}}</h2>
-                <div id="chartNegocioPorContato" style="width: 100%; height: 500px;"></div>
+                <div id="chartNegocioPorEmpresa" style="width: 100%; height: 400px;"></div>
             </div>
       </div>
   </div>

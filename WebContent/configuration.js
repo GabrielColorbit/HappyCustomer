@@ -25,6 +25,7 @@ var app = angular.module('happyCustomerApp', [
 	'HeaderControllers',
 	'amChartsDirective',
 	'RelatorioController',
+	'HomeControllers'
 
 
 ]);

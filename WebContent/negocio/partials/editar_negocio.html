@@ -33,7 +33,16 @@
 							
 							<input type="hidden"id="nome1" ng-model="negocio.id">
 							<input type="hidden"id="nome2" ng-model="item.id">
-							
+							<div  class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
+									<label>Situação</label>
+			      				<select class="form-control" required data-validation-required-message="Por favor selecione um tipo de usuário"
+							    ng-options="situacao for situacao in situacoes" ng-model="negocio.situacao" >
+								    <option value="">Situação</option>
+								</select>								
+	
+								<p class="help-block text-danger"></p>
+								
+							</div>
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Nome</label> 
@@ -46,9 +55,9 @@
 						</div>
 						
 						<div class="row control-group">
-							
+
 							<div 
-								class="form-group col-xs-8 floating-label-form-group controls floating-label-form-group-with-value">
+								class="form-group col-xs-7 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Usuário Responsável</label>
 								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
 							    ng-options="usuario.nome for usuario in usuarios track by usuario.id" ng-model="negocio.usuarioresponsavel" >    
@@ -60,7 +69,7 @@
 							</div>
 							
 							<div 
-								class="form-group col-xs-4 floating-label-form-group controls floating-label-form-group-with-value">
+								class="form-group col-xs-5 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Data</label> 
 								<input type="text" class="form-control date" placeholder="Data" ng-model="negocio.data" id="data_cadastro" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
@@ -71,7 +80,7 @@
 						<div class="row control-group">
 						
 							<div 
-								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								class="form-group col-xs-7 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Contato</label>
 								<select class="form-control" required data-validation-required-message="Por favor selecione um contato"
 							    ng-options="contato.nome for contato in contatos track by contato.id" ng-model="negocio.contato" >    
@@ -83,7 +92,7 @@
 							</div>
 						
 							<div 
-								class="form-group col-xs-6 floating-label-form-group controls floating-label-form-group-with-value">
+								class="form-group col-xs-5 floating-label-form-group controls floating-label-form-group-with-value">
 								<label>Empresa</label>
 								<select class="form-control" ng-model="negocio.empresa" required data-validation-required-message="Por favor selecione uma empresa"
 							    ng-options="empresa.razaosocial for empresa in empresas track by empresa.id">    

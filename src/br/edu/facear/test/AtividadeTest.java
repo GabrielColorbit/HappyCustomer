@@ -33,7 +33,7 @@ public class AtividadeTest {
 	public void testCadastrarAtividade() throws Exception {
 
 		Atividade.setNome("Celular travando");
-		Atividade.setDatacadastro("20/12/2016");
+		Atividade.setDatacadastro("20/01/2016");
 		Atividade.setDatainicio("20/11/2016");
 		//Atividade.setDatafim("22/11/2016");
 		Atividade.setDescricao("Vamos verificar a causa do bug.");

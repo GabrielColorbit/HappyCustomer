@@ -43,6 +43,11 @@ public class NegocioDAO implements InterfaceDAO<Negocio> {
 		Query q = em.createQuery("from Negocio a order by id");
 		return (ArrayList<Negocio>) q.getResultList();
 	}
+	
+	public ArrayList<Negocio> ListarEmAndamento() {
+		Query q = em.createQuery("from Negocio a Where a.situacao = 0 order by id");
+		return (ArrayList<Negocio>) q.getResultList();
+	}
 
 	// BUSCAR ID
 	@Override

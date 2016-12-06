@@ -83,6 +83,14 @@ public class AtividadeBO implements InterfaceBO<Atividade> {
 		}
 		return a;
 	}
+	// LISTAR ATIVOS
+	public ArrayList<Atividade> ListarAtividadesAtivas() throws Exception {
+		ArrayList<Atividade> a = atividadeDAO.ListarAtividadesAtivas();
+		if (a == null) {
+			throw new Exception("Nenhuma Atividade cadastrada");
+		}
+		return a;
+	}
 
 	// BUSCAR ID
 	@Override

@@ -50,6 +50,7 @@ public class Negocio {
 	private String nome;
 	private String data;
 	private Float valor;
+	private Situacao situacao;
 	public Long getId() {
 		return id;
 	}
@@ -98,79 +99,20 @@ public class Negocio {
 	public void setValor(Float valor) {
 		this.valor = valor;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((contato == null) ? 0 : contato.hashCode());
-		result = prime * result + ((data == null) ? 0 : data.hashCode());
-		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((itens_negocio == null) ? 0 : itens_negocio.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((usuarioresponsavel == null) ? 0 : usuarioresponsavel.hashCode());
-		result = prime * result + ((valor == null) ? 0 : valor.hashCode());
-		return result;
+	public Situacao getSituacao() {
+		return situacao;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Negocio other = (Negocio) obj;
-		if (contato == null) {
-			if (other.contato != null)
-				return false;
-		} else if (!contato.equals(other.contato))
-			return false;
-		if (data == null) {
-			if (other.data != null)
-				return false;
-		} else if (!data.equals(other.data))
-			return false;
-		if (empresa == null) {
-			if (other.empresa != null)
-				return false;
-		} else if (!empresa.equals(other.empresa))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (itens_negocio == null) {
-			if (other.itens_negocio != null)
-				return false;
-		} else if (!itens_negocio.equals(other.itens_negocio))
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (usuarioresponsavel == null) {
-			if (other.usuarioresponsavel != null)
-				return false;
-		} else if (!usuarioresponsavel.equals(other.usuarioresponsavel))
-			return false;
-		if (valor == null) {
-			if (other.valor != null)
-				return false;
-		} else if (!valor.equals(other.valor))
-			return false;
-		return true;
+	public void setSituacao(Situacao situacao) {
+		this.situacao = situacao;
 	}
 	@Override
 	public String toString() {
 		return "Negocio [id=" + id + ", usuarioresponsavel=" + usuarioresponsavel + ", contato=" + contato
 				+ ", empresa=" + empresa + ", itens_negocio=" + itens_negocio + ", nome=" + nome + ", data=" + data
-				+ ", valor=" + valor + "]";
+				+ ", valor=" + valor + ", situacao=" + situacao + "]";
 	}
 	public Negocio(Long id, Usuario usuarioresponsavel, Contato contato, Empresa empresa, List<Item> itens_negocio,
-			String nome, String data, Float valor) {
+			String nome, String data, Float valor, Situacao situacao) {
 		super();
 		this.id = id;
 		this.usuarioresponsavel = usuarioresponsavel;
@@ -180,9 +122,12 @@ public class Negocio {
 		this.nome = nome;
 		this.data = data;
 		this.valor = valor;
+		this.situacao = situacao;
 	}
 	public Negocio() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
 }

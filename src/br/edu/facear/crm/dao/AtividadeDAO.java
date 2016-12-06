@@ -43,7 +43,14 @@ public class AtividadeDAO implements InterfaceDAO<Atividade> {
 		Query q = em.createQuery("from Atividade a order by id");
 		return (ArrayList<Atividade>) q.getResultList();
 	}
-
+	public ArrayList<Atividade> ListarAtividadesAtivas() {
+		Query q = em.createQuery("from Atividade a Where a.situacao = 0 order by id");
+		return (ArrayList<Atividade>) q.getResultList();
+	}
+	public ArrayList<Atividade> ListarAtividadesUsuario(Long idusuario) {
+		Query q = em.createQuery("from Atividade a Where a.usuarioresponsavel = "+idusuario+" order by id");
+		return (ArrayList<Atividade>) q.getResultList();
+	}
 	// BUSCAR ID
 	@Override
 	public Atividade BuscarID(Long id) {

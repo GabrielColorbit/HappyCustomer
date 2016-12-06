@@ -5,6 +5,13 @@ img-crop {
   display: block;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  padding: 101px 106px;
+  font-weight: bold;
+}
+img-crop:before {
+	content:"Selecione ou arraste uma foto :)";
+	font-size:20px;
 }
 /* line 7, ../../source/scss/ng-img-crop.scss */
 img-crop canvas {

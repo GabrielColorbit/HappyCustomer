@@ -498,6 +498,11 @@ public class FacadeHappyCustomer {
 	public ArrayList<Atividade> ListarAtividade() throws Exception {
 		return atividadeBO.Listar();
 	}
+	
+	// LISTAR ATIVOS
+	public ArrayList<Atividade> ListarAtividadesAtivas() throws Exception {
+		return atividadeBO.ListarAtividadesAtivas();
+	}
 
 	// BUSCAR PELO ID
 	public Atividade BuscarAtividadePorId(Long atividade) throws Exception {
